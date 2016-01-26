@@ -4,6 +4,5 @@ narration-base: http://mathhub.info/ODK/Sage
 dependencies:
 responsible: f.rabe@jacobs-university.de
 title:SageMath Knowledge and Interoperability 
-teaser:<p>The knowledge behind the open source SageMath system; see <a
-href="http://www.sagemath.org/">www.sagemath.org</a>.</p>
+teaser:<p>The knowledge behind the open source SageMath system; see <a href="http://www.sagemath.org/">www.sagemath.org</a>.</p>
 description:desc.html  
