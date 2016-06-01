@@ -1,0 +1,741 @@
+[
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.g_sets.GSets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.modular_abelian_varieties.ModularAbelianVarieties",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.algebras.Algebras",
+            "sage.categories.coalgebras.Coalgebras"
+        ],
+        "name": "sage.categories.bialgebras.Bialgebras",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.posets.Posets",
+            "sage.categories.finite_sets.FiniteSets"
+        ],
+        "name": "sage.categories.finite_posets.FinitePosets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.fields.Fields"
+        ],
+        "name": "sage.categories.quotient_fields.QuotientFields",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.distributive_magmas_and_additive_magmas.DistributiveMagmasAndAdditiveMagmas.AdditiveAssociative.AdditiveCommutative.AdditiveUnital.Associative",
+            "sage.categories.monoids.Monoids"
+        ],
+        "name": "sage.categories.semirings.Semirings",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.discrete_valuation.DiscreteValuationRings"
+        ],
+        "name": "sage.categories.complete_discrete_valuation.CompleteDiscreteValuationRings",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.category.JoinCategory"
+        ],
+        "name": "sage.categories.affine_weyl_groups.AffineWeylGroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.integral_domains.IntegralDomains"
+        ],
+        "name": "sage.categories.gcd_domains.GcdDomains",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.posets.Posets",
+            "sage.categories.monoids.Monoids"
+        ],
+        "name": "sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.distributive_magmas_and_additive_magmas.DistributiveMagmasAndAdditiveMagmas.AdditiveAssociative.AdditiveCommutative.AdditiveUnital.Associative",
+            "sage.categories.commutative_additive_groups.CommutativeAdditiveGroups"
+        ],
+        "name": "sage.categories.rngs.Rngs",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.pointed_sets.PointedSets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.fields.Fields"
+        ],
+        "name": "sage.categories.discrete_valuation.DiscreteValuationFields",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.posets.Posets"
+        ],
+        "name": "sage.categories.lattice_posets.LatticePosets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.vector_spaces.VectorSpaces"
+        ],
+        "name": "sage.categories.category_types.ChainComplexes",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.magmas.Magmas",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.finite_sets.FiniteSets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.modules.Modules"
+        ],
+        "name": "sage.categories.vector_spaces.VectorSpaces",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_with_partial_maps.SetsWithPartialMaps"
+        ],
+        "name": "sage.categories.sets_cat.Sets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.fields.Fields"
+        ],
+        "name": "sage.categories.function_fields.FunctionFields",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.sets_with_grading.SetsWithGrading",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.algebra_modules.AlgebraModules"
+        ],
+        "name": "sage.categories.algebra_ideals.AlgebraIdeals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.objects.Objects"
+        ],
+        "name": "sage.categories.sets_with_partial_maps.SetsWithPartialMaps",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.commutative_additive_groups.CommutativeAdditiveGroups"
+        ],
+        "name": "sage.categories.right_modules.RightModules",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.schemes.Schemes",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.hopf_algebras_with_basis.HopfAlgebrasWithBasis",
+            "sage.categories.finite_dimensional_algebras_with_basis.FiniteDimensionalAlgebrasWithBasis"
+        ],
+        "name": "sage.categories.finite_dimensional_hopf_algebras_with_basis.FiniteDimensionalHopfAlgebrasWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.euclidean_domains.EuclideanDomains"
+        ],
+        "name": "sage.categories.discrete_valuation.DiscreteValuationRings",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.groupoid.Groupoid",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.modules.Modules"
+        ],
+        "name": "sage.categories.algebra_modules.AlgebraModules",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.gcd_domains.GcdDomains"
+        ],
+        "name": "sage.categories.unique_factorization_domains.UniqueFactorizationDomains",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.magmas.Magmas"
+        ],
+        "name": "sage.categories.semigroups.Semigroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.rngs.Rngs",
+            "sage.categories.semirings.Semirings"
+        ],
+        "name": "sage.categories.rings.Rings",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.regular_crystals.RegularCrystals",
+            "sage.categories.finite_crystals.FiniteCrystals",
+            "sage.categories.highest_weight_crystals.HighestWeightCrystals"
+        ],
+        "name": "sage.categories.classical_crystals.ClassicalCrystals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.bialgebras.Bialgebras"
+        ],
+        "name": "sage.categories.hopf_algebras.HopfAlgebras",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.rings.Rings",
+            "sage.categories.associative_algebras.AssociativeAlgebras",
+            "sage.categories.unital_algebras.UnitalAlgebras"
+        ],
+        "name": "sage.categories.algebras.Algebras",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.additive_groups.AdditiveGroups",
+            "sage.categories.commutative_additive_monoids.CommutativeAdditiveMonoids"
+        ],
+        "name": "sage.categories.commutative_additive_groups.CommutativeAdditiveGroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.unique_factorization_domains.UniqueFactorizationDomains"
+        ],
+        "name": "sage.categories.principal_ideal_domains.PrincipalIdealDomains",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.algebras.Algebras",
+            "sage.categories.unital_algebras.UnitalAlgebras.WithBasis"
+        ],
+        "name": "sage.categories.algebras_with_basis.AlgebrasWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.hopf_algebras.HopfAlgebras",
+            "sage.categories.bialgebras_with_basis.BialgebrasWithBasis"
+        ],
+        "name": "sage.categories.hopf_algebras_with_basis.HopfAlgebrasWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.algebra_ideals.AlgebraIdeals"
+        ],
+        "name": "sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.algebras_with_basis.AlgebrasWithBasis",
+            "sage.categories.finite_dimensional_modules_with_basis.FiniteDimensionalModulesWithBasis"
+        ],
+        "name": "sage.categories.finite_dimensional_algebras_with_basis.FiniteDimensionalAlgebrasWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.permutation_groups.PermutationGroups",
+            "sage.categories.finite_groups.FiniteGroups",
+            "sage.categories.finitely_generated_semigroups.FinitelyGeneratedSemigroups.Finite"
+        ],
+        "name": "sage.categories.finite_permutation_groups.FinitePermutationGroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.hopf_algebras_with_basis.HopfAlgebrasWithBasis",
+            "sage.categories.graded_algebras_with_basis.GradedAlgebrasWithBasis"
+        ],
+        "name": "sage.categories.graded_hopf_algebras_with_basis.GradedHopfAlgebrasWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.crystals.Crystals"
+        ],
+        "name": "sage.categories.regular_crystals.RegularCrystals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.semigroups.Semigroups",
+            "sage.categories.finite_sets.FiniteSets"
+        ],
+        "name": "sage.categories.finite_semigroups.FiniteSemigroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.modules.Modules"
+        ],
+        "name": "sage.categories.ring_ideals.RingIdeals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.additive_magmas.AdditiveMagmas.AdditiveCommutative",
+            "sage.categories.additive_semigroups.AdditiveSemigroups"
+        ],
+        "name": "sage.categories.commutative_additive_semigroups.CommutativeAdditiveSemigroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.modules_with_basis.ModulesWithBasis",
+            "sage.categories.vector_spaces.VectorSpaces"
+        ],
+        "name": "sage.categories.vector_spaces.VectorSpaces.WithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.domains.Domains"
+        ],
+        "name": "sage.categories.division_rings.DivisionRings",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.modules.Modules"
+        ],
+        "name": "sage.categories.vector_spaces.VectorSpaces",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.enumerated_sets.EnumeratedSets"
+        ],
+        "name": "sage.categories.crystals.Crystals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.discrete_valuation.DiscreteValuationFields"
+        ],
+        "name": "sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.rings.Rings",
+            "sage.categories.monoids.Monoids.Commutative"
+        ],
+        "name": "sage.categories.commutative_rings.CommutativeRings",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.posets.Posets",
+            "sage.categories.monoids.Monoids"
+        ],
+        "name": "sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.fields.Fields",
+            "sage.categories.commutative_rings.CommutativeRings.Finite",
+            "sage.categories.finite_enumerated_sets.FiniteEnumeratedSets"
+        ],
+        "name": "sage.categories.finite_fields.FiniteFields",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.simplicial_complexes.SimplicialComplexes",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.objects.Objects"
+        ],
+        "name": "sage.categories.category_types.Elements",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.domains.Domains",
+            "sage.categories.commutative_rings.CommutativeRings"
+        ],
+        "name": "sage.categories.integral_domains.IntegralDomains",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.posets.Posets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.finite_coxeter_groups.FiniteCoxeterGroups",
+            "sage.categories.weyl_groups.WeylGroups"
+        ],
+        "name": "sage.categories.finite_weyl_groups.FiniteWeylGroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.monoids.Monoids",
+            "sage.categories.magmas.Magmas.Unital.Inverse"
+        ],
+        "name": "sage.categories.groups.Groups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.enumerated_sets.EnumeratedSets",
+            "sage.categories.finite_sets.FiniteSets"
+        ],
+        "name": "sage.categories.finite_enumerated_sets.FiniteEnumeratedSets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.algebras.Algebras"
+        ],
+        "name": "sage.categories.matrix_algebras.MatrixAlgebras",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.posets.Posets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.fields.Fields"
+        ],
+        "name": "sage.categories.number_fields.NumberFields",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.finite_dimensional_modules_with_basis.FiniteDimensionalModulesWithBasis",
+            "sage.categories.vector_spaces.VectorSpaces.WithBasis"
+        ],
+        "name": "sage.categories.category.JoinCategory",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.groups.Groups"
+        ],
+        "name": "sage.categories.permutation_groups.PermutationGroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.generalized_coxeter_groups.GeneralizedCoxeterGroups"
+        ],
+        "name": "sage.categories.coxeter_groups.CoxeterGroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.crystals.Crystals",
+            "sage.categories.finite_enumerated_sets.FiniteEnumeratedSets"
+        ],
+        "name": "sage.categories.finite_crystals.FiniteCrystals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.algebras_with_basis.AlgebrasWithBasis",
+            "sage.categories.bialgebras.Bialgebras",
+            "sage.categories.coalgebras_with_basis.CoalgebrasWithBasis"
+        ],
+        "name": "sage.categories.bialgebras_with_basis.BialgebrasWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.modules_with_basis.ModulesWithBasis",
+            "sage.categories.vector_spaces.VectorSpaces"
+        ],
+        "name": "sage.categories.vector_spaces.VectorSpaces.WithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.additive_magmas.AdditiveMagmas",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.filtered_modules_with_basis.FilteredModulesWithBasis",
+            "sage.categories.graded_modules.GradedModules"
+        ],
+        "name": "sage.categories.graded_modules_with_basis.GradedModulesWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.enumerated_sets.EnumeratedSets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.algebras.Algebras",
+            "sage.categories.commutative_rings.CommutativeRings"
+        ],
+        "name": "sage.categories.commutative_algebras.CommutativeAlgebras",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.vector_spaces.VectorSpaces"
+        ],
+        "name": "sage.categories.coalgebras.Coalgebras",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.vector_spaces.VectorSpaces.WithBasis",
+            "sage.categories.coalgebras.Coalgebras"
+        ],
+        "name": "sage.categories.coalgebras_with_basis.CoalgebrasWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.sets_cat.Sets"
+        ],
+        "name": "sage.categories.posets.Posets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.filtered_modules.FilteredModules"
+        ],
+        "name": "sage.categories.graded_modules.GradedModules",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.commutative_additive_groups.CommutativeAdditiveGroups"
+        ],
+        "name": "sage.categories.left_modules.LeftModules",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.vector_spaces.VectorSpaces.WithBasis"
+        ],
+        "name": "sage.categories.hecke_modules.HeckeModules",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.crystals.Crystals"
+        ],
+        "name": "sage.categories.highest_weight_crystals.HighestWeightCrystals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.additive_monoids.AdditiveMonoids",
+            "sage.categories.commutative_additive_semigroups.CommutativeAdditiveSemigroups"
+        ],
+        "name": "sage.categories.commutative_additive_monoids.CommutativeAdditiveMonoids",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [],
+        "name": "sage.categories.objects.Objects",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.lattice_posets.LatticePosets",
+            "sage.categories.finite_posets.FinitePosets"
+        ],
+        "name": "sage.categories.finite_lattice_posets.FiniteLatticePosets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.left_modules.LeftModules",
+            "sage.categories.right_modules.RightModules"
+        ],
+        "name": "sage.categories.bimodules.Bimodules",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.modules.Modules"
+        ],
+        "name": "sage.categories.ring_ideals.RingIdeals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.ring_ideals.RingIdeals"
+        ],
+        "name": "sage.categories.commutative_ring_ideals.CommutativeRingIdeals",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.euclidean_domains.EuclideanDomains",
+            "sage.categories.division_rings.DivisionRings"
+        ],
+        "name": "sage.categories.fields.Fields",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.modules.Modules"
+        ],
+        "name": "sage.categories.vector_spaces.VectorSpaces",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.filtered_algebras.FilteredAlgebras",
+            "sage.categories.graded_modules.GradedModules"
+        ],
+        "name": "sage.categories.graded_algebras.GradedAlgebras",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.rings.Rings"
+        ],
+        "name": "sage.categories.domains.Domains",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.monoids.Monoids",
+            "sage.categories.finite_semigroups.FiniteSemigroups"
+        ],
+        "name": "sage.categories.finite_monoids.FiniteMonoids",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.semigroups.Semigroups",
+            "sage.categories.magmas.Magmas.Unital"
+        ],
+        "name": "sage.categories.monoids.Monoids",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.enumerated_sets.EnumeratedSets",
+            "sage.categories.sets_cat.Sets.Infinite"
+        ],
+        "name": "sage.categories.infinite_enumerated_sets.InfiniteEnumeratedSets",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.filtered_algebras_with_basis.FilteredAlgebrasWithBasis",
+            "sage.categories.graded_algebras.GradedAlgebras",
+            "sage.categories.graded_modules_with_basis.GradedModulesWithBasis"
+        ],
+        "name": "sage.categories.graded_algebras_with_basis.GradedAlgebrasWithBasis",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.finite_monoids.FiniteMonoids",
+            "sage.categories.groups.Groups"
+        ],
+        "name": "sage.categories.finite_groups.FiniteGroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.coxeter_groups.CoxeterGroups"
+        ],
+        "name": "sage.categories.weyl_groups.WeylGroups",
+        "type": "Sage_Category"
+    },
+    {
+        "implied": [
+            "sage.categories.principal_ideal_domains.PrincipalIdealDomains"
+        ],
+        "name": "sage.categories.euclidean_domains.EuclideanDomains",
+        "type": "Sage_Category"
+    }
+]
