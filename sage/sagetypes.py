@@ -15,7 +15,9 @@ EXAMPLES::
       The super categories? or the axioms and structure?
 """
 
+import inspect
 from sage.misc.cachefunc import cached_function
+from sage.misc.abstract_method import AbstractMethod
 from sage.categories.category import Category
 from sage.categories.category_with_axiom import CategoryWithAxiom
 from sage.categories.covariant_functorial_construction import FunctorialConstructionCategory
@@ -94,8 +96,77 @@ def export_category(category):
             "axioms": list(category.axioms()),
             "structure": [category_name(cat) for cat in category.structure()],
             "type": "Sage_Category",
-            "required_methods": category.required_methods()
+            "required_methods": required_methods(category)
     }
+
+def export_method(method):
+    """
+
+    """
+    if isinstance(method, AbstractMethod):
+        method = method._f
+    return {"name": method.func_name,
+            "__doc__": method.__doc__,
+            "args": inspect.getargspec(method).args,
+            "argspec": inspect.getargspec(method)
+            }
 
 def export():
     return [export_category(category) for category in category_sample()]
+
+def required_methods(self):
+    """
+    Returns the methods that are required and optional for parents
+    in this category and their elements.
+
+    EXAMPLES::
+
+        sage: Algebras(QQ).required_methods()
+        {'element': {'optional': ['_add_', '_mul_'], 'required': ['__nonzero__']},
+         'parent': {'optional': ['algebra_generators'], 'required': ['__contains__']}}
+    """
+    return { "parent"  : abstract_methods_of_class(self.parent_class, export_method),
+             "element" : abstract_methods_of_class(self.element_class, export_method),
+             "morphism": abstract_methods_of_class(self.morphism_class, export_method),
+             "subcategory": abstract_methods_of_class(self.subcategory_class, export_method)
+    }
+
+def abstract_methods_of_class(cls, extract=None):
+    """
+    Returns the required and optional abstract methods of the class
+
+    EXAMPLES::
+
+        sage: class AbstractClass:
+        ...       @abstract_method
+        ...       def required1(): pass
+        ...
+        ...       @abstract_method(optional = True)
+        ...       def optional2(): pass
+        ...
+        ...       @abstract_method(optional = True)
+        ...       def optional1(): pass
+        ...
+        ...       @abstract_method
+        ...       def required2(): pass
+        ...
+        sage: sage.misc.abstract_method.abstract_methods_of_class(AbstractClass)
+        {'optional': ['optional1', 'optional2'],
+         'required': ['required1', 'required2']}
+
+    """
+    if extract is None:
+        def extract(f):
+            return f._name
+    result = { "required"  : [],
+               "optional"  : []
+               }
+    for name in dir(cls):
+        entry = getattr(cls, name)
+        if not isinstance(entry, AbstractMethod):
+            continue
+        if entry.is_optional():
+            result["optional"].append(extract(entry))
+        else:
+            result["required"].append(extract(entry))
+    return result
