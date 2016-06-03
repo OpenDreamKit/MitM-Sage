@@ -1,0 +1,9 @@
+theory http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse
+HasMeta http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/magmas/Magmas?Unital
+Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/sets_cat?Sets
+Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/magmas?Magmas
+Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?Inverse
+constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?Inverse

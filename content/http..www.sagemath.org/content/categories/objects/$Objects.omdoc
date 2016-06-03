@@ -1,0 +1,1 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Objects" base="http://www.sagemath.org/content/categories/objects" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/content?Axioms"></import></theory></omdoc>

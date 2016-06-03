@@ -1,0 +1,3 @@
+theory http://www.sagemath.org/content/categories/objects?Objects
+HasMeta http://www.sagemath.org/content/categories/objects?Objects http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/objects?Objects http://www.sagemath.org/content?Axioms

@@ -1,0 +1,8 @@
+theory http://www.sagemath.org/?Types
+HasMeta http://www.sagemath.org/?Types http://cds.omdoc.org/urtheories?LF
+Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?object
+constant http://www.sagemath.org/?Types?object
+Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?prop
+constant http://www.sagemath.org/?Types?prop
+Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?ded
+constant http://www.sagemath.org/?Types?ded

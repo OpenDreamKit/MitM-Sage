@@ -1,0 +1,19 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Types" base="http://www.sagemath.org/" meta="http://cds.omdoc.org/urtheories?LF"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#38.2.0:116.6.1"/></metadata><constant name="object">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#63.3.1:78.3.16"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://cds.omdoc.org/urtheories" module="Typed" name="type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#72.3.10:75.3.13"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="prop">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#80.4.1:93.4.14"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://cds.omdoc.org/urtheories" module="Typed" name="type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#87.4.8:90.4.11"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="ded">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#95.5.1:114.5.20"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#101.5.7:111.5.17"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="prop"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#101.5.7:104.5.10"/></metadata></om:OMS><om:OMS base="http://cds.omdoc.org/urtheories" module="Typed" name="type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://mathhub.info/ODK/Sage/sage.mmt#108.5.14:111.5.17"/></metadata></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant></theory></omdoc>
