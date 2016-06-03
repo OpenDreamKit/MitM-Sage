@@ -20,15 +20,15 @@ from sage.categories.category import Category
 from sage.categories.category_with_axiom import CategoryWithAxiom
 from sage.categories.covariant_functorial_construction import FunctorialConstructionCategory
 from sage.sets.recursively_enumerated_set import RecursivelyEnumeratedSet
-from sage.rings.rational_field import QQ
+from sage.categories.rings import Rings
 
-def nested_categories(category):
-    result = []
+def related_categories(category):
+    result = list(category.super_categories())
     for key,value in category.__class__.__base__.__dict__.iteritems():
         if isinstance(value, type):
             if issubclass(value, (CategoryWithAxiom, FunctorialConstructionCategory)):
                 if key == "Algebras":
-                    result.append(getattr(category, key)(QQ))
+                    result.append(getattr(category, key)(Rings()))
                 else:
                     result.append(getattr(category, key)())
     return result
@@ -58,10 +58,11 @@ def category_sample():
     """
     import sage.categories.all
     abstract_classes_for_categories = [Category]
-    seeds = tuple(cls.an_instance()
-                  for cls in sage.categories.all.__dict__.values()
-                  if isinstance(cls, type) and issubclass(cls, Category) and cls not in abstract_classes_for_categories)
-    return list(RecursivelyEnumeratedSet(seeds, nested_categories))
+    seeds = {cls.an_instance()
+             for cls in sage.categories.all.__dict__.values()
+             if isinstance(cls, type) and issubclass(cls, Category) and cls not in abstract_classes_for_categories}
+    print len(seeds), len(set(seeds))
+    return list(RecursivelyEnumeratedSet(seeds, related_categories))
 
 def category_name(category):
     """
