@@ -1,13 +1,20 @@
 theory http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis
 HasMeta http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/right_modules?RightModules
-Includes http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
+Declares http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?_add_
+constant http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?_mul_
+constant http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?_mul_
+Declares http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?one_basis
+constant http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?one_basis
+Declares http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?product_on_basis
+constant http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?product_on_basis
+Declares http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis?__contains__

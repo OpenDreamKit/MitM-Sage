@@ -1,6 +1,15 @@
 theory http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals
 HasMeta http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/crystals?Crystals
-Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?e
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?e
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?f
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?f
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?__invert__
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?__invert__
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?connected_components_generators
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?connected_components_generators
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?__contains__
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?__contains__

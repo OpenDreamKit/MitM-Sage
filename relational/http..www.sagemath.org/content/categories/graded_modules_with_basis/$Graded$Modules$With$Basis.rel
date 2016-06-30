@@ -1,12 +1,18 @@
 theory http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis
 HasMeta http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis
 Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules?GradedModules
-Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules?FilteredModules
-Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/right_modules?RightModules
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?_add_
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?degree_on_basis
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?degree_on_basis
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__invert__
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__invert__
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__contains__

@@ -1,11 +1,15 @@
 theory http://www.sagemath.org/content/categories/graded_modules?GradedModules
 HasMeta http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules
-Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/graded_modules?GradedModules
-Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/right_modules?RightModules
+Declares http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/graded_modules?GradedModules?sage.categories.graded_modules.GradedModules
+constant http://www.sagemath.org/content/categories/graded_modules?GradedModules?sage.categories.graded_modules.GradedModules
+Declares http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/graded_modules?GradedModules?_add_
+constant http://www.sagemath.org/content/categories/graded_modules?GradedModules?_add_
+Declares http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/graded_modules?GradedModules?__nonzero__
+constant http://www.sagemath.org/content/categories/graded_modules?GradedModules?__nonzero__
+Declares http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/graded_modules?GradedModules?__invert__
+constant http://www.sagemath.org/content/categories/graded_modules?GradedModules?__invert__
+Declares http://www.sagemath.org/content/categories/graded_modules?GradedModules http://www.sagemath.org/content/categories/graded_modules?GradedModules?__contains__
+constant http://www.sagemath.org/content/categories/graded_modules?GradedModules?__contains__

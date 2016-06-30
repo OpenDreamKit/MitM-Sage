@@ -1,8 +1,22 @@
 theory http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts
 HasMeta http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals
 Includes http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts
-Includes http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/crystals?Crystals
-Includes http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?e
+constant http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?e
+Declares http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?epsilon
+constant http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?epsilon
+Declares http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?f
+constant http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?f
+Declares http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?phi
+constant http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?phi
+Declares http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?weight
+constant http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?weight
+Declares http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?__invert__
+constant http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?__invert__
+Declares http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?connected_components_generators
+constant http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?connected_components_generators
+Declares http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?__contains__
+constant http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts?__contains__

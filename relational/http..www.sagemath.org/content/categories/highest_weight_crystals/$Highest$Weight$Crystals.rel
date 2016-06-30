@@ -1,6 +1,19 @@
 theory http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals
 HasMeta http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/crystals?Crystals
-Includes http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?e
+constant http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?e
+Declares http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?epsilon
+constant http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?epsilon
+Declares http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?f
+constant http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?f
+Declares http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?phi
+constant http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?phi
+Declares http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?weight
+constant http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?weight
+Declares http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?__invert__
+constant http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?__invert__
+Declares http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?__contains__
+constant http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals?__contains__

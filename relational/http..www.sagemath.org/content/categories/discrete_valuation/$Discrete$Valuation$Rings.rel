@@ -1,11 +1,23 @@
 theory http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings
 HasMeta http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains
-Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings
-Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?sage.categories.discrete_valuation.DiscreteValuationRings
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?sage.categories.discrete_valuation.DiscreteValuationRings
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?_add_
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?_add_
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?_mul_
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?_mul_
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__nonzero__
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__nonzero__
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?valuation
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?valuation
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__invert__
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__invert__
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__contains__
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__contains__
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?residue_field
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?residue_field
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?uniformizer
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?uniformizer

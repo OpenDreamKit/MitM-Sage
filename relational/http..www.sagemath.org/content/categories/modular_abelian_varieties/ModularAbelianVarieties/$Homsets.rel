@@ -1,7 +1,11 @@
 theory http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets
 HasMeta http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/homsets?Homsets
-Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets
-Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?__invert__
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?__invert__
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?__contains__
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?__contains__

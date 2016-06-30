@@ -1,9 +1,12 @@
 theory http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids
 HasMeta http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/monoids?Monoids
 Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups
-Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/magmas/Magmas?Unital
+Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?_mul_
+constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?_mul_
+Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?__invert__
+constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?__invert__
+Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?__contains__
+constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?__contains__

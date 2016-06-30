@@ -1,5 +1,7 @@
 theory http://www.sagemath.org/content/categories/category_types?Elements
 HasMeta http://www.sagemath.org/content/categories/category_types?Elements http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/category_types?Elements http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/category_types?Elements http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/category_types?Elements http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/category_types?Elements http://www.sagemath.org/content/categories/objects?Objects
-Includes http://www.sagemath.org/content/categories/category_types?Elements http://www.sagemath.org/content/categories/category_types?Elements
+Declares http://www.sagemath.org/content/categories/category_types?Elements http://www.sagemath.org/content/categories/category_types?Elements?sage.categories.category_types.Elements
+constant http://www.sagemath.org/content/categories/category_types?Elements?sage.categories.category_types.Elements

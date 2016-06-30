@@ -1,16 +1,23 @@
 theory http://www.sagemath.org/content/categories/algebras/Algebras?Quotients
 HasMeta http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras?Algebras
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/monoids/Monoids?Subquotients
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/semigroups/Semigroups?Quotients
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/right_modules?RightModules
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients
-Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?_add_
+constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?_add_
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?_mul_
+constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?_mul_
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__nonzero__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__nonzero__
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__invert__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__invert__
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__contains__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__contains__
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?ambient
+constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?ambient
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?lift
+constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?lift
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?retract
+constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?retract

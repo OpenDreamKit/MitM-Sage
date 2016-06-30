@@ -1,15 +1,25 @@
 theory http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts
 HasMeta http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings
 Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas?CartesianProducts
 Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts
 Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?CartesianProducts
 Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?CartesianProducts
-Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts
-Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?_mul_
+constant http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?_mul_
+Declares http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?__nonzero__
+constant http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?__nonzero__
+Declares http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?__invert__
+constant http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?__invert__
+Declares http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?__contains__
+constant http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?__contains__
+Declares http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?_cartesian_product_of_elements
+constant http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?_cartesian_product_of_elements
+Declares http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?_sets_keys
+constant http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?_sets_keys
+Declares http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?cartesian_factors
+constant http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?cartesian_factors
+Declares http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?cartesian_projection
+constant http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?CartesianProducts?cartesian_projection

@@ -1,10 +1,24 @@
 theory http://www.sagemath.org/content/categories/category?JoinCategory
 HasMeta http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/weyl_groups?WeylGroups
 Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets
-Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/complex_reflection_or_generalized_coxeter_groups?ComplexReflectionOrGeneralizedCoxeterGroups
-Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/magmas/Magmas?Unital
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?reflection_length
+constant http://www.sagemath.org/content/categories/category?JoinCategory?reflection_length
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?__invert__
+constant http://www.sagemath.org/content/categories/category?JoinCategory?__invert__
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?distinguished_reflection
+constant http://www.sagemath.org/content/categories/category?JoinCategory?distinguished_reflection
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?hyperplane_index_set
+constant http://www.sagemath.org/content/categories/category?JoinCategory?hyperplane_index_set
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?irreducible_components
+constant http://www.sagemath.org/content/categories/category?JoinCategory?irreducible_components
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?reflection
+constant http://www.sagemath.org/content/categories/category?JoinCategory?reflection
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?reflection_index_set
+constant http://www.sagemath.org/content/categories/category?JoinCategory?reflection_index_set
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?__contains__
+constant http://www.sagemath.org/content/categories/category?JoinCategory?__contains__
+Declares http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/category?JoinCategory?index_set
+constant http://www.sagemath.org/content/categories/category?JoinCategory?index_set

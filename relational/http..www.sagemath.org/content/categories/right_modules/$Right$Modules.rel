@@ -1,9 +1,15 @@
 theory http://www.sagemath.org/content/categories/right_modules?RightModules
 HasMeta http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/commutative_additive_groups?CommutativeAdditiveGroups
-Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/right_modules?RightModules
-Includes http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
+Declares http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/right_modules?RightModules?sage.categories.right_modules.RightModules
+constant http://www.sagemath.org/content/categories/right_modules?RightModules?sage.categories.right_modules.RightModules
+Declares http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/right_modules?RightModules?_add_
+constant http://www.sagemath.org/content/categories/right_modules?RightModules?_add_
+Declares http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/right_modules?RightModules?__nonzero__
+constant http://www.sagemath.org/content/categories/right_modules?RightModules?__nonzero__
+Declares http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/right_modules?RightModules?__invert__
+constant http://www.sagemath.org/content/categories/right_modules?RightModules?__invert__
+Declares http://www.sagemath.org/content/categories/right_modules?RightModules http://www.sagemath.org/content/categories/right_modules?RightModules?__contains__
+constant http://www.sagemath.org/content/categories/right_modules?RightModules?__contains__

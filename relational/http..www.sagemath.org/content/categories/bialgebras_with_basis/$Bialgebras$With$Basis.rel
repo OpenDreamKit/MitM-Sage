@@ -1,15 +1,27 @@
 theory http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis
 HasMeta http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras?Bialgebras
 Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras?Coalgebras
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/right_modules?RightModules
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?_add_
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?_mul_
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?_mul_
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?__invert__
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?__invert__
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?coproduct_on_basis
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?coproduct_on_basis
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?counit_on_basis
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?counit_on_basis
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?one_basis
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?one_basis
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?product_on_basis
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?product_on_basis
+Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?__contains__

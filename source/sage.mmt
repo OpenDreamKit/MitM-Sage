@@ -3,5 +3,7 @@ namespace http://www.sagemath.org/ 
 theory Types : ur:?LF =
 	object : type 
 	prop : type 
-	ded : prop → type 
+	ded : prop → type  ## ⊦ 1 
+	structural : type 
+	structureof : structural → type  ## ≤ 1 
 

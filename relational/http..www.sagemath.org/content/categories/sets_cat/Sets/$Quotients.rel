@@ -1,7 +1,17 @@
 theory http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients
 HasMeta http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients
-Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?sage.categories.sets_cat.Sets.Quotients
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?sage.categories.sets_cat.Sets.Quotients
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?__invert__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?__invert__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?__contains__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?__contains__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?ambient
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?ambient
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?lift
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?lift
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?retract
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?retract

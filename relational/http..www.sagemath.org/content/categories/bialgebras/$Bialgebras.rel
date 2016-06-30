@@ -1,13 +1,22 @@
 theory http://www.sagemath.org/content/categories/bialgebras?Bialgebras
 HasMeta http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/algebras?Algebras
 Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/right_modules?RightModules
+Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?_add_
+constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?_add_
+Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?_mul_
+constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?_mul_
+Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__nonzero__
+constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__nonzero__
+Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__invert__
+constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__invert__
+Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?algebra_generators
+constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?algebra_generators
+Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__contains__
+constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__contains__
+Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?coproduct
+constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?coproduct
+Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?counit
+constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?counit

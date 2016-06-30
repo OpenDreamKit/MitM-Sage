@@ -1,11 +1,15 @@
 theory http://www.sagemath.org/content/categories/filtered_modules?FilteredModules
 HasMeta http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/modules?Modules
-Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/right_modules?RightModules
-Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules
-Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?sage.categories.filtered_modules.FilteredModules
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?sage.categories.filtered_modules.FilteredModules
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?_add_
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?_add_
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__nonzero__
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__nonzero__
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__invert__
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__invert__
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__contains__
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__contains__

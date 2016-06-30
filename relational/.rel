@@ -1,4 +1,2 @@
-document http://mathhub.info/ODK/Sage
-Declares http://mathhub.info/ODK/Sage http://mathhub.info/ODK/Sage/sage.omdoc
-Declares http://mathhub.info/ODK/Sage http://mathhub.info/ODK/Sage/sage_architecture_python_implementation.omdoc
-Declares http://mathhub.info/ODK/Sage http://mathhub.info/ODK/Sage/sagetypes.omdoc
+document http://www.sagemath.org
+Declares http://www.sagemath.org http://www.sagemath.org/sage.omdoc

@@ -1,8 +1,13 @@
 theory http://www.sagemath.org/content/categories/magmas/Magmas?Commutative
 HasMeta http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
 Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?Commutative
 constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?Commutative
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?_mul_
+constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?_mul_
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?__invert__
+constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?__invert__
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?__contains__
+constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?__contains__

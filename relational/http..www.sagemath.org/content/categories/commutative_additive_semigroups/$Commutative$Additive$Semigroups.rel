@@ -1,8 +1,12 @@
 theory http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups
 HasMeta http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative
 Includes http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups
-Includes http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
+Declares http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups?_add_
+constant http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups?_add_
+Declares http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups?__invert__
+constant http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups?__invert__
+Declares http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups?__contains__
+constant http://www.sagemath.org/content/categories/commutative_additive_semigroups?CommutativeAdditiveSemigroups?__contains__

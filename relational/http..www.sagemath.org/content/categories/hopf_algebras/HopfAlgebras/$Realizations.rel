@@ -1,15 +1,23 @@
 theory http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations
 HasMeta http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Realizations
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/coalgebras/Coalgebras?Realizations
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/coalgebras?Coalgebras
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/right_modules?RightModules
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?_add_
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?_add_
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?_mul_
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?_mul_
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__nonzero__
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__nonzero__
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__invert__
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__invert__
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?algebra_generators
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?algebra_generators
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__contains__
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__contains__
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?coproduct
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?coproduct
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?counit
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?counit

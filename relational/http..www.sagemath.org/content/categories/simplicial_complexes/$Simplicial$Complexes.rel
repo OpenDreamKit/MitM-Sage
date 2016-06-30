@@ -1,6 +1,15 @@
 theory http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes
 HasMeta http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?sage.categories.simplicial_complexes.SimplicialComplexes
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?sage.categories.simplicial_complexes.SimplicialComplexes
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?__invert__
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?__invert__
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?__contains__
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?__contains__
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?faces
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?faces
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?facets
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?facets

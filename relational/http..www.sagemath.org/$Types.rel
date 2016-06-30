@@ -6,3 +6,7 @@ Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?prop
 constant http://www.sagemath.org/?Types?prop
 Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?ded
 constant http://www.sagemath.org/?Types?ded
+Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?structural
+constant http://www.sagemath.org/?Types?structural
+Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?structureof
+constant http://www.sagemath.org/?Types?structureof

@@ -1,11 +1,14 @@
 theory http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis
 HasMeta http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis
 Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional
-Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/right_modules?RightModules
-Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/left_modules?LeftModules
-Includes http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?_add_
+constant http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?__contains__

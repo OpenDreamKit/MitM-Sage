@@ -1,12 +1,17 @@
 theory http://www.sagemath.org/content/categories/number_fields?NumberFields
 HasMeta http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/fields?Fields
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?sage.categories.number_fields.NumberFields
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?sage.categories.number_fields.NumberFields
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?_add_
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?_add_
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?_mul_
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?_mul_
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?__nonzero__
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?__nonzero__
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?__invert__
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?__invert__
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?__contains__
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?__contains__

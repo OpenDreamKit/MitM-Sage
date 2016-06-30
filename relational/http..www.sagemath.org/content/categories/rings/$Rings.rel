@@ -1,11 +1,16 @@
 theory http://www.sagemath.org/content/categories/rings?Rings
 HasMeta http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rngs?Rngs
 Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/semirings?Semirings
-Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?_add_
+constant http://www.sagemath.org/content/categories/rings?Rings?_add_
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?_mul_
+constant http://www.sagemath.org/content/categories/rings?Rings?_mul_
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__nonzero__
+constant http://www.sagemath.org/content/categories/rings?Rings?__nonzero__
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__invert__
+constant http://www.sagemath.org/content/categories/rings?Rings?__invert__
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__contains__
+constant http://www.sagemath.org/content/categories/rings?Rings?__contains__

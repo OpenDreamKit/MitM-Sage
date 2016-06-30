@@ -1,11 +1,31 @@
 theory http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated
 HasMeta http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups
-Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/complex_reflection_or_generalized_coxeter_groups?ComplexReflectionOrGeneralizedCoxeterGroups
-Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
 Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?WellGenerated
 constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?WellGenerated
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?reflection_length
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?reflection_length
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?to_matrix
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?to_matrix
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?__invert__
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?__invert__
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?codegrees
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?codegrees
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?degrees
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?degrees
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?distinguished_reflection
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?distinguished_reflection
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?hyperplane_index_set
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?hyperplane_index_set
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?irreducible_components
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?irreducible_components
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?reflection
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?reflection
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?reflection_index_set
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?reflection_index_set
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?__contains__
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?__contains__
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?index_set
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated?index_set

@@ -1,8 +1,14 @@
 theory http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups
 HasMeta http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/semigroups?Semigroups
 Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_sets?FiniteSets
-Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/magmas?Magmas
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?_mul_
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?_mul_
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?__invert__
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?__invert__
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?semigroup_generators
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?semigroup_generators
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?__contains__
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?__contains__

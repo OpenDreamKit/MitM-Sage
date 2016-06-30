@@ -1,1 +1,239 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="EuclideanDomains" base="http://www.sagemath.org/content/categories/euclidean_domains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/content?Axioms"></import><import from="http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains"></import><import from="http://www.sagemath.org/content/categories/magmas?Magmas"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Unital"></import><import from="http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains"></import><import from="http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas"></import><import from="http://www.sagemath.org/content/categories/sets_cat?Sets"></import><import from="http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital"></import><import from="http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps"></import></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="EuclideanDomains" base="http://www.sagemath.org/content/categories/euclidean_domains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains"></import><constant name="sage.categories.euclidean_domains.EuclideanDomains">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="structureof"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Structures" name="sage.categories.euclidean_domains.EuclideanDomains"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><document name="Element Methods"><constant name="_add_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the sum of ``self`` and ``right``.
+
+            INPUT:
+
+            - ``self``, ``right`` -- two elements with the same parent
+
+            OUTPUT:
+
+            - an element of the same parent
+
+            EXAMPLES::
+
+                sage: F = CommutativeAdditiveSemigroups().example()
+                sage: (a,b,c,d) = F.additive_semigroup_generators()
+                sage: a._add_(b)
+                a + b
+            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Product of two elements
+
+            INPUT:
+
+            - ``self``, ``right`` -- two elements with the same parent
+
+            OUTPUT:
+
+            - an element of the same parent
+
+            EXAMPLES::
+
+                sage: S = Semigroups().example(&quot;free&quot;)
+                sage: x = S('a'); y = S('b')
+                sage: x._mul_(y)
+                'ab'
+            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return whether ``self`` is not zero.
+
+                All parents in the category ``CommutativeAdditiveMonoids()``
+                should implement this method.
+
+                .. note:: This is currently not useful because this method is
+                   overridden by ``Element``.
+
+                TESTS::
+
+                    sage: S = CommutativeAdditiveMonoids().example()
+                    sage: bool(S.zero())
+                    False
+                    sage: bool(S.an_element())
+                    True
+                 </opaque><constant name="euclidean_degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the degree of this element as an element of a euclidean
+            domain, i.e., for elements `a`, `b` the euclidean degree `f`
+            satisfies the usual properties:
+
+            1. if `b` is not zero, then there are elements `q` and `r` such
+               that `a = bq + r` with `r = 0` or `f(r) &lt; f(b)`
+            2. if `a,b` are not zero, then `f(a) \leq f(ab)`
+
+            .. NOTE::
+
+                The name ``euclidean_degree`` was chosen because the euclidean
+                function has different names in different contexts, e.g.,
+                absolute value for integers, degree for polynomials.
+
+            OUTPUT:
+
+            For non-zero elements, a natural number. For the zero element, this
+            might raise an exception or produce some other output, depending on
+            the implementation.
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: x.euclidean_degree()
+                1
+                sage: ZZ.one().euclidean_degree()
+                1
+            </opaque><constant name="quo_rem">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the quotient and remainder of the division of this element
+            by the non-zero element ``other``.
+
+            INPUT:
+
+            - ``other`` -- an element in the same euclidean domain
+
+            OUTPUT
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: x.quo_rem(x)
+                (1, 0)
+            </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the inverse morphism, or raise an error.
+
+            The error may either state that the morphism is not
+            invertible, or that Sage cannot invert it.
+
+            EXAMPLES::
+
+                sage: i = End(QQ).identity(); i
+                Identity endomorphism of Rational Field
+                sage: i.__invert__()
+                Identity endomorphism of Rational Field
+
+            This method is meant to be used with the Python inversion
+            operator `~`::
+
+                sage: ~i
+                Identity endomorphism of Rational Field
+
+            We now try to inverse a couple of morphisms defined by a matrix::
+
+                sage: H = End(QQ^2)
+                sage: phi = H(matrix([[1,1],[0,1]])); phi
+                Vector space morphism represented by the matrix:
+                [1 1]
+                [0 1]
+                Domain: Vector space of dimension 2 over Rational Field
+                Codomain: Vector space of dimension 2 over Rational Field
+                sage: ~phi
+                Vector space morphism represented by the matrix:
+                [ 1 -1]
+                [ 0  1]
+                Domain: Vector space of dimension 2 over Rational Field
+                Codomain: Vector space of dimension 2 over Rational Field
+
+                sage: phi = H(matrix([[1,1],[1,1]]))
+                sage: ~phi
+                Traceback (most recent call last):
+                ...
+                ZeroDivisionError: matrix morphism not invertible
+
+            .. NOTE::
+
+                This is an optional method. A default implementation
+                raising ``NotImplementedError`` could be provided instead.
+            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test whether the set ``self`` contains the object ``x``.
+
+            All parents in the category ``Sets()`` should implement this method.
+
+            EXAMPLES::
+
+                sage: P = Sets().example(); P
+                Set of prime numbers (basic implementation)
+                sage: 12 in P
+                False
+                sage: P(5) in P
+                True
+            </opaque></document></theory></omdoc>

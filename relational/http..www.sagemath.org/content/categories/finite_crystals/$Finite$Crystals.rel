@@ -1,7 +1,22 @@
 theory http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals
 HasMeta http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/crystals?Crystals
 Includes http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets
-Includes http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
+Declares http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?e
+constant http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?e
+Declares http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?epsilon
+constant http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?epsilon
+Declares http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?f
+constant http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?f
+Declares http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?phi
+constant http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?phi
+Declares http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?weight
+constant http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?weight
+Declares http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?__invert__
+constant http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?__invert__
+Declares http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?connected_components_generators
+constant http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?connected_components_generators
+Declares http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?__contains__
+constant http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals?__contains__
