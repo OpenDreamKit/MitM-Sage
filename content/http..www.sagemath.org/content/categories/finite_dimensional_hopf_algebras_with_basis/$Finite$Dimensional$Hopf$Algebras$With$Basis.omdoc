@@ -1,4 +1,17 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteDimensionalHopfAlgebrasWithBasis" base="http://www.sagemath.org/content/categories/finite_dimensional_hopf_algebras_with_basis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis"></import><import from="http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis"></import><opaque format="text">Element Methods:</opaque><opaque format="text">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteDimensionalHopfAlgebrasWithBasis" base="http://www.sagemath.org/content/categories/finite_dimensional_hopf_algebras_with_basis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis"></import><import from="http://www.sagemath.org/content/categories/finite_dimensional_algebras_with_basis?FiniteDimensionalAlgebrasWithBasis"></import><document name="Element Methods"><constant name="_add_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
             Return the sum of ``self`` and ``right``.
 
             INPUT:
@@ -15,7 +28,7 @@
                 sage: (a,b,c,d) = F.additive_semigroup_generators()
                 sage: a._add_(b)
                 a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_add_">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -45,16 +58,12 @@
                 sage: x = S('a'); y = S('b')
                 sage: x._mul_(y)
                 'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -74,12 +83,16 @@
                     False
                     sage: bool(S.an_element())
                     True
-                 </opaque><constant name="__nonzero__">
+                 </opaque><constant name="monomial_coefficients">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -117,7 +130,7 @@
                 sage: d['a'] = 5
                 sage: f
                 B['a'] + 3*B['c']
-            </opaque><constant name="monomial_coefficients">
+            </opaque></document><document name="Morphism Methods:"></document><document name="Parent Methods:"><constant name="antipode_on_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -130,7 +143,7 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Morphism Methods:</opaque><opaque format="text">Parent Methods:</opaque><opaque format="text">
+     </constant><opaque format="text">
             The antipode of the Hopf algebra on the basis (optional)
 
             INPUT:
@@ -151,7 +164,7 @@
                 (1,2,3)
                 sage: A.antipode_on_basis(w)
                 B[(1,3,2)]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="antipode_on_basis">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="coproduct_on_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -182,7 +195,7 @@
                 sage: (a, b) = A._group.gens()
                 sage: A.coproduct_on_basis(a)
                 B[(1,2,3)] # B[(1,2,3)]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="coproduct_on_basis">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="counit_on_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -213,16 +226,12 @@
                 sage: (a, b) = A._group.gens()
                 sage: A.counit_on_basis(a)
                 1
-            </opaque><opaque format="text">(Optional)</opaque><constant name="counit_on_basis">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="one_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -242,12 +251,20 @@
                     B[word: ]
                     sage: A.from_base_ring(4)
                     4*B[word: ]
-                </opaque><opaque format="text">(Optional)</opaque><constant name="one_basis">
+                </opaque><opaque format="text">(Optional)</opaque><constant name="product_on_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -271,7 +288,7 @@
                     sage: Word = A.basis().keys()
                     sage: A.product_on_basis(Word(&quot;abc&quot;),Word(&quot;cba&quot;))
                     B[word: abccba]
-                </opaque><opaque format="text">(Optional)</opaque><constant name="product_on_basis">
+                </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -279,11 +296,7 @@
                  <om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
@@ -301,17 +314,4 @@
                 False
                 sage: P(5) in P
                 True
-            </opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant></theory></omdoc>
+            </opaque></document></theory></omdoc>

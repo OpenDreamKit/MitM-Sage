@@ -1,4 +1,13 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Subquotients" base="http://www.sagemath.org/content/categories/finite_sets/FiniteSets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_sets?FiniteSets"></import><import from="http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients"></import><opaque format="text">Element Methods:</opaque><opaque format="text">Morphism Methods:</opaque><opaque format="text">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Subquotients" base="http://www.sagemath.org/content/categories/finite_sets/FiniteSets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_sets?FiniteSets"></import><import from="http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients"></import><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
             Return the inverse morphism, or raise an error.
 
             The error may either state that the morphism is not
@@ -43,16 +52,20 @@
 
                 This is an optional method. A default implementation
                 raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__invert__">
+            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Parent Methods:</opaque><opaque format="text">
+     </constant><opaque format="text">
             Test whether the set ``self`` contains the object ``x``.
 
             All parents in the category ``Sets()`` should implement this method.
@@ -65,16 +78,12 @@
                 False
                 sage: P(5) in P
                 True
-            </opaque><constant name="__contains__">
+            </opaque><constant name="ambient">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -90,12 +99,16 @@
 
                     :meth:`Sets.SubcategoryMethods.Subquotients` for the
                     specifications and :meth:`.lift` and :meth:`.retract`.
-                </opaque><constant name="ambient">
+                </opaque><constant name="lift">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -122,7 +135,7 @@
                     :class:`Sets.SubcategoryMethods.Subquotients` for
                     the specifications, :meth:`.ambient`, :meth:`.retract`,
                     and also :meth:`Sets.Subquotients.ElementMethods.lift`.
-                </opaque><constant name="lift">
+                </opaque><constant name="retract">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -156,17 +169,4 @@
                     (42, An example of a semigroup: the left zero semigroup)
                     sage: S.retract(s), S.retract(s).parent()
                     (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
-                </opaque><constant name="retract">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant></theory></omdoc>
+                </opaque></document></theory></omdoc>

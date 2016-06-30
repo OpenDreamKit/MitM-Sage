@@ -6,7 +6,16 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Element Methods:</opaque><opaque format="text">
+     </constant><document name="Element Methods"><constant name="reflection_length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
             Return the reflection length of ``self``.
 
             This is the minimal length of a factorization of ``self``
@@ -29,7 +38,7 @@
                 sage: W = ReflectionGroup((2,2,2))                      # optional - gap3
                 sage: sorted([t.reflection_length() for t in W])        # optional - gap3
                 [0, 1, 1, 2]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection_length">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="to_matrix">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -65,7 +74,7 @@
                 sage: W = ColoredPermutations(3, 1)
                 sage: [t.to_matrix() for t in W]
                 [[1], [zeta3], [-zeta3 - 1]]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="to_matrix">
+            </opaque><opaque format="text">(Optional)</opaque></document><document name="Morphism Methods:"><constant name="__invert__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -74,7 +83,7 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Morphism Methods:</opaque><opaque format="text">
+     </constant><opaque format="text">
             Return the inverse morphism, or raise an error.
 
             The error may either state that the morphism is not
@@ -119,7 +128,7 @@
 
                 This is an optional method. A default implementation
                 raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__invert__">
+            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="codegrees">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -128,7 +137,7 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Parent Methods:</opaque><opaque format="text">
+     </constant><opaque format="text">
             Return the codegrees of ``self``.
 
             OUTPUT: a tuple of Sage integers
@@ -146,7 +155,7 @@
                 sage: W = ReflectionGroup(31)              # optional - gap3
                 sage: W.codegrees()                        # optional - gap3
                 (28, 16, 12, 0)
-            </opaque><opaque format="text">(Optional)</opaque><constant name="codegrees">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="degrees">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -173,12 +182,16 @@
                 sage: W = ReflectionGroup(31)              # optional - gap3
                 sage: W.degrees()                          # optional - gap3
                 (8, 12, 20, 24)
-            </opaque><opaque format="text">(Optional)</opaque><constant name="degrees">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="distinguished_reflection">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -205,16 +218,12 @@
                 d (1,8)(2,7)(3,6)(4,10)(9,12)
                 e (1,6)(2,9)(3,8)(5,11)(7,12)
                 f (1,11)(3,10)(4,9)(5,7)(6,12)
-            </opaque><opaque format="text">(Optional)</opaque><constant name="distinguished_reflection">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="hyperplane_index_set">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -244,7 +253,7 @@
                 sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=('a','b','c','d','e','f'))  # optional - gap3
                 sage: W.hyperplane_index_set()                          # optional - gap3
                 ('a', 'b', 'c', 'd', 'e', 'f')
-            </opaque><opaque format="text">(Optional)</opaque><constant name="hyperplane_index_set">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="irreducible_components">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -264,12 +273,16 @@
                 [Irreducible real reflection group of rank 2 and type A2,
                  Irreducible complex reflection group of rank 3 and type G(3,1,3),
                  Irreducible complex reflection group of rank 2 and type ST4]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="irreducible_components">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -295,16 +308,12 @@
                 4 (1,8)(2,7)(3,6)(4,10)(9,12)
                 5 (1,6)(2,9)(3,8)(5,11)(7,12)
                 6 (1,11)(3,10)(4,9)(5,7)(6,12)
-            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection_index_set">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -327,12 +336,16 @@
                 sage: W = ReflectionGroup((1,1,4), reflection_index_set=('a','b','c','d','e','f'))  # optional - gap3
                 sage: W.reflection_index_set()                          # optional - gap3
                 ('a', 'b', 'c', 'd', 'e', 'f')
-            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection_index_set">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -349,16 +362,12 @@
                 False
                 sage: P(5) in P
                 True
-            </opaque><constant name="__contains__">
+            </opaque><constant name="index_set">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -387,13 +396,4 @@
                 sage: W = ReflectionGroup((1,1,4), index_set=('a','b','c')) # optional - gap3
                 sage: W.index_set()                                     # optional - gap3
                 ('a', 'b', 'c')
-            </opaque><constant name="index_set">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant></theory></omdoc>
+            </opaque></document></theory></omdoc>

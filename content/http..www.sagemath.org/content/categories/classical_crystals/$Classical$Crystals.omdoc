@@ -1,4 +1,17 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="ClassicalCrystals" base="http://www.sagemath.org/content/categories/classical_crystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals"></import><import from="http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals"></import><import from="http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals"></import><opaque format="text">Element Methods:</opaque><opaque format="text">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="ClassicalCrystals" base="http://www.sagemath.org/content/categories/classical_crystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals"></import><import from="http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals"></import><import from="http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals"></import><document name="Element Methods"><constant name="e">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
             Return `e_i` of ``self`` if it exists or ``None`` otherwise.
 
             This method should be implemented by the element class of
@@ -11,7 +24,7 @@
                 3
                 sage: x.e(1), x.e(2), x.e(3)
                 (None, 2, None)
-            </opaque><constant name="e">
+            </opaque><constant name="f">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -37,20 +50,16 @@
                 2
                 sage: x.f(1), x.f(2), x.f(3)
                 (None, 3, None)
-            </opaque><constant name="f">
+            </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Morphism Methods:</opaque><opaque format="text">
+     </constant><opaque format="text">
             Return the inverse morphism, or raise an error.
 
             The error may either state that the morphism is not
@@ -95,29 +104,7 @@
 
                 This is an optional method. A default implementation
                 raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">Parent Methods:</opaque><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque><constant name="__contains__">
+            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -130,4 +117,17 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant></theory></omdoc>
+     </constant><opaque format="text">
+            Test whether the set ``self`` contains the object ``x``.
+
+            All parents in the category ``Sets()`` should implement this method.
+
+            EXAMPLES::
+
+                sage: P = Sets().example(); P
+                Set of prime numbers (basic implementation)
+                sage: 12 in P
+                False
+                sage: P(5) in P
+                True
+            </opaque></document></theory></omdoc>

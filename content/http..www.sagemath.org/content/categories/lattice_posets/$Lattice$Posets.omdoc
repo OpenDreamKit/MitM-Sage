@@ -6,7 +6,16 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Element Methods:</opaque><opaque format="text">Morphism Methods:</opaque><opaque format="text">
+     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
             Return the inverse morphism, or raise an error.
 
             The error may either state that the morphism is not
@@ -51,16 +60,20 @@
 
                 This is an optional method. A default implementation
                 raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__invert__">
+            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="lower_covers">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Parent Methods:</opaque><opaque format="text">
+     </constant><opaque format="text">
             Return the lower covers of `x`, that is, the elements `y`
             such that `y&lt;x` and there exists no `z` such that `y&lt;z&lt;x`.
 
@@ -69,7 +82,7 @@
                 sage: D = Poset((divisors(30), attrcall(&quot;divides&quot;)))
                 sage: D.lower_covers(15)
                 [3, 5]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="lower_covers">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="order_filter">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -95,7 +108,7 @@
                 sage: B = Posets.BooleanLattice(4)
                 sage: B.order_filter([3,8])
                 [3, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="order_filter">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="order_ideal">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -122,7 +135,7 @@
                 sage: B = Posets.BooleanLattice(4)
                 sage: B.order_ideal([7,10])
                 [0, 1, 2, 3, 4, 5, 6, 7, 8, 10]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="order_ideal">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="upper_covers">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -144,7 +157,7 @@
                 sage: D = Poset((divisors(30), attrcall(&quot;divides&quot;)))
                 sage: D.upper_covers(3)
                 [6, 15]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="upper_covers">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -170,7 +183,7 @@
                 False
                 sage: P(5) in P
                 True
-            </opaque><constant name="__contains__">
+            </opaque><constant name="join">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -178,7 +191,11 @@
                  <om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
@@ -195,7 +212,7 @@
                 sage: D = LatticePoset((divisors(60), attrcall(&quot;divides&quot;)))
                 sage: D.join( D(6), D(10) )
                 30
-            </opaque><constant name="join">
+            </opaque><constant name="le">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -228,7 +245,7 @@
                 True
                 sage: D.le( 3, 5 )
                 False
-            </opaque><constant name="le">
+            </opaque><constant name="meet">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -257,21 +274,4 @@
                 sage: D = LatticePoset((divisors(30), attrcall(&quot;divides&quot;)))
                 sage: D.meet( D(6), D(15) )
                 3
-            </opaque><constant name="meet">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant></theory></omdoc>
+            </opaque></document></theory></omdoc>

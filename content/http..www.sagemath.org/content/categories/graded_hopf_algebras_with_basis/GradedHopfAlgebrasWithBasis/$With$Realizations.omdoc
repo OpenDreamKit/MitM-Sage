@@ -38,7 +38,20 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Element Methods:</opaque><opaque format="text">
+     </constant><document name="Element Methods"><constant name="_add_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
             Return the sum of ``self`` and ``right``.
 
             INPUT:
@@ -55,7 +68,7 @@
                 sage: (a,b,c,d) = F.additive_semigroup_generators()
                 sage: a._add_(b)
                 a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_add_">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -85,16 +98,12 @@
                 sage: x = S('a'); y = S('b')
                 sage: x._mul_(y)
                 'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -114,7 +123,7 @@
                     False
                     sage: bool(S.an_element())
                     True
-                 </opaque><constant name="__nonzero__">
+                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -123,7 +132,7 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Morphism Methods:</opaque><opaque format="text">
+     </constant><opaque format="text">
             Return the inverse morphism, or raise an error.
 
             The error may either state that the morphism is not
@@ -168,7 +177,7 @@
 
                 This is an optional method. A default implementation
                 raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__invert__">
+            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="algebra_generators">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -177,7 +186,7 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Parent Methods:</opaque><opaque format="text">
+     </constant><opaque format="text">
             Return a family of generators of this algebra.
 
             EXAMPLES::
@@ -186,12 +195,16 @@
                 An example of an algebra with basis: the free algebra on the generators ('a', 'b', 'c') over Rational Field
                 sage: F.algebra_generators()
                 Family (B[word: a], B[word: b], B[word: c])
-            </opaque><opaque format="text">(Optional)</opaque><constant name="algebra_generators">
+            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
@@ -208,7 +221,7 @@
                 False
                 sage: P(5) in P
                 True
-            </opaque><constant name="__contains__">
+            </opaque><constant name="coproduct">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -237,7 +250,7 @@
                 (B[(1,2,3)], B[(1,2,3)] # B[(1,2,3)])
                 sage: b, A.coproduct(b)
                 (B[(1,3)], B[(1,3)] # B[(1,3)])
-            </opaque><constant name="coproduct">
+            </opaque><constant name="counit">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -269,17 +282,4 @@
 
             TODO: implement some tests of the axioms of coalgebras, bialgebras
             and Hopf algebras using the counit.
-            </opaque><constant name="counit">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant></theory></omdoc>
+            </opaque></document></theory></omdoc>

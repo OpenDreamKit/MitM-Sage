@@ -6,4 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Element Methods:</opaque><opaque format="text">Morphism Methods:</opaque><opaque format="text">Parent Methods:</opaque></theory></omdoc>
+     </constant><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"></document></theory></omdoc>
