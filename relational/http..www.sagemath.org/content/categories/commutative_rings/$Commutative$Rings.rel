@@ -1,11 +1,6 @@
 theory http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings
 HasMeta http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content/categories/rings?Rings
 Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content/categories/monoids/Monoids?Commutative
-Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps

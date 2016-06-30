@@ -1,10 +1,6 @@
 theory http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups
 HasMeta http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups/GeneralizedCoxeterGroups?Finite
 Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups
-Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/complex_reflection_or_generalized_coxeter_groups?ComplexReflectionOrGeneralizedCoxeterGroups
-Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps

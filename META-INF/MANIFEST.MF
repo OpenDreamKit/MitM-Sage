@@ -1,6 +1,6 @@
 id: ODK/Sage
 source-base: http://mathhub.info/ODK/Sage
-narration-base: http://mathhub.info/ODK/Sage
+narration-base: http://www.sagemath.org
 dependencies:
 responsible: f.rabe@jacobs-university.de
 title:SageMath Knowledge and Interoperability 

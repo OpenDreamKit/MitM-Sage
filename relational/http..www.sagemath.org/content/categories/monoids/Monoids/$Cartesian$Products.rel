@@ -1,11 +1,7 @@
 theory http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts
 HasMeta http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids?Monoids
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/semigroups/Semigroups?CartesianProducts
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts
-Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts
-Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas?Unital

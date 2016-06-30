@@ -1,6 +1,7 @@
 theory http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients
 HasMeta http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?sage.categories.sets_cat.Sets.Subquotients
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?sage.categories.sets_cat.Sets.Subquotients

@@ -1,14 +1,7 @@
 theory http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras
 HasMeta http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/?Types
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content?Axioms
+Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/magmas?Magmas
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/sets_with_partial_maps?SetsWithPartialMaps
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/sets_cat?Sets
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/right_modules?RightModules
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
-Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/left_modules?LeftModules
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?sage.categories.hopf_algebras.HopfAlgebras
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?sage.categories.hopf_algebras.HopfAlgebras
