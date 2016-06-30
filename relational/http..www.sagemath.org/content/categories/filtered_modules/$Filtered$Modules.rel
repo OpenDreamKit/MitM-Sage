@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredMod
 Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?sage.categories.filtered_modules.FilteredModules
 constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?sage.categories.filtered_modules.FilteredModules
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?_add_
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?_add_
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__nonzero__
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__nonzero__
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__invert__
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__invert__
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__contains__
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?__contains__

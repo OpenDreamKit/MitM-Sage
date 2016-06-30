@@ -4,3 +4,11 @@ Includes http://www.sagemath.org/content/categories/additive_monoids?AdditiveMon
 Includes http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital
 Includes http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups
+Declares http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids?_add_
+constant http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids?_add_
+Declares http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids?__nonzero__
+constant http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids?__nonzero__
+Declares http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids?__invert__
+constant http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids?__invert__
+Declares http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids?__contains__
+constant http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids?__contains__

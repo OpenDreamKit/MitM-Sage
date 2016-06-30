@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/semigroups?Semigroups http:/
 Includes http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/magmas?Magmas
 Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?Associative
 constant http://www.sagemath.org/content/categories/semigroups?Semigroups?Associative
+Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?_mul_
+constant http://www.sagemath.org/content/categories/semigroups?Semigroups?_mul_
+Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?__invert__
+constant http://www.sagemath.org/content/categories/semigroups?Semigroups?__invert__
+Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?semigroup_generators
+constant http://www.sagemath.org/content/categories/semigroups?Semigroups?semigroup_generators
+Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?__contains__
+constant http://www.sagemath.org/content/categories/semigroups?Semigroups?__contains__

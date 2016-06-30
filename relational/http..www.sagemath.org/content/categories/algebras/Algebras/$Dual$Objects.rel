@@ -4,3 +4,15 @@ Includes http://www.sagemath.org/content/categories/algebras/Algebras?DualObject
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/coalgebras?Coalgebras
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?_add_
+constant http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?_add_
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?__nonzero__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?__nonzero__
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?__invert__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?__invert__
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?__contains__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?__contains__
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?coproduct
+constant http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?coproduct
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?counit
+constant http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects?counit

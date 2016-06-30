@@ -3,3 +3,21 @@ HasMeta http://www.sagemath.org/content/categories/generalized_coxeter_groups?Ge
 Includes http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/complex_reflection_or_generalized_coxeter_groups?ComplexReflectionOrGeneralizedCoxeterGroups
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?reflection_length
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?reflection_length
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?__invert__
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?__invert__
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?distinguished_reflection
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?distinguished_reflection
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?hyperplane_index_set
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?hyperplane_index_set
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?irreducible_components
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?irreducible_components
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?reflection
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?reflection
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?reflection_index_set
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?reflection_index_set
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?__contains__
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?__contains__
+Declares http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?index_set
+constant http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups?index_set

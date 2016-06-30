@@ -4,3 +4,17 @@ Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?C
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/modules/Modules?CartesianProducts
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?__nonzero__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?__nonzero__
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?__invert__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?__invert__
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?__contains__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?__contains__
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?_cartesian_product_of_elements
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?_cartesian_product_of_elements
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?_sets_keys
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?_sets_keys
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?cartesian_factors
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?cartesian_factors
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?cartesian_projection
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?CartesianProducts?cartesian_projection

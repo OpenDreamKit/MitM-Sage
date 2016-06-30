@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/finite_enumerated_sets/Finit
 Includes http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets
 Includes http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects http://www.sagemath.org/content/categories/finite_sets/FiniteSets?Subquotients
 Includes http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?__invert__
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?__invert__
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?__contains__
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?__contains__
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?ambient
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?ambient
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?lift
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?lift
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?retract
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets/FiniteEnumeratedSets?IsomorphicObjects?retract

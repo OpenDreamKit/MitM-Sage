@@ -13,3 +13,19 @@ Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_ba
 constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?AdditiveCommutative
 Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?Distributive
 constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?Distributive
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?_add_
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?_add_
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?_mul_
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?_mul_
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?__nonzero__
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?__nonzero__
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?__invert__
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?__invert__
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?algebra_generators
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?algebra_generators
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?__contains__
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?__contains__
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?coproduct
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?coproduct
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?counit
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis/GradedHopfAlgebrasWithBasis?WithRealizations?counit

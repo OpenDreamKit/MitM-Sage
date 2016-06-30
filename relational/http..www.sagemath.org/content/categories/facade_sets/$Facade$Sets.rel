@@ -5,3 +5,5 @@ Includes http://www.sagemath.org/content/categories/facade_sets?FacadeSets http:
 Includes http://www.sagemath.org/content/categories/facade_sets?FacadeSets http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/facade_sets?FacadeSets http://www.sagemath.org/content/categories/facade_sets?FacadeSets?Facade
 constant http://www.sagemath.org/content/categories/facade_sets?FacadeSets?Facade
+Declares http://www.sagemath.org/content/categories/facade_sets?FacadeSets http://www.sagemath.org/content/categories/facade_sets?FacadeSets?__invert__
+constant http://www.sagemath.org/content/categories/facade_sets?FacadeSets?__invert__

@@ -6,3 +6,11 @@ Includes http://www.sagemath.org/content/categories/modules/Modules?Homsets http
 Includes http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/homsets?HomsetsOf
 Declares http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/modules/Modules?Homsets?sage.categories.modules.Modules.Homsets
 constant http://www.sagemath.org/content/categories/modules/Modules?Homsets?sage.categories.modules.Modules.Homsets
+Declares http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/modules/Modules?Homsets?_add_
+constant http://www.sagemath.org/content/categories/modules/Modules?Homsets?_add_
+Declares http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/modules/Modules?Homsets?__nonzero__
+constant http://www.sagemath.org/content/categories/modules/Modules?Homsets?__nonzero__
+Declares http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/modules/Modules?Homsets?__invert__
+constant http://www.sagemath.org/content/categories/modules/Modules?Homsets?__invert__
+Declares http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/modules/Modules?Homsets?__contains__
+constant http://www.sagemath.org/content/categories/modules/Modules?Homsets?__contains__

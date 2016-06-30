@@ -4,3 +4,9 @@ Includes http://www.sagemath.org/content/categories/monoids?Monoids http://www.s
 Includes http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/semigroups?Semigroups
 Includes http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/magmas/Magmas?Unital
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?_mul_
+constant http://www.sagemath.org/content/categories/monoids?Monoids?_mul_
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?__invert__
+constant http://www.sagemath.org/content/categories/monoids?Monoids?__invert__
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?__contains__
+constant http://www.sagemath.org/content/categories/monoids?Monoids?__contains__

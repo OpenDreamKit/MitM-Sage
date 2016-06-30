@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/category_types?ChainComplexe
 Includes http://www.sagemath.org/content/categories/category_types?ChainComplexes http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/category_types?ChainComplexes http://www.sagemath.org/content/categories/category_types?ChainComplexes?sage.categories.category_types.ChainComplexes
 constant http://www.sagemath.org/content/categories/category_types?ChainComplexes?sage.categories.category_types.ChainComplexes
+Declares http://www.sagemath.org/content/categories/category_types?ChainComplexes http://www.sagemath.org/content/categories/category_types?ChainComplexes?_add_
+constant http://www.sagemath.org/content/categories/category_types?ChainComplexes?_add_
+Declares http://www.sagemath.org/content/categories/category_types?ChainComplexes http://www.sagemath.org/content/categories/category_types?ChainComplexes?__nonzero__
+constant http://www.sagemath.org/content/categories/category_types?ChainComplexes?__nonzero__
+Declares http://www.sagemath.org/content/categories/category_types?ChainComplexes http://www.sagemath.org/content/categories/category_types?ChainComplexes?__invert__
+constant http://www.sagemath.org/content/categories/category_types?ChainComplexes?__invert__
+Declares http://www.sagemath.org/content/categories/category_types?ChainComplexes http://www.sagemath.org/content/categories/category_types?ChainComplexes?__contains__
+constant http://www.sagemath.org/content/categories/category_types?ChainComplexes?__contains__

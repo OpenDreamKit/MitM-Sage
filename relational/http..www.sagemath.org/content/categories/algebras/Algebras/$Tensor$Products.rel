@@ -4,3 +4,15 @@ Includes http://www.sagemath.org/content/categories/algebras/Algebras?TensorProd
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/content/categories/algebras?Algebras
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/content/categories/modules/Modules?TensorProducts
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?_add_
+constant http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?_add_
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?_mul_
+constant http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?_mul_
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?__nonzero__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?__nonzero__
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?__invert__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?__invert__
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?algebra_generators
+constant http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?algebra_generators
+Declares http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?__contains__
+constant http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts?__contains__

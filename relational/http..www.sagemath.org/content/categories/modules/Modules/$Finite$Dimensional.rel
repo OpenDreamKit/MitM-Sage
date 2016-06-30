@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/modules/Modules?FiniteDimens
 Includes http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?FiniteDimensional
 constant http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?FiniteDimensional
+Declares http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?_add_
+constant http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?_add_
+Declares http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?__nonzero__
+constant http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?__nonzero__
+Declares http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?__invert__
+constant http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?__invert__
+Declares http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?__contains__
+constant http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional?__contains__

@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/domains?Domains http://www.s
 Includes http://www.sagemath.org/content/categories/domains?Domains http://www.sagemath.org/content/categories/rings?Rings
 Declares http://www.sagemath.org/content/categories/domains?Domains http://www.sagemath.org/content/categories/domains?Domains?NoZeroDivisors
 constant http://www.sagemath.org/content/categories/domains?Domains?NoZeroDivisors
+Declares http://www.sagemath.org/content/categories/domains?Domains http://www.sagemath.org/content/categories/domains?Domains?_add_
+constant http://www.sagemath.org/content/categories/domains?Domains?_add_
+Declares http://www.sagemath.org/content/categories/domains?Domains http://www.sagemath.org/content/categories/domains?Domains?_mul_
+constant http://www.sagemath.org/content/categories/domains?Domains?_mul_
+Declares http://www.sagemath.org/content/categories/domains?Domains http://www.sagemath.org/content/categories/domains?Domains?__nonzero__
+constant http://www.sagemath.org/content/categories/domains?Domains?__nonzero__
+Declares http://www.sagemath.org/content/categories/domains?Domains http://www.sagemath.org/content/categories/domains?Domains?__invert__
+constant http://www.sagemath.org/content/categories/domains?Domains?__invert__
+Declares http://www.sagemath.org/content/categories/domains?Domains http://www.sagemath.org/content/categories/domains?Domains?__contains__
+constant http://www.sagemath.org/content/categories/domains?Domains?__contains__

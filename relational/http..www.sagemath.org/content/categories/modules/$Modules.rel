@@ -3,3 +3,11 @@ HasMeta http://www.sagemath.org/content/categories/modules?Modules http://www.sa
 Includes http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/bimodules?Bimodules
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?_add_
+constant http://www.sagemath.org/content/categories/modules?Modules?_add_
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?__nonzero__
+constant http://www.sagemath.org/content/categories/modules?Modules?__nonzero__
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?__invert__
+constant http://www.sagemath.org/content/categories/modules?Modules?__invert__
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?__contains__
+constant http://www.sagemath.org/content/categories/modules?Modules?__contains__

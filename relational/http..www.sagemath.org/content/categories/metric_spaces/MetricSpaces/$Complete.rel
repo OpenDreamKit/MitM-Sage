@@ -5,3 +5,7 @@ Includes http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?C
 Includes http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces
 Declares http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete?Complete
 constant http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete?Complete
+Declares http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete?__invert__
+constant http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete?__invert__
+Declares http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete?__contains__
+constant http://www.sagemath.org/content/categories/metric_spaces/MetricSpaces?Complete?__contains__

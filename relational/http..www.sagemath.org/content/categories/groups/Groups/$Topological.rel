@@ -4,3 +4,9 @@ Includes http://www.sagemath.org/content/categories/groups/Groups?Topological ht
 Includes http://www.sagemath.org/content/categories/groups/Groups?Topological http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/groups/Groups?Topological http://www.sagemath.org/content/categories/groups?Groups
 Includes http://www.sagemath.org/content/categories/groups/Groups?Topological http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces
+Declares http://www.sagemath.org/content/categories/groups/Groups?Topological http://www.sagemath.org/content/categories/groups/Groups?Topological?_mul_
+constant http://www.sagemath.org/content/categories/groups/Groups?Topological?_mul_
+Declares http://www.sagemath.org/content/categories/groups/Groups?Topological http://www.sagemath.org/content/categories/groups/Groups?Topological?__invert__
+constant http://www.sagemath.org/content/categories/groups/Groups?Topological?__invert__
+Declares http://www.sagemath.org/content/categories/groups/Groups?Topological http://www.sagemath.org/content/categories/groups/Groups?Topological?__contains__
+constant http://www.sagemath.org/content/categories/groups/Groups?Topological?__contains__

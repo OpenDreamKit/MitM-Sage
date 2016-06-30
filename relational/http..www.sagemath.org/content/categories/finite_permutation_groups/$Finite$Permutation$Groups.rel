@@ -5,3 +5,9 @@ Includes http://www.sagemath.org/content/categories/finite_permutation_groups?Fi
 Includes http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups
 Includes http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups
 Includes http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite
+Declares http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?_mul_
+constant http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?_mul_
+Declares http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?__invert__
+constant http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?__invert__
+Declares http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?__contains__
+constant http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?__contains__

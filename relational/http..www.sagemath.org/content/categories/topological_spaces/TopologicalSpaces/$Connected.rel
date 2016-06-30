@@ -5,3 +5,7 @@ Includes http://www.sagemath.org/content/categories/topological_spaces/Topologic
 Includes http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces
 Declares http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected?Connected
 constant http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected?Connected
+Declares http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected?__invert__
+constant http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected?__invert__
+Declares http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected?__contains__
+constant http://www.sagemath.org/content/categories/topological_spaces/TopologicalSpaces?Connected?__contains__

@@ -5,3 +5,17 @@ Includes http://www.sagemath.org/content/categories/quotient_fields?QuotientFiel
 Includes http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/fields?Fields
 Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?sage.categories.quotient_fields.QuotientFields
 constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?sage.categories.quotient_fields.QuotientFields
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?_add_
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?_add_
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?_mul_
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?_mul_
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__nonzero__
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__nonzero__
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?denominator
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?denominator
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?numerator
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?numerator
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__invert__
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__invert__
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__contains__
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__contains__

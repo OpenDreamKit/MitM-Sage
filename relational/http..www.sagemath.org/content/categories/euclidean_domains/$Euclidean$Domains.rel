@@ -5,3 +5,17 @@ Includes http://www.sagemath.org/content/categories/euclidean_domains?EuclideanD
 Includes http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains
 Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?sage.categories.euclidean_domains.EuclideanDomains
 constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?sage.categories.euclidean_domains.EuclideanDomains
+Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?_add_
+constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?_add_
+Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?_mul_
+constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?_mul_
+Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?__nonzero__
+constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?__nonzero__
+Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?euclidean_degree
+constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?euclidean_degree
+Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?quo_rem
+constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?quo_rem
+Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?__invert__
+constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?__invert__
+Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?__contains__
+constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?__contains__

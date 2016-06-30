@@ -3,3 +3,7 @@ HasMeta http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealization
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/facade_sets?FacadeSets
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?__invert__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?__invert__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?a_realization
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?a_realization

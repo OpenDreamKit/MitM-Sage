@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/commutative_ring_ideals?Comm
 Includes http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals http://www.sagemath.org/content/categories/ring_ideals?RingIdeals
 Declares http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?sage.categories.commutative_ring_ideals.CommutativeRingIdeals
 constant http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?sage.categories.commutative_ring_ideals.CommutativeRingIdeals
+Declares http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?_add_
+constant http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?_add_
+Declares http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?__nonzero__
+constant http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?__nonzero__
+Declares http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?__invert__
+constant http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?__invert__
+Declares http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?__contains__
+constant http://www.sagemath.org/content/categories/commutative_ring_ideals?CommutativeRingIdeals?__contains__

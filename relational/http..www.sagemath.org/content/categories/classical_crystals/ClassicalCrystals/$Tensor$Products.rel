@@ -6,3 +6,11 @@ Includes http://www.sagemath.org/content/categories/classical_crystals/Classical
 Includes http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts
 Includes http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts http://www.sagemath.org/content/categories/regular_crystals/RegularCrystals?TensorProducts
 Includes http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts
+Declares http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts?e
+constant http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts?e
+Declares http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts?f
+constant http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts?f
+Declares http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts?__invert__
+constant http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts?__invert__
+Declares http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts?__contains__
+constant http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals?TensorProducts?__contains__

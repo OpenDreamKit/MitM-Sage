@@ -4,3 +4,13 @@ Includes http://www.sagemath.org/content/categories/semirings?Semirings http://w
 Includes http://www.sagemath.org/content/categories/semirings?Semirings http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/semirings?Semirings http://www.sagemath.org/content/categories/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas/AdditiveAssociative/AdditiveCommutative/AdditiveUnital?Associative
 Includes http://www.sagemath.org/content/categories/semirings?Semirings http://www.sagemath.org/content/categories/monoids?Monoids
+Declares http://www.sagemath.org/content/categories/semirings?Semirings http://www.sagemath.org/content/categories/semirings?Semirings?_add_
+constant http://www.sagemath.org/content/categories/semirings?Semirings?_add_
+Declares http://www.sagemath.org/content/categories/semirings?Semirings http://www.sagemath.org/content/categories/semirings?Semirings?_mul_
+constant http://www.sagemath.org/content/categories/semirings?Semirings?_mul_
+Declares http://www.sagemath.org/content/categories/semirings?Semirings http://www.sagemath.org/content/categories/semirings?Semirings?__nonzero__
+constant http://www.sagemath.org/content/categories/semirings?Semirings?__nonzero__
+Declares http://www.sagemath.org/content/categories/semirings?Semirings http://www.sagemath.org/content/categories/semirings?Semirings?__invert__
+constant http://www.sagemath.org/content/categories/semirings?Semirings?__invert__
+Declares http://www.sagemath.org/content/categories/semirings?Semirings http://www.sagemath.org/content/categories/semirings?Semirings?__contains__
+constant http://www.sagemath.org/content/categories/semirings?Semirings?__contains__

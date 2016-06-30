@@ -4,3 +4,27 @@ Includes http://www.sagemath.org/content/categories/graded_hopf_algebras_with_ba
 Includes http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?_add_
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?_mul_
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?_mul_
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?degree_on_basis
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?degree_on_basis
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?__invert__
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?__invert__
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?antipode_on_basis
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?antipode_on_basis
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?coproduct_on_basis
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?coproduct_on_basis
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?counit_on_basis
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?counit_on_basis
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?one_basis
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?one_basis
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?product_on_basis
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?product_on_basis
+Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis?__contains__

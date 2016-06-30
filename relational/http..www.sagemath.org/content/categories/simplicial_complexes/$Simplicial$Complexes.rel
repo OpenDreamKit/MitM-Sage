@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/simplicial_complexes?Simplic
 Includes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?sage.categories.simplicial_complexes.SimplicialComplexes
 constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?sage.categories.simplicial_complexes.SimplicialComplexes
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?__invert__
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?__invert__
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?__contains__
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?__contains__
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?faces
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?faces
+Declares http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?facets
+constant http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes?facets

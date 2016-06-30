@@ -4,3 +4,17 @@ Includes http://www.sagemath.org/content/categories/coalgebras_with_basis?Coalge
 Includes http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis
 Includes http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras?Coalgebras
+Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?_add_
+constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?__invert__
+constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?__invert__
+Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?coproduct_on_basis
+constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?coproduct_on_basis
+Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?counit_on_basis
+constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?counit_on_basis
+Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?__contains__

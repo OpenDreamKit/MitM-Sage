@@ -3,3 +3,11 @@ HasMeta http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces ht
 Includes http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces http://www.sagemath.org/content/categories/modules?Modules
+Declares http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces?_add_
+constant http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces?_add_
+Declares http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces?__nonzero__
+constant http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces?__nonzero__
+Declares http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces?__invert__
+constant http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces?__invert__
+Declares http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces?__contains__
+constant http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces?__contains__

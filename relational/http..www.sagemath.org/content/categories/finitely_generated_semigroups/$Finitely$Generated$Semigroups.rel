@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/finitely_generated_semigroup
 Includes http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups http://www.sagemath.org/content/categories/semigroups?Semigroups
 Includes http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas
 Includes http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets
+Declares http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups?_mul_
+constant http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups?_mul_
+Declares http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups?__invert__
+constant http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups?__invert__
+Declares http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups?__contains__
+constant http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups?__contains__
+Declares http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups?semigroup_generators
+constant http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups?semigroup_generators

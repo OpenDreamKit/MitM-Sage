@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/number_fields?NumberFields h
 Includes http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/fields?Fields
 Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?sage.categories.number_fields.NumberFields
 constant http://www.sagemath.org/content/categories/number_fields?NumberFields?sage.categories.number_fields.NumberFields
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?_add_
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?_add_
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?_mul_
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?_mul_
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?__nonzero__
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?__nonzero__
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?__invert__
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?__invert__
+Declares http://www.sagemath.org/content/categories/number_fields?NumberFields http://www.sagemath.org/content/categories/number_fields?NumberFields?__contains__
+constant http://www.sagemath.org/content/categories/number_fields?NumberFields?__contains__

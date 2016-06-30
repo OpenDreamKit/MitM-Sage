@@ -3,3 +3,21 @@ HasMeta http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http:/
 Includes http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection_length
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection_length
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?__invert__
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?__invert__
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?distinguished_reflection
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?distinguished_reflection
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?hyperplane_index_set
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?hyperplane_index_set
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?irreducible_components
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?irreducible_components
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection_index_set
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection_index_set
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?__contains__
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?__contains__
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?index_set
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?index_set

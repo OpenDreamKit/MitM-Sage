@@ -5,3 +5,19 @@ Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras h
 Includes http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras
 Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?sage.categories.hopf_algebras.HopfAlgebras
 constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?sage.categories.hopf_algebras.HopfAlgebras
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?_add_
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?_add_
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?_mul_
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?_mul_
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?__nonzero__
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?__nonzero__
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?__invert__
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?__invert__
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?algebra_generators
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?algebra_generators
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?__contains__
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?__contains__
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?coproduct
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?coproduct
+Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?counit
+constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?counit

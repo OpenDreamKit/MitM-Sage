@@ -5,3 +5,7 @@ Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/Mo
 Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/homsets?Homsets
 Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets
 constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?__invert__
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?__invert__
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?__contains__
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets?__contains__

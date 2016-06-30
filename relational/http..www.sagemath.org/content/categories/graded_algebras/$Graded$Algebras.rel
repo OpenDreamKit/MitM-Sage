@@ -4,3 +4,15 @@ Includes http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebr
 Includes http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras
 Includes http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/content/categories/graded_modules?GradedModules
+Declares http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?_add_
+constant http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?_add_
+Declares http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?_mul_
+constant http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?_mul_
+Declares http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?__nonzero__
+constant http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?__nonzero__
+Declares http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?__invert__
+constant http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?__invert__
+Declares http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?algebra_generators
+constant http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?algebra_generators
+Declares http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?__contains__
+constant http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras?__contains__

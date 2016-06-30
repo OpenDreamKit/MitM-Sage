@@ -4,3 +4,9 @@ Includes http://www.sagemath.org/content/categories/monoids/Monoids?Commutative 
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?Commutative http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?Commutative http://www.sagemath.org/content/categories/monoids?Monoids
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Commutative http://www.sagemath.org/content/categories/monoids/Monoids?Commutative?_mul_
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Commutative?_mul_
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Commutative http://www.sagemath.org/content/categories/monoids/Monoids?Commutative?__invert__
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Commutative?__invert__
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Commutative http://www.sagemath.org/content/categories/monoids/Monoids?Commutative?__contains__
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Commutative?__contains__

@@ -5,3 +5,9 @@ Includes http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial http:
 Includes http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial http://www.sagemath.org/content/categories/magmas?Magmas
 Declares http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial?JTrivial
 constant http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial?JTrivial
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial?_mul_
+constant http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial?_mul_
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial?__invert__
+constant http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial?__invert__
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial?__contains__
+constant http://www.sagemath.org/content/categories/magmas/Magmas?JTrivial?__contains__

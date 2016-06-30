@@ -4,3 +4,23 @@ Includes http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWey
 Includes http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups
 Includes http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?reflection_length
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?reflection_length
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?to_matrix
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?to_matrix
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?__invert__
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?__invert__
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?distinguished_reflection
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?distinguished_reflection
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?hyperplane_index_set
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?hyperplane_index_set
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?irreducible_components
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?irreducible_components
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?reflection
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?reflection
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?reflection_index_set
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?reflection_index_set
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?__contains__
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?__contains__
+Declares http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?index_set
+constant http://www.sagemath.org/content/categories/finite_weyl_groups?FiniteWeylGroups?index_set

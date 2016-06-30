@@ -1,1 +1,301 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="CoxeterGroups" base="http://www.sagemath.org/content/categories/coxeter_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups"></import></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="CoxeterGroups" base="http://www.sagemath.org/content/categories/coxeter_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups"></import><opaque format="text">Element Methods:</opaque><opaque format="text">
+            Return the reflection length of ``self``.
+
+            This is the minimal length of a factorization of ``self``
+            into reflections.
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,2))                      # optional - gap3
+                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
+                [0, 1]
+
+                sage: W = ReflectionGroup((2,1,2))                      # optional - gap3
+                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
+                [0, 1, 1, 1, 1, 2, 2, 2]
+
+                sage: W = ReflectionGroup((3,1,2))                      # optional - gap3
+                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
+                [0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+
+                sage: W = ReflectionGroup((2,2,2))                      # optional - gap3
+                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
+                [0, 1, 1, 2]
+            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection_length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Morphism Methods:</opaque><opaque format="text">
+            Return the inverse morphism, or raise an error.
+
+            The error may either state that the morphism is not
+            invertible, or that Sage cannot invert it.
+
+            EXAMPLES::
+
+                sage: i = End(QQ).identity(); i
+                Identity endomorphism of Rational Field
+                sage: i.__invert__()
+                Identity endomorphism of Rational Field
+
+            This method is meant to be used with the Python inversion
+            operator `~`::
+
+                sage: ~i
+                Identity endomorphism of Rational Field
+
+            We now try to inverse a couple of morphisms defined by a matrix::
+
+                sage: H = End(QQ^2)
+                sage: phi = H(matrix([[1,1],[0,1]])); phi
+                Vector space morphism represented by the matrix:
+                [1 1]
+                [0 1]
+                Domain: Vector space of dimension 2 over Rational Field
+                Codomain: Vector space of dimension 2 over Rational Field
+                sage: ~phi
+                Vector space morphism represented by the matrix:
+                [ 1 -1]
+                [ 0  1]
+                Domain: Vector space of dimension 2 over Rational Field
+                Codomain: Vector space of dimension 2 over Rational Field
+
+                sage: phi = H(matrix([[1,1],[1,1]]))
+                sage: ~phi
+                Traceback (most recent call last):
+                ...
+                ZeroDivisionError: matrix morphism not invertible
+
+            .. NOTE::
+
+                This is an optional method. A default implementation
+                raising ``NotImplementedError`` could be provided instead.
+            </opaque><opaque format="text">(Optional)</opaque><constant name="__invert__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent Methods:</opaque><opaque format="text">
+            Return the `i`-th distinguished reflection of ``self``.
+
+            INPUT:
+
+            - ``i`` -- an element of the index set of the distinguished reflections.
+
+            .. SEEALSO::
+
+                - :meth:`distinguished_reflections`
+                - :meth:`hyperplane_index_set`
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=('a','b','c','d','e','f'))  # optional - gap3
+                sage: for i in W.hyperplane_index_set():                    # optional - gap3
+                ....:     print('%s %s'%(i, W.distinguished_reflection(i))) # optional - gap3
+                a (1,7)(2,4)(5,6)(8,10)(11,12)
+                b (1,4)(2,8)(3,5)(7,10)(9,11)
+                c (2,5)(3,9)(4,6)(8,11)(10,12)
+                d (1,8)(2,7)(3,6)(4,10)(9,12)
+                e (1,6)(2,9)(3,8)(5,11)(7,12)
+                f (1,11)(3,10)(4,9)(5,7)(6,12)
+            </opaque><opaque format="text">(Optional)</opaque><constant name="distinguished_reflection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the index set of the distinguished reflections of ``self``.
+
+            This is also the index set of the reflection hyperplanes
+            of ``self``, hence the name. This name is slightly abusive
+            since the concept of reflection hyperplanes is not defined
+            for all generalized Coxeter groups. However for all
+            practical purposes this is only used for complex
+            reflection groups, and there this is the desirable name.
+
+            .. SEEALSO::
+
+                - :meth:`distinguished_reflection`
+                - :meth:`distinguished_reflections`
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
+                sage: W.hyperplane_index_set()                          # optional - gap3
+                (1, 2, 3, 4, 5, 6)
+                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=[1,3,'asdf',7,9,11])    # optional - gap3
+                sage: W.hyperplane_index_set()                          # optional - gap3
+                (1, 3, 'asdf', 7, 9, 11)
+                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=('a','b','c','d','e','f'))  # optional - gap3
+                sage: W.hyperplane_index_set()                          # optional - gap3
+                ('a', 'b', 'c', 'd', 'e', 'f')
+            </opaque><opaque format="text">(Optional)</opaque><constant name="hyperplane_index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the irreducible components of ``self`` as finite
+            reflection groups.
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup([1,1,3], [3,1,3], 4)          # optional - gap3
+                sage: W.irreducible_components()                        # optional - gap3
+                [Irreducible real reflection group of rank 2 and type A2,
+                 Irreducible complex reflection group of rank 3 and type G(3,1,3),
+                 Irreducible complex reflection group of rank 2 and type ST4]
+            </opaque><opaque format="text">(Optional)</opaque><constant name="irreducible_components">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the `i`-th reflection of ``self``.
+
+            For `i` in `1,\dots,N`, this gives the `i`-th reflection of
+            ``self``.
+
+            .. SEEALSO::
+
+                - :meth:`reflections_index_set`
+                - :meth:`reflections`
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
+                sage: for i in W.reflection_index_set():                # optional - gap3
+                ....:     print('%s %s'%(i, W.reflection(i)))           # optional - gap3
+                1 (1,7)(2,4)(5,6)(8,10)(11,12)
+                2 (1,4)(2,8)(3,5)(7,10)(9,11)
+                3 (2,5)(3,9)(4,6)(8,11)(10,12)
+                4 (1,8)(2,7)(3,6)(4,10)(9,12)
+                5 (1,6)(2,9)(3,8)(5,11)(7,12)
+                6 (1,11)(3,10)(4,9)(5,7)(6,12)
+            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the index set of the reflections of ``self``.
+
+            .. SEEALSO::
+
+                - :meth:`reflection`
+                - :meth:`reflections`
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
+                sage: W.reflection_index_set()                          # optional - gap3
+                (1, 2, 3, 4, 5, 6)
+                sage: W = ReflectionGroup((1,1,4), reflection_index_set=[1,3,'asdf',7,9,11])    # optional - gap3
+                sage: W.reflection_index_set()                          # optional - gap3
+                (1, 3, 'asdf', 7, 9, 11)
+                sage: W = ReflectionGroup((1,1,4), reflection_index_set=('a','b','c','d','e','f'))  # optional - gap3
+                sage: W.reflection_index_set()                          # optional - gap3
+                ('a', 'b', 'c', 'd', 'e', 'f')
+            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection_index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test whether the set ``self`` contains the object ``x``.
+
+            All parents in the category ``Sets()`` should implement this method.
+
+            EXAMPLES::
+
+                sage: P = Sets().example(); P
+                Set of prime numbers (basic implementation)
+                sage: 12 in P
+                False
+                sage: P(5) in P
+                True
+            </opaque><constant name="__contains__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the index set of (the simple reflections of)
+            ``self``, as a list (or iterable).
+
+            .. SEEALSO::
+
+                - :meth:`simple_reflection`
+                - :meth:`simple_reflections`
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().Finite().example(); W
+                The 5-th dihedral group of order 10
+                sage: W.index_set()
+                (1, 2)
+
+                sage: W = ColoredPermutations(1, 4)
+                sage: W.index_set()
+                (1, 2, 3)
+                sage: W = ReflectionGroup((1,1,4), index_set=[1,3,'asdf'])  # optional - gap3
+                sage: W.index_set()                                     # optional - gap3
+                (1, 3, 'asdf')
+                sage: W = ReflectionGroup((1,1,4), index_set=('a','b','c')) # optional - gap3
+                sage: W.index_set()                                     # optional - gap3
+                ('a', 'b', 'c')
+            </opaque><constant name="index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant></theory></omdoc>

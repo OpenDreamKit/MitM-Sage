@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/modules_with_basis?ModulesWi
 Includes http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?WithBasis
 constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?WithBasis
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?_add_
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__invert__
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__invert__
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__contains__

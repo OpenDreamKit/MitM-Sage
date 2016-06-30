@@ -3,3 +3,11 @@ HasMeta http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?Du
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects?_add_
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects?_add_
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects?__nonzero__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects?__nonzero__
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects?__invert__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects?__invert__
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects?__contains__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects?__contains__

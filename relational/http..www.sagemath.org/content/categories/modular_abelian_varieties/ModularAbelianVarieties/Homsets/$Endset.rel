@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/Mo
 Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset http://www.sagemath.org/content/categories/rings?Rings
 Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset http://www.sagemath.org/content/categories/homsets/Homsets?Endset
 Includes http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties?Homsets
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?_add_
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?_add_
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?_mul_
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?_mul_
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?__nonzero__
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?__nonzero__
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?__invert__
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?__invert__
+Declares http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?__contains__
+constant http://www.sagemath.org/content/categories/modular_abelian_varieties/ModularAbelianVarieties/Homsets?Endset?__contains__

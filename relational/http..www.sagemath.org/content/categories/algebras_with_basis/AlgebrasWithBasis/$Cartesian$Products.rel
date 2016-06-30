@@ -5,3 +5,25 @@ Includes http://www.sagemath.org/content/categories/algebras_with_basis/Algebras
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras/Algebras?CartesianProducts
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?CartesianProducts
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?_mul_
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?_mul_
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?__nonzero__
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?__nonzero__
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?monomial_coefficients
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?__invert__
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?__invert__
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?one_basis
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?one_basis
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?product_on_basis
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?product_on_basis
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?__contains__
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?__contains__
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?_cartesian_product_of_elements
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?_cartesian_product_of_elements
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?_sets_keys
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?_sets_keys
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?cartesian_factors
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?cartesian_factors
+Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?cartesian_projection
+constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?cartesian_projection

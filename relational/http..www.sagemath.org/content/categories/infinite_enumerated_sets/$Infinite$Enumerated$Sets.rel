@@ -4,3 +4,7 @@ Includes http://www.sagemath.org/content/categories/infinite_enumerated_sets?Inf
 Includes http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets
 Includes http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite
+Declares http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets?__invert__
+constant http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets?__invert__
+Declares http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets?__contains__
+constant http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets?__contains__

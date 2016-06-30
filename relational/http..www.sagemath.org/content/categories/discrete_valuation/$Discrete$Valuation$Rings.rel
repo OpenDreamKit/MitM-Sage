@@ -5,3 +5,19 @@ Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteV
 Includes http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains
 Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?sage.categories.discrete_valuation.DiscreteValuationRings
 constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?sage.categories.discrete_valuation.DiscreteValuationRings
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?_add_
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?_add_
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?_mul_
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?_mul_
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__nonzero__
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__nonzero__
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?valuation
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?valuation
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__invert__
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__invert__
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__contains__
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?__contains__
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?residue_field
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?residue_field
+Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?uniformizer
+constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?uniformizer

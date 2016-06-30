@@ -3,3 +3,13 @@ HasMeta http://www.sagemath.org/content/categories/principal_ideal_domains?Princ
 Includes http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains http://www.sagemath.org/content/categories/unique_factorization_domains?UniqueFactorizationDomains
+Declares http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?_add_
+constant http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?_add_
+Declares http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?_mul_
+constant http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?_mul_
+Declares http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?__nonzero__
+constant http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?__nonzero__
+Declares http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?__invert__
+constant http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?__invert__
+Declares http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?__contains__
+constant http://www.sagemath.org/content/categories/principal_ideal_domains?PrincipalIdealDomains?__contains__

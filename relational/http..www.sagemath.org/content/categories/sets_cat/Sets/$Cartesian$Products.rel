@@ -5,3 +5,15 @@ Includes http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProdu
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?sage.categories.sets_cat.Sets.CartesianProducts
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?sage.categories.sets_cat.Sets.CartesianProducts
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?__invert__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?__invert__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?__contains__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?__contains__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?_cartesian_product_of_elements
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?_cartesian_product_of_elements
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?_sets_keys
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?_sets_keys
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?cartesian_factors
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?cartesian_factors
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?cartesian_projection
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?cartesian_projection

@@ -4,3 +4,19 @@ Includes http://www.sagemath.org/content/categories/finite_posets?FinitePosets h
 Includes http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/posets?Posets
 Includes http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_sets?FiniteSets
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?__invert__
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?__invert__
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?antichains
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?antichains
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?lower_covers
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?lower_covers
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?order_filter
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?order_filter
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?order_ideal
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?order_ideal
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?upper_covers
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?upper_covers
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?__contains__
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?__contains__
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?le
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?le

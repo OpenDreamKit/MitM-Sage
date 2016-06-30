@@ -5,3 +5,7 @@ Includes http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces h
 Includes http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces
 Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?sage.categories.metric_spaces.MetricSpaces
 constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?sage.categories.metric_spaces.MetricSpaces
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?__invert__
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?__invert__
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?__contains__
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?__contains__

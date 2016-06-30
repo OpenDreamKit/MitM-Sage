@@ -5,3 +5,15 @@ Includes http://www.sagemath.org/content/categories/coalgebras?Coalgebras http:/
 Includes http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?sage.categories.coalgebras.Coalgebras
 constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?sage.categories.coalgebras.Coalgebras
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?_add_
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?_add_
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__nonzero__
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__nonzero__
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__invert__
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__invert__
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__contains__
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__contains__
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?coproduct
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?coproduct
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?counit
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?counit

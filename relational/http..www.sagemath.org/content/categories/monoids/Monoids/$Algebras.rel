@@ -5,3 +5,15 @@ Includes http://www.sagemath.org/content/categories/monoids/Monoids?Algebras htt
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?_add_
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?_add_
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?_mul_
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?_mul_
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?__nonzero__
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?__nonzero__
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?monomial_coefficients
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?__invert__
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?__invert__
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?Algebras http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?__contains__
+constant http://www.sagemath.org/content/categories/monoids/Monoids?Algebras?__contains__

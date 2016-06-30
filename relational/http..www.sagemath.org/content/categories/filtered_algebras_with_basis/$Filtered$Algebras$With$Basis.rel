@@ -5,3 +5,21 @@ Includes http://www.sagemath.org/content/categories/filtered_algebras_with_basis
 Includes http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras
 Includes http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?_add_
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?_mul_
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?_mul_
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?degree_on_basis
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?degree_on_basis
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?__invert__
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?__invert__
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?one_basis
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?one_basis
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?product_on_basis
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?product_on_basis
+Declares http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis?__contains__

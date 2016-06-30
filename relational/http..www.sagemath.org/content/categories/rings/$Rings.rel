@@ -4,3 +4,13 @@ Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagem
 Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rngs?Rngs
 Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/semirings?Semirings
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?_add_
+constant http://www.sagemath.org/content/categories/rings?Rings?_add_
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?_mul_
+constant http://www.sagemath.org/content/categories/rings?Rings?_mul_
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__nonzero__
+constant http://www.sagemath.org/content/categories/rings?Rings?__nonzero__
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__invert__
+constant http://www.sagemath.org/content/categories/rings?Rings?__invert__
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__contains__
+constant http://www.sagemath.org/content/categories/rings?Rings?__contains__

@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects htt
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?sage.categories.sets_cat.Sets.Subobjects
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?sage.categories.sets_cat.Sets.Subobjects
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?__invert__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?__invert__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?__contains__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?__contains__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?ambient
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?ambient
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?lift
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?lift
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?retract
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subobjects?retract

@@ -6,3 +6,9 @@ Includes http://www.sagemath.org/content/categories/additive_semigroups/Additive
 Includes http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups
 Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets?sage.categories.additive_semigroups.AdditiveSemigroups.Homsets
 constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets?sage.categories.additive_semigroups.AdditiveSemigroups.Homsets
+Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets?_add_
+constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets?_add_
+Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets?__invert__
+constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets?__invert__
+Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets?__contains__
+constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Homsets?__contains__

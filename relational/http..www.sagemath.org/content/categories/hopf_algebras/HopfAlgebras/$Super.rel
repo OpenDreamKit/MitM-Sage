@@ -3,3 +3,19 @@ HasMeta http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Su
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?_add_
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?_add_
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?_mul_
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?_mul_
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?__nonzero__
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?__nonzero__
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?__invert__
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?__invert__
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?algebra_generators
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?algebra_generators
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?__contains__
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?__contains__
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?coproduct
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?coproduct
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?counit
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Super?counit

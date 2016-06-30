@@ -7,3 +7,15 @@ Includes http://www.sagemath.org/content/categories/commutative_additive_groups/
 Includes http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras
 Includes http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveCommutative?Algebras
 Includes http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras
+Declares http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?_add_
+constant http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?_add_
+Declares http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?_mul_
+constant http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?_mul_
+Declares http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?__nonzero__
+constant http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?__nonzero__
+Declares http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?monomial_coefficients
+constant http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?__invert__
+constant http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?__invert__
+Declares http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?__contains__
+constant http://www.sagemath.org/content/categories/commutative_additive_groups/CommutativeAdditiveGroups?Algebras?__contains__

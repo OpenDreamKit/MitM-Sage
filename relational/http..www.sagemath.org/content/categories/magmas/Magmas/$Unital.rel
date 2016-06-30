@@ -7,3 +7,9 @@ Declares http://www.sagemath.org/content/categories/magmas/Magmas?Unital http://
 constant http://www.sagemath.org/content/categories/magmas/Magmas?Unital?Unital
 Declares http://www.sagemath.org/content/categories/magmas/Magmas?Unital http://www.sagemath.org/content/categories/magmas/Magmas?Unital?sage.categories.magmas.Magmas.Unital
 constant http://www.sagemath.org/content/categories/magmas/Magmas?Unital?sage.categories.magmas.Magmas.Unital
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?Unital http://www.sagemath.org/content/categories/magmas/Magmas?Unital?_mul_
+constant http://www.sagemath.org/content/categories/magmas/Magmas?Unital?_mul_
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?Unital http://www.sagemath.org/content/categories/magmas/Magmas?Unital?__invert__
+constant http://www.sagemath.org/content/categories/magmas/Magmas?Unital?__invert__
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?Unital http://www.sagemath.org/content/categories/magmas/Magmas?Unital?__contains__
+constant http://www.sagemath.org/content/categories/magmas/Magmas?Unital?__contains__

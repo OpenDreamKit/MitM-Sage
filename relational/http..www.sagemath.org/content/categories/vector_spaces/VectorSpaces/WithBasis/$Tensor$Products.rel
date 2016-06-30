@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/W
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?WithBasis
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?TensorProducts
 Includes http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?TensorProducts
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?_add_
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?_add_
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?__nonzero__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?__nonzero__
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?monomial_coefficients
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?__invert__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?__invert__
+Declares http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?__contains__
+constant http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts?__contains__

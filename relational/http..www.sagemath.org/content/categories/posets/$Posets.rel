@@ -5,3 +5,17 @@ Includes http://www.sagemath.org/content/categories/posets?Posets http://www.sag
 Includes http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/posets?Posets?sage.categories.posets.Posets
 constant http://www.sagemath.org/content/categories/posets?Posets?sage.categories.posets.Posets
+Declares http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/posets?Posets?__invert__
+constant http://www.sagemath.org/content/categories/posets?Posets?__invert__
+Declares http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/posets?Posets?lower_covers
+constant http://www.sagemath.org/content/categories/posets?Posets?lower_covers
+Declares http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/posets?Posets?order_filter
+constant http://www.sagemath.org/content/categories/posets?Posets?order_filter
+Declares http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/posets?Posets?order_ideal
+constant http://www.sagemath.org/content/categories/posets?Posets?order_ideal
+Declares http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/posets?Posets?upper_covers
+constant http://www.sagemath.org/content/categories/posets?Posets?upper_covers
+Declares http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/posets?Posets?__contains__
+constant http://www.sagemath.org/content/categories/posets?Posets?__contains__
+Declares http://www.sagemath.org/content/categories/posets?Posets http://www.sagemath.org/content/categories/posets?Posets?le
+constant http://www.sagemath.org/content/categories/posets?Posets?le

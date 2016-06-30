@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/super_modules?SuperModules h
 Includes http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/graded_modules?GradedModules
 Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?sage.categories.super_modules.SuperModules
 constant http://www.sagemath.org/content/categories/super_modules?SuperModules?sage.categories.super_modules.SuperModules
+Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?_add_
+constant http://www.sagemath.org/content/categories/super_modules?SuperModules?_add_
+Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?__nonzero__
+constant http://www.sagemath.org/content/categories/super_modules?SuperModules?__nonzero__
+Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?__invert__
+constant http://www.sagemath.org/content/categories/super_modules?SuperModules?__invert__
+Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?__contains__
+constant http://www.sagemath.org/content/categories/super_modules?SuperModules?__contains__

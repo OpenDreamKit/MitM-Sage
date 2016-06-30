@@ -5,3 +5,15 @@ Includes http://www.sagemath.org/content/categories/modules/Modules/Homsets?Ends
 Includes http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/algebras?Algebras
 Includes http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/homsets/Homsets?Endset
 Includes http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/modules/Modules?Homsets
+Declares http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?_add_
+constant http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?_add_
+Declares http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?_mul_
+constant http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?_mul_
+Declares http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?__nonzero__
+constant http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?__nonzero__
+Declares http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?__invert__
+constant http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?__invert__
+Declares http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?algebra_generators
+constant http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?algebra_generators
+Declares http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?__contains__
+constant http://www.sagemath.org/content/categories/modules/Modules/Homsets?Endset?__contains__

@@ -5,3 +5,21 @@ Includes http://www.sagemath.org/content/categories/graded_algebras_with_basis?G
 Includes http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras
 Includes http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?_add_
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?_mul_
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?_mul_
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?degree_on_basis
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?degree_on_basis
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?__invert__
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?__invert__
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?one_basis
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?one_basis
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?product_on_basis
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?product_on_basis
+Declares http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/graded_algebras_with_basis?GradedAlgebrasWithBasis?__contains__

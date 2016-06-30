@@ -4,3 +4,15 @@ Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?
 Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis
 Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules?FilteredModules
+Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?_add_
+constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?_add_
+Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?degree_on_basis
+constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?degree_on_basis
+Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?__nonzero__
+constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?__nonzero__
+Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?monomial_coefficients
+constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?monomial_coefficients
+Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?__invert__
+constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?__invert__
+Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?__contains__
+constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?__contains__

@@ -5,3 +5,9 @@ Includes http://www.sagemath.org/content/categories/permutation_groups?Permutati
 Includes http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups http://www.sagemath.org/content/categories/groups?Groups
 Declares http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups?sage.categories.permutation_groups.PermutationGroups
 constant http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups?sage.categories.permutation_groups.PermutationGroups
+Declares http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups?_mul_
+constant http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups?_mul_
+Declares http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups?__invert__
+constant http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups?__invert__
+Declares http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups?__contains__
+constant http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups?__contains__

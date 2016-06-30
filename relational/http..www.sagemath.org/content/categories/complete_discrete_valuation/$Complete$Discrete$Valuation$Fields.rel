@@ -5,3 +5,23 @@ Includes http://www.sagemath.org/content/categories/complete_discrete_valuation?
 Includes http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationFields
 Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields
 constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?_add_
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?_add_
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?_mul_
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?_mul_
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?__nonzero__
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?__nonzero__
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?precision_absolute
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?precision_absolute
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?precision_relative
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?precision_relative
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?valuation
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?valuation
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?__invert__
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?__invert__
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?__contains__
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?__contains__
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?residue_field
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?residue_field
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?uniformizer
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationFields?uniformizer

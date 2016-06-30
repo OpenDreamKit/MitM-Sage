@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/function_fields?FunctionFiel
 Includes http://www.sagemath.org/content/categories/function_fields?FunctionFields http://www.sagemath.org/content/categories/fields?Fields
 Declares http://www.sagemath.org/content/categories/function_fields?FunctionFields http://www.sagemath.org/content/categories/function_fields?FunctionFields?sage.categories.function_fields.FunctionFields
 constant http://www.sagemath.org/content/categories/function_fields?FunctionFields?sage.categories.function_fields.FunctionFields
+Declares http://www.sagemath.org/content/categories/function_fields?FunctionFields http://www.sagemath.org/content/categories/function_fields?FunctionFields?_add_
+constant http://www.sagemath.org/content/categories/function_fields?FunctionFields?_add_
+Declares http://www.sagemath.org/content/categories/function_fields?FunctionFields http://www.sagemath.org/content/categories/function_fields?FunctionFields?_mul_
+constant http://www.sagemath.org/content/categories/function_fields?FunctionFields?_mul_
+Declares http://www.sagemath.org/content/categories/function_fields?FunctionFields http://www.sagemath.org/content/categories/function_fields?FunctionFields?__nonzero__
+constant http://www.sagemath.org/content/categories/function_fields?FunctionFields?__nonzero__
+Declares http://www.sagemath.org/content/categories/function_fields?FunctionFields http://www.sagemath.org/content/categories/function_fields?FunctionFields?__invert__
+constant http://www.sagemath.org/content/categories/function_fields?FunctionFields?__invert__
+Declares http://www.sagemath.org/content/categories/function_fields?FunctionFields http://www.sagemath.org/content/categories/function_fields?FunctionFields?__contains__
+constant http://www.sagemath.org/content/categories/function_fields?FunctionFields?__contains__

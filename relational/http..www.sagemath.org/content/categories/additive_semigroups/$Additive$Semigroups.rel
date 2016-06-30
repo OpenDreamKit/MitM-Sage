@@ -5,3 +5,9 @@ Includes http://www.sagemath.org/content/categories/additive_semigroups?Additive
 Includes http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
 Declares http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups?AdditiveAssociative
 constant http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups?AdditiveAssociative
+Declares http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups?_add_
+constant http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups?_add_
+Declares http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups?__invert__
+constant http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups?__invert__
+Declares http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups?__contains__
+constant http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups?__contains__

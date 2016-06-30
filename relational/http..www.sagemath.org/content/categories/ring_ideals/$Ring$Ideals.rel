@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/ring_ideals?RingIdeals http:
 Includes http://www.sagemath.org/content/categories/ring_ideals?RingIdeals http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/ring_ideals?RingIdeals http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?sage.categories.ring_ideals.RingIdeals
 constant http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?sage.categories.ring_ideals.RingIdeals
+Declares http://www.sagemath.org/content/categories/ring_ideals?RingIdeals http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?_add_
+constant http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?_add_
+Declares http://www.sagemath.org/content/categories/ring_ideals?RingIdeals http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?__nonzero__
+constant http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?__nonzero__
+Declares http://www.sagemath.org/content/categories/ring_ideals?RingIdeals http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?__invert__
+constant http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?__invert__
+Declares http://www.sagemath.org/content/categories/ring_ideals?RingIdeals http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?__contains__
+constant http://www.sagemath.org/content/categories/ring_ideals?RingIdeals?__contains__

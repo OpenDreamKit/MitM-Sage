@@ -5,3 +5,13 @@ Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients h
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?sage.categories.sets_cat.Sets.Subquotients
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?sage.categories.sets_cat.Sets.Subquotients
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?__invert__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?__invert__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?__contains__
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?__contains__
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?ambient
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?ambient
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?lift
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?lift
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?retract
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?retract

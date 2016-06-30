@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/algebra_modules?AlgebraModul
 Includes http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?sage.categories.algebra_modules.AlgebraModules
 constant http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?sage.categories.algebra_modules.AlgebraModules
+Declares http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?_add_
+constant http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?_add_
+Declares http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?__nonzero__
+constant http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?__nonzero__
+Declares http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?__invert__
+constant http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?__invert__
+Declares http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?__contains__
+constant http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules?__contains__

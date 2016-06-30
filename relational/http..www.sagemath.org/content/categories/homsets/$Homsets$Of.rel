@@ -5,3 +5,7 @@ Includes http://www.sagemath.org/content/categories/homsets?HomsetsOf http://www
 Includes http://www.sagemath.org/content/categories/homsets?HomsetsOf http://www.sagemath.org/content/categories/homsets?Homsets
 Declares http://www.sagemath.org/content/categories/homsets?HomsetsOf http://www.sagemath.org/content/categories/homsets?HomsetsOf?sage.categories.homsets.HomsetsOf
 constant http://www.sagemath.org/content/categories/homsets?HomsetsOf?sage.categories.homsets.HomsetsOf
+Declares http://www.sagemath.org/content/categories/homsets?HomsetsOf http://www.sagemath.org/content/categories/homsets?HomsetsOf?__invert__
+constant http://www.sagemath.org/content/categories/homsets?HomsetsOf?__invert__
+Declares http://www.sagemath.org/content/categories/homsets?HomsetsOf http://www.sagemath.org/content/categories/homsets?HomsetsOf?__contains__
+constant http://www.sagemath.org/content/categories/homsets?HomsetsOf?__contains__

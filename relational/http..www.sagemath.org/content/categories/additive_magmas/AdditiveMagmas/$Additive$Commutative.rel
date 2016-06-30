@@ -5,3 +5,9 @@ Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagm
 Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
 Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative?AdditiveCommutative
 constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative?AdditiveCommutative
+Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative?_add_
+constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative?_add_
+Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative?__invert__
+constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative?__invert__
+Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative?__contains__
+constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveCommutative?__contains__

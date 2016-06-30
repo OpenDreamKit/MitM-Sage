@@ -5,3 +5,15 @@ Includes http://www.sagemath.org/content/categories/algebras?Algebras http://www
 Includes http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/rings?Rings
 Includes http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras
 Includes http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/unital_algebras?UnitalAlgebras
+Declares http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/algebras?Algebras?_add_
+constant http://www.sagemath.org/content/categories/algebras?Algebras?_add_
+Declares http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/algebras?Algebras?_mul_
+constant http://www.sagemath.org/content/categories/algebras?Algebras?_mul_
+Declares http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/algebras?Algebras?__nonzero__
+constant http://www.sagemath.org/content/categories/algebras?Algebras?__nonzero__
+Declares http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/algebras?Algebras?__invert__
+constant http://www.sagemath.org/content/categories/algebras?Algebras?__invert__
+Declares http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/algebras?Algebras?algebra_generators
+constant http://www.sagemath.org/content/categories/algebras?Algebras?algebra_generators
+Declares http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/algebras?Algebras?__contains__
+constant http://www.sagemath.org/content/categories/algebras?Algebras?__contains__

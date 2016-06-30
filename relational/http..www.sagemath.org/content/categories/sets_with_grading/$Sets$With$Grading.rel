@@ -5,3 +5,9 @@ Includes http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGr
 Includes http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading?sage.categories.sets_with_grading.SetsWithGrading
 constant http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading?sage.categories.sets_with_grading.SetsWithGrading
+Declares http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading?__invert__
+constant http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading?__invert__
+Declares http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading?subset
+constant http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading?subset
+Declares http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading?__contains__
+constant http://www.sagemath.org/content/categories/sets_with_grading?SetsWithGrading?__contains__

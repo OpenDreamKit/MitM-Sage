@@ -6,3 +6,11 @@ Includes http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?H
 Includes http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets http://www.sagemath.org/content/categories/homsets?Homsets
 Declares http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?sage.categories.hecke_modules.HeckeModules.Homsets
 constant http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?sage.categories.hecke_modules.HeckeModules.Homsets
+Declares http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?_add_
+constant http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?_add_
+Declares http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?__nonzero__
+constant http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?__nonzero__
+Declares http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?__invert__
+constant http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?__invert__
+Declares http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?__contains__
+constant http://www.sagemath.org/content/categories/hecke_modules/HeckeModules?Homsets?__contains__

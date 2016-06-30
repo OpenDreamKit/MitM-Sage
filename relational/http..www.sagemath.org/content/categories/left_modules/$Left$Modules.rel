@@ -5,3 +5,11 @@ Includes http://www.sagemath.org/content/categories/left_modules?LeftModules htt
 Includes http://www.sagemath.org/content/categories/left_modules?LeftModules http://www.sagemath.org/content/categories/commutative_additive_groups?CommutativeAdditiveGroups
 Declares http://www.sagemath.org/content/categories/left_modules?LeftModules http://www.sagemath.org/content/categories/left_modules?LeftModules?sage.categories.left_modules.LeftModules
 constant http://www.sagemath.org/content/categories/left_modules?LeftModules?sage.categories.left_modules.LeftModules
+Declares http://www.sagemath.org/content/categories/left_modules?LeftModules http://www.sagemath.org/content/categories/left_modules?LeftModules?_add_
+constant http://www.sagemath.org/content/categories/left_modules?LeftModules?_add_
+Declares http://www.sagemath.org/content/categories/left_modules?LeftModules http://www.sagemath.org/content/categories/left_modules?LeftModules?__nonzero__
+constant http://www.sagemath.org/content/categories/left_modules?LeftModules?__nonzero__
+Declares http://www.sagemath.org/content/categories/left_modules?LeftModules http://www.sagemath.org/content/categories/left_modules?LeftModules?__invert__
+constant http://www.sagemath.org/content/categories/left_modules?LeftModules?__invert__
+Declares http://www.sagemath.org/content/categories/left_modules?LeftModules http://www.sagemath.org/content/categories/left_modules?LeftModules?__contains__
+constant http://www.sagemath.org/content/categories/left_modules?LeftModules?__contains__
