@@ -23,6 +23,7 @@ from sage.categories.category_with_axiom import CategoryWithAxiom
 from sage.categories.covariant_functorial_construction import FunctorialConstructionCategory
 from sage.sets.recursively_enumerated_set import RecursivelyEnumeratedSet
 from sage.categories.rings import Rings
+import mygap
 
 def related_categories(category):
     result = list(category.super_categories())
@@ -63,7 +64,6 @@ def category_sample():
     seeds = {cls.an_instance()
              for cls in sage.categories.all.__dict__.values()
              if isinstance(cls, type) and issubclass(cls, Category) and cls not in abstract_classes_for_categories}
-    print len(seeds), len(set(seeds))
     return list(RecursivelyEnumeratedSet(seeds, related_categories))
 
 def category_name(category):
@@ -77,6 +77,11 @@ def category_name(category):
     """
     cls = category.__class__.__base__
     return cls.__module__+"."+cls.__name__
+
+def export_annotated_method(annotated_method):
+    d = export_method(annotated_method["__imfunc__"])
+    d.update({key: value for (key, value) in annotated_method.iteritems() if key != "__imfunc__"})
+    return d
 
 def export_category(category):
     """
@@ -96,8 +101,30 @@ def export_category(category):
             "axioms": list(category.axioms()),
             "structure": [category_name(cat) for cat in category.structure()],
             "type": "Sage_Category",
-            "required_methods": required_methods(category)
+            #"required_methods": required_methods(category),
+            "parent_class": export_class(category.parent_class),
+            "element_class": export_class(category.element_class),
+            "morphism_class": export_class(category.morphism_class),
+            "subcategory_class": export_class(category.element_class),
+            "semantic": {
+                cls_name: [
+                    export_annotated_method(method)
+                    for (key, method) in semantic.iteritems()
+                ]
+                for (cls_name, semantic) in getattr(category, "_semantic", {}).iteritems()
+            }
     }
+
+def export_class(cls):
+    return {
+        "__doc__": getattr(cls, "__doc__", None),
+        "methods": tuple(
+            export_method(method)
+            for (key, method) in cls.__dict__.iteritems()
+            if key not in ["__doc__", "__module__", "_sage_src_lines_", "_reduction"]
+            and inspect.isfunction(method)
+            and not any(hasattr(base, key) for base in cls.__bases__)
+        )}
 
 def export_method(method):
     """
