@@ -1,0 +1,52 @@
+theory http://www.sagemath.org/?Axioms
+HasMeta http://www.sagemath.org/?Axioms http://www.sagemath.org/?Types
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Dummy
+constant http://www.sagemath.org/?Axioms?Dummy
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Unital
+constant http://www.sagemath.org/?Axioms?Unital
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Associative
+constant http://www.sagemath.org/?Axioms?Associative
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Inverse
+constant http://www.sagemath.org/?Axioms?Inverse
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Finite
+constant http://www.sagemath.org/?Axioms?Finite
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?FinitelyGeneratedAsMagma
+constant http://www.sagemath.org/?Axioms?FinitelyGeneratedAsMagma
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Infinite
+constant http://www.sagemath.org/?Axioms?Infinite
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Distributive
+constant http://www.sagemath.org/?Axioms?Distributive
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?AdditiveCommutative
+constant http://www.sagemath.org/?Axioms?AdditiveCommutative
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?AdditiveInverse
+constant http://www.sagemath.org/?Axioms?AdditiveInverse
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?AdditiveAssociative
+constant http://www.sagemath.org/?Axioms?AdditiveAssociative
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Commutative
+constant http://www.sagemath.org/?Axioms?Commutative
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?NoZeroDivisors
+constant http://www.sagemath.org/?Axioms?NoZeroDivisors
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?AdditiveUnital
+constant http://www.sagemath.org/?Axioms?AdditiveUnital
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Division
+constant http://www.sagemath.org/?Axioms?Division
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?WithBasis
+constant http://www.sagemath.org/?Axioms?WithBasis
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?FiniteDimensional
+constant http://www.sagemath.org/?Axioms?FiniteDimensional
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?WellGenerated
+constant http://www.sagemath.org/?Axioms?WellGenerated
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?JTrivial
+constant http://www.sagemath.org/?Axioms?JTrivial
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Facade
+constant http://www.sagemath.org/?Axioms?Facade
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Connected
+constant http://www.sagemath.org/?Axioms?Connected
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Endset
+constant http://www.sagemath.org/?Axioms?Endset
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Compact
+constant http://www.sagemath.org/?Axioms?Compact
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Complete
+constant http://www.sagemath.org/?Axioms?Complete
+Declares http://www.sagemath.org/?Axioms http://www.sagemath.org/?Axioms?Irreducible
+constant http://www.sagemath.org/?Axioms?Irreducible
