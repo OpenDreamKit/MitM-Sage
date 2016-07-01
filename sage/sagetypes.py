@@ -7,7 +7,7 @@ EXAMPLES::
     sage: import json
     sage: data = sagetypes.export()
     sage: with open('sagetypes.json', 'w') as outfile:
-    ....:     json.dump(data, outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    ....:     json.dump(data, outfile, sort_keys=True, indent=4, separators=(',', ': '), default=str)
 
 .. TODO::
 
@@ -18,6 +18,7 @@ EXAMPLES::
 import inspect
 from sage.misc.cachefunc import cached_function
 from sage.misc.abstract_method import AbstractMethod
+from sage.misc.sageinspect import sage_getargspec
 from sage.categories.category import Category
 from sage.categories.category_with_axiom import CategoryWithAxiom
 from sage.categories.covariant_functorial_construction import FunctorialConstructionCategory
@@ -78,65 +79,91 @@ def category_name(category):
     cls = category.__class__.__base__
     return cls.__module__+"."+cls.__name__
 
-def export_annotated_method(annotated_method):
-    d = export_method(annotated_method["__imfunc__"])
-    d.update({key: value for (key, value) in annotated_method.iteritems() if key != "__imfunc__"})
-    return d
-
 def export_category(category):
     """
     Export semantic information about the category
 
     EXAMPLES::
 
-        sage: sagetypes.export_category(Groups())
+        sage: from sagetypes import export_category
+        sage: export_category(Groups())
         {'implied': ['sage.categories.monoids.Monoids',
           'sage.categories.magmas.Magmas.Unital.Inverse'],
          'name': 'sage.categories.groups.Groups',
          'type': 'Sage_Category'}
     """
+    semantic = getattr(category, "_semantic", {})
     return {"implied": [category_name(cat) for cat in category.super_categories()],
-            "__doc__": category.__doc__,
-            "name": category_name(category),
-            "axioms": list(category.axioms()),
-            "structure": [category_name(cat) for cat in category.structure()],
-            "type": "Sage_Category",
-            #"required_methods": required_methods(category),
-            "parent_class": export_class(category.parent_class),
-            "element_class": export_class(category.element_class),
-            "morphism_class": export_class(category.morphism_class),
-            "subcategory_class": export_class(category.element_class),
-            "semantic": {
-                cls_name: [
-                    export_annotated_method(method)
-                    for (key, method) in semantic.iteritems()
-                ]
-                for (cls_name, semantic) in getattr(category, "_semantic", {}).iteritems()
-            }
-    }
+              "__doc__": category.__doc__,
+              "name": category_name(category),
+              "axioms": list(category.axioms()),
+              "structure": [category_name(cat) for cat in category.structure()],
+              "type": "Sage_Category",
+              #"required_methods": required_methods(category),
+              "parent_class": export_class(category.parent_class),
+              "element_class": export_class(category.element_class),
+              "morphism_class": export_class(category.morphism_class),
+              "subcategory_class": export_class(category.element_class),
+              "gap": semantic.get("gap", None),
+              "mmt": semantic.get("mmt", None)}
 
 def export_class(cls):
-    return {
-        "__doc__": getattr(cls, "__doc__", None),
-        "methods": tuple(
-            export_method(method)
-            for (key, method) in cls.__dict__.iteritems()
-            if key not in ["__doc__", "__module__", "_sage_src_lines_", "_reduction"]
-            and inspect.isfunction(method)
-            and not any(hasattr(base, key) for base in cls.__bases__)
-        )}
-
-def export_method(method):
     """
 
+    EXAMPLES::
+
+        sage: class A:
+        ....:     _semantic = {'truc': {'gap': 'coucou'} }
+        ....:     def truc(x,y): pass
+        ....:     def blah(x): pass
+        sage: from sagetypes import export_class
+        sage: export_class(A)
+        {'__doc__': None,
+         'methods': {'blah': {'__doc__': None,
+           'args': ['x'],
+           'argspec': ArgSpec(args=['x'], varargs=None, keywords=None, defaults=None)},
+          'truc': {'__doc__': None,
+           'args': ['x', 'y'],
+           'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
+           'gap': 'coucou'}}}
+    """
+    semantic = getattr(cls, "_semantic", {})
+    return {
+        "__doc__": getattr(cls, "__doc__", None),
+        "methods": { key:
+            export_method(method, semantic.get(key, {}))
+            for (key, method) in cls.__dict__.iteritems()
+            if key not in ["__doc__", "__module__", "_sage_src_lines_", "_reduction"]
+            and (callable(method) or isinstance(method, AbstractMethod))
+            and not any(hasattr(base, key) for base in cls.__bases__)
+        }}
+
+def export_method(method, semantic={}):
+    """
+    Export metadata about a single method, including stuff in semantic
+
+    EXAMPLES::
+
+        sage: def f(x,y): pass
+        sage: export_method(f, {"gap":"coucou"})
+        {'__doc__': None,
+         'args': ['x', 'y'],
+         'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
+         'gap': 'coucou',
+         'name': 'f'}
     """
     if isinstance(method, AbstractMethod):
         method = method._f
-    return {"name": method.func_name,
-            "__doc__": method.__doc__,
-            "args": inspect.getargspec(method).args,
-            "argspec": inspect.getargspec(method)
-            }
+    try:
+        argspec = sage_getargspec(method)
+        result = {"__doc__": method.__doc__,
+                  "args": argspec.args,
+                  "argspec": argspec
+        }
+    except TypeError:
+        result = {}
+    result.update(semantic)
+    return result
 
 def export():
     return [export_category(category) for category in category_sample()]
