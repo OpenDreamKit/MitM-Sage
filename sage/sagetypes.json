@@ -7935,7 +7935,7 @@
                         null,
                         [
                             null,
-                            Infinity,
+                            "Infinity",
                             "both",
                             null,
                             null,
@@ -8421,7 +8421,7 @@
                         [
                             null,
                             null,
-                            Infinity,
+                            "Infinity",
                             "both",
                             null,
                             null,
@@ -8734,7 +8734,7 @@
                         null,
                         [
                             null,
-                            Infinity,
+                            "Infinity",
                             "both",
                             null,
                             null,
