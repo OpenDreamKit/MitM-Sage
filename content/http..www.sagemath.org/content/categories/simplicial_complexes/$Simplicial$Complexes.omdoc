@@ -6,87 +6,57 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+     </constant><document name="Element Methods"><opaque format="text">
+    The category of abstract simplicial complexes.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+    An abstract simplicial complex `A` is a collection of sets `X`
+    such that:
 
-            EXAMPLES::
+    - `\emptyset \in A`,
+    - if `X \subset Y \in A`, then `X \in A`.
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+    .. TODO::
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+        Implement the category of simplicial complexes considered
+        as :class:`CW complexes &lt;sage.categories.cw_complexes.CWComplexes&gt;`
+        and rename this to the category of ``AbstractSimplicialComplexes``
+        with appropriate functors.
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+    EXAMPLES::
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+        sage: from sage.categories.simplicial_complexes import SimplicialComplexes
+        sage: C = SimplicialComplexes(); C
+        Category of simplicial complexes
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    TESTS::
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of abstract simplicial complexes.
 
-            .. NOTE::
+    An abstract simplicial complex `A` is a collection of sets `X`
+    such that:
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+    - `\emptyset \in A`,
+    - if `X \subset Y \in A`, then `X \in A`.
 
-            All parents in the category ``Sets()`` should implement this method.
+    .. TODO::
 
-            EXAMPLES::
+        Implement the category of simplicial complexes considered
+        as :class:`CW complexes &lt;sage.categories.cw_complexes.CWComplexes&gt;`
+        and rename this to the category of ``AbstractSimplicialComplexes``
+        with appropriate functors.
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque><constant name="faces">
+    EXAMPLES::
+
+        sage: from sage.categories.simplicial_complexes import SimplicialComplexes
+        sage: C = SimplicialComplexes(); C
+        Category of simplicial complexes
+
+    TESTS::
+
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent.faces">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -106,7 +76,7 @@
                  0: {(1,), (2,), (3,), (4,), (5,)},
                  1: {(1, 2), (1, 3), (1, 4), (2, 5), (3, 4), (4, 5)},
                  2: {(1, 3, 4)}}
-            </opaque><constant name="facets">
+            </opaque><constant name="parent.facets">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -123,4 +93,29 @@
                 sage: S = SimplicialComplex([[1,3,4], [1,2],[2,5],[4,5]])
                 sage: S.facets()
                 {(1, 2), (1, 3, 4), (2, 5), (4, 5)}
-            </opaque></document></theory></omdoc>
+            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of abstract simplicial complexes.
+
+    An abstract simplicial complex `A` is a collection of sets `X`
+    such that:
+
+    - `\emptyset \in A`,
+    - if `X \subset Y \in A`, then `X \in A`.
+
+    .. TODO::
+
+        Implement the category of simplicial complexes considered
+        as :class:`CW complexes &lt;sage.categories.cw_complexes.CWComplexes&gt;`
+        and rename this to the category of ``AbstractSimplicialComplexes``
+        with appropriate functors.
+
+    EXAMPLES::
+
+        sage: from sage.categories.simplicial_complexes import SimplicialComplexes
+        sage: C = SimplicialComplexes(); C
+        Category of simplicial complexes
+
+    TESTS::
+
+        sage: TestSuite(C).run()
+    </opaque></document></theory></omdoc>

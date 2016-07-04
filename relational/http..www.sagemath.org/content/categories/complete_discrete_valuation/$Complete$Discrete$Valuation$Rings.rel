@@ -5,23 +5,11 @@ Includes http://www.sagemath.org/content/categories/complete_discrete_valuation?
 Includes http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings
 Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationRings
 constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationRings
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?_add_
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?_add_
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?_mul_
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?_mul_
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?__nonzero__
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?__nonzero__
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?precision_absolute
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?precision_absolute
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?precision_relative
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?precision_relative
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?valuation
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?valuation
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?__invert__
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?__invert__
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?__contains__
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?__contains__
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?residue_field
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?residue_field
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?uniformizer
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?uniformizer
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?element.precision_absolute
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?element.precision_absolute
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?element.precision_relative
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?element.precision_relative
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?subcategory.precision_absolute
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?subcategory.precision_absolute
+Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?subcategory.precision_relative
+constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?subcategory.precision_relative

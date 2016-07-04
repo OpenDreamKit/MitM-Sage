@@ -5,11 +5,3 @@ Includes http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals
 Includes http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals http://www.sagemath.org/content/categories/algebra_modules?AlgebraModules
 Declares http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?sage.categories.algebra_ideals.AlgebraIdeals
 constant http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?sage.categories.algebra_ideals.AlgebraIdeals
-Declares http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?_add_
-constant http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?_add_
-Declares http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?__nonzero__
-constant http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?__nonzero__
-Declares http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?__invert__
-constant http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?__invert__
-Declares http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?__contains__
-constant http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals?__contains__

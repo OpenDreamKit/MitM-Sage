@@ -4,15 +4,9 @@ Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?Gr
 Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis
 Includes http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules?GradedModules
-Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?_add_
-constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?_add_
-Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?degree_on_basis
-constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?degree_on_basis
-Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__nonzero__
-constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__nonzero__
-Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?monomial_coefficients
-constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__invert__
-constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__invert__
-Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__contains__
-constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?__contains__
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?element.degree_negation
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?element.degree_negation
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?parent.degree_negation
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?parent.degree_negation
+Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?subcategory.degree_negation
+constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?subcategory.degree_negation

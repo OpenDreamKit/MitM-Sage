@@ -4,17 +4,5 @@ Includes http://www.sagemath.org/content/categories/filtered_algebras?FilteredAl
 Includes http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/algebras?Algebras
 Includes http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_modules?FilteredModules
-Declares http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?_add_
-constant http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?_add_
-Declares http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?_mul_
-constant http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?_mul_
-Declares http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?__nonzero__
-constant http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?__invert__
-constant http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?__invert__
-Declares http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?algebra_generators
-constant http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?algebra_generators
-Declares http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?graded_algebra
-constant http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?graded_algebra
-Declares http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?__contains__
-constant http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?__contains__
+Declares http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?parent.graded_algebra
+constant http://www.sagemath.org/content/categories/filtered_algebras?FilteredAlgebras?parent.graded_algebra

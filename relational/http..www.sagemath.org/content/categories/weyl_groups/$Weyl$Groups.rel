@@ -3,21 +3,51 @@ HasMeta http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http:/
 Includes http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection_length
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection_length
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?__invert__
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?__invert__
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?distinguished_reflection
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?distinguished_reflection
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?hyperplane_index_set
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?hyperplane_index_set
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?irreducible_components
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?irreducible_components
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection_index_set
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?reflection_index_set
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?__contains__
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?__contains__
-Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?index_set
-constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?index_set
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.bruhat_lower_covers_coroots
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.bruhat_lower_covers_coroots
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.bruhat_upper_covers_coroots
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.bruhat_upper_covers_coroots
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.inversion_arrangement
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.inversion_arrangement
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.inversions
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.inversions
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.is_pieri_factor
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.is_pieri_factor
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.left_pieri_factorizations
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.left_pieri_factorizations
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.quantum_bruhat_successors
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.quantum_bruhat_successors
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.reflection_to_coroot
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.reflection_to_coroot
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.reflection_to_root
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.reflection_to_root
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.stanley_symmetric_function
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.stanley_symmetric_function
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.stanley_symmetric_function_as_polynomial
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?element.stanley_symmetric_function_as_polynomial
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?parent.pieri_factors
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?parent.pieri_factors
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?parent.quantum_bruhat_graph
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?parent.quantum_bruhat_graph
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.bruhat_lower_covers_coroots
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.bruhat_lower_covers_coroots
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.bruhat_upper_covers_coroots
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.bruhat_upper_covers_coroots
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.inversion_arrangement
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.inversion_arrangement
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.inversions
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.inversions
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.is_pieri_factor
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.is_pieri_factor
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.left_pieri_factorizations
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.left_pieri_factorizations
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.quantum_bruhat_successors
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.quantum_bruhat_successors
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.reflection_to_coroot
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.reflection_to_coroot
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.reflection_to_root
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.reflection_to_root
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.stanley_symmetric_function
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.stanley_symmetric_function
+Declares http://www.sagemath.org/content/categories/weyl_groups?WeylGroups http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.stanley_symmetric_function_as_polynomial
+constant http://www.sagemath.org/content/categories/weyl_groups?WeylGroups?subcategory.stanley_symmetric_function_as_polynomial

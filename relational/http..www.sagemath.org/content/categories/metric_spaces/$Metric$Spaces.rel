@@ -5,7 +5,17 @@ Includes http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces h
 Includes http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces
 Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?sage.categories.metric_spaces.MetricSpaces
 constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?sage.categories.metric_spaces.MetricSpaces
-Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?__invert__
-constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?__invert__
-Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?__contains__
-constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?__contains__
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?element.abs
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?element.abs
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?element.dist
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?element.dist
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent._test_metric
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent._test_metric
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent.dist
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent.dist
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent.metric
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent.metric
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.abs
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.abs
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.dist
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.dist

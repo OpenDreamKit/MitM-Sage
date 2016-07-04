@@ -4,19 +4,7 @@ Includes http://www.sagemath.org/content/categories/algebras_with_basis?Algebras
 Includes http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras?Algebras
 Includes http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/unital_algebras/UnitalAlgebras?WithBasis
-Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?_add_
-constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?_add_
-Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?_mul_
-constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?_mul_
-Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?__nonzero__
-constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?__nonzero__
-Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?monomial_coefficients
-constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?__invert__
-constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?__invert__
-Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?one_basis
-constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?one_basis
-Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?product_on_basis
-constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?product_on_basis
-Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?__contains__
-constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?__contains__
+Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?parent._product_from_combinatorial_algebra_multiply
+constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?parent._product_from_combinatorial_algebra_multiply
+Declares http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?parent.hochschild_complex
+constant http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis?parent.hochschild_complex

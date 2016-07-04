@@ -1,4 +1,47 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="UnitalAlgebras" base="http://www.sagemath.org/content/categories/unital_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/magmatic_algebras?MagmaticAlgebras"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Unital"></import><document name="Element Methods"><constant name="_add_">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="UnitalAlgebras" base="http://www.sagemath.org/content/categories/unital_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/magmatic_algebras?MagmaticAlgebras"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Unital"></import><document name="Element Methods"><opaque format="text">
+        ``Magmas.Element.__mul__`` is preferable to ``Modules.Element.__mul__``
+        since the later does not handle products of two elements of ``self``.
+
+        TESTS::
+
+            sage: A = AlgebrasWithBasis(QQ).example(); A
+            An example of an algebra with basis: the free algebra
+            on the generators ('a', 'b', 'c') over Rational Field
+            sage: x = A.an_element()
+            sage: x
+            B[word: ] + 2*B[word: a] + 3*B[word: b] + B[word: bab]
+            sage: x.__mul__(x)
+            B[word: ] + 4*B[word: a] + 4*B[word: aa] + 6*B[word: ab]
+            + 2*B[word: abab] + 6*B[word: b] + 6*B[word: ba]
+            + 2*B[word: bab] + 2*B[word: baba] + 3*B[word: babb]
+            + B[word: babbab] + 9*B[word: bb] + 3*B[word: bbab]
+        </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of non-associative algebras over a given base ring.
+
+    A non-associative algebra over a ring `R` is a module over `R`
+    which s also a unital magma.
+
+    .. WARNING::
+
+        Until :trac:`15043` is implemented, :class:`Algebras` is the
+        category of associative unital algebras; thus, unlike the name
+        suggests, :class:`UnitalAlgebras` is not a subcategory of
+        :class:`Algebras` but of
+        :class:`~.magmatic_algebras.MagmaticAlgebras`.
+
+    EXAMPLES::
+
+        sage: from sage.categories.unital_algebras import UnitalAlgebras
+        sage: C = UnitalAlgebras(ZZ); C
+        Category of unital algebras over Integer Ring
+
+    TESTS::
+
+        sage: from sage.categories.magmatic_algebras import MagmaticAlgebras
+        sage: C is MagmaticAlgebras(ZZ).Unital()
+        True
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent.from_base_ring">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -12,173 +55,33 @@
        
        
      </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+            Return the canonical embedding of ``r`` into ``self``.
 
             INPUT:
 
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
+            - ``r`` -- an element of ``self.base_ring()``
 
             EXAMPLES::
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
-
-            INPUT:
-
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
-
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
-
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
-
-                TESTS::
-
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="algebra_generators">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return a family of generators of this algebra.
-
-            EXAMPLES::
-
-                sage: F = AlgebrasWithBasis(QQ).example(); F
+                sage: A = AlgebrasWithBasis(QQ).example(); A
                 An example of an algebra with basis: the free algebra on the generators ('a', 'b', 'c') over Rational Field
-                sage: F.algebra_generators()
-                Family (B[word: a], B[word: b], B[word: c])
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+                sage: A.from_base_ring(1)
+                B[word: ]
+            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+        ``Magmas.Element.__mul__`` is preferable to ``Modules.Element.__mul__``
+        since the later does not handle products of two elements of ``self``.
 
-            All parents in the category ``Sets()`` should implement this method.
+        TESTS::
 
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+            sage: A = AlgebrasWithBasis(QQ).example(); A
+            An example of an algebra with basis: the free algebra
+            on the generators ('a', 'b', 'c') over Rational Field
+            sage: x = A.an_element()
+            sage: x
+            B[word: ] + 2*B[word: a] + 3*B[word: b] + B[word: bab]
+            sage: x.__mul__(x)
+            B[word: ] + 4*B[word: a] + 4*B[word: aa] + 6*B[word: ab]
+            + 2*B[word: abab] + 6*B[word: b] + 6*B[word: ba]
+            + 2*B[word: bab] + 2*B[word: baba] + 3*B[word: babb]
+            + B[word: babbab] + 9*B[word: bb] + 3*B[word: bbab]
+        </opaque></document></theory></omdoc>

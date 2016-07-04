@@ -3,32 +3,12 @@
        
        
        
-     </constant><constant name="Unital">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="Associative">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="Inverse">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
-       
-       
      </constant><constant name="Finite">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="FinitelyGeneratedAsMagma">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="Infinite">
+     </constant><constant name="Associative">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
@@ -43,12 +23,17 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="AdditiveInverse">
+     </constant><constant name="Unital">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
        
      </constant><constant name="AdditiveAssociative">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="AdditiveInverse">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
@@ -73,6 +58,21 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
        
+     </constant><constant name="FinitelyGeneratedAsMagma">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="Inverse">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="Infinite">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
+       
+       
      </constant><constant name="WithBasis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
@@ -88,7 +88,7 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="JTrivial">
+     </constant><constant name="GAP">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
@@ -103,7 +103,12 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="Endset">
+     </constant><constant name="JTrivial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="Complete">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
@@ -113,7 +118,7 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="Complete">
+     </constant><constant name="Endset">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="prop"></om:OMS></om:OMOBJ></type>
        

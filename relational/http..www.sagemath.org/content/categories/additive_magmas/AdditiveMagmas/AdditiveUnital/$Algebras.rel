@@ -4,15 +4,3 @@ Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagm
 Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?Algebras
 Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/content/categories/unital_algebras/UnitalAlgebras?WithBasis
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?_add_
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?_add_
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?_mul_
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?_mul_
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?__nonzero__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?monomial_coefficients
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?__invert__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?__invert__
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?__contains__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras?__contains__

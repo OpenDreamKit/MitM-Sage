@@ -5,15 +5,15 @@ Includes http://www.sagemath.org/content/categories/coalgebras?Coalgebras http:/
 Includes http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?sage.categories.coalgebras.Coalgebras
 constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?sage.categories.coalgebras.Coalgebras
-Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?_add_
-constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?_add_
-Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__nonzero__
-constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__invert__
-constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__invert__
-Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__contains__
-constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?__contains__
-Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?coproduct
-constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?coproduct
-Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?counit
-constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?counit
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?element.coproduct
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?element.coproduct
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?element.counit
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?element.counit
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?parent.coproduct
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?parent.coproduct
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?parent.counit
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?parent.counit
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?subcategory.coproduct
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?subcategory.coproduct
+Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?subcategory.counit
+constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?subcategory.counit

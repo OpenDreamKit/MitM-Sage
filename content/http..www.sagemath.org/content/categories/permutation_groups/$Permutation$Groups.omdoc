@@ -6,114 +6,128 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
+     </constant><document name="Element Methods"><opaque format="text">
+    The category of permutation groups.
 
-            INPUT:
+    A *permutation group* is a group whose elements are concretely
+    represented by permutations of some set. In other words, the group
+    comes endowed with a distinguished action on some set.
 
-            - ``self``, ``right`` -- two elements with the same parent
+    This distinguished action should be preserved by permutation group
+    morphisms. For details, see
+    :Wikipedia:`Permutation_group#Permutation_isomorphic_groups`.
 
-            OUTPUT:
+    .. TODO:: shall we accept only permutations with finite support or not?
 
-            - an element of the same parent
+    EXAMPLES::
 
-            EXAMPLES::
+        sage: PermutationGroups()
+        Category of permutation groups
+        sage: PermutationGroups().super_categories()
+        [Category of groups]
 
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+    The category of permutation groups defines additional structure
+    that should be preserved by morphisms, namely the distinguished
+    action::
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+        sage: PermutationGroups().additional_structure()
+        Category of permutation groups
 
-            EXAMPLES::
+    TESTS::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+        sage: C = PermutationGroups()
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of permutation groups.
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+    A *permutation group* is a group whose elements are concretely
+    represented by permutations of some set. In other words, the group
+    comes endowed with a distinguished action on some set.
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+    This distinguished action should be preserved by permutation group
+    morphisms. For details, see
+    :Wikipedia:`Permutation_group#Permutation_isomorphic_groups`.
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+    .. TODO:: shall we accept only permutations with finite support or not?
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    EXAMPLES::
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+        sage: PermutationGroups()
+        Category of permutation groups
+        sage: PermutationGroups().super_categories()
+        [Category of groups]
 
-            .. NOTE::
+    The category of permutation groups defines additional structure
+    that should be preserved by morphisms, namely the distinguished
+    action::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+        sage: PermutationGroups().additional_structure()
+        Category of permutation groups
 
-            All parents in the category ``Sets()`` should implement this method.
+    TESTS::
 
-            EXAMPLES::
+        sage: C = PermutationGroups()
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    The category of permutation groups.
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+    A *permutation group* is a group whose elements are concretely
+    represented by permutations of some set. In other words, the group
+    comes endowed with a distinguished action on some set.
+
+    This distinguished action should be preserved by permutation group
+    morphisms. For details, see
+    :Wikipedia:`Permutation_group#Permutation_isomorphic_groups`.
+
+    .. TODO:: shall we accept only permutations with finite support or not?
+
+    EXAMPLES::
+
+        sage: PermutationGroups()
+        Category of permutation groups
+        sage: PermutationGroups().super_categories()
+        [Category of groups]
+
+    The category of permutation groups defines additional structure
+    that should be preserved by morphisms, namely the distinguished
+    action::
+
+        sage: PermutationGroups().additional_structure()
+        Category of permutation groups
+
+    TESTS::
+
+        sage: C = PermutationGroups()
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of permutation groups.
+
+    A *permutation group* is a group whose elements are concretely
+    represented by permutations of some set. In other words, the group
+    comes endowed with a distinguished action on some set.
+
+    This distinguished action should be preserved by permutation group
+    morphisms. For details, see
+    :Wikipedia:`Permutation_group#Permutation_isomorphic_groups`.
+
+    .. TODO:: shall we accept only permutations with finite support or not?
+
+    EXAMPLES::
+
+        sage: PermutationGroups()
+        Category of permutation groups
+        sage: PermutationGroups().super_categories()
+        [Category of groups]
+
+    The category of permutation groups defines additional structure
+    that should be preserved by morphisms, namely the distinguished
+    action::
+
+        sage: PermutationGroups().additional_structure()
+        Category of permutation groups
+
+    TESTS::
+
+        sage: C = PermutationGroups()
+        sage: TestSuite(C).run()
+    </opaque></document></theory></omdoc>

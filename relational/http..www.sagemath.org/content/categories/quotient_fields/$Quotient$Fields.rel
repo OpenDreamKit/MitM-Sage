@@ -5,17 +5,27 @@ Includes http://www.sagemath.org/content/categories/quotient_fields?QuotientFiel
 Includes http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/fields?Fields
 Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?sage.categories.quotient_fields.QuotientFields
 constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?sage.categories.quotient_fields.QuotientFields
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?_add_
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?_add_
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?_mul_
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?_mul_
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__nonzero__
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__nonzero__
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?denominator
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?denominator
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?numerator
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?numerator
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__invert__
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__invert__
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__contains__
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?__contains__
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element._derivative
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element._derivative
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.denominator
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.denominator
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.derivative
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.derivative
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.factor
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.factor
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.numerator
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.numerator
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.partial_fraction_decomposition
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.partial_fraction_decomposition
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory._derivative
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory._derivative
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.denominator
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.denominator
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.derivative
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.derivative
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.factor
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.factor
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.numerator
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.numerator
+Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.partial_fraction_decomposition
+constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.partial_fraction_decomposition

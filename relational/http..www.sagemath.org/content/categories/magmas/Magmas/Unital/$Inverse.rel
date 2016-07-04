@@ -5,9 +5,3 @@ Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/magmas/Magmas?Unital
 Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?Inverse
 constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?Inverse
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?_mul_
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?_mul_
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?__invert__
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?__invert__
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?__contains__
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse?__contains__

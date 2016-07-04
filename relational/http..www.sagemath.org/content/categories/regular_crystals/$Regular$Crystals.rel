@@ -3,13 +3,43 @@ HasMeta http://www.sagemath.org/content/categories/regular_crystals?RegularCryst
 Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/crystals?Crystals
-Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?e
-constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?e
-Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?f
-constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?f
-Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?__invert__
-constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?__invert__
-Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?connected_components_generators
-constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?connected_components_generators
-Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?__contains__
-constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?__contains__
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element._test_stembridge_local_axioms
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element._test_stembridge_local_axioms
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.demazure_operator_simple
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.demazure_operator_simple
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.dual_equivalence_class
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.dual_equivalence_class
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeDel_depth
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeDel_depth
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeDel_rise
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeDel_rise
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeDelta_depth
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeDelta_depth
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeDelta_rise
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeDelta_rise
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeTriple
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?element.stembridgeTriple
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?parent._test_stembridge_local_axioms
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?parent._test_stembridge_local_axioms
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?parent.demazure_operator
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?parent.demazure_operator
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?parent.demazure_subcrystal
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?parent.demazure_subcrystal
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?parent.dual_equivalence_graph
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?parent.dual_equivalence_graph
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory._test_stembridge_local_axioms
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory._test_stembridge_local_axioms
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.demazure_operator_simple
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.demazure_operator_simple
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.dual_equivalence_class
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.dual_equivalence_class
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeDel_depth
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeDel_depth
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeDel_rise
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeDel_rise
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeDelta_depth
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeDelta_depth
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeDelta_rise
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeDelta_rise
+Declares http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeTriple
+constant http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals?subcategory.stembridgeTriple

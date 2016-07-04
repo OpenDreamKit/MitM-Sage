@@ -4,17 +4,3 @@ Includes http://www.sagemath.org/content/categories/additive_semigroups/Additive
 Includes http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras
 Includes http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?Algebras
-Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?_add_
-constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?_add_
-Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?_mul_
-constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?_mul_
-Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?__nonzero__
-constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?monomial_coefficients
-constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?__invert__
-constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?__invert__
-Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?semigroup_generators
-constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?semigroup_generators
-Declares http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?__contains__
-constant http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras?__contains__

@@ -1,4 +1,19 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="UniqueFactorizationDomains" base="http://www.sagemath.org/content/categories/unique_factorization_domains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/gcd_domains?GcdDomains"></import><document name="Element Methods"><constant name="_add_">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="UniqueFactorizationDomains" base="http://www.sagemath.org/content/categories/unique_factorization_domains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/gcd_domains?GcdDomains"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
+    The category of unique factorization domains
+    constructive unique factorization domains, i.e. where one can constructively
+    factor members into a product of a finite number of irreducible elements
+
+    EXAMPLES::
+
+        sage: UniqueFactorizationDomains()
+        Category of unique factorization domains
+        sage: UniqueFactorizationDomains().super_categories()
+        [Category of gcd domains]
+
+    TESTS::
+
+        sage: TestSuite(UniqueFactorizationDomains()).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent._gcd_univariate_polynomial">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -6,138 +21,48 @@
                  <om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
-
-            INPUT:
-
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
       </om:OMBIND>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            Product of two elements
+            Return the greatest common divisor of ``f`` and ``g``.
 
             INPUT:
 
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
-
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
-
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
-
-                TESTS::
-
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+            - ``f``, ``g`` -- two polynomials defined over this UFD.
 
             .. NOTE::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+                This is a helper method for
+                :meth:`sage.rings.polynomial.polynomial_element.Polynomial.gcd`.
+
+            ALGORITHM:
+
+            Algorithm 3.3.1 in [GTM138]_, based on pseudo-division.
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = PolynomialRing(ZZ, sparse=True)
+                sage: S.&lt;T&gt; = R[]
+                sage: p = (-3*x^2 - x)*T^3 - 3*x*T^2 + (x^2 - x)*T + 2*x^2 + 3*x - 2
+                sage: q = (-x^2 - 4*x - 5)*T^2 + (6*x^2 + x + 1)*T + 2*x^2 - x
+                sage: quo,rem=p.pseudo_quo_rem(q); quo,rem
+                ((3*x^4 + 13*x^3 + 19*x^2 + 5*x)*T + 18*x^4 + 12*x^3 + 16*x^2 + 16*x,
+                 (-113*x^6 - 106*x^5 - 133*x^4 - 101*x^3 - 42*x^2 - 41*x)*T - 34*x^6 + 13*x^5 + 54*x^4 + 126*x^3 + 134*x^2 - 5*x - 50)
+                sage: (-x^2 - 4*x - 5)^(3-2+1) * p == quo*q + rem
+                True
+
+            REFERENCES:
+
+            .. [GTM138] Henri Cohen. A Course in Computational Number Theory.
+               Graduate Texts in Mathematics, vol. 138. Springer, 1993.
+            </opaque><constant name="parent.is_unique_factorization_domain">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -151,16 +76,11 @@
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
+            Return True, since this in an object of the category of unique factorization domains.
 
             EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
+                sage: Parent(QQ,category=UniqueFactorizationDomains()).is_unique_factorization_domain()
                 True
-            </opaque></document></theory></omdoc>
+
+            </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>

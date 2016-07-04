@@ -5,15 +5,3 @@ Includes http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebr
 Includes http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras http://www.sagemath.org/content/categories/algebras?Algebras
 Declares http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?sage.categories.matrix_algebras.MatrixAlgebras
 constant http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?sage.categories.matrix_algebras.MatrixAlgebras
-Declares http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?_add_
-constant http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?_add_
-Declares http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?_mul_
-constant http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?_mul_
-Declares http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?__nonzero__
-constant http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?__invert__
-constant http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?__invert__
-Declares http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?algebra_generators
-constant http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?algebra_generators
-Declares http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?__contains__
-constant http://www.sagemath.org/content/categories/matrix_algebras?MatrixAlgebras?__contains__

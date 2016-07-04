@@ -5,11 +5,3 @@ Includes http://www.sagemath.org/content/categories/modules/Modules?TensorProduc
 Includes http://www.sagemath.org/content/categories/modules/Modules?TensorProducts http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/modules/Modules?TensorProducts http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?sage.categories.modules.Modules.TensorProducts
 constant http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?sage.categories.modules.Modules.TensorProducts
-Declares http://www.sagemath.org/content/categories/modules/Modules?TensorProducts http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?_add_
-constant http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?_add_
-Declares http://www.sagemath.org/content/categories/modules/Modules?TensorProducts http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?__nonzero__
-constant http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?__nonzero__
-Declares http://www.sagemath.org/content/categories/modules/Modules?TensorProducts http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?__invert__
-constant http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?__invert__
-Declares http://www.sagemath.org/content/categories/modules/Modules?TensorProducts http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?__contains__
-constant http://www.sagemath.org/content/categories/modules/Modules?TensorProducts?__contains__

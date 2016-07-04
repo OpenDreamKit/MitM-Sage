@@ -6,4 +6,60 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"></document></theory></omdoc>
+     </constant><document name="Element Methods"><opaque format="text">
+    The category of all elements of a given parent.
+
+    EXAMPLES::
+
+        sage: a = IntegerRing()(5)
+        sage: C = a.category(); C
+        Category of elements of Integer Ring
+        sage: a in C
+        True
+        sage: 2/3 in C
+        False
+        sage: loads(C.dumps()) == C
+        True
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of all elements of a given parent.
+
+    EXAMPLES::
+
+        sage: a = IntegerRing()(5)
+        sage: C = a.category(); C
+        Category of elements of Integer Ring
+        sage: a in C
+        True
+        sage: 2/3 in C
+        False
+        sage: loads(C.dumps()) == C
+        True
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    The category of all elements of a given parent.
+
+    EXAMPLES::
+
+        sage: a = IntegerRing()(5)
+        sage: C = a.category(); C
+        Category of elements of Integer Ring
+        sage: a in C
+        True
+        sage: 2/3 in C
+        False
+        sage: loads(C.dumps()) == C
+        True
+    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of all elements of a given parent.
+
+    EXAMPLES::
+
+        sage: a = IntegerRing()(5)
+        sage: C = a.category(); C
+        Category of elements of Integer Ring
+        sage: a in C
+        True
+        sage: 2/3 in C
+        False
+        sage: loads(C.dumps()) == C
+        True
+    </opaque></document></theory></omdoc>

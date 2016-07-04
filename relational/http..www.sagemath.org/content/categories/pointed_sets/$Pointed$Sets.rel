@@ -5,7 +5,3 @@ Includes http://www.sagemath.org/content/categories/pointed_sets?PointedSets htt
 Includes http://www.sagemath.org/content/categories/pointed_sets?PointedSets http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/pointed_sets?PointedSets http://www.sagemath.org/content/categories/pointed_sets?PointedSets?sage.categories.pointed_sets.PointedSets
 constant http://www.sagemath.org/content/categories/pointed_sets?PointedSets?sage.categories.pointed_sets.PointedSets
-Declares http://www.sagemath.org/content/categories/pointed_sets?PointedSets http://www.sagemath.org/content/categories/pointed_sets?PointedSets?__invert__
-constant http://www.sagemath.org/content/categories/pointed_sets?PointedSets?__invert__
-Declares http://www.sagemath.org/content/categories/pointed_sets?PointedSets http://www.sagemath.org/content/categories/pointed_sets?PointedSets?__contains__
-constant http://www.sagemath.org/content/categories/pointed_sets?PointedSets?__contains__

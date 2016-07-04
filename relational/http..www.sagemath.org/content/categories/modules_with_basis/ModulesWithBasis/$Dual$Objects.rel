@@ -3,11 +3,3 @@ HasMeta http://www.sagemath.org/content/categories/modules_with_basis/ModulesWit
 Includes http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects?_add_
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects?_add_
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects?__nonzero__
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects?__nonzero__
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects?__invert__
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects?__invert__
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects?__contains__
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?DualObjects?__contains__

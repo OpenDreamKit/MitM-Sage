@@ -5,19 +5,3 @@ Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?T
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/coalgebras/Coalgebras?TensorProducts
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?_add_
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?_add_
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?_mul_
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?_mul_
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?__nonzero__
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?__nonzero__
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?__invert__
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?__invert__
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?algebra_generators
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?algebra_generators
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?__contains__
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?__contains__
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?coproduct
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?coproduct
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?counit
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts?counit

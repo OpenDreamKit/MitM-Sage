@@ -6,37 +6,28 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><constant name="_add_">
+     </constant><document name="Element Methods"><constant name="element.is_even">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
-
-            INPUT:
-
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
+            Return if ``self`` is an even element.
 
             EXAMPLES::
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_even()
+                False
+                sage: C.basis()[2,2].is_even()
+                True
+            </opaque><constant name="element.is_even_odd">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -46,99 +37,145 @@
        
        
      </constant><opaque format="text">
-                Return whether ``self`` is not zero.
-
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
-
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
-
-                TESTS::
-
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+            Return ``0`` if ``self`` is an even element or ``1``
+            if an odd element.
 
             .. NOTE::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+                The default implementation assumes that the even/odd is
+                determined by the parity of :meth:`degree`.
+
+                Overwrite this method if the even/odd behavior is desired
+                to be independent.
+
+            EXAMPLES::
+
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_even_odd()
+                1
+                sage: C.basis()[2,2].is_even_odd()
+                0
+            </opaque><constant name="element.is_odd">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
+            Return if ``self`` is an odd element.
 
             EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_odd()
                 True
+                sage: C.basis()[2,2].is_odd()
+                False
+            </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of super modules.
+
+    An `R`-*super module* (where `R` is a ring) is an `R`-module `M` equipped
+    with a decomposition `M = M_0 \oplus M_1` into two `R`-submodules
+    `M_0` and `M_1` (called the *even part* and the *odd part* of `M`,
+    respectively).
+
+    Thus, an `R`-super module automatically becomes a `\ZZ / 2 \ZZ`-graded
+    `R`-module, with `M_0` being the degree-`0` component and `M_1` being the
+    degree-`1` component.
+
+    EXAMPLES::
+
+        sage: Modules(ZZ).Super()
+        Category of super modules over Integer Ring
+        sage: Modules(ZZ).Super().super_categories()
+        [Category of graded modules over Integer Ring]
+
+    The category of super modules defines the super structure which
+    shall be preserved by morphisms::
+
+        sage: Modules(ZZ).Super().additional_structure()
+        Category of super modules over Integer Ring
+
+    TESTS::
+
+        sage: TestSuite(Modules(ZZ).Super()).run()
+    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"><constant name="subcategory.is_even">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return if ``self`` is an even element.
+
+            EXAMPLES::
+
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_even()
+                False
+                sage: C.basis()[2,2].is_even()
+                True
+            </opaque><constant name="subcategory.is_even_odd">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``0`` if ``self`` is an even element or ``1``
+            if an odd element.
+
+            .. NOTE::
+
+                The default implementation assumes that the even/odd is
+                determined by the parity of :meth:`degree`.
+
+                Overwrite this method if the even/odd behavior is desired
+                to be independent.
+
+            EXAMPLES::
+
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_even_odd()
+                1
+                sage: C.basis()[2,2].is_even_odd()
+                0
+            </opaque><constant name="subcategory.is_odd">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return if ``self`` is an odd element.
+
+            EXAMPLES::
+
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_odd()
+                True
+                sage: C.basis()[2,2].is_odd()
+                False
             </opaque></document></theory></omdoc>

@@ -4,17 +4,7 @@ Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAl
 Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras?MagmaticAlgebras
 Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?WithBasis
-Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?_add_
-constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?_add_
-Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?_mul_
-constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?_mul_
-Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?__nonzero__
-constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?__nonzero__
-Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?monomial_coefficients
-constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?__invert__
-constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?__invert__
-Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?product_on_basis
-constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?product_on_basis
-Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?__contains__
-constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?__contains__
+Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?parent._product_from_product_on_basis_multiply
+constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?parent._product_from_product_on_basis_multiply
+Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?parent.product_on_basis
+constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?parent.product_on_basis

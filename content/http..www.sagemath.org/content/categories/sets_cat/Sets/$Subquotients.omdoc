@@ -6,7 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
+     </constant><document name="Element Methods"><constant name="element.lift">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -16,77 +16,48 @@
        
        
      </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+                Lift ``self`` to the ambient space for its parent.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+                EXAMPLES::
 
-            EXAMPLES::
+                    sage: S = Semigroups().Subquotients().example()
+                    sage: s = S.an_element()
+                    sage: s, s.parent()
+                    (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
+                    sage: S.lift(s), S.lift(s).parent()
+                    (42, An example of a semigroup: the left zero semigroup)
+                    sage: s.lift(), s.lift().parent()
+                    (42, An example of a semigroup: the left zero semigroup)
+                </opaque></document><document name="Morphism Methods:"><opaque format="text">
+        A category for subquotients of sets.
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+        .. SEEALSO:: :meth:`Sets().Subquotients`
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+        EXAMPLES::
 
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+            sage: Sets().Subquotients()
+            Category of subquotients of sets
+            sage: Sets().Subquotients().all_super_categories()
+            [Category of subquotients of sets, Category of sets,
+             Category of sets with partial maps,
+             Category of objects]
+        </opaque></document><document name="Parent Methods:"><constant name="parent._repr_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+                EXAMPLES::
 
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque><constant name="ambient">
+                    sage: from sage.categories.examples.semigroups import IncompleteSubquotientSemigroup
+                    sage: S = IncompleteSubquotientSemigroup()
+                    sage: S._repr_()
+                    'A subquotient of An example of a semigroup: the left zero semigroup'
+                </opaque><constant name="parent.ambient">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -107,7 +78,7 @@
 
                     :meth:`Sets.SubcategoryMethods.Subquotients` for the
                     specifications and :meth:`.lift` and :meth:`.retract`.
-                </opaque><constant name="lift">
+                </opaque><constant name="parent.lift">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -143,7 +114,7 @@
                     :class:`Sets.SubcategoryMethods.Subquotients` for
                     the specifications, :meth:`.ambient`, :meth:`.retract`,
                     and also :meth:`Sets.Subquotients.ElementMethods.lift`.
-                </opaque><constant name="retract">
+                </opaque><constant name="parent.retract">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -177,4 +148,26 @@
                     (42, An example of a semigroup: the left zero semigroup)
                     sage: S.retract(s), S.retract(s).parent()
                     (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
+                </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.lift">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Lift ``self`` to the ambient space for its parent.
+
+                EXAMPLES::
+
+                    sage: S = Semigroups().Subquotients().example()
+                    sage: s = S.an_element()
+                    sage: s, s.parent()
+                    (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
+                    sage: S.lift(s), S.lift(s).parent()
+                    (42, An example of a semigroup: the left zero semigroup)
+                    sage: s.lift(), s.lift().parent()
+                    (42, An example of a semigroup: the left zero semigroup)
                 </opaque></document></theory></omdoc>

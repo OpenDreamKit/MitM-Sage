@@ -6,9 +6,3 @@ Includes http://www.sagemath.org/content/categories/homsets/Homsets?Endset http:
 Includes http://www.sagemath.org/content/categories/homsets/Homsets?Endset http://www.sagemath.org/content/categories/homsets?Homsets
 Declares http://www.sagemath.org/content/categories/homsets/Homsets?Endset http://www.sagemath.org/content/categories/homsets/Homsets?Endset?Endset
 constant http://www.sagemath.org/content/categories/homsets/Homsets?Endset?Endset
-Declares http://www.sagemath.org/content/categories/homsets/Homsets?Endset http://www.sagemath.org/content/categories/homsets/Homsets?Endset?_mul_
-constant http://www.sagemath.org/content/categories/homsets/Homsets?Endset?_mul_
-Declares http://www.sagemath.org/content/categories/homsets/Homsets?Endset http://www.sagemath.org/content/categories/homsets/Homsets?Endset?__invert__
-constant http://www.sagemath.org/content/categories/homsets/Homsets?Endset?__invert__
-Declares http://www.sagemath.org/content/categories/homsets/Homsets?Endset http://www.sagemath.org/content/categories/homsets/Homsets?Endset?__contains__
-constant http://www.sagemath.org/content/categories/homsets/Homsets?Endset?__contains__

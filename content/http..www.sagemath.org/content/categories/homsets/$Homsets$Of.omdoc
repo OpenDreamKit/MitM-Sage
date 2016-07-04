@@ -6,84 +6,92 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+     </constant><document name="Element Methods"><opaque format="text">
+    Default class for homsets of a category.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+    This is used when a category `C` defines some additional structure
+    but not a homset category of its own. Indeed, unlike for covariant
+    functorial constructions, we cannot represent the homset category
+    of `C` by just the join of the homset categories of its super
+    categories.
 
-            EXAMPLES::
+    EXAMPLES::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+        sage: C = (Magmas() &amp; Posets()).Homsets(); C
+        Category of homsets of magmas and posets
+        sage: type(C)
+        &lt;class 'sage.categories.homsets.HomsetsOf_with_category'&gt;
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+    TESTS::
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+        sage: TestSuite(C).run()
+        sage: C = Rings().Homsets()
+        sage: TestSuite(C).run(skip=['_test_category_graph'])
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    Default class for homsets of a category.
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+    This is used when a category `C` defines some additional structure
+    but not a homset category of its own. Indeed, unlike for covariant
+    functorial constructions, we cannot represent the homset category
+    of `C` by just the join of the homset categories of its super
+    categories.
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    EXAMPLES::
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+        sage: C = (Magmas() &amp; Posets()).Homsets(); C
+        Category of homsets of magmas and posets
+        sage: type(C)
+        &lt;class 'sage.categories.homsets.HomsetsOf_with_category'&gt;
 
-            .. NOTE::
+    TESTS::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+        sage: TestSuite(C).run()
+        sage: C = Rings().Homsets()
+        sage: TestSuite(C).run(skip=['_test_category_graph'])
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    Default class for homsets of a category.
 
-            All parents in the category ``Sets()`` should implement this method.
+    This is used when a category `C` defines some additional structure
+    but not a homset category of its own. Indeed, unlike for covariant
+    functorial constructions, we cannot represent the homset category
+    of `C` by just the join of the homset categories of its super
+    categories.
 
-            EXAMPLES::
+    EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+        sage: C = (Magmas() &amp; Posets()).Homsets(); C
+        Category of homsets of magmas and posets
+        sage: type(C)
+        &lt;class 'sage.categories.homsets.HomsetsOf_with_category'&gt;
+
+    TESTS::
+
+        sage: TestSuite(C).run()
+        sage: C = Rings().Homsets()
+        sage: TestSuite(C).run(skip=['_test_category_graph'])
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    Default class for homsets of a category.
+
+    This is used when a category `C` defines some additional structure
+    but not a homset category of its own. Indeed, unlike for covariant
+    functorial constructions, we cannot represent the homset category
+    of `C` by just the join of the homset categories of its super
+    categories.
+
+    EXAMPLES::
+
+        sage: C = (Magmas() &amp; Posets()).Homsets(); C
+        Category of homsets of magmas and posets
+        sage: type(C)
+        &lt;class 'sage.categories.homsets.HomsetsOf_with_category'&gt;
+
+    TESTS::
+
+        sage: TestSuite(C).run()
+        sage: C = Rings().Homsets()
+        sage: TestSuite(C).run(skip=['_test_category_graph'])
+        sage: TestSuite(C).run()
+    </opaque></document></theory></omdoc>

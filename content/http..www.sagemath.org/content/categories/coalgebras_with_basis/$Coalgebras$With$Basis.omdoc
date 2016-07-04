@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="CoalgebrasWithBasis" base="http://www.sagemath.org/content/categories/coalgebras_with_basis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis"></import><import from="http://www.sagemath.org/content/categories/coalgebras?Coalgebras"></import><document name="Element Methods"><constant name="_add_">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="CoalgebrasWithBasis" base="http://www.sagemath.org/content/categories/coalgebras_with_basis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis"></import><import from="http://www.sagemath.org/content/categories/coalgebras?Coalgebras"></import><document name="Element Methods"><constant name="element.coproduct_iterated">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -12,149 +12,69 @@
        
        
      </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+            Apply ``n`` coproducts to ``self``.
 
-            INPUT:
+            .. TODO::
 
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
+                Remove dependency on ``modules_with_basis`` methods.
 
             EXAMPLES::
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
+                sage: Psi = NonCommutativeSymmetricFunctions(QQ).Psi()
+                sage: Psi[2,2].coproduct_iterated(0)
+                Psi[2, 2]
+                sage: Psi[2,2].coproduct_iterated(2)
+                Psi[] # Psi[] # Psi[2, 2] + 2*Psi[] # Psi[2] # Psi[2]
+                 + Psi[] # Psi[2, 2] # Psi[] + 2*Psi[2] # Psi[] # Psi[2]
+                 + 2*Psi[2] # Psi[2] # Psi[] + Psi[2, 2] # Psi[] # Psi[]
 
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
+            TESTS::
 
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
+                sage: p = SymmetricFunctions(QQ).p()
+                sage: p[5,2,2].coproduct_iterated()
+                p[] # p[5, 2, 2] + 2*p[2] # p[5, 2] + p[2, 2] # p[5]
+                 + p[5] # p[2, 2] + 2*p[5, 2] # p[2] + p[5, 2, 2] # p[]
+                sage: p([]).coproduct_iterated(3)
+                p[] # p[] # p[] # p[]
 
-                TESTS::
+            ::
 
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque><constant name="monomial_coefficients">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return a dictionary whose keys are indices of basis elements
-            in the support of ``self`` and whose values are the
-            corresponding coefficients.
+                sage: Psi = NonCommutativeSymmetricFunctions(QQ).Psi()
+                sage: Psi[2,2].coproduct_iterated(0)
+                Psi[2, 2]
+                sage: Psi[2,2].coproduct_iterated(3)
+                Psi[] # Psi[] # Psi[] # Psi[2, 2] + 2*Psi[] # Psi[] # Psi[2] # Psi[2]
+                 + Psi[] # Psi[] # Psi[2, 2] # Psi[] + 2*Psi[] # Psi[2] # Psi[] # Psi[2]
+                 + 2*Psi[] # Psi[2] # Psi[2] # Psi[] + Psi[] # Psi[2, 2] # Psi[] # Psi[]
+                 + 2*Psi[2] # Psi[] # Psi[] # Psi[2] + 2*Psi[2] # Psi[] # Psi[2] # Psi[]
+                 + 2*Psi[2] # Psi[2] # Psi[] # Psi[] + Psi[2, 2] # Psi[] # Psi[] # Psi[]
 
-            INPUT:
+            ::
 
-            - ``copy`` -- (default: ``True``) if ``self`` is internally
-              represented by a dictionary ``d``, then make a copy of ``d``;
-              if ``False``, then this can cause undesired behavior by
-              mutating ``d``
+                sage: m = SymmetricFunctionsNonCommutingVariables(QQ).m()
+                sage: m[[1,3],[2]].coproduct_iterated(2)
+                m{} # m{} # m{{1, 3}, {2}} + m{} # m{{1}} # m{{1, 2}}
+                 + m{} # m{{1, 2}} # m{{1}} + m{} # m{{1, 3}, {2}} # m{}
+                 + m{{1}} # m{} # m{{1, 2}} + m{{1}} # m{{1, 2}} # m{}
+                 + m{{1, 2}} # m{} # m{{1}} + m{{1, 2}} # m{{1}} # m{}
+                 + m{{1, 3}, {2}} # m{} # m{}
+                sage: m[[]].coproduct_iterated(3), m[[1,3],[2]].coproduct_iterated(0)
+                (m{} # m{} # m{} # m{}, m{{1, 3}, {2}})
+            </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of coalgebras with a distinguished basis.
 
-            EXAMPLES::
+    EXAMPLES::
 
-                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
-                sage: B = F.basis()
-                sage: f = B['a'] + 3*B['c']
-                sage: d = f.monomial_coefficients()
-                sage: d['a']
-                1
-                sage: d['c']
-                3
+        sage: CoalgebrasWithBasis(ZZ)
+        Category of coalgebras with basis over Integer Ring
+        sage: sorted(CoalgebrasWithBasis(ZZ).super_categories(), key=str)
+        [Category of coalgebras over Integer Ring,
+         Category of modules with basis over Integer Ring]
 
-            TESTS:
+    TESTS::
 
-            We check that we make a copy of the coefficient dictionary::
-
-                sage: F = CombinatorialFreeModule(ZZ, ['a','b','c'])
-                sage: B = F.basis()
-                sage: f = B['a'] + 3*B['c']
-                sage: d = f.monomial_coefficients()
-                sage: d['a'] = 5
-                sage: f
-                B['a'] + 3*B['c']
-            </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="coproduct_on_basis">
+        sage: TestSuite(CoalgebrasWithBasis(ZZ)).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent.coproduct_on_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -185,7 +105,7 @@
                 sage: (a, b) = A._group.gens()
                 sage: A.coproduct_on_basis(a)
                 B[(1,2,3)] # B[(1,2,3)]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="counit_on_basis">
+            </opaque><constant name="parent.counit_on_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -216,7 +136,7 @@
                 sage: (a, b) = A._group.gens()
                 sage: A.counit_on_basis(a)
                 1
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
+            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.coproduct_iterated">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -230,16 +150,52 @@
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+            Apply ``n`` coproducts to ``self``.
 
-            All parents in the category ``Sets()`` should implement this method.
+            .. TODO::
+
+                Remove dependency on ``modules_with_basis`` methods.
 
             EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
+                sage: Psi = NonCommutativeSymmetricFunctions(QQ).Psi()
+                sage: Psi[2,2].coproduct_iterated(0)
+                Psi[2, 2]
+                sage: Psi[2,2].coproduct_iterated(2)
+                Psi[] # Psi[] # Psi[2, 2] + 2*Psi[] # Psi[2] # Psi[2]
+                 + Psi[] # Psi[2, 2] # Psi[] + 2*Psi[2] # Psi[] # Psi[2]
+                 + 2*Psi[2] # Psi[2] # Psi[] + Psi[2, 2] # Psi[] # Psi[]
+
+            TESTS::
+
+                sage: p = SymmetricFunctions(QQ).p()
+                sage: p[5,2,2].coproduct_iterated()
+                p[] # p[5, 2, 2] + 2*p[2] # p[5, 2] + p[2, 2] # p[5]
+                 + p[5] # p[2, 2] + 2*p[5, 2] # p[2] + p[5, 2, 2] # p[]
+                sage: p([]).coproduct_iterated(3)
+                p[] # p[] # p[] # p[]
+
+            ::
+
+                sage: Psi = NonCommutativeSymmetricFunctions(QQ).Psi()
+                sage: Psi[2,2].coproduct_iterated(0)
+                Psi[2, 2]
+                sage: Psi[2,2].coproduct_iterated(3)
+                Psi[] # Psi[] # Psi[] # Psi[2, 2] + 2*Psi[] # Psi[] # Psi[2] # Psi[2]
+                 + Psi[] # Psi[] # Psi[2, 2] # Psi[] + 2*Psi[] # Psi[2] # Psi[] # Psi[2]
+                 + 2*Psi[] # Psi[2] # Psi[2] # Psi[] + Psi[] # Psi[2, 2] # Psi[] # Psi[]
+                 + 2*Psi[2] # Psi[] # Psi[] # Psi[2] + 2*Psi[2] # Psi[] # Psi[2] # Psi[]
+                 + 2*Psi[2] # Psi[2] # Psi[] # Psi[] + Psi[2, 2] # Psi[] # Psi[] # Psi[]
+
+            ::
+
+                sage: m = SymmetricFunctionsNonCommutingVariables(QQ).m()
+                sage: m[[1,3],[2]].coproduct_iterated(2)
+                m{} # m{} # m{{1, 3}, {2}} + m{} # m{{1}} # m{{1, 2}}
+                 + m{} # m{{1, 2}} # m{{1}} + m{} # m{{1, 3}, {2}} # m{}
+                 + m{{1}} # m{} # m{{1, 2}} + m{{1}} # m{{1, 2}} # m{}
+                 + m{{1, 2}} # m{} # m{{1}} + m{{1, 2}} # m{{1}} # m{}
+                 + m{{1, 3}, {2}} # m{} # m{}
+                sage: m[[]].coproduct_iterated(3), m[[1,3],[2]].coproduct_iterated(0)
+                (m{} # m{} # m{} # m{}, m{{1, 3}, {2}})
             </opaque></document></theory></omdoc>

@@ -4,19 +4,3 @@ Includes http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super 
 Includes http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/super_algebras?SuperAlgebras
 Includes http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/coalgebras/Coalgebras?Super
-Declares http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?_add_
-constant http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?_add_
-Declares http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?_mul_
-constant http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?_mul_
-Declares http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?__nonzero__
-constant http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?__nonzero__
-Declares http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?__invert__
-constant http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?__invert__
-Declares http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?algebra_generators
-constant http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?algebra_generators
-Declares http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?__contains__
-constant http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?__contains__
-Declares http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?coproduct
-constant http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?coproduct
-Declares http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?counit
-constant http://www.sagemath.org/content/categories/bialgebras/Bialgebras?Super?counit

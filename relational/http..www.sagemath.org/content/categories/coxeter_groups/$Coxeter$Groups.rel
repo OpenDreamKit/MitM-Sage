@@ -3,21 +3,193 @@ HasMeta http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups 
 Includes http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups?GeneralizedCoxeterGroups
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?reflection_length
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?reflection_length
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?__invert__
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?__invert__
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?distinguished_reflection
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?distinguished_reflection
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?hyperplane_index_set
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?hyperplane_index_set
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?irreducible_components
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?irreducible_components
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?reflection
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?reflection
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?reflection_index_set
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?reflection_index_set
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?__contains__
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?__contains__
-Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?index_set
-constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?index_set
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.absolute_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.absolute_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.absolute_le
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.absolute_le
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.absolute_length
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.absolute_length
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.apply_demazure_product
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.apply_demazure_product
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.apply_simple_projection
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.apply_simple_projection
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.binary_factorizations
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.binary_factorizations
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_le
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_le
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_lower_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_lower_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_lower_covers_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_lower_covers_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_upper_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_upper_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_upper_covers_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.bruhat_upper_covers_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.canonical_matrix
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.canonical_matrix
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.coset_representative
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.coset_representative
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.cover_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.cover_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.coxeter_sorting_word
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.coxeter_sorting_word
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.deodhar_factor_element
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.deodhar_factor_element
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.deodhar_lift_down
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.deodhar_lift_down
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.deodhar_lift_up
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.deodhar_lift_up
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.descents
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.descents
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.first_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.first_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.has_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.has_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.has_full_support
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.has_full_support
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.has_left_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.has_left_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.has_right_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.has_right_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.inversions_as_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.inversions_as_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.is_coxeter_sortable
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.is_coxeter_sortable
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.is_grassmannian
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.is_grassmannian
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.left_inversions_as_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.left_inversions_as_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.length
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.length
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.lower_cover_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.lower_cover_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.lower_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.lower_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.min_demazure_product_greater
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.min_demazure_product_greater
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.reduced_word
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.reduced_word
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.reduced_word_graph
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.reduced_word_graph
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.reduced_word_reverse_iterator
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.reduced_word_reverse_iterator
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.reduced_words
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.reduced_words
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.support
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.support
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.upper_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.upper_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.weak_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.weak_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.weak_le
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?element.weak_le
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent._test_descents
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent._test_descents
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent._test_has_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent._test_has_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent._test_reduced_word
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent._test_reduced_word
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent._test_simple_projections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent._test_simple_projections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.bruhat_interval
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.bruhat_interval
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.canonical_representation
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.canonical_representation
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.coxeter_element
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.coxeter_element
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.demazure_product
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.demazure_product
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.elements_of_length
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.elements_of_length
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.grassmannian_elements
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.grassmannian_elements
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.random_element_of_length
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.random_element_of_length
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.simple_projection
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.simple_projection
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.simple_projections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.simple_projections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.standard_coxeter_elements
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.standard_coxeter_elements
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.weak_order_ideal
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?parent.weak_order_ideal
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.absolute_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.absolute_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.absolute_le
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.absolute_le
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.absolute_length
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.absolute_length
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.apply_demazure_product
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.apply_demazure_product
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.apply_simple_projection
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.apply_simple_projection
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.binary_factorizations
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.binary_factorizations
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_le
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_le
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_lower_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_lower_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_lower_covers_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_lower_covers_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_upper_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_upper_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_upper_covers_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.bruhat_upper_covers_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.canonical_matrix
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.canonical_matrix
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.coset_representative
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.coset_representative
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.cover_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.cover_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.coxeter_sorting_word
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.coxeter_sorting_word
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.deodhar_factor_element
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.deodhar_factor_element
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.deodhar_lift_down
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.deodhar_lift_down
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.deodhar_lift_up
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.deodhar_lift_up
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.descents
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.descents
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.first_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.first_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.has_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.has_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.has_full_support
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.has_full_support
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.has_left_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.has_left_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.has_right_descent
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.has_right_descent
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.inversions_as_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.inversions_as_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.is_coxeter_sortable
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.is_coxeter_sortable
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.is_grassmannian
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.is_grassmannian
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.left_inversions_as_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.left_inversions_as_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.length
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.length
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.lower_cover_reflections
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.lower_cover_reflections
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.lower_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.lower_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.min_demazure_product_greater
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.min_demazure_product_greater
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.reduced_word
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.reduced_word
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.reduced_word_graph
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.reduced_word_graph
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.reduced_word_reverse_iterator
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.reduced_word_reverse_iterator
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.reduced_words
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.reduced_words
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.support
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.support
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.upper_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.upper_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.weak_covers
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.weak_covers
+Declares http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.weak_le
+constant http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups?subcategory.weak_le

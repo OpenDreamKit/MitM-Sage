@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="AffineWeylGroups" base="http://www.sagemath.org/content/categories/affine_weyl_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/category?JoinCategory"></import><document name="Element Methods"><constant name="reflection_length">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="AffineWeylGroups" base="http://www.sagemath.org/content/categories/affine_weyl_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/category?JoinCategory"></import><document name="Element Methods"><constant name="element.affine_grassmannian_to_core">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -8,263 +8,38 @@
        
        
      </constant><opaque format="text">
-            Return the reflection length of ``self``.
-
-            This is the minimal length of a factorization of ``self``
-            into reflections.
-
-            EXAMPLES::
-
-                sage: W = ReflectionGroup((1,1,2))                      # optional - gap3
-                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
-                [0, 1]
-
-                sage: W = ReflectionGroup((2,1,2))                      # optional - gap3
-                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
-                [0, 1, 1, 1, 1, 2, 2, 2]
-
-                sage: W = ReflectionGroup((3,1,2))                      # optional - gap3
-                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
-                [0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-
-                sage: W = ReflectionGroup((2,2,2))                      # optional - gap3
-                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
-                [0, 1, 1, 2]
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="distinguished_reflection">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the `i`-th distinguished reflection of ``self``.
+            Bijection between affine Grassmannian elements of type `A_k^{(1)}` and `(k+1)`-cores.
 
             INPUT:
 
-            - ``i`` -- an element of the index set of the distinguished reflections.
+            - ``self`` -- an affine Grassmannian element of some affine Weyl group of type `A_k^{(1)}`
 
-            .. SEEALSO::
+            Recall that an element `w` of an affine Weyl group is
+            affine Grassmannian if all its all reduced words end in 0, see :meth:`is_affine_grassmannian`.
 
-                - :meth:`distinguished_reflections`
-                - :meth:`hyperplane_index_set`
+            OUTPUT:
 
-            EXAMPLES::
+            - a `(k+1)`-core
 
-                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=('a','b','c','d','e','f'))  # optional - gap3
-                sage: for i in W.hyperplane_index_set():                    # optional - gap3
-                ....:     print('%s %s'%(i, W.distinguished_reflection(i))) # optional - gap3
-                a (1,7)(2,4)(5,6)(8,10)(11,12)
-                b (1,4)(2,8)(3,5)(7,10)(9,11)
-                c (2,5)(3,9)(4,6)(8,11)(10,12)
-                d (1,8)(2,7)(3,6)(4,10)(9,12)
-                e (1,6)(2,9)(3,8)(5,11)(7,12)
-                f (1,11)(3,10)(4,9)(5,7)(6,12)
-            </opaque><opaque format="text">(Optional)</opaque><constant name="hyperplane_index_set">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the index set of the distinguished reflections of ``self``.
-
-            This is also the index set of the reflection hyperplanes
-            of ``self``, hence the name. This name is slightly abusive
-            since the concept of reflection hyperplanes is not defined
-            for all generalized Coxeter groups. However for all
-            practical purposes this is only used for complex
-            reflection groups, and there this is the desirable name.
-
-            .. SEEALSO::
-
-                - :meth:`distinguished_reflection`
-                - :meth:`distinguished_reflections`
+            See also :meth:`affine_grassmannian_to_partition`.
 
             EXAMPLES::
 
-                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
-                sage: W.hyperplane_index_set()                          # optional - gap3
-                (1, 2, 3, 4, 5, 6)
-                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=[1,3,'asdf',7,9,11])    # optional - gap3
-                sage: W.hyperplane_index_set()                          # optional - gap3
-                (1, 3, 'asdf', 7, 9, 11)
-                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=('a','b','c','d','e','f'))  # optional - gap3
-                sage: W.hyperplane_index_set()                          # optional - gap3
-                ('a', 'b', 'c', 'd', 'e', 'f')
-            </opaque><opaque format="text">(Optional)</opaque><constant name="irreducible_components">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the irreducible components of ``self`` as finite
-            reflection groups.
-
-            EXAMPLES::
-
-                sage: W = ReflectionGroup([1,1,3], [3,1,3], 4)          # optional - gap3
-                sage: W.irreducible_components()                        # optional - gap3
-                [Irreducible real reflection group of rank 2 and type A2,
-                 Irreducible complex reflection group of rank 3 and type G(3,1,3),
-                 Irreducible complex reflection group of rank 2 and type ST4]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the `i`-th reflection of ``self``.
-
-            For `i` in `1,\dots,N`, this gives the `i`-th reflection of
-            ``self``.
-
-            .. SEEALSO::
-
-                - :meth:`reflections_index_set`
-                - :meth:`reflections`
-
-            EXAMPLES::
-
-                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
-                sage: for i in W.reflection_index_set():                # optional - gap3
-                ....:     print('%s %s'%(i, W.reflection(i)))           # optional - gap3
-                1 (1,7)(2,4)(5,6)(8,10)(11,12)
-                2 (1,4)(2,8)(3,5)(7,10)(9,11)
-                3 (2,5)(3,9)(4,6)(8,11)(10,12)
-                4 (1,8)(2,7)(3,6)(4,10)(9,12)
-                5 (1,6)(2,9)(3,8)(5,11)(7,12)
-                6 (1,11)(3,10)(4,9)(5,7)(6,12)
-            </opaque><opaque format="text">(Optional)</opaque><constant name="reflection_index_set">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the index set of the reflections of ``self``.
-
-            .. SEEALSO::
-
-                - :meth:`reflection`
-                - :meth:`reflections`
-
-            EXAMPLES::
-
-                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
-                sage: W.reflection_index_set()                          # optional - gap3
-                (1, 2, 3, 4, 5, 6)
-                sage: W = ReflectionGroup((1,1,4), reflection_index_set=[1,3,'asdf',7,9,11])    # optional - gap3
-                sage: W.reflection_index_set()                          # optional - gap3
-                (1, 3, 'asdf', 7, 9, 11)
-                sage: W = ReflectionGroup((1,1,4), reflection_index_set=('a','b','c','d','e','f'))  # optional - gap3
-                sage: W.reflection_index_set()                          # optional - gap3
-                ('a', 'b', 'c', 'd', 'e', 'f')
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
+                sage: W = WeylGroup(['A',2,1])
+                sage: w = W.from_reduced_word([0,2,1,0])
+                sage: la = w.affine_grassmannian_to_core(); la
+                [4, 2]
+                sage: type(la)
+                &lt;class 'sage.combinat.core.Cores_length_with_category.element_class'&gt;
+                sage: la.to_grassmannian() == w
                 True
-            </opaque><constant name="index_set">
+
+                sage: w = W.from_reduced_word([0,2,1])
+                sage: w.affine_grassmannian_to_core()
+                Traceback (most recent call last):
+                ...
+                ValueError: Error! this only works on type 'A' affine Grassmannian elements
+            </opaque><constant name="element.affine_grassmannian_to_partition">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -274,28 +49,301 @@
        
        
      </constant><opaque format="text">
-            Return the index set of (the simple reflections of)
-            ``self``, as a list (or iterable).
+            Bijection between affine Grassmannian elements of type `A_k^{(1)}` and `k`-bounded partitions.
 
-            .. SEEALSO::
+            INPUT:
 
-                - :meth:`simple_reflection`
-                - :meth:`simple_reflections`
+            - ``self`` is affine Grassmannian element of the affine Weyl group of type `A_k^{(1)}` (i.e. all reduced words end in 0)
+
+            OUTPUT:
+
+            - `k`-bounded partition
+
+            See also :meth:`affine_grassmannian_to_core`.
 
             EXAMPLES::
 
-                sage: W = CoxeterGroups().Finite().example(); W
-                The 5-th dihedral group of order 10
-                sage: W.index_set()
-                (1, 2)
+                sage: k = 2
+                sage: W = WeylGroup(['A',k,1])
+                sage: w = W.from_reduced_word([0,2,1,0])
+                sage: la = w.affine_grassmannian_to_partition(); la
+                [2, 2]
+                sage: la.from_kbounded_to_grassmannian(k) == w
+                True
+            </opaque><constant name="element.is_affine_grassmannian">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Tests whether ``self`` is affine Grassmannian
 
-                sage: W = ColoredPermutations(1, 4)
-                sage: W.index_set()
-                (1, 2, 3)
-                sage: W = ReflectionGroup((1,1,4), index_set=[1,3,'asdf'])  # optional - gap3
-                sage: W.index_set()                                     # optional - gap3
-                (1, 3, 'asdf')
-                sage: W = ReflectionGroup((1,1,4), index_set=('a','b','c')) # optional - gap3
-                sage: W.index_set()                                     # optional - gap3
-                ('a', 'b', 'c')
+            An element of an affine Weyl group is *affine Grassmannian*
+            if any of the following equivalent properties holds:
+
+             - all reduced words for self end with 0.
+             - self is the identity, or 0 is its single right descent.
+             - self is a mimimal coset representative for W / cl W.
+
+            EXAMPLES::
+
+                sage: W=WeylGroup(['A',3,1])
+                sage: w=W.from_reduced_word([2,1,0])
+                sage: w.is_affine_grassmannian()
+                True
+                sage: w=W.from_reduced_word([2,0])
+                sage: w.is_affine_grassmannian()
+                False
+                sage: W.one().is_affine_grassmannian()
+                True
+            </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of affine Weyl groups
+
+    .. todo:: add a description of this category
+
+    .. seealso::
+
+        - :wikipedia:`Affine_weyl_group`
+        - :class:`WeylGroups`, :class:`WeylGroup`
+
+    EXAMPLES::
+
+        sage: C = AffineWeylGroups(); C
+        Category of affine weyl groups
+        sage: C.super_categories()
+        [Category of infinite weyl groups]
+
+        sage: C.example()
+        NotImplemented
+        sage: W = WeylGroup([&quot;A&quot;,4,1]); W
+        Weyl Group of type ['A', 4, 1] (as a matrix group acting on the root space)
+        sage: W.category()
+        Category of affine weyl groups
+
+    TESTS::
+
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent.affine_grassmannian_elements_of_given_length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the affine Grassmannian elements of length `k`, as a list.
+
+            EXAMPLES::
+
+                sage: W=WeylGroup(['A',3,1])
+                sage: [x.reduced_word() for x in W.affine_grassmannian_elements_of_given_length(3)]
+                [[2, 1, 0], [3, 1, 0], [2, 3, 0]]
+
+            .. SEEALSO::
+
+                :meth:`AffineWeylGroups.ElementMethods.is_affine_grassmannian`
+
+            .. TODO:: should return an enumerated set, with iterator, ...
+            </opaque><constant name="parent.special_node">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.affine_grassmannian_to_core">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Bijection between affine Grassmannian elements of type `A_k^{(1)}` and `(k+1)`-cores.
+
+            INPUT:
+
+            - ``self`` -- an affine Grassmannian element of some affine Weyl group of type `A_k^{(1)}`
+
+            Recall that an element `w` of an affine Weyl group is
+            affine Grassmannian if all its all reduced words end in 0, see :meth:`is_affine_grassmannian`.
+
+            OUTPUT:
+
+            - a `(k+1)`-core
+
+            See also :meth:`affine_grassmannian_to_partition`.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',2,1])
+                sage: w = W.from_reduced_word([0,2,1,0])
+                sage: la = w.affine_grassmannian_to_core(); la
+                [4, 2]
+                sage: type(la)
+                &lt;class 'sage.combinat.core.Cores_length_with_category.element_class'&gt;
+                sage: la.to_grassmannian() == w
+                True
+
+                sage: w = W.from_reduced_word([0,2,1])
+                sage: w.affine_grassmannian_to_core()
+                Traceback (most recent call last):
+                ...
+                ValueError: Error! this only works on type 'A' affine Grassmannian elements
+            </opaque><constant name="subcategory.affine_grassmannian_to_partition">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Bijection between affine Grassmannian elements of type `A_k^{(1)}` and `k`-bounded partitions.
+
+            INPUT:
+
+            - ``self`` is affine Grassmannian element of the affine Weyl group of type `A_k^{(1)}` (i.e. all reduced words end in 0)
+
+            OUTPUT:
+
+            - `k`-bounded partition
+
+            See also :meth:`affine_grassmannian_to_core`.
+
+            EXAMPLES::
+
+                sage: k = 2
+                sage: W = WeylGroup(['A',k,1])
+                sage: w = W.from_reduced_word([0,2,1,0])
+                sage: la = w.affine_grassmannian_to_partition(); la
+                [2, 2]
+                sage: la.from_kbounded_to_grassmannian(k) == w
+                True
+            </opaque><constant name="subcategory.is_affine_grassmannian">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Tests whether ``self`` is affine Grassmannian
+
+            An element of an affine Weyl group is *affine Grassmannian*
+            if any of the following equivalent properties holds:
+
+             - all reduced words for self end with 0.
+             - self is the identity, or 0 is its single right descent.
+             - self is a mimimal coset representative for W / cl W.
+
+            EXAMPLES::
+
+                sage: W=WeylGroup(['A',3,1])
+                sage: w=W.from_reduced_word([2,1,0])
+                sage: w.is_affine_grassmannian()
+                True
+                sage: w=W.from_reduced_word([2,0])
+                sage: w.is_affine_grassmannian()
+                False
+                sage: W.one().is_affine_grassmannian()
+                True
             </opaque></document></theory></omdoc>

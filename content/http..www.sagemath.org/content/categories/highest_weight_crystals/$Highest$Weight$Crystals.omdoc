@@ -1,51 +1,71 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="HighestWeightCrystals" base="http://www.sagemath.org/content/categories/highest_weight_crystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/crystals?Crystals"></import><document name="Element Methods"><constant name="e">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="HighestWeightCrystals" base="http://www.sagemath.org/content/categories/highest_weight_crystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/crystals?Crystals"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
+    The category of highest weight crystals.
+
+    A crystal is highest weight if it is acyclic; in particular, every
+    connected component has a unique highest weight element, and that
+    element generate the component.
+
+    EXAMPLES::
+
+        sage: C = HighestWeightCrystals()
+        sage: C
+        Category of highest weight crystals
+        sage: C.super_categories()
+        [Category of crystals]
+        sage: C.example()
+        Highest weight crystal of type A_3 of highest weight omega_1
+
+    TESTS::
+
+        sage: TestSuite(C).run()
+        sage: B = HighestWeightCrystals().example()
+        sage: TestSuite(B).run(verbose = True)
+        running ._test_an_element() . . . pass
+        running ._test_cardinality() . . . pass
+        running ._test_category() . . . pass
+        running ._test_elements() . . .
+          Running the test suite of self.an_element()
+          running ._test_category() . . . pass
+          running ._test_eq() . . . pass
+          running ._test_not_implemented_methods() . . . pass
+          running ._test_pickling() . . . pass
+          running ._test_stembridge_local_axioms() . . . pass
+          pass
+        running ._test_elements_eq_reflexive() . . . pass
+        running ._test_elements_eq_symmetric() . . . pass
+        running ._test_elements_eq_transitive() . . . pass
+        running ._test_elements_neq() . . . pass
+        running ._test_enumerated_set_contains() . . . pass
+        running ._test_enumerated_set_iter_cardinality() . . . pass
+        running ._test_enumerated_set_iter_list() . . . pass
+        running ._test_eq() . . . pass
+        running ._test_fast_iter() . . . pass
+        running ._test_not_implemented_methods() . . . pass
+        running ._test_pickling() . . . pass
+        running ._test_some_elements() . . . pass
+        running ._test_stembridge_local_axioms() . . . pass
+    </opaque></document><document name="Parent Methods:"><constant name="parent.highest_weight_vector">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            Return `e_i` of ``self`` if it exists or ``None`` otherwise.
+            Returns the highest weight vector if there is a single one;
+            otherwise, raises an error.
 
-            This method should be implemented by the element class of
-            the crystal.
+            Caveat: this assumes that :meth:`.highest_weight_vectors`
+            returns a list or tuple.
 
-            EXAMPLES::
-
-                sage: C = Crystals().example(5)
-                sage: x = C[2]; x
-                3
-                sage: x.e(1), x.e(2), x.e(3)
-                (None, 2, None)
-            </opaque><constant name="epsilon">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
             EXAMPLES::
 
                 sage: C = crystals.Letters(['A',5])
-                sage: C(1).epsilon(1)
-                0
-                sage: C(2).epsilon(1)
+                sage: C.highest_weight_vector()
                 1
-            </opaque><constant name="f">
+            </opaque><constant name="parent.highest_weight_vectors">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -58,20 +78,84 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Return `f_i` of ``self`` if it exists or ``None`` otherwise.
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
 
-            This method should be implemented by the element class of
-            the crystal.
+    A decorator that creates a cached version of an instance
+    method of a class.
 
-            EXAMPLES::
+    .. NOTE::
 
-                sage: C = Crystals().example(5)
-                sage: x = C[1]; x
-                2
-                sage: x.f(1), x.f(2), x.f(3)
-                (None, 3, None)
-            </opaque><constant name="phi">
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="parent.lowest_weight_vectors">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -84,89 +168,84 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            EXAMPLES::
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
 
-                sage: C = crystals.Letters(['A',5])
-                sage: C(1).phi(1)
-                1
-                sage: C(2).phi(1)
-                0
-            </opaque><constant name="weight">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the weight of this crystal element.
+    A decorator that creates a cached version of an instance
+    method of a class.
 
-            This method should be implemented by the element class of
-            the crystal.
+    .. NOTE::
 
-            EXAMPLES::
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
 
-                sage: C = crystals.Letters(['A',5])
-                sage: C(1).weight()
-                (1, 0, 0, 0, 0, 0)
-            </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+    EXAMPLES::
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
 
-            EXAMPLES::
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+    So, you would hardly ever see an instance of this class alive.
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
 
-            .. NOTE::
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="parent.q_dimension">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -179,17 +258,81 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
 
-            All parents in the category ``Sets()`` should implement this method.
+    A decorator that creates a cached version of an instance
+    method of a class.
 
-            EXAMPLES::
+    .. NOTE::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>

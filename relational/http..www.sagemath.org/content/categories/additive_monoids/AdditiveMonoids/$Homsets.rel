@@ -6,11 +6,3 @@ Includes http://www.sagemath.org/content/categories/additive_monoids/AdditiveMon
 Includes http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids
 Declares http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?sage.categories.additive_monoids.AdditiveMonoids.Homsets
 constant http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?sage.categories.additive_monoids.AdditiveMonoids.Homsets
-Declares http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?_add_
-constant http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?_add_
-Declares http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?__nonzero__
-constant http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?__nonzero__
-Declares http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?__invert__
-constant http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?__invert__
-Declares http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?__contains__
-constant http://www.sagemath.org/content/categories/additive_monoids/AdditiveMonoids?Homsets?__contains__

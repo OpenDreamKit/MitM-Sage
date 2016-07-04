@@ -5,7 +5,3 @@ Includes http://www.sagemath.org/content/categories/groupoid?Groupoid http://www
 Includes http://www.sagemath.org/content/categories/groupoid?Groupoid http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/groupoid?Groupoid http://www.sagemath.org/content/categories/groupoid?Groupoid?sage.categories.groupoid.Groupoid
 constant http://www.sagemath.org/content/categories/groupoid?Groupoid?sage.categories.groupoid.Groupoid
-Declares http://www.sagemath.org/content/categories/groupoid?Groupoid http://www.sagemath.org/content/categories/groupoid?Groupoid?__invert__
-constant http://www.sagemath.org/content/categories/groupoid?Groupoid?__invert__
-Declares http://www.sagemath.org/content/categories/groupoid?Groupoid http://www.sagemath.org/content/categories/groupoid?Groupoid?__contains__
-constant http://www.sagemath.org/content/categories/groupoid?Groupoid?__contains__

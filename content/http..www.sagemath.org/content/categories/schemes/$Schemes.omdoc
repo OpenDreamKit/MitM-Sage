@@ -6,84 +6,136 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+     </constant><document name="Element Methods"><opaque format="text">
+    The category of all schemes.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+    EXAMPLES::
 
-            EXAMPLES::
+        sage: Schemes()
+        Category of schemes
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+    ``Schemes`` can also be used to construct the category of schemes
+    over a given base::
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+        sage: Schemes(Spec(ZZ))
+        Category of schemes over Integer Ring
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+        sage: Schemes(ZZ)
+        Category of schemes over Integer Ring
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+    .. TODO::
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+        Make ``Schemes()`` a singleton category (and remove
+        :class:`Schemes` from the workaround in
+        :meth:`.category_types.Category_over_base._test_category_over_bases`).
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+        This is currently incompatible with the dispatching below.
 
-            .. NOTE::
+    TESTS::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+        sage: TestSuite(Schemes()).run()
 
-            All parents in the category ``Sets()`` should implement this method.
+    Check that Hom sets of schemes are in the correct category::
 
-            EXAMPLES::
+        sage: Schemes().Homsets().super_categories()
+        [Category of homsets]
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of all schemes.
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+    EXAMPLES::
+
+        sage: Schemes()
+        Category of schemes
+
+    ``Schemes`` can also be used to construct the category of schemes
+    over a given base::
+
+        sage: Schemes(Spec(ZZ))
+        Category of schemes over Integer Ring
+
+        sage: Schemes(ZZ)
+        Category of schemes over Integer Ring
+
+    .. TODO::
+
+        Make ``Schemes()`` a singleton category (and remove
+        :class:`Schemes` from the workaround in
+        :meth:`.category_types.Category_over_base._test_category_over_bases`).
+
+        This is currently incompatible with the dispatching below.
+
+    TESTS::
+
+        sage: TestSuite(Schemes()).run()
+
+    Check that Hom sets of schemes are in the correct category::
+
+        sage: Schemes().Homsets().super_categories()
+        [Category of homsets]
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    The category of all schemes.
+
+    EXAMPLES::
+
+        sage: Schemes()
+        Category of schemes
+
+    ``Schemes`` can also be used to construct the category of schemes
+    over a given base::
+
+        sage: Schemes(Spec(ZZ))
+        Category of schemes over Integer Ring
+
+        sage: Schemes(ZZ)
+        Category of schemes over Integer Ring
+
+    .. TODO::
+
+        Make ``Schemes()`` a singleton category (and remove
+        :class:`Schemes` from the workaround in
+        :meth:`.category_types.Category_over_base._test_category_over_bases`).
+
+        This is currently incompatible with the dispatching below.
+
+    TESTS::
+
+        sage: TestSuite(Schemes()).run()
+
+    Check that Hom sets of schemes are in the correct category::
+
+        sage: Schemes().Homsets().super_categories()
+        [Category of homsets]
+    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of all schemes.
+
+    EXAMPLES::
+
+        sage: Schemes()
+        Category of schemes
+
+    ``Schemes`` can also be used to construct the category of schemes
+    over a given base::
+
+        sage: Schemes(Spec(ZZ))
+        Category of schemes over Integer Ring
+
+        sage: Schemes(ZZ)
+        Category of schemes over Integer Ring
+
+    .. TODO::
+
+        Make ``Schemes()`` a singleton category (and remove
+        :class:`Schemes` from the workaround in
+        :meth:`.category_types.Category_over_base._test_category_over_bases`).
+
+        This is currently incompatible with the dispatching below.
+
+    TESTS::
+
+        sage: TestSuite(Schemes()).run()
+
+    Check that Hom sets of schemes are in the correct category::
+
+        sage: Schemes().Homsets().super_categories()
+        [Category of homsets]
+    </opaque></document></theory></omdoc>

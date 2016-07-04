@@ -6,11 +6,3 @@ Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagm
 Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets http://www.sagemath.org/content/categories/homsets?Homsets
 Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital.Homsets
 constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital.Homsets
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?_add_
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?_add_
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?__nonzero__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?__nonzero__
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?__invert__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?__invert__
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?__contains__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Homsets?__contains__

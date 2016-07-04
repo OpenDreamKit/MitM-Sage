@@ -5,11 +5,5 @@ Includes http://www.sagemath.org/content/categories/modules_with_basis/ModulesWi
 Includes http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets http://www.sagemath.org/content/categories/modules/Modules?Homsets
 Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?sage.categories.modules_with_basis.ModulesWithBasis.Homsets
 constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?sage.categories.modules_with_basis.ModulesWithBasis.Homsets
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?_add_
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?_add_
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?__nonzero__
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?__nonzero__
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?__invert__
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?__invert__
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?__contains__
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?__contains__
+Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?parent.__call_on_basis__
+constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?Homsets?parent.__call_on_basis__

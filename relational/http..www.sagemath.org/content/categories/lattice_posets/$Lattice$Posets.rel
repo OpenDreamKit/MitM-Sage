@@ -5,21 +5,7 @@ Includes http://www.sagemath.org/content/categories/lattice_posets?LatticePosets
 Includes http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/posets?Posets
 Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?sage.categories.lattice_posets.LatticePosets
 constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?sage.categories.lattice_posets.LatticePosets
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?__invert__
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?__invert__
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?lower_covers
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?lower_covers
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?order_filter
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?order_filter
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?order_ideal
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?order_ideal
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?upper_covers
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?upper_covers
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?__contains__
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?__contains__
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?join
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?join
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?le
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?le
-Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?meet
-constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?meet
+Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?parent.join
+constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?parent.join
+Declares http://www.sagemath.org/content/categories/lattice_posets?LatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?parent.meet
+constant http://www.sagemath.org/content/categories/lattice_posets?LatticePosets?parent.meet

@@ -4,9 +4,9 @@ Includes http://www.sagemath.org/content/categories/finite_groups?FiniteGroups h
 Includes http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids
 Includes http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/content/categories/groups?Groups
-Declares http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?_mul_
-constant http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?_mul_
-Declares http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?__invert__
-constant http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?__invert__
-Declares http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?__contains__
-constant http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?__contains__
+Declares http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?parent.cayley_graph_disabled
+constant http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?parent.cayley_graph_disabled
+Declares http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?parent.conjugacy_classes
+constant http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?parent.conjugacy_classes
+Declares http://www.sagemath.org/content/categories/finite_groups?FiniteGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?parent.conjugacy_classes_representatives
+constant http://www.sagemath.org/content/categories/finite_groups?FiniteGroups?parent.conjugacy_classes_representatives

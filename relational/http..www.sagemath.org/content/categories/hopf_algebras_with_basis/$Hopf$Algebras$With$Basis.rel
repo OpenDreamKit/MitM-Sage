@@ -4,25 +4,7 @@ Includes http://www.sagemath.org/content/categories/hopf_algebras_with_basis?Hop
 Includes http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras
 Includes http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?_add_
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?_add_
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?_mul_
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?_mul_
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?__nonzero__
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?__nonzero__
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?monomial_coefficients
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?__invert__
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?__invert__
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?antipode_on_basis
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?antipode_on_basis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?coproduct_on_basis
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?coproduct_on_basis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?counit_on_basis
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?counit_on_basis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?one_basis
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?one_basis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?product_on_basis
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?product_on_basis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?__contains__
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?__contains__
+Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?parent._test_antipode
+constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?parent._test_antipode
+Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?parent.antipode_on_basis
+constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis?parent.antipode_on_basis

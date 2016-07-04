@@ -1,34 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteMonoids" base="http://www.sagemath.org/content/categories/finite_monoids" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/monoids?Monoids"></import><import from="http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups"></import><document name="Element Methods"><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
-
-            INPUT:
-
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Morphism Methods:"><constant name="__invert__">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteMonoids" base="http://www.sagemath.org/content/categories/finite_monoids" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/monoids?Monoids"></import><import from="http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups"></import><document name="Element Methods"><constant name="element.pseudo_order">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -38,74 +8,118 @@
        
        
      </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+            Returns the pair `[k, j]` with `k` minimal and `0\leq j &lt;k` such
+            that ``self^k == self^j``.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+            Note that `j` is uniquely determined.
 
             EXAMPLES::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+                sage: M = FiniteMonoids().example(); M
+                An example of a finite multiplicative monoid: the integers modulo 12
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+                sage: x = M(2)
+                sage: [ x^i for i in range(7) ]
+                [1, 2, 4, 8, 4, 8, 4]
+                sage: x.pseudo_order()
+                [4, 2]
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+                sage: x = M(3)
+                sage: [ x^i for i in range(7) ]
+                [1, 3, 9, 3, 9, 3, 9]
+                sage: x.pseudo_order()
+                [3, 1]
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+                sage: x = M(4)
+                sage: [ x^i for i in range(7) ]
+                [1, 4, 4, 4, 4, 4, 4]
+                sage: x.pseudo_order()
+                [2, 1]
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+                sage: x = M(5)
+                sage: [ x^i for i in range(7) ]
+                [1, 5, 1, 5, 1, 5, 1]
+                sage: x.pseudo_order()
+                [2, 0]
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+            TODO: more appropriate name? see, for example, Jean-Eric Pin's
+            lecture notes on semigroups.
+            </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of finite (multiplicative) :class:`monoids &lt;Monoids&gt;`.
 
-            .. NOTE::
+    A finite monoid is a :class:`finite sets &lt;FiniteSets&gt;` endowed
+    with an associative unital binary operation `*`.
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+    EXAMPLES::
+
+        sage: FiniteMonoids()
+        Category of finite monoids
+        sage: FiniteMonoids().super_categories()
+        [Category of monoids, Category of finite semigroups]
+
+    TESTS::
+
+        sage: TestSuite(FiniteMonoids()).run()
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    The category of finite (multiplicative) :class:`monoids &lt;Monoids&gt;`.
+
+    A finite monoid is a :class:`finite sets &lt;FiniteSets&gt;` endowed
+    with an associative unital binary operation `*`.
+
+    EXAMPLES::
+
+        sage: FiniteMonoids()
+        Category of finite monoids
+        sage: FiniteMonoids().super_categories()
+        [Category of monoids, Category of finite semigroups]
+
+    TESTS::
+
+        sage: TestSuite(FiniteMonoids()).run()
+    </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.pseudo_order">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+            Returns the pair `[k, j]` with `k` minimal and `0\leq j &lt;k` such
+            that ``self^k == self^j``.
 
-            All parents in the category ``Sets()`` should implement this method.
+            Note that `j` is uniquely determined.
 
             EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
+                sage: M = FiniteMonoids().example(); M
+                An example of a finite multiplicative monoid: the integers modulo 12
+
+                sage: x = M(2)
+                sage: [ x^i for i in range(7) ]
+                [1, 2, 4, 8, 4, 8, 4]
+                sage: x.pseudo_order()
+                [4, 2]
+
+                sage: x = M(3)
+                sage: [ x^i for i in range(7) ]
+                [1, 3, 9, 3, 9, 3, 9]
+                sage: x.pseudo_order()
+                [3, 1]
+
+                sage: x = M(4)
+                sage: [ x^i for i in range(7) ]
+                [1, 4, 4, 4, 4, 4, 4]
+                sage: x.pseudo_order()
+                [2, 1]
+
+                sage: x = M(5)
+                sage: [ x^i for i in range(7) ]
+                [1, 5, 1, 5, 1, 5, 1]
+                sage: x.pseudo_order()
+                [2, 0]
+
+            TODO: more appropriate name? see, for example, Jean-Eric Pin's
+            lecture notes on semigroups.
             </opaque></document></theory></omdoc>

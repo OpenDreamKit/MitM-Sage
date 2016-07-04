@@ -6,13 +6,3 @@ Includes http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObje
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?sage.categories.sets_cat.Sets.IsomorphicObjects
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?sage.categories.sets_cat.Sets.IsomorphicObjects
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?__invert__
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?__invert__
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?__contains__
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?__contains__
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?ambient
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?ambient
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?lift
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?lift
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?retract
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?IsomorphicObjects?retract

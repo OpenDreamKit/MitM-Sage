@@ -4,17 +4,3 @@ Includes http://www.sagemath.org/content/categories/associative_algebras?Associa
 Includes http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/rngs?Rngs
 Includes http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/magmatic_algebras?MagmaticAlgebras
-Declares http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?_add_
-constant http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?_add_
-Declares http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?_mul_
-constant http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?_mul_
-Declares http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?__nonzero__
-constant http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?__invert__
-constant http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?__invert__
-Declares http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?algebra_generators
-constant http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?algebra_generators
-Declares http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?semigroup_generators
-constant http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?semigroup_generators
-Declares http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?__contains__
-constant http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras?__contains__

@@ -5,19 +5,3 @@ Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients 
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras?Algebras
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/monoids/Monoids?Subquotients
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/semigroups/Semigroups?Quotients
-Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?_add_
-constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?_add_
-Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?_mul_
-constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?_mul_
-Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__nonzero__
-constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__nonzero__
-Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__invert__
-constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__invert__
-Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__contains__
-constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?__contains__
-Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?ambient
-constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?ambient
-Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?lift
-constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?lift
-Declares http://www.sagemath.org/content/categories/algebras/Algebras?Quotients http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?retract
-constant http://www.sagemath.org/content/categories/algebras/Algebras?Quotients?retract

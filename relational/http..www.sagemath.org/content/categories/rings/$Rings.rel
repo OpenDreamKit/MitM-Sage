@@ -4,13 +4,35 @@ Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagem
 Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rngs?Rngs
 Includes http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/semirings?Semirings
-Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?_add_
-constant http://www.sagemath.org/content/categories/rings?Rings?_add_
-Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?_mul_
-constant http://www.sagemath.org/content/categories/rings?Rings?_mul_
-Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__nonzero__
-constant http://www.sagemath.org/content/categories/rings?Rings?__nonzero__
-Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__invert__
-constant http://www.sagemath.org/content/categories/rings?Rings?__invert__
-Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?__contains__
-constant http://www.sagemath.org/content/categories/rings?Rings?__contains__
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?element.is_unit
+constant http://www.sagemath.org/content/categories/rings?Rings?element.is_unit
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent._Hom_
+constant http://www.sagemath.org/content/categories/rings?Rings?parent._Hom_
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.__getitem__
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.__getitem__
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent._ideal_class_
+constant http://www.sagemath.org/content/categories/rings?Rings?parent._ideal_class_
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent._mul_
+constant http://www.sagemath.org/content/categories/rings?Rings?parent._mul_
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent._test_characteristic
+constant http://www.sagemath.org/content/categories/rings?Rings?parent._test_characteristic
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.bracket
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.bracket
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.characteristic
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.characteristic
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.ideal
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.ideal
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.ideal_monoid
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.ideal_monoid
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.is_ring
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.is_ring
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.is_zero
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.is_zero
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.quo
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.quo
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.quotient
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.quotient
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.quotient_ring
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.quotient_ring
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?subcategory.is_unit
+constant http://www.sagemath.org/content/categories/rings?Rings?subcategory.is_unit

@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="WithBasis" base="http://www.sagemath.org/content/categories/unital_algebras/UnitalAlgebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis"></import><import from="http://www.sagemath.org/content/categories/unital_algebras?UnitalAlgebras"></import><document name="Element Methods"><constant name="_add_">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="WithBasis" base="http://www.sagemath.org/content/categories/unital_algebras/UnitalAlgebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis"></import><import from="http://www.sagemath.org/content/categories/unital_algebras?UnitalAlgebras"></import><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"><constant name="parent.from_base_ring_from_one_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -12,179 +12,22 @@
        
        
      </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+                Implement the canonical embeding from the ground ring.
 
-            INPUT:
+                INPUT:
 
-            - ``self``, ``right`` -- two elements with the same parent
+                - ``r`` -- an element of the coefficient ring
 
-            OUTPUT:
+                EXAMPLES::
 
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
-
-            INPUT:
-
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
-
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
-
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
-
-                TESTS::
-
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque><constant name="monomial_coefficients">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return a dictionary whose keys are indices of basis elements
-            in the support of ``self`` and whose values are the
-            corresponding coefficients.
-
-            INPUT:
-
-            - ``copy`` -- (default: ``True``) if ``self`` is internally
-              represented by a dictionary ``d``, then make a copy of ``d``;
-              if ``False``, then this can cause undesired behavior by
-              mutating ``d``
-
-            EXAMPLES::
-
-                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
-                sage: B = F.basis()
-                sage: f = B['a'] + 3*B['c']
-                sage: d = f.monomial_coefficients()
-                sage: d['a']
-                1
-                sage: d['c']
-                3
-
-            TESTS:
-
-            We check that we make a copy of the coefficient dictionary::
-
-                sage: F = CombinatorialFreeModule(ZZ, ['a','b','c'])
-                sage: B = F.basis()
-                sage: f = B['a'] + 3*B['c']
-                sage: d = f.monomial_coefficients()
-                sage: d['a'] = 5
-                sage: f
-                B['a'] + 3*B['c']
-            </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="one_basis">
+                    sage: A = AlgebrasWithBasis(QQ).example()
+                    sage: A.from_base_ring_from_one_basis(3)
+                    3*B[word: ]
+                    sage: A.from_base_ring(3)
+                    3*B[word: ]
+                    sage: A(3)
+                    3*B[word: ]
+                </opaque><constant name="parent.one_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -209,44 +52,7 @@
                     B[word: ]
                     sage: A.from_base_ring(4)
                     4*B[word: ]
-                </opaque><opaque format="text">(Optional)</opaque><constant name="product_on_basis">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                The product of the algebra on the basis (optional).
-
-                INPUT:
-
-                - ``i``, ``j`` -- the indices of two elements of the
-                  basis of ``self``
-
-                Return the product of the two corresponding basis elements
-                indexed by ``i`` and ``j``.
-
-                If implemented, :meth:`product` is defined from
-                it by bilinearity.
-
-                EXAMPLES::
-
-                    sage: A = AlgebrasWithBasis(QQ).example()
-                    sage: Word = A.basis().keys()
-                    sage: A.product_on_basis(Word(&quot;abc&quot;),Word(&quot;cba&quot;))
-                    B[word: abccba]
-                </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
+                </opaque><constant name="parent.one_from_one_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -259,17 +65,81 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
 
-            All parents in the category ``Sets()`` should implement this method.
+    A decorator that creates a cached version of an instance
+    method of a class.
 
-            EXAMPLES::
+    .. NOTE::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>

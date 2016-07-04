@@ -5,11 +5,15 @@ Includes http://www.sagemath.org/content/categories/classical_crystals?Classical
 Includes http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals
 Includes http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals
 Includes http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals
-Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?e
-constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?e
-Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?f
-constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?f
-Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?__invert__
-constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?__invert__
-Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?__contains__
-constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?__contains__
+Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?element.lusztig_involution
+constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?element.lusztig_involution
+Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent._test_fast_iter
+constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent._test_fast_iter
+Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.character
+constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.character
+Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.demazure_character
+constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.demazure_character
+Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.opposition_automorphism
+constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.opposition_automorphism
+Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?subcategory.lusztig_involution
+constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?subcategory.lusztig_involution

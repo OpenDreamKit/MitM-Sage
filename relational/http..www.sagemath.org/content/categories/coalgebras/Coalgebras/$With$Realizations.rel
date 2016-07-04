@@ -4,11 +4,3 @@ Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRe
 Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?WithRealizations
 Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations http://www.sagemath.org/content/categories/coalgebras?Coalgebras
-Declares http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations?_add_
-constant http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations?_add_
-Declares http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations?__nonzero__
-constant http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations?__nonzero__
-Declares http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations?__invert__
-constant http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations?__invert__
-Declares http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations?a_realization
-constant http://www.sagemath.org/content/categories/coalgebras/Coalgebras?WithRealizations?a_realization

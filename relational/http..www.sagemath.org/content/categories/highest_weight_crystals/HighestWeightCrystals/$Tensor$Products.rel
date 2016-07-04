@@ -4,17 +4,3 @@ Includes http://www.sagemath.org/content/categories/highest_weight_crystals/High
 Includes http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts
 Includes http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals
-Declares http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?e
-constant http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?e
-Declares http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?epsilon
-constant http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?epsilon
-Declares http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?f
-constant http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?f
-Declares http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?phi
-constant http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?phi
-Declares http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?weight
-constant http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?weight
-Declares http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?__invert__
-constant http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?__invert__
-Declares http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?__contains__
-constant http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts?__contains__

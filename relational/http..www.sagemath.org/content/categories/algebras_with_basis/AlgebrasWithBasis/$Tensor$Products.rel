@@ -5,15 +5,3 @@ Includes http://www.sagemath.org/content/categories/algebras_with_basis/Algebras
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras/Algebras?TensorProducts
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?TensorProducts
-Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?_add_
-constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?_add_
-Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?_mul_
-constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?_mul_
-Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?__nonzero__
-constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?__nonzero__
-Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?monomial_coefficients
-constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?__invert__
-constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?__invert__
-Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?__contains__
-constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts?__contains__

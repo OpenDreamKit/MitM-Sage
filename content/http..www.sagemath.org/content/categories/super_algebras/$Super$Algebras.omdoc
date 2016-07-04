@@ -1,184 +1,70 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="SuperAlgebras" base="http://www.sagemath.org/content/categories/super_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras"></import><import from="http://www.sagemath.org/content/categories/super_modules?SuperModules"></import><document name="Element Methods"><constant name="_add_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="SuperAlgebras" base="http://www.sagemath.org/content/categories/super_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras"></import><import from="http://www.sagemath.org/content/categories/super_modules?SuperModules"></import><document name="Element Methods"><opaque format="text">
+    The category of super algebras.
 
-            INPUT:
+    An `R`-*super algebra* is an `R`-super module `A` endowed with an
+    `R`-algebra structure satisfying
 
-            - ``self``, ``right`` -- two elements with the same parent
+    .. MATH::
 
-            OUTPUT:
+        A_0 A_0 \subseteq A_0, \qquad
+        A_0 A_1 \subseteq A_1, \qquad
+        A_1 A_0 \subseteq A_1, \qquad
+        A_1 A_1 \subseteq A_0
 
-            - an element of the same parent
+    and `1 \in A_0`.
 
-            EXAMPLES::
+    EXAMPLES::
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
+        sage: Algebras(ZZ).Super()
+        Category of super algebras over Integer Ring
 
-            INPUT:
+    TESTS::
 
-            - ``self``, ``right`` -- two elements with the same parent
+        sage: TestSuite(Algebras(ZZ).Super()).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of super algebras.
 
-            OUTPUT:
+    An `R`-*super algebra* is an `R`-super module `A` endowed with an
+    `R`-algebra structure satisfying
 
-            - an element of the same parent
+    .. MATH::
 
-            EXAMPLES::
+        A_0 A_0 \subseteq A_0, \qquad
+        A_0 A_1 \subseteq A_1, \qquad
+        A_1 A_0 \subseteq A_1, \qquad
+        A_1 A_1 \subseteq A_0
 
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
+    and `1 \in A_0`.
 
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
+    EXAMPLES::
 
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
+        sage: Algebras(ZZ).Super()
+        Category of super algebras over Integer Ring
 
-                TESTS::
+    TESTS::
 
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+        sage: TestSuite(Algebras(ZZ).Super()).run()
+    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of super algebras.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+    An `R`-*super algebra* is an `R`-super module `A` endowed with an
+    `R`-algebra structure satisfying
 
-            EXAMPLES::
+    .. MATH::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+        A_0 A_0 \subseteq A_0, \qquad
+        A_0 A_1 \subseteq A_1, \qquad
+        A_1 A_0 \subseteq A_1, \qquad
+        A_1 A_1 \subseteq A_0
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+    and `1 \in A_0`.
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+    EXAMPLES::
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+        sage: Algebras(ZZ).Super()
+        Category of super algebras over Integer Ring
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    TESTS::
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="algebra_generators">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return a family of generators of this algebra.
-
-            EXAMPLES::
-
-                sage: F = AlgebrasWithBasis(QQ).example(); F
-                An example of an algebra with basis: the free algebra on the generators ('a', 'b', 'c') over Rational Field
-                sage: F.algebra_generators()
-                Family (B[word: a], B[word: b], B[word: c])
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+        sage: TestSuite(Algebras(ZZ).Super()).run()
+    </opaque></document></theory></omdoc>

@@ -4,15 +4,11 @@ Includes http://www.sagemath.org/content/categories/groups/Groups?Algebras http:
 Includes http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/monoids/Monoids?Algebras
-Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?_add_
-constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?_add_
-Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?_mul_
-constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?_mul_
-Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?__nonzero__
-constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?monomial_coefficients
-constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?__invert__
-constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?__invert__
-Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?__contains__
-constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?__contains__
+Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?element.central_form
+constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?element.central_form
+Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?parent.center_basis
+constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?parent.center_basis
+Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?parent.group
+constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?parent.group
+Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?subcategory.central_form
+constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?subcategory.central_form

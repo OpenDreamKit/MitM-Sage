@@ -5,13 +5,3 @@ Includes http://www.sagemath.org/content/categories/division_rings?DivisionRings
 Includes http://www.sagemath.org/content/categories/division_rings?DivisionRings http://www.sagemath.org/content/categories/domains?Domains
 Declares http://www.sagemath.org/content/categories/division_rings?DivisionRings http://www.sagemath.org/content/categories/division_rings?DivisionRings?Division
 constant http://www.sagemath.org/content/categories/division_rings?DivisionRings?Division
-Declares http://www.sagemath.org/content/categories/division_rings?DivisionRings http://www.sagemath.org/content/categories/division_rings?DivisionRings?_add_
-constant http://www.sagemath.org/content/categories/division_rings?DivisionRings?_add_
-Declares http://www.sagemath.org/content/categories/division_rings?DivisionRings http://www.sagemath.org/content/categories/division_rings?DivisionRings?_mul_
-constant http://www.sagemath.org/content/categories/division_rings?DivisionRings?_mul_
-Declares http://www.sagemath.org/content/categories/division_rings?DivisionRings http://www.sagemath.org/content/categories/division_rings?DivisionRings?__nonzero__
-constant http://www.sagemath.org/content/categories/division_rings?DivisionRings?__nonzero__
-Declares http://www.sagemath.org/content/categories/division_rings?DivisionRings http://www.sagemath.org/content/categories/division_rings?DivisionRings?__invert__
-constant http://www.sagemath.org/content/categories/division_rings?DivisionRings?__invert__
-Declares http://www.sagemath.org/content/categories/division_rings?DivisionRings http://www.sagemath.org/content/categories/division_rings?DivisionRings?__contains__
-constant http://www.sagemath.org/content/categories/division_rings?DivisionRings?__contains__

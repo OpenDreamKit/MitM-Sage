@@ -3,13 +3,3 @@ HasMeta http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http:/
 Includes http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http://www.sagemath.org/content/categories/integral_domains?IntegralDomains
-Declares http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?_add_
-constant http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?_add_
-Declares http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?_mul_
-constant http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?_mul_
-Declares http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?__nonzero__
-constant http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?__nonzero__
-Declares http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?__invert__
-constant http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?__invert__
-Declares http://www.sagemath.org/content/categories/gcd_domains?GcdDomains http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?__contains__
-constant http://www.sagemath.org/content/categories/gcd_domains?GcdDomains?__contains__

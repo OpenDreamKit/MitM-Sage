@@ -6,7 +6,175 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
+     </constant><document name="Element Methods"><opaque format="text">
+    The category of sets with a grading.
+
+    A *set with a grading* is a set `S` equipped with a
+    grading by some other set `I` (by default the set `\NN` of the
+    non-negative integers):
+
+    .. MATH::
+
+         S = \biguplus_{i\in I} S_i
+
+    where the *graded components* `S_i` are (usually finite)
+    sets. The *grading* function maps each element `s` of
+    `S` to its *grade* `i`, so that `s\in S_i`.
+
+    From implementation point of view, if the graded set is enumerated then
+    each graded component should be enumerated (there is a check in the method
+    :meth:`~SetsWithGrading.ParentMethods._test_graded_components`). The
+    contrary needs not be true.
+
+    To implement this category, a parent must either implement
+    :meth:`~SetsWithGrading.ParentMethods.graded_component()` or
+    :meth:`~SetsWithGrading.ParentMethods.subset()`. If only
+    :meth:`~SetsWithGrading.ParentMethods.subset()` is implemented, the first
+    argument must be the grading for compatibility with
+    :meth:`~SetsWithGrading.ParentMethods.graded_component()`. Additionally
+    either the parent must implement
+    :meth:`~SetsWithGrading.ParentMethods.grading()` or its elements must
+    implement a method ``grade()``. See the example
+    :class:`sage.categories.examples.sets_with_grading.NonNegativeIntegers`.
+
+    Finally, if the graded set is enumerated (see
+    :class:`~sage.categories.enumerated_sets.EnumeratedSets`) then each graded
+    component should be enumerated. The contrary needs not be true.
+
+    EXAMPLES:
+
+    A typical example of a set with a grading is the set of non-negative
+    integers graded by themselves::
+
+        sage: N = SetsWithGrading().example(); N
+        Non negative integers
+        sage: N.category()
+        Category of facade sets with grading
+        sage: N.grading_set()
+        Non negative integers
+
+    The *grading function* is given by ``N.grading``::
+
+        sage: N.grading(4)
+        4
+
+    The graded component `S_i` is the set of all integer partitions of
+    `i`::
+
+        sage: N.graded_component(grade = 5)
+        {5}
+        sage: N.graded_component(grade = 42)
+        {42}
+
+    Here are some information about this category::
+
+        sage: SetsWithGrading()
+        Category of sets with grading
+        sage: SetsWithGrading().super_categories()
+        [Category of sets]
+        sage: SetsWithGrading().all_super_categories()
+        [Category of sets with grading,
+         Category of sets,
+         Category of sets with partial maps,
+         Category of objects]
+
+    .. TODO::
+
+        - This should be moved to ``Sets().WithGrading()``.
+        - Should the grading set be a parameter for this category?
+        - Does the enumeration need to be compatible with the grading? Be
+          careful that the fact that graded components are allowed to be finite
+          or infinite make the answer complicated.
+
+    TESTS::
+
+        sage: C = SetsWithGrading()
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of sets with a grading.
+
+    A *set with a grading* is a set `S` equipped with a
+    grading by some other set `I` (by default the set `\NN` of the
+    non-negative integers):
+
+    .. MATH::
+
+         S = \biguplus_{i\in I} S_i
+
+    where the *graded components* `S_i` are (usually finite)
+    sets. The *grading* function maps each element `s` of
+    `S` to its *grade* `i`, so that `s\in S_i`.
+
+    From implementation point of view, if the graded set is enumerated then
+    each graded component should be enumerated (there is a check in the method
+    :meth:`~SetsWithGrading.ParentMethods._test_graded_components`). The
+    contrary needs not be true.
+
+    To implement this category, a parent must either implement
+    :meth:`~SetsWithGrading.ParentMethods.graded_component()` or
+    :meth:`~SetsWithGrading.ParentMethods.subset()`. If only
+    :meth:`~SetsWithGrading.ParentMethods.subset()` is implemented, the first
+    argument must be the grading for compatibility with
+    :meth:`~SetsWithGrading.ParentMethods.graded_component()`. Additionally
+    either the parent must implement
+    :meth:`~SetsWithGrading.ParentMethods.grading()` or its elements must
+    implement a method ``grade()``. See the example
+    :class:`sage.categories.examples.sets_with_grading.NonNegativeIntegers`.
+
+    Finally, if the graded set is enumerated (see
+    :class:`~sage.categories.enumerated_sets.EnumeratedSets`) then each graded
+    component should be enumerated. The contrary needs not be true.
+
+    EXAMPLES:
+
+    A typical example of a set with a grading is the set of non-negative
+    integers graded by themselves::
+
+        sage: N = SetsWithGrading().example(); N
+        Non negative integers
+        sage: N.category()
+        Category of facade sets with grading
+        sage: N.grading_set()
+        Non negative integers
+
+    The *grading function* is given by ``N.grading``::
+
+        sage: N.grading(4)
+        4
+
+    The graded component `S_i` is the set of all integer partitions of
+    `i`::
+
+        sage: N.graded_component(grade = 5)
+        {5}
+        sage: N.graded_component(grade = 42)
+        {42}
+
+    Here are some information about this category::
+
+        sage: SetsWithGrading()
+        Category of sets with grading
+        sage: SetsWithGrading().super_categories()
+        [Category of sets]
+        sage: SetsWithGrading().all_super_categories()
+        [Category of sets with grading,
+         Category of sets,
+         Category of sets with partial maps,
+         Category of objects]
+
+    .. TODO::
+
+        - This should be moved to ``Sets().WithGrading()``.
+        - Should the grading set be a parameter for this category?
+        - Does the enumeration need to be compatible with the grading? Be
+          careful that the fact that graded components are allowed to be finite
+          or infinite make the answer complicated.
+
+    TESTS::
+
+        sage: C = SetsWithGrading()
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent._test_graded_components">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -16,51 +184,102 @@
        
        
      </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+            Test that some graded components of ``self`` are parent with
+            initialized category and that the parent has a properly implemented
+            ``grading()`` method.
 
             EXAMPLES::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+                sage: SetsWithGrading().example()._test_graded_components()
+            </opaque><constant name="parent.generating_series">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Default implementation for generating series.
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+            OUTPUT:
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+            A series, indexed by the grading set.
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+            EXAMPLES::
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+                sage: N = SetsWithGrading().example(); N
+                Non negative integers
+                sage: N.generating_series()
+                1/(-z + 1)
+            </opaque><constant name="parent.graded_component">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the graded component of ``self`` with grade ``grade``.
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+            The default implementation just calls the method :meth:`subset()`
+            with the first argument ``grade``.
 
-            .. NOTE::
+            EXAMPLES::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="subset">
+                sage: N = SetsWithGrading().example(); N
+                Non negative integers
+                sage: N.graded_component(3)
+                {3}
+            </opaque><constant name="parent.grading">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the grading of the element ``elt`` of ``self``.
+
+            This default implementation calls ``elt.grade()``.
+
+            EXAMPLES::
+
+                sage: N = SetsWithGrading().example(); N
+                Non negative integers
+                sage: N.grading(4)
+                4
+            </opaque><constant name="parent.grading_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the set ``self`` is graded by. By default, this is
+            the set of non-negative integers.
+
+            EXAMPLES::
+
+                sage: SetsWithGrading().example().grading_set()
+                Non negative integers
+            </opaque><constant name="parent.subset">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -82,30 +301,88 @@
                 Integer vectors weighted by [3, 2, 1]
                 sage: W.subset(4)
                 Integer vectors of 4 weighted by [3, 2, 1]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of sets with a grading.
 
-            All parents in the category ``Sets()`` should implement this method.
+    A *set with a grading* is a set `S` equipped with a
+    grading by some other set `I` (by default the set `\NN` of the
+    non-negative integers):
 
-            EXAMPLES::
+    .. MATH::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+         S = \biguplus_{i\in I} S_i
+
+    where the *graded components* `S_i` are (usually finite)
+    sets. The *grading* function maps each element `s` of
+    `S` to its *grade* `i`, so that `s\in S_i`.
+
+    From implementation point of view, if the graded set is enumerated then
+    each graded component should be enumerated (there is a check in the method
+    :meth:`~SetsWithGrading.ParentMethods._test_graded_components`). The
+    contrary needs not be true.
+
+    To implement this category, a parent must either implement
+    :meth:`~SetsWithGrading.ParentMethods.graded_component()` or
+    :meth:`~SetsWithGrading.ParentMethods.subset()`. If only
+    :meth:`~SetsWithGrading.ParentMethods.subset()` is implemented, the first
+    argument must be the grading for compatibility with
+    :meth:`~SetsWithGrading.ParentMethods.graded_component()`. Additionally
+    either the parent must implement
+    :meth:`~SetsWithGrading.ParentMethods.grading()` or its elements must
+    implement a method ``grade()``. See the example
+    :class:`sage.categories.examples.sets_with_grading.NonNegativeIntegers`.
+
+    Finally, if the graded set is enumerated (see
+    :class:`~sage.categories.enumerated_sets.EnumeratedSets`) then each graded
+    component should be enumerated. The contrary needs not be true.
+
+    EXAMPLES:
+
+    A typical example of a set with a grading is the set of non-negative
+    integers graded by themselves::
+
+        sage: N = SetsWithGrading().example(); N
+        Non negative integers
+        sage: N.category()
+        Category of facade sets with grading
+        sage: N.grading_set()
+        Non negative integers
+
+    The *grading function* is given by ``N.grading``::
+
+        sage: N.grading(4)
+        4
+
+    The graded component `S_i` is the set of all integer partitions of
+    `i`::
+
+        sage: N.graded_component(grade = 5)
+        {5}
+        sage: N.graded_component(grade = 42)
+        {42}
+
+    Here are some information about this category::
+
+        sage: SetsWithGrading()
+        Category of sets with grading
+        sage: SetsWithGrading().super_categories()
+        [Category of sets]
+        sage: SetsWithGrading().all_super_categories()
+        [Category of sets with grading,
+         Category of sets,
+         Category of sets with partial maps,
+         Category of objects]
+
+    .. TODO::
+
+        - This should be moved to ``Sets().WithGrading()``.
+        - Should the grading set be a parameter for this category?
+        - Does the enumeration need to be compatible with the grading? Be
+          careful that the fact that graded components are allowed to be finite
+          or infinite make the answer complicated.
+
+    TESTS::
+
+        sage: C = SetsWithGrading()
+        sage: TestSuite(C).run()
+    </opaque></document></theory></omdoc>

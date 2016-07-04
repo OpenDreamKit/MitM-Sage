@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Monoids" base="http://www.sagemath.org/content/categories/monoids" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/semigroups?Semigroups"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Unital"></import><document name="Element Methods"><constant name="_mul_">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Monoids" base="http://www.sagemath.org/content/categories/monoids" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/semigroups?Semigroups"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Unital"></import><document name="Element Methods"><constant name="element._pow_naive">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -12,23 +12,23 @@
        
        
      </constant><opaque format="text">
-            Product of two elements
+            Return ``self`` to the `n^{th}` power (naive implementation).
 
             INPUT:
 
-            - ``self``, ``right`` -- two elements with the same parent
+            - ``n`` -- a nonnegative integer
 
-            OUTPUT:
-
-            - an element of the same parent
+            This naive implementation does not use binary
+            exponentiation; there are cases where this is actually
+            faster due to size explosion.
 
             EXAMPLES::
 
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Morphism Methods:"><constant name="__invert__">
+                sage: S = Monoids().example()
+                sage: x = S(&quot;aa&quot;)
+                sage: [x._pow_naive(i) for i in range(6)]
+                ['', 'aa', 'aaaa', 'aaaaaa', 'aaaaaaaa', 'aaaaaaaaaa']
+            </opaque><constant name="element.is_one">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -38,51 +38,18 @@
        
        
      </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+            Return whether ``self`` is the one of the monoid.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+            The default implementation is to compare with ``self.one()``.
 
-            EXAMPLES::
+            TESTS::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+                sage: S = Monoids().example()
+                sage: S.one().is_one()
+                True
+                sage: S(&quot;aa&quot;).is_one()
+                False
+            </opaque><constant name="element.powers">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -96,16 +63,237 @@
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
+            Return the list `[x^0, x^1, \ldots, x^{n-1}]`.
 
             EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
+                sage: A = Matrix([[1, 1], [-1, 0]])
+                sage: A.powers(6)
+                [
+                [1 0]  [ 1  1]  [ 0  1]  [-1  0]  [-1 -1]  [ 0 -1]
+                [0 1], [-1  0], [-1 -1], [ 0 -1], [ 1  0], [ 1  1]
+                ]
+            </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of (multiplicative) monoids.
+
+    A *monoid* is a unital :class:`semigroup &lt;Semigroups&gt;`, that is a
+    set endowed with a multiplicative binary operation `*` which is
+    associative and admits a unit (see :wikipedia:`Monoid`).
+
+    EXAMPLES::
+
+        sage: Monoids()
+        Category of monoids
+        sage: Monoids().super_categories()
+        [Category of semigroups, Category of unital magmas]
+        sage: Monoids().all_super_categories()
+        [Category of monoids,
+         Category of semigroups,
+         Category of unital magmas, Category of magmas,
+         Category of sets,
+         Category of sets with partial maps,
+         Category of objects]
+
+        sage: Monoids().axioms()
+        frozenset({'Associative', 'Unital'})
+        sage: Semigroups().Unital()
+        Category of monoids
+
+        sage: Monoids().example()
+        An example of a monoid: the free monoid generated by ('a', 'b', 'c', 'd')
+
+    TESTS::
+
+        sage: C = Monoids()
+        sage: TestSuite(C).run()
+
+    </opaque></document><document name="Parent Methods:"><constant name="parent._test_prod">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run basic tests for the product method :meth:`prod` of ``self``.
+
+            See the documentation for :class:`TestSuite` for information on
+            further options.
+
+            INPUT:
+
+            - ``options`` -- any keyword arguments accepted by :meth:`_tester`
+
+            EXAMPLES:
+
+            By default, this method tests only the elements returned by
+            ``self.some_elements()``::
+
+                sage: S = Monoids().example()
+                sage: S._test_prod()
+
+            However, the elements tested can be customized with the
+            ``elements`` keyword argument::
+
+                sage: S._test_prod(elements = (S('a'), S('b')))
+            </opaque><constant name="parent.monoid_generators">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="parent.one_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Backward compatibility alias for :meth:`one`.
+
+            TESTS::
+
+                sage: S = Monoids().example()
+                sage: S.one_element()
+                doctest:...: DeprecationWarning: .one_element() is deprecated. Please use .one() instead.
+                See http://trac.sagemath.org/17694 for details.
+                ''
+            </opaque><constant name="parent.submonoid">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the multiplicative submonoid generated by ``generators``.
+
+            INPUT:
+
+            - ``generators`` -- a finite family of elements of
+              ``self``, or a list, iterable, ... that can be converted
+              into one (see :class:`Family`).
+
+            - ``category`` -- a category
+
+            This is a shorthand for
+            :meth:`Semigroups.ParentMethods.subsemigroup` that
+            specifies that this is a submonoid, and in particular that
+            the unit is ``self.one()``.
+
+            EXAMPLES::
+
+                sage: R = IntegerModRing(15)
+                sage: M = R.submonoid([R(3),R(5)]); M
+                A submonoid of (Ring of integers modulo 15) with 2 generators
+                sage: M.list()
+                [1, 3, 5, 9, 0, 10, 12, 6]
+
+            Not the presence of the unit, unlike in::
+
+                sage: S = R.subsemigroup([R(3),R(5)]); S
+                A subsemigroup of (Ring of integers modulo 15) with 2 generators
+                sage: S.list()
+                [3, 5, 9, 0, 10, 12, 6]
+
+            This method is really a shorthand for subsemigroup::
+
+                sage: M2 = R.subsemigroup([R(3),R(5)], one=R.one())
+                sage: M2 is M
                 True
+
+
+            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory._pow_naive">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``self`` to the `n^{th}` power (naive implementation).
+
+            INPUT:
+
+            - ``n`` -- a nonnegative integer
+
+            This naive implementation does not use binary
+            exponentiation; there are cases where this is actually
+            faster due to size explosion.
+
+            EXAMPLES::
+
+                sage: S = Monoids().example()
+                sage: x = S(&quot;aa&quot;)
+                sage: [x._pow_naive(i) for i in range(6)]
+                ['', 'aa', 'aaaa', 'aaaaaa', 'aaaaaaaa', 'aaaaaaaaaa']
+            </opaque><constant name="subcategory.is_one">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether ``self`` is the one of the monoid.
+
+            The default implementation is to compare with ``self.one()``.
+
+            TESTS::
+
+                sage: S = Monoids().example()
+                sage: S.one().is_one()
+                True
+                sage: S(&quot;aa&quot;).is_one()
+                False
+            </opaque><constant name="subcategory.powers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the list `[x^0, x^1, \ldots, x^{n-1}]`.
+
+            EXAMPLES::
+
+                sage: A = Matrix([[1, 1], [-1, 0]])
+                sage: A.powers(6)
+                [
+                [1 0]  [ 1  1]  [ 0  1]  [-1  0]  [-1 -1]  [ 0 -1]
+                [0 1], [-1  0], [-1 -1], [ 0 -1], [ 1  0], [ 1  1]
+                ]
             </opaque></document></theory></omdoc>

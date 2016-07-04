@@ -4,13 +4,5 @@ Includes http://www.sagemath.org/content/categories/integral_domains?IntegralDom
 Includes http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/content/categories/domains?Domains
 Includes http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings
-Declares http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?_add_
-constant http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?_add_
-Declares http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?_mul_
-constant http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?_mul_
-Declares http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?__nonzero__
-constant http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?__nonzero__
-Declares http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?__invert__
-constant http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?__invert__
-Declares http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?__contains__
-constant http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?__contains__
+Declares http://www.sagemath.org/content/categories/integral_domains?IntegralDomains http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?parent.is_integral_domain
+constant http://www.sagemath.org/content/categories/integral_domains?IntegralDomains?parent.is_integral_domain

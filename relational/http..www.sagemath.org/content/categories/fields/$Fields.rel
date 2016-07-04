@@ -4,13 +4,27 @@ Includes http://www.sagemath.org/content/categories/fields?Fields http://www.sag
 Includes http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains
 Includes http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/division_rings?DivisionRings
-Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?_add_
-constant http://www.sagemath.org/content/categories/fields?Fields?_add_
-Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?_mul_
-constant http://www.sagemath.org/content/categories/fields?Fields?_mul_
-Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?__nonzero__
-constant http://www.sagemath.org/content/categories/fields?Fields?__nonzero__
-Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?__invert__
-constant http://www.sagemath.org/content/categories/fields?Fields?__invert__
-Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?__contains__
-constant http://www.sagemath.org/content/categories/fields?Fields?__contains__
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?element.lcm
+constant http://www.sagemath.org/content/categories/fields?Fields?element.lcm
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?element.xgcd
+constant http://www.sagemath.org/content/categories/fields?Fields?element.xgcd
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent.__pow__
+constant http://www.sagemath.org/content/categories/fields?Fields?parent.__pow__
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent._squarefree_decomposition_univariate_polynomial
+constant http://www.sagemath.org/content/categories/fields?Fields?parent._squarefree_decomposition_univariate_polynomial
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent._test_characteristic_fields
+constant http://www.sagemath.org/content/categories/fields?Fields?parent._test_characteristic_fields
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent._xgcd_univariate_polynomial
+constant http://www.sagemath.org/content/categories/fields?Fields?parent._xgcd_univariate_polynomial
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent.fraction_field
+constant http://www.sagemath.org/content/categories/fields?Fields?parent.fraction_field
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent.is_field
+constant http://www.sagemath.org/content/categories/fields?Fields?parent.is_field
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent.is_integrally_closed
+constant http://www.sagemath.org/content/categories/fields?Fields?parent.is_integrally_closed
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent.is_perfect
+constant http://www.sagemath.org/content/categories/fields?Fields?parent.is_perfect
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?subcategory.lcm
+constant http://www.sagemath.org/content/categories/fields?Fields?subcategory.lcm
+Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?subcategory.xgcd
+constant http://www.sagemath.org/content/categories/fields?Fields?subcategory.xgcd

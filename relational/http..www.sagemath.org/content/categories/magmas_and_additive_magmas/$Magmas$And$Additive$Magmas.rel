@@ -4,11 +4,3 @@ Includes http://www.sagemath.org/content/categories/magmas_and_additive_magmas?M
 Includes http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas http://www.sagemath.org/content/categories/magmas?Magmas
 Includes http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
-Declares http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas?_add_
-constant http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas?_add_
-Declares http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas?_mul_
-constant http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas?_mul_
-Declares http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas?__invert__
-constant http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas?__invert__
-Declares http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas?__contains__
-constant http://www.sagemath.org/content/categories/magmas_and_additive_magmas?MagmasAndAdditiveMagmas?__contains__

@@ -5,13 +5,3 @@ Includes http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?A
 Includes http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras http://www.sagemath.org/content/categories/finite_dimensional_hopf_algebras_with_basis?FiniteDimensionalHopfAlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras
 Includes http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras http://www.sagemath.org/content/categories/finite_sets/FiniteSets?Algebras
-Declares http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?_add_
-constant http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?_add_
-Declares http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?_mul_
-constant http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?_mul_
-Declares http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?__nonzero__
-constant http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?monomial_coefficients
-constant http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?__contains__
-constant http://www.sagemath.org/content/categories/finite_groups/FiniteGroups?Algebras?__contains__
