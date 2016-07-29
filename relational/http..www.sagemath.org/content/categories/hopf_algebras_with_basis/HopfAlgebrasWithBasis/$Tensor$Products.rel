@@ -5,21 +5,3 @@ Includes http://www.sagemath.org/content/categories/hopf_algebras_with_basis/Hop
 Includes http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?TensorProducts
 Includes http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?TensorProducts
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?_add_
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?_add_
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?_mul_
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?_mul_
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?__nonzero__
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?__nonzero__
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?monomial_coefficients
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?__invert__
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?__invert__
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?antipode_on_basis
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?antipode_on_basis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?coproduct_on_basis
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?coproduct_on_basis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?counit_on_basis
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?counit_on_basis
-Declares http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?__contains__
-constant http://www.sagemath.org/content/categories/hopf_algebras_with_basis/HopfAlgebrasWithBasis?TensorProducts?__contains__

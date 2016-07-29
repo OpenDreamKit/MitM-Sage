@@ -6,7 +6,107 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><constant name="e">
+     </constant><document name="Element Methods"><constant name="element.Epsilon">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(0).Epsilon()
+                (0, 0, 0, 0, 0, 0)
+                sage: C(1).Epsilon()
+                (0, 0, 0, 0, 0, 0)
+                sage: C(2).Epsilon()
+                (1, 0, 0, 0, 0, 0)
+            </opaque><constant name="element.Phi">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(0).Phi()
+                (0, 0, 0, 0, 0, 0)
+                sage: C(1).Phi()
+                (1, 0, 0, 0, 0, 0)
+                sage: C(2).Phi()
+                (1, 1, 0, 0, 0, 0)
+            </opaque><constant name="element.all_paths_to_highest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Iterate over all paths to the highest weight from ``self``
+            with respect to `index_set`.
+
+            INPUT:
+
+            - ``index_set`` -- (optional) a subset of the index set of ``self``
+
+            EXAMPLES::
+
+                sage: B = crystals.infinity.Tableaux(&quot;A2&quot;)
+                sage: b0 = B.highest_weight_vector()
+                sage: b = b0.f_string([1, 2, 1, 2])
+                sage: L = b.all_paths_to_highest_weight()
+                sage: list(L)
+                [[2, 1, 2, 1], [2, 2, 1, 1]]
+
+                sage: Y = crystals.infinity.GeneralizedYoungWalls(3)
+                sage: y0 = Y.highest_weight_vector()
+                sage: y = y0.f_string([0, 1, 2, 3, 2, 1, 0])
+                sage: list(y.all_paths_to_highest_weight())
+                [[0, 1, 2, 3, 2, 1, 0],
+                 [0, 1, 3, 2, 2, 1, 0],
+                 [0, 3, 1, 2, 2, 1, 0],
+                 [0, 3, 2, 1, 1, 0, 2],
+                 [0, 3, 2, 1, 1, 2, 0]]
+
+                sage: B = crystals.Tableaux(&quot;A3&quot;, shape=[4,2,1])
+                sage: b0 = B.highest_weight_vector()
+                sage: b = b0.f_string([1, 1, 2, 3])
+                sage: list(b.all_paths_to_highest_weight())
+                [[1, 3, 2, 1], [3, 1, 2, 1], [3, 2, 1, 1]]
+            </opaque><constant name="element.cartan_type">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the Cartan type associated to ``self``
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A', 5])
+                sage: C(1).cartan_type()
+                ['A', 5]
+            </opaque><constant name="element.e">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -32,7 +132,31 @@
                 3
                 sage: x.e(1), x.e(2), x.e(3)
                 (None, 2, None)
-            </opaque><constant name="epsilon">
+            </opaque><constant name="element.e_string">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Applies `e_{i_r} \cdots e_{i_1}` to self for ``list`` as
+            `[i_1, ..., i_r]`
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',3])
+                sage: b = C(3)
+                sage: b.e_string([2,1])
+                1
+                sage: b.e_string([1,2])
+            </opaque><constant name="element.epsilon">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -53,7 +177,7 @@
                 0
                 sage: C(2).epsilon(1)
                 1
-            </opaque><constant name="f">
+            </opaque><constant name="element.f">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -79,7 +203,177 @@
                 2
                 sage: x.f(1), x.f(2), x.f(3)
                 (None, 3, None)
-            </opaque><constant name="phi">
+            </opaque><constant name="element.f_string">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Applies `f_{i_r} \cdots f_{i_1}` to self for ``list`` as
+            `[i_1, ..., i_r]`
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',3])
+                sage: b = C(1)
+                sage: b.f_string([1,2])
+                3
+                sage: b.f_string([2,1])
+            </opaque><constant name="element.index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="element.is_highest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns ``True`` if ``self`` is a highest weight.
+            Specifying the option ``index_set`` to be a subset `I` of the
+            index set of the underlying crystal, finds all highest
+            weight vectors for arrows in `I`.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).is_highest_weight()
+                True
+                sage: C(2).is_highest_weight()
+                False
+                sage: C(2).is_highest_weight(index_set = [2,3,4,5])
+                True
+            </opaque><constant name="element.is_lowest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns ``True`` if ``self`` is a lowest weight.
+            Specifying the option ``index_set`` to be a subset `I` of the
+            index set of the underlying crystal, finds all lowest
+            weight vectors for arrows in `I`.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).is_lowest_weight()
+                False
+                sage: C(6).is_lowest_weight()
+                True
+                sage: C(4).is_lowest_weight(index_set = [1,3])
+                True
+            </opaque><constant name="element.phi">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -100,7 +394,213 @@
                 1
                 sage: C(2).phi(1)
                 0
-            </opaque><constant name="weight">
+            </opaque><constant name="element.phi_minus_epsilon">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return `\varphi_i - \varepsilon_i` of ``self``.
+
+            There are sometimes better implementations using the
+            weight for this. It is used for reflections along a string.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).phi_minus_epsilon(1)
+                1
+            </opaque><constant name="element.s">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the reflection of ``self`` along its `i`-string.
+
+            EXAMPLES::
+
+                sage: C = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: b = C(rows=[[1,1],[3]])
+                sage: b.s(1)
+                [[2, 2], [3]]
+                sage: b = C(rows=[[1,2],[3]])
+                sage: b.s(2)
+                [[1, 2], [3]]
+                sage: T = crystals.Tableaux(['A',2],shape=[4])
+                sage: t = T(rows=[[1,2,2,2]])
+                sage: t.s(1)
+                [[1, 1, 1, 2]]
+            </opaque><constant name="element.subcrystal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Construct the subcrystal generated by ``self`` using `e_i` and/or
+            `f_i` for all `i` in ``index_set``.
+
+            INPUT:
+
+            - ``index_set`` -- (default: ``None``) the index set; if ``None``
+              then use the index set of the crystal
+
+            - ``max_depth`` -- (default: infinity) the maximum depth to build
+
+            - ``direction`` -- (default: ``'both'``) the direction to build
+              the subcrystal; it can be one of the following:
+
+              - ``'both'`` - using both `e_i` and `f_i`
+              - ``'upper'`` - using `e_i`
+              - ``'lower'`` - using `f_i`
+
+            - ``contained`` -- (optional) a set (or function) defining the
+              containment in the subcrystal
+
+            - ``cartan_type`` -- (optional) specify the Cartan type of the
+              subcrystal
+
+            - ``category`` -- (optional) specify the category of the subcrystal
+
+            .. SEEALSO::
+
+                - :meth:`Crystals.ParentMethods.subcrystal()`
+
+            EXAMPLES::
+
+                sage: C = crystals.KirillovReshetikhin(['A',3,1], 1, 2)
+                sage: elt = C(1,4)
+                sage: list(elt.subcrystal(index_set=[1,3]))
+                [[[1, 4]], [[2, 4]], [[1, 3]], [[2, 3]]]
+                sage: list(elt.subcrystal(index_set=[1,3], max_depth=1))
+                [[[1, 4]], [[2, 4]], [[1, 3]]]
+                sage: list(elt.subcrystal(index_set=[1,3], direction='upper'))
+                [[[1, 4]], [[1, 3]]]
+                sage: list(elt.subcrystal(index_set=[1,3], direction='lower'))
+                [[[1, 4]], [[2, 4]]]
+            </opaque><constant name="element.to_highest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the highest weight element `u` and a list `[i_1,...,i_k]`
+            such that `self = f_{i_1} ... f_{i_k} u`, where `i_1,...,i_k` are
+            elements in `index_set`. By default the index set is assumed to be
+            the full index set of self.
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',3], shape = [1])
+                sage: t = T(rows = [[3]])
+                sage: t.to_highest_weight()
+                [[[1]], [2, 1]]
+                sage: T = crystals.Tableaux(['A',3], shape = [2,1])
+                sage: t = T(rows = [[1,2],[4]])
+                sage: t.to_highest_weight()
+                [[[1, 1], [2]], [1, 3, 2]]
+                sage: t.to_highest_weight(index_set = [3])
+                [[[1, 2], [3]], [3]]
+                sage: K = crystals.KirillovReshetikhin(['A',3,1],2,1)
+                sage: t = K(rows=[[2],[3]]); t.to_highest_weight(index_set=[1])
+                [[[1], [3]], [1]]
+                sage: t.to_highest_weight()
+                Traceback (most recent call last):
+                ...
+                ValueError: This is not a highest weight crystals!
+            </opaque><constant name="element.to_lowest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the lowest weight element `u` and a list `[i_1,...,i_k]`
+            such that `self = e_{i_1} ... e_{i_k} u`, where `i_1,...,i_k` are
+            elements in `index_set`. By default the index set is assumed to be
+            the full index set of self.
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',3], shape = [1])
+                sage: t = T(rows = [[3]])
+                sage: t.to_lowest_weight()
+                [[[4]], [3]]
+                sage: T = crystals.Tableaux(['A',3], shape = [2,1])
+                sage: t = T(rows = [[1,2],[4]])
+                sage: t.to_lowest_weight()
+                [[[3, 4], [4]], [1, 2, 2, 3]]
+                sage: t.to_lowest_weight(index_set = [3])
+                [[[1, 2], [4]], []]
+                sage: K = crystals.KirillovReshetikhin(['A',3,1],2,1)
+                sage: t = K.module_generator(); t
+                [[1], [2]]
+                sage: t.to_lowest_weight(index_set=[1,2,3])
+                [[[3], [4]], [2, 1, 3, 2]]
+                sage: t.to_lowest_weight()
+                Traceback (most recent call last):
+                ...
+                ValueError: This is not a highest weight crystals!
+            </opaque><constant name="element.weight">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -120,7 +620,277 @@
                 sage: C = crystals.Letters(['A',5])
                 sage: C(1).weight()
                 (1, 0, 0, 0, 0, 0)
-            </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
+            </opaque></document><document name="Morphism Methods:"><constant name="morphism.is_embedding">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="morphism.is_isomorphism">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="morphism.is_strict">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque></document><document name="Parent Methods:"><constant name="parent.Lambda">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -130,51 +900,155 @@
        
        
      </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+            Returns the fundamental weights in the weight lattice
+            realization for the root system associated with the crystal
 
             EXAMPLES::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+                sage: C = crystals.Letters(['A', 5])
+                sage: C.Lambda()
+                Finite family {1: (1, 0, 0, 0, 0, 0), 2: (1, 1, 0, 0, 0, 0), 3: (1, 1, 1, 0, 0, 0), 4: (1, 1, 1, 1, 0, 0), 5: (1, 1, 1, 1, 1, 0)}
+            </opaque><constant name="parent._Hom_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the homset from ``self`` to ``Y`` in the
+            category ``category``.
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+            INPUT:
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+            - ``Y`` -- a crystal
+            - ``category`` -- a subcategory of :class:`Crystals`() or ``None``
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+            The sole purpose of this method is to construct the homset
+            as a :class:`~sage.categories.crystals.CrystalHomset`. If
+            ``category`` is specified and is not a subcategory of
+            :class:`Crystals`, a ``TypeError`` is raised instead.
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+            This method is not meant to be called directly. Please use
+            :func:`sage.categories.homset.Hom` instead.
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+            EXAMPLES::
 
-            .. NOTE::
+                sage: B = crystals.elementary.B(['A',2], 1)
+                sage: H = B._Hom_(B); H
+                Set of Crystal Morphisms from The 1-elementary crystal of type ['A', 2]
+                 to The 1-elementary crystal of type ['A', 2]
+            </opaque><constant name="parent.__add__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the direct sum of ``self`` with ``X``.
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="connected_components_generators">
+            EXAMPLES::
+
+                sage: B = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: C = crystals.Letters(['A',2])
+                sage: B.direct_sum(C)
+                Direct sum of the crystals Family
+                (The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
+                 The crystal of letters for type ['A', 2])
+
+            As a shorthand, we can use ``+``::
+
+                sage: B + C
+                Direct sum of the crystals Family
+                (The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
+                 The crystal of letters for type ['A', 2])
+            </opaque><constant name="parent._latex_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the crystal graph as a latex string. This can be exported
+            to a file with self.latex_file('filename').
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',2],shape=[1])
+                sage: T._latex_()  # optional - dot2tex graphviz
+                '...tikzpicture...'
+                sage: view(T, tightpage = True) # optional - dot2tex graphviz, not tested (opens external window)
+
+            One can for example also color the edges using the following options::
+
+                sage: T = crystals.Tableaux(['A',2],shape=[1])
+                sage: T._latex_(color_by_label = {0:&quot;black&quot;, 1:&quot;red&quot;, 2:&quot;blue&quot;})   #optional - dot2tex graphviz
+                '...tikzpicture...'
+            </opaque><constant name="parent.cartan_type">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the Cartan type of the crystal
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',2])
+                sage: C.cartan_type()
+                ['A', 2]
+            </opaque><constant name="parent.connected_components">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the connected components of ``self`` as subcrystals.
+
+            EXAMPLES::
+
+                sage: B = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: C = crystals.Letters(['A',2])
+                sage: T = crystals.TensorProduct(B,C)
+                sage: T.connected_components()
+                [Subcrystal of Full tensor product of the crystals
+                 [The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
+                  The crystal of letters for type ['A', 2]],
+                 Subcrystal of Full tensor product of the crystals
+                 [The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
+                  The crystal of letters for type ['A', 2]],
+                 Subcrystal of Full tensor product of the crystals
+                 [The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
+                  The crystal of letters for type ['A', 2]]]
+            </opaque><constant name="parent.connected_components_generators">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -194,7 +1068,319 @@
                 sage: T = crystals.TensorProduct(B,C)
                 sage: T.connected_components_generators()
                 ([[[1, 1], [2]], 1], [[[1, 2], [2]], 1], [[[1, 2], [3]], 1])
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
+            </opaque><constant name="parent.crystal_morphism">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Construct a crystal morphism from ``self`` to another crystal
+            ``codomain``.
+
+            INPUT:
+
+            - ``on_gens`` -- a function or list that determines the image
+              of the generators (if given a list, then this uses the order
+              of the generators of the domain) of ``self`` under the
+              crystal morphism
+            - ``codomain`` -- (default: ``self``) the codomain of the morphism
+            - ``cartan_type`` -- (optional) the Cartan type of the morphism;
+              the default is the Cartan type of ``self``
+            - ``index_set`` -- (optional) the index set of the morphism;
+              the default is the index set of the Cartan type
+            - ``generators`` -- (optional) the generators to define the
+              morphism; the default is the generators of ``self``
+            - ``automorphism`` -- (optional) the automorphism to perform the
+              twisting
+            - ``virtualization`` -- (optional) a dictionary whose keys are
+              in the index set of the domain and whose values are lists of
+              entries in the index set of the codomain; the default is the
+              identity dictionary
+            - ``scaling_factors`` -- (optional) a dictionary whose keys are
+              in the index set of the domain and whose values are scaling
+              factors for the weight, `\varepsilon` and `\varphi`; the
+              default are all scaling factors to be one
+            - ``category`` -- (optional) the category for the crystal morphism;
+              the default is the category of :class:`Crystals`.
+            - ``check`` -- (default: ``True``) check if the crystal morphism
+              is valid
+
+            .. SEEALSO::
+
+                For more examples, see
+                :class:`sage.categories.crystals.CrystalHomset`.
+
+            EXAMPLES:
+
+            We construct the natural embedding of a crystal using tableaux
+            into the tensor product of single boxes via the reading word::
+
+                sage: B = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: F = crystals.Tableaux(['A',2], shape=[1])
+                sage: T = crystals.TensorProduct(F, F, F)
+                sage: mg = T.highest_weight_vectors()[2]; mg
+                [[[1]], [[2]], [[1]]]
+                sage: psi = B.crystal_morphism([mg], codomain=T); psi
+                ['A', 2] Crystal morphism:
+                  From: The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]]
+                  To:   Full tensor product of the crystals
+                         [The crystal of tableaux of type ['A', 2] and shape(s) [[1]],
+                          The crystal of tableaux of type ['A', 2] and shape(s) [[1]],
+                          The crystal of tableaux of type ['A', 2] and shape(s) [[1]]]
+                  Defn: [2, 1, 1] |--&gt; [[[1]], [[2]], [[1]]]
+                sage: b = B.module_generators[0]
+                sage: b.pp()
+                  1  1
+                  2
+                sage: psi(b)
+                [[[1]], [[2]], [[1]]]
+                sage: psi(b.f(2))
+                [[[1]], [[3]], [[1]]]
+                sage: psi(b.f_string([2,1,1]))
+                [[[2]], [[3]], [[2]]]
+                sage: lw = b.to_lowest_weight()[0]
+                sage: lw.pp()
+                  2  3
+                  3
+                sage: psi(lw)
+                [[[3]], [[3]], [[2]]]
+                sage: psi(lw) == mg.to_lowest_weight()[0]
+                True
+
+            We now take the other isomorphic highest weight component
+            in the tensor product::
+
+                sage: mg = T.highest_weight_vectors()[1]; mg
+                [[[2]], [[1]], [[1]]]
+                sage: psi = B.crystal_morphism([mg], codomain=T)
+                sage: psi(lw)
+                [[[3]], [[2]], [[3]]]
+
+            We construct a crystal morphism of classical crystals using a
+            Kirillov-Reshetikhin crystal::
+
+                sage: B = crystals.Tableaux(['D', 4], shape=[1,1])
+                sage: K = crystals.KirillovReshetikhin(['D',4,1], 2,2)
+                sage: K.module_generators
+                [[], [[1], [2]], [[1, 1], [2, 2]]]
+                sage: v = K.module_generators[1]
+                sage: psi = B.crystal_morphism([v], codomain=K, category=FiniteCrystals())
+                sage: psi
+                ['D', 4] -&gt; ['D', 4, 1] Virtual Crystal morphism:
+                  From: The crystal of tableaux of type ['D', 4] and shape(s) [[1, 1]]
+                  To:   Kirillov-Reshetikhin crystal of type ['D', 4, 1] with (r,s)=(2,2)
+                  Defn: [2, 1] |--&gt; [[1], [2]]
+                sage: b = B.module_generators[0]
+                sage: psi(b)
+                [[1], [2]]
+                sage: psi(b.to_lowest_weight()[0])
+                [[-2], [-1]]
+
+            We can define crystal morphisms using a different set of
+            generators. For example, we construct an example using the
+            lowest weight vector::
+
+                sage: B = crystals.Tableaux(['A',2], shape=[1])
+                sage: La = RootSystem(['A',2]).weight_lattice().fundamental_weights()
+                sage: T = crystals.elementary.T(['A',2], La[2])
+                sage: Bp = T.tensor(B)
+                sage: C = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: x = C.module_generators[0].f_string([1,2])
+                sage: psi = Bp.crystal_morphism([x], generators=Bp.lowest_weight_vectors())
+                sage: psi(Bp.highest_weight_vector())
+                [[1, 1], [2]]
+
+            We can also use a dictionary to specify the generators and
+            their images::
+
+                sage: psi = Bp.crystal_morphism({Bp.lowest_weight_vectors()[0]: x})
+                sage: psi(Bp.highest_weight_vector())
+                [[1, 1], [2]]
+
+            We construct a twisted crystal morphism induced from the diagram
+            automorphism of type `A_3^{(1)}`::
+
+                sage: La = RootSystem(['A',3,1]).weight_lattice(extended=True).fundamental_weights()
+                sage: B0 = crystals.GeneralizedYoungWalls(3, La[0])
+                sage: B1 = crystals.GeneralizedYoungWalls(3, La[1])
+                sage: phi = B0.crystal_morphism(B1.module_generators, automorphism={0:1, 1:2, 2:3, 3:0})
+                sage: phi
+                ['A', 3, 1] Twisted Crystal morphism:
+                  From: Highest weight crystal of generalized Young walls of Cartan type ['A', 3, 1] and highest weight Lambda[0]
+                  To:   Highest weight crystal of generalized Young walls of Cartan type ['A', 3, 1] and highest weight Lambda[1]
+                  Defn: [] |--&gt; []
+                sage: x = B0.module_generators[0].f_string([0,1,2,3]); x
+                [[0, 3], [1], [2]]
+                sage: phi(x)
+                [[], [1, 0], [2], [3]]
+
+            We construct a virtual crystal morphism from type `G_2` into
+            type `D_4`::
+
+                sage: D = crystals.Tableaux(['D',4], shape=[1,1])
+                sage: G = crystals.Tableaux(['G',2], shape=[1])
+                sage: psi = G.crystal_morphism(D.module_generators,
+                ....:                          virtualization={1:[2],2:[1,3,4]},
+                ....:                          scaling_factors={1:1, 2:1})
+                sage: for x in G:
+                ....:     ascii_art(x, psi(x), sep='  |--&gt;  ')
+                ....:     print(&quot;&quot;)
+                             1
+                  1  |--&gt;    2
+                &lt;BLANKLINE&gt;
+                             1
+                  2  |--&gt;    3
+                &lt;BLANKLINE&gt;
+                             2
+                  3  |--&gt;   -3
+                &lt;BLANKLINE&gt;
+                             3
+                  0  |--&gt;   -3
+                &lt;BLANKLINE&gt;
+                             3
+                 -3  |--&gt;   -2
+                &lt;BLANKLINE&gt;
+                            -3
+                 -2  |--&gt;   -1
+                &lt;BLANKLINE&gt;
+                            -2
+                 -1  |--&gt;   -1
+            </opaque><constant name="parent.digraph">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the DiGraph associated to ``self``.
+
+            INPUT:
+
+            - ``subset`` -- (optional) a subset of vertices for
+              which the digraph should be constructed
+
+            - ``index_set`` -- (optional) the index set to draw arrows
+
+            EXAMPLES::
+
+                sage: C = Crystals().example(5)
+                sage: C.digraph()
+                Digraph on 6 vertices
+
+            The edges of the crystal graph are by default colored using
+            blue for edge 1, red for edge 2, and green for edge 3::
+
+                sage: C = Crystals().example(3)
+                sage: G = C.digraph()
+                sage: view(G, tightpage=True)  # optional - dot2tex graphviz, not tested (opens external window)
+
+            One may also overwrite the colors::
+
+                sage: C = Crystals().example(3)
+                sage: G = C.digraph()
+                sage: G.set_latex_options(color_by_label = {1:&quot;red&quot;, 2:&quot;purple&quot;, 3:&quot;blue&quot;})
+                sage: view(G, tightpage=True)  # optional - dot2tex graphviz, not tested (opens external window)
+
+            Or one may add colors to yet unspecified edges::
+
+                sage: C = Crystals().example(4)
+                sage: G = C.digraph()
+                sage: C.cartan_type()._index_set_coloring[4]=&quot;purple&quot;
+                sage: view(G, tightpage=True)  # optional - dot2tex graphviz, not tested (opens external window)
+
+            Here is an example of how to take the top part up to a
+            given depth of an infinite dimensional crystal::
+
+                sage: C = CartanType(['C',2,1])
+                sage: La = C.root_system().weight_lattice().fundamental_weights()
+                sage: T = crystals.HighestWeight(La[0])
+                sage: S = T.subcrystal(max_depth=3)
+                sage: G = T.digraph(subset=S); G
+                Digraph on 5 vertices
+                sage: sorted(G.vertices(), key=str)
+                [(-Lambda[0] + 2*Lambda[1] - delta,),
+                 (1/2*Lambda[0] + Lambda[1] - Lambda[2] - 1/2*delta, -1/2*Lambda[0] + Lambda[1] - 1/2*delta),
+                 (1/2*Lambda[0] - Lambda[1] + Lambda[2] - 1/2*delta, -1/2*Lambda[0] + Lambda[1] - 1/2*delta),
+                 (Lambda[0] - 2*Lambda[1] + 2*Lambda[2] - delta,),
+                 (Lambda[0],)]
+
+            Here is a way to construct a picture of a Demazure crystal using
+            the ``subset`` option::
+
+                sage: B = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: t = B.highest_weight_vector()
+                sage: D = B.demazure_subcrystal(t, [2,1])
+                sage: list(D)
+                [[[1, 1], [2]], [[1, 1], [3]], [[1, 2], [2]],
+                 [[1, 3], [2]], [[1, 3], [3]]]
+                sage: view(D, tightpage=True)  # optional - dot2tex graphviz, not tested (opens external window)
+
+            We can also choose to display particular arrows using the
+            ``index_set`` option::
+
+                sage: C = crystals.KirillovReshetikhin(['D',4,1], 2, 1)
+                sage: G = C.digraph(index_set=[1,3])
+                sage: len(G.edges())
+                20
+                sage: view(G, tightpage=True)  # optional - dot2tex graphviz, not tested (opens external window)
+
+            .. TODO:: Add more tests.
+            </opaque><constant name="parent.direct_sum">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -208,16 +1394,1125 @@
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
+            Return the direct sum of ``self`` with ``X``.
 
             EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
+                sage: B = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: C = crystals.Letters(['A',2])
+                sage: B.direct_sum(C)
+                Direct sum of the crystals Family
+                (The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
+                 The crystal of letters for type ['A', 2])
+
+            As a shorthand, we can use ``+``::
+
+                sage: B + C
+                Direct sum of the crystals Family
+                (The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
+                 The crystal of letters for type ['A', 2])
+            </opaque><constant name="parent.dot_tex">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a dot_tex string representation of ``self``.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',2])
+                sage: C.dot_tex()
+                'digraph G { \n  node [ shape=plaintext ];\n  N_0 [ label = &quot; &quot;, texlbl = &quot;$1$&quot; ];\n  N_1 [ label = &quot; &quot;, texlbl = &quot;$2$&quot; ];\n  N_2 [ label = &quot; &quot;, texlbl = &quot;$3$&quot; ];\n  N_0 -&gt; N_1 [ label = &quot; &quot;, texlbl = &quot;1&quot; ];\n  N_1 -&gt; N_2 [ label = &quot; &quot;, texlbl = &quot;2&quot; ];\n}'
+            </opaque><constant name="parent.index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="parent.is_connected">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``True`` if ``self`` is a connected crystal.
+
+            EXAMPLES::
+
+                sage: B = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: C = crystals.Letters(['A',2])
+                sage: T = crystals.TensorProduct(B,C)
+                sage: B.is_connected()
                 True
+                sage: T.is_connected()
+                False
+            </opaque><constant name="parent.latex">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the crystal graph as a latex string. This can be exported
+            to a file with self.latex_file('filename').
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',2],shape=[1])
+                sage: T._latex_()  # optional - dot2tex graphviz
+                '...tikzpicture...'
+                sage: view(T, tightpage = True) # optional - dot2tex graphviz, not tested (opens external window)
+
+            One can for example also color the edges using the following options::
+
+                sage: T = crystals.Tableaux(['A',2],shape=[1])
+                sage: T._latex_(color_by_label = {0:&quot;black&quot;, 1:&quot;red&quot;, 2:&quot;blue&quot;})   #optional - dot2tex graphviz
+                '...tikzpicture...'
+            </opaque><constant name="parent.latex_file">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Exports a file, suitable for pdflatex, to 'filename'. This requires
+            a proper installation of ``dot2tex`` in sage-python. For more
+            information see the documentation for ``self.latex()``.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A', 5])
+                sage: C.latex_file('/tmp/test.tex')  # optional - dot2tex graphviz
+            </opaque><constant name="parent.metapost">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Use C.metapost(&quot;filename.mp&quot;,[options]), where options can be:
+
+            thicklines = True (for thicker edges) labels = False (to suppress
+            labeling of the vertices) scaling_factor=value, where value is a
+            floating point number, 1.0 by default. Increasing or decreasing the
+            scaling factor changes the size of the image. tallness=1.0.
+            Increasing makes the image taller without increasing the width.
+
+            Root operators e(1) or f(1) move along red lines, e(2) or f(2)
+            along green. The highest weight is in the lower left. Vertices with
+            the same weight are kept close together. The concise labels on the
+            nodes are strings introduced by Berenstein and Zelevinsky and
+            Littelmann; see Littelmann's paper Cones, Crystals, Patterns,
+            sections 5 and 6.
+
+            For Cartan types B2 or C2, the pattern has the form
+
+            a2 a3 a4 a1
+
+            where c\*a2 = a3 = 2\*a4 =0 and a1=0, with c=2 for B2, c=1 for C2.
+            Applying e(2) a1 times, e(1) a2 times, e(2) a3 times, e(1) a4 times
+            returns to the highest weight. (Observe that Littelmann writes the
+            roots in opposite of the usual order, so our e(1) is his e(2) for
+            these Cartan types.) For type A2, the pattern has the form
+
+            a3 a2 a1
+
+            where applying e(1) a1 times, e(2) a2 times then e(3) a1 times
+            returns to the highest weight. These data determine the vertex and
+            may be translated into a Gelfand-Tsetlin pattern or tableau.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A', 2])
+                sage: C.metapost(tmp_filename())
+
+            ::
+
+                sage: C = crystals.Letters(['A', 5])
+                sage: C.metapost(tmp_filename())
+                Traceback (most recent call last):
+                ...
+                NotImplementedError
+            </opaque><constant name="parent.number_of_connected_components">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the number of connected components of ``self``.
+
+            EXAMPLES::
+
+                sage: B = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: C = crystals.Letters(['A',2])
+                sage: T = crystals.TensorProduct(B,C)
+                sage: T.number_of_connected_components()
+                3
+            </opaque><constant name="parent.plot">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the plot of ``self`` as a directed graph.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A', 5])
+                sage: print(C.plot())
+                Graphics object consisting of 17 graphics primitives
+            </opaque><constant name="parent.plot3d">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the 3-dimensional plot of ``self`` as a directed graph.
+
+            EXAMPLES::
+
+                sage: C = crystals.KirillovReshetikhin(['A',3,1],2,1)
+                sage: print(C.plot3d())
+                Graphics3d Object
+            </opaque><constant name="parent.subcrystal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Construct the subcrystal from ``generators`` using `e_i` and/or
+            `f_i` for all `i` in ``index_set``.
+
+            INPUT:
+
+            - ``index_set`` -- (default: ``None``) the index set; if ``None``
+              then use the index set of the crystal
+
+            - ``generators`` -- (default: ``None``) the list of generators; if
+              ``None`` then use the module generators of the crystal
+
+            - ``max_depth`` -- (default: infinity) the maximum depth to build
+
+            - ``direction`` -- (default: ``'both'``) the direction to build
+              the subcrystal; it can be one of the following:
+
+              - ``'both'`` - using both `e_i` and `f_i`
+              - ``'upper'`` - using `e_i`
+              - ``'lower'`` - using `f_i`
+
+            - ``contained`` -- (optional) a set or function defining the
+              containment in the subcrystal
+
+            - ``virtualization``, ``scaling_factors`` -- (optional)
+              dictionaries whose key `i` corresponds to the sets `\sigma_i`
+              and `\gamma_i` respectively used to define virtual crystals; see
+              :class:`~sage.combinat.crystals.virtual_crystal.VirtualCrystal`
+
+            - ``cartan_type`` -- (optional) specify the Cartan type of the
+              subcrystal
+
+            - ``category`` -- (optional) specify the category of the subcrystal
+
+            EXAMPLES::
+
+                sage: C = crystals.KirillovReshetikhin(['A',3,1], 1, 2)
+                sage: S = list(C.subcrystal(index_set=[1,2])); S
+                [[[1, 1]], [[1, 2]], [[1, 3]], [[2, 2]], [[2, 3]], [[3, 3]]]
+                sage: C.cardinality()
+                10
+                sage: len(S)
+                6
+                sage: list(C.subcrystal(index_set=[1,3], generators=[C(1,4)]))
+                [[[1, 4]], [[2, 4]], [[1, 3]], [[2, 3]]]
+                sage: list(C.subcrystal(index_set=[1,3], generators=[C(1,4)], max_depth=1))
+                [[[1, 4]], [[2, 4]], [[1, 3]]]
+                sage: list(C.subcrystal(index_set=[1,3], generators=[C(1,4)], direction='upper'))
+                [[[1, 4]], [[1, 3]]]
+                sage: list(C.subcrystal(index_set=[1,3], generators=[C(1,4)], direction='lower'))
+                [[[1, 4]], [[2, 4]]]
+
+                sage: G = C.subcrystal(index_set=[1,2,3]).digraph()
+                sage: GA = crystals.Tableaux('A3', shape=[2]).digraph()
+                sage: G.is_isomorphic(GA, edge_labels=True)
+                True
+
+            We construct the subcrystal which contains the necessary data
+            to construct the corresponding dual equivalence graph::
+
+                sage: C = crystals.Tableaux(['A',5], shape=[3,3])
+                sage: is_wt0 = lambda x: all(x.epsilon(i) == x.phi(i) for i in x.parent().index_set())
+                sage: def check(x):
+                ....:     if is_wt0(x):
+                ....:         return True
+                ....:     for i in x.parent().index_set()[:-1]:
+                ....:         L = [x.e(i), x.e_string([i,i+1]), x.f(i), x.f_string([i,i+1])]
+                ....:         if any(y is not None and is_wt0(y) for y in L):
+                ....:             return True
+                ....:     return False
+                sage: wt0 = [x for x in C if is_wt0(x)]
+                sage: S = C.subcrystal(contained=check, generators=wt0)
+                sage: S.module_generators[0]
+                [[1, 3, 5], [2, 4, 6]]
+                sage: S.module_generators[0].e(2).e(3).f(2).f(3)
+                [[1, 2, 5], [3, 4, 6]]
+
+            An example of a type `B_2` virtual crystal inside of a
+            type `A_3` ambient crystal::
+
+                sage: A = crystals.Tableaux(['A',3], shape=[2,1,1])
+                sage: S = A.subcrystal(virtualization={1:[1,3], 2:[2]},
+                ....:                  scaling_factors={1:1,2:1}, cartan_type=['B',2])
+                sage: B = crystals.Tableaux(['B',2], shape=[1])
+                sage: S.digraph().is_isomorphic(B.digraph(), edge_labels=True)
+                True
+            </opaque><constant name="parent.tensor">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the tensor product of ``self`` with the crystals ``B``.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A', 3])
+                sage: B = crystals.infinity.Tableaux(['A', 3])
+                sage: T = C.tensor(C, B); T
+                Full tensor product of the crystals
+                 [The crystal of letters for type ['A', 3],
+                  The crystal of letters for type ['A', 3],
+                  The infinity crystal of tableaux of type ['A', 3]]
+                sage: tensor([C, C, B]) is T
+                True
+
+                sage: C = crystals.Letters(['A',2])
+                sage: T = C.tensor(C, C, generators=[[C(2),C(1),C(1)],[C(1),C(2),C(1)]]); T
+                The tensor product of the crystals
+                 [The crystal of letters for type ['A', 2],
+                  The crystal of letters for type ['A', 2],
+                  The crystal of letters for type ['A', 2]]
+                sage: T.module_generators
+                [[2, 1, 1], [1, 2, 1]]
+            </opaque><constant name="parent.weight_lattice_realization">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the weight lattice realization used to express weights.
+
+            This default implementation uses the ambient space of the
+            root system for (non relabelled) finite types and the
+            weight lattice otherwise. This is a legacy from when
+            ambient spaces were partially implemented, and may be
+            changed in the future.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A', 5])
+                sage: C.weight_lattice_realization()
+                Ambient space of the Root system of type ['A', 5]
+                sage: K = crystals.KirillovReshetikhin(['A',2,1], 1, 1)
+                sage: K.weight_lattice_realization()
+                Weight lattice of the Root system of type ['A', 2, 1]
+            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.Epsilon">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(0).Epsilon()
+                (0, 0, 0, 0, 0, 0)
+                sage: C(1).Epsilon()
+                (0, 0, 0, 0, 0, 0)
+                sage: C(2).Epsilon()
+                (1, 0, 0, 0, 0, 0)
+            </opaque><constant name="subcategory.Phi">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(0).Phi()
+                (0, 0, 0, 0, 0, 0)
+                sage: C(1).Phi()
+                (1, 0, 0, 0, 0, 0)
+                sage: C(2).Phi()
+                (1, 1, 0, 0, 0, 0)
+            </opaque><constant name="subcategory.all_paths_to_highest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Iterate over all paths to the highest weight from ``self``
+            with respect to `index_set`.
+
+            INPUT:
+
+            - ``index_set`` -- (optional) a subset of the index set of ``self``
+
+            EXAMPLES::
+
+                sage: B = crystals.infinity.Tableaux(&quot;A2&quot;)
+                sage: b0 = B.highest_weight_vector()
+                sage: b = b0.f_string([1, 2, 1, 2])
+                sage: L = b.all_paths_to_highest_weight()
+                sage: list(L)
+                [[2, 1, 2, 1], [2, 2, 1, 1]]
+
+                sage: Y = crystals.infinity.GeneralizedYoungWalls(3)
+                sage: y0 = Y.highest_weight_vector()
+                sage: y = y0.f_string([0, 1, 2, 3, 2, 1, 0])
+                sage: list(y.all_paths_to_highest_weight())
+                [[0, 1, 2, 3, 2, 1, 0],
+                 [0, 1, 3, 2, 2, 1, 0],
+                 [0, 3, 1, 2, 2, 1, 0],
+                 [0, 3, 2, 1, 1, 0, 2],
+                 [0, 3, 2, 1, 1, 2, 0]]
+
+                sage: B = crystals.Tableaux(&quot;A3&quot;, shape=[4,2,1])
+                sage: b0 = B.highest_weight_vector()
+                sage: b = b0.f_string([1, 1, 2, 3])
+                sage: list(b.all_paths_to_highest_weight())
+                [[1, 3, 2, 1], [3, 1, 2, 1], [3, 2, 1, 1]]
+            </opaque><constant name="subcategory.cartan_type">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the Cartan type associated to ``self``
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A', 5])
+                sage: C(1).cartan_type()
+                ['A', 5]
+            </opaque><constant name="subcategory.e">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return `e_i` of ``self`` if it exists or ``None`` otherwise.
+
+            This method should be implemented by the element class of
+            the crystal.
+
+            EXAMPLES::
+
+                sage: C = Crystals().example(5)
+                sage: x = C[2]; x
+                3
+                sage: x.e(1), x.e(2), x.e(3)
+                (None, 2, None)
+            </opaque><constant name="subcategory.e_string">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Applies `e_{i_r} \cdots e_{i_1}` to self for ``list`` as
+            `[i_1, ..., i_r]`
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',3])
+                sage: b = C(3)
+                sage: b.e_string([2,1])
+                1
+                sage: b.e_string([1,2])
+            </opaque><constant name="subcategory.epsilon">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).epsilon(1)
+                0
+                sage: C(2).epsilon(1)
+                1
+            </opaque><constant name="subcategory.f">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return `f_i` of ``self`` if it exists or ``None`` otherwise.
+
+            This method should be implemented by the element class of
+            the crystal.
+
+            EXAMPLES::
+
+                sage: C = Crystals().example(5)
+                sage: x = C[1]; x
+                2
+                sage: x.f(1), x.f(2), x.f(3)
+                (None, 3, None)
+            </opaque><constant name="subcategory.f_string">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Applies `f_{i_r} \cdots f_{i_1}` to self for ``list`` as
+            `[i_1, ..., i_r]`
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',3])
+                sage: b = C(1)
+                sage: b.f_string([1,2])
+                3
+                sage: b.f_string([2,1])
+            </opaque><constant name="subcategory.index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="subcategory.is_highest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns ``True`` if ``self`` is a highest weight.
+            Specifying the option ``index_set`` to be a subset `I` of the
+            index set of the underlying crystal, finds all highest
+            weight vectors for arrows in `I`.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).is_highest_weight()
+                True
+                sage: C(2).is_highest_weight()
+                False
+                sage: C(2).is_highest_weight(index_set = [2,3,4,5])
+                True
+            </opaque><constant name="subcategory.is_lowest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns ``True`` if ``self`` is a lowest weight.
+            Specifying the option ``index_set`` to be a subset `I` of the
+            index set of the underlying crystal, finds all lowest
+            weight vectors for arrows in `I`.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).is_lowest_weight()
+                False
+                sage: C(6).is_lowest_weight()
+                True
+                sage: C(4).is_lowest_weight(index_set = [1,3])
+                True
+            </opaque><constant name="subcategory.phi">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).phi(1)
+                1
+                sage: C(2).phi(1)
+                0
+            </opaque><constant name="subcategory.phi_minus_epsilon">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return `\varphi_i - \varepsilon_i` of ``self``.
+
+            There are sometimes better implementations using the
+            weight for this. It is used for reflections along a string.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).phi_minus_epsilon(1)
+                1
+            </opaque><constant name="subcategory.s">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the reflection of ``self`` along its `i`-string.
+
+            EXAMPLES::
+
+                sage: C = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: b = C(rows=[[1,1],[3]])
+                sage: b.s(1)
+                [[2, 2], [3]]
+                sage: b = C(rows=[[1,2],[3]])
+                sage: b.s(2)
+                [[1, 2], [3]]
+                sage: T = crystals.Tableaux(['A',2],shape=[4])
+                sage: t = T(rows=[[1,2,2,2]])
+                sage: t.s(1)
+                [[1, 1, 1, 2]]
+            </opaque><constant name="subcategory.subcrystal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Construct the subcrystal generated by ``self`` using `e_i` and/or
+            `f_i` for all `i` in ``index_set``.
+
+            INPUT:
+
+            - ``index_set`` -- (default: ``None``) the index set; if ``None``
+              then use the index set of the crystal
+
+            - ``max_depth`` -- (default: infinity) the maximum depth to build
+
+            - ``direction`` -- (default: ``'both'``) the direction to build
+              the subcrystal; it can be one of the following:
+
+              - ``'both'`` - using both `e_i` and `f_i`
+              - ``'upper'`` - using `e_i`
+              - ``'lower'`` - using `f_i`
+
+            - ``contained`` -- (optional) a set (or function) defining the
+              containment in the subcrystal
+
+            - ``cartan_type`` -- (optional) specify the Cartan type of the
+              subcrystal
+
+            - ``category`` -- (optional) specify the category of the subcrystal
+
+            .. SEEALSO::
+
+                - :meth:`Crystals.ParentMethods.subcrystal()`
+
+            EXAMPLES::
+
+                sage: C = crystals.KirillovReshetikhin(['A',3,1], 1, 2)
+                sage: elt = C(1,4)
+                sage: list(elt.subcrystal(index_set=[1,3]))
+                [[[1, 4]], [[2, 4]], [[1, 3]], [[2, 3]]]
+                sage: list(elt.subcrystal(index_set=[1,3], max_depth=1))
+                [[[1, 4]], [[2, 4]], [[1, 3]]]
+                sage: list(elt.subcrystal(index_set=[1,3], direction='upper'))
+                [[[1, 4]], [[1, 3]]]
+                sage: list(elt.subcrystal(index_set=[1,3], direction='lower'))
+                [[[1, 4]], [[2, 4]]]
+            </opaque><constant name="subcategory.to_highest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the highest weight element `u` and a list `[i_1,...,i_k]`
+            such that `self = f_{i_1} ... f_{i_k} u`, where `i_1,...,i_k` are
+            elements in `index_set`. By default the index set is assumed to be
+            the full index set of self.
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',3], shape = [1])
+                sage: t = T(rows = [[3]])
+                sage: t.to_highest_weight()
+                [[[1]], [2, 1]]
+                sage: T = crystals.Tableaux(['A',3], shape = [2,1])
+                sage: t = T(rows = [[1,2],[4]])
+                sage: t.to_highest_weight()
+                [[[1, 1], [2]], [1, 3, 2]]
+                sage: t.to_highest_weight(index_set = [3])
+                [[[1, 2], [3]], [3]]
+                sage: K = crystals.KirillovReshetikhin(['A',3,1],2,1)
+                sage: t = K(rows=[[2],[3]]); t.to_highest_weight(index_set=[1])
+                [[[1], [3]], [1]]
+                sage: t.to_highest_weight()
+                Traceback (most recent call last):
+                ...
+                ValueError: This is not a highest weight crystals!
+            </opaque><constant name="subcategory.to_lowest_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the lowest weight element `u` and a list `[i_1,...,i_k]`
+            such that `self = e_{i_1} ... e_{i_k} u`, where `i_1,...,i_k` are
+            elements in `index_set`. By default the index set is assumed to be
+            the full index set of self.
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',3], shape = [1])
+                sage: t = T(rows = [[3]])
+                sage: t.to_lowest_weight()
+                [[[4]], [3]]
+                sage: T = crystals.Tableaux(['A',3], shape = [2,1])
+                sage: t = T(rows = [[1,2],[4]])
+                sage: t.to_lowest_weight()
+                [[[3, 4], [4]], [1, 2, 2, 3]]
+                sage: t.to_lowest_weight(index_set = [3])
+                [[[1, 2], [4]], []]
+                sage: K = crystals.KirillovReshetikhin(['A',3,1],2,1)
+                sage: t = K.module_generator(); t
+                [[1], [2]]
+                sage: t.to_lowest_weight(index_set=[1,2,3])
+                [[[3], [4]], [2, 1, 3, 2]]
+                sage: t.to_lowest_weight()
+                Traceback (most recent call last):
+                ...
+                ValueError: This is not a highest weight crystals!
+            </opaque><constant name="subcategory.weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the weight of this crystal element.
+
+            This method should be implemented by the element class of
+            the crystal.
+
+            EXAMPLES::
+
+                sage: C = crystals.Letters(['A',5])
+                sage: C(1).weight()
+                (1, 0, 0, 0, 0, 0)
             </opaque></document></theory></omdoc>

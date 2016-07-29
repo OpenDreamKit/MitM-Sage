@@ -6,19 +6,3 @@ Includes http://www.sagemath.org/content/categories/partially_ordered_monoids?Pa
 Includes http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/monoids?Monoids
 Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids
 constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids
-Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?_mul_
-constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?_mul_
-Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?__invert__
-constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?__invert__
-Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?lower_covers
-constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?lower_covers
-Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?order_filter
-constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?order_filter
-Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?order_ideal
-constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?order_ideal
-Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?upper_covers
-constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?upper_covers
-Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?__contains__
-constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?__contains__
-Declares http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?le
-constant http://www.sagemath.org/content/categories/partially_ordered_monoids?PartiallyOrderedMonoids?le

@@ -4,17 +4,3 @@ Includes http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Al
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas?Algebras
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas?Commutative
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?_add_
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?_add_
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?_mul_
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?_mul_
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?__nonzero__
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?monomial_coefficients
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?__invert__
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?__invert__
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?product_on_basis
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?product_on_basis
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?__contains__
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Commutative?Algebras?__contains__

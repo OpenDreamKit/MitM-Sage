@@ -4,19 +4,3 @@ Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http:/
 Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/algebras?Algebras
 Includes http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras
-Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?_add_
-constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?_add_
-Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?_mul_
-constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?_mul_
-Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__nonzero__
-constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__invert__
-constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__invert__
-Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?algebra_generators
-constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?algebra_generators
-Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__contains__
-constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?__contains__
-Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?coproduct
-constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?coproduct
-Declares http://www.sagemath.org/content/categories/bialgebras?Bialgebras http://www.sagemath.org/content/categories/bialgebras?Bialgebras?counit
-constant http://www.sagemath.org/content/categories/bialgebras?Bialgebras?counit

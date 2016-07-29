@@ -5,19 +5,129 @@ Includes http://www.sagemath.org/content/categories/crystals?Crystals http://www
 Includes http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets
 Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?sage.categories.crystals.Crystals
 constant http://www.sagemath.org/content/categories/crystals?Crystals?sage.categories.crystals.Crystals
-Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?e
-constant http://www.sagemath.org/content/categories/crystals?Crystals?e
-Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?epsilon
-constant http://www.sagemath.org/content/categories/crystals?Crystals?epsilon
-Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?f
-constant http://www.sagemath.org/content/categories/crystals?Crystals?f
-Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?phi
-constant http://www.sagemath.org/content/categories/crystals?Crystals?phi
-Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?weight
-constant http://www.sagemath.org/content/categories/crystals?Crystals?weight
-Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?__invert__
-constant http://www.sagemath.org/content/categories/crystals?Crystals?__invert__
-Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?connected_components_generators
-constant http://www.sagemath.org/content/categories/crystals?Crystals?connected_components_generators
-Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?__contains__
-constant http://www.sagemath.org/content/categories/crystals?Crystals?__contains__
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.Epsilon
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.Epsilon
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.Phi
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.Phi
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.all_paths_to_highest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.all_paths_to_highest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.cartan_type
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.cartan_type
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.e
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.e
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.e_string
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.e_string
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.epsilon
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.epsilon
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.f
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.f
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.f_string
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.f_string
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.index_set
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.index_set
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.is_highest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.is_highest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.is_lowest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.is_lowest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.phi
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.phi
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.phi_minus_epsilon
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.phi_minus_epsilon
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.s
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.s
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.subcrystal
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.subcrystal
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.to_highest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.to_highest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.to_lowest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.to_lowest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?element.weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?element.weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?morphism.is_embedding
+constant http://www.sagemath.org/content/categories/crystals?Crystals?morphism.is_embedding
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?morphism.is_isomorphism
+constant http://www.sagemath.org/content/categories/crystals?Crystals?morphism.is_isomorphism
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?morphism.is_strict
+constant http://www.sagemath.org/content/categories/crystals?Crystals?morphism.is_strict
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.Lambda
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.Lambda
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent._Hom_
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent._Hom_
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.__add__
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.__add__
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent._latex_
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent._latex_
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.cartan_type
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.cartan_type
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.connected_components
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.connected_components
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.connected_components_generators
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.connected_components_generators
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.crystal_morphism
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.crystal_morphism
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.digraph
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.digraph
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.direct_sum
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.direct_sum
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.dot_tex
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.dot_tex
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.index_set
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.index_set
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.is_connected
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.is_connected
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.latex
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.latex
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.latex_file
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.latex_file
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.metapost
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.metapost
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.number_of_connected_components
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.number_of_connected_components
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.plot
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.plot
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.plot3d
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.plot3d
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.subcrystal
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.subcrystal
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.tensor
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.tensor
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?parent.weight_lattice_realization
+constant http://www.sagemath.org/content/categories/crystals?Crystals?parent.weight_lattice_realization
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.Epsilon
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.Epsilon
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.Phi
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.Phi
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.all_paths_to_highest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.all_paths_to_highest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.cartan_type
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.cartan_type
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.e
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.e
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.e_string
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.e_string
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.epsilon
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.epsilon
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.f
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.f
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.f_string
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.f_string
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.index_set
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.index_set
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.is_highest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.is_highest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.is_lowest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.is_lowest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.phi
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.phi
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.phi_minus_epsilon
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.phi_minus_epsilon
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.s
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.s
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.subcrystal
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.subcrystal
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.to_highest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.to_highest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.to_lowest_weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.to_lowest_weight
+Declares http://www.sagemath.org/content/categories/crystals?Crystals http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.weight
+constant http://www.sagemath.org/content/categories/crystals?Crystals?subcategory.weight

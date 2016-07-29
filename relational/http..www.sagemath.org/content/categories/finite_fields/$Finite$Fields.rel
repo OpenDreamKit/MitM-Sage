@@ -5,13 +5,3 @@ Includes http://www.sagemath.org/content/categories/finite_fields?FiniteFields h
 Includes http://www.sagemath.org/content/categories/finite_fields?FiniteFields http://www.sagemath.org/content/categories/fields?Fields
 Includes http://www.sagemath.org/content/categories/finite_fields?FiniteFields http://www.sagemath.org/content/categories/commutative_rings/CommutativeRings?Finite
 Includes http://www.sagemath.org/content/categories/finite_fields?FiniteFields http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets
-Declares http://www.sagemath.org/content/categories/finite_fields?FiniteFields http://www.sagemath.org/content/categories/finite_fields?FiniteFields?_add_
-constant http://www.sagemath.org/content/categories/finite_fields?FiniteFields?_add_
-Declares http://www.sagemath.org/content/categories/finite_fields?FiniteFields http://www.sagemath.org/content/categories/finite_fields?FiniteFields?_mul_
-constant http://www.sagemath.org/content/categories/finite_fields?FiniteFields?_mul_
-Declares http://www.sagemath.org/content/categories/finite_fields?FiniteFields http://www.sagemath.org/content/categories/finite_fields?FiniteFields?__nonzero__
-constant http://www.sagemath.org/content/categories/finite_fields?FiniteFields?__nonzero__
-Declares http://www.sagemath.org/content/categories/finite_fields?FiniteFields http://www.sagemath.org/content/categories/finite_fields?FiniteFields?__invert__
-constant http://www.sagemath.org/content/categories/finite_fields?FiniteFields?__invert__
-Declares http://www.sagemath.org/content/categories/finite_fields?FiniteFields http://www.sagemath.org/content/categories/finite_fields?FiniteFields?__contains__
-constant http://www.sagemath.org/content/categories/finite_fields?FiniteFields?__contains__

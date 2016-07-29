@@ -5,11 +5,5 @@ Includes http://www.sagemath.org/content/categories/finitely_generated_magmas?Fi
 Includes http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas http://www.sagemath.org/content/categories/magmas?Magmas
 Declares http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?FinitelyGeneratedAsMagma
 constant http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?FinitelyGeneratedAsMagma
-Declares http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?_mul_
-constant http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?_mul_
-Declares http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?__invert__
-constant http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?__invert__
-Declares http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?__contains__
-constant http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?__contains__
-Declares http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?magma_generators
-constant http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?magma_generators
+Declares http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?parent.magma_generators
+constant http://www.sagemath.org/content/categories/finitely_generated_magmas?FinitelyGeneratedMagmas?parent.magma_generators

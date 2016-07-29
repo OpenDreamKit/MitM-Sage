@@ -5,9 +5,27 @@ Includes http://www.sagemath.org/content/categories/magmas?Magmas http://www.sag
 Includes http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?sage.categories.magmas.Magmas
 constant http://www.sagemath.org/content/categories/magmas?Magmas?sage.categories.magmas.Magmas
-Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?_mul_
-constant http://www.sagemath.org/content/categories/magmas?Magmas?_mul_
-Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?__invert__
-constant http://www.sagemath.org/content/categories/magmas?Magmas?__invert__
-Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?__contains__
-constant http://www.sagemath.org/content/categories/magmas?Magmas?__contains__
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?element.__mul__
+constant http://www.sagemath.org/content/categories/magmas?Magmas?element.__mul__
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?element._mul_
+constant http://www.sagemath.org/content/categories/magmas?Magmas?element._mul_
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?element._mul_parent
+constant http://www.sagemath.org/content/categories/magmas?Magmas?element._mul_parent
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?element.is_idempotent
+constant http://www.sagemath.org/content/categories/magmas?Magmas?element.is_idempotent
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?parent.__init_extra__
+constant http://www.sagemath.org/content/categories/magmas?Magmas?parent.__init_extra__
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?parent.multiplication_table
+constant http://www.sagemath.org/content/categories/magmas?Magmas?parent.multiplication_table
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?parent.product
+constant http://www.sagemath.org/content/categories/magmas?Magmas?parent.product
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?parent.product_from_element_class_mul
+constant http://www.sagemath.org/content/categories/magmas?Magmas?parent.product_from_element_class_mul
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.__mul__
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.__mul__
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory._mul_
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory._mul_
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory._mul_parent
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory._mul_parent
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.is_idempotent
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.is_idempotent

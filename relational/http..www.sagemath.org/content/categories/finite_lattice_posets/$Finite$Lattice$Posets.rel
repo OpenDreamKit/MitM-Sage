@@ -4,23 +4,13 @@ Includes http://www.sagemath.org/content/categories/finite_lattice_posets?Finite
 Includes http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/lattice_posets?LatticePosets
 Includes http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?__invert__
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?__invert__
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?antichains
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?antichains
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?lower_covers
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?lower_covers
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?order_filter
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?order_filter
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?order_ideal
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?order_ideal
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?upper_covers
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?upper_covers
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?__contains__
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?__contains__
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?join
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?join
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?le
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?le
-Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?meet
-constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?meet
+Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.is_lattice_morphism
+constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.is_lattice_morphism
+Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.join_irreducibles
+constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.join_irreducibles
+Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.join_irreducibles_poset
+constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.join_irreducibles_poset
+Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.meet_irreducibles
+constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.meet_irreducibles
+Declares http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.meet_irreducibles_poset
+constant http://www.sagemath.org/content/categories/finite_lattice_posets?FiniteLatticePosets?parent.meet_irreducibles_poset

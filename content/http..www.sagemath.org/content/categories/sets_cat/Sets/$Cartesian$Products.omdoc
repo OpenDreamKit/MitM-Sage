@@ -6,7 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
+     </constant><document name="Element Methods"><constant name="element.cartesian_factors">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -16,51 +16,24 @@
        
        
      </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+                Return the Cartesian factors of ``self``.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+                EXAMPLES::
 
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+                    sage: F = CombinatorialFreeModule(ZZ, [4,5]); F.__custom_name = &quot;F&quot;
+                    sage: G = CombinatorialFreeModule(ZZ, [4,6]); G.__custom_name = &quot;G&quot;
+                    sage: H = CombinatorialFreeModule(ZZ, [4,7]); H.__custom_name = &quot;H&quot;
+                    sage: S = cartesian_product([F, G, H])
+                    sage: x = S.monomial((0,4)) + 2 * S.monomial((0,5)) + 3 * S.monomial((1,6)) + 4 * S.monomial((2,4)) + 5 * S.monomial((2,7))
+                    sage: x.cartesian_factors()
+                    (B[4] + 2*B[5], 3*B[6], 4*B[4] + 5*B[7])
+                    sage: [s.parent() for s in x.cartesian_factors()]
+                    [F, G, H]
+                    sage: S.zero().cartesian_factors()
+                    (0, 0, 0)
+                    sage: [s.parent() for s in S.zero().cartesian_factors()]
+                    [F, G, H]
+                </opaque><constant name="element.cartesian_projection">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -74,19 +47,148 @@
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+                Return the projection of ``self`` onto the `i`-th
+                factor of the Cartesian product.
 
-            All parents in the category ``Sets()`` should implement this method.
+                INPUT:
 
-            EXAMPLES::
+                - ``i`` -- the index of a factor of the Cartesian product
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque><constant name="_cartesian_product_of_elements">
+                EXAMPLES::
+
+                    sage: F = CombinatorialFreeModule(ZZ, [4,5]); F.__custom_name = &quot;F&quot;
+                    sage: G = CombinatorialFreeModule(ZZ, [4,6]); G.__custom_name = &quot;G&quot;
+                    sage: S = cartesian_product([F, G])
+                    sage: x = S.monomial((0,4)) + 2 * S.monomial((0,5)) + 3 * S.monomial((1,6))
+                    sage: x.cartesian_projection(0)
+                    B[4] + 2*B[5]
+                    sage: x.cartesian_projection(1)
+                    3*B[6]
+                </opaque><constant name="element.summand_projection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Deprecated: Use :func:`cartesian_projection` instead.
+See :trac:`10963` for details.
+
+</opaque><constant name="element.summand_split">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Deprecated: Use :func:`cartesian_factors` instead.
+See :trac:`10963` for details.
+
+</opaque></document><document name="Morphism Methods:"><opaque format="text">
+        EXAMPLES::
+
+            sage: C = Sets().CartesianProducts().example()
+            sage: C
+            The Cartesian product of (Set of prime numbers (basic implementation),
+             An example of an infinite enumerated set: the non negative integers,
+             An example of a finite enumerated set: {1,2,3})
+            sage: C.category()
+            Category of Cartesian products of sets
+            sage: C.categories()
+            [Category of Cartesian products of sets, Category of sets,
+             Category of sets with partial maps,
+             Category of objects]
+            sage: TestSuite(C).run()
+        </opaque></document><document name="Parent Methods:"><constant name="parent.__iter__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return a lexicographic iterator for the elements of this Cartesian product.
+
+                EXAMPLES::
+
+                    sage: for x,y in cartesian_product([Set([1,2]), Set(['a','b'])]):
+                    ....:     print((x, y))
+                    (1, 'a')
+                    (1, 'b')
+                    (2, 'a')
+                    (2, 'b')
+
+                    sage: A = FiniteEnumeratedSets()([&quot;a&quot;, &quot;b&quot;])
+                    sage: B = FiniteEnumeratedSets().example(); B
+                    An example of a finite enumerated set: {1,2,3}
+                    sage: C = cartesian_product([A, B, A]); C
+                    The Cartesian product of ({'a', 'b'}, An example of a finite enumerated set: {1,2,3}, {'a', 'b'})
+                    sage: C in FiniteEnumeratedSets()
+                    True
+                    sage: list(C)
+                    [('a', 1, 'a'), ('a', 1, 'b'), ('a', 2, 'a'), ('a', 2, 'b'), ('a', 3, 'a'), ('a', 3, 'b'),
+                     ('b', 1, 'a'), ('b', 1, 'b'), ('b', 2, 'a'), ('b', 2, 'b'), ('b', 3, 'a'), ('b', 3, 'b')]
+                    sage: C.__iter__.__module__
+                    'sage.categories.enumerated_sets'
+
+                    sage: F22 = GF(2).cartesian_product(GF(2))
+                    sage: list(F22)
+                    [(0, 0), (0, 1), (1, 0), (1, 1)]
+
+                    sage: C = cartesian_product([Permutations(10)]*4)
+                    sage: it = iter(C)
+                    sage: next(it)
+                    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+                    sage: next(it)
+                    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                     [1, 2, 3, 4, 5, 6, 7, 8, 10, 9])
+
+                .. WARNING::
+
+                    The elements are returned in lexicographic order,
+                    which gives a valid enumeration only if all
+                    factors, but possibly the first one, are
+                    finite. So the following one is fine::
+
+                        sage: it = iter(cartesian_product([ZZ, GF(2)]))
+                        sage: [next(it) for _ in range(10)]
+                        [(0, 0), (0, 1), (1, 0), (1, 1),
+                         (-1, 0), (-1, 1), (2, 0), (2, 1),
+                         (-2, 0), (-2, 1)]
+
+                    But this one is not::
+
+                        sage: it = iter(cartesian_product([GF(2), ZZ]))
+                        sage: [next(it) for _ in range(10)]
+                        doctest:...: UserWarning: Sage is not able to determine
+                        whether the factors of this Cartesian product are
+                        finite. The lexicographic ordering might not go through
+                        all elements.
+                        [(0, 0), (0, 1), (0, -1), (0, 2), (0, -2),
+                         (0, 3), (0, -3), (0, 4), (0, -4), (0, 5)]
+
+                .. NOTE::
+
+                    Here it would be faster to use :func:`itertools.product` for sets
+                    of small size. But the latter expands all factor in memory!
+                    So we can not reasonably use it in general.
+
+                ALGORITHM:
+
+                Recipe 19.9 in the Python Cookbook by Alex Martelli
+                and David Ascher.
+                </opaque><constant name="parent._cartesian_product_of_elements">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -119,7 +221,7 @@
                     (42, 47, 42)
                     sage: C._cartesian_product_of_elements(S.an_element() for S in X)
                     (42, 47, 42)
-                </opaque><constant name="_sets_keys">
+                </opaque><constant name="parent._sets_keys">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -135,7 +237,7 @@
 
                     sage: cartesian_product([QQ, ZZ, ZZ])._sets_keys()
                     {0, 1, 2}
-                </opaque><constant name="cartesian_factors">
+                </opaque><constant name="parent.cartesian_factors">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -151,7 +253,7 @@
 
                     sage: cartesian_product([QQ, ZZ, ZZ]).cartesian_factors()
                     (Rational Field, Integer Ring, Integer Ring)
-                </opaque><constant name="cartesian_projection">
+                </opaque><constant name="parent.cartesian_projection">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -183,4 +285,107 @@
                     sage: pi = C.cartesian_projection(1)
                     sage: pi(x)
                     42
-                </opaque></document></theory></omdoc>
+                </opaque><constant name="parent.is_empty">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return whether this set is empty.
+
+                EXAMPLES::
+
+
+                    sage: S1 = FiniteEnumeratedSet([1,2,3])
+                    sage: S2 = Set([])
+                    sage: cartesian_product([S1,ZZ]).is_empty()
+                    False
+                    sage: cartesian_product([S1,S2,S1]).is_empty()
+                    True
+                </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.cartesian_factors">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return the Cartesian factors of ``self``.
+
+                EXAMPLES::
+
+                    sage: F = CombinatorialFreeModule(ZZ, [4,5]); F.__custom_name = &quot;F&quot;
+                    sage: G = CombinatorialFreeModule(ZZ, [4,6]); G.__custom_name = &quot;G&quot;
+                    sage: H = CombinatorialFreeModule(ZZ, [4,7]); H.__custom_name = &quot;H&quot;
+                    sage: S = cartesian_product([F, G, H])
+                    sage: x = S.monomial((0,4)) + 2 * S.monomial((0,5)) + 3 * S.monomial((1,6)) + 4 * S.monomial((2,4)) + 5 * S.monomial((2,7))
+                    sage: x.cartesian_factors()
+                    (B[4] + 2*B[5], 3*B[6], 4*B[4] + 5*B[7])
+                    sage: [s.parent() for s in x.cartesian_factors()]
+                    [F, G, H]
+                    sage: S.zero().cartesian_factors()
+                    (0, 0, 0)
+                    sage: [s.parent() for s in S.zero().cartesian_factors()]
+                    [F, G, H]
+                </opaque><constant name="subcategory.cartesian_projection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return the projection of ``self`` onto the `i`-th
+                factor of the Cartesian product.
+
+                INPUT:
+
+                - ``i`` -- the index of a factor of the Cartesian product
+
+                EXAMPLES::
+
+                    sage: F = CombinatorialFreeModule(ZZ, [4,5]); F.__custom_name = &quot;F&quot;
+                    sage: G = CombinatorialFreeModule(ZZ, [4,6]); G.__custom_name = &quot;G&quot;
+                    sage: S = cartesian_product([F, G])
+                    sage: x = S.monomial((0,4)) + 2 * S.monomial((0,5)) + 3 * S.monomial((1,6))
+                    sage: x.cartesian_projection(0)
+                    B[4] + 2*B[5]
+                    sage: x.cartesian_projection(1)
+                    3*B[6]
+                </opaque><constant name="subcategory.summand_projection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Deprecated: Use :func:`cartesian_projection` instead.
+See :trac:`10963` for details.
+
+</opaque><constant name="subcategory.summand_split">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Deprecated: Use :func:`cartesian_factors` instead.
+See :trac:`10963` for details.
+
+</opaque></document></theory></omdoc>

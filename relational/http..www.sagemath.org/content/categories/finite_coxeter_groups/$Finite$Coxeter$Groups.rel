@@ -4,23 +4,27 @@ Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?Finite
 Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/generalized_coxeter_groups/GeneralizedCoxeterGroups?Finite
 Includes http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/coxeter_groups?CoxeterGroups
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?reflection_length
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?reflection_length
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?to_matrix
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?to_matrix
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?__invert__
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?__invert__
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?distinguished_reflection
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?distinguished_reflection
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?hyperplane_index_set
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?hyperplane_index_set
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?irreducible_components
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?irreducible_components
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?reflection
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?reflection
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?reflection_index_set
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?reflection_index_set
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?__contains__
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?__contains__
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?index_set
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?index_set
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?element.coxeter_knuth_graph
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?element.coxeter_knuth_graph
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?element.coxeter_knuth_neighbor
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?element.coxeter_knuth_neighbor
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.bruhat_poset
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.bruhat_poset
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.cambrian_lattice
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.cambrian_lattice
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.inversion_sequence
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.inversion_sequence
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.long_element
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.long_element
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.m_cambrian_lattice
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.m_cambrian_lattice
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.reflections_from_w0
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.reflections_from_w0
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.weak_lattice
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.weak_lattice
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.weak_poset
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.weak_poset
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?subcategory.coxeter_knuth_graph
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?subcategory.coxeter_knuth_graph
+Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?subcategory.coxeter_knuth_neighbor
+constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?subcategory.coxeter_knuth_neighbor

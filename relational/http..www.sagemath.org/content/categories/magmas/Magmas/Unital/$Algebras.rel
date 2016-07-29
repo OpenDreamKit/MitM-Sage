@@ -4,19 +4,3 @@ Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebra
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas?Algebras
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/unital_algebras/UnitalAlgebras?WithBasis
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?_add_
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?_add_
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?_mul_
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?_mul_
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?__nonzero__
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?monomial_coefficients
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?__invert__
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?__invert__
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?one_basis
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?one_basis
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?product_on_basis
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?product_on_basis
-Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?__contains__
-constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Algebras?__contains__

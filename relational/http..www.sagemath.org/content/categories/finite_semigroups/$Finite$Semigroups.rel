@@ -4,11 +4,13 @@ Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemi
 Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/semigroups?Semigroups
 Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_sets?FiniteSets
-Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?_mul_
-constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?_mul_
-Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?__invert__
-constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?__invert__
-Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?semigroup_generators
-constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?semigroup_generators
-Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?__contains__
-constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?__contains__
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.idempotents
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.idempotents
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.isomorphism_transformation_monoid
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.isomorphism_transformation_monoid
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_classes
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_classes
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_classes_of_idempotents
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_classes_of_idempotents
+Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_transversal_of_idempotents
+constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_transversal_of_idempotents

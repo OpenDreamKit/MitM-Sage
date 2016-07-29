@@ -4,19 +4,47 @@ Includes http://www.sagemath.org/content/categories/finite_posets?FinitePosets h
 Includes http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/posets?Posets
 Includes http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_sets?FiniteSets
-Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?__invert__
-constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?__invert__
-Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?antichains
-constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?antichains
-Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?lower_covers
-constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?lower_covers
-Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?order_filter
-constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?order_filter
-Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?order_ideal
-constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?order_ideal
-Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?upper_covers
-constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?upper_covers
-Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?__contains__
-constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?__contains__
-Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?le
-constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?le
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.antichains
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.antichains
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.birational_free_labelling
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.birational_free_labelling
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.birational_rowmotion
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.birational_rowmotion
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.birational_toggle
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.birational_toggle
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.birational_toggles
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.birational_toggles
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.directed_subsets
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.directed_subsets
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.is_lattice
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.is_lattice
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.is_poset_isomorphism
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.is_poset_isomorphism
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.is_poset_morphism
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.is_poset_morphism
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.is_selfdual
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.is_selfdual
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.order_filter_generators
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.order_filter_generators
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.order_ideal_complement_generators
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.order_ideal_complement_generators
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.order_ideal_generators
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.order_ideal_generators
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.order_ideals_lattice
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.order_ideals_lattice
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.panyushev_complement
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.panyushev_complement
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.panyushev_orbit_iter
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.panyushev_orbit_iter
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.panyushev_orbits
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.panyushev_orbits
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.rowmotion
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.rowmotion
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.rowmotion_orbit_iter
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.rowmotion_orbit_iter
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.rowmotion_orbits
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.rowmotion_orbits
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.toggling_orbit_iter
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.toggling_orbit_iter
+Declares http://www.sagemath.org/content/categories/finite_posets?FinitePosets http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.toggling_orbits
+constant http://www.sagemath.org/content/categories/finite_posets?FinitePosets?parent.toggling_orbits

@@ -1,184 +1,105 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="CommutativeAlgebras" base="http://www.sagemath.org/content/categories/commutative_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/algebras?Algebras"></import><import from="http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings"></import><document name="Element Methods"><constant name="_add_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="CommutativeAlgebras" base="http://www.sagemath.org/content/categories/commutative_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/algebras?Algebras"></import><import from="http://www.sagemath.org/content/categories/commutative_rings?CommutativeRings"></import><document name="Element Methods"><opaque format="text">
+    The category of commutative algebras with unit over a given base ring.
 
-            INPUT:
+    EXAMPLES::
 
-            - ``self``, ``right`` -- two elements with the same parent
+        sage: M = CommutativeAlgebras(GF(19))
+        sage: M
+        Category of commutative algebras over Finite Field of size 19
+        sage: CommutativeAlgebras(QQ).super_categories()
+        [Category of algebras over Rational Field, Category of commutative rings]
 
-            OUTPUT:
+    This is just a shortcut for::
 
-            - an element of the same parent
+        sage: Algebras(QQ).Commutative()
+        Category of commutative algebras over Rational Field
 
-            EXAMPLES::
+    TESTS::
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
+        sage: Algebras(QQ).Commutative() is CommutativeAlgebras(QQ)
+        True
+        sage: TestSuite(CommutativeAlgebras(ZZ)).run()
 
-            INPUT:
+    Todo:
 
-            - ``self``, ``right`` -- two elements with the same parent
+     - product   ( = Cartesian product)
+     - coproduct ( = tensor product over base ring)
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of commutative algebras with unit over a given base ring.
 
-            OUTPUT:
+    EXAMPLES::
 
-            - an element of the same parent
+        sage: M = CommutativeAlgebras(GF(19))
+        sage: M
+        Category of commutative algebras over Finite Field of size 19
+        sage: CommutativeAlgebras(QQ).super_categories()
+        [Category of algebras over Rational Field, Category of commutative rings]
 
-            EXAMPLES::
+    This is just a shortcut for::
 
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
+        sage: Algebras(QQ).Commutative()
+        Category of commutative algebras over Rational Field
 
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
+    TESTS::
 
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
+        sage: Algebras(QQ).Commutative() is CommutativeAlgebras(QQ)
+        True
+        sage: TestSuite(CommutativeAlgebras(ZZ)).run()
 
-                TESTS::
+    Todo:
 
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+     - product   ( = Cartesian product)
+     - coproduct ( = tensor product over base ring)
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    The category of commutative algebras with unit over a given base ring.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+    EXAMPLES::
 
-            EXAMPLES::
+        sage: M = CommutativeAlgebras(GF(19))
+        sage: M
+        Category of commutative algebras over Finite Field of size 19
+        sage: CommutativeAlgebras(QQ).super_categories()
+        [Category of algebras over Rational Field, Category of commutative rings]
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+    This is just a shortcut for::
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+        sage: Algebras(QQ).Commutative()
+        Category of commutative algebras over Rational Field
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+    TESTS::
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+        sage: Algebras(QQ).Commutative() is CommutativeAlgebras(QQ)
+        True
+        sage: TestSuite(CommutativeAlgebras(ZZ)).run()
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    Todo:
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+     - product   ( = Cartesian product)
+     - coproduct ( = tensor product over base ring)
+    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of commutative algebras with unit over a given base ring.
 
-            .. NOTE::
+    EXAMPLES::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="algebra_generators">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return a family of generators of this algebra.
+        sage: M = CommutativeAlgebras(GF(19))
+        sage: M
+        Category of commutative algebras over Finite Field of size 19
+        sage: CommutativeAlgebras(QQ).super_categories()
+        [Category of algebras over Rational Field, Category of commutative rings]
 
-            EXAMPLES::
+    This is just a shortcut for::
 
-                sage: F = AlgebrasWithBasis(QQ).example(); F
-                An example of an algebra with basis: the free algebra on the generators ('a', 'b', 'c') over Rational Field
-                sage: F.algebra_generators()
-                Family (B[word: a], B[word: b], B[word: c])
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+        sage: Algebras(QQ).Commutative()
+        Category of commutative algebras over Rational Field
 
-            All parents in the category ``Sets()`` should implement this method.
+    TESTS::
 
-            EXAMPLES::
+        sage: Algebras(QQ).Commutative() is CommutativeAlgebras(QQ)
+        True
+        sage: TestSuite(CommutativeAlgebras(ZZ)).run()
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+    Todo:
+
+     - product   ( = Cartesian product)
+     - coproduct ( = tensor product over base ring)
+    </opaque></document></theory></omdoc>

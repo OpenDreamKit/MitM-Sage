@@ -4,9 +4,3 @@ Includes http://www.sagemath.org/content/categories/groups/Groups?Commutative ht
 Includes http://www.sagemath.org/content/categories/groups/Groups?Commutative http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/groups/Groups?Commutative http://www.sagemath.org/content/categories/groups?Groups
 Includes http://www.sagemath.org/content/categories/groups/Groups?Commutative http://www.sagemath.org/content/categories/monoids/Monoids?Commutative
-Declares http://www.sagemath.org/content/categories/groups/Groups?Commutative http://www.sagemath.org/content/categories/groups/Groups?Commutative?_mul_
-constant http://www.sagemath.org/content/categories/groups/Groups?Commutative?_mul_
-Declares http://www.sagemath.org/content/categories/groups/Groups?Commutative http://www.sagemath.org/content/categories/groups/Groups?Commutative?__invert__
-constant http://www.sagemath.org/content/categories/groups/Groups?Commutative?__invert__
-Declares http://www.sagemath.org/content/categories/groups/Groups?Commutative http://www.sagemath.org/content/categories/groups/Groups?Commutative?__contains__
-constant http://www.sagemath.org/content/categories/groups/Groups?Commutative?__contains__

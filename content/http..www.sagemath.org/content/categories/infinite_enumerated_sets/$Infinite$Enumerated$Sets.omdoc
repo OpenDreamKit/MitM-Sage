@@ -1,4 +1,52 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="InfiniteEnumeratedSets" base="http://www.sagemath.org/content/categories/infinite_enumerated_sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets"></import><import from="http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite"></import><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="InfiniteEnumeratedSets" base="http://www.sagemath.org/content/categories/infinite_enumerated_sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets"></import><import from="http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite"></import><document name="Element Methods"><opaque format="text">
+    The category of infinite enumerated sets
+
+    An infinite enumerated sets is a countable set together with a
+    canonical enumeration of its elements.
+
+    EXAMPLES::
+
+        sage: InfiniteEnumeratedSets()
+        Category of infinite enumerated sets
+        sage: InfiniteEnumeratedSets().super_categories()
+        [Category of enumerated sets, Category of infinite sets]
+        sage: InfiniteEnumeratedSets().all_super_categories()
+        [Category of infinite enumerated sets,
+         Category of enumerated sets,
+         Category of infinite sets,
+         Category of sets,
+         Category of sets with partial maps,
+         Category of objects]
+
+    TESTS::
+
+        sage: C = InfiniteEnumeratedSets()
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of infinite enumerated sets
+
+    An infinite enumerated sets is a countable set together with a
+    canonical enumeration of its elements.
+
+    EXAMPLES::
+
+        sage: InfiniteEnumeratedSets()
+        Category of infinite enumerated sets
+        sage: InfiniteEnumeratedSets().super_categories()
+        [Category of enumerated sets, Category of infinite sets]
+        sage: InfiniteEnumeratedSets().all_super_categories()
+        [Category of infinite enumerated sets,
+         Category of enumerated sets,
+         Category of infinite sets,
+         Category of sets,
+         Category of sets with partial maps,
+         Category of objects]
+
+    TESTS::
+
+        sage: C = InfiniteEnumeratedSets()
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent._test_enumerated_set_iter_cardinality">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -8,74 +56,43 @@
        
        
      </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+            Check that the methods :meth:`.cardinality` and
+            :meth:`.__iter__`. are consistent.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+            See also :class:`TestSuite`.
 
-            EXAMPLES::
+            For infinite enumerated sets:
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+               * :meth:`.cardinality` is supposed to return `infinity`
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
+               * :meth:`.list`` is supposed to raise a ``NotImplementedError``.
 
             EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+                sage: NN = InfiniteEnumeratedSets().example()
+                sage: NN._test_enumerated_set_iter_cardinality()
+            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of infinite enumerated sets
+
+    An infinite enumerated sets is a countable set together with a
+    canonical enumeration of its elements.
+
+    EXAMPLES::
+
+        sage: InfiniteEnumeratedSets()
+        Category of infinite enumerated sets
+        sage: InfiniteEnumeratedSets().super_categories()
+        [Category of enumerated sets, Category of infinite sets]
+        sage: InfiniteEnumeratedSets().all_super_categories()
+        [Category of infinite enumerated sets,
+         Category of enumerated sets,
+         Category of infinite sets,
+         Category of sets,
+         Category of sets with partial maps,
+         Category of objects]
+
+    TESTS::
+
+        sage: C = InfiniteEnumeratedSets()
+        sage: TestSuite(C).run()
+    </opaque></document></theory></omdoc>

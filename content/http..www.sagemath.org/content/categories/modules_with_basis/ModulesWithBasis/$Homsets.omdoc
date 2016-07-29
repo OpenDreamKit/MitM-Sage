@@ -6,37 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><constant name="_add_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
-
-            INPUT:
-
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
+     </constant><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"><constant name="parent.__call_on_basis__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -46,99 +16,63 @@
        
        
      </constant><opaque format="text">
-                Return whether ``self`` is not zero.
+                Construct a morphism in this homset from a function defined
+                on the basis.
 
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
+                INPUT:
 
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
+                - ``on_basis`` -- a function from the indices of the
+                  basis of the domain of ``self`` to the codomain of
+                  ``self``
+
+                This method simply delegates the work to
+                :meth:`ModulesWithBasis.ParentMethods.module_morphism`. It
+                is used by :meth:`Homset.__call__` to handle the
+                ``on_basis`` argument, and will disapear as soon as
+                the logic will be generalized.
+
+                EXAMPLES::
+
+                    sage: X = CombinatorialFreeModule(QQ, [1,2,3]);   X.rename(&quot;X&quot;)
+                    sage: Y = CombinatorialFreeModule(QQ, [1,2,3,4]); Y.rename(&quot;Y&quot;)
+                    sage: H = Hom(X, Y)
+                    sage: x = X.basis()
+
+                    sage: phi = H(on_basis = lambda i: Y.monomial(i) + 2*Y.monomial(i+1)) # indirect doctest
+                    sage: phi
+                    Generic morphism:
+                    From: X
+                    To:   Y
+                    sage: phi(x[1] + x[3])
+                    B[1] + 2*B[2] + B[3] + 2*B[4]
+
+                Diagonal functions can be constructed using the ``diagonal`` option::
+
+                    sage: X = CombinatorialFreeModule(QQ, [1,2,3,4]); X.rename(&quot;X&quot;)
+                    sage: Y = CombinatorialFreeModule(QQ, [1,2,3,4], key=&quot;Y&quot;); Y.rename(&quot;Y&quot;)
+                    sage: H = Hom(X, Y)
+                    sage: x = X.basis()
+                    sage: phi = H(diagonal = lambda x: x^2)
+                    sage: phi(x[1] + x[2] + x[3])
+                    B[1] + 4*B[2] + 9*B[3]
 
                 TESTS::
 
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+                As for usual homsets, the argument can be a Python function::
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+                    sage: phi = H(lambda x: Y.zero())
+                    sage: phi
+                    Generic morphism:
+                      From: X
+                      To:   Y
+                    sage: phi(x[1] + x[3])
+                    0
 
-            EXAMPLES::
+               We check that the homset category is properly set up::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+                    sage: X = CombinatorialFreeModule(QQ, [1,2,3]);   X.rename(&quot;X&quot;)
+                    sage: Y = CombinatorialFreeModule(QQ, [1,2,3,4]); Y.rename(&quot;Y&quot;)
+                    sage: H = Hom(X, Y)
+                    sage: H.zero().category_for()
+                    Category of finite dimensional vector spaces with basis over Rational Field
+                </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>

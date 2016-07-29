@@ -5,7 +5,3 @@ Includes http://www.sagemath.org/content/categories/topological_spaces?Topologic
 Includes http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces?sage.categories.topological_spaces.TopologicalSpaces
 constant http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces?sage.categories.topological_spaces.TopologicalSpaces
-Declares http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces?__invert__
-constant http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces?__invert__
-Declares http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces?__contains__
-constant http://www.sagemath.org/content/categories/topological_spaces?TopologicalSpaces?__contains__

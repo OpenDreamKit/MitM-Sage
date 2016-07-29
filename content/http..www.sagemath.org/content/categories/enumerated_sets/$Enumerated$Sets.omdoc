@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="EnumeratedSets" base="http://www.sagemath.org/content/categories/enumerated_sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/sets_cat?Sets"></import><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="EnumeratedSets" base="http://www.sagemath.org/content/categories/enumerated_sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/sets_cat?Sets"></import><document name="Element Methods"><constant name="element.rank">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -8,51 +8,299 @@
        
        
      </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+            Return the rank of ``self`` in its parent.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+            See also :meth:`EnumeratedSets.ElementMethods.rank`
 
             EXAMPLES::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+                sage: F = FiniteSemigroups().example(('a','b','c'))
+                sage: L = list(F); L
+                ['a', 'b', 'c', 'ac', 'ab', 'ba', 'bc', 'cb', 'ca',
+                 'acb', 'abc', 'bca', 'cba', 'bac', 'cab']
+                sage: L[7].rank()
+                7
+            </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of enumerated sets
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+    An *enumerated set* is a *finite* or *countable* set or multiset `S`
+    together with a canonical enumeration of its elements;
+    conceptually, this is very similar to an immutable list. The main
+    difference lies in the names and the return type of the methods,
+    and of course the fact that the list of elements is not supposed to
+    be expanded in memory. Whenever possible one should use one of the
+    two sub-categories :class:`FiniteEnumeratedSets` or
+    :class:`InfiniteEnumeratedSets`.
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+    The purpose of this category is threefold:
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+     - to fix a common interface for all these sets;
+     - to provide a bunch of default implementations;
+     - to provide consistency tests.
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    The standard methods for an enumerated set ``S`` are:
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
+       - ``S.cardinality()``: the number of elements of the set. This
+         is the equivalent for ``len`` on a list except that the
+         return value is specified to be a Sage :class:`Integer` or
+         ``infinity``, instead of a Python ``int``.
+
+       - ``iter(S)``: an iterator for the elements of the set;
+
+       - ``S.list()``: the list of the elements of the set, when
+         possible; raises a NotImplementedError if the list is
+         predictably too large to be expanded in memory.
+
+       - ``S.unrank(n)``: the  ``n-th`` element of the set when ``n`` is a sage
+         ``Integer``. This is the equivalent for ``l[n]`` on a list.
+
+       - ``S.rank(e)``: the position of the element ``e`` in the set;
+         This is equivalent to ``l.index(e)`` for a list except that
+         the return value is specified to be a Sage :class:`Integer`,
+         instead of a Python ``int``.
+
+       - ``S.first()``: the first object of the set; it is equivalent to
+         ``S.unrank(0)``.
+
+       - ``S.next(e)``: the object of the set which follows ``e``; It is
+         equivalent to ``S.unrank(S.rank(e)+1)``.
+
+       - ``S.random_element()``: a random generator for an element of
+         the set. Unless otherwise stated, and for finite enumerated
+         sets, the probability is uniform.
+
+    For examples and tests see:
+
+       - ``FiniteEnumeratedSets().example()``
+       - ``InfiniteEnumeratedSets().example()``
+
+
+    EXAMPLES::
+
+        sage: EnumeratedSets()
+        Category of enumerated sets
+        sage: EnumeratedSets().super_categories()
+        [Category of sets]
+        sage: EnumeratedSets().all_super_categories()
+        [Category of enumerated sets, Category of sets, Category of sets with partial maps, Category of objects]
+
+    TESTS::
+
+        sage: C = EnumeratedSets()
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent.__iter__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="parent._an_element_from_iterator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="parent._first_from_iterator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The &quot;first&quot; element of ``self``.
+
+            ``self.first()`` returns the first element of the set
+            ``self``. This is a generic implementation from the category
+            ``EnumeratedSets()`` which can be used when the method ``__iter__`` is
+            provided.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C.first() # indirect doctest
+                1
+            </opaque><constant name="parent._iterator_from_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            An iterator for the elements of ``self``.
+
+            ``iter(self)`` returns an iterator for the elements
+            of ``self``. This is a generic implementation from the
+            category ``EnumeratedSets()`` which can be used when the
+            method ``list`` is provided.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: it = C._iterator_from_list()
+                sage: [next(it), next(it), next(it)]
+                [1, 2, 3]
+            </opaque><constant name="parent._iterator_from_next">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            An iterator for the elements of ``self``.
+
+            ``iter(self)`` returns an iterator for the element of
+            the set ``self``. This is a generic implementation from
+            the category ``EnumeratedSets()`` which can be used when
+            the methods ``first`` and ``next`` are provided.
+
+            EXAMPLES::
+
+                sage: C = InfiniteEnumeratedSets().example()
+                sage: it = C._iterator_from_next()
+                sage: [next(it), next(it), next(it), next(it), next(it)]
+                [0, 1, 2, 3, 4]
+            </opaque><constant name="parent._iterator_from_unrank">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            An iterator for the elements of ``self``.
+
+            ``iter(self)`` returns an iterator for the elements
+            of the set ``self``. This is a generic implementation from
+            the category ``EnumeratedSets()`` which can be used when
+            the method ``unrank`` is provided.
+
+            EXAMPLES::
+
+                sage: C = InfiniteEnumeratedSets().example()
+                sage: it = C._iterator_from_unrank()
+                sage: [next(it), next(it), next(it), next(it), next(it)]
+                [0, 1, 2, 3, 4]
+            </opaque><constant name="parent._list_default">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return an error since the cardinality of ``self`` is not known.
+
+            EXAMPLES::
+
+                sage: class broken(UniqueRepresentation, Parent):
+                ...    def __init__(self):
+                ...        Parent.__init__(self, category = EnumeratedSets())
+                ...
+                sage: broken().list()
                 Traceback (most recent call last):
                 ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+                NotImplementedError: unknown cardinality
+            </opaque><constant name="parent._next_from_iterator">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -66,16 +314,440 @@
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+            The &quot;next&quot; element after ``obj`` in ``self``.
 
-            All parents in the category ``Sets()`` should implement this method.
+            ``self.next(e)`` returns the element of the set ``self`` which
+            follows ``e``. This is a generic implementation from the category
+            ``EnumeratedSets()`` which can be used when the method ``__iter__``
+            is provided.
+
+            Remark: this is the default (brute force) implementation
+            of the category ``EnumeratedSets()``. Its complexity is
+            `O(r)`, where `r` is the rank of ``obj``.
 
             EXAMPLES::
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
+                sage: C = InfiniteEnumeratedSets().example()
+                sage: C._next_from_iterator(10) # indirect doctest
+                11
+
+            TODO: specify the behavior when ``obj`` is not in ``self``.
+            </opaque><constant name="parent._rank_from_iterator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The rank of an element of ``self``
+
+            ``self.rank(x)`` returns the rank of `x`, that is its
+            position in the enumeration of ``self``. This is an
+            integer between ``0`` and ``n-1`` where ``n`` is the
+            cardinality of ``self``, or None if `x` is not in `self`.
+
+            This is the default (brute force) implementation from the
+            category ``EnumeratedSets()`` which can be used when the
+            method ``__iter__`` is provided. Its complexity is `O(r)`,
+            where `r` is the rank of ``obj``. For infinite enumerated
+            sets, this won't terminate when `x` is not in ``self``
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: list(C)
+                [1, 2, 3]
+                sage: C.rank(3) # indirect doctest
+                2
+                sage: C.rank(5) # indirect doctest
+            </opaque><constant name="parent._some_elements_from_iterator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return some elements in ``self``.
+
+            See :class:`TestSuite` for a typical use case.
+
+            This is a generic implementation from the category
+            ``EnumeratedSets()`` which can be used when the method
+            ``__iter__`` is provided. It returns an iterator for up to
+            the first 100 elements of ``self``
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: list(C.some_elements()) # indirect doctest
+                [1, 2, 3]
+            </opaque><constant name="parent._test_enumerated_set_contains">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Checks that the methods :meth:`.__contains__` and :meth:`.__iter__` are consistent.
+
+            See also :class:`TestSuite`.
+
+            TESTS::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C._test_enumerated_set_contains()
+                sage: TestSuite(C).run()
+
+            Let us now break the class::
+
+                sage: from sage.categories.examples.finite_enumerated_sets import Example
+                sage: class CCls(Example):
+                ...       def __contains__(self, obj):
+                ...           if obj == 3:
+                ...               return False
+                ...           else:
+                ...               return obj in C
+                sage: CC = CCls()
+                sage: CC._test_enumerated_set_contains()
+                Traceback (most recent call last):
+                ...
+                AssertionError: False is not true
+            </opaque><constant name="parent._test_enumerated_set_iter_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Checks that the methods :meth:`.list` and :meth:`.__iter__` are consistent.
+
+            See also: :class:`TestSuite`.
+
+            .. NOTE::
+
+                This test does nothing if the cardinality of the set
+                is larger than the max_runs argument.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C._test_enumerated_set_iter_list()
+                sage: TestSuite(C).run()
+
+            Let us now break the class::
+
+                sage: from sage.categories.examples.finite_enumerated_sets import Example
+                sage: class CCls(Example):
+                ...       def list(self):
+                ...           return [1,2,3,4]
+                sage: CC = CCls()
+                sage: CC._test_enumerated_set_iter_list()
+                Traceback (most recent call last):
+                ...
+                AssertionError: 3 != 4
+
+            For a large enumerated set this test does nothing:
+            increase tester._max_runs if you want to actually run the
+            test::
+
+                sage: class CCls(Example):
+                ...       def list(self):
+                ...           return [1,2,3]
+                sage: CC = CCls()
+                sage: CC._test_enumerated_set_iter_list(verbose=True,max_runs=2)
+                Enumerated set too big; skipping test; increase tester._max_runs
+            </opaque><constant name="parent._unrank_from_iterator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The ``r``-th element of ``self``
+
+            ``self.unrank(r)`` returns the ``r``-th element of self, where
+            ``r`` is an integer between ``0`` and ``n-1`` where ``n`` is the
+            cardinality of ``self``.
+
+            This is the default (brute force) implementation from the
+            category ``EnumeratedSets()`` which can be used when the
+            method ``__iter__`` is provided. Its complexity is `O(r)`,
+            where `r` is the rank of ``obj``.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C.unrank(2) # indirect doctest
+                3
+                sage: C._unrank_from_iterator(5)
+                Traceback (most recent call last):
+                ...
+                ValueError: the value must be between 0 and 2 inclusive
+            </opaque><constant name="parent.first">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The &quot;first&quot; element of ``self``.
+
+            ``self.first()`` returns the first element of the set
+            ``self``. This is a generic implementation from the category
+            ``EnumeratedSets()`` which can be used when the method ``__iter__`` is
+            provided.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C.first() # indirect doctest
+                1
+            </opaque><constant name="parent.is_empty">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether this set is empty.
+
+            EXAMPLES::
+
+                sage: F = FiniteEnumeratedSet([1,2,3])
+                sage: F.is_empty()
                 False
-                sage: P(5) in P
+                sage: F = FiniteEnumeratedSet([])
+                sage: F.is_empty()
                 True
+
+            TESTS::
+
+                sage: F.is_empty.__module__
+                'sage.categories.enumerated_sets'
+            </opaque><constant name="parent.list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return an error since the cardinality of ``self`` is not known.
+
+            EXAMPLES::
+
+                sage: class broken(UniqueRepresentation, Parent):
+                ...    def __init__(self):
+                ...        Parent.__init__(self, category = EnumeratedSets())
+                ...
+                sage: broken().list()
+                Traceback (most recent call last):
+                ...
+                NotImplementedError: unknown cardinality
+            </opaque><constant name="parent.map">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the image `\{f(x) | x \in \text{self}\}` of this
+            enumerated set by `f`, as an enumerated set.
+
+            `f` is supposed to be injective.
+
+            EXAMPLES::
+
+                sage: R = SymmetricGroup(3).map(attrcall('reduced_word')); R
+                Image of Symmetric group of order 3! as a permutation group by *.reduced_word()
+                sage: R.cardinality()
+                6
+                sage: R.list()
+                [[], [1], [2, 1], [1, 2], [2], [1, 2, 1]]
+                sage: [ r for r in R]
+                [[], [1], [2, 1], [1, 2], [2], [1, 2, 1]]
+
+            .. warning::
+
+                If the function is not injective, then there may be
+                repeated elements::
+
+                    sage: P = SymmetricGroup(3)
+                    sage: P.list()
+                    [(), (1,2), (1,2,3), (1,3,2), (2,3), (1,3)]
+                    sage: P.map(attrcall('length')).list()
+                    [0, 1, 2, 2, 1, 3]
+
+            .. warning::
+
+                :class:`MapCombinatorialClass` needs to be refactored to use categories::
+
+                    sage: R.category()             # todo: not implemented
+                    Category of enumerated sets
+                    sage: TestSuite(R).run(skip=['_test_an_element', '_test_category', '_test_some_elements'])
+            </opaque><constant name="parent.next">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The &quot;next&quot; element after ``obj`` in ``self``.
+
+            ``self.next(e)`` returns the element of the set ``self`` which
+            follows ``e``. This is a generic implementation from the category
+            ``EnumeratedSets()`` which can be used when the method ``__iter__``
+            is provided.
+
+            Remark: this is the default (brute force) implementation
+            of the category ``EnumeratedSets()``. Its complexity is
+            `O(r)`, where `r` is the rank of ``obj``.
+
+            EXAMPLES::
+
+                sage: C = InfiniteEnumeratedSets().example()
+                sage: C._next_from_iterator(10) # indirect doctest
+                11
+
+            TODO: specify the behavior when ``obj`` is not in ``self``.
+            </opaque><constant name="parent.rank">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The rank of an element of ``self``
+
+            ``self.rank(x)`` returns the rank of `x`, that is its
+            position in the enumeration of ``self``. This is an
+            integer between ``0`` and ``n-1`` where ``n`` is the
+            cardinality of ``self``, or None if `x` is not in `self`.
+
+            This is the default (brute force) implementation from the
+            category ``EnumeratedSets()`` which can be used when the
+            method ``__iter__`` is provided. Its complexity is `O(r)`,
+            where `r` is the rank of ``obj``. For infinite enumerated
+            sets, this won't terminate when `x` is not in ``self``
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: list(C)
+                [1, 2, 3]
+                sage: C.rank(3) # indirect doctest
+                2
+                sage: C.rank(5) # indirect doctest
+            </opaque><constant name="parent.unrank">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The ``r``-th element of ``self``
+
+            ``self.unrank(r)`` returns the ``r``-th element of self, where
+            ``r`` is an integer between ``0`` and ``n-1`` where ``n`` is the
+            cardinality of ``self``.
+
+            This is the default (brute force) implementation from the
+            category ``EnumeratedSets()`` which can be used when the
+            method ``__iter__`` is provided. Its complexity is `O(r)`,
+            where `r` is the rank of ``obj``.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C.unrank(2) # indirect doctest
+                3
+                sage: C._unrank_from_iterator(5)
+                Traceback (most recent call last):
+                ...
+                ValueError: the value must be between 0 and 2 inclusive
+            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.rank">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the rank of ``self`` in its parent.
+
+            See also :meth:`EnumeratedSets.ElementMethods.rank`
+
+            EXAMPLES::
+
+                sage: F = FiniteSemigroups().example(('a','b','c'))
+                sage: L = list(F); L
+                ['a', 'b', 'c', 'ac', 'ab', 'ba', 'bc', 'cb', 'ca',
+                 'acb', 'abc', 'bca', 'cba', 'bac', 'cab']
+                sage: L[7].rank()
+                7
             </opaque></document></theory></omdoc>

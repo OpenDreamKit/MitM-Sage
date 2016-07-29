@@ -5,27 +5,31 @@ Includes http://www.sagemath.org/content/categories/finite_complex_reflection_gr
 Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/complex_reflection_groups?ComplexReflectionGroups
 Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups
 Includes http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?reflection_length
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?reflection_length
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?to_matrix
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?to_matrix
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?__invert__
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?__invert__
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?codegrees
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?codegrees
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?degrees
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?degrees
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?distinguished_reflection
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?distinguished_reflection
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?hyperplane_index_set
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?hyperplane_index_set
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?irreducible_components
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?irreducible_components
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?reflection
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?reflection
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?reflection_index_set
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?reflection_index_set
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?__contains__
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?__contains__
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?index_set
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?index_set
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?element._matrix_
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?element._matrix_
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?element.character_value
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?element.character_value
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?element.to_matrix
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?element.to_matrix
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent._test_codegrees
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent._test_codegrees
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent._test_degrees
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent._test_degrees
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.codegrees
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.codegrees
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.degrees
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.degrees
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.is_real
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.is_real
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.is_well_generated
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.is_well_generated
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.number_of_reflection_hyperplanes
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.number_of_reflection_hyperplanes
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.number_of_reflections
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.number_of_reflections
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory._matrix_
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory._matrix_
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.character_value
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.character_value
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.to_matrix
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.to_matrix

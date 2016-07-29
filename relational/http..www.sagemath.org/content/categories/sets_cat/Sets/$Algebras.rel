@@ -5,13 +5,3 @@ Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras http:
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?sage.categories.sets_cat.Sets.Algebras
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?sage.categories.sets_cat.Sets.Algebras
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?_add_
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?_add_
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?__nonzero__
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?monomial_coefficients
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?__invert__
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?__invert__
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?__contains__
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?Algebras?__contains__

@@ -4,9 +4,23 @@ Includes http://www.sagemath.org/content/categories/monoids?Monoids http://www.s
 Includes http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/semigroups?Semigroups
 Includes http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/magmas/Magmas?Unital
-Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?_mul_
-constant http://www.sagemath.org/content/categories/monoids?Monoids?_mul_
-Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?__invert__
-constant http://www.sagemath.org/content/categories/monoids?Monoids?__invert__
-Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?__contains__
-constant http://www.sagemath.org/content/categories/monoids?Monoids?__contains__
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?element._pow_naive
+constant http://www.sagemath.org/content/categories/monoids?Monoids?element._pow_naive
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?element.is_one
+constant http://www.sagemath.org/content/categories/monoids?Monoids?element.is_one
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?element.powers
+constant http://www.sagemath.org/content/categories/monoids?Monoids?element.powers
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent._test_prod
+constant http://www.sagemath.org/content/categories/monoids?Monoids?parent._test_prod
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent.monoid_generators
+constant http://www.sagemath.org/content/categories/monoids?Monoids?parent.monoid_generators
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent.one_element
+constant http://www.sagemath.org/content/categories/monoids?Monoids?parent.one_element
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent.submonoid
+constant http://www.sagemath.org/content/categories/monoids?Monoids?parent.submonoid
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?subcategory._pow_naive
+constant http://www.sagemath.org/content/categories/monoids?Monoids?subcategory._pow_naive
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?subcategory.is_one
+constant http://www.sagemath.org/content/categories/monoids?Monoids?subcategory.is_one
+Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?subcategory.powers
+constant http://www.sagemath.org/content/categories/monoids?Monoids?subcategory.powers

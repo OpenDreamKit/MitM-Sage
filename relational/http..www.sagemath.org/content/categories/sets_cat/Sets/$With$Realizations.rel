@@ -3,7 +3,15 @@ HasMeta http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealization
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/facade_sets?FacadeSets
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?__invert__
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?__invert__
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?a_realization
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?a_realization
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent.Realizations
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent.Realizations
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent._register_realization
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent._register_realization
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent._test_with_realizations
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent._test_with_realizations
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent.a_realization
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent.a_realization
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent.inject_shorthands
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent.inject_shorthands
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent.realizations
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?WithRealizations?parent.realizations

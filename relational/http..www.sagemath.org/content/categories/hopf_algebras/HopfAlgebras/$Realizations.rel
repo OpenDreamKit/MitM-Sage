@@ -5,19 +5,5 @@ Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?R
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Realizations
 Includes http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/coalgebras/Coalgebras?Realizations
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?_add_
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?_add_
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?_mul_
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?_mul_
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__nonzero__
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__nonzero__
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__invert__
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__invert__
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?algebra_generators
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?algebra_generators
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__contains__
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?__contains__
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?coproduct
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?coproduct
-Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?counit
-constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?counit
+Declares http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?parent.antipode_by_coercion
+constant http://www.sagemath.org/content/categories/hopf_algebras/HopfAlgebras?Realizations?parent.antipode_by_coercion

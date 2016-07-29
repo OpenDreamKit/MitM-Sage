@@ -4,7 +4,21 @@ Includes http://www.sagemath.org/content/categories/finite_enumerated_sets?Finit
 Includes http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets
 Includes http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_sets?FiniteSets
-Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?__invert__
-constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?__invert__
-Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?__contains__
-constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?__contains__
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._cardinality_from_iterator
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._cardinality_from_iterator
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._cardinality_from_list
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._cardinality_from_list
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._last_from_iterator
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._last_from_iterator
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._last_from_unrank
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._last_from_unrank
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._list_from_iterator
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._list_from_iterator
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._random_element_from_unrank
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._random_element_from_unrank
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._test_enumerated_set_iter_cardinality
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._test_enumerated_set_iter_cardinality
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._unrank_from_list
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent._unrank_from_list
+Declares http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent.last
+constant http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets?parent.last

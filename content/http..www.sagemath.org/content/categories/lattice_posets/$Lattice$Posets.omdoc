@@ -6,184 +6,51 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+     </constant><document name="Element Methods"><opaque format="text">
+    The category of lattices, i.e. partially ordered sets in which any
+    two elements have a unique supremum (the elements' least upper
+    bound; called their *join*) and a unique infimum (greatest lower bound;
+    called their *meet*).
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+    EXAMPLES::
 
-            EXAMPLES::
+        sage: LatticePosets()
+        Category of lattice posets
+        sage: LatticePosets().super_categories()
+        [Category of posets]
+        sage: LatticePosets().example()
+        NotImplemented
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+    .. seealso:: :class:`~sage.categories.posets.Posets`, :class:`FiniteLatticePosets`, :func:`LatticePoset`
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+    TESTS::
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+        sage: C = LatticePosets()
+        sage: TestSuite(C).run()
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of lattices, i.e. partially ordered sets in which any
+    two elements have a unique supremum (the elements' least upper
+    bound; called their *join*) and a unique infimum (greatest lower bound;
+    called their *meet*).
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    EXAMPLES::
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+        sage: LatticePosets()
+        Category of lattice posets
+        sage: LatticePosets().super_categories()
+        [Category of posets]
+        sage: LatticePosets().example()
+        NotImplemented
 
-            .. NOTE::
+    .. seealso:: :class:`~sage.categories.posets.Posets`, :class:`FiniteLatticePosets`, :func:`LatticePoset`
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="lower_covers">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the lower covers of `x`, that is, the elements `y`
-            such that `y&lt;x` and there exists no `z` such that `y&lt;z&lt;x`.
+    TESTS::
 
-            EXAMPLES::
+        sage: C = LatticePosets()
+        sage: TestSuite(C).run()
 
-                sage: D = Poset((divisors(30), attrcall(&quot;divides&quot;)))
-                sage: D.lower_covers(15)
-                [3, 5]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="order_filter">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the order filter generated by a list of elements.
-
-            A subset `I` of a poset is said to be an order filter if, for
-            any `x` in `I` and `y` such that `y \ge x`, then `y` is in `I`.
-
-            This is also called the upper set generated by these elements.
-
-            EXAMPLES::
-
-                sage: B = Posets.BooleanLattice(4)
-                sage: B.order_filter([3,8])
-                [3, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="order_ideal">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the order ideal in ``self`` generated by the elements
-            of an iterable ``elements``.
-
-            A subset `I` of a poset is said to be an order ideal if, for
-            any `x` in `I` and `y` such that `y \le x`, then `y` is in `I`.
-
-            This is also called the lower set generated by these elements.
-
-            EXAMPLES::
-
-                sage: B = Posets.BooleanLattice(4)
-                sage: B.order_ideal([7,10])
-                [0, 1, 2, 3, 4, 5, 6, 7, 8, 10]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="upper_covers">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the upper covers of `x`, that is, the elements `y`
-            such that `x&lt;y` and there exists no `z` such that `x&lt;z&lt;y`.
-
-            EXAMPLES::
-
-                sage: D = Poset((divisors(30), attrcall(&quot;divides&quot;)))
-                sage: D.upper_covers(3)
-                [6, 15]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque><constant name="join">
+    </opaque></document><document name="Parent Methods:"><constant name="parent.join">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -212,40 +79,7 @@
                 sage: D = LatticePoset((divisors(60), attrcall(&quot;divides&quot;)))
                 sage: D.join( D(6), D(10) )
                 30
-            </opaque><constant name="le">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return whether `x \le y` in the poset ``self``.
-
-            INPUT:
-
-            - ``x``, ``y`` -- elements of ``self``.
-
-            EXAMPLES::
-
-                sage: D = Poset((divisors(30), attrcall(&quot;divides&quot;)))
-                sage: D.le( 3, 6 )
-                True
-                sage: D.le( 3, 3 )
-                True
-                sage: D.le( 3, 5 )
-                False
-            </opaque><constant name="meet">
+            </opaque><constant name="parent.meet">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -274,4 +108,26 @@
                 sage: D = LatticePoset((divisors(30), attrcall(&quot;divides&quot;)))
                 sage: D.meet( D(6), D(15) )
                 3
-            </opaque></document></theory></omdoc>
+            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of lattices, i.e. partially ordered sets in which any
+    two elements have a unique supremum (the elements' least upper
+    bound; called their *join*) and a unique infimum (greatest lower bound;
+    called their *meet*).
+
+    EXAMPLES::
+
+        sage: LatticePosets()
+        Category of lattice posets
+        sage: LatticePosets().super_categories()
+        [Category of posets]
+        sage: LatticePosets().example()
+        NotImplemented
+
+    .. seealso:: :class:`~sage.categories.posets.Posets`, :class:`FiniteLatticePosets`, :func:`LatticePoset`
+
+    TESTS::
+
+        sage: C = LatticePosets()
+        sage: TestSuite(C).run()
+
+    </opaque></document></theory></omdoc>

@@ -4,9 +4,21 @@ Includes http://www.sagemath.org/content/categories/groups?Groups http://www.sag
 Includes http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/monoids?Monoids
 Includes http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Inverse
-Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?_mul_
-constant http://www.sagemath.org/content/categories/groups?Groups?_mul_
-Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?__invert__
-constant http://www.sagemath.org/content/categories/groups?Groups?__invert__
-Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?__contains__
-constant http://www.sagemath.org/content/categories/groups?Groups?__contains__
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?element.conjugacy_class
+constant http://www.sagemath.org/content/categories/groups?Groups?element.conjugacy_class
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent._test_inverse
+constant http://www.sagemath.org/content/categories/groups?Groups?parent._test_inverse
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.cayley_table
+constant http://www.sagemath.org/content/categories/groups?Groups?parent.cayley_table
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.conjugacy_class
+constant http://www.sagemath.org/content/categories/groups?Groups?parent.conjugacy_class
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.group_generators
+constant http://www.sagemath.org/content/categories/groups?Groups?parent.group_generators
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.holomorph
+constant http://www.sagemath.org/content/categories/groups?Groups?parent.holomorph
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.is_abelian
+constant http://www.sagemath.org/content/categories/groups?Groups?parent.is_abelian
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.semidirect_product
+constant http://www.sagemath.org/content/categories/groups?Groups?parent.semidirect_product
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?subcategory.conjugacy_class
+constant http://www.sagemath.org/content/categories/groups?Groups?subcategory.conjugacy_class

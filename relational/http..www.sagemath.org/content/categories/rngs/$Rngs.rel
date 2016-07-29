@@ -4,15 +4,3 @@ Includes http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemat
 Includes http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/content/categories/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas/AdditiveAssociative/AdditiveCommutative/AdditiveUnital?Associative
 Includes http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/content/categories/commutative_additive_groups?CommutativeAdditiveGroups
-Declares http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/content/categories/rngs?Rngs?_add_
-constant http://www.sagemath.org/content/categories/rngs?Rngs?_add_
-Declares http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/content/categories/rngs?Rngs?_mul_
-constant http://www.sagemath.org/content/categories/rngs?Rngs?_mul_
-Declares http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/content/categories/rngs?Rngs?__nonzero__
-constant http://www.sagemath.org/content/categories/rngs?Rngs?__nonzero__
-Declares http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/content/categories/rngs?Rngs?__invert__
-constant http://www.sagemath.org/content/categories/rngs?Rngs?__invert__
-Declares http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/content/categories/rngs?Rngs?semigroup_generators
-constant http://www.sagemath.org/content/categories/rngs?Rngs?semigroup_generators
-Declares http://www.sagemath.org/content/categories/rngs?Rngs http://www.sagemath.org/content/categories/rngs?Rngs?__contains__
-constant http://www.sagemath.org/content/categories/rngs?Rngs?__contains__

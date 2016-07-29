@@ -6,139 +6,100 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><constant name="_add_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+     </constant><document name="Element Methods"><opaque format="text">
+    The category of filtered modules over a given ring `R`.
 
-            INPUT:
+    A *filtered module* over a ring `R` with a totally ordered
+    indexing set `I` (typically `I = \NN`) is an `R`-module `M` equipped
+    with a family `(F_i)_{i \in I}` of `R`-submodules satisfying
+    `F_i \subseteq F_j` for all `i,j \in I` having `i \leq j`, and
+    `M = \bigcup_{i \in I} F_i`. This family is called a *filtration*
+    of the given module `M`.
 
-            - ``self``, ``right`` -- two elements with the same parent
+    EXAMPLES::
 
-            OUTPUT:
+        sage: Modules(ZZ).Filtered()
+        Category of filtered modules over Integer Ring
+        sage: Modules(ZZ).Filtered().super_categories()
+        [Category of modules over Integer Ring]
 
-            - an element of the same parent
+    TESTS::
 
-            EXAMPLES::
+        sage: TestSuite(Modules(ZZ).Filtered()).run()
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
+    REFERENCES:
 
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
+    - :wikipedia:`Filtration_(mathematics)`
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of filtered modules over a given ring `R`.
 
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
+    A *filtered module* over a ring `R` with a totally ordered
+    indexing set `I` (typically `I = \NN`) is an `R`-module `M` equipped
+    with a family `(F_i)_{i \in I}` of `R`-submodules satisfying
+    `F_i \subseteq F_j` for all `i,j \in I` having `i \leq j`, and
+    `M = \bigcup_{i \in I} F_i`. This family is called a *filtration*
+    of the given module `M`.
 
-                TESTS::
+    EXAMPLES::
 
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+        sage: Modules(ZZ).Filtered()
+        Category of filtered modules over Integer Ring
+        sage: Modules(ZZ).Filtered().super_categories()
+        [Category of modules over Integer Ring]
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+    TESTS::
 
-            EXAMPLES::
+        sage: TestSuite(Modules(ZZ).Filtered()).run()
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+    REFERENCES:
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+    - :wikipedia:`Filtration_(mathematics)`
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    The category of filtered modules over a given ring `R`.
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+    A *filtered module* over a ring `R` with a totally ordered
+    indexing set `I` (typically `I = \NN`) is an `R`-module `M` equipped
+    with a family `(F_i)_{i \in I}` of `R`-submodules satisfying
+    `F_i \subseteq F_j` for all `i,j \in I` having `i \leq j`, and
+    `M = \bigcup_{i \in I} F_i`. This family is called a *filtration*
+    of the given module `M`.
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+    EXAMPLES::
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+        sage: Modules(ZZ).Filtered()
+        Category of filtered modules over Integer Ring
+        sage: Modules(ZZ).Filtered().super_categories()
+        [Category of modules over Integer Ring]
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+    TESTS::
 
-            .. NOTE::
+        sage: TestSuite(Modules(ZZ).Filtered()).run()
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+    REFERENCES:
 
-            All parents in the category ``Sets()`` should implement this method.
+    - :wikipedia:`Filtration_(mathematics)`
+    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of filtered modules over a given ring `R`.
 
-            EXAMPLES::
+    A *filtered module* over a ring `R` with a totally ordered
+    indexing set `I` (typically `I = \NN`) is an `R`-module `M` equipped
+    with a family `(F_i)_{i \in I}` of `R`-submodules satisfying
+    `F_i \subseteq F_j` for all `i,j \in I` having `i \leq j`, and
+    `M = \bigcup_{i \in I} F_i`. This family is called a *filtration*
+    of the given module `M`.
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+    EXAMPLES::
+
+        sage: Modules(ZZ).Filtered()
+        Category of filtered modules over Integer Ring
+        sage: Modules(ZZ).Filtered().super_categories()
+        [Category of modules over Integer Ring]
+
+    TESTS::
+
+        sage: TestSuite(Modules(ZZ).Filtered()).run()
+
+    REFERENCES:
+
+    - :wikipedia:`Filtration_(mathematics)`
+    </opaque></document></theory></omdoc>

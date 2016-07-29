@@ -5,17 +5,3 @@ Includes http://www.sagemath.org/content/categories/coalgebras_with_basis/Coalge
 Includes http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis
 Includes http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras/Coalgebras?Super
-Declares http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?_add_
-constant http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?_add_
-Declares http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?__nonzero__
-constant http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?__nonzero__
-Declares http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?monomial_coefficients
-constant http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?__invert__
-constant http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?__invert__
-Declares http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?coproduct_on_basis
-constant http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?coproduct_on_basis
-Declares http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?counit_on_basis
-constant http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?counit_on_basis
-Declares http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?__contains__
-constant http://www.sagemath.org/content/categories/coalgebras_with_basis/CoalgebrasWithBasis?Super?__contains__

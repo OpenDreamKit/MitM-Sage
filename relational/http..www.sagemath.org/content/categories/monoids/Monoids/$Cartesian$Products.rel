@@ -5,17 +5,3 @@ Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianPro
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids?Monoids
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/semigroups/Semigroups?CartesianProducts
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts
-Declares http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?_mul_
-constant http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?_mul_
-Declares http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?__invert__
-constant http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?__invert__
-Declares http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?__contains__
-constant http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?__contains__
-Declares http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?_cartesian_product_of_elements
-constant http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?_cartesian_product_of_elements
-Declares http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?_sets_keys
-constant http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?_sets_keys
-Declares http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?cartesian_factors
-constant http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?cartesian_factors
-Declares http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?cartesian_projection
-constant http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?cartesian_projection

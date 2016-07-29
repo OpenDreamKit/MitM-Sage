@@ -5,9 +5,5 @@ Includes http://www.sagemath.org/content/categories/magmas/Magmas?Commutative ht
 Includes http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas?Magmas
 Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?Commutative
 constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?Commutative
-Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?_mul_
-constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?_mul_
-Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?__invert__
-constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?__invert__
-Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?__contains__
-constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?__contains__
+Declares http://www.sagemath.org/content/categories/magmas/Magmas?Commutative http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?parent.is_commutative
+constant http://www.sagemath.org/content/categories/magmas/Magmas?Commutative?parent.is_commutative

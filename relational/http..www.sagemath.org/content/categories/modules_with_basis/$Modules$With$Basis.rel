@@ -5,13 +5,141 @@ Includes http://www.sagemath.org/content/categories/modules_with_basis?ModulesWi
 Includes http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?WithBasis
 constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?WithBasis
-Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?_add_
-constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?_add_
-Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__nonzero__
-constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__nonzero__
-Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?monomial_coefficients
-constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__invert__
-constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__invert__
-Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__contains__
-constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?__contains__
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.__getitem__
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.__getitem__
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.__len__
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.__len__
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.coefficient
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.coefficient
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.coefficients
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.coefficients
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.is_zero
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.is_zero
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_coefficient
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_coefficient
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_item
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_item
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_monomial
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_monomial
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_support
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_support
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_term
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.leading_term
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.length
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.length
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.map_coefficients
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.map_coefficients
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.map_item
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.map_item
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.map_support
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.map_support
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.map_support_skip_none
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.map_support_skip_none
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.monomial_coefficients
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.monomial_coefficients
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.monomials
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.monomials
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.support
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.support
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.support_of_term
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.support_of_term
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.tensor
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.tensor
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.terms
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.terms
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_coefficient
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_coefficient
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_item
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_item
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_monomial
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_monomial
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_support
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_support
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_term
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?element.trailing_term
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?morphism._on_basis
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?morphism._on_basis
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?morphism.on_basis
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?morphism.on_basis
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._apply_module_endomorphism
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._apply_module_endomorphism
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._apply_module_morphism
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._apply_module_morphism
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._module_morphism
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._module_morphism
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._repr_
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._repr_
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._sum_of_monomials
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._sum_of_monomials
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.basis
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.basis
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.echelon_form
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.echelon_form
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.linear_combination
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.linear_combination
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.module_morphism
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.module_morphism
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.monomial
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.monomial
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.monomial_or_zero_if_none
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.monomial_or_zero_if_none
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.submodule
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.submodule
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.sum_of_terms
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.sum_of_terms
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.tensor
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.tensor
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.term
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.term
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.__getitem__
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.__getitem__
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.__len__
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.__len__
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.coefficient
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.coefficient
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.coefficients
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.coefficients
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.is_zero
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.is_zero
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_coefficient
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_coefficient
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_item
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_item
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_monomial
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_monomial
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_support
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_support
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_term
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.leading_term
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.length
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.length
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.map_coefficients
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.map_coefficients
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.map_item
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.map_item
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.map_support
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.map_support
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.map_support_skip_none
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.map_support_skip_none
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.monomial_coefficients
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.monomial_coefficients
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.monomials
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.monomials
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.support
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.support
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.support_of_term
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.support_of_term
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.tensor
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.tensor
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.terms
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.terms
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_coefficient
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_coefficient
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_item
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_item
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_monomial
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_monomial
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_support
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_support
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_term
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?subcategory.trailing_term

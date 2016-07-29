@@ -5,19 +5,3 @@ Includes http://www.sagemath.org/content/categories/crystals/Crystals?TensorProd
 Includes http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals?Crystals
 Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?sage.categories.crystals.Crystals.TensorProducts
 constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?sage.categories.crystals.Crystals.TensorProducts
-Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?e
-constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?e
-Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?epsilon
-constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?epsilon
-Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?f
-constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?f
-Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?phi
-constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?phi
-Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?weight
-constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?weight
-Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?__invert__
-constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?__invert__
-Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?connected_components_generators
-constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?connected_components_generators
-Declares http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?__contains__
-constant http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts?__contains__

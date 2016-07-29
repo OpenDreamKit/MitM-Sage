@@ -5,11 +5,5 @@ Includes http://www.sagemath.org/content/categories/hecke_modules?HeckeModules h
 Includes http://www.sagemath.org/content/categories/hecke_modules?HeckeModules http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces
 Declares http://www.sagemath.org/content/categories/hecke_modules?HeckeModules http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?sage.categories.hecke_modules.HeckeModules
 constant http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?sage.categories.hecke_modules.HeckeModules
-Declares http://www.sagemath.org/content/categories/hecke_modules?HeckeModules http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?_add_
-constant http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?_add_
-Declares http://www.sagemath.org/content/categories/hecke_modules?HeckeModules http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?__nonzero__
-constant http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?__nonzero__
-Declares http://www.sagemath.org/content/categories/hecke_modules?HeckeModules http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?__invert__
-constant http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?__invert__
-Declares http://www.sagemath.org/content/categories/hecke_modules?HeckeModules http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?__contains__
-constant http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?__contains__
+Declares http://www.sagemath.org/content/categories/hecke_modules?HeckeModules http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?parent._Hom_
+constant http://www.sagemath.org/content/categories/hecke_modules?HeckeModules?parent._Hom_

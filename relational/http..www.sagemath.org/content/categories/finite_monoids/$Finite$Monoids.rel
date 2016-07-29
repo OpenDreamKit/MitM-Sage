@@ -4,9 +4,7 @@ Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids
 Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/monoids?Monoids
 Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups
-Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?_mul_
-constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?_mul_
-Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?__invert__
-constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?__invert__
-Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?__contains__
-constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?__contains__
+Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?element.pseudo_order
+constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?element.pseudo_order
+Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?subcategory.pseudo_order
+constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?subcategory.pseudo_order

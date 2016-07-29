@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Modules" base="http://www.sagemath.org/content/categories/modules" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/bimodules?Bimodules"></import><document name="Element Methods"><constant name="_add_">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Modules" base="http://www.sagemath.org/content/categories/modules" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/bimodules?Bimodules"></import><document name="Element Methods"><constant name="element.__mul__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -11,103 +11,40 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+     </constant><opaque format="text">Modules__mul__(Element left, right)
+File: sage/categories/coercion_methods.pyx (starting at line 86)
 
-            INPUT:
+    Return the product of ``left`` and ``right``.
 
-            - ``self``, ``right`` -- two elements with the same parent
+    INPUT:
 
-            OUTPUT:
+    - ``left`` -- an element of a :class:`module &lt;Modules&gt;`
+    - ``right`` -- any object
 
-            - an element of the same parent
+    EXAMPLES:
 
-            EXAMPLES::
+    This is used when multiplying an element of a module on the right
+    by something, typically a coefficient::
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
+        sage: F = CombinatorialFreeModule(QQ, [&quot;a&quot;, &quot;b&quot;])
+        sage: x = F.monomial(&quot;a&quot;)
+        sage: x * int(2)
+        2*B['a']
 
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
+    .. SEEALSO:: :meth:`Modules.ElementMethods.__rmul__`
 
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
+    This is :meth:`Modules.ElementMethods.__rmul__`, implemented as a
+    Cython method in :mod:`sage.categories.magmas_cython`::
 
-                TESTS::
+        sage: x.__mul__.im_func is Modules.ElementMethods.__mul__.im_func
+        True
+        sage: x.__mul__.im_func is sage.categories.coercion_methods.Modules__mul__
+        True
 
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+    .. TODO::
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
+        Make a better unit test once ``Modules().example()`` is implemented.
+    </opaque><constant name="element.__rmul__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -120,17 +57,303 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+     </constant><opaque format="text">Modules__rmul__(Element right, left)
+File: sage/categories/coercion_methods.pyx (starting at line 122)
 
-            All parents in the category ``Sets()`` should implement this method.
+    Return the product of ``left`` and ``right``.
 
-            EXAMPLES::
+    INPUT:
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+    - ``right`` -- an element of a :class:`module &lt;Modules&gt;`
+    - ``left`` -- any object
+
+    EXAMPLES:
+
+    This is used when multiplying an element of a module on the left
+    by something, typically a coefficient::
+
+        sage: F = CombinatorialFreeModule(QQ, [&quot;a&quot;, &quot;b&quot;])
+        sage: x = F.monomial(&quot;a&quot;)
+        sage: int(2) * x
+        2*B['a']
+        sage: x.__rmul__(int(2))
+        2*B['a']
+
+    .. SEEALSO:: :meth:`Modules.ElementMethods.__mul__`
+
+    This is :meth:`Modules.ElementMethods.__rmul__`, implemented as a Cython
+    method in :mod:`sage.categories.coercion_methods`::
+
+        sage: x.__rmul__.im_func is Modules.ElementMethods.__rmul__.im_func
+        True
+        sage: x.__rmul__.im_func is sage.categories.coercion_methods.Modules__rmul__
+        True
+
+    .. TODO::
+
+        Make a better unit test once ``Modules().example()`` is implemented.
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of all modules over a base ring `R`.
+
+    An `R`-module `M` is a left and right `R`-module over a
+    commutative ring `R` such that:
+
+    .. MATH::
+
+        r*(x*s) = (r*x)*s \qquad  \forall r,s \in R \text{ and } x \in M
+
+    INPUT:
+
+    - ``base_ring`` -- a ring `R` or subcategory of ``Rings()``
+    - ``dispatch`` -- a boolean (for internal use; default: ``True``)
+
+    When the base ring is a field, the category of vector spaces is
+    returned instead (unless ``dispatch == False``).
+
+    .. WARNING::
+
+        Outside of the context of symmetric modules over a commutative
+        ring, the specifications of this category are fuzzy and not
+        yet set in stone (see below). The code in this category and
+        its subcategories is therefore prone to bugs or arbitrary
+        limitations in this case.
+
+    EXAMPLES::
+
+        sage: Modules(ZZ)
+        Category of modules over Integer Ring
+        sage: Modules(QQ)
+        Category of vector spaces over Rational Field
+
+        sage: Modules(Rings())
+        Category of modules over rings
+        sage: Modules(FiniteFields())
+        Category of vector spaces over finite fields
+
+        sage: Modules(Integers(9))
+        Category of modules over Ring of integers modulo 9
+
+        sage: Modules(Integers(9)).super_categories()
+        [Category of bimodules over Ring of integers modulo 9 on the left and Ring of integers modulo 9 on the right]
+
+        sage: Modules(ZZ).super_categories()
+        [Category of bimodules over Integer Ring on the left and Integer Ring on the right]
+
+        sage: Modules == RingModules
+        True
+
+        sage: Modules(ZZ['x']).is_abelian()   # see #6081
+        True
+
+    TESTS::
+
+        sage: TestSuite(Modules(ZZ)).run()
+
+    .. TODO::
+
+        - Clarify the distinction, if any, with ``BiModules(R, R)``.
+          In particular, if `R` is a commutative ring (e.g. a field),
+          some pieces of the code possibly assume that `M` is a
+          *symmetric `R`-`R`-bimodule*:
+
+          .. MATH::
+
+              r*x = x*r \qquad  \forall r \in R \text{ and } x \in M
+
+        - Make sure that non symmetric modules are properly supported
+          by all the code, and advertise it.
+
+        - Make sure that non commutative rings are properly supported
+          by all the code, and advertise it.
+
+        - Add support for base semirings.
+
+        - Implement a ``FreeModules(R)`` category, when so prompted by a
+          concrete use case: e.g.  modeling a free module with several
+          bases (using :meth:`Sets.SubcategoryMethods.Realizations`)
+          or with an atlas of local maps (see e.g. :trac:`15916`).
+    </opaque></document><document name="Parent Methods:"><constant name="parent.tensor_square">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.__mul__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Modules__mul__(Element left, right)
+File: sage/categories/coercion_methods.pyx (starting at line 86)
+
+    Return the product of ``left`` and ``right``.
+
+    INPUT:
+
+    - ``left`` -- an element of a :class:`module &lt;Modules&gt;`
+    - ``right`` -- any object
+
+    EXAMPLES:
+
+    This is used when multiplying an element of a module on the right
+    by something, typically a coefficient::
+
+        sage: F = CombinatorialFreeModule(QQ, [&quot;a&quot;, &quot;b&quot;])
+        sage: x = F.monomial(&quot;a&quot;)
+        sage: x * int(2)
+        2*B['a']
+
+    .. SEEALSO:: :meth:`Modules.ElementMethods.__rmul__`
+
+    This is :meth:`Modules.ElementMethods.__rmul__`, implemented as a
+    Cython method in :mod:`sage.categories.magmas_cython`::
+
+        sage: x.__mul__.im_func is Modules.ElementMethods.__mul__.im_func
+        True
+        sage: x.__mul__.im_func is sage.categories.coercion_methods.Modules__mul__
+        True
+
+    .. TODO::
+
+        Make a better unit test once ``Modules().example()`` is implemented.
+    </opaque><constant name="subcategory.__rmul__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Modules__rmul__(Element right, left)
+File: sage/categories/coercion_methods.pyx (starting at line 122)
+
+    Return the product of ``left`` and ``right``.
+
+    INPUT:
+
+    - ``right`` -- an element of a :class:`module &lt;Modules&gt;`
+    - ``left`` -- any object
+
+    EXAMPLES:
+
+    This is used when multiplying an element of a module on the left
+    by something, typically a coefficient::
+
+        sage: F = CombinatorialFreeModule(QQ, [&quot;a&quot;, &quot;b&quot;])
+        sage: x = F.monomial(&quot;a&quot;)
+        sage: int(2) * x
+        2*B['a']
+        sage: x.__rmul__(int(2))
+        2*B['a']
+
+    .. SEEALSO:: :meth:`Modules.ElementMethods.__mul__`
+
+    This is :meth:`Modules.ElementMethods.__rmul__`, implemented as a Cython
+    method in :mod:`sage.categories.coercion_methods`::
+
+        sage: x.__rmul__.im_func is Modules.ElementMethods.__rmul__.im_func
+        True
+        sage: x.__rmul__.im_func is sage.categories.coercion_methods.Modules__rmul__
+        True
+
+    .. TODO::
+
+        Make a better unit test once ``Modules().example()`` is implemented.
+    </opaque></document></theory></omdoc>

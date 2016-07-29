@@ -5,7 +5,3 @@ Includes http://www.sagemath.org/content/categories/g_sets?GSets http://www.sage
 Includes http://www.sagemath.org/content/categories/g_sets?GSets http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/g_sets?GSets http://www.sagemath.org/content/categories/g_sets?GSets?sage.categories.g_sets.GSets
 constant http://www.sagemath.org/content/categories/g_sets?GSets?sage.categories.g_sets.GSets
-Declares http://www.sagemath.org/content/categories/g_sets?GSets http://www.sagemath.org/content/categories/g_sets?GSets?__invert__
-constant http://www.sagemath.org/content/categories/g_sets?GSets?__invert__
-Declares http://www.sagemath.org/content/categories/g_sets?GSets http://www.sagemath.org/content/categories/g_sets?GSets?__contains__
-constant http://www.sagemath.org/content/categories/g_sets?GSets?__contains__

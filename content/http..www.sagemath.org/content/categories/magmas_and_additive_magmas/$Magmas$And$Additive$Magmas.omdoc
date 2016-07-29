@@ -1,141 +1,137 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="MagmasAndAdditiveMagmas" base="http://www.sagemath.org/content/categories/magmas_and_additive_magmas" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/magmas?Magmas"></import><import from="http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas"></import><document name="Element Methods"><constant name="_add_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="MagmasAndAdditiveMagmas" base="http://www.sagemath.org/content/categories/magmas_and_additive_magmas" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/magmas?Magmas"></import><import from="http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas"></import><document name="Element Methods"><opaque format="text">
+    The category of sets `(S,+,*)` with an additive operation '+' and
+    a multiplicative operation `*`
 
-            INPUT:
+    EXAMPLES::
 
-            - ``self``, ``right`` -- two elements with the same parent
+        sage: from sage.categories.magmas_and_additive_magmas import MagmasAndAdditiveMagmas
+        sage: C = MagmasAndAdditiveMagmas(); C
+        Category of magmas and additive magmas
 
-            OUTPUT:
+    This is the base category for the categories of rings and their variants::
 
-            - an element of the same parent
+        sage: C.Distributive()
+        Category of distributive magmas and additive magmas
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().AdditiveInverse()
+        Category of rngs
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().Unital()
+        Category of semirings
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().AdditiveInverse().Unital()
+        Category of rings
 
-            EXAMPLES::
+    This category is really meant to represent the intersection of the
+    categories of :class:`Magmas` and :class:`AdditiveMagmas`; however
+    Sage's infrastructure does not allow yet to model this::
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
+        sage: Magmas() &amp; AdditiveMagmas()
+        Join of Category of magmas and Category of additive magmas
 
-            INPUT:
+        sage: Magmas() &amp; AdditiveMagmas()        # todo: not implemented
+        Category of magmas and additive magmas
 
-            - ``self``, ``right`` -- two elements with the same parent
+    TESTS::
 
-            OUTPUT:
+        sage: TestSuite(MagmasAndAdditiveMagmas()).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of sets `(S,+,*)` with an additive operation '+' and
+    a multiplicative operation `*`
 
-            - an element of the same parent
+    EXAMPLES::
 
-            EXAMPLES::
+        sage: from sage.categories.magmas_and_additive_magmas import MagmasAndAdditiveMagmas
+        sage: C = MagmasAndAdditiveMagmas(); C
+        Category of magmas and additive magmas
 
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+    This is the base category for the categories of rings and their variants::
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+        sage: C.Distributive()
+        Category of distributive magmas and additive magmas
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().AdditiveInverse()
+        Category of rngs
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().Unital()
+        Category of semirings
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().AdditiveInverse().Unital()
+        Category of rings
 
-            EXAMPLES::
+    This category is really meant to represent the intersection of the
+    categories of :class:`Magmas` and :class:`AdditiveMagmas`; however
+    Sage's infrastructure does not allow yet to model this::
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+        sage: Magmas() &amp; AdditiveMagmas()
+        Join of Category of magmas and Category of additive magmas
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+        sage: Magmas() &amp; AdditiveMagmas()        # todo: not implemented
+        Category of magmas and additive magmas
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+    TESTS::
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+        sage: TestSuite(MagmasAndAdditiveMagmas()).run()
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    The category of sets `(S,+,*)` with an additive operation '+' and
+    a multiplicative operation `*`
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    EXAMPLES::
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+        sage: from sage.categories.magmas_and_additive_magmas import MagmasAndAdditiveMagmas
+        sage: C = MagmasAndAdditiveMagmas(); C
+        Category of magmas and additive magmas
 
-            .. NOTE::
+    This is the base category for the categories of rings and their variants::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+        sage: C.Distributive()
+        Category of distributive magmas and additive magmas
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().AdditiveInverse()
+        Category of rngs
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().Unital()
+        Category of semirings
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().AdditiveInverse().Unital()
+        Category of rings
 
-            All parents in the category ``Sets()`` should implement this method.
+    This category is really meant to represent the intersection of the
+    categories of :class:`Magmas` and :class:`AdditiveMagmas`; however
+    Sage's infrastructure does not allow yet to model this::
 
-            EXAMPLES::
+        sage: Magmas() &amp; AdditiveMagmas()
+        Join of Category of magmas and Category of additive magmas
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+        sage: Magmas() &amp; AdditiveMagmas()        # todo: not implemented
+        Category of magmas and additive magmas
+
+    TESTS::
+
+        sage: TestSuite(MagmasAndAdditiveMagmas()).run()
+    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of sets `(S,+,*)` with an additive operation '+' and
+    a multiplicative operation `*`
+
+    EXAMPLES::
+
+        sage: from sage.categories.magmas_and_additive_magmas import MagmasAndAdditiveMagmas
+        sage: C = MagmasAndAdditiveMagmas(); C
+        Category of magmas and additive magmas
+
+    This is the base category for the categories of rings and their variants::
+
+        sage: C.Distributive()
+        Category of distributive magmas and additive magmas
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().AdditiveInverse()
+        Category of rngs
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().Unital()
+        Category of semirings
+        sage: C.Distributive().Associative().AdditiveAssociative().AdditiveCommutative().AdditiveUnital().AdditiveInverse().Unital()
+        Category of rings
+
+    This category is really meant to represent the intersection of the
+    categories of :class:`Magmas` and :class:`AdditiveMagmas`; however
+    Sage's infrastructure does not allow yet to model this::
+
+        sage: Magmas() &amp; AdditiveMagmas()
+        Join of Category of magmas and Category of additive magmas
+
+        sage: Magmas() &amp; AdditiveMagmas()        # todo: not implemented
+        Category of magmas and additive magmas
+
+    TESTS::
+
+        sage: TestSuite(MagmasAndAdditiveMagmas()).run()
+    </opaque></document></theory></omdoc>

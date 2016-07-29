@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="BialgebrasWithBasis" base="http://www.sagemath.org/content/categories/bialgebras_with_basis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis"></import><import from="http://www.sagemath.org/content/categories/bialgebras?Bialgebras"></import><import from="http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis"></import><document name="Element Methods"><constant name="_add_">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="BialgebrasWithBasis" base="http://www.sagemath.org/content/categories/bialgebras_with_basis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis"></import><import from="http://www.sagemath.org/content/categories/bialgebras?Bialgebras"></import><import from="http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis"></import><document name="Element Methods"><constant name="element.adams_operator">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -12,326 +12,599 @@
        
        
      </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+            Compute the `n`-th convolution power of the identity morphism
+            `\mathrm{Id}` on ``self``.
 
             INPUT:
 
-            - ``self``, ``right`` -- two elements with the same parent
+            - ``n`` -- a nonnegative integer
 
             OUTPUT:
 
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
-
-            INPUT:
-
-            - ``self``, ``right`` -- two elements with the same parent
-
-            OUTPUT:
-
-            - an element of the same parent
-
-            EXAMPLES::
-
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
-
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
-
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
-
-                TESTS::
-
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque><constant name="monomial_coefficients">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return a dictionary whose keys are indices of basis elements
-            in the support of ``self`` and whose values are the
-            corresponding coefficients.
-
-            INPUT:
-
-            - ``copy`` -- (default: ``True``) if ``self`` is internally
-              represented by a dictionary ``d``, then make a copy of ``d``;
-              if ``False``, then this can cause undesired behavior by
-              mutating ``d``
-
-            EXAMPLES::
-
-                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
-                sage: B = F.basis()
-                sage: f = B['a'] + 3*B['c']
-                sage: d = f.monomial_coefficients()
-                sage: d['a']
-                1
-                sage: d['c']
-                3
-
-            TESTS:
-
-            We check that we make a copy of the coefficient dictionary::
-
-                sage: F = CombinatorialFreeModule(ZZ, ['a','b','c'])
-                sage: B = F.basis()
-                sage: f = B['a'] + 3*B['c']
-                sage: d = f.monomial_coefficients()
-                sage: d['a'] = 5
-                sage: f
-                B['a'] + 3*B['c']
-            </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+            - the image of ``self`` under the convolution power `\mathrm{Id}^{*n}`
 
             .. NOTE::
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="coproduct_on_basis">
+                In the literature, this is also called a Hopf power or
+                Sweedler power, cf. [AL2015]_.
+
+            .. SEEALSO::
+
+                :meth:`sage.categories.bialgebras.ElementMethods.convolution_product`
+
+            REFERENCES:
+
+            .. [AL2015] *The characteristic polynomial of the Adams operators
+               on graded connected Hopf algebras*.
+               Marcelo Aguiar and Aaron Lauve.
+               Algebra Number Theory, v.9, 2015, n.3, 2015.
+
+            .. TODO::
+
+                Remove dependency on ``modules_with_basis`` methods.
+
+            EXAMPLES::
+
+                sage: h = SymmetricFunctions(QQ).h()
+                sage: h[5].adams_operator(2)
+                2*h[3, 2] + 2*h[4, 1] + 2*h[5]
+                sage: h[5].plethysm(2*h[1])
+                2*h[3, 2] + 2*h[4, 1] + 2*h[5]
+                sage: h([]).adams_operator(0)
+                h[]
+                sage: h([]).adams_operator(1)
+                h[]
+                sage: h[3,2].adams_operator(0)
+                0
+                sage: h[3,2].adams_operator(1)
+                h[3, 2]
+
+            ::
+
+                sage: S = NonCommutativeSymmetricFunctions(QQ).S()
+                sage: S[4].adams_operator(5)
+                5*S[1, 1, 1, 1] + 10*S[1, 1, 2] + 10*S[1, 2, 1] + 10*S[1, 3] + 10*S[2, 1, 1] + 10*S[2, 2] + 10*S[3, 1] + 5*S[4]
+
+
+            ::
+
+                sage: m = SymmetricFunctionsNonCommutingVariables(QQ).m()
+                sage: m[[1,3],[2]].adams_operator(-2)
+                3*m{{1}, {2, 3}} + 3*m{{1, 2}, {3}} + 6*m{{1, 2, 3}} - 2*m{{1, 3}, {2}}
+            </opaque><constant name="element.convolution_product">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            The coproduct of the algebra on the basis (optional).
+            Return the image of ``self`` under the convolution product (map) of
+            the maps.
+
+            Let `A` and `B` be bialgebras over a commutative ring `R`.
+            Given maps `f_i : A \to B` for `1 \leq i &lt; n`, define the
+            convolution product
+
+            .. MATH::
+
+                (f_1 * f_2 * \cdots * f_n) := \mu^{(n-1)} \circ (f_1 \otimes
+                f_2 \otimes \cdots \otimes f_n) \circ \Delta^{(n-1)},
+
+            where `\Delta^{(k)} := \bigl(\Delta \otimes
+            \mathrm{Id}^{\otimes(k-1)}\bigr) \circ \Delta^{(k-1)}`,
+            with `\Delta^{(1)} = \Delta` (the ordinary coproduct in `A`) and
+            `\Delta^{(0)} = \mathrm{Id}`; and with `\mu^{(k)} := \mu \circ
+            \bigl(\mu^{(k-1)} \otimes \mathrm{Id})` and `\mu^{(1)} = \mu`
+            (the ordinary product in `B`). See [Sw1969]_.
+
+            (In the literature, one finds, e.g., `\Delta^{(2)}` for what we
+            denote above as `\Delta^{(1)}`. See [KMN2012]_.)
 
             INPUT:
 
-            - ``i`` -- the indices of an element of the basis of ``self``
+            - ``maps`` -- any number `n \geq 0` of linear maps `f_1, f_2,
+              \ldots, f_n` on ``self.parent()``; or a single ``list`` or
+              ``tuple`` of such maps
 
-            Returns the coproduct of the corresponding basis elements
-            If implemented, the coproduct of the algebra is defined
-            from it by linearity.
+            OUTPUT:
 
-            EXAMPLES::
+            - the convolution product of ``maps`` applied to ``self``
 
-                sage: A = HopfAlgebrasWithBasis(QQ).example(); A
-                An example of Hopf algebra with basis: the group algebra of the Dihedral group of order 6 as a permutation group over Rational Field
-                sage: (a, b) = A._group.gens()
-                sage: A.coproduct_on_basis(a)
-                B[(1,2,3)] # B[(1,2,3)]
-            </opaque><opaque format="text">(Optional)</opaque><constant name="counit_on_basis">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            The counit of the algebra on the basis (optional).
+            REFERENCES:
 
-            INPUT:
+            .. [KMN2012] On the trace of the antipode and higher indicators.
+               Yevgenia Kashina and Susan Montgomery and Richard Ng.
+               Israel J. Math., v.188, 2012.
 
-            - ``i`` -- the indices of an element of the basis of ``self``
+            .. [Sw1969] Hopf algebras.
+               Moss Sweedler.
+               W.A. Benjamin, Math Lec Note Ser., 1969.
 
-            Returns the counit of the corresponding basis elements
-            If implemented, the counit of the algebra is defined
-            from it by linearity.
+            AUTHORS:
 
-            EXAMPLES::
+            - Amy Pang - 12 June 2015 - Sage Days 65
 
-                sage: A = HopfAlgebrasWithBasis(QQ).example(); A
-                An example of Hopf algebra with basis: the group algebra of the Dihedral group of order 6 as a permutation group over Rational Field
-                sage: (a, b) = A._group.gens()
-                sage: A.counit_on_basis(a)
-                1
-            </opaque><opaque format="text">(Optional)</opaque><constant name="one_basis">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                When the one of an algebra with basis is an element of
-                this basis, this optional method can return the index of
-                this element. This is used to provide a default
-                implementation of :meth:`.one`, and an optimized default
-                implementation of :meth:`.from_base_ring`.
+            .. TODO::
 
-                EXAMPLES::
+                Remove dependency on ``modules_with_basis`` methods.
 
-                    sage: A = AlgebrasWithBasis(QQ).example()
-                    sage: A.one_basis()
-                    word: 
-                    sage: A.one()
-                    B[word: ]
-                    sage: A.from_base_ring(4)
-                    4*B[word: ]
-                </opaque><opaque format="text">(Optional)</opaque><constant name="product_on_basis">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                The product of the algebra on the basis (optional).
+            EXAMPLES:
 
-                INPUT:
+            We compute convolution products of the identity and antipode maps
+            on Schur functions::
 
-                - ``i``, ``j`` -- the indices of two elements of the
-                  basis of ``self``
-
-                Return the product of the two corresponding basis elements
-                indexed by ``i`` and ``j``.
-
-                If implemented, :meth:`product` is defined from
-                it by bilinearity.
-
-                EXAMPLES::
-
-                    sage: A = AlgebrasWithBasis(QQ).example()
-                    sage: Word = A.basis().keys()
-                    sage: A.product_on_basis(Word(&quot;abc&quot;),Word(&quot;cba&quot;))
-                    B[word: abccba]
-                </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
+                sage: Id = lambda x: x
+                sage: Antipode = lambda x: x.antipode()
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: s[3].convolution_product(Id, Id)
+                2*s[2, 1] + 4*s[3]
+                sage: s[3,2].convolution_product(Id) == s[3,2]
                 True
+
+            The method accepts multiple arguments, or a single argument
+            consisting of a list of maps::
+
+                sage: s[3,2].convolution_product(Id, Id)
+                2*s[2, 1, 1, 1] + 6*s[2, 2, 1] + 6*s[3, 1, 1] + 12*s[3, 2] + 6*s[4, 1] + 2*s[5]
+                sage: s[3,2].convolution_product([Id, Id])
+                2*s[2, 1, 1, 1] + 6*s[2, 2, 1] + 6*s[3, 1, 1] + 12*s[3, 2] + 6*s[4, 1] + 2*s[5]
+
+            We test the defining property of the antipode morphism; namely,
+            that the antipode is the inverse of the identity map in the
+            convolution algebra whose identity element is the composition of
+            the counit and unit::
+
+                sage: s[3,2].convolution_product() == s[3,2].convolution_product(Antipode, Id) == s[3,2].convolution_product(Id, Antipode)
+                True
+
+            ::
+
+                sage: Psi = NonCommutativeSymmetricFunctions(QQ).Psi()
+                sage: Psi[2,1].convolution_product(Id, Id, Id)
+                3*Psi[1, 2] + 6*Psi[2, 1]
+                sage: (Psi[5,1] - Psi[1,5]).convolution_product(Id, Id, Id)
+                -3*Psi[1, 5] + 3*Psi[5, 1]
+
+            ::
+
+                sage: G = SymmetricGroup(3)
+                sage: QG = GroupAlgebra(G,QQ)
+                sage: x = QG.sum_of_terms([(p,p.length()) for p in Permutations(3)]); x
+                [1, 3, 2] + [2, 1, 3] + 2*[2, 3, 1] + 2*[3, 1, 2] + 3*[3, 2, 1]
+                sage: x.convolution_product(Id, Id)
+                5*[1, 2, 3] + 2*[2, 3, 1] + 2*[3, 1, 2]
+                sage: x.convolution_product(Id, Id, Id)
+                4*[1, 2, 3] + [1, 3, 2] + [2, 1, 3] + 3*[3, 2, 1]
+                sage: x.convolution_product([Id]*6)
+                9*[1, 2, 3]
+
+            TESTS::
+
+                sage: Id = lambda x: x
+                sage: Antipode = lambda x: x.antipode()
+
+            ::
+
+                sage: h = SymmetricFunctions(QQ).h()
+                sage: h[5].convolution_product([Id, Id])
+                2*h[3, 2] + 2*h[4, 1] + 2*h[5]
+                sage: h.one().convolution_product([Id, Antipode])
+                h[]
+                sage: h[3,2].convolution_product([Id, Antipode])
+                0
+                sage: h.one().convolution_product([Id, Antipode]) == h.one().convolution_product()
+                True
+
+            ::
+
+                sage: S = NonCommutativeSymmetricFunctions(QQ).S()
+                sage: S[4].convolution_product([Id]*5)
+                5*S[1, 1, 1, 1] + 10*S[1, 1, 2] + 10*S[1, 2, 1] + 10*S[1, 3]
+                 + 10*S[2, 1, 1] + 10*S[2, 2] + 10*S[3, 1] + 5*S[4]
+
+            ::
+
+                sage: m = SymmetricFunctionsNonCommutingVariables(QQ).m()
+                sage: m[[1,3],[2]].convolution_product([Antipode, Antipode])
+                3*m{{1}, {2, 3}} + 3*m{{1, 2}, {3}} + 6*m{{1, 2, 3}} - 2*m{{1, 3}, {2}}
+                sage: m[[]].convolution_product([])
+                m{}
+                sage: m[[1,3],[2]].convolution_product([])
+                0
+
+            ::
+
+                sage: QS = SymmetricGroupAlgebra(QQ, 5)
+                sage: x = QS.sum_of_terms(zip(Permutations(5)[3:6],[1,2,3])); x
+                [1, 2, 4, 5, 3] + 2*[1, 2, 5, 3, 4] + 3*[1, 2, 5, 4, 3]
+                sage: x.convolution_product([Antipode, Id])
+                6*[1, 2, 3, 4, 5]
+                sage: x.convolution_product(Id, Antipode, Antipode, Antipode)
+                3*[1, 2, 3, 4, 5] + [1, 2, 4, 5, 3] + 2*[1, 2, 5, 3, 4]
+
+            ::
+
+                sage: G = SymmetricGroup(3)
+                sage: QG = GroupAlgebra(G,QQ)
+                sage: x = QG.sum_of_terms([(p,p.length()) for p in Permutations(3)]); x
+                [1, 3, 2] + [2, 1, 3] + 2*[2, 3, 1] + 2*[3, 1, 2] + 3*[3, 2, 1]
+                sage: x.convolution_product(Antipode, Id)
+                9*[1, 2, 3]
+                sage: x.convolution_product([Id, Antipode, Antipode, Antipode])
+                5*[1, 2, 3] + 2*[2, 3, 1] + 2*[3, 1, 2]
+
+            ::
+
+                sage: s[3,2].counit().parent() == s[3,2].convolution_product().parent()
+                False
+            </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of bialgebras with a distinguished basis.
+
+    EXAMPLES::
+
+        sage: C = BialgebrasWithBasis(QQ); C
+        Category of bialgebras with basis over Rational Field
+
+        sage: sorted(C.super_categories(), key=str)
+        [Category of algebras with basis over Rational Field,
+         Category of bialgebras over Rational Field,
+         Category of coalgebras with basis over Rational Field]
+
+    TESTS::
+
+        sage: TestSuite(BialgebrasWithBasis(ZZ)).run()
+    </opaque></document><document name="Parent Methods:"><constant name="parent.convolution_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the convolution product (a map) of the given maps.
+
+            Let `A` and `B` be bialgebras over a commutative ring `R`.
+            Given maps `f_i : A \to B` for `1 \leq i &lt; n`, define the
+            convolution product
+
+            .. MATH::
+
+                (f_1 * f_2 * \cdots * f_n) := \mu^{(n-1)} \circ (f_1 \otimes
+                f_2 \otimes \cdots \otimes f_n) \circ \Delta^{(n-1)},
+
+            where `\Delta^{(k)} := \bigl(\Delta \otimes
+            \mathrm{Id}^{\otimes(k-1)}\bigr) \circ \Delta^{(k-1)}`,
+            with `\Delta^{(1)} = \Delta` (the ordinary coproduct in `A`) and
+            `\Delta^{(0)} = \mathrm{Id}`; and with `\mu^{(k)} := \mu \circ
+            \bigl(\mu^{(k-1)} \otimes \mathrm{Id})` and `\mu^{(1)} = \mu`
+            (the ordinary product in `B`). See [Sw1969]_.
+
+            (In the literature, one finds, e.g., `\Delta^{(2)}` for what we
+            denote above as `\Delta^{(1)}`. See [KMN2012]_.)
+
+            INPUT:
+
+            - ``maps`` -- any number `n \geq 0` of linear maps `f_1, f_2,
+              \ldots, f_n` on ``self``; or a single ``list`` or ``tuple``
+              of such maps
+
+            OUTPUT:
+
+            - the new map `f_1 * f_2 * \cdots * f_2` representing their
+              convolution product
+
+            .. SEEALSO::
+
+                :meth:`sage.categories.bialgebras.ElementMethods.convolution_product`
+
+            AUTHORS:
+
+            - Aaron Lauve - 12 June 2015 - Sage Days 65
+
+            .. TODO::
+
+                Remove dependency on ``modules_with_basis`` methods.
+
+            EXAMPLES:
+
+            We construct some maps: the identity, the antipode and
+            projection onto the homogeneous componente of degree 2::
+
+                sage: Id = lambda x: x
+                sage: Antipode = lambda x: x.antipode()
+                sage: Proj2 = lambda x: x.parent().sum_of_terms([(m, c) for (m, c) in x if m.size() == 2])
+
+            Compute the convolution product of the identity with itself and
+            with the projection ``Proj2`` on the Hopf algebra of
+            non-commutative symmetric functions::
+
+                sage: R = NonCommutativeSymmetricFunctions(QQ).ribbon()
+                sage: T = R.convolution_product([Id, Id])
+                sage: [T(R(comp)) for comp in Compositions(3)]
+                [4*R[1, 1, 1] + R[1, 2] + R[2, 1],
+                 2*R[1, 1, 1] + 4*R[1, 2] + 2*R[2, 1] + 2*R[3],
+                 2*R[1, 1, 1] + 2*R[1, 2] + 4*R[2, 1] + 2*R[3],
+                 R[1, 2] + R[2, 1] + 4*R[3]]
+                sage: T = R.convolution_product(Proj2, Id)
+                sage: [T(R([i])) for i in range(1, 5)]
+                [0, R[2], R[2, 1] + R[3], R[2, 2] + R[4]]
+
+            Compute the convolution product of no maps on the Hopf algebra of
+            symmetric functions in non-commuting variables. This is the
+            composition of the counit with the unit::
+
+                sage: m = SymmetricFunctionsNonCommutingVariables(QQ).m()
+                sage: T = m.convolution_product()
+                sage: [T(m(lam)) for lam in SetPartitions(0).list() + SetPartitions(2).list()]
+                [m{}, 0, 0]
+
+            Compute the convolution product of the projection ``Proj2`` with
+            the identity on the Hopf algebra of symmetric functions in
+            non-commuting variables::
+
+                sage: T = m.convolution_product(Proj2, Id)
+                sage: [T(m(lam)) for lam in SetPartitions(3)]
+                [0,
+                 m{{1, 2}, {3}} + m{{1, 2, 3}},
+                 m{{1, 2}, {3}} + m{{1, 2, 3}},
+                 m{{1, 2}, {3}} + m{{1, 2, 3}},
+                 3*m{{1}, {2}, {3}} + 3*m{{1}, {2, 3}} + 3*m{{1, 3}, {2}}]
+
+            Compute the convolution product of the antipode with itself and the
+            identity map on group algebra of the symmetric group::
+
+                sage: G = SymmetricGroup(3)
+                sage: QG = GroupAlgebra(G, QQ)
+                sage: x = QG.sum_of_terms([(p,p.number_of_peaks() + p.number_of_inversions()) for p in Permutations(3)]); x
+                2*[1, 3, 2] + [2, 1, 3] + 3*[2, 3, 1] + 2*[3, 1, 2] + 3*[3, 2, 1]
+                sage: T = QG.convolution_product(Antipode, Antipode, Id)
+                sage: T(x)
+                2*[1, 3, 2] + [2, 1, 3] + 2*[2, 3, 1] + 3*[3, 1, 2] + 3*[3, 2, 1]
+            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.adams_operator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Compute the `n`-th convolution power of the identity morphism
+            `\mathrm{Id}` on ``self``.
+
+            INPUT:
+
+            - ``n`` -- a nonnegative integer
+
+            OUTPUT:
+
+            - the image of ``self`` under the convolution power `\mathrm{Id}^{*n}`
+
+            .. NOTE::
+
+                In the literature, this is also called a Hopf power or
+                Sweedler power, cf. [AL2015]_.
+
+            .. SEEALSO::
+
+                :meth:`sage.categories.bialgebras.ElementMethods.convolution_product`
+
+            REFERENCES:
+
+            .. [AL2015] *The characteristic polynomial of the Adams operators
+               on graded connected Hopf algebras*.
+               Marcelo Aguiar and Aaron Lauve.
+               Algebra Number Theory, v.9, 2015, n.3, 2015.
+
+            .. TODO::
+
+                Remove dependency on ``modules_with_basis`` methods.
+
+            EXAMPLES::
+
+                sage: h = SymmetricFunctions(QQ).h()
+                sage: h[5].adams_operator(2)
+                2*h[3, 2] + 2*h[4, 1] + 2*h[5]
+                sage: h[5].plethysm(2*h[1])
+                2*h[3, 2] + 2*h[4, 1] + 2*h[5]
+                sage: h([]).adams_operator(0)
+                h[]
+                sage: h([]).adams_operator(1)
+                h[]
+                sage: h[3,2].adams_operator(0)
+                0
+                sage: h[3,2].adams_operator(1)
+                h[3, 2]
+
+            ::
+
+                sage: S = NonCommutativeSymmetricFunctions(QQ).S()
+                sage: S[4].adams_operator(5)
+                5*S[1, 1, 1, 1] + 10*S[1, 1, 2] + 10*S[1, 2, 1] + 10*S[1, 3] + 10*S[2, 1, 1] + 10*S[2, 2] + 10*S[3, 1] + 5*S[4]
+
+
+            ::
+
+                sage: m = SymmetricFunctionsNonCommutingVariables(QQ).m()
+                sage: m[[1,3],[2]].adams_operator(-2)
+                3*m{{1}, {2, 3}} + 3*m{{1, 2}, {3}} + 6*m{{1, 2, 3}} - 2*m{{1, 3}, {2}}
+            </opaque><constant name="subcategory.convolution_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the image of ``self`` under the convolution product (map) of
+            the maps.
+
+            Let `A` and `B` be bialgebras over a commutative ring `R`.
+            Given maps `f_i : A \to B` for `1 \leq i &lt; n`, define the
+            convolution product
+
+            .. MATH::
+
+                (f_1 * f_2 * \cdots * f_n) := \mu^{(n-1)} \circ (f_1 \otimes
+                f_2 \otimes \cdots \otimes f_n) \circ \Delta^{(n-1)},
+
+            where `\Delta^{(k)} := \bigl(\Delta \otimes
+            \mathrm{Id}^{\otimes(k-1)}\bigr) \circ \Delta^{(k-1)}`,
+            with `\Delta^{(1)} = \Delta` (the ordinary coproduct in `A`) and
+            `\Delta^{(0)} = \mathrm{Id}`; and with `\mu^{(k)} := \mu \circ
+            \bigl(\mu^{(k-1)} \otimes \mathrm{Id})` and `\mu^{(1)} = \mu`
+            (the ordinary product in `B`). See [Sw1969]_.
+
+            (In the literature, one finds, e.g., `\Delta^{(2)}` for what we
+            denote above as `\Delta^{(1)}`. See [KMN2012]_.)
+
+            INPUT:
+
+            - ``maps`` -- any number `n \geq 0` of linear maps `f_1, f_2,
+              \ldots, f_n` on ``self.parent()``; or a single ``list`` or
+              ``tuple`` of such maps
+
+            OUTPUT:
+
+            - the convolution product of ``maps`` applied to ``self``
+
+            REFERENCES:
+
+            .. [KMN2012] On the trace of the antipode and higher indicators.
+               Yevgenia Kashina and Susan Montgomery and Richard Ng.
+               Israel J. Math., v.188, 2012.
+
+            .. [Sw1969] Hopf algebras.
+               Moss Sweedler.
+               W.A. Benjamin, Math Lec Note Ser., 1969.
+
+            AUTHORS:
+
+            - Amy Pang - 12 June 2015 - Sage Days 65
+
+            .. TODO::
+
+                Remove dependency on ``modules_with_basis`` methods.
+
+            EXAMPLES:
+
+            We compute convolution products of the identity and antipode maps
+            on Schur functions::
+
+                sage: Id = lambda x: x
+                sage: Antipode = lambda x: x.antipode()
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: s[3].convolution_product(Id, Id)
+                2*s[2, 1] + 4*s[3]
+                sage: s[3,2].convolution_product(Id) == s[3,2]
+                True
+
+            The method accepts multiple arguments, or a single argument
+            consisting of a list of maps::
+
+                sage: s[3,2].convolution_product(Id, Id)
+                2*s[2, 1, 1, 1] + 6*s[2, 2, 1] + 6*s[3, 1, 1] + 12*s[3, 2] + 6*s[4, 1] + 2*s[5]
+                sage: s[3,2].convolution_product([Id, Id])
+                2*s[2, 1, 1, 1] + 6*s[2, 2, 1] + 6*s[3, 1, 1] + 12*s[3, 2] + 6*s[4, 1] + 2*s[5]
+
+            We test the defining property of the antipode morphism; namely,
+            that the antipode is the inverse of the identity map in the
+            convolution algebra whose identity element is the composition of
+            the counit and unit::
+
+                sage: s[3,2].convolution_product() == s[3,2].convolution_product(Antipode, Id) == s[3,2].convolution_product(Id, Antipode)
+                True
+
+            ::
+
+                sage: Psi = NonCommutativeSymmetricFunctions(QQ).Psi()
+                sage: Psi[2,1].convolution_product(Id, Id, Id)
+                3*Psi[1, 2] + 6*Psi[2, 1]
+                sage: (Psi[5,1] - Psi[1,5]).convolution_product(Id, Id, Id)
+                -3*Psi[1, 5] + 3*Psi[5, 1]
+
+            ::
+
+                sage: G = SymmetricGroup(3)
+                sage: QG = GroupAlgebra(G,QQ)
+                sage: x = QG.sum_of_terms([(p,p.length()) for p in Permutations(3)]); x
+                [1, 3, 2] + [2, 1, 3] + 2*[2, 3, 1] + 2*[3, 1, 2] + 3*[3, 2, 1]
+                sage: x.convolution_product(Id, Id)
+                5*[1, 2, 3] + 2*[2, 3, 1] + 2*[3, 1, 2]
+                sage: x.convolution_product(Id, Id, Id)
+                4*[1, 2, 3] + [1, 3, 2] + [2, 1, 3] + 3*[3, 2, 1]
+                sage: x.convolution_product([Id]*6)
+                9*[1, 2, 3]
+
+            TESTS::
+
+                sage: Id = lambda x: x
+                sage: Antipode = lambda x: x.antipode()
+
+            ::
+
+                sage: h = SymmetricFunctions(QQ).h()
+                sage: h[5].convolution_product([Id, Id])
+                2*h[3, 2] + 2*h[4, 1] + 2*h[5]
+                sage: h.one().convolution_product([Id, Antipode])
+                h[]
+                sage: h[3,2].convolution_product([Id, Antipode])
+                0
+                sage: h.one().convolution_product([Id, Antipode]) == h.one().convolution_product()
+                True
+
+            ::
+
+                sage: S = NonCommutativeSymmetricFunctions(QQ).S()
+                sage: S[4].convolution_product([Id]*5)
+                5*S[1, 1, 1, 1] + 10*S[1, 1, 2] + 10*S[1, 2, 1] + 10*S[1, 3]
+                 + 10*S[2, 1, 1] + 10*S[2, 2] + 10*S[3, 1] + 5*S[4]
+
+            ::
+
+                sage: m = SymmetricFunctionsNonCommutingVariables(QQ).m()
+                sage: m[[1,3],[2]].convolution_product([Antipode, Antipode])
+                3*m{{1}, {2, 3}} + 3*m{{1, 2}, {3}} + 6*m{{1, 2, 3}} - 2*m{{1, 3}, {2}}
+                sage: m[[]].convolution_product([])
+                m{}
+                sage: m[[1,3],[2]].convolution_product([])
+                0
+
+            ::
+
+                sage: QS = SymmetricGroupAlgebra(QQ, 5)
+                sage: x = QS.sum_of_terms(zip(Permutations(5)[3:6],[1,2,3])); x
+                [1, 2, 4, 5, 3] + 2*[1, 2, 5, 3, 4] + 3*[1, 2, 5, 4, 3]
+                sage: x.convolution_product([Antipode, Id])
+                6*[1, 2, 3, 4, 5]
+                sage: x.convolution_product(Id, Antipode, Antipode, Antipode)
+                3*[1, 2, 3, 4, 5] + [1, 2, 4, 5, 3] + 2*[1, 2, 5, 3, 4]
+
+            ::
+
+                sage: G = SymmetricGroup(3)
+                sage: QG = GroupAlgebra(G,QQ)
+                sage: x = QG.sum_of_terms([(p,p.length()) for p in Permutations(3)]); x
+                [1, 3, 2] + [2, 1, 3] + 2*[2, 3, 1] + 2*[3, 1, 2] + 3*[3, 2, 1]
+                sage: x.convolution_product(Antipode, Id)
+                9*[1, 2, 3]
+                sage: x.convolution_product([Id, Antipode, Antipode, Antipode])
+                5*[1, 2, 3] + 2*[2, 3, 1] + 2*[3, 1, 2]
+
+            ::
+
+                sage: s[3,2].counit().parent() == s[3,2].convolution_product().parent()
+                False
             </opaque></document></theory></omdoc>

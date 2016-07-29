@@ -1,1 +1,45 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Objects" base="http://www.sagemath.org/content/categories/objects" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Objects" base="http://www.sagemath.org/content/categories/objects" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><document name="Element Methods"><opaque format="text">
+    The category of all objects
+    the basic category
+
+    EXAMPLES::
+
+        sage: Objects()
+        Category of objects
+        sage: Objects().super_categories()
+        []
+
+    TESTS::
+
+        sage: TestSuite(Objects()).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of all objects
+    the basic category
+
+    EXAMPLES::
+
+        sage: Objects()
+        Category of objects
+        sage: Objects().super_categories()
+        []
+
+    TESTS::
+
+        sage: TestSuite(Objects()).run()
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+        Methods for all category objects
+        </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of all objects
+    the basic category
+
+    EXAMPLES::
+
+        sage: Objects()
+        Category of objects
+        sage: Objects().super_categories()
+        []
+
+    TESTS::
+
+        sage: TestSuite(Objects()).run()
+    </opaque></document></theory></omdoc>

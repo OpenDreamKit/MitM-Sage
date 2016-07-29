@@ -6,175 +6,46 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+     </constant><document name="Element Methods"><opaque format="text">
+        A category for isomorphic objects of sets.
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+        EXAMPLES::
 
-            EXAMPLES::
+            sage: Sets().IsomorphicObjects()
+            Category of isomorphic objects of sets
+            sage: Sets().IsomorphicObjects().all_super_categories()
+            [Category of isomorphic objects of sets,
+             Category of subobjects of sets, Category of quotients of sets,
+             Category of subquotients of sets,
+             Category of sets,
+             Category of sets with partial maps,
+             Category of objects]
+        </opaque></document><document name="Morphism Methods:"><opaque format="text">
+        A category for isomorphic objects of sets.
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+        EXAMPLES::
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+            sage: Sets().IsomorphicObjects()
+            Category of isomorphic objects of sets
+            sage: Sets().IsomorphicObjects().all_super_categories()
+            [Category of isomorphic objects of sets,
+             Category of subobjects of sets, Category of quotients of sets,
+             Category of subquotients of sets,
+             Category of sets,
+             Category of sets with partial maps,
+             Category of objects]
+        </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"><opaque format="text">
+        A category for isomorphic objects of sets.
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+        EXAMPLES::
 
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque><constant name="ambient">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return the ambient space for ``self``.
-
-                EXAMPLES::
-
-                    sage: Semigroups().Subquotients().example().ambient()
-                    An example of a semigroup: the left zero semigroup
-
-                .. SEEALSO::
-
-                    :meth:`Sets.SubcategoryMethods.Subquotients` for the
-                    specifications and :meth:`.lift` and :meth:`.retract`.
-                </opaque><constant name="lift">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Lift `x` to the ambient space for ``self``.
-
-                INPUT:
-
-                - ``x`` -- an element of ``self``
-
-                EXAMPLES::
-
-                    sage: S = Semigroups().Subquotients().example()
-                    sage: s = S.an_element()
-                    sage: s, s.parent()
-                    (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
-                    sage: S.lift(s), S.lift(s).parent()
-                    (42, An example of a semigroup: the left zero semigroup)
-                    sage: s.lift(), s.lift().parent()
-                    (42, An example of a semigroup: the left zero semigroup)
-
-                .. SEEALSO::
-
-                    :class:`Sets.SubcategoryMethods.Subquotients` for
-                    the specifications, :meth:`.ambient`, :meth:`.retract`,
-                    and also :meth:`Sets.Subquotients.ElementMethods.lift`.
-                </opaque><constant name="retract">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Retract ``x`` to ``self``.
-
-                INPUT:
-
-                - ``x`` -- an element of the ambient space for ``self``
-
-                .. SEEALSO::
-
-                    :class:`Sets.SubcategoryMethods.Subquotients` for
-                    the specifications, :meth:`.ambient`, :meth:`.retract`,
-                    and also :meth:`Sets.Subquotients.ElementMethods.retract`.
-
-                EXAMPLES::
-
-                    sage: S = Semigroups().Subquotients().example()
-                    sage: s = S.ambient().an_element()
-                    sage: s, s.parent()
-                    (42, An example of a semigroup: the left zero semigroup)
-                    sage: S.retract(s), S.retract(s).parent()
-                    (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
-                </opaque></document></theory></omdoc>
+            sage: Sets().IsomorphicObjects()
+            Category of isomorphic objects of sets
+            sage: Sets().IsomorphicObjects().all_super_categories()
+            [Category of isomorphic objects of sets,
+             Category of subobjects of sets, Category of quotients of sets,
+             Category of subquotients of sets,
+             Category of sets,
+             Category of sets with partial maps,
+             Category of objects]
+        </opaque></document></theory></omdoc>

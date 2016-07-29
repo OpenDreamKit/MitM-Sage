@@ -1,4 +1,7 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis"></import><import from="http://www.sagemath.org/content/categories/modules/Modules?TensorProducts"></import><document name="Element Methods"><constant name="_add_">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis"></import><import from="http://www.sagemath.org/content/categories/modules/Modules?TensorProducts"></import><document name="Element Methods"><opaque format="text">
+            Implements operations on elements of tensor products of modules
+            with basis.
+            </opaque><constant name="element.apply_multilinear_morphism">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -6,54 +9,127 @@
                  <om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
       </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+                Return the result of applying the morphism induced by ``f``
+                to ``self``.
 
-            INPUT:
+                INPUT:
 
-            - ``self``, ``right`` -- two elements with the same parent
+                - ``f`` -- a multilinear morphism from the component
+                  modules of the parent tensor product to any module
 
-            OUTPUT:
+                - ``codomain`` -- the codomain of ``f`` (optional)
 
-            - an element of the same parent
+                By the universal property of the tensor product, ``f``
+                induces a linear morphism from `self.parent()` to the
+                target module. Returns the result of applying that
+                morphism to ``self``.
 
-            EXAMPLES::
+                The codomain is used for optimizations purposes
+                only. If it's not provided, it's recovered by calling
+                ``f`` on the zero input.
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
+                EXAMPLES:
 
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
+                We start with simple (admittedly not so interesting)
+                examples, with two modules `A` and `B`::
 
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
+                    sage: A = CombinatorialFreeModule(ZZ, [1,2], prefix=&quot;A&quot;); A.rename(&quot;A&quot;)
+                    sage: B = CombinatorialFreeModule(ZZ, [3,4], prefix=&quot;B&quot;); B.rename(&quot;B&quot;)
 
-                TESTS::
+                and `f` the bilinear morphism `(a,b) \mapsto b \otimes a`
+                from `A \times B` to `B \otimes A`::
 
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
+                    sage: def f(a,b):
+                    ....:     return tensor([b,a])
+
+                Now, calling applying `f` on `a \otimes b` returns the same
+                as `f(a,b)`::
+
+                    sage: a = A.monomial(1) + 2 * A.monomial(2); a
+                    A[1] + 2*A[2]
+                    sage: b = B.monomial(3) - 2 * B.monomial(4); b
+                    B[3] - 2*B[4]
+                    sage: f(a,b)
+                    B[3] # A[1] + 2*B[3] # A[2] - 2*B[4] # A[1] - 4*B[4] # A[2]
+                    sage: tensor([a,b]).apply_multilinear_morphism(f)
+                    B[3] # A[1] + 2*B[3] # A[2] - 2*B[4] # A[1] - 4*B[4] # A[2]
+
+                `f` may be a bilinear morphism to any module over the
+                base ring of `A` and `B`. Here the codomain is `\ZZ`::
+
+                    sage: def f(a,b):
+                    ....:     return sum(a.coefficients(), 0) * sum(b.coefficients(), 0)
+                    sage: f(a,b)
+                    -3
+                    sage: tensor([a,b]).apply_multilinear_morphism(f)
+                    -3
+
+                Mind the `0` in the sums above; otherwise `f` would
+                not return `0` in `\ZZ`::
+
+                    sage: def f(a,b):
+                    ....:     return sum(a.coefficients()) * sum(b.coefficients())
+                    sage: type(f(A.zero(), B.zero()))
+                    &lt;type 'int'&gt;
+
+                Which would be wrong and break this method::
+
+                    sage: tensor([a,b]).apply_multilinear_morphism(f)
+                    Traceback (most recent call last):
+                    ...
+                    AttributeError: 'int' object has no attribute 'parent'
+
+                Here we consider an example where the codomain is a
+                module with basis with a different base ring::
+
+                    sage: C = CombinatorialFreeModule(QQ, [(1,3),(2,4)], prefix=&quot;C&quot;); C.rename(&quot;C&quot;)
+                    sage: def f(a,b):
+                    ....:     return C.sum_of_terms( [((1,3), QQ(a[1]*b[3])), ((2,4), QQ(a[2]*b[4]))] )
+                    sage: f(a,b)
+                    C[(1, 3)] - 4*C[(2, 4)]
+                    sage: tensor([a,b]).apply_multilinear_morphism(f)
+                    C[(1, 3)] - 4*C[(2, 4)]
+
+                 We conclude with a real life application, where we
+                 check that the antipode of the Hopf algebra of
+                 Symmetric functions on the Schur basis satisfies its
+                 defining formula::
+
+                    sage: Sym = SymmetricFunctions(QQ)
+                    sage: s = Sym.schur()
+                    sage: def f(a,b): return a*b.antipode()
+                    sage: x = 4*s.an_element(); x
+                    8*s[] + 8*s[1] + 12*s[2]
+                    sage: x.coproduct().apply_multilinear_morphism(f)
+                    8*s[]
+                    sage: x.coproduct().apply_multilinear_morphism(f) == x.counit()
                     True
-                 </opaque><constant name="monomial_coefficients">
+
+                We recover the constant term of `x`, as desired.
+
+                .. TODO::
+
+                    Extract a method to linearize a multilinear
+                    morphism, and delegate the work there.
+                </opaque></document><document name="Morphism Methods:"><opaque format="text">
+        The category of modules with basis constructed by tensor product of
+        modules with basis.
+        </opaque></document><document name="Parent Methods:"><opaque format="text">
+            Implements operations on tensor products of modules with basis.
+            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+            Implements operations on elements of tensor products of modules
+            with basis.
+            </opaque><constant name="subcategory.apply_multilinear_morphism">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -61,123 +137,116 @@
                  <om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return a dictionary whose keys are indices of basis elements
-            in the support of ``self`` and whose values are the
-            corresponding coefficients.
-
-            INPUT:
-
-            - ``copy`` -- (default: ``True``) if ``self`` is internally
-              represented by a dictionary ``d``, then make a copy of ``d``;
-              if ``False``, then this can cause undesired behavior by
-              mutating ``d``
-
-            EXAMPLES::
-
-                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
-                sage: B = F.basis()
-                sage: f = B['a'] + 3*B['c']
-                sage: d = f.monomial_coefficients()
-                sage: d['a']
-                1
-                sage: d['c']
-                3
-
-            TESTS:
-
-            We check that we make a copy of the coefficient dictionary::
-
-                sage: F = CombinatorialFreeModule(ZZ, ['a','b','c'])
-                sage: B = F.basis()
-                sage: f = B['a'] + 3*B['c']
-                sage: d = f.monomial_coefficients()
-                sage: d['a'] = 5
-                sage: f
-                B['a'] + 3*B['c']
-            </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
-
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
-
-            EXAMPLES::
-
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
-
-            This method is meant to be used with the Python inversion
-            operator `~`::
-
-                sage: ~i
-                Identity endomorphism of Rational Field
-
-            We now try to inverse a couple of morphisms defined by a matrix::
-
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
-
-            .. NOTE::
-
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
                  <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
                  <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
       </om:OMBIND>
+      </om:OMBIND>
       </om:OMBIND></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
+                Return the result of applying the morphism induced by ``f``
+                to ``self``.
 
-            All parents in the category ``Sets()`` should implement this method.
+                INPUT:
 
-            EXAMPLES::
+                - ``f`` -- a multilinear morphism from the component
+                  modules of the parent tensor product to any module
 
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+                - ``codomain`` -- the codomain of ``f`` (optional)
+
+                By the universal property of the tensor product, ``f``
+                induces a linear morphism from `self.parent()` to the
+                target module. Returns the result of applying that
+                morphism to ``self``.
+
+                The codomain is used for optimizations purposes
+                only. If it's not provided, it's recovered by calling
+                ``f`` on the zero input.
+
+                EXAMPLES:
+
+                We start with simple (admittedly not so interesting)
+                examples, with two modules `A` and `B`::
+
+                    sage: A = CombinatorialFreeModule(ZZ, [1,2], prefix=&quot;A&quot;); A.rename(&quot;A&quot;)
+                    sage: B = CombinatorialFreeModule(ZZ, [3,4], prefix=&quot;B&quot;); B.rename(&quot;B&quot;)
+
+                and `f` the bilinear morphism `(a,b) \mapsto b \otimes a`
+                from `A \times B` to `B \otimes A`::
+
+                    sage: def f(a,b):
+                    ....:     return tensor([b,a])
+
+                Now, calling applying `f` on `a \otimes b` returns the same
+                as `f(a,b)`::
+
+                    sage: a = A.monomial(1) + 2 * A.monomial(2); a
+                    A[1] + 2*A[2]
+                    sage: b = B.monomial(3) - 2 * B.monomial(4); b
+                    B[3] - 2*B[4]
+                    sage: f(a,b)
+                    B[3] # A[1] + 2*B[3] # A[2] - 2*B[4] # A[1] - 4*B[4] # A[2]
+                    sage: tensor([a,b]).apply_multilinear_morphism(f)
+                    B[3] # A[1] + 2*B[3] # A[2] - 2*B[4] # A[1] - 4*B[4] # A[2]
+
+                `f` may be a bilinear morphism to any module over the
+                base ring of `A` and `B`. Here the codomain is `\ZZ`::
+
+                    sage: def f(a,b):
+                    ....:     return sum(a.coefficients(), 0) * sum(b.coefficients(), 0)
+                    sage: f(a,b)
+                    -3
+                    sage: tensor([a,b]).apply_multilinear_morphism(f)
+                    -3
+
+                Mind the `0` in the sums above; otherwise `f` would
+                not return `0` in `\ZZ`::
+
+                    sage: def f(a,b):
+                    ....:     return sum(a.coefficients()) * sum(b.coefficients())
+                    sage: type(f(A.zero(), B.zero()))
+                    &lt;type 'int'&gt;
+
+                Which would be wrong and break this method::
+
+                    sage: tensor([a,b]).apply_multilinear_morphism(f)
+                    Traceback (most recent call last):
+                    ...
+                    AttributeError: 'int' object has no attribute 'parent'
+
+                Here we consider an example where the codomain is a
+                module with basis with a different base ring::
+
+                    sage: C = CombinatorialFreeModule(QQ, [(1,3),(2,4)], prefix=&quot;C&quot;); C.rename(&quot;C&quot;)
+                    sage: def f(a,b):
+                    ....:     return C.sum_of_terms( [((1,3), QQ(a[1]*b[3])), ((2,4), QQ(a[2]*b[4]))] )
+                    sage: f(a,b)
+                    C[(1, 3)] - 4*C[(2, 4)]
+                    sage: tensor([a,b]).apply_multilinear_morphism(f)
+                    C[(1, 3)] - 4*C[(2, 4)]
+
+                 We conclude with a real life application, where we
+                 check that the antipode of the Hopf algebra of
+                 Symmetric functions on the Schur basis satisfies its
+                 defining formula::
+
+                    sage: Sym = SymmetricFunctions(QQ)
+                    sage: s = Sym.schur()
+                    sage: def f(a,b): return a*b.antipode()
+                    sage: x = 4*s.an_element(); x
+                    8*s[] + 8*s[1] + 12*s[2]
+                    sage: x.coproduct().apply_multilinear_morphism(f)
+                    8*s[]
+                    sage: x.coproduct().apply_multilinear_morphism(f) == x.counit()
+                    True
+
+                We recover the constant term of `x`, as desired.
+
+                .. TODO::
+
+                    Extract a method to linearize a multilinear
+                    morphism, and delegate the work there.
+                </opaque></document></theory></omdoc>

@@ -4,17 +4,3 @@ Includes http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebr
 Includes http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras
 Includes http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/magmas/Magmas?Algebras
-Declares http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?_add_
-constant http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?_add_
-Declares http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?_mul_
-constant http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?_mul_
-Declares http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?__nonzero__
-constant http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?__nonzero__
-Declares http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?monomial_coefficients
-constant http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?monomial_coefficients
-Declares http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?__invert__
-constant http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?__invert__
-Declares http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?semigroup_generators
-constant http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?semigroup_generators
-Declares http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?__contains__
-constant http://www.sagemath.org/content/categories/semigroups/Semigroups?Algebras?__contains__

@@ -4,11 +4,5 @@ Includes http://www.sagemath.org/content/categories/simplicial_complexes/Simplic
 Includes http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite http://www.sagemath.org/content/categories/finite_sets?FiniteSets
 Includes http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite http://www.sagemath.org/content/categories/simplicial_complexes?SimplicialComplexes
-Declares http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?__invert__
-constant http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?__invert__
-Declares http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?__contains__
-constant http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?__contains__
-Declares http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?faces
-constant http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?faces
-Declares http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?facets
-constant http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?facets
+Declares http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?parent.dimension
+constant http://www.sagemath.org/content/categories/simplicial_complexes/SimplicialComplexes?Finite?parent.dimension

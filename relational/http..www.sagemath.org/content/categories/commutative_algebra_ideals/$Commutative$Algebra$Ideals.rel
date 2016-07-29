@@ -5,11 +5,3 @@ Includes http://www.sagemath.org/content/categories/commutative_algebra_ideals?C
 Includes http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals http://www.sagemath.org/content/categories/algebra_ideals?AlgebraIdeals
 Declares http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals
 constant http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals
-Declares http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?_add_
-constant http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?_add_
-Declares http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?__nonzero__
-constant http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?__nonzero__
-Declares http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?__invert__
-constant http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?__invert__
-Declares http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?__contains__
-constant http://www.sagemath.org/content/categories/commutative_algebra_ideals?CommutativeAlgebraIdeals?__contains__

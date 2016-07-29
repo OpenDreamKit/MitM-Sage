@@ -1,188 +1,113 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Rngs" base="http://www.sagemath.org/content/categories/rngs" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas/AdditiveAssociative/AdditiveCommutative/AdditiveUnital?Associative"></import><import from="http://www.sagemath.org/content/categories/commutative_additive_groups?CommutativeAdditiveGroups"></import><document name="Element Methods"><constant name="_add_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the sum of ``self`` and ``right``.
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Rngs" base="http://www.sagemath.org/content/categories/rngs" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas/AdditiveAssociative/AdditiveCommutative/AdditiveUnital?Associative"></import><import from="http://www.sagemath.org/content/categories/commutative_additive_groups?CommutativeAdditiveGroups"></import><document name="Element Methods"><opaque format="text">
+    The category of rngs.
 
-            INPUT:
+    An *rng* `(S, +, *)` is similar to a ring but not necessarilly
+    unital. In other words, it is a combination of a commutative
+    additive group `(S, +)` and a multiplicative semigroup `(S, *)`,
+    where `*` distributes over `+`.
 
-            - ``self``, ``right`` -- two elements with the same parent
+    EXAMPLES::
 
-            OUTPUT:
+        sage: C = Rngs(); C
+        Category of rngs
+        sage: sorted(C.super_categories(), key=str)
+        [Category of associative additive commutative additive associative additive unital distributive magmas and additive magmas,
+         Category of commutative additive groups]
 
-            - an element of the same parent
+        sage: sorted(C.axioms())
+        ['AdditiveAssociative', 'AdditiveCommutative', 'AdditiveInverse',
+         'AdditiveUnital', 'Associative', 'Distributive']
 
-            EXAMPLES::
+        sage: C is (CommutativeAdditiveGroups() &amp; Semigroups()).Distributive()
+        True
+        sage: C.Unital()
+        Category of rings
 
-                sage: F = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = F.additive_semigroup_generators()
-                sage: a._add_(b)
-                a + b
-            </opaque><opaque format="text">(Optional)</opaque><constant name="_mul_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Product of two elements
+    TESTS::
 
-            INPUT:
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Morphism Methods:"><opaque format="text">
+    The category of rngs.
 
-            - ``self``, ``right`` -- two elements with the same parent
+    An *rng* `(S, +, *)` is similar to a ring but not necessarilly
+    unital. In other words, it is a combination of a commutative
+    additive group `(S, +)` and a multiplicative semigroup `(S, *)`,
+    where `*` distributes over `+`.
 
-            OUTPUT:
+    EXAMPLES::
 
-            - an element of the same parent
+        sage: C = Rngs(); C
+        Category of rngs
+        sage: sorted(C.super_categories(), key=str)
+        [Category of associative additive commutative additive associative additive unital distributive magmas and additive magmas,
+         Category of commutative additive groups]
 
-            EXAMPLES::
+        sage: sorted(C.axioms())
+        ['AdditiveAssociative', 'AdditiveCommutative', 'AdditiveInverse',
+         'AdditiveUnital', 'Associative', 'Distributive']
 
-                sage: S = Semigroups().example(&quot;free&quot;)
-                sage: x = S('a'); y = S('b')
-                sage: x._mul_(y)
-                'ab'
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__nonzero__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Return whether ``self`` is not zero.
+        sage: C is (CommutativeAdditiveGroups() &amp; Semigroups()).Distributive()
+        True
+        sage: C.Unital()
+        Category of rings
 
-                All parents in the category ``CommutativeAdditiveMonoids()``
-                should implement this method.
+    TESTS::
 
-                .. note:: This is currently not useful because this method is
-                   overridden by ``Element``.
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Parent Methods:"><opaque format="text">
+    The category of rngs.
 
-                TESTS::
+    An *rng* `(S, +, *)` is similar to a ring but not necessarilly
+    unital. In other words, it is a combination of a commutative
+    additive group `(S, +)` and a multiplicative semigroup `(S, *)`,
+    where `*` distributes over `+`.
 
-                    sage: S = CommutativeAdditiveMonoids().example()
-                    sage: bool(S.zero())
-                    False
-                    sage: bool(S.an_element())
-                    True
-                 </opaque></document><document name="Morphism Methods:"><constant name="__invert__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the inverse morphism, or raise an error.
+    EXAMPLES::
 
-            The error may either state that the morphism is not
-            invertible, or that Sage cannot invert it.
+        sage: C = Rngs(); C
+        Category of rngs
+        sage: sorted(C.super_categories(), key=str)
+        [Category of associative additive commutative additive associative additive unital distributive magmas and additive magmas,
+         Category of commutative additive groups]
 
-            EXAMPLES::
+        sage: sorted(C.axioms())
+        ['AdditiveAssociative', 'AdditiveCommutative', 'AdditiveInverse',
+         'AdditiveUnital', 'Associative', 'Distributive']
 
-                sage: i = End(QQ).identity(); i
-                Identity endomorphism of Rational Field
-                sage: i.__invert__()
-                Identity endomorphism of Rational Field
+        sage: C is (CommutativeAdditiveGroups() &amp; Semigroups()).Distributive()
+        True
+        sage: C.Unital()
+        Category of rings
 
-            This method is meant to be used with the Python inversion
-            operator `~`::
+    TESTS::
 
-                sage: ~i
-                Identity endomorphism of Rational Field
+        sage: TestSuite(C).run()
+    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
+    The category of rngs.
 
-            We now try to inverse a couple of morphisms defined by a matrix::
+    An *rng* `(S, +, *)` is similar to a ring but not necessarilly
+    unital. In other words, it is a combination of a commutative
+    additive group `(S, +)` and a multiplicative semigroup `(S, *)`,
+    where `*` distributes over `+`.
 
-                sage: H = End(QQ^2)
-                sage: phi = H(matrix([[1,1],[0,1]])); phi
-                Vector space morphism represented by the matrix:
-                [1 1]
-                [0 1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
-                sage: ~phi
-                Vector space morphism represented by the matrix:
-                [ 1 -1]
-                [ 0  1]
-                Domain: Vector space of dimension 2 over Rational Field
-                Codomain: Vector space of dimension 2 over Rational Field
+    EXAMPLES::
 
-                sage: phi = H(matrix([[1,1],[1,1]]))
-                sage: ~phi
-                Traceback (most recent call last):
-                ...
-                ZeroDivisionError: matrix morphism not invertible
+        sage: C = Rngs(); C
+        Category of rngs
+        sage: sorted(C.super_categories(), key=str)
+        [Category of associative additive commutative additive associative additive unital distributive magmas and additive magmas,
+         Category of commutative additive groups]
 
-            .. NOTE::
+        sage: sorted(C.axioms())
+        ['AdditiveAssociative', 'AdditiveCommutative', 'AdditiveInverse',
+         'AdditiveUnital', 'Associative', 'Distributive']
 
-                This is an optional method. A default implementation
-                raising ``NotImplementedError`` could be provided instead.
-            </opaque><opaque format="text">(Optional)</opaque></document><document name="Parent Methods:"><constant name="semigroup_generators">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return distinguished semigroup generators for ``self``.
+        sage: C is (CommutativeAdditiveGroups() &amp; Semigroups()).Distributive()
+        True
+        sage: C.Unital()
+        Category of rings
 
-            OUTPUT: a family
+    TESTS::
 
-            This method is optional.
-
-            EXAMPLES::
-
-                sage: S = Semigroups().example(&quot;free&quot;); S
-                An example of a semigroup: the free semigroup generated by ('a', 'b', 'c', 'd')
-                sage: S.semigroup_generators()
-                Family ('a', 'b', 'c', 'd')
-            </opaque><opaque format="text">(Optional)</opaque><constant name="__contains__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Test whether the set ``self`` contains the object ``x``.
-
-            All parents in the category ``Sets()`` should implement this method.
-
-            EXAMPLES::
-
-                sage: P = Sets().example(); P
-                Set of prime numbers (basic implementation)
-                sage: 12 in P
-                False
-                sage: P(5) in P
-                True
-            </opaque></document></theory></omdoc>
+        sage: TestSuite(C).run()
+    </opaque></document></theory></omdoc>
