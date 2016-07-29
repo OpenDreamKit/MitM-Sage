@@ -5,3 +5,5 @@ Includes http://www.sagemath.org/content/categories/homsets?Homsets http://www.s
 Includes http://www.sagemath.org/content/categories/homsets?Homsets http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/homsets?Homsets http://www.sagemath.org/content/categories/homsets?Homsets?sage.categories.homsets.Homsets
 constant http://www.sagemath.org/content/categories/homsets?Homsets?sage.categories.homsets.Homsets
+Declares http://www.sagemath.org/content/categories/homsets?Homsets http://www.sagemath.org/content/categories/homsets?Homsets?subcategory.Endset
+constant http://www.sagemath.org/content/categories/homsets?Homsets?subcategory.Endset

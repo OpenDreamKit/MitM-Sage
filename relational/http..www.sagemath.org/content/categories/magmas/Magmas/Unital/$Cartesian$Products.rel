@@ -4,3 +4,5 @@ Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?Cartesi
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas?CartesianProducts
 Includes http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas?Unital
+Declares http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts?element.__invert__
+constant http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts?element.__invert__

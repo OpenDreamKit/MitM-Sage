@@ -6,43 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of finitely generated (multiplicative) magmas.
-
-    See :meth:`Magmas.SubcategoryMethods.FinitelyGeneratedAsMagma` for
-    details.
-
-    EXAMPLES::
-
-        sage: C = Magmas().FinitelyGeneratedAsMagma(); C
-        Category of finitely generated magmas
-        sage: C.super_categories()
-        [Category of magmas]
-        sage: sorted(C.axioms())
-        ['FinitelyGeneratedAsMagma']
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of finitely generated (multiplicative) magmas.
-
-    See :meth:`Magmas.SubcategoryMethods.FinitelyGeneratedAsMagma` for
-    details.
-
-    EXAMPLES::
-
-        sage: C = Magmas().FinitelyGeneratedAsMagma(); C
-        Category of finitely generated magmas
-        sage: C.super_categories()
-        [Category of magmas]
-        sage: sorted(C.axioms())
-        ['FinitelyGeneratedAsMagma']
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.magma_generators">
+     </constant><document name="Parent Methods"><constant name="parent.magma_generators">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -64,22 +28,4 @@
                 sage: S = FiniteSemigroups().example()
                 sage: S.magma_generators()
                 Family ('a', 'b', 'c', 'd')
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of finitely generated (multiplicative) magmas.
-
-    See :meth:`Magmas.SubcategoryMethods.FinitelyGeneratedAsMagma` for
-    details.
-
-    EXAMPLES::
-
-        sage: C = Magmas().FinitelyGeneratedAsMagma(); C
-        Category of finitely generated magmas
-        sage: C.super_categories()
-        [Category of magmas]
-        sage: sorted(C.axioms())
-        ['FinitelyGeneratedAsMagma']
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

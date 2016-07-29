@@ -6,51 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of finite sets.
-
-    EXAMPLES::
-
-        sage: C = FiniteSets(); C
-        Category of finite sets
-        sage: C.super_categories()
-        [Category of sets]
-        sage: C.all_super_categories()
-        [Category of finite sets,
-         Category of sets,
-         Category of sets with partial maps,
-         Category of objects]
-        sage: C.example()
-        NotImplemented
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-        sage: C is Sets().Finite()
-        True
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of finite sets.
-
-    EXAMPLES::
-
-        sage: C = FiniteSets(); C
-        Category of finite sets
-        sage: C.super_categories()
-        [Category of sets]
-        sage: C.all_super_categories()
-        [Category of finite sets,
-         Category of sets,
-         Category of sets with partial maps,
-         Category of objects]
-        sage: C.example()
-        NotImplemented
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-        sage: C is Sets().Finite()
-        True
-    </opaque></document><document name="Parent Methods:"><constant name="parent.list">
+     </constant><document name="Parent Methods"><constant name="parent.list">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -59,26 +15,4 @@
       </om:OMBIND></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of finite sets.
-
-    EXAMPLES::
-
-        sage: C = FiniteSets(); C
-        Category of finite sets
-        sage: C.super_categories()
-        [Category of sets]
-        sage: C.all_super_categories()
-        [Category of finite sets,
-         Category of sets,
-         Category of sets with partial maps,
-         Category of objects]
-        sage: C.example()
-        NotImplemented
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-        sage: C is Sets().Finite()
-        True
-    </opaque></document></theory></omdoc>
+     </constant><opaque format="text"></opaque></document></theory></omdoc>

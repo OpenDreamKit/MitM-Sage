@@ -6,36 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of ideals in a fixed commutative algebra `A`.
-
-    EXAMPLES::
-
-        sage: C = CommutativeAlgebraIdeals(QQ['x'])
-        sage: C
-        Category of commutative algebra ideals in Univariate Polynomial Ring in x over Rational Field
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of ideals in a fixed commutative algebra `A`.
-
-    EXAMPLES::
-
-        sage: C = CommutativeAlgebraIdeals(QQ['x'])
-        sage: C
-        Category of commutative algebra ideals in Univariate Polynomial Ring in x over Rational Field
-    </opaque></document><document name="Parent Methods:"><opaque format="text">
-    The category of ideals in a fixed commutative algebra `A`.
-
-    EXAMPLES::
-
-        sage: C = CommutativeAlgebraIdeals(QQ['x'])
-        sage: C
-        Category of commutative algebra ideals in Univariate Polynomial Ring in x over Rational Field
-    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of ideals in a fixed commutative algebra `A`.
-
-    EXAMPLES::
-
-        sage: C = CommutativeAlgebraIdeals(QQ['x'])
-        sage: C
-        Category of commutative algebra ideals in Univariate Polynomial Ring in x over Rational Field
-    </opaque></document></theory></omdoc>
+     </constant></theory></omdoc>

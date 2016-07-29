@@ -2,127 +2,127 @@ theory http://www.sagemath.org/?Structures
 HasMeta http://www.sagemath.org/?Structures http://www.sagemath.org/?Types
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.magmas.Magmas
 constant http://www.sagemath.org/?Structures?sage.categories.magmas.Magmas
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.pointed_sets.PointedSets
-constant http://www.sagemath.org/?Structures?sage.categories.pointed_sets.PointedSets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_with_grading.SetsWithGrading
-constant http://www.sagemath.org/?Structures?sage.categories.sets_with_grading.SetsWithGrading
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids
-constant http://www.sagemath.org/?Structures?sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.lattice_posets.LatticePosets
-constant http://www.sagemath.org/?Structures?sage.categories.lattice_posets.LatticePosets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas
-constant http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.category_types.ChainComplexes
-constant http://www.sagemath.org/?Structures?sage.categories.category_types.ChainComplexes
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals
-constant http://www.sagemath.org/?Structures?sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.algebra_ideals.AlgebraIdeals
-constant http://www.sagemath.org/?Structures?sage.categories.algebra_ideals.AlgebraIdeals
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.schemes.Schemes
-constant http://www.sagemath.org/?Structures?sage.categories.schemes.Schemes
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.matrix_algebras.MatrixAlgebras
-constant http://www.sagemath.org/?Structures?sage.categories.matrix_algebras.MatrixAlgebras
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.algebra_modules.AlgebraModules
-constant http://www.sagemath.org/?Structures?sage.categories.algebra_modules.AlgebraModules
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.permutation_groups.PermutationGroups
-constant http://www.sagemath.org/?Structures?sage.categories.permutation_groups.PermutationGroups
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.hopf_algebras.HopfAlgebras
-constant http://www.sagemath.org/?Structures?sage.categories.hopf_algebras.HopfAlgebras
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets
-constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.groupoid.Groupoid
-constant http://www.sagemath.org/?Structures?sage.categories.groupoid.Groupoid
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.number_fields.NumberFields
-constant http://www.sagemath.org/?Structures?sage.categories.number_fields.NumberFields
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.right_modules.RightModules
-constant http://www.sagemath.org/?Structures?sage.categories.right_modules.RightModules
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_with_partial_maps.SetsWithPartialMaps
-constant http://www.sagemath.org/?Structures?sage.categories.sets_with_partial_maps.SetsWithPartialMaps
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.ring_ideals.RingIdeals
-constant http://www.sagemath.org/?Structures?sage.categories.ring_ideals.RingIdeals
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.category_types.Elements
-constant http://www.sagemath.org/?Structures?sage.categories.category_types.Elements
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.g_sets.GSets
-constant http://www.sagemath.org/?Structures?sage.categories.g_sets.GSets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.discrete_valuation.DiscreteValuationRings
-constant http://www.sagemath.org/?Structures?sage.categories.discrete_valuation.DiscreteValuationRings
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.commutative_ring_ideals.CommutativeRingIdeals
-constant http://www.sagemath.org/?Structures?sage.categories.commutative_ring_ideals.CommutativeRingIdeals
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.crystals.Crystals
-constant http://www.sagemath.org/?Structures?sage.categories.crystals.Crystals
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationRings
 constant http://www.sagemath.org/?Structures?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationRings
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.euclidean_domains.EuclideanDomains
-constant http://www.sagemath.org/?Structures?sage.categories.euclidean_domains.EuclideanDomains
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields
-constant http://www.sagemath.org/?Structures?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.discrete_valuation.DiscreteValuationFields
-constant http://www.sagemath.org/?Structures?sage.categories.discrete_valuation.DiscreteValuationFields
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.quotient_fields.QuotientFields
-constant http://www.sagemath.org/?Structures?sage.categories.quotient_fields.QuotientFields
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modular_abelian_varieties.ModularAbelianVarieties
-constant http://www.sagemath.org/?Structures?sage.categories.modular_abelian_varieties.ModularAbelianVarieties
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.graded_modules.GradedModules
 constant http://www.sagemath.org/?Structures?sage.categories.graded_modules.GradedModules
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.function_fields.FunctionFields
-constant http://www.sagemath.org/?Structures?sage.categories.function_fields.FunctionFields
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.simplicial_complexes.SimplicialComplexes
+constant http://www.sagemath.org/?Structures?sage.categories.simplicial_complexes.SimplicialComplexes
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas
+constant http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.permutation_groups.PermutationGroups
+constant http://www.sagemath.org/?Structures?sage.categories.permutation_groups.PermutationGroups
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.ring_ideals.RingIdeals
+constant http://www.sagemath.org/?Structures?sage.categories.ring_ideals.RingIdeals
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.schemes.Schemes
+constant http://www.sagemath.org/?Structures?sage.categories.schemes.Schemes
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.algebra_ideals.AlgebraIdeals
+constant http://www.sagemath.org/?Structures?sage.categories.algebra_ideals.AlgebraIdeals
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.euclidean_domains.EuclideanDomains
+constant http://www.sagemath.org/?Structures?sage.categories.euclidean_domains.EuclideanDomains
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.g_sets.GSets
+constant http://www.sagemath.org/?Structures?sage.categories.g_sets.GSets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields
+constant http://www.sagemath.org/?Structures?sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.algebra_modules.AlgebraModules
+constant http://www.sagemath.org/?Structures?sage.categories.algebra_modules.AlgebraModules
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.discrete_valuation.DiscreteValuationFields
+constant http://www.sagemath.org/?Structures?sage.categories.discrete_valuation.DiscreteValuationFields
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.hecke_modules.HeckeModules
 constant http://www.sagemath.org/?Structures?sage.categories.hecke_modules.HeckeModules
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.left_modules.LeftModules
 constant http://www.sagemath.org/?Structures?sage.categories.left_modules.LeftModules
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.coalgebras.Coalgebras
-constant http://www.sagemath.org/?Structures?sage.categories.coalgebras.Coalgebras
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.simplicial_complexes.SimplicialComplexes
-constant http://www.sagemath.org/?Structures?sage.categories.simplicial_complexes.SimplicialComplexes
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.commutative_ring_ideals.CommutativeRingIdeals
+constant http://www.sagemath.org/?Structures?sage.categories.commutative_ring_ideals.CommutativeRingIdeals
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_with_partial_maps.SetsWithPartialMaps
+constant http://www.sagemath.org/?Structures?sage.categories.sets_with_partial_maps.SetsWithPartialMaps
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modular_abelian_varieties.ModularAbelianVarieties
+constant http://www.sagemath.org/?Structures?sage.categories.modular_abelian_varieties.ModularAbelianVarieties
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.number_fields.NumberFields
+constant http://www.sagemath.org/?Structures?sage.categories.number_fields.NumberFields
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.matrix_algebras.MatrixAlgebras
+constant http://www.sagemath.org/?Structures?sage.categories.matrix_algebras.MatrixAlgebras
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.posets.Posets
 constant http://www.sagemath.org/?Structures?sage.categories.posets.Posets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Subobjects
-constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Subobjects
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.filtered_modules.FilteredModules
-constant http://www.sagemath.org/?Structures?sage.categories.filtered_modules.FilteredModules
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.crystals.Crystals.TensorProducts
-constant http://www.sagemath.org/?Structures?sage.categories.crystals.Crystals.TensorProducts
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Quotients
-constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Quotients
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital
-constant http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.topological_spaces.TopologicalSpaces
-constant http://www.sagemath.org/?Structures?sage.categories.topological_spaces.TopologicalSpaces
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.magmas.Magmas.Unital
-constant http://www.sagemath.org/?Structures?sage.categories.magmas.Magmas.Unital
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets
-constant http://www.sagemath.org/?Structures?sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Subquotients
-constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Subquotients
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.hecke_modules.HeckeModules.Homsets
-constant http://www.sagemath.org/?Structures?sage.categories.hecke_modules.HeckeModules.Homsets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.IsomorphicObjects
-constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.IsomorphicObjects
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Algebras
-constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Algebras
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.groupoid.Groupoid
+constant http://www.sagemath.org/?Structures?sage.categories.groupoid.Groupoid
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.category_types.Elements
+constant http://www.sagemath.org/?Structures?sage.categories.category_types.Elements
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.crystals.Crystals
+constant http://www.sagemath.org/?Structures?sage.categories.crystals.Crystals
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.pointed_sets.PointedSets
+constant http://www.sagemath.org/?Structures?sage.categories.pointed_sets.PointedSets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.hopf_algebras.HopfAlgebras
+constant http://www.sagemath.org/?Structures?sage.categories.hopf_algebras.HopfAlgebras
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.quotient_fields.QuotientFields
+constant http://www.sagemath.org/?Structures?sage.categories.quotient_fields.QuotientFields
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids
+constant http://www.sagemath.org/?Structures?sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.lattice_posets.LatticePosets
+constant http://www.sagemath.org/?Structures?sage.categories.lattice_posets.LatticePosets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.category_types.ChainComplexes
+constant http://www.sagemath.org/?Structures?sage.categories.category_types.ChainComplexes
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_with_grading.SetsWithGrading
+constant http://www.sagemath.org/?Structures?sage.categories.sets_with_grading.SetsWithGrading
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.function_fields.FunctionFields
+constant http://www.sagemath.org/?Structures?sage.categories.function_fields.FunctionFields
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets
+constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals
+constant http://www.sagemath.org/?Structures?sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.right_modules.RightModules
+constant http://www.sagemath.org/?Structures?sage.categories.right_modules.RightModules
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.discrete_valuation.DiscreteValuationRings
+constant http://www.sagemath.org/?Structures?sage.categories.discrete_valuation.DiscreteValuationRings
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.coalgebras.Coalgebras
+constant http://www.sagemath.org/?Structures?sage.categories.coalgebras.Coalgebras
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas.Homsets
 constant http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas.Homsets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modules.Modules.TensorProducts
-constant http://www.sagemath.org/?Structures?sage.categories.modules.Modules.TensorProducts
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modules.Modules.Homsets
-constant http://www.sagemath.org/?Structures?sage.categories.modules.Modules.Homsets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.metric_spaces.MetricSpaces
-constant http://www.sagemath.org/?Structures?sage.categories.metric_spaces.MetricSpaces
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.CartesianProducts
-constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.CartesianProducts
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Algebras
+constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Algebras
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modules_with_basis.ModulesWithBasis.Homsets
 constant http://www.sagemath.org/?Structures?sage.categories.modules_with_basis.ModulesWithBasis.Homsets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.homsets.HomsetsOf
-constant http://www.sagemath.org/?Structures?sage.categories.homsets.HomsetsOf
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_monoids.AdditiveMonoids.Homsets
-constant http://www.sagemath.org/?Structures?sage.categories.additive_monoids.AdditiveMonoids.Homsets
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.homsets.Homsets
-constant http://www.sagemath.org/?Structures?sage.categories.homsets.Homsets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.magmas.Magmas.Unital
+constant http://www.sagemath.org/?Structures?sage.categories.magmas.Magmas.Unital
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Subobjects
+constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Subobjects
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.hecke_modules.HeckeModules.Homsets
+constant http://www.sagemath.org/?Structures?sage.categories.hecke_modules.HeckeModules.Homsets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.filtered_modules.FilteredModules
+constant http://www.sagemath.org/?Structures?sage.categories.filtered_modules.FilteredModules
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.metric_spaces.MetricSpaces
+constant http://www.sagemath.org/?Structures?sage.categories.metric_spaces.MetricSpaces
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.IsomorphicObjects
+constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.IsomorphicObjects
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Quotients
+constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Quotients
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.crystals.Crystals.TensorProducts
+constant http://www.sagemath.org/?Structures?sage.categories.crystals.Crystals.TensorProducts
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modules.Modules.Homsets
+constant http://www.sagemath.org/?Structures?sage.categories.modules.Modules.Homsets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Subquotients
+constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.Subquotients
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.CartesianProducts
+constant http://www.sagemath.org/?Structures?sage.categories.sets_cat.Sets.CartesianProducts
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.topological_spaces.TopologicalSpaces
+constant http://www.sagemath.org/?Structures?sage.categories.topological_spaces.TopologicalSpaces
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modules.Modules.TensorProducts
+constant http://www.sagemath.org/?Structures?sage.categories.modules.Modules.TensorProducts
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital
+constant http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets
+constant http://www.sagemath.org/?Structures?sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.complex_reflection_or_generalized_coxeter_groups.ComplexReflectionOrGeneralizedCoxeterGroups
 constant http://www.sagemath.org/?Structures?sage.categories.complex_reflection_or_generalized_coxeter_groups.ComplexReflectionOrGeneralizedCoxeterGroups
-Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_semigroups.AdditiveSemigroups.Homsets
-constant http://www.sagemath.org/?Structures?sage.categories.additive_semigroups.AdditiveSemigroups.Homsets
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.super_modules.SuperModules
 constant http://www.sagemath.org/?Structures?sage.categories.super_modules.SuperModules
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.homsets.HomsetsOf
+constant http://www.sagemath.org/?Structures?sage.categories.homsets.HomsetsOf
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.homsets.Homsets
+constant http://www.sagemath.org/?Structures?sage.categories.homsets.Homsets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_monoids.AdditiveMonoids.Homsets
+constant http://www.sagemath.org/?Structures?sage.categories.additive_monoids.AdditiveMonoids.Homsets
+Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_semigroups.AdditiveSemigroups.Homsets
+constant http://www.sagemath.org/?Structures?sage.categories.additive_semigroups.AdditiveSemigroups.Homsets
 Declares http://www.sagemath.org/?Structures http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital.Homsets
 constant http://www.sagemath.org/?Structures?sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital.Homsets

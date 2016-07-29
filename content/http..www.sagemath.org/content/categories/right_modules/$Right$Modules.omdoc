@@ -6,19 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of right modules
-    right modules over an rng (ring not necessarily with unit), i.e.
-    an abelian group with right multiplation by elements of the rng
-
-    EXAMPLES::
-
-        sage: RightModules(QQ)
-        Category of right modules over Rational Field
-        sage: RightModules(QQ).super_categories()
-        [Category of commutative additive groups]
-
-    TESTS::
-
-        sage: TestSuite(RightModules(ZZ)).run()
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+     </constant></theory></omdoc>

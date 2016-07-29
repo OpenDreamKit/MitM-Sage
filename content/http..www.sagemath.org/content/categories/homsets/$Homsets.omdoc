@@ -6,120 +6,23 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of all homsets.
+     </constant><document name="Subcategory Methods"><constant name="subcategory.Endset">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the subcategory of the homsets of ``self`` that are endomorphism sets.
 
-    EXAMPLES::
+            EXAMPLES::
 
-        sage: from sage.categories.homsets import Homsets
-        sage: Homsets()
-        Category of homsets
+                sage: Sets().Homsets().Endset()
+                Category of endsets of sets
 
-    This is a subcategory of ``Sets()``::
-
-        sage: Homsets().super_categories()
-        [Category of sets]
-
-    By this, we assume that all homsets implemented in Sage are sets,
-    or equivalently that we only implement locally small categories.
-    See :wikipedia:`Category_(mathematics)`.
-
-    :trac:`17364`: every homset category shall be a subcategory of the
-    category of all homsets::
-
-        sage: Schemes().Homsets().is_subcategory(Homsets())
-        True
-        sage: AdditiveMagmas().Homsets().is_subcategory(Homsets())
-        True
-        sage: AdditiveMagmas().AdditiveUnital().Homsets().is_subcategory(Homsets())
-        True
-
-    This is tested in :meth:`HomsetsCategory._test_homsets_category`.
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of all homsets.
-
-    EXAMPLES::
-
-        sage: from sage.categories.homsets import Homsets
-        sage: Homsets()
-        Category of homsets
-
-    This is a subcategory of ``Sets()``::
-
-        sage: Homsets().super_categories()
-        [Category of sets]
-
-    By this, we assume that all homsets implemented in Sage are sets,
-    or equivalently that we only implement locally small categories.
-    See :wikipedia:`Category_(mathematics)`.
-
-    :trac:`17364`: every homset category shall be a subcategory of the
-    category of all homsets::
-
-        sage: Schemes().Homsets().is_subcategory(Homsets())
-        True
-        sage: AdditiveMagmas().Homsets().is_subcategory(Homsets())
-        True
-        sage: AdditiveMagmas().AdditiveUnital().Homsets().is_subcategory(Homsets())
-        True
-
-    This is tested in :meth:`HomsetsCategory._test_homsets_category`.
-    </opaque></document><document name="Parent Methods:"><opaque format="text">
-    The category of all homsets.
-
-    EXAMPLES::
-
-        sage: from sage.categories.homsets import Homsets
-        sage: Homsets()
-        Category of homsets
-
-    This is a subcategory of ``Sets()``::
-
-        sage: Homsets().super_categories()
-        [Category of sets]
-
-    By this, we assume that all homsets implemented in Sage are sets,
-    or equivalently that we only implement locally small categories.
-    See :wikipedia:`Category_(mathematics)`.
-
-    :trac:`17364`: every homset category shall be a subcategory of the
-    category of all homsets::
-
-        sage: Schemes().Homsets().is_subcategory(Homsets())
-        True
-        sage: AdditiveMagmas().Homsets().is_subcategory(Homsets())
-        True
-        sage: AdditiveMagmas().AdditiveUnital().Homsets().is_subcategory(Homsets())
-        True
-
-    This is tested in :meth:`HomsetsCategory._test_homsets_category`.
-    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of all homsets.
-
-    EXAMPLES::
-
-        sage: from sage.categories.homsets import Homsets
-        sage: Homsets()
-        Category of homsets
-
-    This is a subcategory of ``Sets()``::
-
-        sage: Homsets().super_categories()
-        [Category of sets]
-
-    By this, we assume that all homsets implemented in Sage are sets,
-    or equivalently that we only implement locally small categories.
-    See :wikipedia:`Category_(mathematics)`.
-
-    :trac:`17364`: every homset category shall be a subcategory of the
-    category of all homsets::
-
-        sage: Schemes().Homsets().is_subcategory(Homsets())
-        True
-        sage: AdditiveMagmas().Homsets().is_subcategory(Homsets())
-        True
-        sage: AdditiveMagmas().AdditiveUnital().Homsets().is_subcategory(Homsets())
-        True
-
-    This is tested in :meth:`HomsetsCategory._test_homsets_category`.
-    </opaque></document></theory></omdoc>
+                sage: Posets().Homsets().Endset()
+                Category of endsets of posets
+            </opaque></document></theory></omdoc>

@@ -6,7 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"><constant name="parent.facade_for">
+     </constant><document name="Parent Methods"><constant name="parent.facade_for">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -40,4 +40,4 @@
                 Traceback (most recent call last):
                 ...
                 NotImplementedError: this parent did not specify which parents it is a facade for
-            </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

@@ -1,19 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteGroups" base="http://www.sagemath.org/content/categories/finite_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids"></import><import from="http://www.sagemath.org/content/categories/groups?Groups"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of finite (multiplicative) groups.
-
-    EXAMPLES::
-
-        sage: C = FiniteGroups(); C
-        Category of finite groups
-        sage: C.super_categories()
-        [Category of finite monoids, Category of groups]
-        sage: C.example()
-        General Linear Group of degree 2 over Finite Field of size 3
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.cayley_graph_disabled">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteGroups" base="http://www.sagemath.org/content/categories/finite_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids"></import><import from="http://www.sagemath.org/content/categories/groups?Groups"></import><document name="Parent Methods"><constant name="parent.cayley_graph_disabled">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -76,4 +61,4 @@
                 sage: G = SymmetricGroup(3)
                 sage: G.conjugacy_classes_representatives()
                 [(), (1,2), (1,2,3)]
-           </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+           </opaque></document></theory></omdoc>

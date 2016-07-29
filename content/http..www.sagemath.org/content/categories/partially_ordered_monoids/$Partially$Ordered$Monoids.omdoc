@@ -6,21 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of partially ordered monoids, that is partially ordered sets
-    which are also monoids, and such that multiplication preserves the
-    ordering: `x \leq y` implies `x*z &lt; y*z` and `z*x &lt; z*y`.
-
-    http://en.wikipedia.org/wiki/Ordered_monoid
-
-    EXAMPLES::
-
-        sage: PartiallyOrderedMonoids()
-        Category of partially ordered monoids
-        sage: PartiallyOrderedMonoids().super_categories()
-        [Category of posets, Category of monoids]
-
-    TESTS::
-
-        sage: TestSuite(PartiallyOrderedMonoids()).run()
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+     </constant></theory></omdoc>

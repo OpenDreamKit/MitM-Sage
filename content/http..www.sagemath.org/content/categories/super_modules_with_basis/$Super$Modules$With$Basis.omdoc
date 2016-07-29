@@ -89,27 +89,7 @@
                 sage: a = x*y
                 sage: a.odd_component().parent() is C
                 True
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of super modules with a distinguished basis.
-
-    An `R`-*super module with a distinguished basis* is an
-    `R`-super module equipped with an `R`-module basis whose elements are
-    homogeneous.
-
-    EXAMPLES::
-
-        sage: C = GradedModulesWithBasis(ZZ); C
-        Category of graded modules with basis over Integer Ring
-        sage: sorted(C.super_categories(), key=str)
-        [Category of filtered modules with basis over Integer Ring,
-         Category of graded modules over Integer Ring]
-        sage: C is ModulesWithBasis(ZZ).Graded()
-        True
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent._even_odd_on_basis">
+            </opaque></document><document name="Parent Methods"><constant name="parent._even_odd_on_basis">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -146,95 +126,4 @@
                 1
                 sage: C._even_odd_on_basis((0,1))
                 0
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.even_component">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the even component of ``self``.
-
-            EXAMPLES::
-
-                sage: Q = QuadraticForm(QQ, 2, [1,2,3])
-                sage: C.&lt;x,y&gt; = CliffordAlgebra(Q)
-                sage: a = x*y + x - 3*y + 4
-                sage: a.even_component()
-                x*y + 4
-
-            TESTS:
-
-            Check that this really return ``A.zero()`` and not a plain ``0``::
-
-                sage: a = x + y
-                sage: a.even_component().parent() is C
-                True
-            </opaque><constant name="subcategory.is_super_homogeneous">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return whether this element is homogeneous, in the sense
-            of a super module (i.e., is even or odd).
-
-            EXAMPLES::
-
-                sage: Q = QuadraticForm(QQ, 2, [1,2,3])
-                sage: C.&lt;x,y&gt; = CliffordAlgebra(Q)
-                sage: a = x + y
-                sage: a.is_super_homogeneous()
-                True
-                sage: a = x*y + 4
-                sage: a.is_super_homogeneous()
-                True
-                sage: a = x*y + x - 3*y + 4
-                sage: a.is_super_homogeneous()
-                False
-
-            The exterior algebra has a `\ZZ` grading, which induces the
-            `\ZZ / 2\ZZ` grading. However the definition of homogeneous
-            elements differs because of the different gradings::
-
-                sage: E.&lt;x,y&gt; = ExteriorAlgebra(QQ)
-                sage: a = x*y + 4
-                sage: a.is_super_homogeneous()
-                True
-                sage: a.is_homogeneous()
-                False
-            </opaque><constant name="subcategory.odd_component">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the odd component of ``self``.
-
-            EXAMPLES::
-
-                sage: Q = QuadraticForm(QQ, 2, [1,2,3])
-                sage: C.&lt;x,y&gt; = CliffordAlgebra(Q)
-                sage: a = x*y + x - 3*y + 4
-                sage: a.odd_component()
-                x - 3*y
-
-            TESTS:
-
-            Check that this really return ``A.zero()`` and not a plain ``0``::
-
-                sage: a = x*y
-                sage: a.odd_component().parent() is C
-                True
             </opaque></document></theory></omdoc>

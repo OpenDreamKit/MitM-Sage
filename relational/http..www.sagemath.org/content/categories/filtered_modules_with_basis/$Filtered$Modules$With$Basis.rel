@@ -32,17 +32,3 @@ Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?
 constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?parent.projection
 Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?parent.to_graded_conversion
 constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?parent.to_graded_conversion
-Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.degree
-constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.degree
-Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.degree_on_basis
-constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.degree_on_basis
-Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.homogeneous_component
-constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.homogeneous_component
-Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.homogeneous_degree
-constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.homogeneous_degree
-Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.is_homogeneous
-constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.is_homogeneous
-Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.maximal_degree
-constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.maximal_degree
-Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.truncate
-constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?subcategory.truncate

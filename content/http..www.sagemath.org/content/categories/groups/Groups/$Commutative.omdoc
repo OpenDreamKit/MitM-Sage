@@ -1,17 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Commutative" base="http://www.sagemath.org/content/categories/groups/Groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/groups?Groups"></import><import from="http://www.sagemath.org/content/categories/monoids/Monoids?Commutative"></import><document name="Element Methods"><opaque format="text">
-        Category of commutative (abelian) groups.
-
-        A group `G` is *commutative* if `xy = yx` for all `x,y \in G`.
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        Category of commutative (abelian) groups.
-
-        A group `G` is *commutative* if `xy = yx` for all `x,y \in G`.
-        </opaque></document><document name="Parent Methods:"><opaque format="text">
-        Category of commutative (abelian) groups.
-
-        A group `G` is *commutative* if `xy = yx` for all `x,y \in G`.
-        </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-        Category of commutative (abelian) groups.
-
-        A group `G` is *commutative* if `xy = yx` for all `x,y \in G`.
-        </opaque></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Commutative" base="http://www.sagemath.org/content/categories/groups/Groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/groups?Groups"></import><import from="http://www.sagemath.org/content/categories/monoids/Monoids?Commutative"></import></theory></omdoc>

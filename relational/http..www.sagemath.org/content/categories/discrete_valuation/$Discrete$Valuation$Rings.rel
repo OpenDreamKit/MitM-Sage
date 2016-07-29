@@ -13,7 +13,3 @@ Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteV
 constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?parent.residue_field
 Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?parent.uniformizer
 constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?parent.uniformizer
-Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?subcategory.lcm
-constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?subcategory.lcm
-Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?subcategory.valuation
-constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationRings?subcategory.valuation

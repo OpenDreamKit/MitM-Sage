@@ -6,7 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"><constant name="parent.__call_on_basis__">
+     </constant><document name="Parent Methods"><constant name="parent.__call_on_basis__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -75,4 +75,4 @@
                     sage: H = Hom(X, Y)
                     sage: H.zero().category_for()
                     Category of finite dimensional vector spaces with basis over Rational Field
-                </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+                </opaque></document></theory></omdoc>

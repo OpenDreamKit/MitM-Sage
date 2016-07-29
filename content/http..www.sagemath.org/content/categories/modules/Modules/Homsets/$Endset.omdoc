@@ -1,13 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Endset" base="http://www.sagemath.org/content/categories/modules/Modules/Homsets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/algebras?Algebras"></import><import from="http://www.sagemath.org/content/categories/homsets/Homsets?Endset"></import><import from="http://www.sagemath.org/content/categories/modules/Modules?Homsets"></import><document name="Element Methods"><opaque format="text">
-            The category of endomorphism sets `End(X)` for `X`
-            a module (this is not used yet)
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-            The category of endomorphism sets `End(X)` for `X`
-            a module (this is not used yet)
-            </opaque></document><document name="Parent Methods:"><opaque format="text">
-            The category of endomorphism sets `End(X)` for `X`
-            a module (this is not used yet)
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-            The category of endomorphism sets `End(X)` for `X`
-            a module (this is not used yet)
-            </opaque></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Endset" base="http://www.sagemath.org/content/categories/modules/Modules/Homsets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/algebras?Algebras"></import><import from="http://www.sagemath.org/content/categories/homsets/Homsets?Endset"></import><import from="http://www.sagemath.org/content/categories/modules/Modules?Homsets"></import></theory></omdoc>

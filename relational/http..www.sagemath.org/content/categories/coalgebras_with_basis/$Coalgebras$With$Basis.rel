@@ -10,5 +10,3 @@ Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?Coalge
 constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?parent.coproduct_on_basis
 Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?parent.counit_on_basis
 constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?parent.counit_on_basis
-Declares http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?subcategory.coproduct_iterated
-constant http://www.sagemath.org/content/categories/coalgebras_with_basis?CoalgebrasWithBasis?subcategory.coproduct_iterated

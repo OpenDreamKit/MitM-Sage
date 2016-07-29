@@ -13,9 +13,3 @@ Declares http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWey
 constant http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?parent.affine_grassmannian_elements_of_given_length
 Declares http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?parent.special_node
 constant http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?parent.special_node
-Declares http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?subcategory.affine_grassmannian_to_core
-constant http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?subcategory.affine_grassmannian_to_core
-Declares http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?subcategory.affine_grassmannian_to_partition
-constant http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?subcategory.affine_grassmannian_to_partition
-Declares http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?subcategory.is_affine_grassmannian
-constant http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?subcategory.is_affine_grassmannian

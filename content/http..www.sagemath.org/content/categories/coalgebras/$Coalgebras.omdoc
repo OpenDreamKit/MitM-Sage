@@ -48,20 +48,7 @@
                 (B[(1,2,3)], 1)
                 sage: b, b.counit()
                 (B[(1,3)], 1)
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of coalgebras
-
-    EXAMPLES::
-
-        sage: Coalgebras(QQ)
-        Category of coalgebras over Rational Field
-        sage: Coalgebras(QQ).super_categories()
-        [Category of vector spaces over Rational Field]
-
-    TESTS::
-
-        sage: TestSuite(Coalgebras(ZZ)).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.coproduct">
+            </opaque></document><document name="Parent Methods"><constant name="parent.coproduct">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -122,46 +109,4 @@
 
             TODO: implement some tests of the axioms of coalgebras, bialgebras
             and Hopf algebras using the counit.
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.coproduct">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Returns the coproduct of ``self``
-
-            EXAMPLES::
-
-                sage: A = HopfAlgebrasWithBasis(QQ).example(); A
-                An example of Hopf algebra with basis: the group algebra of the Dihedral group of order 6 as a permutation group over Rational Field
-                sage: [a,b] = A.algebra_generators()
-                sage: a, a.coproduct()
-                (B[(1,2,3)], B[(1,2,3)] # B[(1,2,3)])
-                sage: b, b.coproduct()
-                (B[(1,3)], B[(1,3)] # B[(1,3)])
-            </opaque><constant name="subcategory.counit">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Returns the counit of ``self``
-
-            EXAMPLES::
-
-                sage: A = HopfAlgebrasWithBasis(QQ).example(); A
-                An example of Hopf algebra with basis: the group algebra of the Dihedral group of order 6 as a permutation group over Rational Field
-                sage: [a,b] = A.algebra_generators()
-                sage: a, a.counit()
-                (B[(1,2,3)], 1)
-                sage: b, b.counit()
-                (B[(1,3)], 1)
             </opaque></document></theory></omdoc>

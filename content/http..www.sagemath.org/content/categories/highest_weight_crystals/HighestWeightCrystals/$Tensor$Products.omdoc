@@ -1,12 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts"></import><import from="http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals"></import><document name="Element Methods"><opaque format="text">
-        The category of highest weight crystals constructed by tensor
-        product of highest weight crystals.
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        The category of highest weight crystals constructed by tensor
-        product of highest weight crystals.
-        </opaque></document><document name="Parent Methods:"><opaque format="text">
-            Implements operations on tensor products of crystals.
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-        The category of highest weight crystals constructed by tensor
-        product of highest weight crystals.
-        </opaque></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts"></import><import from="http://www.sagemath.org/content/categories/highest_weight_crystals?HighestWeightCrystals"></import></theory></omdoc>

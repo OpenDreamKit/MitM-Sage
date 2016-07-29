@@ -23,15 +23,7 @@
                 sage: x = Qp(5)(50)
                 sage: x.valuation()
                 2
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of discrete valuation fields
-
-    EXAMPLES::
-
-        sage: Qp(7) in DiscreteValuationFields()
-        True
-        sage: TestSuite(DiscreteValuationFields()).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.residue_field">
+            </opaque></document><document name="Parent Methods"><constant name="parent.residue_field">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -68,21 +60,4 @@
 
                 sage: Qp(5).uniformizer()
                 5 + O(5^21)
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.valuation">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the valuation of this element.
-
-            EXAMPLES::
-
-                sage: x = Qp(5)(50)
-                sage: x.valuation()
-                2
             </opaque></document></theory></omdoc>

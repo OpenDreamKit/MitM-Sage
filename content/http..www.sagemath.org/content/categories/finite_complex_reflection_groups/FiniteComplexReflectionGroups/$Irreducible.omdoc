@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Irreducible" base="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups"></import><import from="http://www.sagemath.org/content/categories/complex_reflection_or_generalized_coxeter_groups/ComplexReflectionOrGeneralizedCoxeterGroups?Irreducible"></import><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"><constant name="parent.coxeter_number">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Irreducible" base="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups"></import><import from="http://www.sagemath.org/content/categories/complex_reflection_or_generalized_coxeter_groups/ComplexReflectionOrGeneralizedCoxeterGroups?Irreducible"></import><document name="Parent Methods"><constant name="parent.coxeter_number">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -21,4 +21,4 @@
                     sage: W = ReflectionGroup(31)          # optional - gap3
                     sage: W.coxeter_number()               # optional - gap3
                     30
-                </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+                </opaque></document></theory></omdoc>

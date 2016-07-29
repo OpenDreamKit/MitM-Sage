@@ -3,7 +3,7 @@ HasMeta http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlg
 Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras?MagmaticAlgebras
-Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?WithBasis
+Includes http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis
 Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?parent._product_from_product_on_basis_multiply
 constant http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?parent._product_from_product_on_basis_multiply
 Declares http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis http://www.sagemath.org/content/categories/magmatic_algebras/MagmaticAlgebras?WithBasis?parent.product_on_basis

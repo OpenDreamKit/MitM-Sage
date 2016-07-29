@@ -6,7 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"><constant name="parent._test_well_generated">
+     </constant><document name="Parent Methods"><constant name="parent._test_well_generated">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -190,4 +190,4 @@ File: sage/misc/cachefunc.pyx (starting at line 2099)
     AUTHOR:
 
     - Simon King (2011-04)
-    </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+    </opaque></document></theory></omdoc>

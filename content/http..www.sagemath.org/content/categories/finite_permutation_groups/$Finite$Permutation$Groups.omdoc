@@ -1,58 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FinitePermutationGroups" base="http://www.sagemath.org/content/categories/finite_permutation_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups"></import><import from="http://www.sagemath.org/content/categories/finite_groups?FiniteGroups"></import><import from="http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of finite permutation groups, i.e. groups concretely
-    represented as groups of permutations acting on a finite set.
-
-    It is currently assumed that any finite permutation group comes
-    endowed with a distinguished finite set of generators (method
-    ``group_generators``); this is the case for all the existing
-    implementations in Sage.
-
-    EXAMPLES::
-
-        sage: C = PermutationGroups().Finite(); C
-        Category of finite permutation groups
-        sage: C.super_categories()
-        [Category of permutation groups,
-         Category of finite groups,
-         Category of finite finitely generated semigroups]
-
-        sage: C.example()
-        Dihedral group of order 6 as a permutation group
-
-    TESTS::
-
-        sage: C is FinitePermutationGroups()
-        True
-        sage: TestSuite(C).run()
-
-        sage: G = FinitePermutationGroups().example()
-        sage: TestSuite(G).run(verbose = True)
-        running ._test_an_element() . . . pass
-        running ._test_associativity() . . . pass
-        running ._test_cardinality() . . . pass
-        running ._test_category() . . . pass
-        running ._test_elements() . . .
-          Running the test suite of self.an_element()
-          running ._test_category() . . . pass
-          running ._test_eq() . . . pass
-          running ._test_not_implemented_methods() . . . pass
-          running ._test_pickling() . . . pass
-          pass
-        running ._test_elements_eq_reflexive() . . . pass
-        running ._test_elements_eq_symmetric() . . . pass
-        running ._test_elements_eq_transitive() . . . pass
-        running ._test_elements_neq() . . . pass
-        running ._test_enumerated_set_contains() . . . pass
-        running ._test_enumerated_set_iter_cardinality() . . . pass
-        running ._test_enumerated_set_iter_list() . . . pass
-        running ._test_eq() . . . pass
-        running ._test_inverse() . . . pass
-        running ._test_not_implemented_methods() . . . pass
-        running ._test_one() . . . pass
-        running ._test_pickling() . . . pass
-        running ._test_prod() . . . pass
-        running ._test_some_elements() . . . pass
-    </opaque></document><document name="Parent Methods:"><constant name="parent.cycle_index">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FinitePermutationGroups" base="http://www.sagemath.org/content/categories/finite_permutation_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups"></import><import from="http://www.sagemath.org/content/categories/finite_groups?FiniteGroups"></import><import from="http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite"></import><document name="Parent Methods"><constant name="parent.cycle_index">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -168,4 +114,4 @@
                 Permutation Group with generators [()]
                 sage: P.cycle_index()
                 p[1]
-            </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

@@ -47,51 +47,7 @@
                 [(-4, 2, 5)]
                 sage: t.lusztig_involution()
                 [(-2, -3, 4)]
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of classical crystals, that is crystals of finite Cartan type.
-
-    EXAMPLES::
-
-        sage: C = ClassicalCrystals()
-        sage: C
-        Category of classical crystals
-        sage: C.super_categories()
-        [Category of regular crystals,
-         Category of finite crystals,
-         Category of highest weight crystals]
-        sage: C.example()
-        Highest weight crystal of type A_3 of highest weight omega_1
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-        sage: B = ClassicalCrystals().example()
-        sage: TestSuite(B).run(verbose = True)
-        running ._test_an_element() . . . pass
-        running ._test_cardinality() . . . pass
-        running ._test_category() . . . pass
-        running ._test_elements() . . .
-          Running the test suite of self.an_element()
-          running ._test_category() . . . pass
-          running ._test_eq() . . . pass
-          running ._test_not_implemented_methods() . . . pass
-          running ._test_pickling() . . . pass
-          running ._test_stembridge_local_axioms() . . . pass
-          pass
-        running ._test_elements_eq_reflexive() . . . pass
-        running ._test_elements_eq_symmetric() . . . pass
-        running ._test_elements_eq_transitive() . . . pass
-        running ._test_elements_neq() . . . pass
-        running ._test_enumerated_set_contains() . . . pass
-        running ._test_enumerated_set_iter_cardinality() . . . pass
-        running ._test_enumerated_set_iter_list() . . . pass
-        running ._test_eq() . . . pass
-        running ._test_fast_iter() . . . pass
-        running ._test_not_implemented_methods() . . . pass
-        running ._test_pickling() . . . pass
-        running ._test_some_elements() . . . pass
-        running ._test_stembridge_local_axioms() . . . pass
-    </opaque></document><document name="Parent Methods:"><constant name="parent._test_fast_iter">
+            </opaque></document><document name="Parent Methods"><constant name="parent._test_fast_iter">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -261,53 +217,4 @@
                 Use opposition_automorphism from the Cartan type instead.
                 See http://trac.sagemath.org/15560 for details.
                 Finite family {1: 5, 2: 4, 3: 3, 4: 2, 5: 1}
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.lusztig_involution">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the Lusztig involution on the classical highest weight
-            crystal ``self``.
-
-            The Lusztig involution on a finite-dimensional highest weight
-            crystal `B(\lambda)` of highest weight `\lambda` maps the
-            highest weight vector to the lowest weight vector and the
-            Kashiwara operator `f_i` to `e_{i^*}`, where `i^*` is defined as
-            `\alpha_{i^*} = -w_0(\alpha_i)`. Here `w_0` is the longest element
-            of the Weyl group acting on the `i`-th simple root `\alpha_i`.
-
-            EXAMPLES::
-
-                sage: B = crystals.Tableaux(['A',3],shape=[2,1])
-                sage: b = B(rows=[[1,2],[4]])
-                sage: b.lusztig_involution()
-                [[1, 4], [3]]
-                sage: b.to_tableau().schuetzenberger_involution(n=4)
-                [[1, 4], [3]]
-
-                sage: all(b.lusztig_involution().to_tableau() == b.to_tableau().schuetzenberger_involution(n=4) for b in B)
-                True
-
-                sage: B = crystals.Tableaux(['D',4],shape=[1])
-                sage: [[b,b.lusztig_involution()] for b in B]
-                [[[[1]], [[-1]]], [[[2]], [[-2]]], [[[3]], [[-3]]], [[[4]], [[-4]]], [[[-4]],
-                [[4]]], [[[-3]], [[3]]], [[[-2]], [[2]]], [[[-1]], [[1]]]]
-
-                sage: B = crystals.Tableaux(['D',3],shape=[1])
-                sage: [[b,b.lusztig_involution()] for b in B]
-                [[[[1]], [[-1]]], [[[2]], [[-2]]], [[[3]], [[3]]], [[[-3]], [[-3]]],
-                [[[-2]], [[2]]], [[[-1]], [[1]]]]
-
-                sage: C = CartanType(['E',6])
-                sage: La = C.root_system().weight_lattice().fundamental_weights()
-                sage: T = crystals.HighestWeight(La[1])
-                sage: t = T[3]; t
-                [(-4, 2, 5)]
-                sage: t.lusztig_involution()
-                [(-2, -3, 4)]
             </opaque></document></theory></omdoc>

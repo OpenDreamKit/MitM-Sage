@@ -96,23 +96,7 @@ File: sage/structure/element.pyx (starting at line 3287)
                 sage: R.&lt;x&gt; = QQ[]
                 sage: x.quo_rem(x)
                 (1, 0)
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of constructive euclidean domains, i.e., one can divide
-    producing a quotient and a remainder where the remainder is either zero or
-    its :meth:`ElementMethods.euclidean_degree` is smaller than the divisor.
-
-    EXAMPLES::
-
-      sage: EuclideanDomains()
-      Category of euclidean domains
-      sage: EuclideanDomains().super_categories()
-      [Category of principal ideal domains]
-
-    TESTS::
-
-        sage: TestSuite(EuclideanDomains()).run()
-
-    </opaque></document><document name="Parent Methods:"><constant name="parent._test_euclidean_degree">
+            </opaque></document><document name="Parent Methods"><constant name="parent._test_euclidean_degree">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -219,94 +203,4 @@ File: sage/structure/element.pyx (starting at line 3287)
                 sage: Parent(QQ,category=EuclideanDomains()).is_euclidean_domain()
                 True
 
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.euclidean_degree">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the degree of this element as an element of a euclidean
-            domain, i.e., for elements `a`, `b` the euclidean degree `f`
-            satisfies the usual properties:
-
-            1. if `b` is not zero, then there are elements `q` and `r` such
-               that `a = bq + r` with `r = 0` or `f(r) &lt; f(b)`
-            2. if `a,b` are not zero, then `f(a) \leq f(ab)`
-
-            .. NOTE::
-
-                The name ``euclidean_degree`` was chosen because the euclidean
-                function has different names in different contexts, e.g.,
-                absolute value for integers, degree for polynomials.
-
-            OUTPUT:
-
-            For non-zero elements, a natural number. For the zero element, this
-            might raise an exception or produce some other output, depending on
-            the implementation.
-
-            EXAMPLES::
-
-                sage: R.&lt;x&gt; = QQ[]
-                sage: x.euclidean_degree()
-                1
-                sage: ZZ.one().euclidean_degree()
-                1
-            </opaque><constant name="subcategory.gcd">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">NamedBinopMethod(func, name=None, obj=None)
-File: sage/structure/element.pyx (starting at line 3287)
-
-    A decorator to be used on binary operation methods that should operate
-    on elements of the same parent. If the parents of the arguments differ,
-    coercion is performed, then the method is re-looked up by name on the
-    first argument.
-
-    In short, using the ``NamedBinopMethod`` (alias ``coerce_binop``) decorator
-    on a method gives it the exact same semantics of the basic arithmetic
-    operations like ``_add_``, ``_sub_``, etc. in that both operands are
-    guaranteed to have exactly the same parent.
-    </opaque><constant name="subcategory.quo_rem">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the quotient and remainder of the division of this element
-            by the non-zero element ``other``.
-
-            INPUT:
-
-            - ``other`` -- an element in the same euclidean domain
-
-            OUTPUT
-
-            EXAMPLES::
-
-                sage: R.&lt;x&gt; = QQ[]
-                sage: x.quo_rem(x)
-                (1, 0)
             </opaque></document></theory></omdoc>

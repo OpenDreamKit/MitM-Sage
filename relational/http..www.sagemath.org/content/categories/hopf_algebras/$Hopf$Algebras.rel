@@ -7,5 +7,3 @@ Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras h
 constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?sage.categories.hopf_algebras.HopfAlgebras
 Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?element.antipode
 constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?element.antipode
-Declares http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?subcategory.antipode
-constant http://www.sagemath.org/content/categories/hopf_algebras?HopfAlgebras?subcategory.antipode

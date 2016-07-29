@@ -6,40 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of number fields.
-
-    EXAMPLES:
-
-    We create the category of number fields::
-
-        sage: C = NumberFields()
-        sage: C
-        Category of number fields
-
-    Notice that the rational numbers `\QQ` *are* considered as
-    an object in this category::
-
-        sage: RationalField() in C
-        True
-
-    However, we can define a degree 1 extension of `\QQ`, which is of
-    course also in this category::
-
-        sage: x = PolynomialRing(RationalField(), 'x').gen()
-        sage: K = NumberField(x - 1, 'a'); K
-        Number Field in a with defining polynomial x - 1
-        sage: K in C
-        True
-
-    Number fields all lie in this category, regardless of the name
-    of the variable::
-
-        sage: K = NumberField(x^2 + 1, 'a')
-        sage: K in C
-        True
-
-    TESTS::
-
-        sage: TestSuite(NumberFields()).run()
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+     </constant></theory></omdoc>

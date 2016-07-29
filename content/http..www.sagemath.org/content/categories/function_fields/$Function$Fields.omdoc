@@ -6,18 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of function fields.
-
-    EXAMPLES:
-
-    We create the category of function fields::
-
-        sage: C = FunctionFields()
-        sage: C
-        Category of function fields
-
-    TESTS::
-
-        sage: TestSuite(FunctionFields()).run()
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+     </constant></theory></omdoc>

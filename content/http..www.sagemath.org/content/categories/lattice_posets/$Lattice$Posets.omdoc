@@ -6,51 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of lattices, i.e. partially ordered sets in which any
-    two elements have a unique supremum (the elements' least upper
-    bound; called their *join*) and a unique infimum (greatest lower bound;
-    called their *meet*).
-
-    EXAMPLES::
-
-        sage: LatticePosets()
-        Category of lattice posets
-        sage: LatticePosets().super_categories()
-        [Category of posets]
-        sage: LatticePosets().example()
-        NotImplemented
-
-    .. seealso:: :class:`~sage.categories.posets.Posets`, :class:`FiniteLatticePosets`, :func:`LatticePoset`
-
-    TESTS::
-
-        sage: C = LatticePosets()
-        sage: TestSuite(C).run()
-
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of lattices, i.e. partially ordered sets in which any
-    two elements have a unique supremum (the elements' least upper
-    bound; called their *join*) and a unique infimum (greatest lower bound;
-    called their *meet*).
-
-    EXAMPLES::
-
-        sage: LatticePosets()
-        Category of lattice posets
-        sage: LatticePosets().super_categories()
-        [Category of posets]
-        sage: LatticePosets().example()
-        NotImplemented
-
-    .. seealso:: :class:`~sage.categories.posets.Posets`, :class:`FiniteLatticePosets`, :func:`LatticePoset`
-
-    TESTS::
-
-        sage: C = LatticePosets()
-        sage: TestSuite(C).run()
-
-    </opaque></document><document name="Parent Methods:"><constant name="parent.join">
+     </constant><document name="Parent Methods"><constant name="parent.join">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -108,26 +64,4 @@
                 sage: D = LatticePoset((divisors(30), attrcall(&quot;divides&quot;)))
                 sage: D.meet( D(6), D(15) )
                 3
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of lattices, i.e. partially ordered sets in which any
-    two elements have a unique supremum (the elements' least upper
-    bound; called their *join*) and a unique infimum (greatest lower bound;
-    called their *meet*).
-
-    EXAMPLES::
-
-        sage: LatticePosets()
-        Category of lattice posets
-        sage: LatticePosets().super_categories()
-        [Category of posets]
-        sage: LatticePosets().example()
-        NotImplemented
-
-    .. seealso:: :class:`~sage.categories.posets.Posets`, :class:`FiniteLatticePosets`, :func:`LatticePoset`
-
-    TESTS::
-
-        sage: C = LatticePosets()
-        sage: TestSuite(C).run()
-
-    </opaque></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

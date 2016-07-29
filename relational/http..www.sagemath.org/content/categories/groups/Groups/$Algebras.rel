@@ -10,5 +10,3 @@ Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http:
 constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?parent.center_basis
 Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?parent.group
 constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?parent.group
-Declares http://www.sagemath.org/content/categories/groups/Groups?Algebras http://www.sagemath.org/content/categories/groups/Groups?Algebras?subcategory.central_form
-constant http://www.sagemath.org/content/categories/groups/Groups?Algebras?subcategory.central_form

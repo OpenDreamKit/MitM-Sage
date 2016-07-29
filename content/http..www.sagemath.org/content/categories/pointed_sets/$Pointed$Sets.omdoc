@@ -6,48 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of pointed sets.
-
-    EXAMPLES::
-
-        sage: PointedSets()
-        Category of pointed sets
-
-    TESTS::
-
-        sage: TestSuite(PointedSets()).run()
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of pointed sets.
-
-    EXAMPLES::
-
-        sage: PointedSets()
-        Category of pointed sets
-
-    TESTS::
-
-        sage: TestSuite(PointedSets()).run()
-    </opaque></document><document name="Parent Methods:"><opaque format="text">
-    The category of pointed sets.
-
-    EXAMPLES::
-
-        sage: PointedSets()
-        Category of pointed sets
-
-    TESTS::
-
-        sage: TestSuite(PointedSets()).run()
-    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of pointed sets.
-
-    EXAMPLES::
-
-        sage: PointedSets()
-        Category of pointed sets
-
-    TESTS::
-
-        sage: TestSuite(PointedSets()).run()
-    </opaque></document></theory></omdoc>
+     </constant></theory></omdoc>

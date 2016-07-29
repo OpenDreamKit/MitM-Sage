@@ -1,50 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="HighestWeightCrystals" base="http://www.sagemath.org/content/categories/highest_weight_crystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/crystals?Crystals"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of highest weight crystals.
-
-    A crystal is highest weight if it is acyclic; in particular, every
-    connected component has a unique highest weight element, and that
-    element generate the component.
-
-    EXAMPLES::
-
-        sage: C = HighestWeightCrystals()
-        sage: C
-        Category of highest weight crystals
-        sage: C.super_categories()
-        [Category of crystals]
-        sage: C.example()
-        Highest weight crystal of type A_3 of highest weight omega_1
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-        sage: B = HighestWeightCrystals().example()
-        sage: TestSuite(B).run(verbose = True)
-        running ._test_an_element() . . . pass
-        running ._test_cardinality() . . . pass
-        running ._test_category() . . . pass
-        running ._test_elements() . . .
-          Running the test suite of self.an_element()
-          running ._test_category() . . . pass
-          running ._test_eq() . . . pass
-          running ._test_not_implemented_methods() . . . pass
-          running ._test_pickling() . . . pass
-          running ._test_stembridge_local_axioms() . . . pass
-          pass
-        running ._test_elements_eq_reflexive() . . . pass
-        running ._test_elements_eq_symmetric() . . . pass
-        running ._test_elements_eq_transitive() . . . pass
-        running ._test_elements_neq() . . . pass
-        running ._test_enumerated_set_contains() . . . pass
-        running ._test_enumerated_set_iter_cardinality() . . . pass
-        running ._test_enumerated_set_iter_list() . . . pass
-        running ._test_eq() . . . pass
-        running ._test_fast_iter() . . . pass
-        running ._test_not_implemented_methods() . . . pass
-        running ._test_pickling() . . . pass
-        running ._test_some_elements() . . . pass
-        running ._test_stembridge_local_axioms() . . . pass
-    </opaque></document><document name="Parent Methods:"><constant name="parent.highest_weight_vector">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="HighestWeightCrystals" base="http://www.sagemath.org/content/categories/highest_weight_crystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/crystals?Crystals"></import><document name="Parent Methods"><constant name="parent.highest_weight_vector">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -335,4 +289,4 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: b.f()
         1
 
-    </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+    </opaque></document></theory></omdoc>

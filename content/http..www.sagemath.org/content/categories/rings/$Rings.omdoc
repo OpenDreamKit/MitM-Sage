@@ -26,42 +26,7 @@
                 False
                 sage: MS([1,2,3,4]).is_unit()
                 False
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of rings
-
-    Associative rings with unit, not necessarily commutative
-
-    EXAMPLES::
-
-        sage: Rings()
-        Category of rings
-        sage: sorted(Rings().super_categories(), key=str)
-        [Category of rngs, Category of semirings]
-
-        sage: sorted(Rings().axioms())
-        ['AdditiveAssociative', 'AdditiveCommutative', 'AdditiveInverse',
-         'AdditiveUnital', 'Associative', 'Distributive', 'Unital']
-
-        sage: Rings() is (CommutativeAdditiveGroups() &amp; Monoids()).Distributive()
-        True
-        sage: Rings() is Rngs().Unital()
-        True
-        sage: Rings() is Semirings().AdditiveInverse()
-        True
-
-    TESTS::
-
-        sage: TestSuite(Rings()).run()
-
-    .. TODO::
-
-        (see: http://trac.sagemath.org/sage_trac/wiki/CategoriesRoadMap)
-
-        - Make Rings() into a subcategory or alias of Algebras(ZZ);
-
-        - A parent P in the category ``Rings()`` should automatically be
-          in the category ``Algebras(P)``.
-    </opaque></document><document name="Parent Methods:"><constant name="parent._Hom_">
+            </opaque></document><document name="Parent Methods"><constant name="parent._Hom_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -802,7 +767,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
                   [0 1]
                 )
 
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.is_unit">
+            </opaque></document><document name="Subcategory Methods"><constant name="subcategory.Division">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -812,22 +777,59 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
        
        
      </constant><opaque format="text">
-            Return whether this element is a unit in the ring.
+            Return the full subcategory of the division objects of ``self``.
+
+            A ring satisfies the *division axiom* if all non-zero
+            elements have multiplicative inverses.
 
             .. NOTE::
 
-                This is a generic implementation for (non-commutative) rings
-                which only works for the one element, its additive inverse, and
-                the zero element.  Most rings should provide a more specialized
-                implementation.
+                This could be generalized to
+                :class:`MagmasAndAdditiveMagmas.Distributive.AdditiveUnital`.
 
             EXAMPLES::
 
-                sage: MS = MatrixSpace(ZZ, 2)
-                sage: MS.one().is_unit()
-                True
-                sage: MS.zero().is_unit()
-                False
-                sage: MS([1,2,3,4]).is_unit()
-                False
+                sage: Rings().Division()
+                Category of division rings
+                sage: Rings().Commutative().Division()
+                Category of fields
+
+            TESTS::
+
+                sage: TestSuite(Rings().Division()).run()
+                sage: Algebras(QQ).Division.__module__
+                'sage.categories.rings'
+            </opaque><constant name="subcategory.NoZeroDivisors">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the full subcategory of the objects of ``self`` having
+            no nonzero zero divisors.
+
+            A *zero divisor* in a ring `R` is an element `x \in R` such
+            that there exists a nonzero element `y \in R` such that
+            `x \cdot y = 0` or `y \cdot x = 0`
+            (see :wikipedia:`Zero_divisor`).
+
+            EXAMPLES::
+
+                sage: Rings().NoZeroDivisors()
+                Category of domains
+
+            .. NOTE::
+
+                This could be generalized to
+                :class:`MagmasAndAdditiveMagmas.Distributive.AdditiveUnital`.
+
+            TESTS::
+
+                sage: TestSuite(Rings().NoZeroDivisors()).run()
+                sage: Algebras(QQ).NoZeroDivisors.__module__
+                'sage.categories.rings'
             </opaque></document></theory></omdoc>

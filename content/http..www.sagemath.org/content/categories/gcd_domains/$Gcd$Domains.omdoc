@@ -1,16 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="GcdDomains" base="http://www.sagemath.org/content/categories/gcd_domains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/integral_domains?IntegralDomains"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of gcd domains
-    domains where gcd can be computed but where there is no guarantee of
-    factorisation into irreducibles
-
-    EXAMPLES::
-
-        sage: GcdDomains()
-        Category of gcd domains
-        sage: GcdDomains().super_categories()
-        [Category of integral domains]
-
-    TESTS::
-
-        sage: TestSuite(GcdDomains()).run()
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="GcdDomains" base="http://www.sagemath.org/content/categories/gcd_domains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/integral_domains?IntegralDomains"></import></theory></omdoc>

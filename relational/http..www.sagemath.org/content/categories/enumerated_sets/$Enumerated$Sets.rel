@@ -45,5 +45,3 @@ Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSe
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.rank
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.unrank
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.unrank
-Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?subcategory.rank
-constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?subcategory.rank

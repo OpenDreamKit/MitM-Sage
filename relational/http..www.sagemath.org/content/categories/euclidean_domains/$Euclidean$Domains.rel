@@ -19,9 +19,3 @@ Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanD
 constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?parent.gcd_free_basis
 Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?parent.is_euclidean_domain
 constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?parent.is_euclidean_domain
-Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?subcategory.euclidean_degree
-constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?subcategory.euclidean_degree
-Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?subcategory.gcd
-constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?subcategory.gcd
-Declares http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?subcategory.quo_rem
-constant http://www.sagemath.org/content/categories/euclidean_domains?EuclideanDomains?subcategory.quo_rem

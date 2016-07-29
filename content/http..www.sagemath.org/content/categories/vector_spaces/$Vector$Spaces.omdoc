@@ -1,12 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="VectorSpaces" base="http://www.sagemath.org/content/categories/vector_spaces" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/modules?Modules"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of (abstract) vector spaces over a given field
-
-    ??? with an embedding in an ambient vector space ???
-
-    EXAMPLES::
-
-        sage: VectorSpaces(QQ)
-        Category of vector spaces over Rational Field
-        sage: VectorSpaces(QQ).super_categories()
-        [Category of modules over Rational Field]
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="VectorSpaces" base="http://www.sagemath.org/content/categories/vector_spaces" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/modules?Modules"></import></theory></omdoc>

@@ -24,7 +24,3 @@ Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?Finite
 constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.weak_lattice
 Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.weak_poset
 constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?parent.weak_poset
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?subcategory.coxeter_knuth_graph
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?subcategory.coxeter_knuth_graph
-Declares http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?subcategory.coxeter_knuth_neighbor
-constant http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups?subcategory.coxeter_knuth_neighbor

@@ -30,7 +30,7 @@
                 [-3, -1, 0]
                 sage: sorted(v.coefficients())
                 [-3, -1]
-            </opaque></document><document name="Morphism Methods:"><constant name="morphism.image">
+            </opaque></document><document name="Morphism Methods"><constant name="morphism.image">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -192,7 +192,7 @@
                     Category of commutative additive semigroups
                     sage: phi.parent().homset_category() # todo: not implemented
                     Category of finite dimensional modules with basis over Integer Ring
-            </opaque></document><document name="Parent Methods:"><constant name="parent.annihilator">
+            </opaque></document><document name="Parent Methods"><constant name="parent.annihilator">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -481,36 +481,4 @@
                  - :meth:`Modules.WithBasis.ParentMethods.submodule`
                  - :meth:`Rings.ParentMethods.quotient`
                  - :class:`sage.modules.with_basis.subquotient.QuotientModuleWithBasis`
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.dense_coefficient_list">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return a list of *all* coefficients of ``self``.
-
-            By default, this list is ordered in the same way as the
-            indexing set of the basis of the parent of ``self``.
-
-            INPUT:
-
-            - ``order`` -- (optional) an ordering of the basis indexing set
-
-            EXAMPLES::
-
-                sage: v = vector([0, -1, -3])
-                sage: v.dense_coefficient_list()
-                [0, -1, -3]
-                sage: v.dense_coefficient_list([2,1,0])
-                [-3, -1, 0]
-                sage: sorted(v.coefficients())
-                [-3, -1]
             </opaque></document></theory></omdoc>

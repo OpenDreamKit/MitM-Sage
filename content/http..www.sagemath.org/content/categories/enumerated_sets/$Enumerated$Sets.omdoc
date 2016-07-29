@@ -20,75 +20,7 @@
                  'acb', 'abc', 'bca', 'cba', 'bac', 'cab']
                 sage: L[7].rank()
                 7
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of enumerated sets
-
-    An *enumerated set* is a *finite* or *countable* set or multiset `S`
-    together with a canonical enumeration of its elements;
-    conceptually, this is very similar to an immutable list. The main
-    difference lies in the names and the return type of the methods,
-    and of course the fact that the list of elements is not supposed to
-    be expanded in memory. Whenever possible one should use one of the
-    two sub-categories :class:`FiniteEnumeratedSets` or
-    :class:`InfiniteEnumeratedSets`.
-
-    The purpose of this category is threefold:
-
-     - to fix a common interface for all these sets;
-     - to provide a bunch of default implementations;
-     - to provide consistency tests.
-
-    The standard methods for an enumerated set ``S`` are:
-
-       - ``S.cardinality()``: the number of elements of the set. This
-         is the equivalent for ``len`` on a list except that the
-         return value is specified to be a Sage :class:`Integer` or
-         ``infinity``, instead of a Python ``int``.
-
-       - ``iter(S)``: an iterator for the elements of the set;
-
-       - ``S.list()``: the list of the elements of the set, when
-         possible; raises a NotImplementedError if the list is
-         predictably too large to be expanded in memory.
-
-       - ``S.unrank(n)``: the  ``n-th`` element of the set when ``n`` is a sage
-         ``Integer``. This is the equivalent for ``l[n]`` on a list.
-
-       - ``S.rank(e)``: the position of the element ``e`` in the set;
-         This is equivalent to ``l.index(e)`` for a list except that
-         the return value is specified to be a Sage :class:`Integer`,
-         instead of a Python ``int``.
-
-       - ``S.first()``: the first object of the set; it is equivalent to
-         ``S.unrank(0)``.
-
-       - ``S.next(e)``: the object of the set which follows ``e``; It is
-         equivalent to ``S.unrank(S.rank(e)+1)``.
-
-       - ``S.random_element()``: a random generator for an element of
-         the set. Unless otherwise stated, and for finite enumerated
-         sets, the probability is uniform.
-
-    For examples and tests see:
-
-       - ``FiniteEnumeratedSets().example()``
-       - ``InfiniteEnumeratedSets().example()``
-
-
-    EXAMPLES::
-
-        sage: EnumeratedSets()
-        Category of enumerated sets
-        sage: EnumeratedSets().super_categories()
-        [Category of sets]
-        sage: EnumeratedSets().all_super_categories()
-        [Category of enumerated sets, Category of sets, Category of sets with partial maps, Category of objects]
-
-    TESTS::
-
-        sage: C = EnumeratedSets()
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.__iter__">
+            </opaque></document><document name="Parent Methods"><constant name="parent.__iter__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -728,26 +660,4 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
                 Traceback (most recent call last):
                 ...
                 ValueError: the value must be between 0 and 2 inclusive
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.rank">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the rank of ``self`` in its parent.
-
-            See also :meth:`EnumeratedSets.ElementMethods.rank`
-
-            EXAMPLES::
-
-                sage: F = FiniteSemigroups().example(('a','b','c'))
-                sage: L = list(F); L
-                ['a', 'b', 'c', 'ac', 'ab', 'ba', 'bc', 'cb', 'ca',
-                 'acb', 'abc', 'bca', 'cba', 'bac', 'cab']
-                sage: L[7].rank()
-                7
             </opaque></document></theory></omdoc>

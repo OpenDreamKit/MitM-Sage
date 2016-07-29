@@ -1,13 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals"></import><import from="http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts"></import><import from="http://www.sagemath.org/content/categories/regular_crystals/RegularCrystals?TensorProducts"></import><import from="http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts"></import><document name="Element Methods"><opaque format="text">
-        The category of classical crystals constructed by tensor
-        product of classical crystals.
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        The category of classical crystals constructed by tensor
-        product of classical crystals.
-        </opaque></document><document name="Parent Methods:"><opaque format="text">
-        The category of classical crystals constructed by tensor
-        product of classical crystals.
-        </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-        The category of classical crystals constructed by tensor
-        product of classical crystals.
-        </opaque></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/classical_crystals/ClassicalCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals"></import><import from="http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals?TensorProducts"></import><import from="http://www.sagemath.org/content/categories/regular_crystals/RegularCrystals?TensorProducts"></import><import from="http://www.sagemath.org/content/categories/highest_weight_crystals/HighestWeightCrystals?TensorProducts"></import></theory></omdoc>

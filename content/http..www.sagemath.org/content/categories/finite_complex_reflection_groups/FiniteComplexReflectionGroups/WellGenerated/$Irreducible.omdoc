@@ -1,10 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Irreducible" base="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups/WellGenerated" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?Irreducible"></import><import from="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated"></import><document name="Element Methods"><opaque format="text">
-            The category of finite irreducible well-generated
-            finite complex reflection groups.
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-            The category of finite irreducible well-generated
-            finite complex reflection groups.
-            </opaque></document><document name="Parent Methods:"><constant name="parent.catalan_number">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Irreducible" base="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups/WellGenerated" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?Irreducible"></import><import from="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups?WellGenerated"></import><document name="Parent Methods"><constant name="parent.catalan_number">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -274,7 +268,4 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: b.f()
         1
 
-    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-            The category of finite irreducible well-generated
-            finite complex reflection groups.
-            </opaque></document></theory></omdoc>
+    </opaque></document></theory></omdoc>

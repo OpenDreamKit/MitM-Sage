@@ -17,15 +17,3 @@ Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFiel
 constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.numerator
 Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.partial_fraction_decomposition
 constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?element.partial_fraction_decomposition
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory._derivative
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory._derivative
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.denominator
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.denominator
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.derivative
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.derivative
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.factor
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.factor
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.numerator
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.numerator
-Declares http://www.sagemath.org/content/categories/quotient_fields?QuotientFields http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.partial_fraction_decomposition
-constant http://www.sagemath.org/content/categories/quotient_fields?QuotientFields?subcategory.partial_fraction_decomposition

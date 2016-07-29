@@ -11,9 +11,3 @@ Declares http://www.sagemath.org/content/categories/super_modules?SuperModules h
 constant http://www.sagemath.org/content/categories/super_modules?SuperModules?element.is_even_odd
 Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?element.is_odd
 constant http://www.sagemath.org/content/categories/super_modules?SuperModules?element.is_odd
-Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?subcategory.is_even
-constant http://www.sagemath.org/content/categories/super_modules?SuperModules?subcategory.is_even
-Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?subcategory.is_even_odd
-constant http://www.sagemath.org/content/categories/super_modules?SuperModules?subcategory.is_even_odd
-Declares http://www.sagemath.org/content/categories/super_modules?SuperModules http://www.sagemath.org/content/categories/super_modules?SuperModules?subcategory.is_odd
-constant http://www.sagemath.org/content/categories/super_modules?SuperModules?subcategory.is_odd

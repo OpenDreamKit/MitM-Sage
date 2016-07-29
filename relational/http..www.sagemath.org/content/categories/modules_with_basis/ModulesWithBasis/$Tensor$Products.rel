@@ -6,5 +6,3 @@ Includes http://www.sagemath.org/content/categories/modules_with_basis/ModulesWi
 Includes http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?TensorProducts http://www.sagemath.org/content/categories/modules/Modules?TensorProducts
 Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?TensorProducts http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?TensorProducts?element.apply_multilinear_morphism
 constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?TensorProducts?element.apply_multilinear_morphism
-Declares http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?TensorProducts http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?TensorProducts?subcategory.apply_multilinear_morphism
-constant http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?TensorProducts?subcategory.apply_multilinear_morphism
