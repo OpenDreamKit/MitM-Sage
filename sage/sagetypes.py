@@ -7,7 +7,7 @@ EXAMPLES::
     sage: import json
     sage: data = sagetypes.export()
     sage: with open('sagetypes.json', 'w') as outfile:
-    ....:     json.dump(data, outfile, sort_keys=True, indent=4, separators=(',', ': '), default=str)
+    ....:     json.dump(data, outfile, sort_keys=True, indent=4, separators=(',', ': '), default=str, allow_nan=True)
 
 .. TODO::
 
@@ -15,11 +15,11 @@ EXAMPLES::
       The super categories? or the axioms and structure?
 """
 
-import inspect
+from sage.misc.misc import attrcall
 from sage.misc.cachefunc import cached_function
 from sage.misc.abstract_method import AbstractMethod
 from sage.misc.sageinspect import sage_getargspec
-from sage.categories.category import Category
+from sage.categories.category import Category, JoinCategory
 from sage.categories.category_with_axiom import CategoryWithAxiom
 from sage.categories.covariant_functorial_construction import FunctorialConstructionCategory
 from sage.sets.recursively_enumerated_set import RecursivelyEnumeratedSet
@@ -36,6 +36,19 @@ def related_categories(category):
                 else:
                     result.append(getattr(category, key)())
     return result
+
+axioms_of_magmas = ['Associative', 'Finite', 'Inverse','Unital','FinitelyGenerated','Commutative']
+#,'CartesianProducts','Metric','Topological','Quotients','Subquotients','Subobjects','IsomorphicObjects']
+
+def sub_categories_of_magmas(cat):
+    result = []
+    for ax in axioms_of_magmas:
+        try:
+            result.append(getattr(cat, ax)())
+        except AttributeError:
+            pass
+    return result
+
 
 @cached_function
 def category_sample():
@@ -103,7 +116,7 @@ def export_category(category):
               "parent_class": export_class(category.parent_class),
               "element_class": export_class(category.element_class),
               "morphism_class": export_class(category.morphism_class),
-              "subcategory_class": export_class(category.element_class),
+              "subcategory_class": export_class(category.subcategory_class),
               "gap": semantic.get("gap", None),
               "mmt": semantic.get("mmt", None)}
 
@@ -224,3 +237,53 @@ def abstract_methods_of_class(cls, extract=None):
         else:
             result["required"].append(extract(entry))
     return result
+
+def category_graph(categories = None, relabel="object_names"):
+    """
+    Return the graph of the categories in Sage.
+
+    INPUT:
+
+    - ``categories`` -- a list (or iterable) of categories
+
+    If ``categories`` is specified, then the graph contains the
+    mentioned categories together with all their super
+    categories. Otherwise the graph contains (an instance of) each
+    category in :mod:`sage.categories.all` (e.g. ``Algebras(QQ)`` for
+    algebras).
+
+    For readability, the names of the category are shortened.
+
+    .. TODO:: Further remove the base ring (see also :trac:`15801`).
+
+    EXAMPLES::
+
+        sage: G = sage.categories.category.category_graph(categories = [Groups()])
+        sage: G.vertices()
+        ['groups', 'inverse unital magmas', 'magmas', 'monoids', 'objects',
+         'semigroups', 'sets', 'sets with partial maps', 'unital magmas']
+        sage: G.plot()
+        Graphics object consisting of 20 graphics primitives
+
+        sage: sage.categories.category.category_graph().plot()
+        Graphics object consisting of ... graphics primitives
+    """
+    from sage import graphs
+    if categories is None:
+        categories = category_sample()
+    # Include all the super categories
+    # Get rid of join categories
+    categories = set(cat
+                     for category in categories
+                     for cat in category.all_super_categories(proper=isinstance(category, JoinCategory)))
+    g = graphs.digraph.DiGraph()
+    for cat in categories:
+        g.add_vertex(cat)
+        for source in categories:
+            # Don't use super_categories() since it might contain join categories
+            for target in source._super_categories:
+                g.add_edge([source, target])
+
+    if relabel == "object_names":
+        g.relabel(attrcall("_repr_object_names"))
+    return g
