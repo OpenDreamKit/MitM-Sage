@@ -2,7 +2,7 @@
 
 Output browsable at: https://odk.mathhub.info/mh/mmt/?http://www.sagemath.org
 
-## How to regenerate (usualy done by @nthiery, upon request)
+## How to regenerate Sage's output (usually done by @nthiery, upon request)
 
 Install the dependencies:
 
@@ -25,4 +25,8 @@ Run the following commands:
 
 Commit the output file:
 
-    git commit -m "Update Sage CDs" sagetypes.json
+    git commit -m "Update Sage's CDs" sagetypes.json
+
+## How to process Sage's output (usually done by Dennis Müller, upon request)
+
+???
