@@ -1,0 +1,7 @@
+theory http://www.sagemath.org/content/categories/categories/objects?GAP
+HasMeta http://www.sagemath.org/content/categories/categories/objects?GAP http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/categories/objects?GAP http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/categories/objects?GAP http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/categories/objects?GAP http://www.sagemath.org/content/categories/objects?Objects
+Declares http://www.sagemath.org/content/categories/categories/objects?GAP http://www.sagemath.org/content/categories/categories/objects?GAP?GAP
+constant http://www.sagemath.org/content/categories/categories/objects?GAP?GAP

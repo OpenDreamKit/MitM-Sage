@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/categories/mmt/AdditiveSemigroups?GAP
+HasMeta http://www.sagemath.org/content/categories/mmt/AdditiveSemigroups?GAP http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveSemigroups?GAP http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveSemigroups?GAP http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveSemigroups?GAP http://www.sagemath.org/content/categories/mmt/AdditiveMagmas?GAP
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveSemigroups?GAP http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups

@@ -1,10 +1,9 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Irreducible" base="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups"></import><import from="http://www.sagemath.org/content/categories/complex_reflection_or_generalized_coxeter_groups/ComplexReflectionOrGeneralizedCoxeterGroups?Irreducible"></import><document name="Parent Methods"><constant name="parent.coxeter_number">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Irreducible" base="http://www.sagemath.org/content/categories/finite_complex_reflection_groups/FiniteComplexReflectionGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups"></import><import from="http://www.sagemath.org/content/categories/complex_reflection_or_generalized_coxeter_groups/ComplexReflectionOrGeneralizedCoxeterGroups?Irreducible"></import><omdoc name="Parent Methods"><constant name="parent.coxeter_number">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
@@ -21,4 +20,4 @@
                     sage: W = ReflectionGroup(31)          # optional - gap3
                     sage: W.coxeter_number()               # optional - gap3
                     30
-                </opaque></document></theory></omdoc>
+                </opaque></omdoc></theory></omdoc>
