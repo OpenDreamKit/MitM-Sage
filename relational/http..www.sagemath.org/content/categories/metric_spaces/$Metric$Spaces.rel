@@ -15,7 +15,5 @@ Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces h
 constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent.dist
 Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent.metric
 constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?parent.metric
-Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.abs
-constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.abs
-Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.dist
-constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.dist
+Declares http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.Complete
+constant http://www.sagemath.org/content/categories/metric_spaces?MetricSpaces?subcategory.Complete

@@ -28,20 +28,7 @@
                     (42, An example of a semigroup: the left zero semigroup)
                     sage: s.lift(), s.lift().parent()
                     (42, An example of a semigroup: the left zero semigroup)
-                </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        A category for subquotients of sets.
-
-        .. SEEALSO:: :meth:`Sets().Subquotients`
-
-        EXAMPLES::
-
-            sage: Sets().Subquotients()
-            Category of subquotients of sets
-            sage: Sets().Subquotients().all_super_categories()
-            [Category of subquotients of sets, Category of sets,
-             Category of sets with partial maps,
-             Category of objects]
-        </opaque></document><document name="Parent Methods:"><constant name="parent._repr_">
+                </opaque></document><document name="Parent Methods"><constant name="parent._repr_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -148,26 +135,4 @@
                     (42, An example of a semigroup: the left zero semigroup)
                     sage: S.retract(s), S.retract(s).parent()
                     (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
-                </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.lift">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Lift ``self`` to the ambient space for its parent.
-
-                EXAMPLES::
-
-                    sage: S = Semigroups().Subquotients().example()
-                    sage: s = S.an_element()
-                    sage: s, s.parent()
-                    (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
-                    sage: S.lift(s), S.lift(s).parent()
-                    (42, An example of a semigroup: the left zero semigroup)
-                    sage: s.lift(), s.lift().parent()
-                    (42, An example of a semigroup: the left zero semigroup)
                 </opaque></document></theory></omdoc>

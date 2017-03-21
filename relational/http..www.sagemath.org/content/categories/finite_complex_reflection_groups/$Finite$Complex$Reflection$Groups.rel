@@ -27,9 +27,5 @@ Declares http://www.sagemath.org/content/categories/finite_complex_reflection_gr
 constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.number_of_reflection_hyperplanes
 Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.number_of_reflections
 constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?parent.number_of_reflections
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory._matrix_
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory._matrix_
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.character_value
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.character_value
-Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.to_matrix
-constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.to_matrix
+Declares http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.WellGenerated
+constant http://www.sagemath.org/content/categories/finite_complex_reflection_groups?FiniteComplexReflectionGroups?subcategory.WellGenerated

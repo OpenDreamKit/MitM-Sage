@@ -30,23 +30,7 @@
                 sage: p = pbp([3,1]) - 2 * pbp([2]) + 4 * pbp([1])
                 sage: p.degree_negation()
                 -4*P[1] - 2*P[2] + P[3, 1]
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of graded modules with a distinguished basis.
-
-    EXAMPLES::
-
-        sage: C = GradedModulesWithBasis(ZZ); C
-        Category of graded modules with basis over Integer Ring
-        sage: sorted(C.super_categories(), key=str)
-        [Category of filtered modules with basis over Integer Ring,
-         Category of graded modules over Integer Ring]
-        sage: C is ModulesWithBasis(ZZ).Graded()
-        True
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.degree_negation">
+            </opaque></document><document name="Parent Methods"><constant name="parent.degree_negation">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -84,37 +68,5 @@
                 sage: pbp = lambda x: P.basis()[Partition(list(x))]
                 sage: p = pbp([3,1]) - 2 * pbp([2]) + 4 * pbp([1])
                 sage: P.degree_negation(p)
-                -4*P[1] - 2*P[2] + P[3, 1]
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.degree_negation">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the image of ``self`` under the degree negation
-            automorphism of the graded module to which ``self`` belongs.
-
-            The degree negation is the module automorphism which scales
-            every homogeneous element of degree `k` by `(-1)^k` (for all
-            `k`). This assumes that the module to which ``self`` belongs
-            (that is, the module ``self.parent()``) is `\ZZ`-graded.
-
-            EXAMPLES::
-
-                sage: E.&lt;a,b&gt; = ExteriorAlgebra(QQ)
-                sage: ((1 + a) * (1 + b)).degree_negation()
-                a^b - a - b + 1
-                sage: E.zero().degree_negation()
-                0
-
-                sage: P = GradedModulesWithBasis(ZZ).example(); P
-                An example of a graded module with basis: the free module on partitions over Integer Ring
-                sage: pbp = lambda x: P.basis()[Partition(list(x))]
-                sage: p = pbp([3,1]) - 2 * pbp([2]) + 4 * pbp([1])
-                sage: p.degree_negation()
                 -4*P[1] - 2*P[2] + P[3, 1]
             </opaque></document></theory></omdoc>

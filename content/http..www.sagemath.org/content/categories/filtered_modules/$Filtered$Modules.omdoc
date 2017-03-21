@@ -6,100 +6,94 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of filtered modules over a given ring `R`.
+     </constant><document name="Subcategory Methods"><constant name="subcategory.Connected">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
+File: sage/misc/cachefunc.pyx (starting at line 2442)
 
-    A *filtered module* over a ring `R` with a totally ordered
-    indexing set `I` (typically `I = \NN`) is an `R`-module `M` equipped
-    with a family `(F_i)_{i \in I}` of `R`-submodules satisfying
-    `F_i \subseteq F_j` for all `i,j \in I` having `i \leq j`, and
-    `M = \bigcup_{i \in I} F_i`. This family is called a *filtration*
-    of the given module `M`.
+    A decorator that creates a cached version of an instance
+    method of a class.
 
-    EXAMPLES::
+    .. NOTE::
 
-        sage: Modules(ZZ).Filtered()
-        Category of filtered modules over Integer Ring
-        sage: Modules(ZZ).Filtered().super_categories()
-        [Category of modules over Integer Ring]
-
-    TESTS::
-
-        sage: TestSuite(Modules(ZZ).Filtered()).run()
-
-    REFERENCES:
-
-    - :wikipedia:`Filtration_(mathematics)`
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of filtered modules over a given ring `R`.
-
-    A *filtered module* over a ring `R` with a totally ordered
-    indexing set `I` (typically `I = \NN`) is an `R`-module `M` equipped
-    with a family `(F_i)_{i \in I}` of `R`-submodules satisfying
-    `F_i \subseteq F_j` for all `i,j \in I` having `i \leq j`, and
-    `M = \bigcup_{i \in I} F_i`. This family is called a *filtration*
-    of the given module `M`.
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
 
     EXAMPLES::
 
-        sage: Modules(ZZ).Filtered()
-        Category of filtered modules over Integer Ring
-        sage: Modules(ZZ).Filtered().super_categories()
-        [Category of modules over Integer Ring]
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
 
-    TESTS::
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
 
-        sage: TestSuite(Modules(ZZ).Filtered()).run()
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
 
-    REFERENCES:
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
 
-    - :wikipedia:`Filtration_(mathematics)`
-    </opaque></document><document name="Parent Methods:"><opaque format="text">
-    The category of filtered modules over a given ring `R`.
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
 
-    A *filtered module* over a ring `R` with a totally ordered
-    indexing set `I` (typically `I = \NN`) is an `R`-module `M` equipped
-    with a family `(F_i)_{i \in I}` of `R`-submodules satisfying
-    `F_i \subseteq F_j` for all `i,j \in I` having `i \leq j`, and
-    `M = \bigcup_{i \in I} F_i`. This family is called a *filtration*
-    of the given module `M`.
+    So, you would hardly ever see an instance of this class alive.
 
-    EXAMPLES::
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
 
-        sage: Modules(ZZ).Filtered()
-        Category of filtered modules over Integer Ring
-        sage: Modules(ZZ).Filtered().super_categories()
-        [Category of modules over Integer Ring]
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
 
-    TESTS::
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
 
-        sage: TestSuite(Modules(ZZ).Filtered()).run()
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
 
-    REFERENCES:
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
 
-    - :wikipedia:`Filtration_(mathematics)`
-    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of filtered modules over a given ring `R`.
-
-    A *filtered module* over a ring `R` with a totally ordered
-    indexing set `I` (typically `I = \NN`) is an `R`-module `M` equipped
-    with a family `(F_i)_{i \in I}` of `R`-submodules satisfying
-    `F_i \subseteq F_j` for all `i,j \in I` having `i \leq j`, and
-    `M = \bigcup_{i \in I} F_i`. This family is called a *filtration*
-    of the given module `M`.
-
-    EXAMPLES::
-
-        sage: Modules(ZZ).Filtered()
-        Category of filtered modules over Integer Ring
-        sage: Modules(ZZ).Filtered().super_categories()
-        [Category of modules over Integer Ring]
-
-    TESTS::
-
-        sage: TestSuite(Modules(ZZ).Filtered()).run()
-
-    REFERENCES:
-
-    - :wikipedia:`Filtration_(mathematics)`
     </opaque></document></theory></omdoc>

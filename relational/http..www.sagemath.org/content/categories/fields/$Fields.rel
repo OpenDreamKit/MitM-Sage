@@ -24,7 +24,3 @@ Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sag
 constant http://www.sagemath.org/content/categories/fields?Fields?parent.is_integrally_closed
 Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?parent.is_perfect
 constant http://www.sagemath.org/content/categories/fields?Fields?parent.is_perfect
-Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?subcategory.lcm
-constant http://www.sagemath.org/content/categories/fields?Fields?subcategory.lcm
-Declares http://www.sagemath.org/content/categories/fields?Fields http://www.sagemath.org/content/categories/fields?Fields?subcategory.xgcd
-constant http://www.sagemath.org/content/categories/fields?Fields?subcategory.xgcd

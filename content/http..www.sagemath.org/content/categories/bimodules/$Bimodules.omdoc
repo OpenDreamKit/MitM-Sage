@@ -1,14 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Bimodules" base="http://www.sagemath.org/content/categories/bimodules" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/left_modules?LeftModules"></import><import from="http://www.sagemath.org/content/categories/right_modules?RightModules"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of `(R,S)`-bimodules
-
-    For `R` and `S` rings, a `(R,S)`-bimodule `X` is a left `R`-module
-    and right `S`-module such that the left and right actions commute:
-    `r*(x*s) = (r*x)*s`.
-
-    EXAMPLES::
-
-        sage: Bimodules(QQ, ZZ)
-        Category of bimodules over Rational Field on the left and Integer Ring on the right
-        sage: Bimodules(QQ, ZZ).super_categories()
-        [Category of left modules over Rational Field, Category of right modules over Integer Ring]
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Bimodules" base="http://www.sagemath.org/content/categories/bimodules" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/left_modules?LeftModules"></import><import from="http://www.sagemath.org/content/categories/right_modules?RightModules"></import></theory></omdoc>

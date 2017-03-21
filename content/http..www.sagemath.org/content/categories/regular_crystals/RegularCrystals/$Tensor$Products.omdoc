@@ -1,13 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/regular_crystals/RegularCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts"></import><import from="http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals"></import><document name="Element Methods"><opaque format="text">
-        The category of regular crystals constructed by tensor
-        product of regular crystals.
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        The category of regular crystals constructed by tensor
-        product of regular crystals.
-        </opaque></document><document name="Parent Methods:"><opaque format="text">
-        The category of regular crystals constructed by tensor
-        product of regular crystals.
-        </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-        The category of regular crystals constructed by tensor
-        product of regular crystals.
-        </opaque></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/regular_crystals/RegularCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts"></import><import from="http://www.sagemath.org/content/categories/regular_crystals?RegularCrystals"></import></theory></omdoc>

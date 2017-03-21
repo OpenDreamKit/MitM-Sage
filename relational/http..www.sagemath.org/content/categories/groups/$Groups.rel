@@ -20,5 +20,3 @@ Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sag
 constant http://www.sagemath.org/content/categories/groups?Groups?parent.is_abelian
 Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.semidirect_product
 constant http://www.sagemath.org/content/categories/groups?Groups?parent.semidirect_product
-Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?subcategory.conjugacy_class
-constant http://www.sagemath.org/content/categories/groups?Groups?subcategory.conjugacy_class

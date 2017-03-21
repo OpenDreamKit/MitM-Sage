@@ -5,3 +5,5 @@ Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredMod
 Includes http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/modules?Modules
 Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?sage.categories.filtered_modules.FilteredModules
 constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?sage.categories.filtered_modules.FilteredModules
+Declares http://www.sagemath.org/content/categories/filtered_modules?FilteredModules http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?subcategory.Connected
+constant http://www.sagemath.org/content/categories/filtered_modules?FilteredModules?subcategory.Connected

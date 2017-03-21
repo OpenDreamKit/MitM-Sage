@@ -1,57 +1,24 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Algebras" base="http://www.sagemath.org/content/categories/algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/rings?Rings"></import><import from="http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras"></import><import from="http://www.sagemath.org/content/categories/unital_algebras?UnitalAlgebras"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of associative and unital algebras over a given base ring.
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Algebras" base="http://www.sagemath.org/content/categories/algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/rings?Rings"></import><import from="http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras"></import><import from="http://www.sagemath.org/content/categories/unital_algebras?UnitalAlgebras"></import><document name="Subcategory Methods"><constant name="subcategory.Semisimple">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
+                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
+                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
+                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMBIND></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the subcategory of semisimple objects of ``self``.
 
-    An associative and unital algebra over a ring `R` is a module over
-    `R` which is itself a ring.
+            .. NOTE::
 
-    .. WARNING::
+                This mimics the syntax of axioms for a smooth
+                transition if ``Semisimple`` becomes one.
 
-        :class:`Algebras` will be eventually be replaced by
-        :class:`.magmatic_algebras.MagmaticAlgebras`
-        for consistency with e.g. :wikipedia:`Algebras` which assumes
-        neither associativity nor the existence of a unit (see
-        :trac:`15043`).
+            EXAMPLES::
 
-    .. TODO:: Should `R` be a commutative ring?
-
-    EXAMPLES::
-
-        sage: Algebras(ZZ)
-        Category of algebras over Integer Ring
-        sage: sorted(Algebras(ZZ).super_categories(), key=str)
-        [Category of associative algebras over Integer Ring,
-         Category of rings,
-         Category of unital algebras over Integer Ring]
-
-    TESTS::
-
-        sage: TestSuite(Algebras(ZZ)).run()
-    </opaque></document><document name="Parent Methods:"><opaque format="text">
-    The category of associative and unital algebras over a given base ring.
-
-    An associative and unital algebra over a ring `R` is a module over
-    `R` which is itself a ring.
-
-    .. WARNING::
-
-        :class:`Algebras` will be eventually be replaced by
-        :class:`.magmatic_algebras.MagmaticAlgebras`
-        for consistency with e.g. :wikipedia:`Algebras` which assumes
-        neither associativity nor the existence of a unit (see
-        :trac:`15043`).
-
-    .. TODO:: Should `R` be a commutative ring?
-
-    EXAMPLES::
-
-        sage: Algebras(ZZ)
-        Category of algebras over Integer Ring
-        sage: sorted(Algebras(ZZ).super_categories(), key=str)
-        [Category of associative algebras over Integer Ring,
-         Category of rings,
-         Category of unital algebras over Integer Ring]
-
-    TESTS::
-
-        sage: TestSuite(Algebras(ZZ)).run()
-    </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+                sage: Algebras(QQ).Semisimple()
+                Category of semisimple algebras over Rational Field
+                sage: Algebras(QQ).WithBasis().FiniteDimensional().Semisimple()
+                Category of finite dimensional semisimple algebras with basis over Rational Field
+            </opaque></document></theory></omdoc>

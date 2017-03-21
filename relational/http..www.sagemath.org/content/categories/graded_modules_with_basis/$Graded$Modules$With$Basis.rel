@@ -8,5 +8,3 @@ Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?Gr
 constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?element.degree_negation
 Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?parent.degree_negation
 constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?parent.degree_negation
-Declares http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?subcategory.degree_negation
-constant http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis?subcategory.degree_negation

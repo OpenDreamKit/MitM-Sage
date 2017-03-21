@@ -6,65 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of additive semigroups.
-
-    An *additive semigroup* is an associative :class:`additive magma
-    &lt;AdditiveMagmas&gt;`, that is a set endowed with an operation `+`
-    which is associative.
-
-    EXAMPLES::
-
-        sage: from sage.categories.additive_semigroups import AdditiveSemigroups
-        sage: C = AdditiveSemigroups(); C
-        Category of additive semigroups
-        sage: C.super_categories()
-        [Category of additive magmas]
-        sage: C.all_super_categories()
-        [Category of additive semigroups,
-         Category of additive magmas,
-         Category of sets,
-         Category of sets with partial maps,
-         Category of objects]
-
-        sage: C.axioms()
-        frozenset({'AdditiveAssociative'})
-        sage: C is AdditiveMagmas().AdditiveAssociative()
-        True
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of additive semigroups.
-
-    An *additive semigroup* is an associative :class:`additive magma
-    &lt;AdditiveMagmas&gt;`, that is a set endowed with an operation `+`
-    which is associative.
-
-    EXAMPLES::
-
-        sage: from sage.categories.additive_semigroups import AdditiveSemigroups
-        sage: C = AdditiveSemigroups(); C
-        Category of additive semigroups
-        sage: C.super_categories()
-        [Category of additive magmas]
-        sage: C.all_super_categories()
-        [Category of additive semigroups,
-         Category of additive magmas,
-         Category of sets,
-         Category of sets with partial maps,
-         Category of objects]
-
-        sage: C.axioms()
-        frozenset({'AdditiveAssociative'})
-        sage: C is AdditiveMagmas().AdditiveAssociative()
-        True
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent._test_additive_associativity">
+     </constant><document name="Parent Methods"><constant name="parent._test_additive_associativity">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -96,33 +38,4 @@
                 sage: S._test_additive_associativity(elements = (a, b+c, d))
 
             See the documentation for :class:`TestSuite` for more information.
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of additive semigroups.
-
-    An *additive semigroup* is an associative :class:`additive magma
-    &lt;AdditiveMagmas&gt;`, that is a set endowed with an operation `+`
-    which is associative.
-
-    EXAMPLES::
-
-        sage: from sage.categories.additive_semigroups import AdditiveSemigroups
-        sage: C = AdditiveSemigroups(); C
-        Category of additive semigroups
-        sage: C.super_categories()
-        [Category of additive magmas]
-        sage: C.all_super_categories()
-        [Category of additive semigroups,
-         Category of additive magmas,
-         Category of sets,
-         Category of sets with partial maps,
-         Category of objects]
-
-        sage: C.axioms()
-        frozenset({'AdditiveAssociative'})
-        sage: C is AdditiveMagmas().AdditiveAssociative()
-        True
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

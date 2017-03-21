@@ -48,30 +48,7 @@ File: sage/structure/element.pyx (starting at line 3287)
     on a method gives it the exact same semantics of the basic arithmetic
     operations like ``_add_``, ``_sub_``, etc. in that both operands are
     guaranteed to have exactly the same parent.
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of (commutative) fields, i.e. commutative rings where
-    all non-zero elements have multiplicative inverses
-
-    EXAMPLES::
-
-        sage: K = Fields()
-        sage: K
-        Category of fields
-        sage: Fields().super_categories()
-        [Category of euclidean domains, Category of division rings]
-
-        sage: K(IntegerRing())
-        Rational Field
-        sage: K(PolynomialRing(GF(3), 'x'))
-        Fraction Field of Univariate Polynomial Ring in x over
-        Finite Field of size 3
-        sage: K(RealField())
-        Real Field with 53 bits of precision
-
-    TESTS::
-
-        sage: TestSuite(Fields()).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.__pow__">
+    </opaque></document><document name="Parent Methods"><constant name="parent.__pow__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -320,54 +297,4 @@ File: sage/structure/element.pyx (starting at line 3287)
                 sage: FunctionField(GF(2), 'x').is_perfect()
                 False
 
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.lcm">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">NamedBinopMethod(func, name=None, obj=None)
-File: sage/structure/element.pyx (starting at line 3287)
-
-    A decorator to be used on binary operation methods that should operate
-    on elements of the same parent. If the parents of the arguments differ,
-    coercion is performed, then the method is re-looked up by name on the
-    first argument.
-
-    In short, using the ``NamedBinopMethod`` (alias ``coerce_binop``) decorator
-    on a method gives it the exact same semantics of the basic arithmetic
-    operations like ``_add_``, ``_sub_``, etc. in that both operands are
-    guaranteed to have exactly the same parent.
-    </opaque><constant name="subcategory.xgcd">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">NamedBinopMethod(func, name=None, obj=None)
-File: sage/structure/element.pyx (starting at line 3287)
-
-    A decorator to be used on binary operation methods that should operate
-    on elements of the same parent. If the parents of the arguments differ,
-    coercion is performed, then the method is re-looked up by name on the
-    first argument.
-
-    In short, using the ``NamedBinopMethod`` (alias ``coerce_binop``) decorator
-    on a method gives it the exact same semantics of the basic arithmetic
-    operations like ``_add_``, ``_sub_``, etc. in that both operands are
-    guaranteed to have exactly the same parent.
-    </opaque></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

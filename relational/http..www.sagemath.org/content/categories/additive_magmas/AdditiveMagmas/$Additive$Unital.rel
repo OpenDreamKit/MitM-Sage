@@ -25,13 +25,5 @@ Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagm
 constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?parent.zero
 Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?parent.zero_element
 constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?parent.zero_element
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory.__neg__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory.__neg__
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory.__nonzero__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory.__nonzero__
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory.__sub__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory.__sub__
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory._sub_
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory._sub_
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory._test_nonzero_equal
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory._test_nonzero_equal
+Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory.AdditiveInverse
+constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?subcategory.AdditiveInverse

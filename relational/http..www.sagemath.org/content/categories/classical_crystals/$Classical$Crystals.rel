@@ -15,5 +15,3 @@ Declares http://www.sagemath.org/content/categories/classical_crystals?Classical
 constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.demazure_character
 Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.opposition_automorphism
 constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?parent.opposition_automorphism
-Declares http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?subcategory.lusztig_involution
-constant http://www.sagemath.org/content/categories/classical_crystals?ClassicalCrystals?subcategory.lusztig_involution

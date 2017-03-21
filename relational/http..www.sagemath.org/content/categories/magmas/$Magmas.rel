@@ -21,11 +21,17 @@ Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sag
 constant http://www.sagemath.org/content/categories/magmas?Magmas?parent.product
 Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?parent.product_from_element_class_mul
 constant http://www.sagemath.org/content/categories/magmas?Magmas?parent.product_from_element_class_mul
-Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.__mul__
-constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.__mul__
-Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory._mul_
-constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory._mul_
-Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory._mul_parent
-constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory._mul_parent
-Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.is_idempotent
-constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.is_idempotent
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.Associative
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.Associative
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.Commutative
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.Commutative
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.Distributive
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.Distributive
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.FinitelyGenerated
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.FinitelyGenerated
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.FinitelyGeneratedAsMagma
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.FinitelyGeneratedAsMagma
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.JTrivial
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.JTrivial
+Declares http://www.sagemath.org/content/categories/magmas?Magmas http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.Unital
+constant http://www.sagemath.org/content/categories/magmas?Magmas?subcategory.Unital

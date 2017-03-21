@@ -49,5 +49,27 @@ Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sag
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.random_element
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.some_elements
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.some_elements
-Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.cartesian_product
-constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.cartesian_product
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Algebras
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Algebras
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.CartesianProducts
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.CartesianProducts
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Facade
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Facade
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Facades
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Facades
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Finite
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Finite
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Infinite
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Infinite
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.IsomorphicObjects
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.IsomorphicObjects
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Metric
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Metric
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Quotients
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Quotients
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Subobjects
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Subobjects
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Subquotients
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Subquotients
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Topological
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Topological

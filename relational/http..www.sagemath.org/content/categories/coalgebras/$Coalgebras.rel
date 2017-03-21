@@ -13,7 +13,3 @@ Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http:/
 constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?parent.coproduct
 Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?parent.counit
 constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?parent.counit
-Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?subcategory.coproduct
-constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?subcategory.coproduct
-Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?subcategory.counit
-constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?subcategory.counit

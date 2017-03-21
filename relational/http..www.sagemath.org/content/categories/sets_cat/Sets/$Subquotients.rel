@@ -15,5 +15,3 @@ Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients h
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?parent.lift
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?parent.retract
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?parent.retract
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?subcategory.lift
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients?subcategory.lift

@@ -6,51 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of sets `(S,+,*)` with `*` distributing on `+`.
-
-    This is similar to a ring, but `+` and `*` are only required to be
-    (additive) magmas.
-
-    EXAMPLES::
-
-        sage: from sage.categories.distributive_magmas_and_additive_magmas import DistributiveMagmasAndAdditiveMagmas
-        sage: C = DistributiveMagmasAndAdditiveMagmas(); C
-        Category of distributive magmas and additive magmas
-        sage: C.super_categories()
-        [Category of magmas and additive magmas]
-
-    TESTS::
-
-        sage: from sage.categories.magmas_and_additive_magmas import MagmasAndAdditiveMagmas
-        sage: C is MagmasAndAdditiveMagmas().Distributive()
-        True
-        sage: C is (Magmas() &amp; AdditiveMagmas()).Distributive()
-        True
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of sets `(S,+,*)` with `*` distributing on `+`.
-
-    This is similar to a ring, but `+` and `*` are only required to be
-    (additive) magmas.
-
-    EXAMPLES::
-
-        sage: from sage.categories.distributive_magmas_and_additive_magmas import DistributiveMagmasAndAdditiveMagmas
-        sage: C = DistributiveMagmasAndAdditiveMagmas(); C
-        Category of distributive magmas and additive magmas
-        sage: C.super_categories()
-        [Category of magmas and additive magmas]
-
-    TESTS::
-
-        sage: from sage.categories.magmas_and_additive_magmas import MagmasAndAdditiveMagmas
-        sage: C is MagmasAndAdditiveMagmas().Distributive()
-        True
-        sage: C is (Magmas() &amp; AdditiveMagmas()).Distributive()
-        True
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent._test_distributivity">
+     </constant><document name="Parent Methods"><constant name="parent._test_distributivity">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -82,26 +38,4 @@
                 sage: CC._test_distributivity(elements=[CC(0),CC(1),CC(3),CC(I)])
 
             See the documentation for :class:`TestSuite` for more information.
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of sets `(S,+,*)` with `*` distributing on `+`.
-
-    This is similar to a ring, but `+` and `*` are only required to be
-    (additive) magmas.
-
-    EXAMPLES::
-
-        sage: from sage.categories.distributive_magmas_and_additive_magmas import DistributiveMagmasAndAdditiveMagmas
-        sage: C = DistributiveMagmasAndAdditiveMagmas(); C
-        Category of distributive magmas and additive magmas
-        sage: C.super_categories()
-        [Category of magmas and additive magmas]
-
-    TESTS::
-
-        sage: from sage.categories.magmas_and_additive_magmas import MagmasAndAdditiveMagmas
-        sage: C is MagmasAndAdditiveMagmas().Distributive()
-        True
-        sage: C is (Magmas() &amp; AdditiveMagmas()).Distributive()
-        True
-        sage: TestSuite(C).run()
-    </opaque></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

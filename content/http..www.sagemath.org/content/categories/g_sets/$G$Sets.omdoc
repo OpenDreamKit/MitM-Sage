@@ -6,44 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-    The category of $G$-sets, for a group $G$.
-
-    EXAMPLES::
-
-        sage: S = SymmetricGroup(3)
-        sage: GSets(S)
-        Category of G-sets for Symmetric group of order 3! as a permutation group
-
-    TODO: should this derive from Category_over_base?
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of $G$-sets, for a group $G$.
-
-    EXAMPLES::
-
-        sage: S = SymmetricGroup(3)
-        sage: GSets(S)
-        Category of G-sets for Symmetric group of order 3! as a permutation group
-
-    TODO: should this derive from Category_over_base?
-    </opaque></document><document name="Parent Methods:"><opaque format="text">
-    The category of $G$-sets, for a group $G$.
-
-    EXAMPLES::
-
-        sage: S = SymmetricGroup(3)
-        sage: GSets(S)
-        Category of G-sets for Symmetric group of order 3! as a permutation group
-
-    TODO: should this derive from Category_over_base?
-    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of $G$-sets, for a group $G$.
-
-    EXAMPLES::
-
-        sage: S = SymmetricGroup(3)
-        sage: GSets(S)
-        Category of G-sets for Symmetric group of order 3! as a permutation group
-
-    TODO: should this derive from Category_over_base?
-    </opaque></document></theory></omdoc>
+     </constant></theory></omdoc>

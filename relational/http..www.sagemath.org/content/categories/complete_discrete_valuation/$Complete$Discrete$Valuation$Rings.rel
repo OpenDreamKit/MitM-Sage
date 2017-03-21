@@ -9,7 +9,3 @@ Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?
 constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?element.precision_absolute
 Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?element.precision_relative
 constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?element.precision_relative
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?subcategory.precision_absolute
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?subcategory.precision_absolute
-Declares http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?subcategory.precision_relative
-constant http://www.sagemath.org/content/categories/complete_discrete_valuation?CompleteDiscreteValuationRings?subcategory.precision_relative

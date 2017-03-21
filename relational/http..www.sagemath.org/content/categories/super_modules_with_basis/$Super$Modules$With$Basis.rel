@@ -12,9 +12,3 @@ Declares http://www.sagemath.org/content/categories/super_modules_with_basis?Sup
 constant http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?element.odd_component
 Declares http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?parent._even_odd_on_basis
 constant http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?parent._even_odd_on_basis
-Declares http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?subcategory.even_component
-constant http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?subcategory.even_component
-Declares http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?subcategory.is_super_homogeneous
-constant http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?subcategory.is_super_homogeneous
-Declares http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?subcategory.odd_component
-constant http://www.sagemath.org/content/categories/super_modules_with_basis?SuperModulesWithBasis?subcategory.odd_component

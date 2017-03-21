@@ -6,16 +6,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-        TESTS::
-
-            sage: TestSuite(HeckeModules(ZZ).Homsets()).run()
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        TESTS::
-
-            sage: TestSuite(HeckeModules(ZZ).Homsets()).run()
-        </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"><opaque format="text">
-        TESTS::
-
-            sage: TestSuite(HeckeModules(ZZ).Homsets()).run()
-        </opaque></document></theory></omdoc>
+     </constant></theory></omdoc>

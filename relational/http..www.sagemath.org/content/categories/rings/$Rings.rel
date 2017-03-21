@@ -34,5 +34,7 @@ Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagem
 constant http://www.sagemath.org/content/categories/rings?Rings?parent.quotient
 Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.quotient_ring
 constant http://www.sagemath.org/content/categories/rings?Rings?parent.quotient_ring
-Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?subcategory.is_unit
-constant http://www.sagemath.org/content/categories/rings?Rings?subcategory.is_unit
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?subcategory.Division
+constant http://www.sagemath.org/content/categories/rings?Rings?subcategory.Division
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?subcategory.NoZeroDivisors
+constant http://www.sagemath.org/content/categories/rings?Rings?subcategory.NoZeroDivisors

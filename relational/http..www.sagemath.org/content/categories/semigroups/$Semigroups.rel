@@ -33,7 +33,11 @@ Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http:/
 constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.subsemigroup
 Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.trivial_representation
 constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.trivial_representation
-Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.__pow__
-constant http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.__pow__
-Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory._pow_
-constant http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory._pow_
+Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.Aperiodic
+constant http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.Aperiodic
+Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.HTrivial
+constant http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.HTrivial
+Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.LTrivial
+constant http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.LTrivial
+Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.RTrivial
+constant http://www.sagemath.org/content/categories/semigroups?Semigroups?subcategory.RTrivial

@@ -5,3 +5,5 @@ Includes http://www.sagemath.org/content/categories/algebras?Algebras http://www
 Includes http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/rings?Rings
 Includes http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras
 Includes http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/unital_algebras?UnitalAlgebras
+Declares http://www.sagemath.org/content/categories/algebras?Algebras http://www.sagemath.org/content/categories/algebras?Algebras?subcategory.Semisimple
+constant http://www.sagemath.org/content/categories/algebras?Algebras?subcategory.Semisimple

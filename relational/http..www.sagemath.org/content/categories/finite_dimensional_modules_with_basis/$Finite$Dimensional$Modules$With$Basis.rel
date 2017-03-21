@@ -24,5 +24,3 @@ Declares http://www.sagemath.org/content/categories/finite_dimensional_modules_w
 constant http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?parent.dimension
 Declares http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?parent.quotient_module
 constant http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?parent.quotient_module
-Declares http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?subcategory.dense_coefficient_list
-constant http://www.sagemath.org/content/categories/finite_dimensional_modules_with_basis?FiniteDimensionalModulesWithBasis?subcategory.dense_coefficient_list

@@ -6,11 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><document name="Element Methods"><opaque format="text">
-        The category of homomorphism sets `\hom(X,Y)` for `X`, `Y` modules.
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        The category of homomorphism sets `\hom(X,Y)` for `X`, `Y` modules.
-        </opaque></document><document name="Parent Methods:"><constant name="parent.base_ring">
+     </constant><document name="Parent Methods"><constant name="parent.base_ring">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -100,6 +96,4 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: b.f()
         1
 
-    </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-        The category of homomorphism sets `\hom(X,Y)` for `X`, `Y` modules.
-        </opaque></document></theory></omdoc>
+    </opaque></document></theory></omdoc>

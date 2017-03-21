@@ -25,11 +25,3 @@ Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProdu
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?parent.cartesian_projection
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?parent.is_empty
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?parent.is_empty
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?subcategory.cartesian_factors
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?subcategory.cartesian_factors
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?subcategory.cartesian_projection
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?subcategory.cartesian_projection
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?subcategory.summand_projection
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?subcategory.summand_projection
-Declares http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?subcategory.summand_split
-constant http://www.sagemath.org/content/categories/sets_cat/Sets?CartesianProducts?subcategory.summand_split

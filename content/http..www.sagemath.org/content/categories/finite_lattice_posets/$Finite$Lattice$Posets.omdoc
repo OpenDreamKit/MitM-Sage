@@ -1,52 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteLatticePosets" base="http://www.sagemath.org/content/categories/finite_lattice_posets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/lattice_posets?LatticePosets"></import><import from="http://www.sagemath.org/content/categories/finite_posets?FinitePosets"></import><document name="Element Methods"><opaque format="text">
-    The category of finite lattices, i.e. finite partially ordered
-    sets which are also lattices.
-
-    EXAMPLES::
-
-        sage: FiniteLatticePosets()
-        Category of finite lattice posets
-        sage: FiniteLatticePosets().super_categories()
-        [Category of lattice posets, Category of finite posets]
-        sage: FiniteLatticePosets().example()
-        NotImplemented
-
-    .. SEEALSO::
-
-        :class:`FinitePosets`, :class:`LatticePosets`, :class:`LatticePoset`
-
-    TESTS::
-
-        sage: C = FiniteLatticePosets()
-        sage: C is FiniteLatticePosets().Finite()
-        True
-        sage: TestSuite(C).run()
-
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of finite lattices, i.e. finite partially ordered
-    sets which are also lattices.
-
-    EXAMPLES::
-
-        sage: FiniteLatticePosets()
-        Category of finite lattice posets
-        sage: FiniteLatticePosets().super_categories()
-        [Category of lattice posets, Category of finite posets]
-        sage: FiniteLatticePosets().example()
-        NotImplemented
-
-    .. SEEALSO::
-
-        :class:`FinitePosets`, :class:`LatticePosets`, :class:`LatticePoset`
-
-    TESTS::
-
-        sage: C = FiniteLatticePosets()
-        sage: C is FiniteLatticePosets().Finite()
-        True
-        sage: TestSuite(C).run()
-
-    </opaque></document><document name="Parent Methods:"><constant name="parent.is_lattice_morphism">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteLatticePosets" base="http://www.sagemath.org/content/categories/finite_lattice_posets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/lattice_posets?LatticePosets"></import><import from="http://www.sagemath.org/content/categories/finite_posets?FinitePosets"></import><document name="Parent Methods"><constant name="parent.is_lattice_morphism">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -220,28 +172,4 @@
                 Finite poset containing 3 elements
 
             .. SEEALSO:: :meth:`meet_irreducibles`
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of finite lattices, i.e. finite partially ordered
-    sets which are also lattices.
-
-    EXAMPLES::
-
-        sage: FiniteLatticePosets()
-        Category of finite lattice posets
-        sage: FiniteLatticePosets().super_categories()
-        [Category of lattice posets, Category of finite posets]
-        sage: FiniteLatticePosets().example()
-        NotImplemented
-
-    .. SEEALSO::
-
-        :class:`FinitePosets`, :class:`LatticePosets`, :class:`LatticePoset`
-
-    TESTS::
-
-        sage: C = FiniteLatticePosets()
-        sage: C is FiniteLatticePosets().Finite()
-        True
-        sage: TestSuite(C).run()
-
-    </opaque></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

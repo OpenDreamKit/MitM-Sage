@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="WithRealizations" base="http://www.sagemath.org/content/categories/sets_cat/Sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/facade_sets?FacadeSets"></import><document name="Element Methods"></document><document name="Morphism Methods:"></document><document name="Parent Methods:"><constant name="parent.Realizations">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="WithRealizations" base="http://www.sagemath.org/content/categories/sets_cat/Sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/facade_sets?FacadeSets"></import><document name="Parent Methods"><constant name="parent.Realizations">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -147,4 +147,4 @@
                     Constructing a parent ``P`` in the category
                     ``A.Realizations()`` automatically adds ``P`` to
                     this list by calling ``A._register_realization(A)``
-                </opaque></document><document name="Subcategory Methods:"></document></theory></omdoc>
+                </opaque></document></theory></omdoc>

@@ -1,13 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals"></import><import from="http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts"></import><document name="Element Methods"><opaque format="text">
-        The category of finite crystals constructed by tensor
-        product of finite crystals.
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        The category of finite crystals constructed by tensor
-        product of finite crystals.
-        </opaque></document><document name="Parent Methods:"><opaque format="text">
-        The category of finite crystals constructed by tensor
-        product of finite crystals.
-        </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-        The category of finite crystals constructed by tensor
-        product of finite crystals.
-        </opaque></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="TensorProducts" base="http://www.sagemath.org/content/categories/finite_crystals/FiniteCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_crystals?FiniteCrystals"></import><import from="http://www.sagemath.org/content/categories/crystals/Crystals?TensorProducts"></import></theory></omdoc>

@@ -9,7 +9,21 @@ Declares http://www.sagemath.org/content/categories/modules?Modules http://www.s
 constant http://www.sagemath.org/content/categories/modules?Modules?element.__rmul__
 Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?parent.tensor_square
 constant http://www.sagemath.org/content/categories/modules?Modules?parent.tensor_square
-Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.__mul__
-constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.__mul__
-Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.__rmul__
-constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.__rmul__
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.DualObjects
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.DualObjects
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.Filtered
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.Filtered
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.FiniteDimensional
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.FiniteDimensional
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.Graded
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.Graded
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.Super
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.Super
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.TensorProducts
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.TensorProducts
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.WithBasis
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.WithBasis
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.base_ring
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.base_ring
+Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.dual
+constant http://www.sagemath.org/content/categories/modules?Modules?subcategory.dual

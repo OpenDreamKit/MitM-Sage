@@ -1,56 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="AdditiveMonoids" base="http://www.sagemath.org/content/categories/additive_monoids" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital"></import><import from="http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups"></import><document name="Element Methods"><opaque format="text">
-    The category of additive monoids.
-
-    An *additive monoid* is a unital :class:`additive semigroup
-    &lt;sage.categories.additive_semigroups.AdditiveSemigroups&gt;`, that
-    is a set endowed with a binary operation `+` which is associative
-    and admits a zero (see :wikipedia:`Monoid`).
-
-    EXAMPLES::
-
-        sage: from sage.categories.additive_monoids import AdditiveMonoids
-        sage: C = AdditiveMonoids(); C
-        Category of additive monoids
-        sage: C.super_categories()
-        [Category of additive unital additive magmas, Category of additive semigroups]
-        sage: sorted(C.axioms())
-        ['AdditiveAssociative', 'AdditiveUnital']
-        sage: from sage.categories.additive_semigroups import AdditiveSemigroups
-        sage: C is AdditiveSemigroups().AdditiveUnital()
-        True
-
-    TESTS::
-
-        sage: C.Algebras(QQ).is_subcategory(AlgebrasWithBasis(QQ))
-        True
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of additive monoids.
-
-    An *additive monoid* is a unital :class:`additive semigroup
-    &lt;sage.categories.additive_semigroups.AdditiveSemigroups&gt;`, that
-    is a set endowed with a binary operation `+` which is associative
-    and admits a zero (see :wikipedia:`Monoid`).
-
-    EXAMPLES::
-
-        sage: from sage.categories.additive_monoids import AdditiveMonoids
-        sage: C = AdditiveMonoids(); C
-        Category of additive monoids
-        sage: C.super_categories()
-        [Category of additive unital additive magmas, Category of additive semigroups]
-        sage: sorted(C.axioms())
-        ['AdditiveAssociative', 'AdditiveUnital']
-        sage: from sage.categories.additive_semigroups import AdditiveSemigroups
-        sage: C is AdditiveSemigroups().AdditiveUnital()
-        True
-
-    TESTS::
-
-        sage: C.Algebras(QQ).is_subcategory(AlgebrasWithBasis(QQ))
-        True
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.sum">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="AdditiveMonoids" base="http://www.sagemath.org/content/categories/additive_monoids" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital"></import><import from="http://www.sagemath.org/content/categories/additive_semigroups?AdditiveSemigroups"></import><document name="Parent Methods"><constant name="parent.sum">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -81,30 +29,4 @@
                 0
                 sage: S.sum(()).parent() == S
                 True
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-    The category of additive monoids.
-
-    An *additive monoid* is a unital :class:`additive semigroup
-    &lt;sage.categories.additive_semigroups.AdditiveSemigroups&gt;`, that
-    is a set endowed with a binary operation `+` which is associative
-    and admits a zero (see :wikipedia:`Monoid`).
-
-    EXAMPLES::
-
-        sage: from sage.categories.additive_monoids import AdditiveMonoids
-        sage: C = AdditiveMonoids(); C
-        Category of additive monoids
-        sage: C.super_categories()
-        [Category of additive unital additive magmas, Category of additive semigroups]
-        sage: sorted(C.axioms())
-        ['AdditiveAssociative', 'AdditiveUnital']
-        sage: from sage.categories.additive_semigroups import AdditiveSemigroups
-        sage: C is AdditiveSemigroups().AdditiveUnital()
-        True
-
-    TESTS::
-
-        sage: C.Algebras(QQ).is_subcategory(AlgebrasWithBasis(QQ))
-        True
-        sage: TestSuite(C).run()
-    </opaque></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

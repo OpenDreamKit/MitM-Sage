@@ -1,16 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="GradedAlgebrasWithBasis" base="http://www.sagemath.org/content/categories/graded_algebras_with_basis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis"></import><import from="http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras"></import><import from="http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of graded algebras with a distinguished basis
-
-    EXAMPLES::
-
-        sage: C = GradedAlgebrasWithBasis(ZZ); C
-        Category of graded algebras with basis over Integer Ring
-        sage: sorted(C.super_categories(), key=str)
-        [Category of filtered algebras with basis over Integer Ring,
-         Category of graded algebras over Integer Ring,
-         Category of graded modules with basis over Integer Ring]
-
-    TESTS::
-
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="GradedAlgebrasWithBasis" base="http://www.sagemath.org/content/categories/graded_algebras_with_basis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/filtered_algebras_with_basis?FilteredAlgebrasWithBasis"></import><import from="http://www.sagemath.org/content/categories/graded_algebras?GradedAlgebras"></import><import from="http://www.sagemath.org/content/categories/graded_modules_with_basis?GradedModulesWithBasis"></import></theory></omdoc>

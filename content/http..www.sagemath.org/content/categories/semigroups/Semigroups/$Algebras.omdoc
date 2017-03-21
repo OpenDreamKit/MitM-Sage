@@ -1,16 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Algebras" base="http://www.sagemath.org/content/categories/semigroups/Semigroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Algebras"></import><document name="Element Methods"><opaque format="text">
-        TESTS::
-
-            sage: TestSuite(Semigroups().Algebras(QQ)).run()
-            sage: TestSuite(Semigroups().Finite().Algebras(QQ)).run()
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        TESTS::
-
-            sage: TestSuite(Semigroups().Algebras(QQ)).run()
-            sage: TestSuite(Semigroups().Finite().Algebras(QQ)).run()
-        </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"><opaque format="text">
-        TESTS::
-
-            sage: TestSuite(Semigroups().Algebras(QQ)).run()
-            sage: TestSuite(Semigroups().Finite().Algebras(QQ)).run()
-        </opaque></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Algebras" base="http://www.sagemath.org/content/categories/semigroups/Semigroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/associative_algebras?AssociativeAlgebras"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Algebras"></import></theory></omdoc>

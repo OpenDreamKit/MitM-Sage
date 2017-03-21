@@ -1,18 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteWeylGroups" base="http://www.sagemath.org/content/categories/finite_weyl_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups"></import><import from="http://www.sagemath.org/content/categories/weyl_groups?WeylGroups"></import><document name="Element Methods"></document><document name="Morphism Methods:"><opaque format="text">
-    The category of finite Weyl groups.
-
-    EXAMPLES::
-
-        sage: C = FiniteWeylGroups()
-        sage: C
-        Category of finite weyl groups
-        sage: C.super_categories()
-        [Category of finite coxeter groups, Category of weyl groups]
-        sage: C.example()
-        The symmetric group on {0, ..., 3}
-
-    TESTS::
-
-        sage: W = FiniteWeylGroups().example()
-        sage: TestSuite(W).run()
-    </opaque></document><document name="Parent Methods:"></document><document name="Subcategory Methods:"></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FiniteWeylGroups" base="http://www.sagemath.org/content/categories/finite_weyl_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/finite_coxeter_groups?FiniteCoxeterGroups"></import><import from="http://www.sagemath.org/content/categories/weyl_groups?WeylGroups"></import></theory></omdoc>

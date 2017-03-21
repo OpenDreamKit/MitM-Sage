@@ -11,7 +11,3 @@ Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?Bialge
 constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?element.convolution_product
 Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?parent.convolution_product
 constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?parent.convolution_product
-Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?subcategory.adams_operator
-constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?subcategory.adams_operator
-Declares http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?subcategory.convolution_product
-constant http://www.sagemath.org/content/categories/bialgebras_with_basis?BialgebrasWithBasis?subcategory.convolution_product

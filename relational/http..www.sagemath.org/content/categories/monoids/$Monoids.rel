@@ -18,9 +18,3 @@ Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.s
 constant http://www.sagemath.org/content/categories/monoids?Monoids?parent.one_element
 Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent.submonoid
 constant http://www.sagemath.org/content/categories/monoids?Monoids?parent.submonoid
-Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?subcategory._pow_naive
-constant http://www.sagemath.org/content/categories/monoids?Monoids?subcategory._pow_naive
-Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?subcategory.is_one
-constant http://www.sagemath.org/content/categories/monoids?Monoids?subcategory.is_one
-Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?subcategory.powers
-constant http://www.sagemath.org/content/categories/monoids?Monoids?subcategory.powers

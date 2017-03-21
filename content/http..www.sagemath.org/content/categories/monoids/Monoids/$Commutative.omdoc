@@ -1,17 +1,1 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Commutative" base="http://www.sagemath.org/content/categories/monoids/Monoids" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/monoids?Monoids"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Commutative"></import><document name="Element Methods"><opaque format="text">
-        Category of commutative (abelian) monoids.
-
-        A monoid `M` is *commutative* if `xy = yx` for all `x,y \in M`.
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-        Category of commutative (abelian) monoids.
-
-        A monoid `M` is *commutative* if `xy = yx` for all `x,y \in M`.
-        </opaque></document><document name="Parent Methods:"><opaque format="text">
-        Category of commutative (abelian) monoids.
-
-        A monoid `M` is *commutative* if `xy = yx` for all `x,y \in M`.
-        </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-        Category of commutative (abelian) monoids.
-
-        A monoid `M` is *commutative* if `xy = yx` for all `x,y \in M`.
-        </opaque></document></theory></omdoc>
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Commutative" base="http://www.sagemath.org/content/categories/monoids/Monoids" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/monoids?Monoids"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Commutative"></import></theory></omdoc>

@@ -40,15 +40,7 @@
                 sage: x = Zp(5)(50)
                 sage: x.valuation()
                 2
-            </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of discrete valuation rings
-
-    EXAMPLES::
-
-        sage: GF(7)[['x']] in DiscreteValuationRings()
-        True
-        sage: TestSuite(DiscreteValuationRings()).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.residue_field">
+            </opaque></document><document name="Parent Methods"><constant name="parent.residue_field">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -88,38 +80,4 @@
                 sage: K.&lt;u&gt; = QQ[[]]
                 sage: K.uniformizer()
                 u
-            </opaque></document><document name="Subcategory Methods:"><constant name="subcategory.lcm">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the least common multiple of self and other,
-            normalized so that it is a power of the distinguished
-            uniformizer.
-            </opaque><constant name="subcategory.valuation">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            Return the valuation of this element.
-
-            EXAMPLES::
-
-                sage: x = Zp(5)(50)
-                sage: x.valuation()
-                2
             </opaque></document></theory></omdoc>

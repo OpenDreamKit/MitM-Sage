@@ -1,47 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="UnitalAlgebras" base="http://www.sagemath.org/content/categories/unital_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/magmatic_algebras?MagmaticAlgebras"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Unital"></import><document name="Element Methods"><opaque format="text">
-        ``Magmas.Element.__mul__`` is preferable to ``Modules.Element.__mul__``
-        since the later does not handle products of two elements of ``self``.
-
-        TESTS::
-
-            sage: A = AlgebrasWithBasis(QQ).example(); A
-            An example of an algebra with basis: the free algebra
-            on the generators ('a', 'b', 'c') over Rational Field
-            sage: x = A.an_element()
-            sage: x
-            B[word: ] + 2*B[word: a] + 3*B[word: b] + B[word: bab]
-            sage: x.__mul__(x)
-            B[word: ] + 4*B[word: a] + 4*B[word: aa] + 6*B[word: ab]
-            + 2*B[word: abab] + 6*B[word: b] + 6*B[word: ba]
-            + 2*B[word: bab] + 2*B[word: baba] + 3*B[word: babb]
-            + B[word: babbab] + 9*B[word: bb] + 3*B[word: bbab]
-        </opaque></document><document name="Morphism Methods:"><opaque format="text">
-    The category of non-associative algebras over a given base ring.
-
-    A non-associative algebra over a ring `R` is a module over `R`
-    which s also a unital magma.
-
-    .. WARNING::
-
-        Until :trac:`15043` is implemented, :class:`Algebras` is the
-        category of associative unital algebras; thus, unlike the name
-        suggests, :class:`UnitalAlgebras` is not a subcategory of
-        :class:`Algebras` but of
-        :class:`~.magmatic_algebras.MagmaticAlgebras`.
-
-    EXAMPLES::
-
-        sage: from sage.categories.unital_algebras import UnitalAlgebras
-        sage: C = UnitalAlgebras(ZZ); C
-        Category of unital algebras over Integer Ring
-
-    TESTS::
-
-        sage: from sage.categories.magmatic_algebras import MagmaticAlgebras
-        sage: C is MagmaticAlgebras(ZZ).Unital()
-        True
-        sage: TestSuite(C).run()
-    </opaque></document><document name="Parent Methods:"><constant name="parent.from_base_ring">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="UnitalAlgebras" base="http://www.sagemath.org/content/categories/unital_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/magmatic_algebras?MagmaticAlgebras"></import><import from="http://www.sagemath.org/content/categories/magmas/Magmas?Unital"></import><document name="Parent Methods"><constant name="parent.from_base_ring">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
                  <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
@@ -67,21 +24,4 @@
                 An example of an algebra with basis: the free algebra on the generators ('a', 'b', 'c') over Rational Field
                 sage: A.from_base_ring(1)
                 B[word: ]
-            </opaque></document><document name="Subcategory Methods:"><opaque format="text">
-        ``Magmas.Element.__mul__`` is preferable to ``Modules.Element.__mul__``
-        since the later does not handle products of two elements of ``self``.
-
-        TESTS::
-
-            sage: A = AlgebrasWithBasis(QQ).example(); A
-            An example of an algebra with basis: the free algebra
-            on the generators ('a', 'b', 'c') over Rational Field
-            sage: x = A.an_element()
-            sage: x
-            B[word: ] + 2*B[word: a] + 3*B[word: b] + B[word: bab]
-            sage: x.__mul__(x)
-            B[word: ] + 4*B[word: a] + 4*B[word: aa] + 6*B[word: ab]
-            + 2*B[word: abab] + 6*B[word: b] + 6*B[word: ba]
-            + 2*B[word: bab] + 2*B[word: baba] + 3*B[word: babb]
-            + B[word: babbab] + 9*B[word: bb] + 3*B[word: bbab]
-        </opaque></document></theory></omdoc>
+            </opaque></document></theory></omdoc>

@@ -11,5 +11,3 @@ Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteV
 constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationFields?parent.residue_field
 Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationFields http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationFields?parent.uniformizer
 constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationFields?parent.uniformizer
-Declares http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationFields http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationFields?subcategory.valuation
-constant http://www.sagemath.org/content/categories/discrete_valuation?DiscreteValuationFields?subcategory.valuation
