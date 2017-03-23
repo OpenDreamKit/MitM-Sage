@@ -29,4 +29,13 @@ Commit the output file:
 
 ## How to process Sage's output (usually done by Dennis Müller, upon request)
 
-???
+Partial instructions, written by @pdehaye:
+
+Make sure you have the necessary MMT plugin installed. From jEdit console: 
+
+    extension info.kwarc.mmt.odk.Plugin
+
+Build the omdoc archive from the json export generated above:
+
+    build ODK/Sage sage-omdoc
+
