@@ -10,6 +10,8 @@ theory Types : ur:?PLF =
 	structureof : structural → type  ## ≤ 1 
 
 
+//   For convenience, a theory that includes the possibility of doing FromTheory 
+	
 theory Convenient = 
   include ur:?PLF 
   include http://gl.mathhub.info/MMT/LFX/Records?LFRecords 
@@ -18,13 +20,14 @@ theory Convenient =
 theory PythonBasicTypes : ?Convenient =  
   python_type : type 
   pyMMT : python_type → type  
-  pylist : python_type → python_type
   pysequence : python_type → python_type 
   pystr : python_type 
   pyint : python_type 
   pyfloat : python_type 
   pytype : python_type 
-  pydict: pyMMT pystr → python_type
+  pylist : python_type  
+  pydict: python_type
+  magic : type → type 
 
 
 theory PythonFunction : ?Convenient = 
@@ -39,60 +42,58 @@ theory PythonFunction : ?Convenient =
 theory PythonClass : ?Convenient = 
   include ?PythonBasicTypes 
   theory PythonClassTheory =
-    superclasses : pyMMT (pysequence pyfunction) 
-    
+    // superclasses : list (pyMMT pyclass) 
+    // every python class has a list of superclasses 
     docstring : pyMMT pystr 
     name : pyMMT pystr 
-    methods : pyMMT (pysequence pyfunction) 
+    // methods : list pyMMT pyfunction 
+    // every python class has a list of methods, which are functions 
+  
   FromTheory pyclass : PythonClassTheory 
   
 
+theory PythonUnknownType : ?Convenient = 
+  include ?PythonBasicTypes 
+  pyunknown : python_type 
+
+  
 theory Python : ?Convenient = 
   include ?PythonBasicTypes 
   include ?PythonFunction 
   include ?PythonClass 
-  
+  include ?PythonUnknownType 
   
-
-theory SageConventionParent : ?Python =
-  include MitM:Foundation?Math 
-
-
   
 theory Sage : ?Python = 
-  include ?SageConventionParent  
   sage_type : type 
   sageMMT : sage_type → type 
   sagepy : sage_type → python_type
  
 
-theory MathObject : ur:?PLF = 
-  include MitM:Foundation?Math 
-  math_type : type  
-  mathMMT : math_type → type 
+
+
+
+theory group.FiniteGroup : ?Sage = 
+
+
+theory PermutationGroup_generic : ?Sage =
+  include ?group.FiniteGroup 
+  init: pyMMT pyunknown → pyMMT pyunknown 
+  // def __init__(self, gens=None, gap_group=None, canonicalize=True, domain=None, category=None): 
+
+
+//   class PermutationGroup_unique(CachedRepresentation, PermutationGroup_generic): 
+
+theory CachedRepresentation : ?Sage = 
 
   
-theory SageObject : ?Sage =
-  include ?MathObject 
-  implements :  sageMMT sage_type → math_type # 1 implements 2 
+theory PermutationGroup_unique : ?Sage =
+  include ?CachedRepresentation 
+  include ?PermutationGroup_generic 
 
 
-theory SageLiterals : ?Sage = 
-  include ?SageObject 
-  include MitM:Foundation?Literals   
-
-
-
-// class TransitiveGroup(PermutationGroup_unique):
-//    def __init__(self, d, n):
-    
-  
-theory SageTransitiveGroup : ?Sage = 
-  include ?SageLiterals 
-  include MitM:smglom/permutationgroup?transitive_group_action 
-  theory TransitiveGroupImplementationTheory =
-    TransitiveGroup : python_type = transitivegroupaction
-    init : pyMMT Integer → pyMMT PositiveInteger → pyMMT TransitiveGroup
-  
-  FromTheory TransitiveGroupImplementation : TransitiveGroupImplementationTheory
+theory TransitiveGroup : ?Sage =
+  include ?PermutationGroup_unique 
+  init: magic ((pyMMT pyunknown) → pyMMT pyunknown)
+  init2 : type  = ((pyMMT pyunknown) → pyMMT pyunknown) 
 
