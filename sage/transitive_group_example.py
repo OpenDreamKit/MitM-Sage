@@ -1,5 +1,5 @@
 
-# /Applications/SageMath-7.5.1.app/Contents/Resources/sage/src/sage/structure/sage_object.pyx
+# sage/src/sage/structure/sage_object.pyx
 
 cdef class SageObject:
     def _test_new(self, **options):
@@ -55,7 +55,7 @@ cdef class SageObject:
     def _pari_(self):
     def _pari_init_(self):
 
-# /Applications/SageMath-7.5.1.app/Contents/Resources/sage/local/lib/python2.7/site-packages/sage/categories/category.py
+# sage/local/lib/python2.7/site-packages/sage/categories/category.py
 
 class Category(UniqueRepresentation, SageObject):
     def __classcall__(cls, *args, **options):
@@ -112,7 +112,7 @@ class Category(UniqueRepresentation, SageObject):
     def example(self, *args, **keywords):
 
 
-# /Applications/SageMath-7.5.1.app/Contents/Resources/sage/src/sage/structure/category_object.pyx
+# sage/src/sage/structure/category_object.pyx
 
 cdef class CategoryObject(SageObject):
     def __init__(self, category = None, base = None):
@@ -148,7 +148,7 @@ cdef class CategoryObject(SageObject):
     def __dir__(self):
     def __div__(self, other):
 
-# /Applications/SageMath-7.5.1.app/Contents/Resources/sage/local/lib/python2.7/site-packages/sage/structure/parent.pyx
+# sage/local/lib/python2.7/site-packages/sage/structure/parent.pyx
 
 cdef class Parent(category_object.CategoryObject):
     def _init_category_(self, category):
@@ -207,7 +207,7 @@ cdef class Parent(category_object.CategoryObject):
     cpdef bint is_exact(self) except -2:
 
 
-# /Applications/SageMath-7.5.1.app/Contents/Resources/sage/src/sage/groups/group.pyx
+# sage/src/sage/groups/group.pyx
 
 cdef class Group(Parent):
     def __init__(self, base=None, gens=None, category=None):
@@ -220,19 +220,19 @@ cdef class Group(Parent):
     def _an_element_(self):
     def quotient(self, H):
 
-# /Applications/SageMath-7.5.1.app/Contents/Resources/sage/src/sage/groups/group.pyx
+# sage/src/sage/groups/group.pyx
 
 cdef class FiniteGroup(Group):
     def __init__(self, base=None, gens=None, category=None):
     def is_finite(self):
 
-# /Applications/SageMath-7.5.1.app/Contents/Resources/sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup_named.py
+# sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup_named.py
 
 class TransitiveGroup(PermutationGroup_unique):
     def __init__(self, d, n):
     def _repr_(self):
 
-# /Applications/SageMath-7.5.1.app/Contents/Resources/sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup.py
+# sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup.py
 
 class PermutationGroup_generic(group.FiniteGroup):
     def __init__(self, gens=None, gap_group=None, canonicalize=True, domain=None, category=None):
