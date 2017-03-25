@@ -1,5 +1,4 @@
 # sage/src/sage/structure/sage_object.pyx
-
 cdef class SageObject:
     def _test_new(self, **options):
     def rename(self, x=None):
@@ -53,9 +52,8 @@ cdef class SageObject:
     def _singular_init_(self, have_ring=False):
     def _pari_(self):
     def _pari_init_(self):
-
+        
 # sage/local/lib/python2.7/site-packages/sage/categories/category.py
-
 class Category(UniqueRepresentation, SageObject):
     def __classcall__(cls, *args, **options):
     def __init__(self, s=None):
@@ -109,8 +107,6 @@ class Category(UniqueRepresentation, SageObject):
     def join(categories, as_list=False, ignore_axioms=(), axioms=()):
     def category(self):
     def example(self, *args, **keywords):
-
-
 # sage/src/sage/structure/category_object.pyx
 
 cdef class CategoryObject(SageObject):
@@ -146,9 +142,8 @@ cdef class CategoryObject(SageObject):
     cdef getattr_from_category(self, name):
     def __dir__(self):
     def __div__(self, other):
-
+        
 # sage/local/lib/python2.7/site-packages/sage/structure/parent.pyx
-
 cdef class Parent(category_object.CategoryObject):
     def _init_category_(self, category):
     def _refine_category_(self, category):
@@ -160,7 +155,6 @@ cdef class Parent(category_object.CategoryObject):
     def category(self):
     def _test_category(self, **options):
     def _test_eq(self, **options):
-    cdef int init_coerce(self, bint warn=True) except -1:
     def _introspect_coerce(self):
     def __getstate__(self):
     def __setstate__(self, d):
@@ -171,8 +165,6 @@ cdef class Parent(category_object.CategoryObject):
     def __contains__(self, x):
     cpdef coerce(self, x):
     def __nonzero__(self):
-    cpdef bint _richcmp(left, right, int op) except -2:
-    cpdef int _cmp_(left, right) except -2:
     def __getitem__(self, n):
     def _is_valid_homomorphism_(self, codomain, im_gens):
     def Hom(self, codomain, category=None):
@@ -188,7 +180,6 @@ cdef class Parent(category_object.CategoryObject):
     def coerce_embedding(self):
     cpdef _generic_convert_map(self, S):
     def _coerce_map_via(self, v, S):
-    cpdef bint has_coerce_map_from(self, S) except -2:
     cpdef _coerce_map_from_(self, S):
     cpdef coerce_map_from(self, S):
     cpdef _internal_coerce_map_from(self, S):
@@ -203,12 +194,10 @@ cdef class Parent(category_object.CategoryObject):
     def construction(self):
     cpdef an_element(self):
     def _an_element_(self):
-    cpdef bint is_exact(self) except -2:
-
 
 # sage/src/sage/groups/group.pyx
-
 cdef class Group(Parent):
+    TESTS::
     def __init__(self, base=None, gens=None, category=None):
     def __contains__(self, x):
     def is_abelian(self):
@@ -218,15 +207,13 @@ cdef class Group(Parent):
     def is_multiplicative(self):
     def _an_element_(self):
     def quotient(self, H):
-
+        
 # sage/src/sage/groups/group.pyx
-
 cdef class FiniteGroup(Group):
     def __init__(self, base=None, gens=None, category=None):
     def is_finite(self):
 
 # sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup.py
-
 class PermutationGroup_generic(group.FiniteGroup):
     def __init__(self, gens=None, gap_group=None, canonicalize=True, domain=None, category=None):
     def construction(self):
@@ -332,17 +319,13 @@ class PermutationGroup_generic(group.FiniteGroup):
     def poincare_series(self, p=2, n=10):
     def sylow_subgroup(self, p):
     def upper_central_series(self):
-
-
+        
 # sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup_named.py
-
 class PermutationGroup_unique(CachedRepresentation, PermutationGroup_generic):
     def __classcall__(cls, *args, **kwds):
     def __eq__(self, other):
-        
 
 # sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup_named.py
-
 class TransitiveGroup(PermutationGroup_unique):
     def __init__(self, d, n):
     def _repr_(self):
