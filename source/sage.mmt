@@ -14,7 +14,7 @@ theory Types : ur:?PLF =
 	
 theory Convenient = 
   include ur:?PLF 
-  include http://gl.mathhub.info/MMT/LFX/Records?LFRecords 
+  include MitM:Foundation?Math 
 
 	
 theory PythonBasicTypes : ?Convenient =  
@@ -27,16 +27,13 @@ theory PythonBasicTypes : ?Convenient =
   pytype : python_type 
   pylist : python_type  
   pydict: python_type
-  magic : type → type 
 
 
 theory PythonFunction : ?Convenient = 
   include ?PythonBasicTypes 
-  theory PythonFunctionTheory = 
-    name : pyMMT pystr 
-    docstring : pyMMT pystr 
-  
-  FromTheory pyfunction : PythonFunctionTheory 
+  pyfunction : python_type → type 
+  pyfunction_type : python_type → python_type → python_type  # 1 ==> 2 
+  magic_function : python_type → type 
 
 
 theory PythonClass : ?Convenient = 
@@ -78,11 +75,10 @@ theory group.FiniteGroup : ?Sage =
 
 theory PermutationGroup_generic : ?Sage =
   include ?group.FiniteGroup 
-  init: pyMMT pyunknown → pyMMT pyunknown 
+  init: pyfunction (pyunknown ==> pyunknown) 
   // def __init__(self, gens=None, gap_group=None, canonicalize=True, domain=None, category=None): 
 
 
-//   class PermutationGroup_unique(CachedRepresentation, PermutationGroup_generic): 
 
 theory CachedRepresentation : ?Sage = 
 
@@ -94,6 +90,6 @@ theory PermutationGroup_unique : ?Sage =
 
 theory TransitiveGroup : ?Sage =
   include ?PermutationGroup_unique 
-  init: magic ((pyMMT pyunknown) → pyMMT pyunknown)
+  init: magic_function (pyunknown ==> pyunknown) 
   init2 : type  = ((pyMMT pyunknown) → pyMMT pyunknown) 
 
