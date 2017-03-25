@@ -1,4 +1,3 @@
-
 # sage/src/sage/structure/sage_object.pyx
 
 cdef class SageObject:
@@ -226,12 +225,6 @@ cdef class FiniteGroup(Group):
     def __init__(self, base=None, gens=None, category=None):
     def is_finite(self):
 
-# sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup_named.py
-
-class TransitiveGroup(PermutationGroup_unique):
-    def __init__(self, d, n):
-    def _repr_(self):
-
 # sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup.py
 
 class PermutationGroup_generic(group.FiniteGroup):
@@ -339,3 +332,17 @@ class PermutationGroup_generic(group.FiniteGroup):
     def poincare_series(self, p=2, n=10):
     def sylow_subgroup(self, p):
     def upper_central_series(self):
+
+
+# sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup_named.py
+
+class PermutationGroup_unique(CachedRepresentation, PermutationGroup_generic):
+    def __classcall__(cls, *args, **kwds):
+    def __eq__(self, other):
+        
+
+# sage/local/lib/python2.7/site-packages/sage/groups/perm_gps/permgroup_named.py
+
+class TransitiveGroup(PermutationGroup_unique):
+    def __init__(self, d, n):
+    def _repr_(self):
