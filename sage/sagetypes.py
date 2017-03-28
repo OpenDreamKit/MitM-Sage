@@ -92,94 +92,122 @@ def category_name(category):
     cls = category.__class__.__base__
     return cls.__module__+"."+cls.__name__
 
-def export_category(category):
-    """
-    Export semantic information about the category
 
-    EXAMPLES::
+class Exporter(object):
+    def __init__(self):
+        self._database = {
+            'categories': {}
+            'classes' : {}
+        }
 
-        sage: from sagetypes import export_category
-        sage: export_category(Groups())
-        {'implied': ['sage.categories.monoids.Monoids',
-          'sage.categories.magmas.Magmas.Unital.Inverse'],
-         'name': 'sage.categories.groups.Groups',
-         'type': 'Sage_Category'}
-    """
-    semantic = getattr(category, "_semantic", {})
-    return {"implied": [category_name(cat) for cat in category.super_categories()],
+    def export_category(category):
+        """
+        Export the semantic information contained in the category
+
+        As a side effect, the semantic is also stored in the exporter's
+        database together with that of all super categories.
+
+        EXAMPLES::
+
+            sage: from sagetypes import export_category
+            sage: export_category(Groups())
+            {'implied': ['sage.categories.monoids.Monoids',
+            'sage.categories.magmas.Magmas.Unital.Inverse'],
+            'name': 'sage.categories.groups.Groups',
+            'type': 'Sage_Category'}
+        """
+        database = self._database['categories']
+        name = category_name(cat)
+        if name in database:
+            return database[name]
+        semantic = getattr(category, "_semantic", {})
+        data = {
+              "implied": [self._export_category(cat)
+                          for cat in category.super_categories()],
               "__doc__": category.__doc__,
-              "name": category_name(category),
               "axioms": list(category.axioms()),
               "structure": [category_name(cat) for cat in category.structure()],
               "type": "Sage_Category",
-              #"required_methods": required_methods(category),
-              "parent_class": export_class(category.parent_class),
-              "element_class": export_class(category.element_class),
-              "morphism_class": export_class(category.morphism_class),
-              "subcategory_class": export_class(category.subcategory_class),
+              "parent_class":      self.export_class(category.parent_class),
+              "element_class":     self.export_class(category.element_class),
+              "morphism_class":    self.export_class(category.morphism_class),
+              "subcategory_class": self.export_class(category.subcategory_class),
               "gap": semantic.get("gap", None),
-              "mmt": semantic.get("mmt", None)}
-
-def export_class(cls):
-    """
-
-    EXAMPLES::
-
-        sage: class A:
-        ....:     _semantic = {'truc': {'gap': 'coucou'} }
-        ....:     def truc(x,y): pass
-        ....:     def blah(x): pass
-        sage: from sagetypes import export_class
-        sage: export_class(A)
-        {'__doc__': None,
-         'methods': {'blah': {'__doc__': None,
-           'args': ['x'],
-           'argspec': ArgSpec(args=['x'], varargs=None, keywords=None, defaults=None)},
-          'truc': {'__doc__': None,
-           'args': ['x', 'y'],
-           'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
-           'gap': 'coucou'}}}
-    """
-    semantic = getattr(cls, "_semantic", {})
-    return {
-        "__doc__": getattr(cls, "__doc__", None),
-        "methods": { key:
-            export_method(method, semantic.get(key, {}))
-            for (key, method) in cls.__dict__.iteritems()
-            if key not in ["__doc__", "__module__", "_sage_src_lines_", "_reduction"]
-            and (callable(method) or isinstance(method, AbstractMethod))
-            and not any(hasattr(base, key) for base in cls.__bases__)
-        }}
-
-def export_method(method, semantic={}):
-    """
-    Export metadata about a single method, including stuff in semantic
-
-    EXAMPLES::
-
-        sage: def f(x,y): pass
-        sage: export_method(f, {"gap":"coucou"})
-        {'__doc__': None,
-         'args': ['x', 'y'],
-         'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
-         'gap': 'coucou',
-         'name': 'f'}
-    """
-    if isinstance(method, AbstractMethod):
-        method = method._f
-    try:
-        argspec = sage_getargspec(method)
-        result = {"__doc__": method.__doc__,
-                  "args": argspec.args,
-                  "argspec": argspec
+              "mmt": semantic.get("mmt", None)
         }
-    except TypeError:
-        result = {}
-    result.update(semantic)
-    return result
+        database[name] = data
+        return data
 
-def export():
-    return [export_category(category) for category in category_sample()]
+    def export_class(self, cls)
+       """
+       Export the semantic contained in 'cls'
+
+       As a side effect, the semantic is also stored in the exporter's
+       database together with that of all super classes.
+
+       EXAMPLES::
+
+           sage: class A:
+           ....:     _semantic = {'truc': {'gap': 'coucou'} }
+           ....:     def truc(x,y): pass
+           ....:     def blah(x): pass
+           sage: from sagetypes import Exporter
+           sage: Exporter().export_class(A)
+           {'__doc__': None,
+            'methods': {'blah': {'__doc__': None,
+              'args': ['x'],
+              'argspec': ArgSpec(args=['x'], varargs=None, keywords=None, defaults=None)},
+             'truc': {'__doc__': None,
+              'args': ['x', 'y'],
+              'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
+              'gap': 'coucou'}}}
+       """
+       database = self._database['classes']
+       name = cls.__name__
+       if name in database:
+           return database[name]
+       semantic = getattr(cls, "_semantic", {})
+       data = {
+           "__doc__": getattr(cls, "__doc__", None),
+           "methods": { key:
+               self.export_method(method, semantic.get(key, {}))
+               for (key, method) in cls.__dict__.iteritems()
+               if key not in ["__doc__", "__module__", "_sage_src_lines_", "_reduction"]
+               and (callable(method) or isinstance(method, AbstractMethod))
+               and not any(hasattr(base, key) for base in cls.__bases__)
+           }}
+        database[name] = data
+        return data
+
+    def export_method(method, semantic={}):
+        """
+        Export metadata about a single method, including stuff in semantic
+
+        EXAMPLES::
+
+            sage: def f(x,y): pass
+            sage: export_method(f, {"gap":"coucou"})
+            {'__doc__': None,
+             'args': ['x', 'y'],
+             'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
+             'gap': 'coucou',
+             'name': 'f'}
+        """
+        if isinstance(method, AbstractMethod):
+            method = method._f
+        try:
+            argspec = sage_getargspec(method)
+            result = {"__doc__": method.__doc__,
+                      "args": argspec.args,
+                      "argspec": argspec   # TODO: add code
+            }
+        except TypeError:
+            result = {}
+        result.update(semantic)
+        return result
+
+    def export_categories():
+        return [export_category(category) for category in category_sample()]
 
 def required_methods(self):
     """
