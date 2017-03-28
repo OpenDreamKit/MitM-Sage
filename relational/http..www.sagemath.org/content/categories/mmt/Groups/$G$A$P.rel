@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/categories/mmt/Groups?GAP
+HasMeta http://www.sagemath.org/content/categories/mmt/Groups?GAP http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/mmt/Groups?GAP http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/mmt/Groups?GAP http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/mmt/Groups?GAP http://www.sagemath.org/content/categories/mmt/Unital?GAP
+Includes http://www.sagemath.org/content/categories/mmt/Groups?GAP http://www.sagemath.org/content/categories/groups?Groups

@@ -1,14 +1,12 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Modules" base="http://www.sagemath.org/content/categories/modules" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/bimodules?Bimodules"></import><document name="Element Methods"><constant name="element.__mul__">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Modules" base="http://www.sagemath.org/content/categories/modules" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/bimodules?Bimodules"></import><omdoc name="Element Methods"><constant name="element.__mul__">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
      </constant><opaque format="text">Modules__mul__(Element left, right)
@@ -46,15 +44,13 @@ File: sage/categories/coercion_methods.pyx (starting at line 86)
         Make a better unit test once ``Modules().example()`` is implemented.
     </opaque><constant name="element.__rmul__">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
      </constant><opaque format="text">Modules__rmul__(Element right, left)
@@ -92,17 +88,15 @@ File: sage/categories/coercion_methods.pyx (starting at line 122)
     .. TODO::
 
         Make a better unit test once ``Modules().example()`` is implemented.
-    </opaque></document><document name="Parent Methods"><constant name="parent.tensor_square">
+    </opaque></omdoc><omdoc name="Parent Methods"><constant name="parent.tensor_square">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
      </constant><opaque format="text">CachedMethod(f, name=None, key=None)
@@ -182,17 +176,15 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: b.f()
         1
 
-    </opaque></document><document name="Subcategory Methods"><constant name="subcategory.DualObjects">
+    </opaque></omdoc><omdoc name="Subcategory Methods"><constant name="subcategory.DualObjects">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
      </constant><opaque format="text">CachedMethod(f, name=None, key=None)
@@ -274,371 +266,54 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
 
     </opaque><constant name="subcategory.Filtered">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="subcategory.FiniteDimensional">
+     </constant><constant name="subcategory.FiniteDimensional">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="subcategory.Graded">
+     </constant><constant name="subcategory.Graded">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="subcategory.Super">
+     </constant><constant name="subcategory.Super">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="subcategory.TensorProducts">
+     </constant><constant name="subcategory.TensorProducts">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
@@ -656,272 +331,35 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
                 Category of tensor products of vector spaces with basis over Rational Field
             </opaque><constant name="subcategory.WithBasis">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="subcategory.base_ring">
+     </constant><constant name="subcategory.base_ring">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="subcategory.dual">
+     </constant><constant name="subcategory.dual">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque></document></theory></omdoc>
+     </constant></omdoc></theory></omdoc>

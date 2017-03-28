@@ -1,10 +1,9 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FilteredAlgebras" base="http://www.sagemath.org/content/categories/filtered_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/algebras?Algebras"></import><import from="http://www.sagemath.org/content/categories/filtered_modules?FilteredModules"></import><document name="Parent Methods"><constant name="parent.graded_algebra">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FilteredAlgebras" base="http://www.sagemath.org/content/categories/filtered_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/algebras?Algebras"></import><import from="http://www.sagemath.org/content/categories/filtered_modules?FilteredModules"></import><omdoc name="Parent Methods"><constant name="parent.graded_algebra">
        
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMBIND>
-                 <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="Pi"></om:OMS>
-                 <om:OMBVAR><om:OMV name="_"><type><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></type></om:OMV></om:OMBVAR>
-                 <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMBIND></om:OMOBJ></type>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
        
        
      </constant><opaque format="text">
@@ -23,4 +22,4 @@
                 Graded Algebra of An example of a filtered algebra with basis:
                  the universal enveloping algebra of
                  Lie algebra of RR^3 with cross product over Integer Ring
-            </opaque></document></theory></omdoc>
+            </opaque></omdoc></theory></omdoc>

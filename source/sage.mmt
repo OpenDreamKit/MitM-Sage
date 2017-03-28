@@ -1,9 +1,95 @@
-namespace http://www.sagemath.org/ 
+namespace http://www.sagemath.org/
 
-theory Types : ur:?LF =
+import MitM http://mathhub.info/MitM/
+
+theory Types : ur:?PLF =
 	object : type 
 	prop : type 
 	ded : prop → type  ## ⊦ 1 
 	structural : type 
 	structureof : structural → type  ## ≤ 1 
+
+
+//   For convenience, a theory that includes the possibility of doing FromTheory 
+	
+theory Convenient = 
+  include ur:?PLF 
+  include MitM:Foundation?Math 
+
+	
+theory PythonBasicTypes : ?Convenient =  
+  python_type : type 
+  pyMMT : python_type → type  
+  pysequence : python_type → python_type 
+  pystr : python_type 
+  pyint : python_type 
+  pyfloat : python_type 
+  pytype : python_type 
+  pylist : python_type  
+  pydict: python_type
+
+
+theory PythonFunction : ?Convenient = 
+  include ?PythonBasicTypes 
+  pyfunction : python_type → type 
+  pyfunction_type : python_type → python_type → python_type  # 1 ==> 2 
+  magic_function : python_type → type 
+
+
+theory PythonClass : ?Convenient = 
+  include ?PythonBasicTypes 
+  theory PythonClassTheory =
+    // superclasses : list (pyMMT pyclass) 
+    // every python class has a list of superclasses 
+    docstring : pyMMT pystr 
+    name : pyMMT pystr 
+    // methods : list pyMMT pyfunction 
+    // every python class has a list of methods, which are functions 
+  
+  FromTheory pyclass : PythonClassTheory 
+  
+
+theory PythonUnknownType : ?Convenient = 
+  include ?PythonBasicTypes 
+  pyunknown : python_type 
+
+  
+theory Python : ?Convenient = 
+  include ?PythonBasicTypes 
+  include ?PythonFunction 
+  include ?PythonClass 
+  include ?PythonUnknownType 
+  
+  
+theory Sage : ?Python = 
+  sage_type : type 
+  sageMMT : sage_type → type 
+  sagepy : sage_type → python_type
+ 
+
+
+
+
+theory group.FiniteGroup : ?Sage = 
+
+
+theory PermutationGroup_generic : ?Sage =
+  include ?group.FiniteGroup 
+  init: pyfunction (pyunknown ==> pyunknown) 
+  // def __init__(self, gens=None, gap_group=None, canonicalize=True, domain=None, category=None): 
+
+
+
+theory CachedRepresentation : ?Sage = 
+
+  
+theory PermutationGroup_unique : ?Sage =
+  include ?CachedRepresentation 
+  include ?PermutationGroup_generic 
+
+
+theory TransitiveGroup : ?Sage =
+  include ?PermutationGroup_unique 
+  init: magic_function (pyunknown ==> pyunknown) 
+  init2 : type  = ((pyMMT pyunknown) → pyMMT pyunknown) 
 

@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/categories/mmt/Finite?GAP
+HasMeta http://www.sagemath.org/content/categories/mmt/Finite?GAP http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/mmt/Finite?GAP http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/mmt/Finite?GAP http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/mmt/Finite?GAP http://www.sagemath.org/content/categories/finite_sets?FiniteSets
+Includes http://www.sagemath.org/content/categories/mmt/Finite?GAP http://www.sagemath.org/content/categories/mmt/Sets?GAP

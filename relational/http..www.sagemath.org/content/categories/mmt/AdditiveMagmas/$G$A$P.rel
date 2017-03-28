@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/categories/mmt/AdditiveMagmas?GAP
+HasMeta http://www.sagemath.org/content/categories/mmt/AdditiveMagmas?GAP http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveMagmas?GAP http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveMagmas?GAP http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveMagmas?GAP http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveMagmas?GAP http://www.sagemath.org/content/categories/mmt/Sets?GAP
