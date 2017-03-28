@@ -7,7 +7,7 @@ EXAMPLES::
     sage: e = Exporter()
     sage: e.harvest_sage_object(TransitiveGroups())
     sage: e.harvest_sage_object(TransitiveGroup(4,1))
-    sage: e.harvest_sage_object(TransitiveGroup(4,1).an_element)
+    sage: e.harvest_sage_object(TransitiveGroup(4,1).an_element())
     sage: e.save('transitive_groups.json')
 
 ..  TODO::

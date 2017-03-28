@@ -60,7 +60,7 @@
                     },
                     "__iter__": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method __iter__ at 0x7f974dffdc08>",
+                        "__imfunc__": "<abstract method __iter__ at 0x7faa353be9b0>",
                         "args": [
                             "self"
                         ],
@@ -917,9 +917,9 @@
             "structure": [
                 "sage.categories.magmas.Magmas.Unital",
                 "sage.categories.magmas.Magmas",
-                "sage.categories.permutation_groups.PermutationGroups",
+                "sage.categories.sets_with_partial_maps.SetsWithPartialMaps",
                 "sage.categories.sets_cat.Sets",
-                "sage.categories.sets_with_partial_maps.SetsWithPartialMaps"
+                "sage.categories.permutation_groups.PermutationGroups"
             ],
             "subcategory_class": {
                 "__doc__": "\n    The category of finite permutation groups, i.e. groups concretely\n    represented as groups of permutations acting on a finite set.\n\n    It is currently assumed that any finite permutation group comes\n    endowed with a distinguished finite set of generators (method\n    ``group_generators``); this is the case for all the existing\n    implementations in Sage.\n\n    EXAMPLES::\n\n        sage: C = PermutationGroups().Finite(); C\n        Category of finite enumerated permutation groups\n        sage: C.super_categories()\n        [Category of permutation groups,\n         Category of finite groups,\n         Category of finite finitely generated semigroups]\n\n        sage: C.example()\n        Dihedral group of order 6 as a permutation group\n\n    TESTS::\n\n        sage: C is FinitePermutationGroups()\n        True\n        sage: TestSuite(C).run()\n\n        sage: G = FinitePermutationGroups().example()\n        sage: TestSuite(G).run(verbose = True)\n        running ._test_an_element() . . . pass\n        running ._test_associativity() . . . pass\n        running ._test_cardinality() . . . pass\n        running ._test_category() . . . pass\n        running ._test_elements() . . .\n          Running the test suite of self.an_element()\n          running ._test_category() . . . pass\n          running ._test_eq() . . . pass\n          running ._test_new() . . . pass\n          running ._test_not_implemented_methods() . . . pass\n          running ._test_pickling() . . . pass\n          pass\n        running ._test_elements_eq_reflexive() . . . pass\n        running ._test_elements_eq_symmetric() . . . pass\n        running ._test_elements_eq_transitive() . . . pass\n        running ._test_elements_neq() . . . pass\n        running ._test_enumerated_set_contains() . . . pass\n        running ._test_enumerated_set_iter_cardinality() . . . pass\n        running ._test_enumerated_set_iter_list() . . . pass\n        running ._test_eq() . . . pass\n        running ._test_inverse() . . . pass\n        running ._test_new() . . . pass\n        running ._test_not_implemented_methods() . . . pass\n        running ._test_one() . . . pass\n        running ._test_pickling() . . . pass\n        running ._test_prod() . . . pass\n        running ._test_some_elements() . . . pass\n    ",
@@ -974,7 +974,7 @@
                     },
                     "isomorphism_transformation_monoid": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method isomorphism_transformation_monoid at 0x7f974e00caa0>",
+                        "__imfunc__": "<abstract method isomorphism_transformation_monoid at 0x7faa353cf848>",
                         "args": [
                             "self"
                         ],
@@ -1083,7 +1083,7 @@
                 "methods": {
                     "list": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method list at 0x7f974dffd758>",
+                        "__imfunc__": "<abstract method list at 0x7faa353be500>",
                         "args": [
                             "self"
                         ],
@@ -1401,7 +1401,7 @@
                     },
                     "group_generators": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method group_generators at 0x7f974e00cc80>",
+                        "__imfunc__": "<abstract method group_generators at 0x7faa353cfa28>",
                         "args": [
                             "self"
                         ],
@@ -1433,7 +1433,7 @@
                     },
                     "is_abelian": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method is_abelian at 0x7f974e00cb90>",
+                        "__imfunc__": "<abstract method is_abelian at 0x7faa353cf938>",
                         "args": [
                             "self"
                         ],
@@ -1555,7 +1555,7 @@
                 "methods": {
                     "_mul_": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method _mul_ at 0x7f983de15938>",
+                        "__imfunc__": "<abstract method _mul_ at 0x7fab251e79b0>",
                         "args": [
                             "self",
                             "other"
@@ -1831,7 +1831,7 @@
                 "methods": {
                     "__invert__": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method __invert__ at 0x7f974e002410>",
+                        "__imfunc__": "<abstract method __invert__ at 0x7faa353c21b8>",
                         "args": [
                             "self"
                         ],
@@ -1912,7 +1912,7 @@
                     },
                     "one": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method one at 0x7f974e002398>",
+                        "__imfunc__": "<abstract method one at 0x7faa353c2140>",
                         "args": [
                             "self"
                         ],
@@ -2098,7 +2098,7 @@
                     },
                     "monoid_generators": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method monoid_generators at 0x7f974e00c8c0>",
+                        "__imfunc__": "<abstract method monoid_generators at 0x7faa353cf668>",
                         "args": [
                             "self"
                         ],
@@ -2370,7 +2370,7 @@
                 "methods": {
                     "__truediv__": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method __truediv__ at 0x7f974e00c050>",
+                        "__imfunc__": "<abstract method __truediv__ at 0x7faa353c2d70>",
                         "args": [
                             "self",
                             "relations"
@@ -2434,7 +2434,7 @@
                     },
                     "is_d_trivial": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method is_d_trivial at 0x7f974e00c1b8>",
+                        "__imfunc__": "<abstract method is_d_trivial at 0x7faa353c2ed8>",
                         "args": [
                             "self"
                         ],
@@ -2452,7 +2452,7 @@
                     },
                     "is_l_trivial": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method is_l_trivial at 0x7f974e00c0c8>",
+                        "__imfunc__": "<abstract method is_l_trivial at 0x7faa353c2de8>",
                         "args": [
                             "self"
                         ],
@@ -2470,7 +2470,7 @@
                     },
                     "is_r_trivial": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method is_r_trivial at 0x7f974e00c140>",
+                        "__imfunc__": "<abstract method is_r_trivial at 0x7faa353c2e60>",
                         "args": [
                             "self"
                         ],
@@ -2539,7 +2539,7 @@
                     },
                     "semigroup_generators": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method semigroup_generators at 0x7f974e002ed8>",
+                        "__imfunc__": "<abstract method semigroup_generators at 0x7faa353c2c80>",
                         "args": [
                             "self"
                         ],
@@ -2767,7 +2767,7 @@
                     },
                     "_an_element_": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method _an_element_ at 0x7f974dffd578>",
+                        "__imfunc__": "<abstract method _an_element_ at 0x7faa353be320>",
                         "args": [
                             "self"
                         ],
@@ -2951,7 +2951,7 @@
                     },
                     "cardinality": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method cardinality at 0x7f974dffd500>",
+                        "__imfunc__": "<abstract method cardinality at 0x7faa353be2a8>",
                         "args": [
                             "self"
                         ],
@@ -2979,7 +2979,7 @@
                     },
                     "is_finite": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method is_finite at 0x7f974dffd410>",
+                        "__imfunc__": "<abstract method is_finite at 0x7faa353be1b8>",
                         "args": [
                             "self"
                         ],
@@ -3013,7 +3013,7 @@
                     },
                     "random_element": {
                         "__doc__": null,
-                        "__imfunc__": "<abstract method random_element at 0x7f974dffd5f0>",
+                        "__imfunc__": "<abstract method random_element at 0x7faa353be398>",
                         "args": [
                             "self"
                         ],
@@ -3359,27 +3359,6 @@
         }
     },
     "classes": {
-        "__builtin__.builtin_function_or_method": {
-            "__doc__": "<attribute '__doc__' of 'builtin_function_or_method' objects>",
-            "implied": [],
-            "methods": {
-                "__cmp__": {
-                    "__doc__": "x.__cmp__(y) <==> cmp(x,y)",
-                    "args": [
-                        "y"
-                    ],
-                    "argspec": [
-                        [
-                            "y"
-                        ],
-                        null,
-                        null,
-                        null
-                    ]
-                }
-            },
-            "name": "__builtin__.builtin_function_or_method"
-        },
         "sage.categories.enumerated_sets.EnumeratedSets.element_class": {
             "__doc__": null,
             "implied": [],
@@ -3429,7 +3408,7 @@
                 },
                 "__iter__": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method __iter__ at 0x7f974dffdc08>",
+                    "__imfunc__": "<abstract method __iter__ at 0x7faa353be9b0>",
                     "args": [
                         "self"
                     ],
@@ -4216,7 +4195,7 @@
                 },
                 "isomorphism_transformation_monoid": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method isomorphism_transformation_monoid at 0x7f974e00caa0>",
+                    "__imfunc__": "<abstract method isomorphism_transformation_monoid at 0x7faa353cf848>",
                     "args": [
                         "self"
                     ],
@@ -4307,7 +4286,7 @@
             "methods": {
                 "list": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method list at 0x7f974dffd758>",
+                    "__imfunc__": "<abstract method list at 0x7faa353be500>",
                     "args": [
                         "self"
                     ],
@@ -4542,7 +4521,7 @@
                 },
                 "group_generators": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method group_generators at 0x7f974e00cc80>",
+                    "__imfunc__": "<abstract method group_generators at 0x7faa353cfa28>",
                     "args": [
                         "self"
                     ],
@@ -4574,7 +4553,7 @@
                 },
                 "is_abelian": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method is_abelian at 0x7f974e00cb90>",
+                    "__imfunc__": "<abstract method is_abelian at 0x7faa353cf938>",
                     "args": [
                         "self"
                     ],
@@ -4690,7 +4669,7 @@
             "methods": {
                 "__invert__": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method __invert__ at 0x7f974e002410>",
+                    "__imfunc__": "<abstract method __invert__ at 0x7faa353c21b8>",
                     "args": [
                         "self"
                     ],
@@ -4765,7 +4744,7 @@
                 },
                 "one": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method one at 0x7f974e002398>",
+                    "__imfunc__": "<abstract method one at 0x7faa353c2140>",
                     "args": [
                         "self"
                     ],
@@ -4813,7 +4792,7 @@
             "methods": {
                 "_mul_": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method _mul_ at 0x7f983de15938>",
+                    "__imfunc__": "<abstract method _mul_ at 0x7fab251e79b0>",
                     "args": [
                         "self",
                         "other"
@@ -5144,7 +5123,7 @@
                 },
                 "monoid_generators": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method monoid_generators at 0x7f974e00c8c0>",
+                    "__imfunc__": "<abstract method monoid_generators at 0x7faa353cf668>",
                     "args": [
                         "self"
                     ],
@@ -5365,7 +5344,7 @@
             "methods": {
                 "__truediv__": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method __truediv__ at 0x7f974e00c050>",
+                    "__imfunc__": "<abstract method __truediv__ at 0x7faa353c2d70>",
                     "args": [
                         "self",
                         "relations"
@@ -5429,7 +5408,7 @@
                 },
                 "is_d_trivial": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method is_d_trivial at 0x7f974e00c1b8>",
+                    "__imfunc__": "<abstract method is_d_trivial at 0x7faa353c2ed8>",
                     "args": [
                         "self"
                     ],
@@ -5447,7 +5426,7 @@
                 },
                 "is_l_trivial": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method is_l_trivial at 0x7f974e00c0c8>",
+                    "__imfunc__": "<abstract method is_l_trivial at 0x7faa353c2de8>",
                     "args": [
                         "self"
                     ],
@@ -5465,7 +5444,7 @@
                 },
                 "is_r_trivial": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method is_r_trivial at 0x7f974e00c140>",
+                    "__imfunc__": "<abstract method is_r_trivial at 0x7faa353c2e60>",
                     "args": [
                         "self"
                     ],
@@ -5534,7 +5513,7 @@
                 },
                 "semigroup_generators": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method semigroup_generators at 0x7f974e002ed8>",
+                    "__imfunc__": "<abstract method semigroup_generators at 0x7faa353c2c80>",
                     "args": [
                         "self"
                     ],
@@ -5785,7 +5764,7 @@
                 },
                 "_an_element_": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method _an_element_ at 0x7f974dffd578>",
+                    "__imfunc__": "<abstract method _an_element_ at 0x7faa353be320>",
                     "args": [
                         "self"
                     ],
@@ -5969,7 +5948,7 @@
                 },
                 "cardinality": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method cardinality at 0x7f974dffd500>",
+                    "__imfunc__": "<abstract method cardinality at 0x7faa353be2a8>",
                     "args": [
                         "self"
                     ],
@@ -5997,7 +5976,7 @@
                 },
                 "is_finite": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method is_finite at 0x7f974dffd410>",
+                    "__imfunc__": "<abstract method is_finite at 0x7faa353be1b8>",
                     "args": [
                         "self"
                     ],
@@ -6031,7 +6010,7 @@
                 },
                 "random_element": {
                     "__doc__": null,
-                    "__imfunc__": "<abstract method random_element at 0x7f974dffd5f0>",
+                    "__imfunc__": "<abstract method random_element at 0x7faa353be398>",
                     "args": [
                         "self"
                     ],
@@ -7865,6 +7844,339 @@
             },
             "name": "sage.groups.perm_gps.permgroup.PermutationGroup_generic"
         },
+        "sage.groups.perm_gps.permgroup_element.PermutationGroupElement": {
+            "__doc__": "PermutationGroupElement(g, parent=None, check=True)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 258)\n\n    An element of a permutation group.\n\n    EXAMPLES::\n\n        sage: G = PermutationGroup(['(1,2,3)(4,5)'])\n        sage: G\n        Permutation Group with generators [(1,2,3)(4,5)]\n        sage: g = G.random_element()\n        sage: g in G\n        True\n        sage: g = G.gen(0); g\n        (1,2,3)(4,5)\n        sage: print(g)\n        (1,2,3)(4,5)\n        sage: g*g\n        (1,3,2)\n        sage: g**(-1)\n        (1,3,2)(4,5)\n        sage: g**2\n        (1,3,2)\n        sage: G = PermutationGroup([(1,2,3)])\n        sage: g = G.gen(0); g\n        (1,2,3)\n        sage: g.order()\n        3\n\n    This example illustrates how permutations act on multivariate\n    polynomials.\n\n    ::\n\n        sage: R = PolynomialRing(RationalField(), 5, [\"x\",\"y\",\"z\",\"u\",\"v\"])\n        sage: x, y, z, u, v = R.gens()\n        sage: f = x**2 - y**2 + 3*z**2\n        sage: G = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])\n        sage: sigma = G.gen(0)\n        sage: f * sigma\n        3*x^2 + y^2 - z^2\n    ",
+            "implied": [
+                "sage.structure.element.MultiplicativeGroupElement"
+            ],
+            "methods": {
+                "__getitem__": {
+                    "__doc__": "File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 601)\n\n        Return the ith permutation cycle in the disjoint cycle\n        representation of self.\n\n        INPUT:\n\n\n        -  ``i`` - integer\n\n\n        OUTPUT: a permutation group element\n\n        EXAMPLES::\n\n            sage: G = PermutationGroup([[(1,2,3),(4,5)]],5)\n            sage: g = G.gen(0)\n            sage: g[0]\n            (1,2,3)\n            sage: g[1]\n            (4,5)\n        ",
+                    "args": [
+                        "self",
+                        "i"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "i"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_act_on_array_on_position": {
+                    "__doc__": "PermutationGroupElement._act_on_array_on_position(self, ClonableIntArray x) -> ClonableIntArray\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 763)\n\n        Returns the right action of ``self`` on the ClonableIntArray\n        ``x``. This is the action on positions.\n\n        EXAMPLES::\n\n            sage: from sage.structure.list_clone_demo import IncreasingIntArrays\n            sage: v = IncreasingIntArrays()([1,2,3,4])\n            sage: G = PermutationGroup([[(1,2,3,4)]])\n            sage: id = G.identity()\n            sage: id._act_on_array_on_position(v)\n            [1, 2, 3, 4]\n        ",
+                    "args": [
+                        "self",
+                        "x"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "x"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_act_on_list_on_position": {
+                    "__doc__": "PermutationGroupElement._act_on_list_on_position(self, list x) -> list\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 735)\n\n        Returns the right action of ``self`` on the list ``x``. This is the\n        action on positions.\n\n        EXAMPLES::\n\n            sage: G = PermutationGroup([[(1,2,3,4,5,6)]])\n            sage: p = G.gen()^2; p\n            (1,3,5)(2,4,6)\n            sage: p._act_on_list_on_position([1,2,3,4,5,6])\n            [3, 4, 5, 6, 1, 2]\n            sage: p._act_on_list_on_position(['a','b','c','d','e','f'])\n            ['c', 'd', 'e', 'f', 'a', 'b']\n            sage: p._act_on_list_on_position(['c','d','e','f','a','b'])\n            ['e', 'f', 'a', 'b', 'c', 'd']\n            sage: p._act_on_list_on_position([])\n            Traceback (most recent call last):\n            ...\n            AssertionError: (1,3,5)(2,4,6) and [] should have the same length\n            sage: p._act_on_list_on_position([1,2,3,4,5,6,7])\n            Traceback (most recent call last):\n            ...\n            AssertionError: (1,3,5)(2,4,6) and [1, 2, 3, 4, 5, 6, 7] should have the same length\n        ",
+                    "args": [
+                        "self",
+                        "x"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "x"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_gap_cycle_string": {
+                    "__doc__": "PermutationGroupElement._gap_cycle_string(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 908)\n\n        Returns a cycle string for this permutation compatible with\n        the GAP numbering.\n\n        EXAMPLES::\n\n            sage: S = SymmetricGroup(3)\n            sage: s = S.gen(0); s\n            (1,2,3)\n            sage: s._gap_cycle_string()\n            '(1,2,3)'\n\n        ::\n\n            sage: S = SymmetricGroup(['a', 'b', 'c'])\n            sage: s = S.gen(0); s\n            ('a','b','c')\n            sage: s._gap_cycle_string()\n            '(1,2,3)'\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_gap_list": {
+                    "__doc__": "PermutationGroupElement._gap_list(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 884)\n\n        Returns this permutation in list notation compatible with the\n        GAP numbering.\n\n        EXAMPLES::\n\n            sage: S = SymmetricGroup(3)\n            sage: s = S.gen(0); s\n            (1,2,3)\n            sage: s._gap_list()\n            [2, 3, 1]\n\n        ::\n\n            sage: S = SymmetricGroup(['a', 'b', 'c'])\n            sage: s = S.gen(0); s\n            ('a','b','c')\n            sage: s._gap_list()\n            [2, 3, 1]\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_latex_": {
+                    "__doc__": "PermutationGroupElement._latex_(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 584)\n\n        Returns a latex representation of this permutation.\n\n        EXAMPLES::\n\n            sage: g = PermutationGroupElement([(1,2,3),(4,5)])\n            sage: latex(g)\n            (1,2,3)(4,5)\n\n            sage: S = SymmetricGroup(['a', 'b'])\n            sage: latex(S.gens())\n            \\left[(\\text{\\texttt{a}},\\text{\\texttt{b}})\\right]\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_mul_": {
+                    "__doc__": "PermutationGroupElement._mul_(left, _right)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 849)\n\n        EXAMPLES::\n\n            sage: S = SymmetricGroup(['a', 'b'])\n            sage: s = S([('a', 'b')]); s\n            ('a','b')\n            sage: s*s\n            ()\n        ",
+                    "args": [
+                        "left",
+                        "_right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "_right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "cycle_string": {
+                    "__doc__": "PermutationGroupElement.cycle_string(self, singletons=False)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1291)\n\n        Return string representation of this permutation.\n\n       EXAMPLES::\n\n            sage: g = PermutationGroupElement([(1,2,3),(4,5)])\n            sage: g.cycle_string()\n            '(1,2,3)(4,5)'\n\n            sage: g = PermutationGroupElement([3,2,1])\n            sage: g.cycle_string(singletons=True)\n            '(1,3)(2)'\n        ",
+                    "args": [
+                        "self",
+                        "singletons"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "singletons"
+                        ],
+                        null,
+                        null,
+                        [
+                            false
+                        ]
+                    ]
+                },
+                "cycle_tuples": {
+                    "__doc__": "PermutationGroupElement.cycle_tuples(self, singletons=False)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1233)\n\n        Return self as a list of disjoint cycles, represented as tuples\n        rather than permutation group elements.\n\n        INPUT:\n\n        - ``singletons`` - boolean (default: False) whether or not consider the\n          cycle that correspond to fixed point\n\n        EXAMPLES::\n\n            sage: p = PermutationGroupElement('(2,6)(4,5,1)')\n            sage: p.cycle_tuples()\n            [(1, 4, 5), (2, 6)]\n            sage: p.cycle_tuples(singletons=True)\n            [(1, 4, 5), (2, 6), (3,)]\n\n        EXAMPLES::\n\n            sage: S = SymmetricGroup(4)\n            sage: S.gen(0).cycle_tuples()\n            [(1, 2, 3, 4)]\n\n        ::\n\n            sage: S = SymmetricGroup(['a','b','c','d'])\n            sage: S.gen(0).cycle_tuples()\n            [('a', 'b', 'c', 'd')]\n            sage: S([('a', 'b'), ('c', 'd')]).cycle_tuples()\n            [('a', 'b'), ('c', 'd')]\n        ",
+                    "args": [
+                        "self",
+                        "singletons"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "singletons"
+                        ],
+                        null,
+                        null,
+                        [
+                            false
+                        ]
+                    ]
+                },
+                "cycle_type": {
+                    "__doc__": "PermutationGroupElement.cycle_type(self, singletons=True, as_list=False)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1310)\n\n        Return the partition that gives the cycle type of ``g`` as an element of\n        ``self``.\n\n        INPUT:\n\n        - ``g`` -- an element of the permutation group ``self.parent()``\n        \n        - ``singletons`` -- ``True`` or ``False`` depending on whether on or not\n          trivial cycles should be counted (default: ``True``)\n\n        - ``as_list`` -- ``True`` or ``False`` depending on whether the cycle\n          type should be returned as a ``list`` or as a class:`Partition` \n          (default: ``False``)\n\n        OUTPUT:\n\n        A class:`Partition`, or `list` if ``is_list`` is ``True``, giving the cycle type of ``g`` \n\n        If speed is a concern then ``as_list=True`` should be used.\n\n        EXAMPLES::\n\n            sage: G = DihedralGroup(3)\n            sage: [g.cycle_type() for g in G]\n            [[1, 1, 1], [2, 1], [3], [2, 1], [3], [2, 1]]\n            sage: PermutationGroupElement('(1,2,3)(4,5)(6,7,8)').cycle_type()\n            [3, 3, 2]\n            sage: G = SymmetricGroup(3); G('(1,2)').cycle_type()\n            [2, 1]\n            sage: G = SymmetricGroup(4); G('(1,2)').cycle_type()\n            [2, 1, 1]\n            sage: G = SymmetricGroup(4); G('(1,2)').cycle_type(singletons=False)\n            [2]\n            sage: G = SymmetricGroup(4); G('(1,2)').cycle_type(as_list=False)\n            [2, 1, 1]\n        ",
+                    "args": [
+                        "self",
+                        "singletons",
+                        "as_list"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "singletons",
+                            "as_list"
+                        ],
+                        null,
+                        null,
+                        [
+                            true,
+                            false
+                        ]
+                    ]
+                },
+                "cycles": {
+                    "__doc__": "PermutationGroupElement.cycles(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1200)\n\n        Return self as a list of disjoint cycles.\n\n        EXAMPLES::\n\n            sage: G = PermutationGroup(['(1,2,3)(4,5,6,7)'])\n            sage: g = G.0\n            sage: g.cycles()\n            [(1,2,3), (4,5,6,7)]\n            sage: a, b = g.cycles()\n            sage: a(1), b(1)\n            (2, 1)\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "dict": {
+                    "__doc__": "PermutationGroupElement.dict(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1019)\n\n        Returns a dictionary associating each element of the domain with its\n        image.\n\n        EXAMPLES::\n\n            sage: G = SymmetricGroup(4)\n            sage: g = G((1,2,3,4)); g\n            (1,2,3,4)\n            sage: v = g.dict(); v\n            {1: 2, 2: 3, 3: 4, 4: 1}\n            sage: type(v[1])\n            <... 'int'>\n            sage: x = G([2,1]); x\n            (1,2)\n            sage: x.dict()\n            {1: 2, 2: 1, 3: 3, 4: 4}\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "domain": {
+                    "__doc__": "PermutationGroupElement.domain(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 932)\n\n        Returns the domain of self.\n\n        EXAMPLES::\n\n            sage: G = SymmetricGroup(4)\n            sage: x = G([2,1,4,3]); x\n            (1,2)(3,4)\n            sage: v = x.domain(); v\n            [2, 1, 4, 3]\n            sage: type(v[0])\n            <... 'int'>\n            sage: x = G([2,1]); x\n            (1,2)\n            sage: x.domain()\n            [2, 1, 3, 4]\n\n        TESTS::\n\n            sage: S = SymmetricGroup(0)\n            sage: x = S.one(); x\n            ()\n            sage: x.domain()\n            []\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "has_descent": {
+                    "__doc__": "PermutationGroupElement.has_descent(self, i, side='right', positive=False)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1356)\n\n        INPUT:\n\n         - ``i``: an element of the index set\n         - ``side``: \"left\" or \"right\" (default: \"right\")\n         - ``positive``: a boolean (default: False)\n\n        Returns whether ``self`` has a left (resp. right) descent at\n        position ``i``. If ``positive`` is True, then test for a non\n        descent instead.\n\n        Beware that, since permutations are acting on the right, the\n        meaning of descents is the reverse of the usual\n        convention. Hence, ``self`` has a left descent at position\n        ``i`` if ``self(i) > self(i+1)``.\n\n        EXAMPLES::\n\n            sage: S = SymmetricGroup([1,2,3])\n            sage: S.one().has_descent(1)\n            False\n            sage: S.one().has_descent(2)\n            False\n            sage: s = S.simple_reflections()\n            sage: x = s[1]*s[2]\n            sage: x.has_descent(1, side = \"right\")\n            False\n            sage: x.has_descent(2, side = \"right\")\n            True\n            sage: x.has_descent(1, side = \"left\")\n            True\n            sage: x.has_descent(2, side = \"left\")\n            False\n            sage: S._test_has_descent()\n\n        The symmetric group acting on a set not of the form\n        `(1,\\dots,n)` is also supported::\n\n            sage: S = SymmetricGroup([2,4,1])\n            sage: s = S.simple_reflections()\n            sage: x = s[2]*s[4]\n            sage: x.has_descent(4)\n            True\n            sage: S._test_has_descent()\n        ",
+                    "args": [
+                        "self",
+                        "i",
+                        "side",
+                        "positive"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "i",
+                            "side",
+                            "positive"
+                        ],
+                        null,
+                        null,
+                        [
+                            "right",
+                            false
+                        ]
+                    ]
+                },
+                "inverse": {
+                    "__doc__": "PermutationGroupElement.inverse(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1088)\n\n        Returns the inverse permutation.\n\n        OUTPUT:\n\n        For an element of a permutation group, this method returns the inverse\n        element, which is both the inverse function and the inverse as an\n        element of a group.\n\n        EXAMPLES::\n\n            sage: s = PermutationGroupElement(\"(1,2,3)(4,5)\")\n            sage: s.inverse()\n            (1,3,2)(4,5)\n\n            sage: A = AlternatingGroup(4)\n            sage: t = A(\"(1,2,3)\")\n            sage: t.inverse()\n            (1,3,2)\n\n        There are several ways (syntactically) to get an inverse\n        of a permutation group element.  ::\n\n            sage: s = PermutationGroupElement(\"(1,2,3,4)(6,7,8)\")\n            sage: s.inverse() == s^-1\n            True\n            sage: s.inverse() == ~s\n            True\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "matrix": {
+                    "__doc__": "PermutationGroupElement.matrix(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1414)\n\n        Returns deg x deg permutation matrix associated to the permutation\n        self\n\n        EXAMPLES::\n\n            sage: G = PermutationGroup(['(1,2,3)(4,5)'])\n            sage: g = G.gen(0)\n            sage: g.matrix()\n            [0 1 0 0 0]\n            [0 0 1 0 0]\n            [1 0 0 0 0]\n            [0 0 0 0 1]\n            [0 0 0 1 0]\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "orbit": {
+                    "__doc__": "PermutationGroupElement.orbit(self, n, bool sorted=True)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1156)\n\n        Returns the orbit of the integer `n` under this group\n        element, as a sorted list.\n\n        EXAMPLES::\n\n            sage: G = PermutationGroup(['(1,2,3)(4,5)'])\n            sage: g = G.gen(0)\n            sage: g.orbit(4)\n            [4, 5]\n            sage: g.orbit(3)\n            [1, 2, 3]\n            sage: g.orbit(10)\n            [10]\n\n        ::\n\n            sage: s = SymmetricGroup(['a', 'b']).gen(0); s\n            ('a','b')\n            sage: s.orbit('a')\n            ['a', 'b']\n        ",
+                    "args": [
+                        "self",
+                        "n",
+                        "sorted"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "n",
+                            "sorted"
+                        ],
+                        null,
+                        null,
+                        [
+                            true
+                        ]
+                    ]
+                },
+                "sign": {
+                    "__doc__": "PermutationGroupElement.sign(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1120)\n\n        Returns the sign of self, which is `(-1)^{s}`, where\n        `s` is the number of swaps.\n\n        EXAMPLES::\n\n            sage: s = PermutationGroupElement('(1,2)(3,5,6)')\n            sage: s.sign()\n            -1\n\n        ALGORITHM: Only even cycles contribute to the sign, thus\n\n        .. MATH::\n\n            sign(sigma) = (-1)^{\\sum_c len(c)-1}\n\n\n        where the sum is over cycles in self.\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "tuple": {
+                    "__doc__": "PermutationGroupElement.tuple(self)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1000)\n\n        Return tuple of images of the domain under self.\n\n        EXAMPLES::\n\n            sage: G = SymmetricGroup(5)\n            sage: s = G([2,1,5,3,4])\n            sage: s.tuple()\n            (2, 1, 5, 3, 4)\n\n            sage: S = SymmetricGroup(['a', 'b'])\n            sage: S.gen().tuple()\n            ('b', 'a')\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "word_problem": {
+                    "__doc__": "PermutationGroupElement.word_problem(self, words, display=True)\nFile: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1437)\n\n        G and H are permutation groups, g in G, H is a subgroup of G\n        generated by a list (words) of elements of G. If g is in H, return\n        the expression for g as a word in the elements of (words).\n\n        This function does not solve the word problem in Sage. Rather it\n        pushes it over to GAP, which has optimized algorithms for the word\n        problem. Essentially, this function is a wrapper for the GAP\n        functions \"EpimorphismFromFreeGroup\" and\n        \"PreImagesRepresentative\".\n\n        EXAMPLES::\n\n            sage: G = PermutationGroup([[(1,2,3),(4,5)],[(3,4)]], canonicalize=False)\n            sage: g1, g2 = G.gens()\n            sage: h = g1^2*g2*g1\n            sage: h.word_problem([g1,g2], False)\n            ('x1^2*x2^-1*x1', '(1,2,3)(4,5)^2*(3,4)^-1*(1,2,3)(4,5)')\n            sage: h.word_problem([g1,g2])\n               x1^2*x2^-1*x1\n               [['(1,2,3)(4,5)', 2], ['(3,4)', -1], ['(1,2,3)(4,5)', 1]]\n            ('x1^2*x2^-1*x1', '(1,2,3)(4,5)^2*(3,4)^-1*(1,2,3)(4,5)')\n        ",
+                    "args": [
+                        "self",
+                        "words",
+                        "display"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "words",
+                            "display"
+                        ],
+                        null,
+                        null,
+                        [
+                            true
+                        ]
+                    ]
+                }
+            },
+            "name": "sage.groups.perm_gps.permgroup_element.PermutationGroupElement"
+        },
         "sage.groups.perm_gps.permgroup_named.PermutationGroup_unique": {
             "__doc__": "\n    .. TODO::\n\n        Fix the broken hash. ::\n\n            sage: G = SymmetricGroup(6)\n            sage: G3 = G.subgroup([G((1,2,3,4,5,6)),G((1,2))])\n            sage: hash(G) == hash(G3)  # todo: Should be True!\n            False\n    ",
             "implied": [
@@ -8442,6 +8754,810 @@
                 }
             },
             "name": "sage.structure.category_object.CategoryObject"
+        },
+        "sage.structure.element.Element": {
+            "__doc__": "Element(parent)\nFile: sage/structure/element.pyx (starting at line 356)\n\n    Generic element of a structure. All other types of elements\n    (:class:`RingElement`, :class:`ModuleElement`, etc)\n    derive from this type.\n\n    Subtypes must either call ``__init__()`` to set ``_parent``, or may\n    set ``_parent`` themselves if that would be more efficient.\n\n    .. automethod:: _cmp_\n    .. automethod:: _richcmp_\n    .. automethod:: __add__\n    .. automethod:: __sub__\n    .. automethod:: __neg__\n    .. automethod:: __mul__\n    .. automethod:: __div__\n    .. automethod:: __truediv__\n    .. automethod:: __floordiv__\n    .. automethod:: __mod__\n    ",
+            "implied": [
+                "sage.structure.sage_object.SageObject"
+            ],
+            "methods": {
+                "N": {
+                    "__doc__": "Deprecated: Use :meth:`n` instead.\nSee :trac:`13055` for details.\n\n",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__add__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1182)\n\n        Top-level addition operator for :class:`Element` invoking\n        the coercion model.\n\n        See :ref:`element_arithmetic`.\n\n        EXAMPLES::\n\n            sage: from sage.structure.element import Element\n            sage: class MyElement(Element):\n            ....:     def _add_(self, other):\n            ....:         return 42\n            sage: e = MyElement(Parent())\n            sage: e + e\n            42\n\n        TESTS::\n\n            sage: e = Element(Parent())\n            sage: e + e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for +: '<type 'sage.structure.parent.Parent'>' and '<type 'sage.structure.parent.Parent'>'\n            sage: 1 + e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for +: 'Integer Ring' and '<type 'sage.structure.parent.Parent'>'\n            sage: e + 1\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for +: '<type 'sage.structure.parent.Parent'>' and 'Integer Ring'\n            sage: int(1) + e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for +: 'int' and 'sage.structure.element.Element'\n            sage: e + int(1)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for +: 'sage.structure.element.Element' and 'int'\n            sage: None + e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for +: 'NoneType' and 'sage.structure.element.Element'\n            sage: e + None\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for +: 'sage.structure.element.Element' and 'NoneType'\n        ",
+                    "args": [
+                        "left",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__cmp__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1000)\n\n        Compare ``left`` and ``right`` using the coercion framework.\n\n        ``self`` and ``other`` are coerced to a common parent and then\n        ``_cmp_`` and ``_richcmp_`` are tried.\n\n        EXAMPLES:\n\n        We create an ``Element`` class where we define ``_richcmp_``\n        and check that comparison works::\n\n            sage: cython('''\n            ....: from sage.structure.sage_object cimport rich_to_bool\n            ....: from sage.structure.element cimport Element\n            ....: cdef class FloatCmp(Element):\n            ....:     cdef float x\n            ....:     def __init__(self, float v):\n            ....:         self.x = v\n            ....:     cpdef _richcmp_(self, other, int op):\n            ....:         cdef float x1 = (<FloatCmp>self).x\n            ....:         cdef float x2 = (<FloatCmp>other).x\n            ....:         return rich_to_bool(op, (x1 > x2) - (x1 < x2) )\n            ....: ''')\n            sage: a = FloatCmp(1)\n            sage: b = FloatCmp(2)\n            sage: cmp(a, b)\n            -1\n            sage: b.__cmp__(a)\n            1\n            sage: a <= b, b <= a\n            (True, False)\n\n        This works despite ``_cmp_`` not being implemented::\n\n            sage: a._cmp_(b)\n            Traceback (most recent call last):\n            ...\n            NotImplementedError: comparison not implemented for <type '...FloatCmp'>\n        ",
+                    "args": [
+                        "self",
+                        "other"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "other"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__copy__": {
+                    "__doc__": "Element.__copy__(self)\nFile: sage/structure/element.pyx (starting at line 538)\n\n        Return a copy of ``self``.\n\n        OUTPUT:\n\n          - a new object which is a copy of ``self``.\n\n        This implementation ensures that ``self.__dict__`` is properly copied\n        when it exists (typically for instances of classes deriving from\n        :class:`Element`).\n\n        TESTS::\n\n            sage: from sage.structure.element import Element\n            sage: el = Element(parent = ZZ)\n            sage: el1 = copy(el)\n            sage: el1 is el\n            False\n\n            sage: class Demo(Element): pass\n            sage: el = Demo(parent = ZZ)\n            sage: el.x = [1,2,3]\n            sage: el1 = copy(el)\n            sage: el1 is el\n            False\n            sage: el1.__dict__ is el.__dict__\n            False\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__dir__": {
+                    "__doc__": "Element.__dir__(self)\nFile: sage/structure/element.pyx (starting at line 474)\n\n        Let cat be the category of the parent of ``self``. This method\n        emulates ``self`` being an instance of both ``Element`` and\n        ``cat.element_class``, in that order, for attribute directory.\n\n        EXAMPLES::\n\n            sage: dir(1/2)\n            ['N', ..., 'is_idempotent', 'is_integer', 'is_integral', ...]\n\n        Caveat: dir on Integer's and some other extension types seem to ignore __dir__::\n\n            sage: 1.__dir__()\n            ['N', ..., 'is_idempotent', 'is_integer', 'is_integral', ...]\n            sage: dir(1)         # todo: not implemented\n            ['N', ..., 'is_idempotent', 'is_integer', 'is_integral', ...]\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__div__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1576)\n\n        Top-level division operator for :class:`Element` invoking\n        the coercion model.\n\n        See :ref:`element_arithmetic`.\n\n        EXAMPLES::\n\n            sage: 2 / 3\n            2/3\n            sage: pi / 3\n            1/3*pi\n            sage: K.<i> = NumberField(x^2+1)\n            sage: 2 / K.ideal(i+1)\n            Fractional ideal (-i + 1)\n\n        ::\n\n            sage: from sage.structure.element import Element\n            sage: class MyElement(Element):\n            ....:     def _div_(self, other):\n            ....:         return 42\n            sage: e = MyElement(Parent())\n            sage: e / e\n            42\n\n        TESTS::\n\n            sage: e = Element(Parent())\n            sage: e / e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for /: '<type 'sage.structure.parent.Parent'>' and '<type 'sage.structure.parent.Parent'>'\n            sage: 1 / e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for /: 'Integer Ring' and '<type 'sage.structure.parent.Parent'>'\n            sage: e / 1\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for /: '<type 'sage.structure.parent.Parent'>' and 'Integer Ring'\n            sage: int(1) / e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for /: 'int' and 'sage.structure.element.Element'\n            sage: e / int(1)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for /: 'sage.structure.element.Element' and 'int'\n            sage: None / e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for /: 'NoneType' and 'sage.structure.element.Element'\n            sage: e / None\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for /: 'sage.structure.element.Element' and 'NoneType'\n        ",
+                    "args": [
+                        "left",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__floordiv__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1749)\n\n        Top-level floor division operator for :class:`Element` invoking\n        the coercion model.\n\n        See :ref:`element_arithmetic`.\n\n        EXAMPLES::\n\n            sage: 7 // 3\n            2\n            sage: 7 // int(3)\n            2\n            sage: int(7) // 3\n            2\n\n        ::\n\n            sage: from sage.structure.element import Element\n            sage: class MyElement(Element):\n            ....:     def _floordiv_(self, other):\n            ....:         return 42\n            sage: e = MyElement(Parent())\n            sage: e // e\n            42\n\n        TESTS::\n\n            sage: e = Element(Parent())\n            sage: e // e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for //: '<type 'sage.structure.parent.Parent'>' and '<type 'sage.structure.parent.Parent'>'\n            sage: 1 // e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for //: 'Integer Ring' and '<type 'sage.structure.parent.Parent'>'\n            sage: e // 1\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for //: '<type 'sage.structure.parent.Parent'>' and 'Integer Ring'\n            sage: int(1) // e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for //: 'int' and 'sage.structure.element.Element'\n            sage: e // int(1)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for //: 'sage.structure.element.Element' and 'int'\n            sage: None // e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for //: 'NoneType' and 'sage.structure.element.Element'\n            sage: e // None\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for //: 'sage.structure.element.Element' and 'NoneType'\n        ",
+                    "args": [
+                        "left",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__getmetaclass__": {
+                    "__doc__": "Element.__getmetaclass__(_)\nFile: sage/structure/element.pyx (starting at line 376)",
+                    "args": [
+                        "_"
+                    ],
+                    "argspec": [
+                        [
+                            "_"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__getstate__": {
+                    "__doc__": "Element.__getstate__(self)\nFile: sage/structure/element.pyx (starting at line 498)\n\n        Return a tuple describing the state of your object.\n\n        This should return all information that will be required to unpickle\n        the object. The functionality for unpickling is implemented in\n        __setstate__().\n\n        TESTS::\n\n            sage: R.<x,y> = QQ[]\n            sage: i = ideal(x^2 - y^2 + 1)\n            sage: i.__getstate__()\n            (Monoid of ideals of Multivariate Polynomial Ring in x, y over Rational Field,\n             {'_Ideal_generic__gens': (x^2 - y^2 + 1,),\n              '_Ideal_generic__ring': Multivariate Polynomial Ring in x, y over Rational Field,\n              '_gb_by_ordering': {}})\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__mod__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1849)\n\n        Top-level modulo operator for :class:`Element` invoking\n        the coercion model.\n\n        See :ref:`element_arithmetic`.\n\n        EXAMPLES::\n\n            sage: 7 % 3\n            1\n            sage: 7 % int(3)\n            1\n            sage: int(7) % 3\n            1\n\n        ::\n\n            sage: from sage.structure.element import Element\n            sage: class MyElement(Element):\n            ....:     def _mod_(self, other):\n            ....:         return 42\n            sage: e = MyElement(Parent())\n            sage: e % e\n            42\n\n        TESTS::\n\n            sage: e = Element(Parent())\n            sage: e % e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for %: '<type 'sage.structure.parent.Parent'>' and '<type 'sage.structure.parent.Parent'>'\n            sage: 1 % e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for %: 'Integer Ring' and '<type 'sage.structure.parent.Parent'>'\n            sage: e % 1\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for %: '<type 'sage.structure.parent.Parent'>' and 'Integer Ring'\n            sage: int(1) % e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for %: 'int' and 'sage.structure.element.Element'\n            sage: e % int(1)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for %: 'sage.structure.element.Element' and 'int'\n            sage: None % e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for %: 'NoneType' and 'sage.structure.element.Element'\n            sage: e % None\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for %: 'sage.structure.element.Element' and 'NoneType'\n        ",
+                    "args": [
+                        "left",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__mul__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1448)\n\n        Top-level multiplication operator for :class:`Element` invoking\n        the coercion model.\n\n        See :ref:`element_arithmetic`.\n\n        EXAMPLES::\n\n            sage: from sage.structure.element import Element\n            sage: class MyElement(Element):\n            ....:     def _mul_(self, other):\n            ....:         return 42\n            sage: e = MyElement(Parent())\n            sage: e * e\n            42\n\n        TESTS::\n\n            sage: e = Element(Parent())\n            sage: e * e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for *: '<type 'sage.structure.parent.Parent'>' and '<type 'sage.structure.parent.Parent'>'\n            sage: 1 * e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for *: 'Integer Ring' and '<type 'sage.structure.parent.Parent'>'\n            sage: e * 1\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for *: '<type 'sage.structure.parent.Parent'>' and 'Integer Ring'\n            sage: int(1) * e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for *: 'int' and 'sage.structure.element.Element'\n            sage: e * int(1)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for *: 'sage.structure.element.Element' and 'int'\n            sage: None * e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for *: 'NoneType' and 'sage.structure.element.Element'\n            sage: e * None\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for *: 'sage.structure.element.Element' and 'NoneType'\n\n        ::\n\n            sage: A = AlgebrasWithBasis(QQ).example(); A\n            An example of an algebra with basis: the free algebra\n            on the generators ('a', 'b', 'c') over Rational Field\n            sage: x = A.an_element()\n            sage: x\n            B[word: ] + 2*B[word: a] + 3*B[word: b] + B[word: bab]\n            sage: x.__mul__(x)\n            B[word: ] + 4*B[word: a] + 4*B[word: aa] + 6*B[word: ab]\n            + 2*B[word: abab] + 6*B[word: b] + 6*B[word: ba]\n            + 2*B[word: bab] + 2*B[word: baba] + 3*B[word: babb]\n            + B[word: babbab] + 9*B[word: bb] + 3*B[word: bbab]\n        ",
+                    "args": [
+                        "left",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__neg__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1394)\n\n        Top-level negation operator for :class:`Element`.\n\n        EXAMPLES::\n\n            sage: from sage.structure.element import Element\n            sage: class MyElement(Element):\n            ....:     def _neg_(self):\n            ....:         return 42\n            sage: e = MyElement(Parent())\n            sage: -e\n            42\n\n        TESTS::\n\n            sage: e = Element(Parent())\n            sage: -e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent for unary -: '<type 'sage.structure.parent.Parent'>'\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__nonzero__": {
+                    "__doc__": "x.__nonzero__() <==> x != 0",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__pos__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 922)",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__radd__": {
+                    "__doc__": "x.__radd__(y) <==> y+x",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__rdiv__": {
+                    "__doc__": "x.__rdiv__(y) <==> y/x",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__rfloordiv__": {
+                    "__doc__": "x.__rfloordiv__(y) <==> y//x",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__rmod__": {
+                    "__doc__": "x.__rmod__(y) <==> y%x",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__rmul__": {
+                    "__doc__": "x.__rmul__(y) <==> y*x",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__rsub__": {
+                    "__doc__": "x.__rsub__(y) <==> y-x",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__rtruediv__": {
+                    "__doc__": "x.__rtruediv__(y) <==> y/x",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__rxor__": {
+                    "__doc__": "x.__rxor__(y) <==> y^x",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "__setstate__": {
+                    "__doc__": "Element.__setstate__(self, state)\nFile: sage/structure/element.pyx (starting at line 518)\n\n        Initializes the state of the object from data saved in a pickle.\n\n        During unpickling __init__ methods of classes are not called, the saved\n        data is passed to the class via this function instead.\n\n        TESTS::\n\n            sage: R.<x,y> = QQ[]\n            sage: i = ideal(x); i\n            Ideal (x) of Multivariate Polynomial Ring in x, y over Rational Field\n            sage: S.<x,y,z> = ZZ[]\n            sage: i.__setstate__((R,{'_Ideal_generic__ring':S,'_Ideal_generic__gens': (S(x^2 - y^2 + 1),)}))\n            sage: i\n            Ideal (x^2 - y^2 + 1) of Multivariate Polynomial Ring in x, y, z over Integer Ring\n        ",
+                    "args": [
+                        "self",
+                        "state"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "state"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__sub__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1303)\n\n        Top-level subtraction operator for :class:`Element` invoking\n        the coercion model.\n\n        See :ref:`element_arithmetic`.\n\n        EXAMPLES::\n\n            sage: from sage.structure.element import Element\n            sage: class MyElement(Element):\n            ....:     def _sub_(self, other):\n            ....:         return 42\n            sage: e = MyElement(Parent())\n            sage: e - e\n            42\n\n        TESTS::\n\n            sage: e = Element(Parent())\n            sage: e - e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for -: '<type 'sage.structure.parent.Parent'>' and '<type 'sage.structure.parent.Parent'>'\n            sage: 1 - e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for -: 'Integer Ring' and '<type 'sage.structure.parent.Parent'>'\n            sage: e - 1\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for -: '<type 'sage.structure.parent.Parent'>' and 'Integer Ring'\n            sage: int(1) - e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for -: 'int' and 'sage.structure.element.Element'\n            sage: e - int(1)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for -: 'sage.structure.element.Element' and 'int'\n            sage: None - e\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for -: 'NoneType' and 'sage.structure.element.Element'\n            sage: e - None\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for -: 'sage.structure.element.Element' and 'NoneType'\n        ",
+                    "args": [
+                        "left",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__truediv__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 1647)\n\n        Top-level true division operator for :class:`Element` invoking\n        the coercion model.\n\n        See :ref:`element_arithmetic`.\n\n        EXAMPLES::\n\n            sage: operator.truediv(2, 3)\n            2/3\n            sage: operator.truediv(pi, 3)\n            1/3*pi\n            sage: K.<i> = NumberField(x^2+1)\n            sage: operator.truediv(2, K.ideal(i+1))\n            Fractional ideal (-i + 1)\n\n        ::\n\n            sage: from sage.structure.element import Element\n            sage: class MyElement(Element):\n            ....:     def _div_(self, other):\n            ....:         return 42\n            sage: e = MyElement(Parent())\n            sage: operator.truediv(e, e)\n            42\n\n        TESTS::\n\n            sage: e = Element(Parent())\n            sage: operator.truediv(e, e)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for /: '<type 'sage.structure.parent.Parent'>' and '<type 'sage.structure.parent.Parent'>'\n            sage: operator.truediv(1, e)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for /: 'Integer Ring' and '<type 'sage.structure.parent.Parent'>'\n            sage: operator.truediv(e, 1)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand parent(s) for /: '<type 'sage.structure.parent.Parent'>' and 'Integer Ring'\n            sage: operator.truediv(int(1), e)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for /: 'int' and 'sage.structure.element.Element'\n            sage: operator.truediv(e, int(1))\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for /: 'sage.structure.element.Element' and 'int'\n            sage: operator.truediv(None, e)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for /: 'NoneType' and 'sage.structure.element.Element'\n            sage: operator.truediv(e, None)\n            Traceback (most recent call last):\n            ...\n            TypeError: unsupported operand type(s) for /: 'sage.structure.element.Element' and 'NoneType'\n        ",
+                    "args": [
+                        "left",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__xor__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 918)",
+                    "args": [
+                        "self",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_act_on_": {
+                    "__doc__": "Element._act_on_(self, x, bool self_on_left)\nFile: sage/structure/element.pyx (starting at line 899)\n\n        Use this method to implement ``self`` acting on ``x``.\n\n        Return None or raise a CoercionException if no\n        such action is defined here.\n        ",
+                    "args": [
+                        "self",
+                        "x",
+                        "self_on_left"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "x",
+                            "self_on_left"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_acted_upon_": {
+                    "__doc__": "Element._acted_upon_(self, x, bool self_on_left)\nFile: sage/structure/element.pyx (starting at line 908)\n\n        Use this method to implement ``self`` acted on by x.\n\n        Return None or raise a CoercionException if no\n        such action is defined here.\n        ",
+                    "args": [
+                        "self",
+                        "x",
+                        "self_on_left"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "x",
+                            "self_on_left"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_cmp_": {
+                    "__doc__": "Element._cmp_(left, right) -> int\nFile: sage/structure/element.pyx (starting at line 1167)\n\n        Default three-way comparison method which only checks for a\n        Python class defining ``__cmp__``.\n        ",
+                    "args": [
+                        "left",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_coeff_repr": {
+                    "__doc__": "Element._coeff_repr(self, no_space=True)\nFile: sage/structure/element.pyx (starting at line 925)",
+                    "args": [
+                        "self",
+                        "no_space"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "no_space"
+                        ],
+                        null,
+                        null,
+                        [
+                            true
+                        ]
+                    ]
+                },
+                "_im_gens_": {
+                    "__doc__": "Element._im_gens_(self, codomain, im_gens)\nFile: sage/structure/element.pyx (starting at line 581)\n\n        Return the image of ``self`` in codomain under the map that sends\n        the images of the generators of the parent of ``self`` to the\n        tuple of elements of im_gens.\n        ",
+                    "args": [
+                        "self",
+                        "codomain",
+                        "im_gens"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "codomain",
+                            "im_gens"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_is_atomic": {
+                    "__doc__": "Element._is_atomic(self)\nFile: sage/structure/element.pyx (starting at line 944)\n\n        Return ``True`` if and only if parenthesis are not required when\n        *printing* out any of `x - s`, `x + s`, `x^s` and `x/s`.\n\n        EXAMPLES::\n\n            sage: n = 5; n._is_atomic()\n            True\n            sage: n = x+1; n._is_atomic()\n            False\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_latex_coeff_repr": {
+                    "__doc__": "Element._latex_coeff_repr(self)\nFile: sage/structure/element.pyx (starting at line 934)",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_mpmath_": {
+                    "__doc__": "Element._mpmath_(self, prec=53, rounding=None)\nFile: sage/structure/element.pyx (starting at line 842)\n\n        Evaluates numerically and returns an mpmath number.\n        Used as fallback for conversion by mpmath.mpmathify().\n\n        .. NOTE::\n\n            Currently, the rounding mode is ignored.\n\n        EXAMPLES::\n\n            sage: from sage.libs.mpmath.all import mp, mpmathify\n            sage: mp.dps = 30\n            sage: 25._mpmath_(53)\n            mpf('25.0')\n            sage: mpmathify(3+4*I)\n            mpc(real='3.0', imag='4.0')\n            sage: mpmathify(1+pi)\n            mpf('4.14159265358979323846264338327933')\n            sage: (1+pi)._mpmath_(10)\n            mpf('4.140625')\n            sage: (1+pi)._mpmath_(mp.prec)\n            mpf('4.14159265358979323846264338327933')\n        ",
+                    "args": [
+                        "self",
+                        "prec",
+                        "rounding"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "prec",
+                            "rounding"
+                        ],
+                        null,
+                        null,
+                        [
+                            53,
+                            null
+                        ]
+                    ]
+                },
+                "_repr_": {
+                    "__doc__": "Element._repr_(self)\nFile: sage/structure/element.pyx (starting at line 495)",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_richcmp_": {
+                    "__doc__": "Element._richcmp_(left, right, int op)\nFile: sage/structure/element.pyx (starting at line 1127)\n\n        Default implementation of rich comparisons for elements with\n        equal parents.\n\n        It tries to see if ``_cmp_`` is implemented. Otherwise it does a\n        comparison by id for ``==`` and ``!=``. Calling this default method\n        with ``<``, ``<=``, ``>`` or ``>=`` will raise a\n        ``NotImplementedError``.\n\n        EXAMPLES::\n\n            sage: from sage.structure.parent import Parent\n            sage: from sage.structure.element import Element\n            sage: P = Parent()\n            sage: e1 = Element(P); e2 = Element(P)\n            sage: e1 == e1    # indirect doctest\n            True\n            sage: e1 == e2    # indirect doctest\n            False\n            sage: e1 < e2     # indirect doctest\n            Traceback (most recent call last):\n            ...\n            NotImplementedError: comparison not implemented for <type 'sage.structure.element.Element'>\n        ",
+                    "args": [
+                        "left",
+                        "right",
+                        "op"
+                    ],
+                    "argspec": [
+                        [
+                            "left",
+                            "right",
+                            "op"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_set_parent": {
+                    "__doc__": "Element._set_parent(self, parent)\nFile: sage/structure/element.pyx (starting at line 388)\n\n        INPUT:\n\n        - ``parent`` - a SageObject\n        ",
+                    "args": [
+                        "self",
+                        "parent"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "parent"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_test_eq": {
+                    "__doc__": "Element._test_eq(self, **options)\nFile: sage/structure/element.pyx (starting at line 673)\n\n        Test that ``self`` is equal to ``self`` and different to ``None``.\n\n        See also: :class:`TestSuite`.\n\n        TESTS::\n\n            sage: from sage.structure.element import Element\n            sage: O = Element(Parent())\n            sage: O._test_eq()\n\n        Let us now write a broken class method::\n\n            sage: class CCls(Element):\n            ....:     def __eq__(self, other):\n            ....:         return True\n            sage: CCls(Parent())._test_eq()\n            Traceback (most recent call last):\n            ...\n            AssertionError: broken equality: Generic element of a structure == None\n\n        Let us now break inequality::\n\n            sage: class CCls(Element):\n            ....:     def __ne__(self, other):\n            ....:         return True\n            sage: CCls(Parent())._test_eq()\n            Traceback (most recent call last):\n            ...\n            AssertionError: broken non-equality: Generic element of a structure != itself\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        "options",
+                        null
+                    ]
+                },
+                "base_extend": {
+                    "__doc__": "Element.base_extend(self, R)\nFile: sage/structure/element.pyx (starting at line 589)",
+                    "args": [
+                        "self",
+                        "R"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "R"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "base_ring": {
+                    "__doc__": "Element.base_ring(self)\nFile: sage/structure/element.pyx (starting at line 594)\n\n        Return the base ring of this element's parent (if that makes sense).\n\n        TESTS::\n\n            sage: QQ.base_ring()\n            Rational Field\n            sage: identity_matrix(3).base_ring()\n            Integer Ring\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "is_zero": {
+                    "__doc__": "Element.is_zero(self)\nFile: sage/structure/element.pyx (starting at line 986)\n\n        Return ``True`` if ``self`` equals ``self.parent()(0)``.\n\n        The default implementation is to fall back to ``not\n        self.__nonzero__``.\n\n        .. WARNING::\n\n            Do not re-implement this method in your subclass but\n            implement ``__nonzero__`` instead.\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "n": {
+                    "__doc__": "Element.n(self, prec=None, digits=None, algorithm=None)\nFile: sage/structure/element.pyx (starting at line 829)\n\n        Alias for :meth:`numerical_approx`.\n\n        EXAMPLES::\n\n            sage: (2/3).n()\n            0.666666666666667\n        ",
+                    "args": [
+                        "self",
+                        "prec",
+                        "digits",
+                        "algorithm"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "prec",
+                            "digits",
+                            "algorithm"
+                        ],
+                        null,
+                        null,
+                        [
+                            null,
+                            null,
+                            null
+                        ]
+                    ]
+                },
+                "numerical_approx": {
+                    "__doc__": "Element.numerical_approx(self, prec=None, digits=None, algorithm=None)\nFile: sage/structure/element.pyx (starting at line 781)\n\n        Return a numerical approximation of ``self`` with ``prec`` bits\n        (or decimal ``digits``) of precision.\n\n        No guarantee is made about the accuracy of the result.\n\n        INPUT:\n\n        - ``prec`` -- precision in bits\n\n        - ``digits`` -- precision in decimal digits (only used if\n          ``prec`` is not given)\n\n        - ``algorithm`` -- which algorithm to use to compute this\n          approximation (the accepted algorithms depend on the object)\n\n        If neither ``prec`` nor ``digits`` is given, the default\n        precision is 53 bits (roughly 16 digits).\n\n        EXAMPLES::\n\n            sage: (2/3).numerical_approx()\n            0.666666666666667\n            sage: pi.n(digits=10)\n            3.141592654\n            sage: pi.n(prec=20)\n            3.1416\n\n        TESTS:\n\n        Check that :trac:`14778` is fixed::\n\n            sage: (0).n(algorithm='foo')\n            0.000000000000000\n\n        The ``.N`` method is a deprecated alias::\n\n            sage: 0.N()\n            doctest:...: DeprecationWarning: N is deprecated. Please use n instead.\n            See http://trac.sagemath.org/13055 for details.\n            0.000000000000000\n        ",
+                    "args": [
+                        "self",
+                        "prec",
+                        "digits",
+                        "algorithm"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "prec",
+                            "digits",
+                            "algorithm"
+                        ],
+                        null,
+                        null,
+                        [
+                            null,
+                            null,
+                            null
+                        ]
+                    ]
+                },
+                "subs": {
+                    "__doc__": "Element.subs(self, in_dict=None, **kwds)\nFile: sage/structure/element.pyx (starting at line 729)\n\n        Substitutes given generators with given values while not touching\n        other generators. This is a generic wrapper around ``__call__``.\n        The syntax is meant to be compatible with the corresponding method\n        for symbolic expressions.\n\n        INPUT:\n\n        - ``in_dict`` - (optional) dictionary of inputs\n\n        - ``**kwds`` - named parameters\n\n        OUTPUT:\n\n        - new object if substitution is possible, otherwise self.\n\n        EXAMPLES::\n\n            sage: x, y = PolynomialRing(ZZ,2,'xy').gens()\n            sage: f = x^2 + y + x^2*y^2 + 5\n            sage: f((5,y))\n            25*y^2 + y + 30\n            sage: f.subs({x:5})\n            25*y^2 + y + 30\n            sage: f.subs(x=5)\n            25*y^2 + y + 30\n            sage: (1/f).subs(x=5)\n            1/(25*y^2 + y + 30)\n            sage: Integer(5).subs(x=4)\n            5\n        ",
+                    "args": [
+                        "self",
+                        "in_dict"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "in_dict"
+                        ],
+                        null,
+                        "kwds",
+                        [
+                            null
+                        ]
+                    ]
+                },
+                "substitute": {
+                    "__doc__": "Element.substitute(self, in_dict=None, **kwds)\nFile: sage/structure/element.pyx (starting at line 868)\n\n        This is an alias for self.subs().\n\n        INPUT:\n\n        - ``in_dict`` - (optional) dictionary of inputs\n\n        - ``**kwds``  - named parameters\n\n        OUTPUT:\n\n        - new object if substitution is possible, otherwise self.\n\n        EXAMPLES::\n\n            sage: x, y = PolynomialRing(ZZ,2,'xy').gens()\n            sage: f = x^2 + y + x^2*y^2 + 5\n            sage: f((5,y))\n            25*y^2 + y + 30\n            sage: f.substitute({x:5})\n            25*y^2 + y + 30\n            sage: f.substitute(x=5)\n            25*y^2 + y + 30\n            sage: (1/f).substitute(x=5)\n            1/(25*y^2 + y + 30)\n            sage: Integer(5).substitute(x=4)\n            5\n         ",
+                    "args": [
+                        "self",
+                        "in_dict"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "in_dict"
+                        ],
+                        null,
+                        "kwds",
+                        [
+                            null
+                        ]
+                    ]
+                }
+            },
+            "name": "sage.structure.element.Element"
+        },
+        "sage.structure.element.MonoidElement": {
+            "__doc__": "File: sage/structure/element.pyx (starting at line 2251)\n\n    Generic element of a monoid.\n    ",
+            "implied": [
+                "sage.structure.element.Element"
+            ],
+            "methods": {
+                "__pow__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 2272)\n\n        Return the (integral) power of self.\n        ",
+                    "args": [
+                        "self",
+                        "n",
+                        "dummy"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "n",
+                            "dummy"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "__rpow__": {
+                    "__doc__": "y.__rpow__(x[, z]) <==> pow(x, y[, z])",
+                    "args": [],
+                    "argspec": [
+                        [],
+                        "args",
+                        "kwds",
+                        null
+                    ]
+                },
+                "multiplicative_order": {
+                    "__doc__": "MonoidElement.multiplicative_order(self)\nFile: sage/structure/element.pyx (starting at line 2266)\n\n        Return the multiplicative order of self.\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "order": {
+                    "__doc__": "MonoidElement.order(self)\nFile: sage/structure/element.pyx (starting at line 2260)\n\n        Return the multiplicative order of self.\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "powers": {
+                    "__doc__": "MonoidElement.powers(self, n)\nFile: sage/structure/element.pyx (starting at line 2280)\n\n        Return the list `[x^0, x^1, \\ldots, x^{n-1}]`.\n\n        EXAMPLES::\n\n            sage: G = SymmetricGroup(4)\n            sage: g = G([2, 3, 4, 1])\n            sage: g.powers(4)\n            [(), (1,2,3,4), (1,3)(2,4), (1,4,3,2)]\n        ",
+                    "args": [
+                        "self",
+                        "n"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "n"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "name": "sage.structure.element.MonoidElement"
+        },
+        "sage.structure.element.MultiplicativeGroupElement": {
+            "__doc__": "File: sage/structure/element.pyx (starting at line 2331)\n\n    Generic element of a multiplicative group.\n    ",
+            "implied": [
+                "sage.structure.element.MonoidElement"
+            ],
+            "methods": {
+                "__invert__": {
+                    "__doc__": "File: sage/structure/element.pyx (starting at line 2348)\n\n        Return the inverse of ``self``.\n        ",
+                    "args": [
+                        "self"
+                    ],
+                    "argspec": [
+                        [
+                            "self"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                "_div_": {
+                    "__doc__": "MultiplicativeGroupElement._div_(self, right)\nFile: sage/structure/element.pyx (starting at line 2341)\n\n        Default implementation of division using multiplication by\n        the inverse.\n        ",
+                    "args": [
+                        "self",
+                        "right"
+                    ],
+                    "argspec": [
+                        [
+                            "self",
+                            "right"
+                        ],
+                        null,
+                        null,
+                        null
+                    ]
+                }
+            },
+            "name": "sage.structure.element.MultiplicativeGroupElement"
         },
         "sage.structure.parent.Parent": {
             "__doc__": "Parent(base=None, category=None, *, element_constructor=None, names=None, normalize=True, facade=None, **kwds)",
