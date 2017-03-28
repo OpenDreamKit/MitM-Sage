@@ -4,24 +4,22 @@ Output browsable at: https://odk.mathhub.info/mh/mmt/?http://www.sagemath.org
 
 ## How to regenerate Sage's output (usually done by @nthiery, upon request)
 
-Install the dependencies:
+Install this package and its dependencies:
 
-    git clone https://github.com/nthiery/sage-gap-semantic-interface.git
-    cd sage-gap-semantic-interface
-    sage -pip install .
-
-Start Sage within the sage/ directory
-
-    cd sage
-    sage
+    cd sage;
+    sage -pip install --user -e .
 
 Run the following commands:
 
-    sage: import sagetypes
-    sage: import json
-    sage: data = sagetypes.export()
-    sage: with open('sagetypes.json', 'w') as outfile:
-    ....:     json.dump(data, outfile, sort_keys=True, indent=4, separators=(',', ': '), default=str, allow_nan=True)
+    sage: from sagetypes import Exporter
+    sage: e = Exporter()
+    sage: e.harvest_categories()
+    sage: e.save('sagetypes.json')
+
+One can also selectively harvest specific objects, classes and
+categories before saving. For example::
+
+    sage: e.harvest_sage_object(TransitiveGroups())
 
 Commit the output file:
 
