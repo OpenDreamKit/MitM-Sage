@@ -1,20 +1,24 @@
 """
-Exporting semantic information from Sage
+Exporting metadata from Sage
 
 EXAMPLES::
 
-    sage: import sagetypes
-    sage: import json
-    sage: data = sagetypes.export()
-    sage: with open('sagetypes.json', 'w') as outfile:
-    ....:     json.dump(data, outfile, sort_keys=True, indent=4, separators=(',', ': '), default=str, allow_nan=True)
+    sage: from sagetypes import Exporter
+    sage: e = Exporter()
+    sage: e.harvest_sage_object(TransitiveGroups())
+    sage: e.harvest_sage_object(TransitiveGroup(4,1))
+    sage: e.harvest_sage_object(TransitiveGroup(4,1).an_element)
+    sage: e.save('transitive_groups.json')
 
-.. TODO::
+..  TODO::
 
-    - What information do we want to export?
-      The super categories? or the axioms and structure?
+    - Instrument TestSuite calls to harvest the whole Sage library
+    - How to separate mathematical metadata from technical stuff
+    - Currently, the metadata for an instance is added to that of its class;
+      if there are several instances with the same class, the last one wins
 """
 
+import json
 from sage.misc.misc import attrcall
 from sage.misc.cachefunc import cached_function
 from sage.misc.abstract_method import AbstractMethod
@@ -24,6 +28,8 @@ from sage.categories.category_with_axiom import CategoryWithAxiom
 from sage.categories.covariant_functorial_construction import FunctorialConstructionCategory
 from sage.sets.recursively_enumerated_set import RecursivelyEnumeratedSet
 from sage.categories.rings import Rings
+from sage.structure.parent import Parent
+from sage.structure.sage_object import SageObject
 import mygap
 
 def related_categories(category):
@@ -55,9 +61,10 @@ def category_sample():
     r"""
     Return a sample of categories.
 
-    It is constructed by looking for all concrete category classes declared in
-    ``sage.categories.all``, calling :meth:`Category.an_instance` on those and
-    taking all their super categories.
+    It is constructed by looking for all concrete category classes
+    declared in ``sage.categories.all``, calling
+    :meth:`Category.an_instance` on those and taking all their super
+    categories.
 
     EXAMPLES::
 
@@ -89,104 +96,186 @@ def category_name(category):
         sage: sagetypes.category_name(Groups())
         'sage.categories.groups.Groups'
     """
-    cls = category.__class__.__base__
+    return class_name(category.__class__.__base__)
+
+def class_name(cls):
+    """
+
+    """
     return cls.__module__+"."+cls.__name__
 
-
 class Exporter(object):
-    def __init__(self):
-        self._database = {
-            'categories': {}
-            'classes' : {}
-        }
+    """
+    A class to iteratively/recursively harvest and export semantic
+    information from Sage by introspection.
 
-    def export_category(category):
+    EXAMPLES::
+
+        sage: from sagetypes import Exporter
+
+    At first, the exporter starts with an empty database::
+
+        sage: e = Exporter()
+        sage: e._database
+        {'categories': {}, 'classes': {}}
+
+    Let's harvest metadata from a class:
+
+        sage: e.harvest_class(Parent)
+        sage: e._database['classes'].keys()
+        ['sage.structure.parent.Parent',
+         'sage.structure.sage_object.SageObject',
+         'sage.structure.category_object.CategoryObject']
+
+    Now we can save the current database, and reload it later::
+
+        sage: e.save("test.json")
+        sage: f = Exporter("test.json")
+        sage: f._database['classes'].keys()
+        ['sage.structure.parent.Parent',
+         'sage.structure.sage_object.SageObject',
+         'sage.structure.category_object.CategoryObject']
+    """
+    def __init__(self, file=None):
+        if file is None:
+            self._database = {
+                'categories': {},
+                'classes' : {}
+                }
+        else:
+            self._database = json.load(file)
+
+    def save(self, file):
+        import json
+        with open(file, 'w') as outfile:
+            json.dump(self._database, outfile, sort_keys=True, indent=4, separators=(',', ': '), default=str, allow_nan=True)
+
+    def harvest_category(self, category):
         """
-        Export the semantic information contained in the category
+        Harvest and return the metadata contained in ``category``.
 
-        As a side effect, the semantic is also stored in the exporter's
-        database together with that of all super categories.
+        As a side effect, all the super categories are harvested as
+        well, and the information stored in the exporter's database.
 
         EXAMPLES::
 
             sage: from sagetypes import export_category
             sage: export_category(Groups())
             {'implied': ['sage.categories.monoids.Monoids',
-            'sage.categories.magmas.Magmas.Unital.Inverse'],
-            'name': 'sage.categories.groups.Groups',
-            'type': 'Sage_Category'}
+                         'sage.categories.magmas.Magmas.Unital.Inverse'],
+             'name': 'sage.categories.groups.Groups',
+             'type': 'Sage_Category'}
         """
         database = self._database['categories']
-        name = category_name(cat)
+        name = category_name(category)
         if name in database:
             return database[name]
         semantic = getattr(category, "_semantic", {})
         data = {
-              "implied": [self._export_category(cat)
+              "name": name,
+              "implied": [self.harvest_category(cat)['name']
                           for cat in category.super_categories()],
               "__doc__": category.__doc__,
               "axioms": list(category.axioms()),
               "structure": [category_name(cat) for cat in category.structure()],
               "type": "Sage_Category",
-              "parent_class":      self.export_class(category.parent_class),
-              "element_class":     self.export_class(category.element_class),
-              "morphism_class":    self.export_class(category.morphism_class),
-              "subcategory_class": self.export_class(category.subcategory_class),
+              "parent_class":      self.harvest_class(category.parent_class),
+              "element_class":     self.harvest_class(category.element_class),
+              "morphism_class":    self.harvest_class(category.morphism_class),
+              "subcategory_class": self.harvest_class(category.subcategory_class),
               "gap": semantic.get("gap", None),
               "mmt": semantic.get("mmt", None)
         }
         database[name] = data
         return data
 
-    def export_class(self, cls)
-       """
-       Export the semantic contained in 'cls'
+    def harvest_class(self, cls):
+        """
+        Harvest and return the metadata contained in 'cls'.
 
-       As a side effect, the semantic is also stored in the exporter's
-       database together with that of all super classes.
+        As a side effect, all the super classes are harvested as well,
+        and the semantic stored in the exporter's database.
 
-       EXAMPLES::
+        EXAMPLES::
 
-           sage: class A:
-           ....:     _semantic = {'truc': {'gap': 'coucou'} }
-           ....:     def truc(x,y): pass
-           ....:     def blah(x): pass
-           sage: from sagetypes import Exporter
-           sage: Exporter().export_class(A)
-           {'__doc__': None,
-            'methods': {'blah': {'__doc__': None,
-              'args': ['x'],
-              'argspec': ArgSpec(args=['x'], varargs=None, keywords=None, defaults=None)},
-             'truc': {'__doc__': None,
-              'args': ['x', 'y'],
-              'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
-              'gap': 'coucou'}}}
-       """
-       database = self._database['classes']
-       name = cls.__name__
-       if name in database:
-           return database[name]
-       semantic = getattr(cls, "_semantic", {})
-       data = {
-           "__doc__": getattr(cls, "__doc__", None),
-           "methods": { key:
-               self.export_method(method, semantic.get(key, {}))
-               for (key, method) in cls.__dict__.iteritems()
-               if key not in ["__doc__", "__module__", "_sage_src_lines_", "_reduction"]
-               and (callable(method) or isinstance(method, AbstractMethod))
-               and not any(hasattr(base, key) for base in cls.__bases__)
-           }}
+            sage: class A:
+            ....:     _semantic = {'truc': {'gap': 'coucou'} }
+            ....:     def truc(x,y): pass
+            ....:     def blah(x): pass
+            sage: from sagetypes import Exporter
+            sage: Exporter().harvest_class(A)
+            {'__doc__': None,
+             'methods': {'blah': {'__doc__': None,
+               'args': ['x'],
+               'argspec': ArgSpec(args=['x'], varargs=None, keywords=None, defaults=None)},
+              'truc': {'__doc__': None,
+               'args': ['x', 'y'],
+               'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
+               'gap': 'coucou'}}}
+        """
+        database = self._database['classes']
+        name = class_name(cls)
+        if name in database:
+            return database[name]
+        semantic = getattr(cls, "_semantic", {})
+        data = {
+            "name": name,
+            "__doc__": getattr(cls, "__doc__", None),
+              "implied": [self.harvest_class(c)['name']
+                          for c in cls.__bases__
+                              if issubclass(c, SageObject)],
+            "methods": { key:
+                self.harvest_method(method, semantic.get(key, {}))
+                for (key, method) in cls.__dict__.iteritems()
+                if key not in ["__doc__", "__module__", "_sage_src_lines_", "_reduction"]
+                and (callable(method) or isinstance(method, AbstractMethod))
+                and not any(hasattr(base, key) for base in cls.__bases__)
+            }
+        }
         database[name] = data
         return data
 
-    def export_method(method, semantic={}):
+    def harvest_sage_object(self, obj):
+        r"""
+        Harvest the metadata contained in the Sage Object `obj`.
+
+        As a side effect, the class of `obj` is harvested as well, and the
+        semantic stored in the exporter's database.
+
+        EXAMPLES::
+
+            sage: from sagetypes import Exporter; e = Exporter()
+            sage: e.harvest_sage_object(QQ)
+            sage: e._database['classes']['sage.rings.rational_field.RationalField_with_category']
+            {'__doc__': ...,
+             'categories': ['sage.categories.quotient_fields.QuotientFields',
+                            'sage.categories.metric_spaces.MetricSpaces'],
+             'implied': ['sage.rings.rational_field.RationalField'],
+             'methods': {},
+             'name': 'sage.rings.rational_field.RationalField_with_category'
+            }
         """
-        Export metadata about a single method, including stuff in semantic
+        cls = obj.__class__
+        data = self.harvest_class(cls)
+        if isinstance(obj, Parent):
+            category = obj.category()
+            categories = category.super_categories() if isinstance(category, JoinCategory) else [category]
+            data['categories'] = [self.harvest_category(category)['name']
+                                  for category in categories]
+        try:
+            construction = self.construction()
+            data['construction'] = [self.harvest_sage_object(x)['name'] for x in construction]
+        except AttributeError:
+            pass
+
+    def harvest_method(self, method, semantic={}):
+        """
+        Export metadata about a single method, including stuff in `semantic`
 
         EXAMPLES::
 
             sage: def f(x,y): pass
-            sage: export_method(f, {"gap":"coucou"})
+            sage: harvest_method(f, {"gap":"coucou"})
             {'__doc__': None,
              'args': ['x', 'y'],
              'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
@@ -206,13 +295,15 @@ class Exporter(object):
         result.update(semantic)
         return result
 
-    def export_categories():
-        return [export_category(category) for category in category_sample()]
+    def harvest_categories(self):
+        for category in category_sample():
+            self.harvest_category(category)
 
-def required_methods(self):
+# Unused
+def abstract_methods_of_categories(self):
     """
-    Returns the methods that are required and optional for parents
-    in this category and their elements.
+    Return the methods that are required and optional for parents,
+    elements, morphisms, ... of this category.
 
     EXAMPLES::
 
@@ -220,12 +311,13 @@ def required_methods(self):
         {'element': {'optional': ['_add_', '_mul_'], 'required': ['__nonzero__']},
          'parent': {'optional': ['algebra_generators'], 'required': ['__contains__']}}
     """
-    return { "parent"  : abstract_methods_of_class(self.parent_class, export_method),
-             "element" : abstract_methods_of_class(self.element_class, export_method),
-             "morphism": abstract_methods_of_class(self.morphism_class, export_method),
-             "subcategory": abstract_methods_of_class(self.subcategory_class, export_method)
+    return { "parent"  : abstract_methods_of_class(self.parent_class),
+             "element" : abstract_methods_of_class(self.element_class),
+             "morphism": abstract_methods_of_class(self.morphism_class),
+             "subcategory": abstract_methods_of_class(self.subcategory_class)
     }
 
+# Unused
 def abstract_methods_of_class(cls, extract=None):
     """
     Returns the required and optional abstract methods of the class
