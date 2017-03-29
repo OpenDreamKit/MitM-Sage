@@ -1,0 +1,34 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/facade_sets/FacadeSets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.facade_for">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the parents this set is a facade for
+
+            This default implementation assumes that ``self`` has
+            an attribute ``_facade_for``, typically initialized by
+            :meth:`Parent.__init__`. If the attribute is not present, the method
+            raises a NotImplementedError.
+
+            EXAMPLES::
+
+                sage: S = Sets().Facade().example(); S
+                An example of facade set: the monoid of positive integers
+                sage: S.facade_for()
+                (Integer Ring,)
+
+            Check that :trac:`13801` is corrected::
+
+                sage: class A(Parent):
+                ....:     def __init__(self):
+                ....:         Parent.__init__(self, category=Sets(), facade=True)
+                sage: a = A()
+                sage: a.facade_for()
+                Traceback (most recent call last):
+                ...
+                NotImplementedError: this parent did not specify which parents it is a facade for
+            </opaque></omdoc></theory></omdoc>

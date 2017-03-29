@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/magmas/Magmas/Unital?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/magmas/Magmas/Unital?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/magmas/Magmas/Unital?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/magmas/Magmas/Unital?subcategory_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/magmas/Magmas/Unital?subcategory_class http://www.sagemath.org/content/classes/magmas/Magmas/Unital?subcategory_class?classmethod.Inverse
+constant http://www.sagemath.org/content/classes/magmas/Magmas/Unital?subcategory_class?classmethod.Inverse

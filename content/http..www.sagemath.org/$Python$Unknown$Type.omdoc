@@ -1,0 +1,6 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="PythonUnknownType" base="http://www.sagemath.org/" meta="http://www.sagemath.org/?Convenient"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1322.51.0:1423.54.1"/></metadata><import from="http://www.sagemath.org/?PythonBasicTypes"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1366.52.2:1392.52.28"/></metadata></import><constant name="pyunknown">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1396.53.2:1421.53.27"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1408.53.14:1418.53.24"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant></theory></omdoc>

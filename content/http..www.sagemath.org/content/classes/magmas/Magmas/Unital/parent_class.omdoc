@@ -1,0 +1,69 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/magmas/Magmas/Unital" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_one">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Test that ``self.one()`` is an element of ``self`` and is
+                neutral for the operation ``*``.
+
+                INPUT:
+
+                - ``options`` -- any keyword arguments accepted by :meth:`_tester`
+
+                EXAMPLES:
+
+                By default, this method tests only the elements returned by
+                ``self.some_elements()``::
+
+                    sage: S = Monoids().example()
+                    sage: S._test_one()
+
+                However, the elements tested can be customized with the
+                ``elements`` keyword argument::
+
+                    sage: S._test_one(elements = (S('a'), S('b')))
+
+                See the documentation for :class:`TestSuite` for more information.
+                </opaque><constant name="classmethod.is_empty">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return whether ``self`` is empty.
+
+                Since this set is a unital magma it is not empty and this method
+                always return ``False``.
+
+                EXAMPLES::
+
+                    sage: S = SymmetricGroup(2)
+                    sage: S.is_empty()
+                    False
+
+                    sage: M = Monoids().example()
+                    sage: M.is_empty()
+                    False
+
+                TESTS::
+
+                    sage: S.is_empty.__module__
+                    'sage.categories.magmas'
+                    sage: M.is_empty.__module__
+                    'sage.categories.magmas'
+                </opaque><constant name="classmethod.one">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque></omdoc></theory></omdoc>

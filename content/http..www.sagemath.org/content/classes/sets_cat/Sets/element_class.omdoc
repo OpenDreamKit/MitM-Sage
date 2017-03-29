@@ -1,0 +1,19 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/sets_cat/Sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.cartesian_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the Cartesian product of its arguments, as an element of
+            the Cartesian product of the parents of those elements.
+
+            EXAMPLES::
+
+                sage: C = AlgebrasWithBasis(QQ)
+                sage: A = C.example()
+                sage: (a,b,c) = A.algebra_generators()
+                sage: a.cartesian_product(b, c)
+                B[(0, word: a)] + B[(1, word: b)] + B[(2, word: c)]
+
+            FIXME: is this a policy that we want to enforce on all parents?
+            </opaque></omdoc></theory></omdoc>

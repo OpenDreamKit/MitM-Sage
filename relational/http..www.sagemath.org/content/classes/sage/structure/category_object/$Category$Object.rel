@@ -1,0 +1,59 @@
+theory http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject
+HasMeta http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.Hom
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.Hom
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__dir__
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__dir__
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__div__
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__div__
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__getstate__
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__getstate__
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__rdiv__
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__rdiv__
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__setstate__
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__setstate__
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__temporarily_change_names
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.__temporarily_change_names
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._assign_names
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._assign_names
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._defining_names
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._defining_names
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._first_ngens
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._first_ngens
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._init_category_
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._init_category_
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._is_category_initialized
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._is_category_initialized
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._refine_category_
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._refine_category_
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.base
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.base
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.base_ring
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.base_ring
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.categories
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.categories
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.gens_dict
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.gens_dict
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.gens_dict_recursive
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.gens_dict_recursive
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.has_base
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.has_base
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.inject_variables
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.inject_variables
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.latex_name
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.latex_name
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.latex_variable_names
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.latex_variable_names
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.normalize_names
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.normalize_names
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.objgen
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.objgen
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.objgens
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.objgens
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.variable_name
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.variable_name
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.variable_names
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.variable_names

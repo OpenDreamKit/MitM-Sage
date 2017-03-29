@@ -1,0 +1,5 @@
+theory http://www.sagemath.org/?PythonUnknownType
+HasMeta http://www.sagemath.org/?PythonUnknownType http://www.sagemath.org/?Convenient
+Includes http://www.sagemath.org/?PythonUnknownType http://www.sagemath.org/?PythonBasicTypes
+Declares http://www.sagemath.org/?PythonUnknownType http://www.sagemath.org/?PythonUnknownType?pyunknown
+constant http://www.sagemath.org/?PythonUnknownType?pyunknown

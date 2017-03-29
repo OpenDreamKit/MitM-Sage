@@ -1,0 +1,3972 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="PermutationGroup_generic" base="http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/groups/old?FiniteGroup"></import><omdoc name="Methods"><constant name="classmethod.__cmp__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Compare ``self`` and ``right``.
+
+        The comparison extends the subgroup relation. Hence, it is first checked
+        whether one of the groups is subgroup of the other. If this is not the
+        case then the ordering is whatever it is in Gap.
+
+        .. NOTE::
+
+            The comparison does not provide a total ordering, as can be seen
+            in the examples below.
+
+        EXAMPLES::
+
+            sage: G1 = PermutationGroup([[(1,2,3),(4,5)],[(3,4)]])
+            sage: G2 = PermutationGroup([[(1,2,3),(4,5)]])
+            sage: G1 &gt; G2 # since G2 is a subgroup of G1
+            True
+            sage: G1 &lt; G2
+            False
+
+        The following example shows that the comparison does not yield a total
+        ordering::
+
+            sage: H1 = PermutationGroup([[(1,2)],[(5,6)]])
+            sage: H2 = PermutationGroup([[(3,4)]])
+            sage: H3 = PermutationGroup([[(1,2)]])
+            sage: H1 &lt; H2 # according to Gap's ordering
+            True
+            sage: H2 &lt; H3 # according to Gap's ordering
+            True
+            sage: H3 &lt; H1 # since H3 is a subgroup of H1
+            True
+        </opaque><constant name="classmethod.__iter__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return an iterator over the elements of this group.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3)], [(1,2)]])
+            sage: [a for a in G]
+            [(), (1,2), (1,2,3), (2,3), (1,3,2), (1,3)]
+
+        Test that it is possible to iterate through moderately large groups
+        (:trac:`18239`)::
+
+            sage: p = [(i,i+1) for i in range(1,601,2)]
+            sage: q = [tuple(range(1+i,601,3)) for i in range(3)]
+            sage: A = PermutationGroup([p,q])
+            sage: A.cardinality()
+            60000
+            sage: for x in A:    # long time - 2 secs
+            ....:     pass       # long time
+        </opaque><constant name="classmethod._domain_gap">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a GAP string representation of the underlying set
+        that this group acts on.  See also :meth:`domain`.
+
+        EXAMPLES::
+
+            sage: P = PermutationGroup([(1,2),(3,5)])
+            sage: P._domain_gap()
+            '[1, 2, 3, 4, 5]'
+        </opaque><constant name="classmethod._element_class">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the class to be used for creating elements of this group. By
+        default this is
+        ``sage.groups.perm_gps.permgroup_element.PermutationGroupElement``, but
+        it may be overridden in derived subclasses (most importantly
+        ``sage.rings.number_field.galois_group.GaloisGroup_v2``).
+
+        EXAMPLES::
+
+            sage: AlternatingGroup(17)._element_class()
+            &lt;type 'sage.groups.perm_gps.permgroup_element.PermutationGroupElement'&gt;
+        </opaque><constant name="classmethod._has_natural_domain">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod._latex_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Method for describing ``self`` in LaTeX. Encapsulates
+        ``self.gens()`` in angle brackets to denote that ``self``
+        is generated by these elements. Called by the
+        ``latex()`` function.
+
+        EXAMPLES:
+
+        We explicitly construct the alternating group on four
+        elements::
+
+            sage: A4 = PermutationGroup([[(1,2,3)],[(2,3,4)]]); A4
+            Permutation Group with generators [(2,3,4), (1,2,3)]
+            sage: latex(A4)
+            \langle (2,3,4), (1,2,3) \rangle
+            sage: A4._latex_()
+            '\\langle (2,3,4), (1,2,3) \\rangle'
+
+            sage: S = SymmetricGroup(['a','b','c'])
+            sage: latex(S)
+            \langle (\text{\texttt{a}},\text{\texttt{b}},\text{\texttt{c}}), (\text{\texttt{a}},\text{\texttt{b}}) \rangle
+        </opaque><constant name="classmethod._order">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        This handles a few special cases of computing the subgroup order much
+        faster than GAP.
+
+        This currently operates very quickly for stabilizer subgroups of
+        permutation groups, for one.
+
+        Will return None if the we could not easily compute it.
+
+        Author: Christopher Swenson
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(10).subgroup([(i, 10) for i in range(1, 10) if i != 4])
+            sage: G._order()
+            362880
+
+        TESTS::
+
+            sage: [SymmetricGroup(n).stabilizer(1)._gap_().Size() for n in [4..10]]
+            [6, 24, 120, 720, 5040, 40320, 362880]
+            sage: special_gens = [
+            ....:     [(3,4), (2,4)],
+            ....:     [(4,5), (3,5), (2,5)],
+            ....:     [(5,6), (4,6), (3,6), (2,6)],
+            ....:     [(6,7), (5,7), (4,7), (3,7), (2,7)],
+            ....:     [(7,8), (6,8), (5,8), (4,8), (3,8), (2,8)],
+            ....:     [(8,9), (7,9), (6,9), (5,9), (4,9), (3,9), (2,9)],
+            ....:     [(9,10), (8,10), (7,10), (6,10), (5,10), (4,10), (3,10), (2,10)]]
+            sage: [SymmetricGroup(n).subgroup(gen)._order() for gen in special_gens]
+            [6, 24, 120, 720, 5040, 40320, 362880]
+        </opaque><constant name="classmethod._regular_subgroup_gap">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod._repr_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a string describing ``self``.
+
+        EXAMPLES:
+
+        We explicitly construct the alternating group on four
+        elements. Note that the ``AlternatingGroup`` class has
+        its own representation string::
+
+            sage: A4 = PermutationGroup([[(1,2,3)],[(2,3,4)]]); A4
+            Permutation Group with generators [(2,3,4), (1,2,3)]
+            sage: A4._repr_()
+            'Permutation Group with generators [(2,3,4), (1,2,3)]'
+            sage: AlternatingGroup(4)._repr_()
+            'Alternating group of order 4!/2 as a permutation group'
+        </opaque><constant name="classmethod.as_finitely_presented_group">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a finitely presented group isomorphic to ``self``.
+
+        This method acts as wrapper for the GAP function ``IsomorphismFpGroupByGenerators``,
+        which yields an isomorphism from a given group to a finitely presented group.
+
+        INPUT:
+
+        - ``reduced`` -- Default ``False``, if ``True`` :meth:`FinitelyPresentedGroup.simplified
+          &lt;sage.groups.finitely_presented.FinitelyPresentedGroup.simplified&gt;`
+          is called, attempting to simplify the presentation of the finitely presented group
+          to be returned.
+
+        OUTPUT:
+
+        Finite presentation of self, obtained by taking the image
+        of the isomorphism returned by the GAP function, ``IsomorphismFpGroupByGenerators``.
+
+        ALGORITHM:
+
+        Uses GAP.
+
+        EXAMPLES::
+
+            sage: CyclicPermutationGroup(50).as_finitely_presented_group()
+            Finitely presented group &lt; a | a^50 &gt;
+            sage: DihedralGroup(4).as_finitely_presented_group()
+            Finitely presented group &lt; a, b | b^2, a^4, (b*a)^2 &gt;
+            sage: GeneralDihedralGroup([2,2]).as_finitely_presented_group()
+            Finitely presented group &lt; a, b, c | a^2, b^2, c^2, (c*b)^2, (c*a)^2, (b*a)^2 &gt;
+
+        GAP algorithm is not guaranteed to produce minimal or canonical presentation::
+
+            sage: G = PermutationGroup(['(1,2,3,4,5)', '(1,5)(2,4)'])
+            sage: G.is_isomorphic(DihedralGroup(5))
+            True
+            sage: K = G.as_finitely_presented_group(); K
+            Finitely presented group &lt; a, b | b^2, (b*a)^2, b*a^-3*b*a^2 &gt;
+            sage: K.as_permutation_group().is_isomorphic(DihedralGroup(5))
+            True
+
+        We can attempt to reduce the output presentation::
+
+            sage: PermutationGroup(['(1,2,3,4,5)','(1,3,5,2,4)']).as_finitely_presented_group()
+            Finitely presented group &lt; a, b | b^-2*a^-1, b*a^-2 &gt;
+            sage: PermutationGroup(['(1,2,3,4,5)','(1,3,5,2,4)']).as_finitely_presented_group(reduced=True)
+            Finitely presented group &lt; a | a^5 &gt;
+
+        TESTS::
+
+            sage: PermutationGroup([]).as_finitely_presented_group()
+            Finitely presented group &lt; a | a &gt;
+            sage: S = SymmetricGroup(6)
+            sage: perm_ls = [S.random_element() for i in range(3)]
+            sage: G = PermutationGroup(perm_ls)
+            sage: G.as_finitely_presented_group().as_permutation_group().is_isomorphic(G)
+            True
+
+        `D_9` is the only non-Abelian group of order 18
+        with an automorphism group of order 54 [TW1980]_::
+
+            sage: D = DihedralGroup(9).as_finitely_presented_group().gap()
+            sage: D.Order(), D.IsAbelian(), D.AutomorphismGroup().Order()
+            (18, false, 54)
+
+        `S_3` is the only non-Abelian group of order 6 [TW1980]_::
+
+            sage: S = SymmetricGroup(3).as_finitely_presented_group().gap()
+            sage: S.Order(), S.IsAbelian()
+            (6, false)
+
+        We can manually construct a permutation representation using GAP
+        coset enumeration methods::
+
+            sage: D = GeneralDihedralGroup([3,3,4]).as_finitely_presented_group().gap()
+            sage: ctab = D.CosetTable(D.Subgroup([]))
+            sage: gen_ls = gap.List(ctab, gap.PermList)
+            sage: PermutationGroup(gen_ls).is_isomorphic(GeneralDihedralGroup([3,3,4]))
+            True
+            sage: A = AlternatingGroup(5).as_finitely_presented_group().gap()
+            sage: ctab = A.CosetTable(A.Subgroup([]))
+            sage: gen_ls = gap.List(ctab, gap.PermList)
+            sage: PermutationGroup(gen_ls).is_isomorphic(AlternatingGroup(5))
+            True
+
+        AUTHORS:
+
+        - Davis Shurbert (2013-06-21): initial version
+        </opaque><constant name="classmethod.blocks_all">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the list of block systems of imprimitivity.
+
+        For more information on primitivity, see the :wikipedia:`Wikipedia
+        article on primitive group actions &lt;Primitive_permutation_group&gt;`.
+
+        INPUT:
+
+        - ``representative`` (boolean) -- whether to return all possible block
+          systems of imprimitivity or only one of their representatives (the
+          block can be obtained from its representative set `S` by computing the
+          orbit of `S` under ``self``).
+
+          This parameter is set to ``True`` by default (as it is GAP's default
+          behaviour).
+
+        OUTPUT:
+
+        This method returns a description of *all* block systems. Hence, the
+        output is a &quot;list of lists of lists&quot; or a &quot;list of lists&quot; depending on
+        the value of ``representatives``. A bit more clearly, output is :
+
+        * A list of length (#number of different block systems) of
+
+           * block systems, each of them being defined as
+
+               * If ``representatives = True`` : a list of representatives of
+                 each set of the block system
+
+               * If ``representatives = False`` : a partition of the elements
+                 defining an imprimitivity block.
+
+        .. SEEALSO::
+
+            - :meth:`~PermutationGroup_generic.is_primitive`
+
+        EXAMPLES:
+
+        Picking an interesting group::
+
+            sage: g = graphs.DodecahedralGraph()
+            sage: g.is_vertex_transitive()
+            True
+            sage: ag = g.automorphism_group()
+            sage: ag.is_primitive()
+            False
+
+        Computing its blocks representatives::
+
+            sage: ag.blocks_all()
+            [[0, 15]]
+
+        Now the full block::
+
+            sage: sorted(ag.blocks_all(representatives = False)[0])
+            [[0, 15], [1, 16], [2, 12], [3, 13], [4, 9], [5, 10], [6, 11], [7, 18], [8, 17], [14, 19]]
+
+        TESTS::
+
+            sage: g = PermutationGroup([(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;)])
+            sage: g.blocks_all()
+            [['a', 'c']]
+            sage: g.blocks_all(False)
+            [[['a', 'c'], ['b', 'd']]]
+        </opaque><constant name="classmethod.cardinality">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the number of elements of this group.
+        See also: G.degree()
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3),(4,5)], [(1,2)]])
+            sage: G.order()
+            12
+            sage: G = PermutationGroup([()])
+            sage: G.order()
+            1
+            sage: G = PermutationGroup([])
+            sage: G.order()
+            1
+        </opaque><constant name="classmethod.center">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the subgroup of elements that commute with every element
+        of this group.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3,4)]])
+            sage: G.center()
+            Subgroup of (Permutation Group with generators [(1,2,3,4)]) generated by [(1,2,3,4)]
+            sage: G = PermutationGroup([[(1,2,3,4)], [(1,2)]])
+            sage: G.center()
+            Subgroup of (Permutation Group with generators [(1,2), (1,2,3,4)]) generated by [()]
+        </opaque><constant name="classmethod.centralizer">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the centralizer of ``g`` in ``self``.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4)]])
+            sage: g = G([(1,3)])
+            sage: G.centralizer(g)
+            Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(2,4), (1,3)]
+            sage: g = G([(1,2,3,4)])
+            sage: G.centralizer(g)
+            Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(1,2,3,4)]
+            sage: H = G.subgroup([G([(1,2,3,4)])])
+            sage: G.centralizer(H)
+            Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(1,2,3,4)]
+        </opaque><constant name="classmethod.character">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a group character from ``values``, where ``values`` is
+        a list of the values of the character evaluated on the conjugacy
+        classes.
+
+        EXAMPLES::
+
+            sage: G = AlternatingGroup(4)
+            sage: n = len(G.conjugacy_classes_representatives())
+            sage: G.character([1]*n)
+            Character of Alternating group of order 4!/2 as a permutation group
+        </opaque><constant name="classmethod.character_table">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the matrix of values of the irreducible characters of a
+        permutation group `G` at the conjugacy classes of
+        `G`.
+
+        The columns represent the conjugacy classes of
+        `G` and the rows represent the different irreducible
+        characters in the ordering given by GAP.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3)]])
+            sage: G.order()
+            12
+            sage: G.character_table()
+            [         1          1          1          1]
+            [         1 -zeta3 - 1      zeta3          1]
+            [         1      zeta3 -zeta3 - 1          1]
+            [         3          0          0         -1]
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3)]])
+            sage: CT = gap(G).CharacterTable()
+
+        Type ``print(gap.eval(&quot;Display(%s)&quot;%CT.name()))`` to display this
+        nicely.
+
+        ::
+
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4)]])
+            sage: G.order()
+            8
+            sage: G.character_table()
+            [ 1  1  1  1  1]
+            [ 1 -1 -1  1  1]
+            [ 1 -1  1 -1  1]
+            [ 1  1 -1 -1  1]
+            [ 2  0  0  0 -2]
+            sage: CT = gap(G).CharacterTable()
+
+        Again, type ``print(gap.eval(&quot;Display(%s)&quot;%CT.name()))`` to display this
+        nicely.
+
+        ::
+
+            sage: SymmetricGroup(2).character_table()
+            [ 1 -1]
+            [ 1  1]
+            sage: SymmetricGroup(3).character_table()
+            [ 1 -1  1]
+            [ 2  0 -1]
+            [ 1  1  1]
+            sage: SymmetricGroup(5).character_table()
+            [ 1 -1  1  1 -1 -1  1]
+            [ 4 -2  0  1  1  0 -1]
+            [ 5 -1  1 -1 -1  1  0]
+            [ 6  0 -2  0  0  0  1]
+            [ 5  1  1 -1  1 -1  0]
+            [ 4  2  0  1 -1  0 -1]
+            [ 1  1  1  1  1  1  1]
+            sage: list(AlternatingGroup(6).character_table())
+            [(1, 1, 1, 1, 1, 1, 1), (5, 1, 2, -1, -1, 0, 0), (5, 1, -1, 2, -1, 0, 0), (8, 0, -1, -1, 0, zeta5^3 + zeta5^2 + 1, -zeta5^3 - zeta5^2), (8, 0, -1, -1, 0, -zeta5^3 - zeta5^2, zeta5^3 + zeta5^2 + 1), (9, 1, 0, 0, 1, -1, -1), (10, -2, 1, 1, 0, 0, 0)]
+
+        Suppose that you have a class function `f(g)` on
+        `G` and you know the values `v_1, \ldots, v_n` on
+        the conjugacy class elements in
+        ``conjugacy_classes_representatives(G)`` =
+        `[g_1, \ldots, g_n]`. Since the irreducible characters
+        `\rho_1, \ldots, \rho_n` of `G` form an
+        `E`-basis of the space of all class functions (`E`
+        a &quot;sufficiently large&quot; cyclotomic field), such a class function is
+        a linear combination of these basis elements,
+        `f = c_1 \rho_1 + \cdots + c_n \rho_n`. To find
+        the coefficients `c_i`, you simply solve the linear system
+        ``character_table_values(G)`` `[v_1, ..., v_n] = [c_1, ..., c_n]`,
+        where `[v_1, \ldots, v_n]` = ``character_table_values(G)`` `^{(-1)}[c_1, ..., c_n]`.
+
+        AUTHORS:
+
+        - David Joyner and William Stein (2006-01-04)
+
+        </opaque><constant name="classmethod.cohomology">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Computes the group cohomology `H^n(G, F)`, where `F = \ZZ`
+        if `p=0` and `F = \ZZ / p \ZZ` if `p &gt; 0` is a prime.
+
+        Wraps HAP's ``GroupHomology`` function, written by Graham Ellis.
+
+        REQUIRES: GAP package HAP (in gap_packages-\*.spkg).
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(4)
+            sage: G.cohomology(1,2)                            # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C2
+            sage: G = SymmetricGroup(3)
+            sage: G.cohomology(5)                              # optional - gap_packages
+            Trivial Abelian group
+            sage: G.cohomology(5,2)                            # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C2
+            sage: G.homology(5,3)                              # optional - gap_packages
+            Trivial Abelian group
+            sage: G.homology(5,4)                              # optional - gap_packages
+            Traceback (most recent call last):
+            ...
+            ValueError: p must be 0 or prime
+
+        This computes `H^4(S_3, \ZZ)` and
+        `H^4(S_3, \ZZ / 2 \ZZ)`, respectively.
+
+        AUTHORS:
+
+        - David Joyner and Graham Ellis
+
+        REFERENCES:
+
+        - G. Ellis, 'Computing group resolutions', J. Symbolic
+          Computation. Vol.38, (2004)1077-1118 (Available at
+          http://hamilton.nuigalway.ie/).
+
+        - D. Joyner, 'A primer on computational group homology and
+          cohomology', http://front.math.ucdavis.edu/0706.0549.
+        </opaque><constant name="classmethod.cohomology_part">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Computes the p-part of the group cohomology `H^n(G, F)`,
+        where `F = \ZZ` if `p=0` and `F = \ZZ / p \ZZ` if
+        `p &gt; 0` is a prime.
+
+        Wraps HAP's Homology function, written
+        by Graham Ellis, applied to the `p`-Sylow subgroup of
+        `G`.
+
+        REQUIRES: GAP package HAP (in gap_packages-\*.spkg).
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(5)
+            sage: G.cohomology_part(7,2)                   # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C2 x C2 x C2
+            sage: G = SymmetricGroup(3)
+            sage: G.cohomology_part(2,3)                   # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C3
+
+        AUTHORS:
+
+        - David Joyner and Graham Ellis
+        </opaque><constant name="classmethod.commutator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the commutator subgroup of a group, or of a pair of groups.
+
+        INPUT:
+
+        - ``other`` - default: ``None`` - a permutation group.
+
+        OUTPUT:
+
+        Let $G$ denote ``self``.  If ``other`` is ``None`` then this method
+        returns the subgroup of $G$ generated by the set of commutators,
+
+        .. MATH::
+
+            \{[g_1,g_2]\vert g_1, g_2\in G\} = \{g_1^{-1}g_2^{-1}g_1g_2\vert g_1, g_2\in G\}
+
+        Let $H$ denote ``other``, in the case that it is not ``None``.  Then
+        this method returns the group generated by the set of commutators,
+
+        .. MATH::
+
+            \{[g,h]\vert g\in G\, h\in H\} = \{g^{-1}h^{-1}gh\vert  g\in G\, h\in H\}
+
+        The two groups need only be permutation groups, there is no notion
+        of requiring them to explicitly be subgroups of some other group.
+
+        .. note::
+
+            For the identical statement, the generators of the returned
+            group can vary from one execution to the next.
+
+        EXAMPLES::
+
+            sage: G = DiCyclicGroup(4)
+            sage: G.commutator()
+            Permutation Group with generators [(1,3,5,7)(2,4,6,8)(9,11,13,15)(10,12,14,16)]
+
+            sage: G = SymmetricGroup(5)
+            sage: H = CyclicPermutationGroup(5)
+            sage: C = G.commutator(H)
+            sage: C.is_isomorphic(AlternatingGroup(5))
+            True
+
+        An abelian group will have a trivial commutator.  ::
+
+            sage: G = CyclicPermutationGroup(10)
+            sage: G.commutator()
+            Permutation Group with generators [()]
+
+        The quotient of a group by its commutator is always abelian.  ::
+
+            sage: G = DihedralGroup(20)
+            sage: C = G.commutator()
+            sage: Q = G.quotient(C)
+            sage: Q.is_abelian()
+            True
+
+        When forming commutators from two groups, the order of the
+        groups does not matter.  ::
+
+            sage: D = DihedralGroup(3)
+            sage: S = SymmetricGroup(2)
+            sage: C1 = D.commutator(S); C1
+            Permutation Group with generators [(1,2,3)]
+            sage: C2 = S.commutator(D); C2
+            Permutation Group with generators [(1,3,2)]
+            sage: C1 == C2
+            True
+
+        This method calls two different functions in GAP, so
+        this tests that their results are consistent.  The
+        commutator groups may have different generators, but the
+        groups are equal. ::
+
+            sage: G = DiCyclicGroup(3)
+            sage: C = G.commutator(); C
+            Permutation Group with generators [(5,7,6)]
+            sage: CC = G.commutator(G); CC
+            Permutation Group with generators [(5,6,7)]
+            sage: C == CC
+            True
+
+        The second group is checked.  ::
+
+            sage: G = SymmetricGroup(2)
+            sage: G.commutator('junk')
+            Traceback (most recent call last):
+            ...
+            TypeError: junk is not a permutation group
+        </opaque><constant name="classmethod.composition_series">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the composition series of this group as a list of
+        permutation groups.
+
+        EXAMPLES:
+
+        These computations use pseudo-random numbers, so we set
+        the seed for reproducible testing.
+
+        ::
+
+            sage: set_random_seed(0)
+            sage: G = PermutationGroup([[(1,2,3),(4,5)],[(3,4)]])
+            sage: G.composition_series()  # random output
+            [Permutation Group with generators [(1,2,3)(4,5), (3,4)], Permutation Group with generators [(1,5)(3,4), (1,5)(2,3), (1,5,4)], Permutation Group with generators [()]]
+            sage: G = PermutationGroup([[(1,2,3),(4,5)], [(1,2)]])
+            sage: CS = G.composition_series()
+            sage: CS[3]
+            Subgroup of (Permutation Group with generators [(1,2), (1,2,3)(4,5)]) generated by [()]
+        </opaque><constant name="classmethod.conjugacy_class">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the conjugacy class of ``g`` inside the group ``self``.
+
+        INPUT:
+
+        - ``g`` -- an element of the permutation group ``self``
+
+        OUTPUT:
+
+        The conjugacy class of ``g`` in the group ``self``. If ``self`` is
+        the group denoted by `G`, this method computes the set
+        `\{x^{-1}gx\ \vert\ x \in G \}`
+
+        EXAMPLES::
+
+            sage: G = DihedralGroup(3)
+            sage: g = G.gen(0)
+            sage: G.conjugacy_class(g)
+            Conjugacy class of (1,2,3) in Dihedral group of order 6 as a permutation group
+        </opaque><constant name="classmethod.conjugacy_classes">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list with all the conjugacy classes of ``self``.
+
+        EXAMPLES::
+
+            sage: G = DihedralGroup(3)
+            sage: G.conjugacy_classes()
+            [Conjugacy class of () in Dihedral group of order 6 as a permutation group,
+             Conjugacy class of (2,3) in Dihedral group of order 6 as a permutation group,
+             Conjugacy class of (1,2,3) in Dihedral group of order 6 as a permutation group]
+        </opaque><constant name="classmethod.conjugacy_classes_representatives">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a complete list of representatives of conjugacy classes in
+        a permutation group `G`.
+
+        The ordering is that given by GAP.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4)]])
+            sage: cl = G.conjugacy_classes_representatives(); cl
+            [(), (2,4), (1,2)(3,4), (1,2,3,4), (1,3)(2,4)]
+            sage: cl[3] in G
+            True
+
+        ::
+
+            sage: G = SymmetricGroup(5)
+            sage: G.conjugacy_classes_representatives()
+            [(), (1,2), (1,2)(3,4), (1,2,3), (1,2,3)(4,5), (1,2,3,4), (1,2,3,4,5)]
+
+        ::
+
+            sage: S = SymmetricGroup(['a','b','c'])
+            sage: S.conjugacy_classes_representatives()
+            [(), ('a','b'), ('a','b','c')]
+
+        AUTHORS:
+
+        - David Joyner and William Stein (2006-01-04)
+        </opaque><constant name="classmethod.conjugacy_classes_subgroups">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a complete list of representatives of conjugacy classes of
+        subgroups in a permutation group `G`.
+
+        The ordering is that given by GAP.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4)]])
+            sage: cl = G.conjugacy_classes_subgroups()
+            sage: cl
+            [Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [()], Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(1,2)(3,4)], Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(1,3)(2,4)], Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(2,4)], Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(1,2)(3,4), (1,4)(2,3)], Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(2,4), (1,3)(2,4)], Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(1,2,3,4), (1,3)(2,4)], Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(2,4), (1,2)(3,4), (1,4)(2,3)]]
+
+        ::
+
+            sage: G = SymmetricGroup(3)
+            sage: G.conjugacy_classes_subgroups()
+            [Subgroup of (Symmetric group of order 3! as a permutation group) generated by [()], Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(2,3)], Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(1,2,3)], Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(2,3), (1,2,3)]]
+
+        AUTHORS:
+
+        - David Joyner (2006-10)
+        </opaque><constant name="classmethod.conjugate">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the group formed by conjugating ``self`` with ``g``.
+
+        INPUT:
+
+        - ``g`` - a permutation group element, or an object that converts
+          to a permutation group element, such as a list of integers or
+          a string of cycles.
+
+        OUTPUT:
+
+        If ``self`` is the group denoted by `H`, then this method computes
+        the group
+
+        .. MATH::
+
+            g^{-1}Hg = \{g^{-1}hg\vert h\in H\}
+
+        which is the group `H` conjugated by `g`.
+
+        There are no restrictions on ``self`` and ``g`` belonging to
+        a common permutation group, and correspondingly, there is no
+        relationship (such as a common parent) between ``self`` and the
+        output group.
+
+        EXAMPLES::
+
+            sage: G = DihedralGroup(6)
+            sage: a = PermutationGroupElement(&quot;(1,2,3,4)&quot;)
+            sage: G.conjugate(a)
+            Permutation Group with generators [(1,4)(2,6)(3,5), (1,5,6,2,3,4)]
+
+        The element performing the conjugation can be specified in
+        several ways.  ::
+
+            sage: G = DihedralGroup(6)
+            sage: strng = &quot;(1,2,3,4)&quot;
+            sage: G.conjugate(strng)
+            Permutation Group with generators [(1,4)(2,6)(3,5), (1,5,6,2,3,4)]
+            sage: G = DihedralGroup(6)
+            sage: lst = [2,3,4,1]
+            sage: G.conjugate(lst)
+            Permutation Group with generators [(1,4)(2,6)(3,5), (1,5,6,2,3,4)]
+            sage: G = DihedralGroup(6)
+            sage: cycles = [(1,2,3,4)]
+            sage: G.conjugate(cycles)
+            Permutation Group with generators [(1,4)(2,6)(3,5), (1,5,6,2,3,4)]
+
+        Conjugation is a group automorphism, so conjugate groups
+        will be isomorphic. ::
+
+            sage: G = DiCyclicGroup(6)
+            sage: G.degree()
+            11
+            sage: cycle = [i+1 for i in range(1,11)] + [1]
+            sage: C = G.conjugate(cycle)
+            sage: G.is_isomorphic(C)
+            True
+
+        The conjugating element may be from a symmetric group with
+        larger degree than the group being conjugated.  ::
+
+            sage: G = AlternatingGroup(5)
+            sage: G.degree()
+            5
+            sage: g = &quot;(1,3)(5,6,7)&quot;
+            sage: H = G.conjugate(g); H
+            Permutation Group with generators [(1,4,6,3,2), (1,4,6)]
+            sage: H.degree()
+            6
+
+        The conjugating element is checked. ::
+
+            sage: G = SymmetricGroup(3)
+            sage: G.conjugate(&quot;junk&quot;)
+            Traceback (most recent call last):
+            ...
+            TypeError: junk does not convert to a permutation group element
+        </opaque><constant name="classmethod.cosets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a list of the cosets of ``S`` in ``self``.
+
+        INPUT:
+
+        - ``S`` - a subgroup of ``self``.  An error is raised
+          if ``S`` is not a subgroup.
+
+        - ``side`` - default: 'right' - determines if right cosets or
+          left cosets are returned.  ``side`` refers to where the
+          representative is placed in the products forming the cosets
+          and thus allowable values are only 'right' and 'left'.
+
+        OUTPUT:
+
+        A list of lists.  Each inner list is a coset of the subgroup
+        in the group.  The first element of each coset is the smallest
+        element (based on the ordering of the elements of ``self``)
+        of all the group elements that have not yet appeared in a
+        previous coset. The elements of each coset are in the same
+        order as the subgroup elements used to build the coset's
+        elements.
+
+        As a consequence, the subgroup itself is the first coset,
+        and its first element is the identity element.  For each coset,
+        the first element listed is the element used as a representative
+        to build the coset.  These representatives form an increasing
+        sequence across the list of cosets, and within a coset the
+        representative is the smallest element of its coset (both
+        orderings are based on of the ordering of elements of ``self``).
+
+        In the case of a normal subgroup, left and right cosets should
+        appear in the same order as part of the outer list.  However,
+        the list of the elements of a particular coset may be in a
+        different order for the right coset versus the order in the
+        left coset. So, if you check to see if a subgroup is normal,
+        it is necessary to sort each individual coset first (but not
+        the list of cosets, due to the ordering of the representatives).
+        See below for examples of this.
+
+        .. note::
+
+            This is a naive implementation intended for instructional
+            purposes, and hence is slow for larger groups.  Sage and GAP
+            provide more sophisticated functions for working quickly with
+            cosets of larger groups.
+
+        EXAMPLES:
+
+        The default is to build right cosets. This example works with
+        the symmetry group of an 8-gon and a normal subgroup.
+        Notice that a straight check on the equality of the output
+        is not sufficient to check normality, while sorting the
+        individual cosets is sufficient to then simply test equality of
+        the list of lists.  Study the second coset in each list to understand the
+        need for sorting the elements of the cosets.  ::
+
+            sage: G = DihedralGroup(8)
+            sage: quarter_turn = G('(1,3,5,7)(2,4,6,8)'); quarter_turn
+            (1,3,5,7)(2,4,6,8)
+            sage: S = G.subgroup([quarter_turn])
+            sage: rc = G.cosets(S); rc
+            [[(), (1,3,5,7)(2,4,6,8), (1,5)(2,6)(3,7)(4,8), (1,7,5,3)(2,8,6,4)],
+             [(2,8)(3,7)(4,6), (1,7)(2,6)(3,5), (1,5)(2,4)(6,8), (1,3)(4,8)(5,7)],
+             [(1,2)(3,8)(4,7)(5,6), (1,8)(2,7)(3,6)(4,5), (1,6)(2,5)(3,4)(7,8), (1,4)(2,3)(5,8)(6,7)],
+             [(1,2,3,4,5,6,7,8), (1,4,7,2,5,8,3,6), (1,6,3,8,5,2,7,4), (1,8,7,6,5,4,3,2)]]
+            sage: lc = G.cosets(S, side='left'); lc
+            [[(), (1,3,5,7)(2,4,6,8), (1,5)(2,6)(3,7)(4,8), (1,7,5,3)(2,8,6,4)],
+             [(2,8)(3,7)(4,6), (1,3)(4,8)(5,7), (1,5)(2,4)(6,8), (1,7)(2,6)(3,5)],
+             [(1,2)(3,8)(4,7)(5,6), (1,4)(2,3)(5,8)(6,7), (1,6)(2,5)(3,4)(7,8), (1,8)(2,7)(3,6)(4,5)],
+             [(1,2,3,4,5,6,7,8), (1,4,7,2,5,8,3,6), (1,6,3,8,5,2,7,4), (1,8,7,6,5,4,3,2)]]
+
+            sage: S.is_normal(G)
+            True
+            sage: rc == lc
+            False
+            sage: rc_sorted = [sorted(c) for c in rc]
+            sage: lc_sorted = [sorted(c) for c in lc]
+            sage: rc_sorted == lc_sorted
+            True
+
+        An example with the symmetry group of a regular
+        tetrahedron and a subgroup that is not normal.
+        Thus, the right and left cosets are different
+        (and so are the representatives). With each
+        individual coset sorted, a naive test of normality
+        is possible.  ::
+
+            sage: A = AlternatingGroup(4)
+            sage: face_turn = A('(1,2,3)'); face_turn
+            (1,2,3)
+            sage: stabilizer = A.subgroup([face_turn])
+            sage: rc = A.cosets(stabilizer, side='right'); rc
+            [[(), (1,2,3), (1,3,2)],
+             [(2,3,4), (1,3)(2,4), (1,4,2)],
+             [(2,4,3), (1,4,3), (1,2)(3,4)],
+             [(1,2,4), (1,4)(2,3), (1,3,4)]]
+            sage: lc = A.cosets(stabilizer, side='left'); lc
+            [[(), (1,2,3), (1,3,2)],
+             [(2,3,4), (1,2)(3,4), (1,3,4)],
+             [(2,4,3), (1,2,4), (1,3)(2,4)],
+             [(1,4,2), (1,4,3), (1,4)(2,3)]]
+
+            sage: stabilizer.is_normal(A)
+            False
+            sage: rc_sorted = [sorted(c) for c in rc]
+            sage: lc_sorted = [sorted(c) for c in lc]
+            sage: rc_sorted == lc_sorted
+            False
+
+        TESTS:
+
+        The keyword ``side`` is checked for the two possible values. ::
+
+            sage: G = SymmetricGroup(3)
+            sage: S = G.subgroup([G(&quot;(1,2)&quot;)])
+            sage: G.cosets(S, side='junk')
+            Traceback (most recent call last):
+            ...
+            ValueError: side should be 'right' or 'left', not junk
+
+        The subgroup argument is checked to see if it is a permutation group.
+        Even a legitimate GAP object can be rejected. ::
+
+            sage: G=SymmetricGroup(3)
+            sage: G.cosets(gap(3))
+            Traceback (most recent call last):
+            ...
+            TypeError: 3 is not a permutation group
+
+        The subgroup is verified as a subgroup of ``self``. ::
+
+            sage: A = AlternatingGroup(3)
+            sage: G = SymmetricGroup(3)
+            sage: S = G.subgroup([G(&quot;(1,2)&quot;)])
+            sage: A.cosets(S)
+            Traceback (most recent call last):
+            ...
+            ValueError: Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(1,2)] is not a subgroup of Alternating group of order 3!/2 as a permutation group
+
+        AUTHOR:
+
+        - Rob Beezer (2011-01-31)
+        </opaque><constant name="classmethod.degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the degree of this permutation group.
+
+        EXAMPLES::
+
+            sage: S = SymmetricGroup(['a','b','c'])
+            sage: S.degree()
+            3
+            sage: G = PermutationGroup([(1,3),(4,5)])
+            sage: G.degree()
+            5
+
+        Note that you can explicitly specify the domain to get a
+        permutation group of smaller degree::
+
+            sage: G = PermutationGroup([(1,3),(4,5)], domain=[1,3,4,5])
+            sage: G.degree()
+            4
+        </opaque><constant name="classmethod.derived_series">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the derived series of this group as a list of permutation
+        groups.
+
+        EXAMPLES:
+
+        These computations use pseudo-random numbers, so we set
+        the seed for reproducible testing.
+
+        ::
+
+            sage: set_random_seed(0)
+            sage: G = PermutationGroup([[(1,2,3),(4,5)],[(3,4)]])
+            sage: G.derived_series()  # random output
+            [Permutation Group with generators [(1,2,3)(4,5), (3,4)], Permutation Group with generators [(1,5)(3,4), (1,5)(2,4), (2,4)(3,5)]]
+        </opaque><constant name="classmethod.direct_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Wraps GAP's ``DirectProduct``, ``Embedding``, and ``Projection``.
+
+        Sage calls GAP's ``DirectProduct``, which chooses an efficient
+        representation for the direct product. The direct product of
+        permutation groups will be a permutation group again. For a direct
+        product ``D``, the GAP operation ``Embedding(D,i)`` returns the
+        homomorphism embedding the i-th factor into ``D``. The GAP operation
+        ``Projection(D,i)`` gives the projection of ``D`` onto the i-th factor.
+        This method returns a 5-tuple: a permutation group and 4 morphisms.
+
+        INPUT:
+
+        -  ``self, other`` - permutation groups
+
+        OUTPUT:
+
+        -  ``D`` - a direct product of the inputs, returned as
+           a permutation group as well
+
+        -  ``iota1`` - an embedding of ``self`` into ``D``
+
+        -  ``iota2`` - an embedding of ``other`` into ``D``
+
+        -  ``pr1`` - the projection of ``D`` onto ``self`` (giving a
+           splitting 1 - other - D - self - 1)
+
+        -  ``pr2`` - the projection of ``D`` onto ``other`` (giving a
+           splitting 1 - self - D - other - 1)
+
+        EXAMPLES::
+
+            sage: G = CyclicPermutationGroup(4)
+            sage: D = G.direct_product(G,False)
+            sage: D
+            Permutation Group with generators [(5,6,7,8), (1,2,3,4)]
+            sage: D,iota1,iota2,pr1,pr2 = G.direct_product(G)
+            sage: D; iota1; iota2; pr1; pr2
+            Permutation Group with generators [(5,6,7,8), (1,2,3,4)]
+            Permutation group morphism:
+              From: Cyclic group of order 4 as a permutation group
+              To:   Permutation Group with generators [(5,6,7,8), (1,2,3,4)]
+              Defn: Embedding( Group( [ (1,2,3,4), (5,6,7,8) ] ), 1 )
+            Permutation group morphism:
+              From: Cyclic group of order 4 as a permutation group
+              To:   Permutation Group with generators [(5,6,7,8), (1,2,3,4)]
+              Defn: Embedding( Group( [ (1,2,3,4), (5,6,7,8) ] ), 2 )
+            Permutation group morphism:
+              From: Permutation Group with generators [(5,6,7,8), (1,2,3,4)]
+              To:   Cyclic group of order 4 as a permutation group
+              Defn: Projection( Group( [ (1,2,3,4), (5,6,7,8) ] ), 1 )
+            Permutation group morphism:
+              From: Permutation Group with generators [(5,6,7,8), (1,2,3,4)]
+              To:   Cyclic group of order 4 as a permutation group
+              Defn: Projection( Group( [ (1,2,3,4), (5,6,7,8) ] ), 2 )
+            sage: g=D([(1,3),(2,4)]); g
+            (1,3)(2,4)
+            sage: d=D([(1,4,3,2),(5,7),(6,8)]); d
+            (1,4,3,2)(5,7)(6,8)
+            sage: iota1(g); iota2(g); pr1(d); pr2(d)
+            (1,3)(2,4)
+            (5,7)(6,8)
+            (1,4,3,2)
+            (1,3)(2,4)
+        </opaque><constant name="classmethod.domain">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the underlying set that this permutation group acts
+        on.
+
+        EXAMPLES::
+
+            sage: P = PermutationGroup([(1,2),(3,5)])
+            sage: P.domain()
+            {1, 2, 3, 4, 5}
+            sage: S = SymmetricGroup(['a', 'b', 'c'])
+            sage: S.domain()
+            {'a', 'b', 'c'}
+        </opaque><constant name="classmethod.exponent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Computes the exponent of the group.
+
+        The exponent `e` of a group `G` is the LCM of the orders of its
+        elements, that is, `e` is the smallest integer such that `g^e=1` for all
+        `g \in G`.
+
+        EXAMPLES::
+
+            sage: G = AlternatingGroup(4)
+            sage: G.exponent()
+            6
+
+        </opaque><constant name="classmethod.fitting_subgroup">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the Fitting subgroup of ``self``.
+
+        The Fitting subgroup of a group $G$ is the largest nilpotent normal
+        subgroup of `G`.
+
+        EXAMPLES::
+
+            sage: G=PermutationGroup([[(1,2,3,4)],[(2,4)]])
+            sage: G.fitting_subgroup()
+            Subgroup of (Permutation Group with generators [(2,4), (1,2,3,4)]) generated by [(2,4), (1,2,3,4), (1,3)]
+            sage: G=PermutationGroup([[(1,2,3,4)],[(1,2)]])
+            sage: G.fitting_subgroup()
+            Subgroup of (Permutation Group with generators [(1,2), (1,2,3,4)]) generated by [(1,2)(3,4), (1,3)(2,4)]
+
+        </opaque><constant name="classmethod.fixed_points">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the list of points fixed by ``self``, i.e., the subset
+        of ``.domain()`` not moved by any element of ``self``.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([(1,2,3)])
+            sage: G.fixed_points()
+            []
+            sage: G = PermutationGroup([(1,2,3),(5,6)])
+            sage: G.fixed_points()
+            [4]
+            sage: G = PermutationGroup([[(1,4,7)],[(4,3),(6,7)]])
+            sage: G.fixed_points()
+            [2, 5]
+        </opaque><constant name="classmethod.frattini_subgroup">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the Frattini subgroup of ``self``.
+
+        The Frattini subgroup of a group $G$ is the intersection of all maximal
+        subgroups of `G`.
+
+        EXAMPLES::
+
+            sage: G=PermutationGroup([[(1,2,3,4)],[(2,4)]])
+            sage: G.frattini_subgroup()
+            Subgroup of (Permutation Group with generators [(2,4), (1,2,3,4)]) generated by [(1,3)(2,4)]
+            sage: G=SymmetricGroup(4)
+            sage: G.frattini_subgroup()
+            Subgroup of (Symmetric group of order 4! as a permutation group) generated by [()]
+
+        </opaque><constant name="classmethod.gens_small">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        For this group, returns a generating set which has few elements.
+        As neither irredundancy nor minimal length is proven, it is fast.
+
+        EXAMPLES::
+
+            sage: R = &quot;(25,27,32,30)(26,29,31,28)( 3,38,43,19)( 5,36,45,21)( 8,33,48,24)&quot; ## R = right
+            sage: U = &quot;( 1, 3, 8, 6)( 2, 5, 7, 4)( 9,33,25,17)(10,34,26,18)(11,35,27,19)&quot; ## U = top
+            sage: L = &quot;( 9,11,16,14)(10,13,15,12)( 1,17,41,40)( 4,20,44,37)( 6,22,46,35)&quot; ## L = left
+            sage: F = &quot;(17,19,24,22)(18,21,23,20)( 6,25,43,16)( 7,28,42,13)( 8,30,41,11)&quot; ## F = front
+            sage: B = &quot;(33,35,40,38)(34,37,39,36)( 3, 9,46,32)( 2,12,47,29)( 1,14,48,27)&quot; ## B = back or rear
+            sage: D = &quot;(41,43,48,46)(42,45,47,44)(14,22,30,38)(15,23,31,39)(16,24,32,40)&quot; ## D = down or bottom
+            sage: G = PermutationGroup([R,L,U,F,B,D])
+            sage: len(G.gens_small())
+            2
+
+        The output may be unpredictable, due to the use of randomized
+        algorithms in GAP. Note that both the following answers are equally valid.
+
+        ::
+
+            sage: G = PermutationGroup([[('a','b')], [('b', 'c')], [('a', 'c')]])
+            sage: G.gens_small() # random
+            [('b','c'), ('a','c','b')] ## (on 64-bit Linux)
+            [('a','b'), ('a','c','b')] ## (on Solaris)
+            sage: len(G.gens_small()) == 2
+            True
+        </opaque><constant name="classmethod.group_id">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ID code of this group, which is a list of two integers.
+        Requires &quot;optional&quot; database_gap-4.4.x package.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3),(4,5)], [(1,2)]])
+            sage: G.group_id()    # optional - database_gap
+            [12, 4]
+        </opaque><constant name="classmethod.group_primitive_id">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the index of this group in the GAP database of primitive groups.
+
+        Requires &quot;optional&quot; database_gap-4.4.x package.
+
+        OUTPUT:
+
+        A positive integer, following GAP's conventions. A
+        ``ValueError`` is raised if the group is not primitive.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3,4,5)], [(1,5),(2,4)]])
+            sage: G.group_primitive_id()    # optional - database_gap
+            2
+            sage: G.degree()
+            5
+
+        From the information of the degree and the identification number,
+        you can recover the isomorphism class of your group in the GAP
+        database::
+
+            sage: H = PrimitiveGroup(5,2)  # optional - database_gap
+            sage: G == H                     # optional - database_gap
+            False
+            sage: G.is_isomorphic(H)         # optional - database_gap
+            True
+        </opaque><constant name="classmethod.has_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns boolean value of ``item in self`` - however *ignores*
+        parentage.
+
+        EXAMPLES::
+
+            sage: G = CyclicPermutationGroup(4)
+            sage: gens = G.gens()
+            sage: H = DihedralGroup(4)
+            sage: g = G([(1,2,3,4)]); g
+            (1,2,3,4)
+            sage: G.has_element(g)
+            True
+            sage: h = H([(1,2),(3,4)]); h
+            (1,2)(3,4)
+            sage: G.has_element(h)
+            False
+        </opaque><constant name="classmethod.has_regular_subgroup">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.holomorph">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        The holomorph of a group as a permutation group.
+
+        The holomorph of a group `G` is the semidirect product
+        `G \rtimes_{id} Aut(G)`, where `id` is the identity function
+        on `Aut(G)`, the automorphism group of `G`.
+
+        See :wikipedia:`Holomorph (mathematics)`
+
+        OUTPUT:
+
+        Returns the holomorph of a given group as permutation group
+        via a wrapping of GAP's semidirect product function.
+
+        EXAMPLES:
+
+        Thomas and Wood's 'Group Tables' (Shiva Publishing, 1980) tells
+        us that the holomorph of `C_5` is the unique group of order 20
+        with a trivial center. ::
+
+            sage: C5 = CyclicPermutationGroup(5)
+            sage: A = C5.holomorph()
+            sage: A.order()
+            20
+            sage: A.is_abelian()
+            False
+            sage: A.center()
+            Subgroup of (Permutation Group with generators
+            [(5,6,7,8,9), (1,2,4,3)(6,7,9,8)]) generated by [()]
+            sage: A
+            Permutation Group with generators [(5,6,7,8,9), (1,2,4,3)(6,7,9,8)]
+
+        Noting that the automorphism group of `D_4` is itself `D_4`, it
+        can easily be shown that the holomorph is indeed an internal
+        semidirect product of these two groups. ::
+
+            sage: D4 = DihedralGroup(4)
+            sage: H = D4.holomorph()
+            sage: H.gens()
+            [(3,8)(4,7), (2,3,5,8), (2,5)(3,8), (1,4,6,7)(2,3,5,8), (1,8)(2,7)(3,6)(4,5)]
+            sage: G = H.subgroup([H.gens()[0],H.gens()[1],H.gens()[2]])
+            sage: N = H.subgroup([H.gens()[3],H.gens()[4]])
+            sage: N.is_normal(H)
+            True
+            sage: G.is_isomorphic(D4)
+            True
+            sage: N.is_isomorphic(D4)
+            True
+            sage: G.intersection(N)
+            Permutation Group with generators [()]
+            sage: L = [H(x)*H(y) for x in G for y in N]; L.sort()
+            sage: L1 = H.list(); L1.sort()
+            sage: L == L1
+            True
+
+        Author:
+
+        - Kevin Halasz (2012-08-14)
+        </opaque><constant name="classmethod.homology">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Computes the group homology `H_n(G, F)`, where
+        `F = \ZZ` if `p=0` and `F = \ZZ / p \ZZ` if
+        `p &gt; 0` is a prime. Wraps HAP's ``GroupHomology`` function,
+        written by Graham Ellis.
+
+        REQUIRES: GAP package HAP (in gap_packages-\*.spkg).
+
+        AUTHORS:
+
+        - David Joyner and Graham Ellis
+
+        The example below computes `H_7(S_5, \ZZ)`,
+        `H_7(S_5, \ZZ / 2 \ZZ)`,
+        `H_7(S_5, \ZZ / 3 \ZZ)`, and
+        `H_7(S_5, \ZZ / 5 \ZZ)`, respectively. To compute the
+        `2`-part of `H_7(S_5, \ZZ)`, use the ``homology_part``
+        function.
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(5)
+            sage: G.homology(7)                              # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C2 x C2 x C4 x C3 x C5
+            sage: G.homology(7,2)                              # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C2 x C2 x C2 x C2 x C2
+            sage: G.homology(7,3)                              # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C3
+            sage: G.homology(7,5)                              # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C5
+
+        REFERENCES:
+
+        - G. Ellis, &quot;Computing group resolutions&quot;, J. Symbolic
+          Computation. Vol.38, (2004)1077-1118 (Available at
+          http://hamilton.nuigalway.ie/.
+
+        - D. Joyner, &quot;A primer on computational group homology and cohomology&quot;,
+          http://front.math.ucdavis.edu/0706.0549
+        </opaque><constant name="classmethod.homology_part">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Computes the `p`-part of the group homology
+        `H_n(G, F)`, where `F = \ZZ` if `p=0` and
+        `F = \ZZ / p \ZZ` if `p &gt; 0` is a prime. Wraps HAP's
+        ``Homology`` function, written by Graham Ellis, applied to the
+        `p`-Sylow subgroup of `G`.
+
+        REQUIRES: GAP package HAP (in gap_packages-\*.spkg).
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(5)
+            sage: G.homology_part(7,2)                              # optional - gap_packages
+            Multiplicative Abelian group isomorphic to C2 x C2 x C2 x C2 x C4
+
+        AUTHORS:
+
+        - David Joyner and Graham Ellis
+        </opaque><constant name="classmethod.id">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        (Same as ``self.group_id()``.) Return the ID code of this group, which
+        is a list of two integers. Requires &quot;optional&quot; database_gap-4.4.x
+        package.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3),(4,5)], [(1,2)]])
+            sage: G.group_id()    # optional - database_gap
+            [12, 4]
+        </opaque><constant name="classmethod.identity">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the identity element of this group.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3),(4,5)]])
+            sage: e = G.identity()
+            sage: e
+            ()
+            sage: g = G.gen(0)
+            sage: g*e
+            (1,2,3)(4,5)
+            sage: e*g
+            (1,2,3)(4,5)
+
+            sage: S = SymmetricGroup(['a','b','c'])
+            sage: S.identity()
+            ()
+        </opaque><constant name="classmethod.intersection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the permutation group that is the intersection of
+        ``self`` and ``other``.
+
+        INPUT:
+
+        - ``other`` - a permutation group.
+
+        OUTPUT:
+
+        A permutation group that is the set-theoretic intersection of ``self``
+        with ``other``.  The groups are viewed as subgroups of a symmetric
+        group big enough to contain both group's symbol sets.  So there is
+        no strict notion of the two groups being subgroups of a common parent.
+
+        EXAMPLES::
+
+            sage: H = DihedralGroup(4)
+
+            sage: K = CyclicPermutationGroup(4)
+            sage: H.intersection(K)
+            Permutation Group with generators [(1,2,3,4)]
+
+            sage: L = DihedralGroup(5)
+            sage: H.intersection(L)
+            Permutation Group with generators [(1,4)(2,3)]
+
+            sage: M = PermutationGroup([&quot;()&quot;])
+            sage: H.intersection(M)
+            Permutation Group with generators [()]
+
+        Some basic properties. ::
+
+            sage: H = DihedralGroup(4)
+            sage: L = DihedralGroup(5)
+            sage: H.intersection(L) == L.intersection(H)
+            True
+            sage: H.intersection(H) == H
+            True
+
+        The group ``other`` is verified as such.  ::
+
+            sage: H = DihedralGroup(4)
+            sage: H.intersection('junk')
+            Traceback (most recent call last):
+            ...
+            TypeError: junk is not a permutation group
+        </opaque><constant name="classmethod.irreducible_characters">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a list of the irreducible characters of ``self``.
+
+        EXAMPLES::
+
+            sage: irr = SymmetricGroup(3).irreducible_characters()
+            sage: [x.values() for x in irr]
+            [[1, -1, 1], [2, 0, -1], [1, 1, 1]]
+        </opaque><constant name="classmethod.is_cyclic">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if this group is cyclic.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])
+            sage: G.is_cyclic()
+            False
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_cyclic()
+            True
+        </opaque><constant name="classmethod.is_elementary_abelian">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if this group is elementary abelian. An elementary
+        abelian group is a finite abelian group, where every nontrivial
+        element has order `p`, where `p` is a prime.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])
+            sage: G.is_elementary_abelian()
+            False
+            sage: G = PermutationGroup(['(1,2,3)','(4,5,6)'])
+            sage: G.is_elementary_abelian()
+            True
+        </opaque><constant name="classmethod.is_isomorphic">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if the groups are isomorphic.
+
+        INPUT:
+
+
+        -  ``self`` - this group
+
+        -  ``right`` - a permutation group
+
+
+        OUTPUT:
+
+        - boolean; ``True`` if ``self`` and ``right`` are isomorphic groups;
+          ``False`` otherwise.
+
+        EXAMPLES::
+
+            sage: v = ['(1,2,3)(4,5)', '(1,2,3,4,5)']
+            sage: G = PermutationGroup(v)
+            sage: H = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_isomorphic(H)
+            False
+            sage: G.is_isomorphic(G)
+            True
+            sage: G.is_isomorphic(PermutationGroup(list(reversed(v))))
+            True
+        </opaque><constant name="classmethod.is_monomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if the group is monomial. A finite group is monomial
+        if every irreducible complex character is induced from a linear
+        character of a subgroup.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_monomial()
+            True
+        </opaque><constant name="classmethod.is_nilpotent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if this group is nilpotent.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])
+            sage: G.is_nilpotent()
+            False
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_nilpotent()
+            True
+        </opaque><constant name="classmethod.is_normal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if this group is a normal subgroup of ``other``.
+
+        EXAMPLES::
+
+            sage: AlternatingGroup(4).is_normal(SymmetricGroup(4))
+            True
+            sage: H = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])
+            sage: H.is_normal(G)
+            False
+        </opaque><constant name="classmethod.is_perfect">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if this group is perfect. A group is perfect if it
+        equals its derived subgroup.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])
+            sage: G.is_perfect()
+            False
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_perfect()
+            False
+        </opaque><constant name="classmethod.is_pgroup">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if this group is a `p`-group. A finite group is
+        a `p`-group if its order is of the form `p^n` for a prime integer
+        `p` and a nonnegative integer `n`.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3,4,5)'])
+            sage: G.is_pgroup()
+            True
+        </opaque><constant name="classmethod.is_polycyclic">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if this group is polycyclic. A group is polycyclic if
+        it has a subnormal series with cyclic factors. (For finite groups,
+        this is the same as if the group is solvable - see
+        ``is_solvable``.)
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])
+            sage: G.is_polycyclic()
+            False
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_polycyclic()
+            True
+        </opaque><constant name="classmethod.is_primitive">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if ``self`` acts primitively on ``domain``.
+        A group $G$ acts primitively on a set $S$ if
+
+        1. $G$ acts transitively on $S$ and
+
+        2. the action induces no non-trivial block system on $S$.
+
+        INPUT:
+
+        - ``domain`` (optional)
+
+        .. SEEALSO::
+
+            - :meth:`~PermutationGroup_generic.blocks_all`
+
+        EXAMPLES:
+
+        By default, test for primitivity of ``self`` on its domain::
+
+            sage: G = PermutationGroup([[(1,2,3,4)],[(1,2)]])
+            sage: G.is_primitive()
+            True
+            sage: G = PermutationGroup([[(1,2,3,4)],[(2,4)]])
+            sage: G.is_primitive()
+            False
+
+        You can specify a domain on which to test primitivity::
+
+            sage: G = PermutationGroup([[(1,2,3,4)],[(2,4)]])
+            sage: G.is_primitive([1..4])
+            False
+            sage: G.is_primitive([1,2,3])
+            True
+            sage: G = PermutationGroup([[(3,4,5,6)],[(3,4)]]) #S_4 on [3..6]
+            sage: G.is_primitive(G.non_fixed_points())
+            True
+
+        </opaque><constant name="classmethod.is_regular">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if ``self`` acts regularly on ``domain``.
+        A group $G$ acts regularly on a set $S$ if
+
+        1. $G$ acts transitively on $S$ and
+        2. $G$ acts semi-regularly on $S$.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3,4)]])
+            sage: G.is_regular()
+            True
+            sage: G = PermutationGroup([[(1,2,3,4)],[(5,6)]])
+            sage: G.is_regular()
+            False
+
+        You can pass in a domain on which to test regularity::
+
+            sage: G = PermutationGroup([[(1,2,3,4)],[(5,6)]])
+            sage: G.is_regular([1..4])
+            True
+            sage: G.is_regular(G.non_fixed_points())
+            False
+
+        </opaque><constant name="classmethod.is_semi_regular">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if ``self`` acts semi-regularly on ``domain``.
+        A group $G$ acts semi-regularly on a set $S$ if the point
+        stabilizers of $S$ in $G$ are trivial.
+
+        ``domain`` is optional and may take several forms. See examples.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3,4)]])
+            sage: G.is_semi_regular()
+            True
+            sage: G = PermutationGroup([[(1,2,3,4)],[(5,6)]])
+            sage: G.is_semi_regular()
+            False
+
+        You can pass in a domain to test semi-regularity::
+
+            sage: G = PermutationGroup([[(1,2,3,4)],[(5,6)]])
+            sage: G.is_semi_regular([1..4])
+            True
+            sage: G.is_semi_regular(G.non_fixed_points())
+            False
+
+        </opaque><constant name="classmethod.is_simple">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if the group is simple. A group is simple if it has no
+        proper normal subgroups.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_simple()
+            False
+        </opaque><constant name="classmethod.is_solvable">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if the group is solvable.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_solvable()
+            True
+        </opaque><constant name="classmethod.is_subgroup">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if ``self`` is a subgroup of ``other``.
+
+        EXAMPLES::
+
+            sage: G = AlternatingGroup(5)
+            sage: H = SymmetricGroup(5)
+            sage: G.is_subgroup(H)
+            True
+        </opaque><constant name="classmethod.is_supersolvable">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if the group is supersolvable. A finite group is
+        supersolvable if it has a normal series with cyclic factors.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.is_supersolvable()
+            True
+        </opaque><constant name="classmethod.is_transitive">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if ``self`` acts transitively on ``domain``.
+        A group $G$ acts transitively on set $S$ if for all `x,y\in S`
+        there is some `g\in G` such that `x^g=y`.
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(5)
+            sage: G.is_transitive()
+            True
+            sage: G = PermutationGroup(['(1,2)(3,4)(5,6)'])
+            sage: G.is_transitive()
+            False
+
+        ::
+
+            sage: G = PermutationGroup([[(1,2,3,4,5)],[(1,2)]]) #S_5 on [1..5]
+            sage: G.is_transitive([1,4,5])
+            True
+            sage: G.is_transitive([2..6])
+            False
+            sage: G.is_transitive(G.non_fixed_points())
+            True
+            sage: H = PermutationGroup([[(1,2,3)],[(4,5,6)]])
+            sage: H.is_transitive(H.non_fixed_points())
+            False
+
+        Note that this differs from the definition in GAP, where
+        ``IsTransitive`` returns whether the group is transitive on the
+        set of points moved by the group.
+
+        ::
+
+            sage: G = PermutationGroup([(2,3)])
+            sage: G.is_transitive()
+            False
+            sage: gap(G).IsTransitive()
+            true
+        </opaque><constant name="classmethod.isomorphism_to">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return an isomorphism from ``self`` to ``right`` if the groups
+        are isomorphic, otherwise ``None``.
+
+        INPUT:
+
+
+        -  ``self`` - this group
+
+        -  ``right`` - a permutation group
+
+
+        OUTPUT:
+
+        - ``None`` or a morphism of permutation groups.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])
+            sage: H = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: G.isomorphism_to(H) is None
+            True
+            sage: G = PermutationGroup([(1,2,3), (2,3)])
+            sage: H = PermutationGroup([(1,2,4), (1,4)])
+            sage: G.isomorphism_to(H)  # not tested, see below
+            Permutation group morphism:
+              From: Permutation Group with generators [(2,3), (1,2,3)]
+              To:   Permutation Group with generators [(1,2,4), (1,4)]
+              Defn: [(2,3), (1,2,3)] -&gt; [(2,4), (1,2,4)]
+
+        TESTS:
+
+        Partial check that the output makes some sense::
+
+            sage: G.isomorphism_to(H)
+            Permutation group morphism:
+              From: Permutation Group with generators [(2,3), (1,2,3)]
+              To:   Permutation Group with generators [(1,2,4), (1,4)]
+              Defn: [(2,3), (1,2,3)] -&gt; [...]
+        </opaque><constant name="classmethod.isomorphism_type_info_simple_group">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        If the group is simple, then this returns the name of the group.
+
+        EXAMPLES::
+
+            sage: G = CyclicPermutationGroup(5)
+            sage: G.isomorphism_type_info_simple_group()
+            rec(
+              name := &quot;Z(5)&quot;,
+              parameter := 5,
+              series := &quot;Z&quot; )
+
+        TESTS:
+
+        This shows that the issue at :trac:`7360` is fixed::
+
+            sage: G = KleinFourGroup()
+            sage: G.is_simple()
+            False
+            sage: G.isomorphism_type_info_simple_group()
+            Traceback (most recent call last):
+            ...
+            TypeError: Group must be simple.
+        </opaque><constant name="classmethod.largest_moved_point">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the largest point moved by a permutation in this group.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4)]])
+            sage: G.largest_moved_point()
+            4
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4,10)]])
+            sage: G.largest_moved_point()
+            10
+
+        ::
+
+            sage: G = PermutationGroup([[('a','b','c'),('d','e')]])
+            sage: G.largest_moved_point()
+            'e'
+
+        .. warning::
+
+           The name of this function is not good; this function
+           should be deprecated in term of degree::
+
+                sage: P = PermutationGroup([[1,2,3,4]])
+                sage: P.largest_moved_point()
+                4
+                sage: P.cardinality()
+                1
+        </opaque><constant name="classmethod.list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return list of all elements of this group.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3,4)], [(1,2)]])
+            sage: G.list()
+            [(), (1,2), (1,2,3,4), (1,3)(2,4), (1,3,4), (2,3,4), (1,4,3,2),
+             (1,3,2,4), (1,3,4,2), (1,2,4,3), (1,4,2,3), (2,4,3), (1,4,3),
+             (1,4)(2,3), (1,4,2), (1,3,2), (1,3), (3,4), (2,4), (1,4), (2,3),
+             (1,2)(3,4), (1,2,3), (1,2,4)]
+
+            sage: G = PermutationGroup([[('a','b')]], domain=('a', 'b')); G
+            Permutation Group with generators [('a','b')]
+            sage: G.list()
+            [(), ('a','b')]
+
+        TESTS:
+
+        Test :trac:`9155`::
+
+            sage: G = SymmetricGroup(2)
+            sage: elements = G.list()
+            sage: elements.remove(G(&quot;()&quot;))
+            sage: elements
+            [(1,2)]
+            sage: G.list()
+            [(), (1,2)]
+        </opaque><constant name="classmethod.lower_central_series">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the lower central series of this group as a list of
+        permutation groups.
+
+        EXAMPLES:
+
+        These computations use pseudo-random numbers, so we set
+        the seed for reproducible testing.
+
+        ::
+
+            sage: set_random_seed(0)
+            sage: G = PermutationGroup([[(1,2,3),(4,5)],[(3,4)]])
+            sage: G.lower_central_series()  # random output
+            [Permutation Group with generators [(1,2,3)(4,5), (3,4)], Permutation Group with generators [(1,5)(3,4), (1,5)(2,3), (1,3)(2,4)]]
+        </opaque><constant name="classmethod.minimal_generating_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a minimal generating set
+
+        EXAMPLES::
+
+            sage: g = graphs.CompleteGraph(4)
+            sage: g.relabel(['a','b','c','d'])
+            sage: mgs = g.automorphism_group().minimal_generating_set(); len(mgs)
+            2
+            sage: mgs # random
+            [('b','d','c'), ('a','c','b','d')]
+
+
+        TESTS::
+
+            sage: PermutationGroup([&quot;(1,2,3)(4,5,6)&quot;,&quot;(1,2,3,4,5,6)&quot;]).minimal_generating_set()
+            [(2,5)(3,6), (1,5,3,4,2,6)]
+        </opaque><constant name="classmethod.molien_series">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the Molien series of a permutation group. The
+        function
+
+        .. MATH::
+
+                     M(x) = (1/|G|)\sum_{g\in G} \det(1-x*g)^{-1}
+
+        is sometimes called the &quot;Molien series&quot; of `G`. GAP's
+        ``MolienSeries`` is associated to a character of a
+        group `G`. How are these related? A group `G`, given as a permutation
+        group on `n` points, has a &quot;natural&quot; representation of dimension `n`,
+        given by permutation matrices. The Molien series of `G` is the one
+        associated to that permutation representation of `G` using the above
+        formula. Character values then count fixed points of the
+        corresponding permutations.
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(5)
+            sage: G.molien_series()
+            1/(-x^15 + x^14 + x^13 - x^10 - x^9 - x^8 + x^7 + x^6 + x^5 - x^2 - x + 1)
+            sage: G = SymmetricGroup(3)
+            sage: G.molien_series()
+            1/(-x^6 + x^5 + x^4 - x^2 - x + 1)
+
+        Some further tests (after :trac:`15817`)::
+
+            sage: G = PermutationGroup([[(1,2,3,4)]])
+            sage: S4ms = SymmetricGroup(4).molien_series()
+            sage: G.molien_series() / S4ms
+            x^5 + 2*x^4 + x^3 + x^2 + 1
+
+        This works for not-transitive groups::
+
+            sage: G = PermutationGroup([[(1,2)],[(3,4)]])
+            sage: G.molien_series() / S4ms
+            x^4 + x^3 + 2*x^2 + x + 1
+
+        This works for groups with fixed points::
+
+            sage: G = PermutationGroup([[(2,)]])
+            sage: G.molien_series()
+            1/(x^2 - 2*x + 1)
+        </opaque><constant name="classmethod.non_fixed_points">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the list of points not fixed by ``self``, i.e., the subset
+        of ``self.domain()`` moved by some element of ``self``.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(3,4,5)],[(7,10)]])
+            sage: G.non_fixed_points()
+            [3, 4, 5, 7, 10]
+            sage: G = PermutationGroup([[(2,3,6)],[(9,)]]) # note: 9 is fixed
+            sage: G.non_fixed_points()
+            [2, 3, 6]
+        </opaque><constant name="classmethod.normal_subgroups">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the normal subgroups of this group as a (sorted in
+        increasing order) list of permutation groups.
+
+        The normal subgroups of `H = PSL(2,7) \times PSL(2,7)` are
+        `1`, two copies of `PSL(2,7)` and `H`
+        itself, as the following example shows.
+
+        EXAMPLES::
+
+            sage: G = PSL(2,7)
+            sage: D = G.direct_product(G)
+            sage: H = D[0]
+            sage: NH = H.normal_subgroups()
+            sage: len(NH)
+            4
+            sage: NH[1].is_isomorphic(G)
+            True
+            sage: NH[2].is_isomorphic(G)
+            True
+        </opaque><constant name="classmethod.normalizer">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the normalizer of ``g`` in ``self``.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4)]])
+            sage: g = G([(1,3)])
+            sage: G.normalizer(g)
+            Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(2,4), (1,3)]
+            sage: g = G([(1,2,3,4)])
+            sage: G.normalizer(g)
+            Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(2,4), (1,2,3,4), (1,3)(2,4)]
+            sage: H = G.subgroup([G([(1,2,3,4)])])
+            sage: G.normalizer(H)
+            Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4)]) generated by [(2,4), (1,2,3,4), (1,3)(2,4)]
+        </opaque><constant name="classmethod.normalizes">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns ``True`` if the group ``other`` is normalized by ``self``.
+        Wraps GAP's ``IsNormal`` function.
+
+        A group `G` normalizes a group `U` if and only if for every
+        `g \in G` and `u \in U` the element `u^g`
+        is a member of `U`. Note that `U` need not be a subgroup of `G`.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: H = PermutationGroup(['(1,2,3)(4,5)', '(1,2,3,4,5)'])
+            sage: H.normalizes(G)
+            False
+            sage: G = SymmetricGroup(3)
+            sage: H = PermutationGroup( [ (4,5,6) ] )
+            sage: G.normalizes(H)
+            True
+            sage: H.normalizes(G)
+            True
+
+        In the last example, `G` and `H` are disjoint, so each normalizes the
+        other.
+        </opaque><constant name="classmethod.orbit">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.orbits">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.poincare_series">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the Poincare series of `G \mod p` (`p \geq 2` must be a prime),
+        for `n` large.
+
+        In other words, if you input a finite group `G`, a prime `p`, and a
+        positive integer `n`, it returns a quotient of polynomials `f(x) = P(x)
+        / Q(x)` whose coefficient of `x^k` equals the rank of the vector space
+        `H_k(G, \ZZ / p \ZZ)`, for all `k` in the range `1 \leq k \leq n`.
+
+        REQUIRES: GAP package HAP (in gap_packages-\*.spkg).
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(5)
+            sage: G.poincare_series(2,10)                              # optional - gap_packages
+            (x^2 + 1)/(x^4 - x^3 - x + 1)
+            sage: G = SymmetricGroup(3)
+            sage: G.poincare_series(2,10)                              # optional - gap_packages
+            1/(-x + 1)
+
+        AUTHORS:
+
+        - David Joyner and Graham Ellis
+
+        </opaque><constant name="classmethod.representative_action">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return an element of self that maps `x` to `y` if it exists.
+
+        This method wraps the gap function ``RepresentativeAction``, which can
+        also return elements that map a given set of points on another set of
+        points.
+
+        INPUT:
+
+        - ``x,y`` -- two elements of the domain.
+
+        EXAMPLES::
+
+            sage: G = groups.permutation.Cyclic(14)
+            sage: g = G.representative_action(1,10)
+            sage: all(g(x) == 1+((x+9-1)%14) for x in G.domain())
+            True
+
+        TESTS::
+
+            sage: g = graphs.PetersenGraph()
+            sage: g.relabel(list(&quot;abcdefghik&quot;))
+            sage: g.vertices()
+            ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k']
+            sage: ag = g.automorphism_group()
+            sage: a = ag.representative_action('a','b')
+            sage: g == g.relabel(a,inplace=False)
+            True
+            sage: a('a') == 'b'
+            True
+        </opaque><constant name="classmethod.semidirect_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        The semidirect product of ``self`` with ``N``.
+
+        INPUT:
+
+        - ``N`` - A group which is acted on by ``self`` and
+          naturally embeds as a normal subgroup of the returned semidirect
+          product.
+
+        - ``mapping`` - A pair of lists that together define a
+          homomorphism, `\phi :` self `\rightarrow` Aut(N), by giving,
+          in the second list, the images of the generators of ``self``
+          in the order given in the first list.
+
+        - ``check`` - A boolean that, if set to False, will skip the
+          initial tests which are made on ``mapping``. This may be beneficial
+          for large ``N``, since in such cases the injectivity test can be
+          expensive. Set to True by default.
+
+        OUTPUT:
+
+        The semidirect product of ``self`` and ``N`` defined by the
+        action of ``self`` on ``N`` given in ``mapping`` (note that a
+        homomorphism from A to the automorphism group of B is
+        equivalent to an action of A on the B's underlying set). The
+        semidirect product of two groups, `H` and `N`, is a construct
+        similar to the direct product in so far as the elements are
+        the Cartesian product of the elements of `H` and the elements
+        of `N`. The operation, however, is built upon an action of `H`
+        on `N`, and is defined as such:
+
+        .. MATH::
+
+                (h_1,n_1)(h_2,n_2) = (h_{1}h_{2}, n_{1}^{h_2}n_2)
+
+        This function is a wrapper for GAP's ``SemidirectProduct``
+        command. The permutation group returned is built upon a
+        permutation representation of the semidirect product of ``self``
+        and ``N`` on a set of size `\mid N \mid`. The generators of
+        ``N`` are given as their right regular representations, while the
+        generators of ``self`` are defined by the underlying action of
+        ``self`` on ``N``. It should be noted that the defining action is
+        not always faithful, and in this case the inputted representations
+        of the generators of ``self`` are placed on additional letters
+        and adjoined to the output's generators of ``self``.
+
+
+        EXAMPLES:
+
+        Perhaps the most common example of a semidirect product comes
+        from the family of dihedral groups. Each dihedral group is the
+        semidirect product of $C_2$ with $C_n$, where, by convention,
+        $3 \leq n$. In this case, the nontrivial element of $C_2$ acts
+        on $C_n$ so as to send each element to its inverse. ::
+
+            sage: C2 = CyclicPermutationGroup(2)
+            sage: C8 = CyclicPermutationGroup(8)
+            sage: alpha = PermutationGroupMorphism_im_gens(C8,C8,[(1,8,7,6,5,4,3,2)])
+            sage: S = C2.semidirect_product(C8,[[(1,2)],[alpha]])
+            sage: S == DihedralGroup(8)
+            False
+            sage: S.is_isomorphic(DihedralGroup(8))
+            True
+            sage: S.gens()
+            [(3,4,5,6,7,8,9,10), (1,2)(4,10)(5,9)(6,8)]
+
+        A more complicated example can be drawn from [TW1980]_.
+        It is there given that a semidirect product of $D_4$ and $C_3$
+        is isomorphic to one of $C_2$ and the dicyclic group of order
+        12. This nonabelian group of order 24 has very similar
+        structure to the dicyclic and dihedral groups of order 24, the
+        three being the only groups of order 24 with a two-element
+        center and 9 conjugacy classes. ::
+
+            sage: D4 = DihedralGroup(4)
+            sage: C3 = CyclicPermutationGroup(3)
+            sage: alpha1 = PermutationGroupMorphism_im_gens(C3,C3,[(1,3,2)])
+            sage: alpha2 = PermutationGroupMorphism_im_gens(C3,C3,[(1,2,3)])
+            sage: S1 = D4.semidirect_product(C3,[[(1,2,3,4),(1,3)],[alpha1,alpha2]])
+            sage: C2 = CyclicPermutationGroup(2)
+            sage: Q = DiCyclicGroup(3)
+            sage: a = Q.gens()[0]; b=Q.gens()[1].inverse()
+            sage: alpha = PermutationGroupMorphism_im_gens(Q,Q,[a,b])
+            sage: S2 = C2.semidirect_product(Q,[[(1,2)],[alpha]])
+            sage: S1.is_isomorphic(S2)
+            True
+            sage: S1.is_isomorphic(DihedralGroup(12))
+            False
+            sage: S1.is_isomorphic(DiCyclicGroup(6))
+            False
+            sage: S1.center()
+            Subgroup of (Permutation Group with generators
+            [(5,6,7), (1,2,3,4)(6,7), (1,3)]) generated by [(1,3)(2,4)]
+            sage: len(S1.conjugacy_classes_representatives())
+            9
+
+        If your normal subgroup is large, and you are confident that
+        your inputs will successfully create a semidirect product, then
+        it is beneficial, for the sake of time efficiency, to set the
+        ``check`` parameter to ``False``.  ::
+
+            sage: C2 = CyclicPermutationGroup(2)
+            sage: C2000 = CyclicPermutationGroup(500)
+            sage: alpha = PermutationGroupMorphism(C2000,C2000,[C2000.gen().inverse()])
+            sage: S = C2.semidirect_product(C2000,[[(1,2)],[alpha]],check=False)
+
+        TESTS::
+
+            sage: C3 = CyclicPermutationGroup(3)
+            sage: D4 = DihedralGroup(4)
+            sage: alpha = PermutationGroupMorphism(C3,C3,[C3(&quot;(1,3,2)&quot;)])
+            sage: alpha1 = PermutationGroupMorphism(C3,C3,[C3(&quot;(1,2,3)&quot;)])
+
+            sage: s = D4.semidirect_product('junk', [[(1,2,3,4),(1,2)], [alpha, alpha1]])
+            Traceback (most recent call last):
+            ...
+            TypeError: junk is not a permutation group
+
+            sage: s = D4.semidirect_product(C3, [[(1,2,3,4),(1,2)], [alpha, alpha1]])
+            Traceback (most recent call last):
+            ...
+            ValueError: the generator list must generate the calling group, [(1, 2, 3, 4), (1, 2)]
+            does not generate Dihedral group of order 8 as a permutation group
+
+            sage: s = D4.semidirect_product(C3, [[(1,2,3,4),(1,3)], [alpha]])
+            Traceback (most recent call last):
+            ...
+            ValueError: the list of generators and the list of morphisms must be of equal length
+
+            sage: alpha2 = PermutationGroupMorphism(C3, D4, [D4(&quot;()&quot;)])
+            sage: s = D4.semidirect_product(C3, [[(1,2,3,4),(1,3)], [alpha, alpha2]])
+            Traceback (most recent call last):
+            ...
+            ValueError: an element of the automorphism list is not an endomorphism (and is therefore not an automorphism)
+
+            sage: alpha3 = PermutationGroupMorphism(C3,C3,[C3(&quot;()&quot;)])
+            sage: s = D4.semidirect_product(C3, [[(1,2,3,4),(1,3)], [alpha, alpha3]])
+            Traceback (most recent call last):
+            ...
+            ValueError: an element of the automorphism list is not an injection (and is therefore not an automorphism)
+
+        AUTHOR:
+
+        - Kevin Halasz (2012-8-12)
+
+        </opaque><constant name="classmethod.smallest_moved_point">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.socle">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the socle of ``self``. The socle of a group $G$ is
+        the subgroup generated by all minimal normal subgroups.
+
+        EXAMPLES::
+
+            sage: G=SymmetricGroup(4)
+            sage: G.socle()
+            Subgroup of (Symmetric group of order 4! as a permutation group) generated by [(1,2)(3,4), (1,4)(2,3)]
+            sage: G.socle().socle()
+            Subgroup of (Subgroup of (Symmetric group of order 4! as a permutation group) generated by [(1,2)(3,4), (1,4)(2,3)]) generated by [(1,2)(3,4), (1,4)(2,3)]
+        </opaque><constant name="classmethod.solvable_radical">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the solvable radical of ``self``. The solvable
+        radical (or just radical) of a group $G$ is the largest
+        solvable normal subgroup of $G$.
+
+        EXAMPLES::
+
+            sage: G=SymmetricGroup(4)
+            sage: G.solvable_radical()
+            Subgroup of (Symmetric group of order 4! as a permutation group) generated by [(1,2), (1,2,3,4)]
+            sage: G=SymmetricGroup(5)
+            sage: G.solvable_radical()
+            Subgroup of (Symmetric group of order 5! as a permutation group) generated by [()]
+
+        </opaque><constant name="classmethod.stabilizer">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the subgroup of ``self`` which stabilize the given position.
+        ``self`` and its stabilizers must have same degree.
+
+        INPUT:
+
+        - ``point`` -- a point of the :meth:`domain`, or a set of points
+          depending on the value of ``action``.
+
+        - ``action`` (string; default ``&quot;OnPoints&quot;``) -- should the group be
+          considered to act on points (``action=&quot;OnPoints&quot;``) or on sets of
+          points (``action=&quot;OnSets&quot;``) ? In the latter case, the first argument
+          must be a subset of :meth:`domain`.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([ [(3,4)], [(1,3)] ])
+            sage: G.stabilizer(1)
+            Subgroup of (Permutation Group with generators [(3,4), (1,3)]) generated by [(3,4)]
+            sage: G.stabilizer(3)
+            Subgroup of (Permutation Group with generators [(3,4), (1,3)]) generated by [(1,4)]
+
+        The stabilizer of a set of points::
+
+            sage: s10 = groups.permutation.Symmetric(10)
+            sage: s10.stabilizer([1..3],&quot;OnSets&quot;).cardinality()
+            30240
+            sage: factorial(3)*factorial(7)
+            30240
+
+        ::
+
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4,10)]])
+            sage: G.stabilizer(10)
+            Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4,10)]) generated by [(2,3,4), (1,2)(3,4)]
+            sage: G.stabilizer(1)
+            Subgroup of (Permutation Group with generators [(1,2)(3,4), (1,2,3,4,10)]) generated by [(2,3)(4,10), (2,10,4)]
+            sage: G = PermutationGroup([[(2,3,4)],[(6,7)]])
+            sage: G.stabilizer(1)
+            Subgroup of (Permutation Group with generators [(6,7), (2,3,4)]) generated by [(6,7), (2,3,4)]
+            sage: G.stabilizer(2)
+            Subgroup of (Permutation Group with generators [(6,7), (2,3,4)]) generated by [(6,7)]
+            sage: G.stabilizer(3)
+            Subgroup of (Permutation Group with generators [(6,7), (2,3,4)]) generated by [(6,7)]
+            sage: G.stabilizer(4)
+            Subgroup of (Permutation Group with generators [(6,7), (2,3,4)]) generated by [(6,7)]
+            sage: G.stabilizer(5)
+            Subgroup of (Permutation Group with generators [(6,7), (2,3,4)]) generated by [(6,7), (2,3,4)]
+            sage: G.stabilizer(6)
+            Subgroup of (Permutation Group with generators [(6,7), (2,3,4)]) generated by [(2,3,4)]
+            sage: G.stabilizer(7)
+            Subgroup of (Permutation Group with generators [(6,7), (2,3,4)]) generated by [(2,3,4)]
+            sage: G.stabilizer(8)
+            Traceback (most recent call last):
+            ...
+            ValueError: 8 does not belong to the domain
+
+        ::
+
+            sage: G = PermutationGroup([ [('c','d')], [('a','c')] ], domain='abcd')
+            sage: G.stabilizer('a')
+            Subgroup of (Permutation Group with generators [('c','d'), ('a','c')]) generated by [('c','d')]
+            sage: G.stabilizer('b')
+            Subgroup of (Permutation Group with generators [('c','d'), ('a','c')]) generated by [('c','d'), ('a','c')]
+            sage: G.stabilizer('c')
+            Subgroup of (Permutation Group with generators [('c','d'), ('a','c')]) generated by [('a','d')]
+            sage: G.stabilizer('d')
+            Subgroup of (Permutation Group with generators [('c','d'), ('a','c')]) generated by [('a','c')]
+
+        TESTS::
+
+            sage: G.stabilizer(['a'],&quot;OnMonkeys&quot;)
+            Traceback (most recent call last):
+            ...
+            ValueError: 'action' must be equal to 'OnPoints' or to 'OnSets'.
+        </opaque><constant name="classmethod.strong_generating_system">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a Strong Generating System of ``self`` according the given
+        base for the right action of ``self`` on itself.
+
+        ``base_of_group`` is a list of the  positions on which ``self`` acts,
+        in any order. The algorithm returns a list of transversals and each
+        transversal is a list of permutations. By default, ``base_of_group``
+        is ``[1, 2, 3, ..., d]`` where `d` is the degree of the group.
+
+        For ``base_of_group`` =
+        `[ \mathrm{pos}_1, \mathrm{pos}_2, \dots , \mathrm{pos}_d]`
+        let `G_i` be the subgroup of `G` = ``self`` which stabilizes
+        `\mathrm{pos}_1, \mathrm{pos}_2, \dots , \mathrm{pos}_i`, so
+
+        .. MATH::
+
+           G = G_0 \supset G_1 \supset G_2 \supset \dots \supset G_n = \{e\}
+
+        Then the algorithm returns `[ G_i.\mathrm{transversals}(\mathrm{pos}_{i+1})]_{1 \leq i \leq n}`
+
+        INPUT:
+
+        - ``base_of_group`` (optional) -- default: ``[1, 2, 3, ..., d]``
+          -- a list containing the integers
+          `1, 2, \dots , d` in any order (`d` is the degree of ``self``)
+
+        OUTPUT:
+
+        - A list of lists of permutations from the group, which form a strong
+          generating system.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(7,8)],[(3,4)],[(4,5)]])
+            sage: G.strong_generating_system()
+            [[()], [()], [(), (3,4,5), (3,5)], [(), (4,5)], [()], [()], [(), (7,8)], [()]]
+            sage: G = PermutationGroup([[(1,2,3,4)],[(1,2)]])
+            sage: G.strong_generating_system()
+            [[(), (1,2)(3,4), (1,3)(2,4), (1,4)(2,3)], [(), (2,3,4), (2,4,3)], [(), (3,4)], [()]]
+            sage: G = PermutationGroup([[(1,2,3)],[(4,5,7)],[(1,4,6)]])
+            sage: G.strong_generating_system()
+            [[(), (1,2,3), (1,4,6), (1,3,2), (1,5,7,4,6), (1,6,4), (1,7,5,4,6)], [(), (2,6,3), (2,5,7,6,3), (2,3,6), (2,7,5,6,3), (2,4,7,6,3)], [(), (3,6,7), (3,5,6), (3,7,6), (3,4,7,5,6)], [(), (4,5)(6,7), (4,7)(5,6), (4,6)(5,7)], [(), (5,7,6), (5,6,7)], [()], [()]]
+            sage: G = PermutationGroup([[(1,2,3)],[(2,3,4)],[(3,4,5)]])
+            sage: G.strong_generating_system([5,4,3,2,1])
+            [[(), (1,5,3,4,2), (1,5,4,3,2), (1,5)(2,3), (1,5,2)], [(), (1,3)(2,4), (1,2)(3,4), (1,4)(2,3)], [(), (1,3,2), (1,2,3)], [()], [()]]
+            sage: G = PermutationGroup([[(3,4)]])
+            sage: G.strong_generating_system()
+            [[()], [()], [(), (3,4)], [()]]
+            sage: G.strong_generating_system(base_of_group=[3,1,2,4])
+            [[(), (3,4)], [()], [()], [()]]
+            sage: G = TransitiveGroup(12,17)                # optional - database_gap
+            sage: G.strong_generating_system()              # optional - database_gap
+            [[(), (1,4,11,2)(3,6,5,8)(7,10,9,12), (1,8,3,2)(4,11,10,9)(5,12,7,6), (1,7)(2,8)(3,9)(4,10)(5,11)(6,12), (1,12,7,2)(3,10,9,8)(4,11,6,5), (1,11)(2,8)(3,5)(4,10)(6,12)(7,9), (1,10,11,8)(2,3,12,5)(4,9,6,7), (1,3)(2,8)(4,10)(5,7)(6,12)(9,11), (1,2,3,8)(4,9,10,11)(5,6,7,12), (1,6,7,8)(2,3,4,9)(5,10,11,12), (1,5,9)(3,11,7), (1,9,5)(3,7,11)], [(), (2,6,10)(4,12,8), (2,10,6)(4,8,12)], [()], [()], [()], [()], [()], [()], [()], [()], [()], [()]]
+
+        TESTS::
+
+            sage: G = SymmetricGroup(10)
+            sage: H = PermutationGroup([G.random_element() for i in range(randrange(1,3,1))])
+            sage: prod(len(x) for x in H.strong_generating_system()) == H.cardinality()
+            True
+        </opaque><constant name="classmethod.structure_description">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+    Return a string that tries to describe the structure of ``G``.
+
+    This methods wraps GAP's ``StructureDescription`` method.
+
+    Requires the *optional* ``database_gap`` package.
+
+    For full details, including the form of the returned string and the
+    algorithm to build it, see `GAP's documentation
+    &lt;http://www.gap-system.org/Manuals/doc/ref/chap39.html&gt;`_.
+
+    INPUT:
+
+    - ``latex`` -- a boolean (default: ``False``). If ``True`` return a
+      LaTeX formatted string.
+
+    OUTPUT:
+
+    - string
+
+    .. WARNING::
+
+        From GAP's documentation: The string returned by
+        ``StructureDescription`` is **not** an isomorphism invariant:
+        non-isomorphic groups can have the same string value, and two
+        isomorphic groups in different representations can produce different
+        strings.
+
+    EXAMPLES::
+
+        sage: G = CyclicPermutationGroup(6)
+        sage: G.structure_description()             # optional - database_gap
+        'C6'
+        sage: G.structure_description(latex=True)   # optional - database_gap
+        'C_{6}'
+        sage: G2 = G.direct_product(G, maps=False)
+        sage: LatexExpr(G2.structure_description(latex=True))   # optional - database_gap
+        C_{6} \times C_{6}
+
+    This method is mainly intended for small groups or groups with few
+    normal subgroups. Even then there are some surprises::
+
+        sage: D3 = DihedralGroup(3)
+        sage: D3.structure_description()    # optional - database_gap
+        'S3'
+
+    We use the Sage notation for the degree of dihedral groups::
+
+        sage: D4 = DihedralGroup(4)
+        sage: D4.structure_description()    # optional - database_gap
+        'D4'
+
+    Works for finitely presented groups (:trac:`17573`)::
+
+        sage: F.&lt;x, y&gt; = FreeGroup()
+        sage: G=F / [x^2*y^-1, x^3*y^2, x*y*x^-1*y^-1]
+        sage: G.structure_description()     # optional - database_gap
+        'C7'
+
+    And matrix groups (:trac:`17573`)::
+
+        sage: groups.matrix.GL(4,2).structure_description() # optional - database_gap
+        'A8'
+    </opaque><constant name="classmethod.subgroup">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Wraps the ``PermutationGroup_subgroup`` constructor. The argument
+        ``gens`` is a list of elements of ``self``.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([(1,2,3),(3,4,5)])
+            sage: g = G((1,2,3))
+            sage: G.subgroup([g])
+            Subgroup of (Permutation Group with generators [(3,4,5), (1,2,3)]) generated by [(1,2,3)]
+        </opaque><constant name="classmethod.subgroups">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a list of all the subgroups of ``self``.
+
+        OUTPUT:
+
+        Each possible subgroup of ``self`` is contained once
+        in the returned list.  The list is in order, according
+        to the size of the subgroups, from the trivial subgroup
+        with one element on through up to the whole group.
+        Conjugacy classes of subgroups are contiguous in the list.
+
+        .. warning::
+
+            For even relatively small groups this method can
+            take a very long time to execute, or create vast
+            amounts of output.  Likely both.  Its purpose is
+            instructional, as it can be useful for studying
+            small groups.  The 156 subgroups of the full
+            symmetric group on 5 symbols of order 120, `S_5`,
+            can be computed in about a minute on commodity hardware
+            in 2011. The 64 subgroups of the cyclic group of order
+            `30030 = 2\cdot 3\cdot 5\cdot 7\cdot 11\cdot 13` takes
+            about twice as long.
+
+            For faster results, which still exhibit the structure of
+            the possible subgroups, use
+            :meth:`conjugacy_classes_subgroups`.
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(3)
+            sage: G.subgroups()
+            [Subgroup of (Symmetric group of order 3! as a permutation group) generated by [()],
+             Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(2,3)],
+             Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(1,2)],
+             Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(1,3)],
+             Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(1,2,3)],
+             Subgroup of (Symmetric group of order 3! as a permutation group) generated by [(2,3), (1,2,3)]]
+
+            sage: G = CyclicPermutationGroup(14)
+            sage: G.subgroups()
+            [Subgroup of (Cyclic group of order 14 as a permutation group) generated by [()],
+             Subgroup of (Cyclic group of order 14 as a permutation group) generated by [(1,8)(2,9)(3,10)(4,11)(5,12)(6,13)(7,14)],
+             Subgroup of (Cyclic group of order 14 as a permutation group) generated by [(1,3,5,7,9,11,13)(2,4,6,8,10,12,14)],
+             Subgroup of (Cyclic group of order 14 as a permutation group) generated by [(1,2,3,4,5,6,7,8,9,10,11,12,13,14), (1,3,5,7,9,11,13)(2,4,6,8,10,12,14)]]
+
+             Subgroup of (Cyclic group of order 14 as a permutation group) generated by [(1,2,3,4,5,6,7,8,9,10,11,12,13,14)]]
+
+        AUTHOR:
+
+        - Rob Beezer (2011-01-24)
+        </opaque><constant name="classmethod.sylow_subgroup">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a Sylow `p`-subgroup of the finite group `G`, where `p` is a
+        prime. This is a `p`-subgroup of `G` whose index in `G` is coprime to
+        `p`.
+
+        Wraps the GAP function ``SylowSubgroup``.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)', '(2,3)'])
+            sage: G.sylow_subgroup(2)
+            Subgroup of (Permutation Group with generators [(2,3), (1,2,3)]) generated by [(2,3)]
+            sage: G.sylow_subgroup(5)
+            Subgroup of (Permutation Group with generators [(2,3), (1,2,3)]) generated by [()]
+
+        TESTS:
+
+        Implementation details should not prevent us from computing
+        large subgroups (:trac:`5491`)::
+
+            sage: PSL(10,2).sylow_subgroup(7)
+            Subgroup of...
+
+        </opaque><constant name="classmethod.transversals">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        If G is a permutation group acting on the set `X = \{1, 2, ...., n\}`
+        and H is the stabilizer subgroup of &lt;integer&gt;, a right
+        (respectively left) transversal is a set containing exactly
+        one element from each right (respectively left) coset of H. This
+        method returns a right transversal of ``self`` by the stabilizer
+        of ``self`` on &lt;integer&gt; position.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([ [(3,4)], [(1,3)] ])
+            sage: G.transversals(1)
+            [(), (1,3,4), (1,4,3)]
+            sage: G = PermutationGroup([[(1,2),(3,4)], [(1,2,3,4,10)]])
+            sage: G.transversals(1)
+            [(), (1,2)(3,4), (1,3,2,10,4), (1,4,2,10,3), (1,10,4,3,2)]
+
+            sage: G = PermutationGroup([ [('c','d')], [('a','c')] ])
+            sage: G.transversals('a')
+            [(), ('a','c','d'), ('a','d','c')]
+        </opaque><constant name="classmethod.trivial_character">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the trivial character of ``self``.
+
+        EXAMPLES::
+
+            sage: SymmetricGroup(3).trivial_character()
+            Character of Symmetric group of order 3! as a permutation group
+        </opaque><constant name="classmethod.upper_central_series">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the upper central series of this group as a list of
+        permutation groups.
+
+        EXAMPLES:
+
+        These computations use pseudo-random numbers, so we set
+        the seed for reproducible testing::
+
+            sage: G = PermutationGroup([[(1,2,3),(4,5)],[(3,4)]])
+            sage: G.upper_central_series()
+            [Subgroup of (Permutation Group with generators [(3,4), (1,2,3)(4,5)]) generated by [()]]
+        </opaque></omdoc></theory></omdoc>

@@ -1,0 +1,30 @@
+theory http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Algebras
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Algebras
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.CartesianProducts
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.CartesianProducts
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Enumerated
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Enumerated
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Facade
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Facade
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Facades
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Facades
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Finite
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Finite
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Infinite
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Infinite
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.IsomorphicObjects
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.IsomorphicObjects
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Metric
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Metric
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Quotients
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Quotients
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Subobjects
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Subobjects
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Subquotients
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Subquotients
+Declares http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Topological
+constant http://www.sagemath.org/content/classes/sets_cat/Sets?subcategory_class?classmethod.Topological

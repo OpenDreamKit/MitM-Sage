@@ -1,0 +1,87 @@
+theory http://www.sagemath.org/content/classes/sage/structure/parent?Parent
+HasMeta http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__contains__
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__contains__
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__getitem__
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__getitem__
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__make_element_class__
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__make_element_class__
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__mul__
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__mul__
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__nonzero__
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__nonzero__
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__rmul__
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.__rmul__
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._an_element_
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._an_element_
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._cmp_
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._cmp_
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._coerce_map_from_
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._coerce_map_from_
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._coerce_map_via
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._coerce_map_via
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._convert_map_from_
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._convert_map_from_
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._generic_convert_map
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._generic_convert_map
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._get_action_
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._get_action_
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._internal_coerce_map_from
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._internal_coerce_map_from
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._internal_convert_map_from
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._internal_convert_map_from
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._introspect_coerce
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._introspect_coerce
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._is_valid_homomorphism_
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._is_valid_homomorphism_
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._populate_coercion_lists_
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._populate_coercion_lists_
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._repr_option
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._repr_option
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._set_element_constructor
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._set_element_constructor
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._test_eq
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._test_eq
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._unset_category
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._unset_category
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._unset_coercions_used
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._unset_coercions_used
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._unset_embedding
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._unset_embedding
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.an_element
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.an_element
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce_embedding
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce_embedding
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce_map_from
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce_map_from
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.construction
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.construction
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.convert_map_from
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.convert_map_from
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.get_action
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.get_action
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.has_coerce_map_from
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.has_coerce_map_from
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.hom
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.hom
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.is_atomic_repr
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.is_atomic_repr
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.is_coercion_cached
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.is_coercion_cached
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.is_conversion_cached
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.is_conversion_cached
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.is_exact
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.is_exact
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.register_action
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.register_action
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.register_coercion
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.register_coercion
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.register_conversion
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.register_conversion
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.register_embedding
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.register_embedding

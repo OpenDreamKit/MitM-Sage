@@ -1,0 +1,20 @@
+theory http://www.sagemath.org/?PythonBasicTypes
+HasMeta http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?Convenient
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?python_type
+constant http://www.sagemath.org/?PythonBasicTypes?python_type
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?pyMMT
+constant http://www.sagemath.org/?PythonBasicTypes?pyMMT
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?pysequence
+constant http://www.sagemath.org/?PythonBasicTypes?pysequence
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?pystr
+constant http://www.sagemath.org/?PythonBasicTypes?pystr
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?pyint
+constant http://www.sagemath.org/?PythonBasicTypes?pyint
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?pyfloat
+constant http://www.sagemath.org/?PythonBasicTypes?pyfloat
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?pytype
+constant http://www.sagemath.org/?PythonBasicTypes?pytype
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?pylist
+constant http://www.sagemath.org/?PythonBasicTypes?pylist
+Declares http://www.sagemath.org/?PythonBasicTypes http://www.sagemath.org/?PythonBasicTypes?pydict
+constant http://www.sagemath.org/?PythonBasicTypes?pydict

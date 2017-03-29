@@ -317,7 +317,7 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="element.stanley_symmetric_function">
+     </constant><opaque format="text"></opaque><constant name="element.stanley_symmetric_function">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -397,7 +397,7 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant></omdoc><omdoc name="Parent Methods"><constant name="parent.pieri_factors">
+     </constant><opaque format="text"></opaque></omdoc><omdoc name="Parent Methods"><constant name="parent.pieri_factors">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

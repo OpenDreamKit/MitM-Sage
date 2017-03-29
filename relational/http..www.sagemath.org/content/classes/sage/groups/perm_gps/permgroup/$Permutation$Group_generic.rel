@@ -1,0 +1,187 @@
+theory http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic
+HasMeta http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/old?FiniteGroup
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.__cmp__
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.__cmp__
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.__iter__
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.__iter__
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._domain_gap
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._domain_gap
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._element_class
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._element_class
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._has_natural_domain
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._has_natural_domain
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._latex_
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._latex_
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._order
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._order
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._regular_subgroup_gap
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._regular_subgroup_gap
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._repr_
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod._repr_
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.as_finitely_presented_group
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.as_finitely_presented_group
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.blocks_all
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.blocks_all
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.cardinality
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.cardinality
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.center
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.center
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.centralizer
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.centralizer
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.character
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.character
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.character_table
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.character_table
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.cohomology
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.cohomology
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.cohomology_part
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.cohomology_part
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.commutator
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.commutator
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.composition_series
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.composition_series
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugacy_class
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugacy_class
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugacy_classes
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugacy_classes
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugacy_classes_representatives
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugacy_classes_representatives
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugacy_classes_subgroups
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugacy_classes_subgroups
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugate
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.conjugate
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.cosets
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.cosets
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.degree
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.degree
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.derived_series
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.derived_series
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.direct_product
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.direct_product
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.domain
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.domain
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.exponent
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.exponent
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.fitting_subgroup
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.fitting_subgroup
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.fixed_points
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.fixed_points
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.frattini_subgroup
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.frattini_subgroup
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.gens_small
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.gens_small
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.group_id
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.group_id
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.group_primitive_id
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.group_primitive_id
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.has_element
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.has_element
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.has_regular_subgroup
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.has_regular_subgroup
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.holomorph
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.holomorph
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.homology
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.homology
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.homology_part
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.homology_part
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.id
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.id
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.identity
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.identity
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.intersection
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.intersection
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.irreducible_characters
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.irreducible_characters
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_cyclic
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_cyclic
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_elementary_abelian
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_elementary_abelian
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_isomorphic
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_isomorphic
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_monomial
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_monomial
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_nilpotent
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_nilpotent
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_normal
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_normal
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_perfect
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_perfect
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_pgroup
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_pgroup
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_polycyclic
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_polycyclic
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_primitive
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_primitive
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_regular
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_regular
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_semi_regular
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_semi_regular
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_simple
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_simple
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_solvable
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_solvable
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_subgroup
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_subgroup
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_supersolvable
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_supersolvable
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_transitive
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.is_transitive
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.isomorphism_to
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.isomorphism_to
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.isomorphism_type_info_simple_group
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.isomorphism_type_info_simple_group
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.largest_moved_point
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.largest_moved_point
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.list
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.list
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.lower_central_series
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.lower_central_series
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.minimal_generating_set
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.minimal_generating_set
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.molien_series
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.molien_series
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.non_fixed_points
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.non_fixed_points
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.normal_subgroups
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.normal_subgroups
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.normalizer
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.normalizer
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.normalizes
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.normalizes
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.orbit
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.orbit
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.orbits
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.orbits
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.poincare_series
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.poincare_series
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.representative_action
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.representative_action
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.semidirect_product
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.semidirect_product
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.smallest_moved_point
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.smallest_moved_point
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.socle
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.socle
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.solvable_radical
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.solvable_radical
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.stabilizer
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.stabilizer
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.strong_generating_system
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.strong_generating_system
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.structure_description
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.structure_description
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.subgroup
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.subgroup
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.subgroups
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.subgroups
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.sylow_subgroup
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.sylow_subgroup
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.transversals
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.transversals
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.trivial_character
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.trivial_character
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.upper_central_series
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup?PermutationGroup_generic?classmethod.upper_central_series

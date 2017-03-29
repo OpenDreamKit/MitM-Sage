@@ -1,2 +1,14 @@
 document http://www.sagemath.org/sage.omdoc
 Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?Types
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?Convenient
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?PythonBasicTypes
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?PythonFunction
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?PythonClass
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?PythonUnknownType
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?Python
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?Sage
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?group.FiniteGroup
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?PermutationGroup_generic
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?CachedRepresentation
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?PermutationGroup_unique
+Declares http://www.sagemath.org/sage.omdoc http://www.sagemath.org/?TransitiveGroup

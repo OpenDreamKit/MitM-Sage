@@ -1,0 +1,21 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="PythonClass" base="http://www.sagemath.org/" meta="http://www.sagemath.org/?Convenient"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#908.38.0:1318.49.1"/></metadata><import from="http://www.sagemath.org/?PythonBasicTypes"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#946.39.2:972.39.28"/></metadata></import><theory name="PythonClassTheory" base="http://www.sagemath.org/" meta="http://www.sagemath.org/?Convenient">
+        
+        
+        <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#976.40.2:1273.47.3"/></metadata><constant name="docstring">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1107.43.4:1132.43.29"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1119.43.16:1129.43.26"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="pyMMT"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1119.43.16:1123.43.20"/></metadata></om:OMS><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="pystr"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1125.43.22:1129.43.26"/></metadata></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="name">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1137.44.4:1157.44.24"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1144.44.11:1154.44.21"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="pyMMT"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1144.44.11:1148.44.15"/></metadata></om:OMS><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="pystr"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1150.44.17:1154.44.21"/></metadata></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant>
+      </theory><derived feature="FromTheory" name="[http://www.sagemath.org/?PythonClass/PythonClassTheory]" base="http://www.sagemath.org/"><type><om:OML name="pyclass"><type><om:OMS base="http://www.sagemath.org/" module="PythonClass/PythonClassTheory"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1297.48.23:1313.48.39"/></metadata></om:OMS></type></om:OML></type></derived></theory></omdoc>

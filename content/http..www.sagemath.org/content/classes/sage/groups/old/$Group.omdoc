@@ -1,0 +1,158 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Group" base="http://www.sagemath.org/content/classes/sage/groups/old" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens"></import><omdoc name="Methods"><constant name="classmethod.is_abelian">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Group.is_abelian(self)
+File: sage/groups/old.pyx (starting at line 99)
+
+        Return True if this group is abelian.
+
+        EXAMPLES::
+
+            sage: from sage.groups.old import Group
+            sage: G = Group()
+            sage: G.is_abelian()
+            Traceback (most recent call last):
+            ...
+            NotImplementedError
+        </opaque><constant name="classmethod.is_commutative">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Group.is_commutative(self)
+File: sage/groups/old.pyx (starting at line 114)
+
+        Return True if this group is commutative. This is an alias for
+        is_abelian, largely to make groups work well with the Factorization
+        class.
+
+        (Note for developers: Derived classes should override is_abelian, not
+        is_commutative.)
+
+        EXAMPLES::
+
+            sage: SL(2, 7).is_commutative()
+            False
+        </opaque><constant name="classmethod.is_finite">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Group.is_finite(self)
+File: sage/groups/old.pyx (starting at line 146)
+
+        Returns True if this group is finite.
+
+        EXAMPLES::
+
+            sage: from sage.groups.old import Group
+            sage: G = Group()
+            sage: G.is_finite()
+            Traceback (most recent call last):
+            ...
+            NotImplementedError
+        </opaque><constant name="classmethod.is_multiplicative">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Group.is_multiplicative(self)
+File: sage/groups/old.pyx (starting at line 161)
+
+        Returns True if the group operation is given by \* (rather than
+        +).
+
+        Override for additive groups.
+
+        EXAMPLES::
+
+            sage: from sage.groups.old import Group
+            sage: G = Group()
+            sage: G.is_multiplicative()
+            True
+        </opaque><constant name="classmethod.order">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Group.order(self)
+File: sage/groups/old.pyx (starting at line 130)
+
+        Returns the number of elements of this group, which is either a
+        positive integer or infinity.
+
+        EXAMPLES::
+
+            sage: from sage.groups.old import Group
+            sage: G = Group()
+            sage: G.order()
+            Traceback (most recent call last):
+            ...
+            NotImplementedError
+        </opaque><constant name="classmethod.quotient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Group.quotient(self, H)
+File: sage/groups/old.pyx (starting at line 192)
+
+        Return the quotient of this group by the normal subgroup
+        `H`.
+
+        EXAMPLES::
+
+            sage: from sage.groups.old import Group
+            sage: G = Group()
+            sage: G.quotient(G)
+            Traceback (most recent call last):
+            ...
+            NotImplementedError
+        </opaque><constant name="classmethod.random_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Group.random_element(self, bound=None)
+File: sage/groups/old.pyx (starting at line 177)
+
+        Return a random element of this group.
+
+        EXAMPLES::
+
+            sage: from sage.groups.old import Group
+            sage: G = Group()
+            sage: G.random_element()
+            Traceback (most recent call last):
+            ...
+            NotImplementedError
+        </opaque></omdoc></theory></omdoc>

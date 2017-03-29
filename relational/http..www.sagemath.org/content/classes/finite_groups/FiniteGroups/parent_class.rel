@@ -1,0 +1,10 @@
+theory http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class
+HasMeta http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class?classmethod.cayley_graph_disabled
+constant http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class?classmethod.cayley_graph_disabled
+Declares http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class?classmethod.conjugacy_classes
+constant http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class?classmethod.conjugacy_classes
+Declares http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class?classmethod.conjugacy_classes_representatives
+constant http://www.sagemath.org/content/classes/finite_groups/FiniteGroups?parent_class?classmethod.conjugacy_classes_representatives

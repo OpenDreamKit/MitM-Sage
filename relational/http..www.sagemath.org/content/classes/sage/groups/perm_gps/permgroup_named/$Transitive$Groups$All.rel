@@ -1,0 +1,5 @@
+theory http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_named?TransitiveGroupsAll
+HasMeta http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_named?TransitiveGroupsAll http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_named?TransitiveGroupsAll http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_named?TransitiveGroupsAll http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_named?TransitiveGroupsAll http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets

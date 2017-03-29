@@ -1,0 +1,45 @@
+theory http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement
+HasMeta http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.__getitem__
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.__getitem__
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._act_on_array_on_position
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._act_on_array_on_position
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._act_on_list_on_position
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._act_on_list_on_position
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._gap_cycle_string
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._gap_cycle_string
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._gap_list
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._gap_list
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._latex_
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._latex_
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._mul_
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod._mul_
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.cycle_string
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.cycle_string
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.cycle_tuples
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.cycle_tuples
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.cycle_type
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.cycle_type
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.cycles
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.cycles
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.dict
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.dict
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.domain
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.domain
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.has_descent
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.has_descent
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.inverse
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.inverse
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.matrix
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.matrix
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.orbit
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.orbit
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.sign
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.sign
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.tuple
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.tuple
+Declares http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.word_problem
+constant http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element?PermutationGroupElement?classmethod.word_problem

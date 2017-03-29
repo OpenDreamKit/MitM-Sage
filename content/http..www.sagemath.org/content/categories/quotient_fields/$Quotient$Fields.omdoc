@@ -158,7 +158,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><constant name="element.partial_fraction_decomposition">
+     </constant><opaque format="text"></opaque><constant name="element.partial_fraction_decomposition">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

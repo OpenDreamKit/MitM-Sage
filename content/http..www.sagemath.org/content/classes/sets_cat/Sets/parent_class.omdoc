@@ -1,0 +1,769 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/sets_cat/Sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.CartesianProduct">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">LazyImport(module, name, as_name=None, namespace=None, at_startup=False, deprecation=None)
+File: sage/misc/lazy_import.pyx (starting at line 135)
+
+    EXAMPLES::
+
+        sage: from sage.misc.lazy_import import LazyImport
+        sage: my_integer = LazyImport('sage.rings.all', 'Integer')
+        sage: my_integer(4)
+        4
+        sage: my_integer('101', base=2)
+        5
+        sage: my_integer(3/2)
+        Traceback (most recent call last):
+        ...
+        TypeError: no conversion of this rational to integer
+    </opaque><constant name="classmethod.__contains__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test whether the set ``self`` contains the object ``x``.
+
+            All parents in the category ``Sets()`` should implement this method.
+
+            EXAMPLES::
+
+                sage: P = Sets().example(); P
+                Set of prime numbers (basic implementation)
+                sage: 12 in P
+                False
+                sage: P(5) in P
+                True
+            </opaque><constant name="classmethod._an_element_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod._element_constructor_from_element_class">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The default constructor for elements of this parent ``self``.
+
+            Among other things, it is called upon ``self(data)`` when
+            the coercion model did not find a way to coerce ``data`` into
+            this parent.
+
+            This default implementation for
+            :meth:`_element_constructor_` calls the constructor of the
+            element class, passing ``self`` as first argument.
+
+            EXAMPLES::
+
+                sage: S = Sets().example(&quot;inherits&quot;)
+                sage: s = S._element_constructor_from_element_class(17); s
+                17
+                sage: type(s)
+                &lt;class 'sage.categories.examples.sets_cat.PrimeNumbers_Inherits_with_category.element_class'&gt;
+            </opaque><constant name="classmethod._test_an_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run generic tests on the method :meth:`.an_element`.
+
+            See also: :class:`TestSuite`.
+
+            EXAMPLES::
+
+                sage: C = Sets().example()
+                sage: C._test_an_element()
+
+            Let us now write a broken :meth:`.an_element` method::
+
+                sage: from sage.categories.examples.sets_cat import PrimeNumbers
+                sage: class CCls(PrimeNumbers):
+                ....:     def an_element(self):
+                ....:         return 18
+                sage: CC = CCls()
+                sage: CC._test_an_element()
+                Traceback (most recent call last):
+                ...
+                AssertionError: self.an_element() is not in self
+
+            TESTS::
+
+                sage: FiniteEnumeratedSet([])._test_an_element()
+            </opaque><constant name="classmethod._test_cardinality">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run generic test on the method :meth:`.cardinality`.
+
+            EXAMPLES::
+
+                sage: C = Sets().example()
+                sage: C._test_cardinality()
+
+            Let us now write a broken :meth:`cardinality` method::
+
+                sage: from sage.categories.examples.sets_cat import *
+                sage: class CCls(PrimeNumbers):
+                ....:     def cardinality(self):
+                ....:         return int(5)
+                sage: CC = CCls()
+                sage: CC._test_cardinality()
+                Traceback (most recent call last):
+                ...
+                AssertionError: the output of the method cardinality must either
+                be a Sage integer or infinity. Not &lt;... 'int'&gt;.
+            </opaque><constant name="classmethod._test_elements">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run generic tests on element(s) of ``self``.
+
+            See also: :class:`TestSuite`.
+
+            EXAMPLES::
+
+                sage: C = Sets().example()
+                sage: C._test_elements(verbose = True)
+                &lt;BLANKLINE&gt;
+                  Running the test suite of self.an_element()
+                  running ._test_category() . . . pass
+                  running ._test_eq() . . . pass
+                  running ._test_new() . . . pass
+                  running ._test_nonzero_equal() . . . pass
+                  running ._test_not_implemented_methods() . . . pass
+                  running ._test_pickling() . . . pass
+                &lt;BLANKLINE&gt;
+
+            Debugging tip: in case of failure of this test, run instead::
+
+                sage: TestSuite(C.an_element()).run()
+
+            Let us now implement a parent whose elements cannot be pickled::
+
+                sage: from sage.categories.examples.sets_cat import PrimeNumbers
+                sage: class Bla(SageObject): pass
+                sage: class CCls(PrimeNumbers):
+                ....:     def an_element(self):
+                ....:         return Bla()
+                sage: CC = CCls()
+                sage: CC._test_elements()
+                  Failure in _test_pickling:
+                  ...
+                  PicklingError: Can't pickle &lt;class '__main__.Bla'&gt;: attribute lookup __main__.Bla failed
+                  ...
+                  The following tests failed: _test_pickling
+            </opaque><constant name="classmethod._test_elements_eq_reflexive">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run generic tests on the equality of elements.
+
+            Test that ``==`` is reflexive.
+
+            See also: :class:`TestSuite`.
+
+            EXAMPLES::
+
+                sage: C = Sets().example()
+                sage: C._test_elements_eq_reflexive()
+
+            We try a non-reflexive equality::
+
+                sage: P = Sets().example(&quot;wrapper&quot;)
+                sage: P._test_elements_eq_reflexive()
+                sage: eq = P.element_class.__eq__
+
+                sage: P.element_class.__eq__ = (lambda x, y:
+                ....:      False if eq(x, P(47)) and eq(y, P(47)) else eq(x, y))
+                sage: P._test_elements_eq_reflexive()
+                Traceback (most recent call last):
+                ...
+                AssertionError: 47 != 47
+
+            We restore ``P.element_class`` in a proper state for further tests::
+
+                sage: P.element_class.__eq__ = eq
+
+            </opaque><constant name="classmethod._test_elements_eq_symmetric">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run generic tests on the equality of elements.
+
+            This tests that ``==`` is symmetric.
+
+            See also: :class:`TestSuite`.
+
+            EXAMPLES::
+
+                sage: C = Sets().example()
+                sage: C._test_elements_eq_symmetric()
+
+            We test a non symmetric equality::
+
+                sage: P = Sets().example(&quot;wrapper&quot;)
+                sage: P._test_elements_eq_symmetric()
+                sage: eq = P.element_class.__eq__
+
+                sage: def non_sym_eq(x, y):
+                ....:    if not y in P:                      return False
+                ....:    elif eq(x, P(47)) and eq(y, P(53)): return True
+                ....:    else:                               return eq(x, y)
+                sage: P.element_class.__eq__ = non_sym_eq
+                sage: P._test_elements_eq_symmetric()
+                Traceback (most recent call last):
+                ...
+                AssertionError: non symmetric equality: 47 == 53 but 53 != 47
+
+            We restore ``P.element_class`` in a proper state for further tests::
+
+                sage: P.element_class.__eq__ = eq
+
+            </opaque><constant name="classmethod._test_elements_eq_transitive">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run generic tests on the equality of elements.
+
+            Test that ``==`` is transitive.
+
+            See also: :class:`TestSuite`.
+
+            EXAMPLES::
+
+                sage: C = Sets().example()
+                sage: C._test_elements_eq_transitive()
+
+            We test a non transitive equality::
+
+                sage: R = Zp(3)
+                sage: Sets().ParentMethods._test_elements_eq_transitive.__func__(R,elements=[R(3,2),R(3,1),R(0)])
+                Traceback (most recent call last):
+                ...
+                AssertionError: non transitive equality:
+                3 + O(3^2) == O(3) and O(3) == 0 but 3 + O(3^2) != 0
+
+            </opaque><constant name="classmethod._test_elements_neq">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run generic tests on the equality of elements.
+
+            Test that ``==`` and ``!=`` are consistent.
+
+            See also: :class:`TestSuite`.
+
+            EXAMPLES::
+
+                sage: C = Sets().example()
+                sage: C._test_elements_neq()
+
+            We try a broken inequality::
+
+                sage: P = Sets().example(&quot;wrapper&quot;)
+                sage: P._test_elements_neq()
+                sage: ne = P.element_class.__ne__
+                sage: eq = P.element_class.__eq__
+
+                sage: P.element_class.__ne__ = lambda x, y: False
+                sage: P._test_elements_neq()
+                Traceback (most recent call last):
+                ...
+                AssertionError: __eq__ and __ne__ inconsistency:
+                  47 == 53 returns False  but  47 != 53 returns False
+
+                sage: P.element_class.__ne__ = lambda x, y: not(x == y)
+
+            We restore ``P.element_class`` in a proper state for further tests::
+
+                sage: P.element_class.__ne__ = ne
+                sage: P.element_class.__eq__ = eq
+            </opaque><constant name="classmethod._test_some_elements">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Run generic tests on the method :meth:`.some_elements`.
+
+            .. SEEALSO:: :class:`TestSuite`
+
+            EXAMPLES::
+
+                sage: C = Sets().example()
+                sage: C._test_some_elements()
+
+            Let us now write a broken :meth:`.some_elements` method::
+
+                sage: from sage.categories.examples.sets_cat import *
+                sage: class CCls(PrimeNumbers):
+                ....:     def some_elements(self):
+                ....:         return [self(17), 32]
+                sage: CC = CCls()
+                sage: CC._test_some_elements()
+                Traceback (most recent call last):
+                ...
+                AssertionError: the object 32 in self.some_elements() is not in self
+            </opaque><constant name="classmethod.algebra">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the algebra of ``self`` over ``base_ring``.
+
+            INPUT:
+
+            - ``self`` -- a parent `S`
+            - ``base_ring`` -- a ring `K`
+            - ``category`` -- a super category of the category
+              of `S`, or ``None``
+
+            This returns the `K`-free module with basis indexed by
+            `S`, endowed with whatever structure can be induced from
+            that of `S`. Note that the ``category`` keyword needs to
+            be fed with the structure on `S` to be used, not the
+            structure that one wants to obtain on the result; see the
+            examples below.
+
+            EXAMPLES:
+
+            If `S` is a monoid, the result is the monoid algebra `KS`::
+
+                sage: S = Monoids().example(); S
+                An example of a monoid: the free monoid generated by ('a', 'b', 'c', 'd')
+                sage: A = S.algebra(QQ); A
+                Free module generated by An example of a monoid: the free monoid generated by ('a', 'b', 'c', 'd') over Rational Field
+                sage: A.category()
+                Category of monoid algebras over Rational Field
+
+            If `S` is a group, the result is the group algebra `KS`::
+
+                sage: S = Groups().example(); S
+                General Linear Group of degree 4 over Rational Field
+                sage: A = S.algebra(QQ); A
+                Group algebra of General Linear Group of degree 4 over Rational Field over Rational Field
+                sage: A.category()
+                Category of group algebras over Rational Field
+
+            which is actually a Hopf algebra::
+
+                sage: A in HopfAlgebras(QQ)
+                True
+
+            By Maschke's theorem, for a finite group whose cardinality
+            does not divide the characteristic of the base field, the
+            algebra is semisimple::
+
+                sage: SymmetricGroup(5).algebra(QQ) in Algebras(QQ).Semisimple()
+                True
+                sage: CyclicPermutationGroup(10).algebra(FiniteField(5)) in Algebras.Semisimple
+                False
+                sage: CyclicPermutationGroup(10).algebra(FiniteField(7)) in Algebras.Semisimple
+                True
+
+
+            One may specify for which category one takes the algebra::
+
+                sage: A = S.algebra(QQ, category=Sets()); A
+                Free module generated by General Linear Group of degree 4 over Rational Field over Rational Field
+                sage: A.category()
+                Category of set algebras over Rational Field
+
+            One may construct as well algebras of additive magmas,
+            semigroups, monoids, or groups::
+
+                sage: S = CommutativeAdditiveMonoids().example(); S
+                An example of a commutative monoid: the free commutative monoid generated by ('a', 'b', 'c', 'd')
+                sage: U = S.algebra(QQ); U
+                Free module generated by An example of a commutative monoid: the free commutative monoid generated by ('a', 'b', 'c', 'd') over Rational Field
+
+            Despite saying &quot;free module&quot;, this is really an algebra
+            and its elements can be multiplied::
+
+                sage: U in Algebras(QQ)
+                True
+                sage: (a,b,c,d) = S.additive_semigroup_generators()
+                sage: U(a) * U(b)
+                B[a + b]
+
+            Constructing the algebra of a set endowed with both an
+            additive and a multiplicative structure is ambiguous::
+
+                sage: Z3 = IntegerModRing(3)
+                sage: A = Z3.algebra(QQ)
+                Traceback (most recent call last):
+                ...
+                TypeError:  `S = Ring of integers modulo 3` is both an additive and a multiplicative semigroup.
+                Constructing its algebra is ambiguous.
+                Please use, e.g., S.algebra(QQ, category=Semigroups())
+
+            The ambiguity can be resolved using the ``category`` argument::
+
+                sage: A = Z3.algebra(QQ, category=Monoids()); A
+                Free module generated by Ring of integers modulo 3 over Rational Field
+                sage: A.category()
+                Category of finite dimensional monoid algebras over Rational Field
+
+                sage: A = Z3.algebra(QQ, category=CommutativeAdditiveGroups()); A
+                Free module generated by Ring of integers modulo 3 over Rational Field
+                sage: A.category()
+                Category of finite dimensional commutative additive group algebras over Rational Field
+
+            Similarly, on , we obtain for additive magmas, monoids, groups.
+
+
+            .. WARNING::
+
+                As we have seen, in most practical use cases, the
+                result is actually an algebra, hence the name of this
+                method. In the other cases this name is misleading::
+
+                    sage: A = Sets().example().algebra(QQ); A
+                    Free module generated by Set of prime numbers (basic implementation) over Rational Field
+                    sage: A.category()
+                    Category of set algebras over Rational Field
+                    sage: A in Algebras(QQ)
+                    False
+
+                Suggestions for a uniform, meaningful, and non
+                misleading name are welcome!
+            </opaque><constant name="classmethod.an_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.cardinality">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.cartesian_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the Cartesian product of the parents.
+
+            INPUT:
+
+            - ``parents`` -- a list (or other iterable) of parents.
+
+            - ``category`` -- (default: ``None``) the category the
+              Cartesian product belongs to. If ``None`` is passed,
+              then
+              :meth:`~sage.categories.covariant_functorial_construction.CovariantFactorialConstruction.category_from_parents`
+              is used to determine the category.
+
+            - ``extra_category`` -- (default: ``None``) a category
+              that is added to the Cartesian product in addition
+              to the categories obtained from the parents.
+
+            - other keyword arguments will passed on to the class used
+              for this Cartesian product (see also
+              :class:`~sage.sets.cartesian_product.CartesianProduct`).
+
+            OUTPUT:
+
+            The Cartesian product.
+
+            EXAMPLES::
+
+                sage: C = AlgebrasWithBasis(QQ)
+                sage: A = C.example(); A.rename(&quot;A&quot;)
+                sage: A.cartesian_product(A,A)
+                A (+) A (+) A
+                sage: ZZ.cartesian_product(GF(2), FiniteEnumeratedSet([1,2,3]))
+                The Cartesian product of (Integer Ring, Finite Field of size 2, {1, 2, 3})
+
+                sage: C = ZZ.cartesian_product(A); C
+                The Cartesian product of (Integer Ring, A)
+
+            TESTS::
+
+                sage: type(C)
+                &lt;class 'sage.sets.cartesian_product.CartesianProduct_with_category'&gt;
+                sage: C.category()
+                Join of Category of rings and ...
+                    and Category of Cartesian products of commutative additive groups
+
+            ::
+
+                sage: cartesian_product([ZZ, ZZ], category=Sets()).category()
+                Category of sets
+                sage: cartesian_product([ZZ, ZZ]).category()
+                Join of
+                Category of Cartesian products of commutative rings and
+                Category of Cartesian products of enumerated sets
+                sage: cartesian_product([ZZ, ZZ], extra_category=Posets()).category()
+                Join of
+                Category of Cartesian products of commutative rings and
+                Category of posets and
+                Category of Cartesian products of enumerated sets
+            </opaque><constant name="classmethod.is_finite">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.is_parent_of">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether ``self`` is the parent of ``element``.
+
+            INPUT:
+
+            - ``element`` -- any object
+
+            EXAMPLES::
+
+                sage: S = ZZ
+                sage: S.is_parent_of(1)
+                True
+                sage: S.is_parent_of(2/1)
+                False
+
+            This method differs from :meth:`__contains__` because it
+            does not attempt any coercion::
+
+                sage: 2/1 in S, S.is_parent_of(2/1)
+                (True, False)
+                sage: int(1) in S, S.is_parent_of(int(1))
+                (True, False)
+            </opaque><constant name="classmethod.random_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.some_elements">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list (or iterable) of elements of ``self``.
+
+            This is typically used for running generic tests
+            (see :class:`TestSuite`).
+
+            This default implementation calls :meth:`.an_element`.
+
+            EXAMPLES::
+
+                sage: S = Sets().example(); S
+                Set of prime numbers (basic implementation)
+                sage: S.an_element()
+                47
+                sage: S.some_elements()
+                [47]
+                sage: S = Set([])
+                sage: S.some_elements()
+                []
+
+            This method should return an iterable, *not* an iterator.
+            </opaque></omdoc></theory></omdoc>

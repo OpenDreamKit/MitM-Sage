@@ -1,0 +1,12 @@
+theory http://www.sagemath.org/content/classes/objects/Objects?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/objects/Objects?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/objects/Objects?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/objects/Objects?subcategory_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/objects/Objects?subcategory_class http://www.sagemath.org/content/classes/objects/Objects?subcategory_class?classmethod.Endsets
+constant http://www.sagemath.org/content/classes/objects/Objects?subcategory_class?classmethod.Endsets
+Declares http://www.sagemath.org/content/classes/objects/Objects?subcategory_class http://www.sagemath.org/content/classes/objects/Objects?subcategory_class?classmethod.GAP
+constant http://www.sagemath.org/content/classes/objects/Objects?subcategory_class?classmethod.GAP
+Declares http://www.sagemath.org/content/classes/objects/Objects?subcategory_class http://www.sagemath.org/content/classes/objects/Objects?subcategory_class?classmethod.Homsets
+constant http://www.sagemath.org/content/classes/objects/Objects?subcategory_class?classmethod.Homsets
+Declares http://www.sagemath.org/content/classes/objects/Objects?subcategory_class http://www.sagemath.org/content/classes/objects/Objects?subcategory_class?classmethod.hom_category
+constant http://www.sagemath.org/content/classes/objects/Objects?subcategory_class?classmethod.hom_category

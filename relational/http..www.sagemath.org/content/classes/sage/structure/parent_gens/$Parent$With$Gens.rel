@@ -1,0 +1,11 @@
+theory http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens
+HasMeta http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase
+Declares http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens?classmethod.gen
+constant http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens?classmethod.gen
+Declares http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens?classmethod.gens
+constant http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens?classmethod.gens
+Declares http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens?classmethod.ngens
+constant http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens?classmethod.ngens

@@ -428,7 +428,20 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><constant name="parent.is_empty">
+     </constant><opaque format="text">
+            The &quot;first&quot; element of ``self``.
+
+            ``self.first()`` returns the first element of the set
+            ``self``. This is a generic implementation from the category
+            ``EnumeratedSets()`` which can be used when the method ``__iter__`` is
+            provided.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C.first() # indirect doctest
+                1
+            </opaque><constant name="parent.is_empty">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -460,7 +473,20 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><constant name="parent.map">
+     </constant><opaque format="text">
+            Return an error since the cardinality of ``self`` is not known.
+
+            EXAMPLES::
+
+                sage: class broken(UniqueRepresentation, Parent):
+                ...    def __init__(self):
+                ...        Parent.__init__(self, category = EnumeratedSets())
+                ...
+                sage: broken().list()
+                Traceback (most recent call last):
+                ...
+                NotImplementedError: unknown cardinality
+            </opaque><constant name="parent.map">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -520,7 +546,26 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><constant name="parent.rank">
+     </constant><opaque format="text">
+            The &quot;next&quot; element after ``obj`` in ``self``.
+
+            ``self.next(e)`` returns the element of the set ``self`` which
+            follows ``e``. This is a generic implementation from the category
+            ``EnumeratedSets()`` which can be used when the method ``__iter__``
+            is provided.
+
+            Remark: this is the default (brute force) implementation
+            of the category ``EnumeratedSets()``. Its complexity is
+            `O(r)`, where `r` is the rank of ``obj``.
+
+            EXAMPLES::
+
+                sage: C = InfiniteEnumeratedSets().example()
+                sage: C._next_from_iterator(10) # indirect doctest
+                11
+
+            TODO: specify the behavior when ``obj`` is not in ``self``.
+            </opaque><constant name="parent.rank">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -531,7 +576,29 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><constant name="parent.unrank">
+     </constant><opaque format="text">
+            The rank of an element of ``self``
+
+            ``self.rank(x)`` returns the rank of `x`, that is its
+            position in the enumeration of ``self``. This is an
+            integer between ``0`` and ``n-1`` where ``n`` is the
+            cardinality of ``self``, or None if `x` is not in `self`.
+
+            This is the default (brute force) implementation from the
+            category ``EnumeratedSets()`` which can be used when the
+            method ``__iter__`` is provided. Its complexity is `O(r)`,
+            where `r` is the rank of ``obj``. For infinite enumerated
+            sets, this won't terminate when `x` is not in ``self``
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: list(C)
+                [1, 2, 3]
+                sage: C.rank(3) # indirect doctest
+                2
+                sage: C.rank(5) # indirect doctest
+            </opaque><constant name="parent.unrank">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -542,4 +609,25 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant></omdoc></theory></omdoc>
+     </constant><opaque format="text">
+            The ``r``-th element of ``self``
+
+            ``self.unrank(r)`` returns the ``r``-th element of self, where
+            ``r`` is an integer between ``0`` and ``n-1`` where ``n`` is the
+            cardinality of ``self``.
+
+            This is the default (brute force) implementation from the
+            category ``EnumeratedSets()`` which can be used when the
+            method ``__iter__`` is provided. Its complexity is `O(r)`,
+            where `r` is the rank of ``obj``.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C.unrank(2) # indirect doctest
+                3
+                sage: C._unrank_from_iterator(5)
+                Traceback (most recent call last):
+                ...
+                ValueError: the value must be between 0 and 2 inclusive
+            </opaque></omdoc></theory></omdoc>

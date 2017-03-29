@@ -1,0 +1,1228 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Element" base="http://www.sagemath.org/content/classes/sage/structure/element" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject"></import><omdoc name="Methods"><constant name="classmethod.N">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Deprecated: Use :meth:`n` instead.
+See :trac:`13055` for details.
+
+</opaque><constant name="classmethod.__add__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1182)
+
+        Top-level addition operator for :class:`Element` invoking
+        the coercion model.
+
+        See :ref:`element_arithmetic`.
+
+        EXAMPLES::
+
+            sage: from sage.structure.element import Element
+            sage: class MyElement(Element):
+            ....:     def _add_(self, other):
+            ....:         return 42
+            sage: e = MyElement(Parent())
+            sage: e + e
+            42
+
+        TESTS::
+
+            sage: e = Element(Parent())
+            sage: e + e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for +: '&lt;type 'sage.structure.parent.Parent'&gt;' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: 1 + e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for +: 'Integer Ring' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: e + 1
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for +: '&lt;type 'sage.structure.parent.Parent'&gt;' and 'Integer Ring'
+            sage: int(1) + e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for +: 'int' and 'sage.structure.element.Element'
+            sage: e + int(1)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for +: 'sage.structure.element.Element' and 'int'
+            sage: None + e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for +: 'NoneType' and 'sage.structure.element.Element'
+            sage: e + None
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for +: 'sage.structure.element.Element' and 'NoneType'
+        </opaque><constant name="classmethod.__cmp__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1000)
+
+        Compare ``left`` and ``right`` using the coercion framework.
+
+        ``self`` and ``other`` are coerced to a common parent and then
+        ``_cmp_`` and ``_richcmp_`` are tried.
+
+        EXAMPLES:
+
+        We create an ``Element`` class where we define ``_richcmp_``
+        and check that comparison works::
+
+            sage: cython('''
+            ....: from sage.structure.sage_object cimport rich_to_bool
+            ....: from sage.structure.element cimport Element
+            ....: cdef class FloatCmp(Element):
+            ....:     cdef float x
+            ....:     def __init__(self, float v):
+            ....:         self.x = v
+            ....:     cpdef _richcmp_(self, other, int op):
+            ....:         cdef float x1 = (&lt;FloatCmp&gt;self).x
+            ....:         cdef float x2 = (&lt;FloatCmp&gt;other).x
+            ....:         return rich_to_bool(op, (x1 &gt; x2) - (x1 &lt; x2) )
+            ....: ''')
+            sage: a = FloatCmp(1)
+            sage: b = FloatCmp(2)
+            sage: cmp(a, b)
+            -1
+            sage: b.__cmp__(a)
+            1
+            sage: a &lt;= b, b &lt;= a
+            (True, False)
+
+        This works despite ``_cmp_`` not being implemented::
+
+            sage: a._cmp_(b)
+            Traceback (most recent call last):
+            ...
+            NotImplementedError: comparison not implemented for &lt;type '...FloatCmp'&gt;
+        </opaque><constant name="classmethod.__copy__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.__copy__(self)
+File: sage/structure/element.pyx (starting at line 538)
+
+        Return a copy of ``self``.
+
+        OUTPUT:
+
+          - a new object which is a copy of ``self``.
+
+        This implementation ensures that ``self.__dict__`` is properly copied
+        when it exists (typically for instances of classes deriving from
+        :class:`Element`).
+
+        TESTS::
+
+            sage: from sage.structure.element import Element
+            sage: el = Element(parent = ZZ)
+            sage: el1 = copy(el)
+            sage: el1 is el
+            False
+
+            sage: class Demo(Element): pass
+            sage: el = Demo(parent = ZZ)
+            sage: el.x = [1,2,3]
+            sage: el1 = copy(el)
+            sage: el1 is el
+            False
+            sage: el1.__dict__ is el.__dict__
+            False
+        </opaque><constant name="classmethod.__dir__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.__dir__(self)
+File: sage/structure/element.pyx (starting at line 474)
+
+        Let cat be the category of the parent of ``self``. This method
+        emulates ``self`` being an instance of both ``Element`` and
+        ``cat.element_class``, in that order, for attribute directory.
+
+        EXAMPLES::
+
+            sage: dir(1/2)
+            ['N', ..., 'is_idempotent', 'is_integer', 'is_integral', ...]
+
+        Caveat: dir on Integer's and some other extension types seem to ignore __dir__::
+
+            sage: 1.__dir__()
+            ['N', ..., 'is_idempotent', 'is_integer', 'is_integral', ...]
+            sage: dir(1)         # todo: not implemented
+            ['N', ..., 'is_idempotent', 'is_integer', 'is_integral', ...]
+        </opaque><constant name="classmethod.__div__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1576)
+
+        Top-level division operator for :class:`Element` invoking
+        the coercion model.
+
+        See :ref:`element_arithmetic`.
+
+        EXAMPLES::
+
+            sage: 2 / 3
+            2/3
+            sage: pi / 3
+            1/3*pi
+            sage: K.&lt;i&gt; = NumberField(x^2+1)
+            sage: 2 / K.ideal(i+1)
+            Fractional ideal (-i + 1)
+
+        ::
+
+            sage: from sage.structure.element import Element
+            sage: class MyElement(Element):
+            ....:     def _div_(self, other):
+            ....:         return 42
+            sage: e = MyElement(Parent())
+            sage: e / e
+            42
+
+        TESTS::
+
+            sage: e = Element(Parent())
+            sage: e / e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for /: '&lt;type 'sage.structure.parent.Parent'&gt;' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: 1 / e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for /: 'Integer Ring' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: e / 1
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for /: '&lt;type 'sage.structure.parent.Parent'&gt;' and 'Integer Ring'
+            sage: int(1) / e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for /: 'int' and 'sage.structure.element.Element'
+            sage: e / int(1)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for /: 'sage.structure.element.Element' and 'int'
+            sage: None / e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for /: 'NoneType' and 'sage.structure.element.Element'
+            sage: e / None
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for /: 'sage.structure.element.Element' and 'NoneType'
+        </opaque><constant name="classmethod.__floordiv__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1749)
+
+        Top-level floor division operator for :class:`Element` invoking
+        the coercion model.
+
+        See :ref:`element_arithmetic`.
+
+        EXAMPLES::
+
+            sage: 7 // 3
+            2
+            sage: 7 // int(3)
+            2
+            sage: int(7) // 3
+            2
+
+        ::
+
+            sage: from sage.structure.element import Element
+            sage: class MyElement(Element):
+            ....:     def _floordiv_(self, other):
+            ....:         return 42
+            sage: e = MyElement(Parent())
+            sage: e // e
+            42
+
+        TESTS::
+
+            sage: e = Element(Parent())
+            sage: e // e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for //: '&lt;type 'sage.structure.parent.Parent'&gt;' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: 1 // e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for //: 'Integer Ring' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: e // 1
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for //: '&lt;type 'sage.structure.parent.Parent'&gt;' and 'Integer Ring'
+            sage: int(1) // e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for //: 'int' and 'sage.structure.element.Element'
+            sage: e // int(1)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for //: 'sage.structure.element.Element' and 'int'
+            sage: None // e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for //: 'NoneType' and 'sage.structure.element.Element'
+            sage: e // None
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for //: 'sage.structure.element.Element' and 'NoneType'
+        </opaque><constant name="classmethod.__getmetaclass__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.__getmetaclass__(_)
+File: sage/structure/element.pyx (starting at line 376)</opaque><constant name="classmethod.__getstate__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.__getstate__(self)
+File: sage/structure/element.pyx (starting at line 498)
+
+        Return a tuple describing the state of your object.
+
+        This should return all information that will be required to unpickle
+        the object. The functionality for unpickling is implemented in
+        __setstate__().
+
+        TESTS::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: i = ideal(x^2 - y^2 + 1)
+            sage: i.__getstate__()
+            (Monoid of ideals of Multivariate Polynomial Ring in x, y over Rational Field,
+             {'_Ideal_generic__gens': (x^2 - y^2 + 1,),
+              '_Ideal_generic__ring': Multivariate Polynomial Ring in x, y over Rational Field,
+              '_gb_by_ordering': {}})
+        </opaque><constant name="classmethod.__mod__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1849)
+
+        Top-level modulo operator for :class:`Element` invoking
+        the coercion model.
+
+        See :ref:`element_arithmetic`.
+
+        EXAMPLES::
+
+            sage: 7 % 3
+            1
+            sage: 7 % int(3)
+            1
+            sage: int(7) % 3
+            1
+
+        ::
+
+            sage: from sage.structure.element import Element
+            sage: class MyElement(Element):
+            ....:     def _mod_(self, other):
+            ....:         return 42
+            sage: e = MyElement(Parent())
+            sage: e % e
+            42
+
+        TESTS::
+
+            sage: e = Element(Parent())
+            sage: e % e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for %: '&lt;type 'sage.structure.parent.Parent'&gt;' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: 1 % e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for %: 'Integer Ring' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: e % 1
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for %: '&lt;type 'sage.structure.parent.Parent'&gt;' and 'Integer Ring'
+            sage: int(1) % e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for %: 'int' and 'sage.structure.element.Element'
+            sage: e % int(1)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for %: 'sage.structure.element.Element' and 'int'
+            sage: None % e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for %: 'NoneType' and 'sage.structure.element.Element'
+            sage: e % None
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for %: 'sage.structure.element.Element' and 'NoneType'
+        </opaque><constant name="classmethod.__mul__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1448)
+
+        Top-level multiplication operator for :class:`Element` invoking
+        the coercion model.
+
+        See :ref:`element_arithmetic`.
+
+        EXAMPLES::
+
+            sage: from sage.structure.element import Element
+            sage: class MyElement(Element):
+            ....:     def _mul_(self, other):
+            ....:         return 42
+            sage: e = MyElement(Parent())
+            sage: e * e
+            42
+
+        TESTS::
+
+            sage: e = Element(Parent())
+            sage: e * e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for *: '&lt;type 'sage.structure.parent.Parent'&gt;' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: 1 * e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for *: 'Integer Ring' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: e * 1
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for *: '&lt;type 'sage.structure.parent.Parent'&gt;' and 'Integer Ring'
+            sage: int(1) * e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for *: 'int' and 'sage.structure.element.Element'
+            sage: e * int(1)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for *: 'sage.structure.element.Element' and 'int'
+            sage: None * e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for *: 'NoneType' and 'sage.structure.element.Element'
+            sage: e * None
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for *: 'sage.structure.element.Element' and 'NoneType'
+
+        ::
+
+            sage: A = AlgebrasWithBasis(QQ).example(); A
+            An example of an algebra with basis: the free algebra
+            on the generators ('a', 'b', 'c') over Rational Field
+            sage: x = A.an_element()
+            sage: x
+            B[word: ] + 2*B[word: a] + 3*B[word: b] + B[word: bab]
+            sage: x.__mul__(x)
+            B[word: ] + 4*B[word: a] + 4*B[word: aa] + 6*B[word: ab]
+            + 2*B[word: abab] + 6*B[word: b] + 6*B[word: ba]
+            + 2*B[word: bab] + 2*B[word: baba] + 3*B[word: babb]
+            + B[word: babbab] + 9*B[word: bb] + 3*B[word: bbab]
+        </opaque><constant name="classmethod.__neg__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1394)
+
+        Top-level negation operator for :class:`Element`.
+
+        EXAMPLES::
+
+            sage: from sage.structure.element import Element
+            sage: class MyElement(Element):
+            ....:     def _neg_(self):
+            ....:         return 42
+            sage: e = MyElement(Parent())
+            sage: -e
+            42
+
+        TESTS::
+
+            sage: e = Element(Parent())
+            sage: -e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent for unary -: '&lt;type 'sage.structure.parent.Parent'&gt;'
+        </opaque><constant name="classmethod.__nonzero__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__nonzero__() &lt;==&gt; x != 0</opaque><constant name="classmethod.__pos__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 922)</opaque><constant name="classmethod.__radd__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__radd__(y) &lt;==&gt; y+x</opaque><constant name="classmethod.__rdiv__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rdiv__(y) &lt;==&gt; y/x</opaque><constant name="classmethod.__rfloordiv__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rfloordiv__(y) &lt;==&gt; y//x</opaque><constant name="classmethod.__rmod__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rmod__(y) &lt;==&gt; y%x</opaque><constant name="classmethod.__rmul__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rmul__(y) &lt;==&gt; y*x</opaque><constant name="classmethod.__rsub__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rsub__(y) &lt;==&gt; y-x</opaque><constant name="classmethod.__rtruediv__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rtruediv__(y) &lt;==&gt; y/x</opaque><constant name="classmethod.__rxor__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rxor__(y) &lt;==&gt; y^x</opaque><constant name="classmethod.__setstate__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.__setstate__(self, state)
+File: sage/structure/element.pyx (starting at line 518)
+
+        Initializes the state of the object from data saved in a pickle.
+
+        During unpickling __init__ methods of classes are not called, the saved
+        data is passed to the class via this function instead.
+
+        TESTS::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: i = ideal(x); i
+            Ideal (x) of Multivariate Polynomial Ring in x, y over Rational Field
+            sage: S.&lt;x,y,z&gt; = ZZ[]
+            sage: i.__setstate__((R,{'_Ideal_generic__ring':S,'_Ideal_generic__gens': (S(x^2 - y^2 + 1),)}))
+            sage: i
+            Ideal (x^2 - y^2 + 1) of Multivariate Polynomial Ring in x, y, z over Integer Ring
+        </opaque><constant name="classmethod.__sub__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1303)
+
+        Top-level subtraction operator for :class:`Element` invoking
+        the coercion model.
+
+        See :ref:`element_arithmetic`.
+
+        EXAMPLES::
+
+            sage: from sage.structure.element import Element
+            sage: class MyElement(Element):
+            ....:     def _sub_(self, other):
+            ....:         return 42
+            sage: e = MyElement(Parent())
+            sage: e - e
+            42
+
+        TESTS::
+
+            sage: e = Element(Parent())
+            sage: e - e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for -: '&lt;type 'sage.structure.parent.Parent'&gt;' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: 1 - e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for -: 'Integer Ring' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: e - 1
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for -: '&lt;type 'sage.structure.parent.Parent'&gt;' and 'Integer Ring'
+            sage: int(1) - e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for -: 'int' and 'sage.structure.element.Element'
+            sage: e - int(1)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for -: 'sage.structure.element.Element' and 'int'
+            sage: None - e
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for -: 'NoneType' and 'sage.structure.element.Element'
+            sage: e - None
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for -: 'sage.structure.element.Element' and 'NoneType'
+        </opaque><constant name="classmethod.__truediv__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 1647)
+
+        Top-level true division operator for :class:`Element` invoking
+        the coercion model.
+
+        See :ref:`element_arithmetic`.
+
+        EXAMPLES::
+
+            sage: operator.truediv(2, 3)
+            2/3
+            sage: operator.truediv(pi, 3)
+            1/3*pi
+            sage: K.&lt;i&gt; = NumberField(x^2+1)
+            sage: operator.truediv(2, K.ideal(i+1))
+            Fractional ideal (-i + 1)
+
+        ::
+
+            sage: from sage.structure.element import Element
+            sage: class MyElement(Element):
+            ....:     def _div_(self, other):
+            ....:         return 42
+            sage: e = MyElement(Parent())
+            sage: operator.truediv(e, e)
+            42
+
+        TESTS::
+
+            sage: e = Element(Parent())
+            sage: operator.truediv(e, e)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for /: '&lt;type 'sage.structure.parent.Parent'&gt;' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: operator.truediv(1, e)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for /: 'Integer Ring' and '&lt;type 'sage.structure.parent.Parent'&gt;'
+            sage: operator.truediv(e, 1)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand parent(s) for /: '&lt;type 'sage.structure.parent.Parent'&gt;' and 'Integer Ring'
+            sage: operator.truediv(int(1), e)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for /: 'int' and 'sage.structure.element.Element'
+            sage: operator.truediv(e, int(1))
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for /: 'sage.structure.element.Element' and 'int'
+            sage: operator.truediv(None, e)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for /: 'NoneType' and 'sage.structure.element.Element'
+            sage: operator.truediv(e, None)
+            Traceback (most recent call last):
+            ...
+            TypeError: unsupported operand type(s) for /: 'sage.structure.element.Element' and 'NoneType'
+        </opaque><constant name="classmethod.__xor__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 918)</opaque><constant name="classmethod._act_on_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._act_on_(self, x, bool self_on_left)
+File: sage/structure/element.pyx (starting at line 899)
+
+        Use this method to implement ``self`` acting on ``x``.
+
+        Return None or raise a CoercionException if no
+        such action is defined here.
+        </opaque><constant name="classmethod._acted_upon_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._acted_upon_(self, x, bool self_on_left)
+File: sage/structure/element.pyx (starting at line 908)
+
+        Use this method to implement ``self`` acted on by x.
+
+        Return None or raise a CoercionException if no
+        such action is defined here.
+        </opaque><constant name="classmethod._cmp_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._cmp_(left, right) -&gt; int
+File: sage/structure/element.pyx (starting at line 1167)
+
+        Default three-way comparison method which only checks for a
+        Python class defining ``__cmp__``.
+        </opaque><constant name="classmethod._coeff_repr">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._coeff_repr(self, no_space=True)
+File: sage/structure/element.pyx (starting at line 925)</opaque><constant name="classmethod._im_gens_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._im_gens_(self, codomain, im_gens)
+File: sage/structure/element.pyx (starting at line 581)
+
+        Return the image of ``self`` in codomain under the map that sends
+        the images of the generators of the parent of ``self`` to the
+        tuple of elements of im_gens.
+        </opaque><constant name="classmethod._is_atomic">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._is_atomic(self)
+File: sage/structure/element.pyx (starting at line 944)
+
+        Return ``True`` if and only if parenthesis are not required when
+        *printing* out any of `x - s`, `x + s`, `x^s` and `x/s`.
+
+        EXAMPLES::
+
+            sage: n = 5; n._is_atomic()
+            True
+            sage: n = x+1; n._is_atomic()
+            False
+        </opaque><constant name="classmethod._latex_coeff_repr">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._latex_coeff_repr(self)
+File: sage/structure/element.pyx (starting at line 934)</opaque><constant name="classmethod._mpmath_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._mpmath_(self, prec=53, rounding=None)
+File: sage/structure/element.pyx (starting at line 842)
+
+        Evaluates numerically and returns an mpmath number.
+        Used as fallback for conversion by mpmath.mpmathify().
+
+        .. NOTE::
+
+            Currently, the rounding mode is ignored.
+
+        EXAMPLES::
+
+            sage: from sage.libs.mpmath.all import mp, mpmathify
+            sage: mp.dps = 30
+            sage: 25._mpmath_(53)
+            mpf('25.0')
+            sage: mpmathify(3+4*I)
+            mpc(real='3.0', imag='4.0')
+            sage: mpmathify(1+pi)
+            mpf('4.14159265358979323846264338327933')
+            sage: (1+pi)._mpmath_(10)
+            mpf('4.140625')
+            sage: (1+pi)._mpmath_(mp.prec)
+            mpf('4.14159265358979323846264338327933')
+        </opaque><constant name="classmethod._repr_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._repr_(self)
+File: sage/structure/element.pyx (starting at line 495)</opaque><constant name="classmethod._richcmp_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._richcmp_(left, right, int op)
+File: sage/structure/element.pyx (starting at line 1127)
+
+        Default implementation of rich comparisons for elements with
+        equal parents.
+
+        It tries to see if ``_cmp_`` is implemented. Otherwise it does a
+        comparison by id for ``==`` and ``!=``. Calling this default method
+        with ``&lt;``, ``&lt;=``, ``&gt;`` or ``&gt;=`` will raise a
+        ``NotImplementedError``.
+
+        EXAMPLES::
+
+            sage: from sage.structure.parent import Parent
+            sage: from sage.structure.element import Element
+            sage: P = Parent()
+            sage: e1 = Element(P); e2 = Element(P)
+            sage: e1 == e1    # indirect doctest
+            True
+            sage: e1 == e2    # indirect doctest
+            False
+            sage: e1 &lt; e2     # indirect doctest
+            Traceback (most recent call last):
+            ...
+            NotImplementedError: comparison not implemented for &lt;type 'sage.structure.element.Element'&gt;
+        </opaque><constant name="classmethod._set_parent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._set_parent(self, parent)
+File: sage/structure/element.pyx (starting at line 388)
+
+        INPUT:
+
+        - ``parent`` - a SageObject
+        </opaque><constant name="classmethod._test_eq">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element._test_eq(self, **options)
+File: sage/structure/element.pyx (starting at line 673)
+
+        Test that ``self`` is equal to ``self`` and different to ``None``.
+
+        See also: :class:`TestSuite`.
+
+        TESTS::
+
+            sage: from sage.structure.element import Element
+            sage: O = Element(Parent())
+            sage: O._test_eq()
+
+        Let us now write a broken class method::
+
+            sage: class CCls(Element):
+            ....:     def __eq__(self, other):
+            ....:         return True
+            sage: CCls(Parent())._test_eq()
+            Traceback (most recent call last):
+            ...
+            AssertionError: broken equality: Generic element of a structure == None
+
+        Let us now break inequality::
+
+            sage: class CCls(Element):
+            ....:     def __ne__(self, other):
+            ....:         return True
+            sage: CCls(Parent())._test_eq()
+            Traceback (most recent call last):
+            ...
+            AssertionError: broken non-equality: Generic element of a structure != itself
+        </opaque><constant name="classmethod.base_extend">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.base_extend(self, R)
+File: sage/structure/element.pyx (starting at line 589)</opaque><constant name="classmethod.base_ring">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.base_ring(self)
+File: sage/structure/element.pyx (starting at line 594)
+
+        Return the base ring of this element's parent (if that makes sense).
+
+        TESTS::
+
+            sage: QQ.base_ring()
+            Rational Field
+            sage: identity_matrix(3).base_ring()
+            Integer Ring
+        </opaque><constant name="classmethod.is_zero">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.is_zero(self)
+File: sage/structure/element.pyx (starting at line 986)
+
+        Return ``True`` if ``self`` equals ``self.parent()(0)``.
+
+        The default implementation is to fall back to ``not
+        self.__nonzero__``.
+
+        .. WARNING::
+
+            Do not re-implement this method in your subclass but
+            implement ``__nonzero__`` instead.
+        </opaque><constant name="classmethod.n">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.n(self, prec=None, digits=None, algorithm=None)
+File: sage/structure/element.pyx (starting at line 829)
+
+        Alias for :meth:`numerical_approx`.
+
+        EXAMPLES::
+
+            sage: (2/3).n()
+            0.666666666666667
+        </opaque><constant name="classmethod.numerical_approx">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.numerical_approx(self, prec=None, digits=None, algorithm=None)
+File: sage/structure/element.pyx (starting at line 781)
+
+        Return a numerical approximation of ``self`` with ``prec`` bits
+        (or decimal ``digits``) of precision.
+
+        No guarantee is made about the accuracy of the result.
+
+        INPUT:
+
+        - ``prec`` -- precision in bits
+
+        - ``digits`` -- precision in decimal digits (only used if
+          ``prec`` is not given)
+
+        - ``algorithm`` -- which algorithm to use to compute this
+          approximation (the accepted algorithms depend on the object)
+
+        If neither ``prec`` nor ``digits`` is given, the default
+        precision is 53 bits (roughly 16 digits).
+
+        EXAMPLES::
+
+            sage: (2/3).numerical_approx()
+            0.666666666666667
+            sage: pi.n(digits=10)
+            3.141592654
+            sage: pi.n(prec=20)
+            3.1416
+
+        TESTS:
+
+        Check that :trac:`14778` is fixed::
+
+            sage: (0).n(algorithm='foo')
+            0.000000000000000
+
+        The ``.N`` method is a deprecated alias::
+
+            sage: 0.N()
+            doctest:...: DeprecationWarning: N is deprecated. Please use n instead.
+            See http://trac.sagemath.org/13055 for details.
+            0.000000000000000
+        </opaque><constant name="classmethod.subs">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.subs(self, in_dict=None, **kwds)
+File: sage/structure/element.pyx (starting at line 729)
+
+        Substitutes given generators with given values while not touching
+        other generators. This is a generic wrapper around ``__call__``.
+        The syntax is meant to be compatible with the corresponding method
+        for symbolic expressions.
+
+        INPUT:
+
+        - ``in_dict`` - (optional) dictionary of inputs
+
+        - ``**kwds`` - named parameters
+
+        OUTPUT:
+
+        - new object if substitution is possible, otherwise self.
+
+        EXAMPLES::
+
+            sage: x, y = PolynomialRing(ZZ,2,'xy').gens()
+            sage: f = x^2 + y + x^2*y^2 + 5
+            sage: f((5,y))
+            25*y^2 + y + 30
+            sage: f.subs({x:5})
+            25*y^2 + y + 30
+            sage: f.subs(x=5)
+            25*y^2 + y + 30
+            sage: (1/f).subs(x=5)
+            1/(25*y^2 + y + 30)
+            sage: Integer(5).subs(x=4)
+            5
+        </opaque><constant name="classmethod.substitute">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Element.substitute(self, in_dict=None, **kwds)
+File: sage/structure/element.pyx (starting at line 868)
+
+        This is an alias for self.subs().
+
+        INPUT:
+
+        - ``in_dict`` - (optional) dictionary of inputs
+
+        - ``**kwds``  - named parameters
+
+        OUTPUT:
+
+        - new object if substitution is possible, otherwise self.
+
+        EXAMPLES::
+
+            sage: x, y = PolynomialRing(ZZ,2,'xy').gens()
+            sage: f = x^2 + y + x^2*y^2 + 5
+            sage: f((5,y))
+            25*y^2 + y + 30
+            sage: f.substitute({x:5})
+            25*y^2 + y + 30
+            sage: f.substitute(x=5)
+            25*y^2 + y + 30
+            sage: (1/f).substitute(x=5)
+            1/(25*y^2 + y + 30)
+            sage: Integer(5).substitute(x=4)
+            5
+         </opaque></omdoc></theory></omdoc>

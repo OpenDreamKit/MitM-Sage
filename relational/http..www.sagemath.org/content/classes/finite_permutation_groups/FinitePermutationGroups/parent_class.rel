@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/finite_permutation_groups/FinitePermutationGroups?parent_class
+HasMeta http://www.sagemath.org/content/classes/finite_permutation_groups/FinitePermutationGroups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/finite_permutation_groups/FinitePermutationGroups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/finite_permutation_groups/FinitePermutationGroups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/finite_permutation_groups/FinitePermutationGroups?parent_class http://www.sagemath.org/content/classes/finite_permutation_groups/FinitePermutationGroups?parent_class?classmethod.cycle_index
+constant http://www.sagemath.org/content/classes/finite_permutation_groups/FinitePermutationGroups?parent_class?classmethod.cycle_index

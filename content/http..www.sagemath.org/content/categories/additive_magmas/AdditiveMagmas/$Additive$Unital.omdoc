@@ -81,7 +81,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><constant name="element._test_nonzero_equal">
+     </constant><opaque format="text"></opaque><constant name="element._test_nonzero_equal">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

@@ -1,0 +1,4 @@
+theory http://www.sagemath.org/content/classes/sets_with_partial_maps/SetsWithPartialMaps?element_class
+HasMeta http://www.sagemath.org/content/classes/sets_with_partial_maps/SetsWithPartialMaps?element_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sets_with_partial_maps/SetsWithPartialMaps?element_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sets_with_partial_maps/SetsWithPartialMaps?element_class http://www.sagemath.org/?Structures

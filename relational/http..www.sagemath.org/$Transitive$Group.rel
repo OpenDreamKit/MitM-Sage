@@ -1,0 +1,10 @@
+theory http://www.sagemath.org/?TransitiveGroup
+HasMeta http://www.sagemath.org/?TransitiveGroup http://www.sagemath.org/?Sage
+Includes http://www.sagemath.org/?TransitiveGroup http://www.sagemath.org/?PermutationGroup_unique
+Includes http://www.sagemath.org/?TransitiveGroup http://www.sagemath.org/?CachedRepresentation
+Includes http://www.sagemath.org/?TransitiveGroup http://www.sagemath.org/?PermutationGroup_generic
+Includes http://www.sagemath.org/?TransitiveGroup http://www.sagemath.org/?group.FiniteGroup
+Declares http://www.sagemath.org/?TransitiveGroup http://www.sagemath.org/?TransitiveGroup?init
+constant http://www.sagemath.org/?TransitiveGroup?init
+Declares http://www.sagemath.org/?TransitiveGroup http://www.sagemath.org/?TransitiveGroup?init2
+constant http://www.sagemath.org/?TransitiveGroup?init2
