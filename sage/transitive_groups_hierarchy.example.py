@@ -1,3 +1,7 @@
+from sagetypes import Exporter
+
+e = Exporter()
+
 from sage.structure.category_object import CategoryObject
 from sage.groups.group import Group
 from sage.groups.group import FiniteGroup
