@@ -1,0 +1,649 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="PermutationGroupElement" base="http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup_element" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement"></import><omdoc name="Methods"><constant name="classmethod.__getitem__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 601)
+
+        Return the ith permutation cycle in the disjoint cycle
+        representation of self.
+
+        INPUT:
+
+
+        -  ``i`` - integer
+
+
+        OUTPUT: a permutation group element
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3),(4,5)]],5)
+            sage: g = G.gen(0)
+            sage: g[0]
+            (1,2,3)
+            sage: g[1]
+            (4,5)
+        </opaque><constant name="classmethod._act_on_array_on_position">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement._act_on_array_on_position(self, ClonableIntArray x) -&gt; ClonableIntArray
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 763)
+
+        Returns the right action of ``self`` on the ClonableIntArray
+        ``x``. This is the action on positions.
+
+        EXAMPLES::
+
+            sage: from sage.structure.list_clone_demo import IncreasingIntArrays
+            sage: v = IncreasingIntArrays()([1,2,3,4])
+            sage: G = PermutationGroup([[(1,2,3,4)]])
+            sage: id = G.identity()
+            sage: id._act_on_array_on_position(v)
+            [1, 2, 3, 4]
+        </opaque><constant name="classmethod._act_on_list_on_position">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement._act_on_list_on_position(self, list x) -&gt; list
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 735)
+
+        Returns the right action of ``self`` on the list ``x``. This is the
+        action on positions.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3,4,5,6)]])
+            sage: p = G.gen()^2; p
+            (1,3,5)(2,4,6)
+            sage: p._act_on_list_on_position([1,2,3,4,5,6])
+            [3, 4, 5, 6, 1, 2]
+            sage: p._act_on_list_on_position(['a','b','c','d','e','f'])
+            ['c', 'd', 'e', 'f', 'a', 'b']
+            sage: p._act_on_list_on_position(['c','d','e','f','a','b'])
+            ['e', 'f', 'a', 'b', 'c', 'd']
+            sage: p._act_on_list_on_position([])
+            Traceback (most recent call last):
+            ...
+            AssertionError: (1,3,5)(2,4,6) and [] should have the same length
+            sage: p._act_on_list_on_position([1,2,3,4,5,6,7])
+            Traceback (most recent call last):
+            ...
+            AssertionError: (1,3,5)(2,4,6) and [1, 2, 3, 4, 5, 6, 7] should have the same length
+        </opaque><constant name="classmethod._gap_cycle_string">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement._gap_cycle_string(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 908)
+
+        Returns a cycle string for this permutation compatible with
+        the GAP numbering.
+
+        EXAMPLES::
+
+            sage: S = SymmetricGroup(3)
+            sage: s = S.gen(0); s
+            (1,2,3)
+            sage: s._gap_cycle_string()
+            '(1,2,3)'
+
+        ::
+
+            sage: S = SymmetricGroup(['a', 'b', 'c'])
+            sage: s = S.gen(0); s
+            ('a','b','c')
+            sage: s._gap_cycle_string()
+            '(1,2,3)'
+        </opaque><constant name="classmethod._gap_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement._gap_list(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 884)
+
+        Returns this permutation in list notation compatible with the
+        GAP numbering.
+
+        EXAMPLES::
+
+            sage: S = SymmetricGroup(3)
+            sage: s = S.gen(0); s
+            (1,2,3)
+            sage: s._gap_list()
+            [2, 3, 1]
+
+        ::
+
+            sage: S = SymmetricGroup(['a', 'b', 'c'])
+            sage: s = S.gen(0); s
+            ('a','b','c')
+            sage: s._gap_list()
+            [2, 3, 1]
+        </opaque><constant name="classmethod._latex_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement._latex_(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 584)
+
+        Returns a latex representation of this permutation.
+
+        EXAMPLES::
+
+            sage: g = PermutationGroupElement([(1,2,3),(4,5)])
+            sage: latex(g)
+            (1,2,3)(4,5)
+
+            sage: S = SymmetricGroup(['a', 'b'])
+            sage: latex(S.gens())
+            \left[(\text{\texttt{a}},\text{\texttt{b}})\right]
+        </opaque><constant name="classmethod._mul_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement._mul_(left, _right)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 849)
+
+        EXAMPLES::
+
+            sage: S = SymmetricGroup(['a', 'b'])
+            sage: s = S([('a', 'b')]); s
+            ('a','b')
+            sage: s*s
+            ()
+        </opaque><constant name="classmethod.cycle_string">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.cycle_string(self, singletons=False)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1291)
+
+        Return string representation of this permutation.
+
+       EXAMPLES::
+
+            sage: g = PermutationGroupElement([(1,2,3),(4,5)])
+            sage: g.cycle_string()
+            '(1,2,3)(4,5)'
+
+            sage: g = PermutationGroupElement([3,2,1])
+            sage: g.cycle_string(singletons=True)
+            '(1,3)(2)'
+        </opaque><constant name="classmethod.cycle_tuples">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.cycle_tuples(self, singletons=False)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1233)
+
+        Return self as a list of disjoint cycles, represented as tuples
+        rather than permutation group elements.
+
+        INPUT:
+
+        - ``singletons`` - boolean (default: False) whether or not consider the
+          cycle that correspond to fixed point
+
+        EXAMPLES::
+
+            sage: p = PermutationGroupElement('(2,6)(4,5,1)')
+            sage: p.cycle_tuples()
+            [(1, 4, 5), (2, 6)]
+            sage: p.cycle_tuples(singletons=True)
+            [(1, 4, 5), (2, 6), (3,)]
+
+        EXAMPLES::
+
+            sage: S = SymmetricGroup(4)
+            sage: S.gen(0).cycle_tuples()
+            [(1, 2, 3, 4)]
+
+        ::
+
+            sage: S = SymmetricGroup(['a','b','c','d'])
+            sage: S.gen(0).cycle_tuples()
+            [('a', 'b', 'c', 'd')]
+            sage: S([('a', 'b'), ('c', 'd')]).cycle_tuples()
+            [('a', 'b'), ('c', 'd')]
+        </opaque><constant name="classmethod.cycle_type">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.cycle_type(self, singletons=True, as_list=False)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1310)
+
+        Return the partition that gives the cycle type of ``g`` as an element of
+        ``self``.
+
+        INPUT:
+
+        - ``g`` -- an element of the permutation group ``self.parent()``
+        
+        - ``singletons`` -- ``True`` or ``False`` depending on whether on or not
+          trivial cycles should be counted (default: ``True``)
+
+        - ``as_list`` -- ``True`` or ``False`` depending on whether the cycle
+          type should be returned as a ``list`` or as a class:`Partition` 
+          (default: ``False``)
+
+        OUTPUT:
+
+        A class:`Partition`, or `list` if ``is_list`` is ``True``, giving the cycle type of ``g`` 
+
+        If speed is a concern then ``as_list=True`` should be used.
+
+        EXAMPLES::
+
+            sage: G = DihedralGroup(3)
+            sage: [g.cycle_type() for g in G]
+            [[1, 1, 1], [2, 1], [3], [2, 1], [3], [2, 1]]
+            sage: PermutationGroupElement('(1,2,3)(4,5)(6,7,8)').cycle_type()
+            [3, 3, 2]
+            sage: G = SymmetricGroup(3); G('(1,2)').cycle_type()
+            [2, 1]
+            sage: G = SymmetricGroup(4); G('(1,2)').cycle_type()
+            [2, 1, 1]
+            sage: G = SymmetricGroup(4); G('(1,2)').cycle_type(singletons=False)
+            [2]
+            sage: G = SymmetricGroup(4); G('(1,2)').cycle_type(as_list=False)
+            [2, 1, 1]
+        </opaque><constant name="classmethod.cycles">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.cycles(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1200)
+
+        Return self as a list of disjoint cycles.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5,6,7)'])
+            sage: g = G.0
+            sage: g.cycles()
+            [(1,2,3), (4,5,6,7)]
+            sage: a, b = g.cycles()
+            sage: a(1), b(1)
+            (2, 1)
+        </opaque><constant name="classmethod.dict">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.dict(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1019)
+
+        Returns a dictionary associating each element of the domain with its
+        image.
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(4)
+            sage: g = G((1,2,3,4)); g
+            (1,2,3,4)
+            sage: v = g.dict(); v
+            {1: 2, 2: 3, 3: 4, 4: 1}
+            sage: type(v[1])
+            &lt;... 'int'&gt;
+            sage: x = G([2,1]); x
+            (1,2)
+            sage: x.dict()
+            {1: 2, 2: 1, 3: 3, 4: 4}
+        </opaque><constant name="classmethod.domain">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.domain(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 932)
+
+        Returns the domain of self.
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(4)
+            sage: x = G([2,1,4,3]); x
+            (1,2)(3,4)
+            sage: v = x.domain(); v
+            [2, 1, 4, 3]
+            sage: type(v[0])
+            &lt;... 'int'&gt;
+            sage: x = G([2,1]); x
+            (1,2)
+            sage: x.domain()
+            [2, 1, 3, 4]
+
+        TESTS::
+
+            sage: S = SymmetricGroup(0)
+            sage: x = S.one(); x
+            ()
+            sage: x.domain()
+            []
+        </opaque><constant name="classmethod.has_descent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.has_descent(self, i, side='right', positive=False)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1356)
+
+        INPUT:
+
+         - ``i``: an element of the index set
+         - ``side``: &quot;left&quot; or &quot;right&quot; (default: &quot;right&quot;)
+         - ``positive``: a boolean (default: False)
+
+        Returns whether ``self`` has a left (resp. right) descent at
+        position ``i``. If ``positive`` is True, then test for a non
+        descent instead.
+
+        Beware that, since permutations are acting on the right, the
+        meaning of descents is the reverse of the usual
+        convention. Hence, ``self`` has a left descent at position
+        ``i`` if ``self(i) &gt; self(i+1)``.
+
+        EXAMPLES::
+
+            sage: S = SymmetricGroup([1,2,3])
+            sage: S.one().has_descent(1)
+            False
+            sage: S.one().has_descent(2)
+            False
+            sage: s = S.simple_reflections()
+            sage: x = s[1]*s[2]
+            sage: x.has_descent(1, side = &quot;right&quot;)
+            False
+            sage: x.has_descent(2, side = &quot;right&quot;)
+            True
+            sage: x.has_descent(1, side = &quot;left&quot;)
+            True
+            sage: x.has_descent(2, side = &quot;left&quot;)
+            False
+            sage: S._test_has_descent()
+
+        The symmetric group acting on a set not of the form
+        `(1,\dots,n)` is also supported::
+
+            sage: S = SymmetricGroup([2,4,1])
+            sage: s = S.simple_reflections()
+            sage: x = s[2]*s[4]
+            sage: x.has_descent(4)
+            True
+            sage: S._test_has_descent()
+        </opaque><constant name="classmethod.inverse">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.inverse(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1088)
+
+        Returns the inverse permutation.
+
+        OUTPUT:
+
+        For an element of a permutation group, this method returns the inverse
+        element, which is both the inverse function and the inverse as an
+        element of a group.
+
+        EXAMPLES::
+
+            sage: s = PermutationGroupElement(&quot;(1,2,3)(4,5)&quot;)
+            sage: s.inverse()
+            (1,3,2)(4,5)
+
+            sage: A = AlternatingGroup(4)
+            sage: t = A(&quot;(1,2,3)&quot;)
+            sage: t.inverse()
+            (1,3,2)
+
+        There are several ways (syntactically) to get an inverse
+        of a permutation group element.  ::
+
+            sage: s = PermutationGroupElement(&quot;(1,2,3,4)(6,7,8)&quot;)
+            sage: s.inverse() == s^-1
+            True
+            sage: s.inverse() == ~s
+            True
+        </opaque><constant name="classmethod.matrix">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.matrix(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1414)
+
+        Returns deg x deg permutation matrix associated to the permutation
+        self
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: g = G.gen(0)
+            sage: g.matrix()
+            [0 1 0 0 0]
+            [0 0 1 0 0]
+            [1 0 0 0 0]
+            [0 0 0 0 1]
+            [0 0 0 1 0]
+        </opaque><constant name="classmethod.orbit">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.orbit(self, n, bool sorted=True)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1156)
+
+        Returns the orbit of the integer `n` under this group
+        element, as a sorted list.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup(['(1,2,3)(4,5)'])
+            sage: g = G.gen(0)
+            sage: g.orbit(4)
+            [4, 5]
+            sage: g.orbit(3)
+            [1, 2, 3]
+            sage: g.orbit(10)
+            [10]
+
+        ::
+
+            sage: s = SymmetricGroup(['a', 'b']).gen(0); s
+            ('a','b')
+            sage: s.orbit('a')
+            ['a', 'b']
+        </opaque><constant name="classmethod.sign">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.sign(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1120)
+
+        Returns the sign of self, which is `(-1)^{s}`, where
+        `s` is the number of swaps.
+
+        EXAMPLES::
+
+            sage: s = PermutationGroupElement('(1,2)(3,5,6)')
+            sage: s.sign()
+            -1
+
+        ALGORITHM: Only even cycles contribute to the sign, thus
+
+        .. MATH::
+
+            sign(sigma) = (-1)^{\sum_c len(c)-1}
+
+
+        where the sum is over cycles in self.
+        </opaque><constant name="classmethod.tuple">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.tuple(self)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1000)
+
+        Return tuple of images of the domain under self.
+
+        EXAMPLES::
+
+            sage: G = SymmetricGroup(5)
+            sage: s = G([2,1,5,3,4])
+            sage: s.tuple()
+            (2, 1, 5, 3, 4)
+
+            sage: S = SymmetricGroup(['a', 'b'])
+            sage: S.gen().tuple()
+            ('b', 'a')
+        </opaque><constant name="classmethod.word_problem">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">PermutationGroupElement.word_problem(self, words, display=True)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1437)
+
+        G and H are permutation groups, g in G, H is a subgroup of G
+        generated by a list (words) of elements of G. If g is in H, return
+        the expression for g as a word in the elements of (words).
+
+        This function does not solve the word problem in Sage. Rather it
+        pushes it over to GAP, which has optimized algorithms for the word
+        problem. Essentially, this function is a wrapper for the GAP
+        functions &quot;EpimorphismFromFreeGroup&quot; and
+        &quot;PreImagesRepresentative&quot;.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3),(4,5)],[(3,4)]], canonicalize=False)
+            sage: g1, g2 = G.gens()
+            sage: h = g1^2*g2*g1
+            sage: h.word_problem([g1,g2], False)
+            ('x1^2*x2^-1*x1', '(1,2,3)(4,5)^2*(3,4)^-1*(1,2,3)(4,5)')
+            sage: h.word_problem([g1,g2])
+               x1^2*x2^-1*x1
+               [['(1,2,3)(4,5)', 2], ['(3,4)', -1], ['(1,2,3)(4,5)', 1]]
+            ('x1^2*x2^-1*x1', '(1,2,3)(4,5)^2*(3,4)^-1*(1,2,3)(4,5)')
+        </opaque></omdoc></theory></omdoc>

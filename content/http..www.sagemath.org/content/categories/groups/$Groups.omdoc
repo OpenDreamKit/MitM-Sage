@@ -367,7 +367,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><constant name="parent.semidirect_product">
+     </constant><opaque format="text"></opaque><constant name="parent.semidirect_product">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

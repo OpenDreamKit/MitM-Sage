@@ -1,0 +1,1585 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Parent" base="http://www.sagemath.org/content/classes/sage/structure/parent" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject"></import><omdoc name="Methods"><constant name="classmethod.__contains__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 1054)
+
+        True if there is an element of self that is equal to x under
+        ==, or if x is already an element of self.  Also, True in other
+        cases involving the Symbolic Ring, which is handled specially.
+
+        For many structures we test this by using :meth:`__call__` and
+        then testing equality between x and the result.
+
+        The Symbolic Ring is treated differently because it is
+        ultra-permissive about letting other rings coerce in, but
+        ultra-strict about doing comparisons.
+
+        EXAMPLES::
+
+            sage: 2 in Integers(7)
+            True
+            sage: 2 in ZZ
+            True
+            sage: Integers(7)(3) in ZZ
+            True
+            sage: 3/1 in ZZ
+            True
+            sage: 5 in QQ
+            True
+            sage: I in RR
+            False
+            sage: SR(2) in ZZ
+            True
+            sage: RIF(1, 2) in RIF
+            True
+            sage: pi in RIF # there is no element of RIF equal to pi
+            False
+            sage: sqrt(2) in CC
+            True
+            sage: pi in RR
+            True
+            sage: pi in CC
+            True
+            sage: pi in RDF
+            True
+            sage: pi in CDF
+            True
+
+        Note that we have
+
+        ::
+
+            sage: 3/2 in RIF
+            True
+
+        because ``3/2`` has an exact representation in ``RIF`` (i.e. can be
+        represented as an interval that contains exactly one value)::
+
+            sage: RIF(3/2).is_exact()
+            True
+
+        On the other hand, we have
+
+        ::
+
+            sage: 2/3 in RIF
+            False
+
+        because ``2/3`` has no exact representation in ``RIF``. Since
+        ``RIF(2/3)`` is a nontrivial interval, it can not be equal to anything
+        (not even itself)::
+
+            sage: RIF(2/3).is_exact()
+            False
+            sage: RIF(2/3).endpoints()
+            (0.666666666666666, 0.666666666666667)
+            sage: RIF(2/3) == RIF(2/3)
+            False
+
+        TESTS:
+
+        Check that :trac:`13824` is fixed::
+
+            sage: 4/3 in GF(3)
+            False
+            sage: 15/50 in GF(25, 'a')
+            False
+            sage: 7/4 in Integers(4)
+            False
+            sage: 15/36 in Integers(6)
+            False
+        </opaque><constant name="classmethod.__getitem__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 1229)
+
+        Returns the `n^{th}` item or slice `n` of self,
+        by getting self as a list.
+
+        EXAMPLES::
+
+            sage: VectorSpace(GF(7), 3)[:10]
+            [(0, 0, 0),
+             (1, 0, 0),
+             (2, 0, 0),
+             (3, 0, 0),
+             (4, 0, 0),
+             (5, 0, 0),
+             (6, 0, 0),
+             (0, 1, 0),
+             (1, 1, 0),
+             (2, 1, 0)]
+
+        TESTS:
+
+        We test the workaround described in :trac:`12956` to let categories
+        override this default implementation::
+
+            sage: class As(Category):
+            ....:     def super_categories(self): return [Sets()]
+            ....:     class ParentMethods:
+            ....:         def __getitem__(self, n):
+            ....:             return 'coucou'
+            sage: class A(Parent):
+            ....:     def __init__(self):
+            ....:         Parent.__init__(self, category=As())
+            sage: a = A()
+            sage: a[1]
+            'coucou'
+        </opaque><constant name="classmethod.__make_element_class__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.__make_element_class__(self, cls, name=None, inherit=None)
+File: sage/structure/parent.pyx (starting at line 587)
+
+        A utility to construct classes for the elements of this
+        parent, with appropriate inheritance from the element class of
+        the category (only for pure python types so far).
+        </opaque><constant name="classmethod.__mul__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 961)
+
+        This is a multiplication method that more or less directly
+        calls another attribute ``_mul_`` (single underscore). This
+        is because ``__mul__`` can not be implemented via inheritance
+        from the parent methods of the category, but ``_mul_`` can
+        be inherited. This is, e.g., used when creating twosided
+        ideals of matrix algebras. See :trac:`7797`.
+
+        EXAMPLES::
+
+            sage: MS = MatrixSpace(QQ,2,2)
+
+        This matrix space is in fact an algebra, and in particular
+        it is a ring, from the point of view of categories::
+
+            sage: MS.category()
+            Category of infinite algebras over (quotient fields and metric spaces)
+            sage: MS in Rings()
+            True
+
+        However, its class does not inherit from the base class
+        ``Ring``::
+
+            sage: isinstance(MS,Ring)
+            False
+
+        Its ``_mul_`` method is inherited from the category, and
+        can be used to create a left or right ideal::
+
+            sage: MS._mul_.__module__
+            'sage.categories.rings'
+            sage: MS*MS.1      # indirect doctest
+            Left Ideal
+            (
+              [0 1]
+              [0 0]
+            )
+             of Full MatrixSpace of 2 by 2 dense matrices over Rational Field
+            sage: MS*[MS.1,2]
+            Left Ideal
+            (
+              [0 1]
+              [0 0],
+            &lt;BLANKLINE&gt;
+              [2 0]
+              [0 2]
+            )
+             of Full MatrixSpace of 2 by 2 dense matrices over Rational Field
+            sage: MS.1*MS
+            Right Ideal
+            (
+              [0 1]
+              [0 0]
+            )
+             of Full MatrixSpace of 2 by 2 dense matrices over Rational Field
+            sage: [MS.1,2]*MS
+            Right Ideal
+            (
+              [0 1]
+              [0 0],
+            &lt;BLANKLINE&gt;
+              [2 0]
+              [0 2]
+            )
+             of Full MatrixSpace of 2 by 2 dense matrices over Rational Field
+
+        </opaque><constant name="classmethod.__nonzero__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__nonzero__() &lt;==&gt; x != 0</opaque><constant name="classmethod.__rmul__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rmul__(y) &lt;==&gt; y*x</opaque><constant name="classmethod._an_element_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._an_element_(self)
+File: sage/structure/parent.pyx (starting at line 2571)
+
+        Returns an element of self. Want it in sufficient generality
+        that poorly-written functions won't work when they're not
+        supposed to. This is cached so doesn't have to be super fast.
+
+        EXAMPLES::
+
+            sage: QQ._an_element_()
+            1/2
+            sage: ZZ['x,y,z']._an_element_()
+            x
+
+        TESTS:
+
+        Since ``Parent`` comes before the parent classes provided by
+        categories in the hierarchy of classes, we make sure that this
+        default implementation of :meth:`_an_element_` does not
+        override some provided by the categories.  Eventually, this
+        default implementation should be moved into the categories to
+        avoid this workaround::
+
+            sage: S = FiniteEnumeratedSet([1,2,3])
+            sage: S.category()
+            Category of facade finite enumerated sets
+            sage: super(Parent, S)._an_element_
+            Cached version of &lt;function _an_element_from_iterator at ...&gt;
+            sage: S._an_element_()
+            1
+            sage: S = FiniteEnumeratedSet([])
+            sage: S._an_element_()
+            Traceback (most recent call last):
+            ...
+            EmptySetError
+
+        </opaque><constant name="classmethod._cmp_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._cmp_(left, right) -&gt; int
+File: sage/structure/parent.pyx (starting at line 1212)
+
+        Check for Python class defining ``__cmp__``
+        </opaque><constant name="classmethod._coerce_map_from_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._coerce_map_from_(self, S)
+File: sage/structure/parent.pyx (starting at line 1936)
+
+        Override this method to specify coercions beyond those specified
+        in coerce_list.
+
+        If no such coercion exists, return None or False. Otherwise, it may
+        return either an actual Map to use for the coercion, a callable
+        (in which case it will be wrapped in a Map), or True (in which case
+        a generic map will be provided).
+        </opaque><constant name="classmethod._coerce_map_via">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._coerce_map_via(self, v, S)
+File: sage/structure/parent.pyx (starting at line 1850)
+
+        This attempts to construct a morphism from S to self by passing through
+        one of the items in v (tried in order).
+
+        S may appear in the list, in which case algorithm will never progress
+        beyond that point.
+
+        This is similar in spirit to the old {{{_coerce_try}}}, and useful when
+        defining _coerce_map_from_
+
+        INPUT:
+
+        - ``v`` - A list (iterator) of parents with coercions into self. There
+          MUST be maps provided from each item in the list to self.
+
+        - ``S`` - the starting parent
+
+        EXAMPLES:
+
+        By :trac:`14711`, coerce maps should be copied for usage outside
+        of the coercion system::
+
+            sage: copy(CDF._coerce_map_via([ZZ, RR, CC], int))
+            Composite map:
+              From: Set of Python objects of type 'int'
+              To:   Complex Double Field
+              Defn:   Native morphism:
+                      From: Set of Python objects of type 'int'
+                      To:   Integer Ring
+                    then
+                      Native morphism:
+                      From: Integer Ring
+                      To:   Complex Double Field
+
+            sage: copy(CDF._coerce_map_via([ZZ, RR, CC], QQ))
+            Composite map:
+              From: Rational Field
+              To:   Complex Double Field
+              Defn:   Generic map:
+                      From: Rational Field
+                      To:   Real Field with 53 bits of precision
+                    then
+                      Native morphism:
+                      From: Real Field with 53 bits of precision
+                      To:   Complex Double Field
+
+            sage: copy(CDF._coerce_map_via([ZZ, RR, CC], CC))
+            Generic map:
+              From: Complex Field with 53 bits of precision
+              To:   Complex Double Field
+        </opaque><constant name="classmethod._convert_map_from_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._convert_map_from_(self, S)
+File: sage/structure/parent.pyx (starting at line 2379)
+
+        Override this method to provide additional conversions beyond those
+        given in convert_list.
+
+        This function is called after coercions are attempted. If there is a
+        coercion morphism in the opposite direction, one should consider
+        adding a section method to that.
+
+        This MUST return a Map from S to self, or None. If None is returned
+        then a generic map will be provided.
+        </opaque><constant name="classmethod._generic_convert_map">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._generic_convert_map(self, S)
+File: sage/structure/parent.pyx (starting at line 1816)
+
+        Returns the default conversion map based on the data provided to
+        :meth:`_populate_coercion_lists_`.
+
+        This is called when :meth:`_coerce_map_from_` returns ``True``.
+
+        If a ``convert_method_name`` is provided, it creates a
+        ``NamedConvertMap``, otherwise it creates a
+        ``DefaultConvertMap`` or ``DefaultConvertMap_unique``
+        depending on whether or not init_no_parent is set.
+
+        EXAMPLES:
+        </opaque><constant name="classmethod._get_action_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._get_action_(self, S, op, bool self_on_left)
+File: sage/structure/parent.pyx (starting at line 2509)
+
+        Override this method to provide an action of self on S or S on self
+        beyond what was specified in action_list.
+
+        This must return an action which accepts an element of self and an
+        element of S (in the order specified by self_on_left).
+        </opaque><constant name="classmethod._internal_coerce_map_from">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._internal_coerce_map_from(self, S)
+File: sage/structure/parent.pyx (starting at line 1985)
+
+        Return the :class:`Map` object to coerce from ``S`` to ``self`` that
+        is used internally by the coercion system if one exists, or ``None``
+        if no such coercion exists.
+
+        EXAMPLES:
+
+        By :trac:`14711`, coerce maps should be copied when using them
+        outside of the coercion system, because they may become defunct
+        by garbage collection::
+
+            sage: ZZ._internal_coerce_map_from(int)
+            (map internal to coercion system -- copy before use)
+            Native morphism:
+              From: Set of Python objects of type 'int'
+              To:   Integer Ring
+            sage: copy(ZZ._internal_coerce_map_from(int))
+            Native morphism:
+              From: Set of Python objects of type 'int'
+              To:   Integer Ring
+            sage: copy(QQ._internal_coerce_map_from(ZZ))
+            Natural morphism:
+              From: Integer Ring
+              To:   Rational Field
+
+            sage: R = QQ['q,t'].fraction_field()
+            sage: Sym = sage.combinat.sf.sf.SymmetricFunctions(R)
+            sage: P = Sym.macdonald().P()
+            sage: Ht = Sym.macdonald().Ht()
+            sage: Ht._internal_coerce_map_from(P)
+            (map internal to coercion system -- copy before use)
+            Composite map:
+              From: Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Macdonald P basis
+              To:   Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Macdonald Ht basis
+            sage: copy(Ht._internal_coerce_map_from(P))
+            Composite map:
+              From: Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Macdonald P basis
+              To:   Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Macdonald Ht basis
+              Defn:   Generic morphism:
+                      From: Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Macdonald P basis
+                      To:   Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Macdonald J basis
+                    then
+                      Generic morphism:
+                      From: Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Macdonald J basis
+                      To:   Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Schur basis
+                    then
+                      Generic morphism:
+                      From: Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Schur basis
+                      To:   Symmetric Functions over Fraction Field of Multivariate Polynomial Ring in q, t over Rational Field in the Macdonald Ht basis
+
+        The following was fixed in :trac:`4740`::
+
+            sage: F = GF(13)
+            sage: F._internal_coerce_map_from(F) is F._internal_coerce_map_from(F)
+            True
+        </opaque><constant name="classmethod._internal_convert_map_from">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._internal_convert_map_from(self, S)
+File: sage/structure/parent.pyx (starting at line 2306)
+
+        This function returns a :class:`Map` from `S` to `self`,
+        which may or may not succeed on all inputs.
+        If a coercion map from S to self exists,
+        then the it will be returned. If a coercion from `self` to `S` exists,
+        then it will attempt to return a section of that map.
+
+        Under the new coercion model, this is the fastest way to convert
+        elements of `S` to elements of `self` (short of manually constructing
+        the elements) and is used by :func:`__call__`.
+
+        EXAMPLES::
+
+            sage: m = ZZ._internal_convert_map_from(QQ)
+            sage: m
+            (map internal to coercion system -- copy before use)
+            Generic map:
+              From: Rational Field
+              To:   Integer Ring
+            sage: m(-35/7)
+            -5
+            sage: parent(m(-35/7))
+            Integer Ring
+        </opaque><constant name="classmethod._introspect_coerce">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._introspect_coerce(self)
+File: sage/structure/parent.pyx (starting at line 751)
+
+        Used for debugging the coercion model.
+
+        EXAMPLES::
+
+            sage: sorted(QQ._introspect_coerce().items())
+            [('_action_hash', &lt;sage.structure.coerce_dict.TripleDict object at ...&gt;),
+             ('_action_list', []),
+             ('_coerce_from_hash', &lt;sage.structure.coerce_dict.MonoDict object at ...&gt;),
+             ('_coerce_from_list', []),
+             ('_convert_from_hash', &lt;sage.structure.coerce_dict.MonoDict object at ...&gt;),
+             ('_convert_from_list', [...]),
+             ('_element_init_pass_parent', False),
+             ('_embedding', None),
+             ('_initial_action_list', []),
+             ('_initial_coerce_list', []),
+             ('_initial_convert_list', [])]
+        </opaque><constant name="classmethod._is_valid_homomorphism_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._is_valid_homomorphism_(self, codomain, im_gens)
+File: sage/structure/parent.pyx (starting at line 1279)
+
+       Return True if ``im_gens`` defines a valid homomorphism
+       from self to codomain; otherwise return False.
+
+       If determining whether or not a homomorphism is valid has not
+       been implemented for this ring, then a NotImplementedError exception
+       is raised.
+       </opaque><constant name="classmethod._populate_coercion_lists_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._populate_coercion_lists_(self, coerce_list=[], action_list=[], convert_list=[], embedding=None, convert_method_name=None, element_constructor=None, init_no_parent=None, bool unpickling=False)
+File: sage/structure/parent.pyx (starting at line 1422)
+
+        This function allows one to specify coercions, actions, conversions
+        and embeddings involving this parent.
+
+        IT SHOULD ONLY BE CALLED DURING THE __INIT__ method, often at the end.
+
+        INPUT:
+
+        - ``coerce_list`` -- a list of coercion Morphisms to self and
+          parents with canonical coercions to self
+
+        - ``action_list`` -- a list of actions on and by self
+
+        - ``convert_list`` -- a list of conversion Maps to self and
+           parents with conversions to self
+
+        - ``embedding`` -- a single Morphism from self
+
+        - ``convert_method_name`` -- a name to look for that other elements
+          can implement to create elements of self (e.g. _integer_)
+
+        - ``element_constructor`` -- A callable object used by the
+          __call__ method to construct new elements. Typically the
+          element class or a bound method (defaults to
+          self._element_constructor_).
+
+        - ``init_no_parent`` -- if True omit passing self in as the
+          first argument of element_constructor for conversion. This
+          is useful if parents are unique, or element_constructor is a
+          bound method (this latter case can be detected
+          automatically).
+        </opaque><constant name="classmethod._repr_option">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._repr_option(self, key)
+File: sage/structure/parent.pyx (starting at line 828)
+
+        Metadata about the :meth:`_repr_` output.
+
+        INPUT:
+
+        - ``key`` -- string. A key for different metadata informations
+          that can be inquired about.
+
+        Valid ``key`` arguments are:
+
+        - ``'ascii_art'``: The :meth:`_repr_` output is multi-line
+          ascii art and each line must be printed starting at the same
+          column, or the meaning is lost.
+
+        - ``'element_ascii_art'``: same but for the output of the
+          elements. Used in :mod:`sage.repl.display.formatter`.
+
+        - ``'element_is_atomic'``: the elements print atomically, that
+          is, parenthesis are not required when *printing* out any of
+          `x - y`, `x + y`, `x^y` and `x/y`.
+
+        OUTPUT:
+
+        Boolean.
+
+        EXAMPLES::
+
+            sage: ZZ._repr_option('ascii_art')
+            False
+            sage: MatrixSpace(ZZ, 2)._repr_option('element_ascii_art')
+            True
+        </opaque><constant name="classmethod._set_element_constructor">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._set_element_constructor(self)
+File: sage/structure/parent.pyx (starting at line 604)
+
+        This function is used in translating from the old to the new coercion model.
+
+        It is called from sage.structure.parent_old.Parent.__init__
+        when an old style parent provides a _element_constructor_ method.
+
+        It just asserts that this _element_constructor_ is callable and
+        also sets self._element_init_pass_parent
+
+        EXAMPLES::
+
+            sage: k = GF(5); k._element_constructor # indirect doctest
+            &lt;bound method FiniteField_prime_modn_with_category._element_constructor_ of Finite Field of size 5&gt;
+        </opaque><constant name="classmethod._test_eq">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._test_eq(self, **options)
+File: sage/structure/parent.pyx (starting at line 690)
+
+        Test that ``self`` is equal to ``self`` and different to ``None``.
+
+        See also: :class:`TestSuite`.
+
+        TESTS::
+
+            sage: O = Parent()
+            sage: O._test_eq()
+
+        Let us now write a broken class method::
+
+            sage: class CCls(Parent):
+            ....:     def __eq__(self, other):
+            ....:         return True
+            sage: CCls()._test_eq()
+            Traceback (most recent call last):
+            ...
+            AssertionError: broken equality: &lt;class '__main__.CCls'&gt; == None
+
+        Let us now break inequality::
+
+            sage: class CCls(Parent):
+            ....:     def __ne__(self, other):
+            ....:         return True
+            sage: CCls()._test_eq()
+            Traceback (most recent call last):
+            ...
+            AssertionError: broken non-equality: &lt;class '__main__.CCls'&gt; != itself
+        </opaque><constant name="classmethod._unset_category">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._unset_category(self)
+File: sage/structure/parent.pyx (starting at line 483)
+
+        Remove the information on ``self``'s category.
+
+        NOTE:
+
+        This may change ``self``'s class!
+
+        EXAMPLES:
+
+        Let us create a parent in the category of rings::
+
+            sage: class MyParent(Parent):
+            ....:     def __init__(self):
+            ....:         Parent.__init__(self, category=Rings())
+            ....:
+            sage: P = MyParent()
+            sage: P.category()
+            Category of rings
+
+        Of course, its category is initialised::
+
+            sage: P._is_category_initialized()
+            True
+
+        We may now refine the category to the category of fields.
+        Note that this changes the class::
+
+            sage: C = type(P)
+            sage: C == MyParent
+            False
+            sage: P._refine_category_(Fields())
+            sage: P.category()
+            Category of fields
+            sage: C == type(P)
+            False
+
+        Now we may have noticed that the category refinement was a
+        mistake. We do not need to worry, because we can undo category
+        initialisation totally::
+
+            sage: P._unset_category()
+            sage: P._is_category_initialized()
+            False
+            sage: type(P) == MyParent
+            True
+
+        Hence, we can now initialise the parent again in the original
+        category, i.e., the category of rings. We find that not only
+        the category, but also the class of the parent is brought back
+        to what it was after the original category initialisation::
+
+            sage: P._init_category_(Rings())
+            sage: type(P) == C
+            True
+
+        </opaque><constant name="classmethod._unset_coercions_used">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._unset_coercions_used(self)
+File: sage/structure/parent.pyx (starting at line 1497)
+
+        Pretend that this parent has never been interrogated by the coercion
+        model, so that it is possible to add coercions, conversions, and
+        actions.  Does not remove any existing embedding.
+
+        WARNING::
+
+            For internal use only!
+        </opaque><constant name="classmethod._unset_embedding">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._unset_embedding(self)
+File: sage/structure/parent.pyx (starting at line 1510)
+
+        Pretend that this parent has never been interrogated by the
+        coercion model, and remove any existing embedding.
+
+        WARNING::
+
+            This does *not* make it safe to add an entirely new embedding!  It
+            is possible that a `Parent` has cached information about the
+            existing embedding; that cached information *is not* removed by
+            this call.
+
+            For internal use only!
+        </opaque><constant name="classmethod.an_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.an_element(self)
+File: sage/structure/parent.pyx (starting at line 2540)
+
+        Returns a (preferably typical) element of this parent.
+
+        This is used both for illustration and testing purposes. If
+        the set ``self`` is empty, :meth:`an_element` raises the
+        exception :class:`EmptySetError`.
+
+        This calls :meth:`_an_element_` (which see), and caches the
+        result. Parent are thus encouraged to override :meth:`_an_element_`.
+
+        EXAMPLES::
+
+            sage: CDF.an_element()
+            1.0*I
+            sage: ZZ[['t']].an_element()
+            t
+
+        In case the set is empty, an :class:`EmptySetError` is raised::
+
+            sage: Set([]).an_element()
+            Traceback (most recent call last):
+            ...
+            EmptySetError
+        </opaque><constant name="classmethod.coerce">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.coerce(self, x)
+File: sage/structure/parent.pyx (starting at line 1168)
+
+        Return x as an element of self, if and only if there is a canonical
+        coercion from the parent of x to self.
+
+        EXAMPLES::
+
+            sage: QQ.coerce(ZZ(2))
+            2
+            sage: ZZ.coerce(QQ(2))
+            Traceback (most recent call last):
+            ...
+            TypeError: no canonical coercion from Rational Field to Integer Ring
+
+        We make an exception for zero::
+
+            sage: V = GF(7)^7
+            sage: V.coerce(0)
+            (0, 0, 0, 0, 0, 0, 0)
+        </opaque><constant name="classmethod.coerce_embedding">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.coerce_embedding(self)
+File: sage/structure/parent.pyx (starting at line 1789)
+
+        Return the embedding of ``self`` into some other parent, if such a
+        parent exists.
+
+        This does not mean that there are no coercion maps from ``self`` into
+        other fields, this is simply a specific morphism specified out of
+        ``self`` and usually denotes a special relationship (e.g. sub-objects,
+        choice of completion, etc.)
+
+        EXAMPLES::
+
+            sage: K.&lt;a&gt;=NumberField(x^3+x^2+1,embedding=1)
+            sage: K.coerce_embedding()
+            Generic morphism:
+              From: Number Field in a with defining polynomial x^3 + x^2 + 1
+              To:   Real Lazy Field
+              Defn: a -&gt; -1.465571231876768?
+            sage: K.&lt;a&gt;=NumberField(x^3+x^2+1,embedding=CC.gen())
+            sage: K.coerce_embedding()
+            Generic morphism:
+              From: Number Field in a with defining polynomial x^3 + x^2 + 1
+              To:   Complex Lazy Field
+              Defn: a -&gt; 0.2327856159383841? + 0.7925519925154479?*I
+        </opaque><constant name="classmethod.coerce_map_from">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.coerce_map_from(self, S)
+File: sage/structure/parent.pyx (starting at line 1948)
+
+        Return a :class:`Map` object to coerce from ``S`` to ``self`` if one
+        exists, or ``None`` if no such coercion exists.
+
+        EXAMPLES:
+
+        By :trac:`12313`, a special kind of weak key dictionary is used to
+        store coercion and conversion maps, namely
+        :class:`~sage.structure.coerce_dict.MonoDict`. In that way, a memory
+        leak was fixed that would occur in the following test::
+
+            sage: import gc
+            sage: _ = gc.collect()
+            sage: K = GF(1&lt;&lt;55,'t')
+            sage: for i in range(50):
+            ....:   a = K.random_element()
+            ....:   E = EllipticCurve(j=a)
+            ....:   b = K.has_coerce_map_from(E)
+            sage: _ = gc.collect()
+            sage: len([x for x in gc.get_objects() if isinstance(x,type(E))])
+            1
+
+        TESTS:
+
+        The following was fixed in :trac:`12969`::
+
+            sage: R = QQ['q,t'].fraction_field()
+            sage: Sym = sage.combinat.sf.sf.SymmetricFunctions(R)
+            sage: H = Sym.macdonald().H()
+            sage: P = Sym.macdonald().P()
+            sage: m = Sym.monomial()
+            sage: Ht = Sym.macdonald().Ht()
+            sage: phi = m.coerce_map_from(P)
+        </opaque><constant name="classmethod.construction">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.construction(self)
+File: sage/structure/parent.pyx (starting at line 2519)
+
+        Returns a pair (functor, parent) such that functor(parent) return self.
+        If this ring does not have a functorial construction, return None.
+
+        EXAMPLES::
+
+            sage: QQ.construction()
+            (FractionField, Integer Ring)
+            sage: f, R = QQ['x'].construction()
+            sage: f
+            Poly[x]
+            sage: R
+            Rational Field
+            sage: f(R)
+            Univariate Polynomial Ring in x over Rational Field
+        </opaque><constant name="classmethod.convert_map_from">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.convert_map_from(self, S)
+File: sage/structure/parent.pyx (starting at line 2279)
+
+        This function returns a :class:`Map` from `S` to `self`,
+        which may or may not succeed on all inputs.
+        If a coercion map from S to self exists,
+        then the it will be returned. If a coercion from `self` to `S` exists,
+        then it will attempt to return a section of that map.
+
+        Under the new coercion model, this is the fastest way to convert
+        elements of `S` to elements of `self` (short of manually constructing
+        the elements) and is used by :meth:`__call__`.
+
+        EXAMPLES::
+
+            sage: m = ZZ.convert_map_from(QQ)
+            sage: m
+            Generic map:
+              From: Rational Field
+              To:   Integer Ring
+            sage: m(-35/7)
+            -5
+            sage: parent(m(-35/7))
+            Integer Ring
+        </opaque><constant name="classmethod.get_action">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.get_action(self, S, op=operator.mul, bool self_on_left=True, self_el=None, S_el=None)
+File: sage/structure/parent.pyx (starting at line 2393)
+
+        Returns an action of self on S or S on self.
+
+        To provide additional actions, override :meth:`_get_action_`.
+
+        TESTS::
+
+            sage: M = QQ['y']^3
+            sage: M.get_action(ZZ['x']['y'])
+            Right scalar multiplication by Univariate Polynomial Ring in y over Univariate Polynomial Ring in x over Integer Ring on Ambient free module of rank 3 over the principal ideal domain Univariate Polynomial Ring in y over Rational Field
+            sage: M.get_action(ZZ['x']) # should be None
+        </opaque><constant name="classmethod.has_coerce_map_from">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.has_coerce_map_from(self, S) -&gt; bool
+File: sage/structure/parent.pyx (starting at line 1912)
+
+        Return True if there is a natural map from S to self.
+        Otherwise, return False.
+
+        EXAMPLES::
+
+            sage: RDF.has_coerce_map_from(QQ)
+            True
+            sage: RDF.has_coerce_map_from(QQ['x'])
+            False
+            sage: RDF['x'].has_coerce_map_from(QQ['x'])
+            True
+            sage: RDF['x,y'].has_coerce_map_from(QQ['x'])
+            True
+        </opaque><constant name="classmethod.hom">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.hom(self, im_gens, codomain=None, check=None)
+File: sage/structure/parent.pyx (starting at line 1333)
+
+       Return the unique homomorphism from self to codomain that
+       sends ``self.gens()`` to the entries of ``im_gens``.
+       Raises a TypeError if there is no such homomorphism.
+
+       INPUT:
+
+       - ``im_gens`` -- the images in the codomain of the generators
+         of this object under the homomorphism
+
+       - ``codomain`` -- the codomain of the homomorphism
+
+       - ``check`` -- whether to verify that the images of generators
+         extend to define a map (using only canonical coercions).
+
+       OUTPUT:
+
+       A homomorphism self --&gt; codomain
+
+       .. NOTE::
+
+          As a shortcut, one can also give an object X instead of
+          ``im_gens``, in which case return the (if it exists)
+          natural map to X.
+
+       EXAMPLES:
+
+       Polynomial Ring: We first illustrate construction of a few
+       homomorphisms involving a polynomial ring::
+
+           sage: R.&lt;x&gt; = PolynomialRing(ZZ)
+           sage: f = R.hom([5], QQ)
+           sage: f(x^2 - 19)
+           6
+
+           sage: R.&lt;x&gt; = PolynomialRing(QQ)
+           sage: f = R.hom([5], GF(7))
+           Traceback (most recent call last):
+           ...
+           TypeError: images do not define a valid homomorphism
+
+           sage: R.&lt;x&gt; = PolynomialRing(GF(7))
+           sage: f = R.hom([3], GF(49,'a'))
+           sage: f
+           Ring morphism:
+             From: Univariate Polynomial Ring in x over Finite Field of size 7
+             To:   Finite Field in a of size 7^2
+             Defn: x |--&gt; 3
+           sage: f(x+6)
+           2
+           sage: f(x^2+1)
+           3
+
+       Natural morphism::
+
+           sage: f = ZZ.hom(GF(5))
+           sage: f(7)
+           2
+           sage: f
+           Ring Coercion morphism:
+             From: Integer Ring
+             To:   Finite Field of size 5
+
+       There might not be a natural morphism, in which case a
+       ``TypeError`` is raised::
+
+           sage: QQ.hom(ZZ)
+           Traceback (most recent call last):
+           ...
+           TypeError: Natural coercion morphism from Rational Field to Integer Ring not defined.
+       </opaque><constant name="classmethod.is_atomic_repr">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.is_atomic_repr(self)
+File: sage/structure/parent.pyx (starting at line 870)
+
+        The old way to signal atomic string reps.
+
+        True if the elements have atomic string representations, in the
+        sense that if they print at s, then -s means the negative of s. For
+        example, integers are atomic but polynomials are not.
+
+        EXAMPLES::
+
+            sage: Parent().is_atomic_repr()
+            doctest:...: DeprecationWarning: Use _repr_option to return metadata about string rep
+            See http://trac.sagemath.org/14040 for details.
+            False
+        </opaque><constant name="classmethod.is_coercion_cached">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.is_coercion_cached(self, domain) -&gt; bool
+File: sage/structure/parent.pyx (starting at line 1527)
+
+
+        </opaque><constant name="classmethod.is_conversion_cached">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.is_conversion_cached(self, domain) -&gt; bool
+File: sage/structure/parent.pyx (starting at line 1533)
+
+        </opaque><constant name="classmethod.is_exact">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.is_exact(self) -&gt; bool
+File: sage/structure/parent.pyx (starting at line 2638)
+
+        Test whether the ring is exact.
+
+        .. NOTE::
+
+            This defaults to true, so even if it does return ``True``
+            you have no guarantee (unless the ring has properly
+            overloaded this).
+
+        OUTPUT:
+
+        Return True if elements of this ring are represented exactly, i.e.,
+        there is no precision loss when doing arithmetic.
+
+        EXAMPLES::
+
+            sage: QQ.is_exact()
+            True
+            sage: ZZ.is_exact()
+            True
+            sage: Qp(7).is_exact()
+            False
+            sage: Zp(7, type='capped-abs').is_exact()
+            False
+        </opaque><constant name="classmethod.register_action">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.register_action(self, action)
+File: sage/structure/parent.pyx (starting at line 1584)
+
+        Update the coercion model to use ``action`` to act on self.
+
+        ``action`` should be of type ``sage.categories.action.Action``.
+
+        EXAMPLES::
+
+            sage: import sage.categories.action
+            sage: import operator
+
+            sage: class SymmetricGroupAction(sage.categories.action.Action):
+            ....:     &quot;Act on a multivariate polynomial ring by permuting the generators.&quot;
+            ....:     def __init__(self, G, M, is_left=True):
+            ....:         sage.categories.action.Action.__init__(self, G, M, is_left, operator.mul)
+            ....:
+            ....:     def _call_(self, g, a):
+            ....:         if not self.is_left():
+            ....:             g, a = a, g
+            ....:         D = {}
+            ....:         for k, v in a.dict().items():
+            ....:             nk = [0]*len(k)
+            ....:             for i in range(len(k)):
+            ....:                 nk[g(i+1)-1] = k[i]
+            ....:             D[tuple(nk)] = v
+            ....:         return a.parent()(D)
+
+            sage: R.&lt;x, y, z&gt; = QQ['x, y, z']
+            sage: G = SymmetricGroup(3)
+            sage: act = SymmetricGroupAction(G, R)
+            sage: t = x + 2*y + 3*z
+
+            sage: act(G((1, 2)), t)
+            2*x + y + 3*z
+            sage: act(G((2, 3)), t)
+            x + 3*y + 2*z
+            sage: act(G((1, 2, 3)), t)
+            3*x + y + 2*z
+
+        This should fail, since we haven't registered the left
+        action::
+
+            sage: G((1,2)) * t
+            Traceback (most recent call last):
+            ...
+            TypeError: ...
+
+        Now let's make it work::
+
+            sage: R._unset_coercions_used()
+            sage: R.register_action(act)
+            sage: G((1, 2)) * t
+            2*x + y + 3*z
+        </opaque><constant name="classmethod.register_coercion">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.register_coercion(self, mor)
+File: sage/structure/parent.pyx (starting at line 1538)
+
+        Update the coercion model to use `mor : P \to \text{self}` to coerce
+        from a parent ``P`` into ``self``.
+
+        For safety, an error is raised if another coercion has already
+        been registered or discovered between ``P`` and ``self``.
+
+        EXAMPLES::
+
+            sage: K.&lt;a&gt; = ZZ['a']
+            sage: L.&lt;b&gt; = ZZ['b']
+            sage: L_into_K = L.hom([-a]) # non-trivial automorphism
+            sage: K.register_coercion(L_into_K)
+
+            sage: K(0) + b
+            -a
+            sage: a + b
+            0
+            sage: K(b) # check that convert calls coerce first; normally this is just a
+            -a
+
+            sage: L(0) + a in K # this goes through the coercion mechanism of K
+            True
+            sage: L(a) in L # this still goes through the convert mechanism of L
+            True
+
+            sage: K.register_coercion(L_into_K)
+            Traceback (most recent call last):
+            ...
+            AssertionError: coercion from Univariate Polynomial Ring in b over Integer Ring to Univariate Polynomial Ring in a over Integer Ring already registered or discovered
+        </opaque><constant name="classmethod.register_conversion">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.register_conversion(self, mor)
+File: sage/structure/parent.pyx (starting at line 1652)
+
+        Update the coercion model to use `\text{mor} : P \to \text{self}` to convert
+        from ``P`` into ``self``.
+
+        EXAMPLES::
+
+            sage: K.&lt;a&gt; = ZZ['a']
+            sage: M.&lt;c&gt; = ZZ['c']
+            sage: M_into_K = M.hom([a]) # trivial automorphism
+            sage: K._unset_coercions_used()
+            sage: K.register_conversion(M_into_K)
+
+            sage: K(c)
+            a
+            sage: K(0) + c
+            Traceback (most recent call last):
+            ...
+            TypeError: ...
+        </opaque><constant name="classmethod.register_embedding">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent.register_embedding(self, embedding)
+File: sage/structure/parent.pyx (starting at line 1687)
+
+        Add embedding to coercion model.
+
+        This method updates the coercion model to use
+        `\text{embedding} : \text{self} \to P` to embed ``self`` into
+        the parent ``P``.
+
+        There can only be one embedding registered; it can only be registered
+        once; and it must be registered before using this parent in the
+        coercion model.
+
+        EXAMPLES::
+
+            sage: S3 = AlternatingGroup(3)
+            sage: G = SL(3, QQ)
+            sage: p = S3[2]; p.matrix()
+            [0 0 1]
+            [1 0 0]
+            [0 1 0]
+
+        In general one can't mix matrices and permutations::
+
+            sage: G(p)
+            Traceback (most recent call last):
+            ...
+            TypeError: entries must be coercible to a list or integer
+            sage: phi = S3.hom(lambda p: G(p.matrix()), codomain = G)
+            sage: phi(p)
+            [0 0 1]
+            [1 0 0]
+            [0 1 0]
+            sage: S3._unset_coercions_used()
+            sage: S3.register_embedding(phi)
+
+        By :trac:`14711`, coerce maps should be copied when using outside of
+        the coercion system::
+
+            sage: phi = copy(S3.coerce_embedding()); phi
+            Generic morphism:
+              From: Alternating group of order 3!/2 as a permutation group
+              To:   Special Linear Group of degree 3 over Rational Field
+            sage: phi(p)
+            [0 0 1]
+            [1 0 0]
+            [0 1 0]
+
+        This does not work since matrix groups are still old-style
+        parents (see :trac:`14014`)::
+
+            sage: G(p)                               # todo: not implemented
+
+        Though one can have a permutation act on the rows of a matrix::
+
+            sage: G(1) * p
+            [0 0 1]
+            [1 0 0]
+            [0 1 0]
+
+        Some more advanced examples::
+
+            sage: x = QQ['x'].0
+            sage: t = abs(ZZ.random_element(10^6))
+            sage: K = NumberField(x^2 + 2*3*7*11, &quot;a&quot;+str(t))
+            sage: a = K.gen()
+            sage: K_into_MS = K.hom([a.matrix()])
+            sage: K._unset_coercions_used()
+            sage: K.register_embedding(K_into_MS)
+
+            sage: L = NumberField(x^2 + 2*3*7*11*19*31, &quot;b&quot;+str(abs(ZZ.random_element(10^6))))
+            sage: b = L.gen()
+            sage: L_into_MS = L.hom([b.matrix()])
+            sage: L._unset_coercions_used()
+            sage: L.register_embedding(L_into_MS)
+
+            sage: K.coerce_embedding()(a)
+            [   0    1]
+            [-462    0]
+            sage: L.coerce_embedding()(b)
+            [      0       1]
+            [-272118       0]
+
+            sage: a.matrix() * b.matrix()
+            [-272118       0]
+            [      0    -462]
+            sage: a.matrix() * b.matrix()
+            [-272118       0]
+            [      0    -462]
+        </opaque></omdoc></theory></omdoc>

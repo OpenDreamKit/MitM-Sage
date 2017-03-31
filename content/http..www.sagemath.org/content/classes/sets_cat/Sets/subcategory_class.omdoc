@@ -1,0 +1,1470 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="subcategory_class" base="http://www.sagemath.org/content/classes/sets_cat/Sets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.Algebras">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.CartesianProducts">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.Enumerated">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.Facade">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the full subcategory of the facade objects of ``self``.
+
+            .. _facade-sets:
+
+            .. RUBRIC:: What is a facade set?
+
+            Recall that, in Sage, :ref:`sets are modelled by *parents*
+            &lt;category-primer-parents-elements-categories&gt;`, and their
+            elements know which distinguished set they belong to. For
+            example, the ring of integers `\ZZ` is modelled by the
+            parent :obj:`ZZ`, and integers know that they belong to
+            this set::
+
+                sage: ZZ
+                Integer Ring
+                sage: 42.parent()
+                Integer Ring
+
+            Sometimes, it is convenient to represent the elements of a
+            parent ``P`` by elements of some other parent. For
+            example, the elements of the set of prime numbers are
+            represented by plain integers::
+
+                sage: Primes()
+                Set of all prime numbers: 2, 3, 5, 7, ...
+                sage: p = Primes().an_element(); p
+                43
+                sage: p.parent()
+                Integer Ring
+
+            In this case, ``P`` is called a *facade set*.
+
+            This feature is advertised through the category of `P`::
+
+                sage: Primes().category()
+                Category of facade infinite enumerated sets
+                sage: Sets().Facade()
+                Category of facade sets
+
+            Typical use cases include modeling a subset of an existing
+            parent::
+
+                sage: Set([4,6,9])                    # random
+                {4, 6, 9}
+                sage: Sets().Facade().example()
+                An example of facade set: the monoid of positive integers
+
+            or the union of several parents::
+
+                sage: Sets().Facade().example(&quot;union&quot;)
+                An example of a facade set: the integers completed by +-infinity
+
+            or endowing an existing parent with more (or less!)
+            structure::
+
+                sage: Posets().example(&quot;facade&quot;)
+                An example of a facade poset: the positive integers ordered by divisibility
+
+            Let us investigate in detail a close variant of this last
+            example: let `P` be set of divisors of `12` partially
+            ordered by divisibility. There are two options for
+            representing its elements:
+
+            1. as plain integers::
+
+                sage: P = Poset((divisors(12), attrcall(&quot;divides&quot;)), facade=True)
+
+            2. as integers, modified to be aware that their parent is `P`::
+
+                sage: Q = Poset((divisors(12), attrcall(&quot;divides&quot;)), facade=False)
+
+            The advantage of option 1. is that one needs not do
+            conversions back and forth between `P` and `\ZZ`. The
+            disadvantage is that this introduces an ambiguity when
+            writing `2 &lt; 3`: does this compare `2` and `3` w.r.t. the
+            natural order on integers or w.r.t. divisibility?::
+
+                sage: 2 &lt; 3
+                True
+
+            To raise this ambiguity, one needs to explicitly specify
+            the underlying poset as in `2 &lt;_P 3`::
+
+                sage: P = Posets().example(&quot;facade&quot;)
+                sage: P.lt(2,3)
+                False
+
+            On the other hand, with option 2. and once constructed,
+            the elements know unambiguously how to compare
+            themselves::
+
+                sage: Q(2) &lt; Q(3)
+                False
+                sage: Q(2) &lt; Q(6)
+                True
+
+            Beware that ``P(2)`` is still the integer `2`. Therefore
+            ``P(2) &lt; P(3)`` still compares `2` and `3` as integers!::
+
+                sage: P(2) &lt; P(3)
+                True
+
+            In short `P` being a facade parent is one of the programmatic
+            counterparts (with e.g. coercions) of the usual mathematical idiom:
+            &quot;for ease of notation, we identify an element of `P` with the
+            corresponding integer&quot;. Too many identifications lead to
+            confusion; the lack thereof leads to heavy, if not obfuscated,
+            notations. Finding the right balance is an art, and even though
+            there are common guidelines, it is ultimately up to the writer to
+            choose which identifications to do. This is no different in code.
+
+            .. SEEALSO::
+
+               The following examples illustrate various ways to
+               implement subsets like the set of prime numbers; look
+               at their code for details::
+
+                   sage: Sets().example(&quot;facade&quot;)
+                   Set of prime numbers (facade implementation)
+                   sage: Sets().example(&quot;inherits&quot;)
+                   Set of prime numbers
+                   sage: Sets().example(&quot;wrapper&quot;)
+                   Set of prime numbers (wrapper implementation)
+
+            .. RUBRIC:: Specifications
+
+            A parent which is a facade must either:
+
+            - call :meth:`Parent.__init__` using the ``facade`` parameter to
+              specify a parent, or tuple thereof.
+            - overload the method :meth:`~Sets.Facade.ParentMethods.facade_for`.
+
+            .. NOTE::
+
+                The concept of facade parents was originally introduced
+                in the computer algebra system MuPAD.
+
+            TESTS:
+
+            Check that multiple categories initialisation
+            works (:trac:`13801`)::
+
+                sage: class A(Parent):
+                ....:   def __init__(self):
+                ....:       Parent.__init__(self, category=(FiniteEnumeratedSets(),Monoids()), facade=True)
+                sage: a = A()
+
+                sage: Posets().Facade()
+                Category of facade posets
+                sage: Posets().Facade().Finite() is  Posets().Finite().Facade()
+                True
+            </opaque><constant name="classmethod.Facades">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Deprecated: Use :func:`Facade` instead.
+See :trac:`17073` for details.
+
+</opaque><constant name="classmethod.Finite">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.Infinite">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.IsomorphicObjects">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.Metric">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.Quotients">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.Subobjects">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.Subquotients">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.Topological">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque></omdoc></theory></omdoc>

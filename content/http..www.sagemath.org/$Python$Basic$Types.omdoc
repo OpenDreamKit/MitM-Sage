@@ -1,0 +1,52 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="PythonBasicTypes" base="http://www.sagemath.org/" meta="http://www.sagemath.org/?Convenient"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#395.19.0:684.29.1"/></metadata><constant name="python_type">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#439.20.2:459.20.22"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://cds.omdoc.org/urtheories" module="Typed" name="type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#453.20.16:456.20.19"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="pyMMT">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#462.21.2:490.21.30"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#470.21.10:487.21.27"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#470.21.10:480.21.20"/></metadata></om:OMS><om:OMS base="http://cds.omdoc.org/urtheories" module="Typed" name="type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#484.21.24:487.21.27"/></metadata></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="pysequence">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#494.22.2:534.22.42"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#507.22.15:531.22.39"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#507.22.15:517.22.25"/></metadata></om:OMS><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#521.22.29:531.22.39"/></metadata></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="pystr">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#537.23.2:558.23.23"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#545.23.10:555.23.20"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="pyint">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#561.24.2:582.24.23"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#569.24.10:579.24.20"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="pyfloat">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#585.25.2:608.25.25"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#595.25.12:605.25.22"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="pytype">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#611.26.2:633.26.24"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#620.26.11:630.26.21"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="pylist">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#636.27.2:658.27.24"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#645.27.11:655.27.21"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="pydict">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#662.28.2:682.28.22"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#670.28.10:680.28.20"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant></theory></omdoc>

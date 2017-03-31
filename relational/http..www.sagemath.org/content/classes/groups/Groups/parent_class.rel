@@ -1,0 +1,18 @@
+theory http://www.sagemath.org/content/classes/groups/Groups?parent_class
+HasMeta http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod._test_inverse
+constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod._test_inverse
+Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.cayley_table
+constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.cayley_table
+Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.conjugacy_class
+constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.conjugacy_class
+Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.group_generators
+constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.group_generators
+Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.holomorph
+constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.holomorph
+Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.is_abelian
+constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.is_abelian
+Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.semidirect_product
+constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.semidirect_product

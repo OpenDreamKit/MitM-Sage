@@ -1,0 +1,19 @@
+theory http://www.sagemath.org/content/classes/sage/groups/old?Group
+HasMeta http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens
+Declares http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.is_abelian
+constant http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.is_abelian
+Declares http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.is_commutative
+constant http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.is_commutative
+Declares http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.is_finite
+constant http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.is_finite
+Declares http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.is_multiplicative
+constant http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.is_multiplicative
+Declares http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.order
+constant http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.order
+Declares http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.quotient
+constant http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.quotient
+Declares http://www.sagemath.org/content/classes/sage/groups/old?Group http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.random_element
+constant http://www.sagemath.org/content/classes/sage/groups/old?Group?classmethod.random_element

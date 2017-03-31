@@ -1,0 +1,104 @@
+theory http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject
+HasMeta http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._ascii_art_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._ascii_art_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._axiom_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._axiom_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._axiom_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._axiom_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._cache_key
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._cache_key
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._fricas_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._fricas_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._fricas_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._fricas_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._gap_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._gap_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._gap_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._gap_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._giac_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._giac_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._giac_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._giac_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._gp_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._gp_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._gp_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._gp_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._interface_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._interface_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._interface_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._interface_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._interface_is_cached_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._interface_is_cached_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._kash_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._kash_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._kash_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._kash_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._macaulay2_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._macaulay2_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._macaulay2_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._macaulay2_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._magma_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._magma_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maple_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maple_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maple_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maple_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._mathematica_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._mathematica_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._mathematica_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._mathematica_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maxima_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maxima_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maxima_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maxima_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maxima_lib_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maxima_lib_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maxima_lib_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._maxima_lib_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._octave_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._octave_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._octave_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._octave_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._pari_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._pari_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._pari_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._pari_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._r_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._r_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._sage_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._sage_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._singular_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._singular_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._singular_init_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._singular_init_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._test_category
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._test_category
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._test_new
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._test_new
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._test_not_implemented_methods
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._test_not_implemented_methods
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._test_pickling
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._test_pickling
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._tester
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._tester
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._unicode_art_
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod._unicode_art_
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.category
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.category
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.db
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.db
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.dump
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.dump
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.dumps
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.dumps
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.parent
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.parent
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.rename
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.rename
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.reset_name
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.reset_name
+Declares http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.save
+constant http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject?classmethod.save

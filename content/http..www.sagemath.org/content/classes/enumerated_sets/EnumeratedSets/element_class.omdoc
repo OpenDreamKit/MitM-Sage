@@ -1,0 +1,22 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.rank">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the rank of ``self`` in its parent.
+
+            See also :meth:`EnumeratedSets.ElementMethods.rank`
+
+            EXAMPLES::
+
+                sage: F = FiniteSemigroups().example(('a','b','c'))
+                sage: L = list(F); L
+                ['a', 'b', 'c', 'ac', 'ab', 'ba', 'bc', 'cb', 'ca',
+                 'acb', 'abc', 'bca', 'cba', 'bac', 'cab']
+                sage: L[7].rank()
+                7
+            </opaque></omdoc></theory></omdoc>

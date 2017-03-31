@@ -155,4 +155,34 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant></omdoc></theory></omdoc>
+     </constant><opaque format="text">CachedMethodCallerNoArgs(inst, f, cache=None, name=None)
+File: sage/misc/cachefunc.pyx (starting at line 2099)
+
+    Utility class that is used by :class:`CachedMethod` to bind a
+    cached method to an instance, in the case of a method that does
+    not accept any arguments except ``self``.
+
+    .. NOTE::
+
+        The return value ``None`` would not be cached. So, if you have
+        a method that does not accept arguments and may return ``None``
+        after a lengthy computation, then ``@cached_method`` should not
+        be used.
+
+    EXAMPLE::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: I.gens
+        Cached version of &lt;function gens at 0x...&gt;
+        sage: type(I.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+        sage: I.gens is I.gens
+        True
+        sage: I.gens() is I.gens()
+        True
+
+    AUTHOR:
+
+    - Simon King (2011-04)
+    </opaque></omdoc></theory></omdoc>

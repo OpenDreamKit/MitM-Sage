@@ -32,7 +32,19 @@ File: sage/structure/element.pyx (starting at line 3287)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant></omdoc><omdoc name="Parent Methods"><constant name="parent.__pow__">
+     </constant><opaque format="text">NamedBinopMethod(func, name=None, obj=None)
+File: sage/structure/element.pyx (starting at line 3287)
+
+    A decorator to be used on binary operation methods that should operate
+    on elements of the same parent. If the parents of the arguments differ,
+    coercion is performed, then the method is re-looked up by name on the
+    first argument.
+
+    In short, using the ``NamedBinopMethod`` (alias ``coerce_binop``) decorator
+    on a method gives it the exact same semantics of the basic arithmetic
+    operations like ``_add_``, ``_sub_``, etc. in that both operands are
+    guaranteed to have exactly the same parent.
+    </opaque></omdoc><omdoc name="Parent Methods"><constant name="parent.__pow__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

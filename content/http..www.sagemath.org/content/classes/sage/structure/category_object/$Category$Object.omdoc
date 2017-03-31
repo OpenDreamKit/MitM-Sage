@@ -1,0 +1,803 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="CategoryObject" base="http://www.sagemath.org/content/classes/sage/structure/category_object" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject"></import><omdoc name="Methods"><constant name="classmethod.Hom">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.Hom(self, codomain, cat=None)
+File: sage/structure/category_object.pyx (starting at line 626)
+
+        Return the homspace ``Hom(self, codomain, cat)`` of all
+        homomorphisms from self to codomain in the category cat.  The
+        default category is determined by ``self.category()`` and
+        ``codomain.category()``.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt; = PolynomialRing(QQ, 2)
+            sage: R.Hom(QQ)
+            Set of Homomorphisms from Multivariate Polynomial Ring in x, y over Rational Field to Rational Field
+
+        Homspaces are defined for very general Sage objects, even elements of familiar rings.
+
+        ::
+
+            sage: n = 5; Hom(n,7)
+            Set of Morphisms from 5 to 7 in Category of elements of Integer Ring
+            sage: z=(2/3); Hom(z,8/1)
+            Set of Morphisms from 2/3 to 8 in Category of elements of Rational Field
+
+        This example illustrates the optional third argument::
+
+            sage: QQ.Hom(ZZ, Sets())
+            Set of Morphisms from Rational Field to Integer Ring in Category of sets
+        </opaque><constant name="classmethod.__dir__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.__dir__(self)
+File: sage/structure/category_object.pyx (starting at line 855)
+
+        Let cat be the category of ``self``. This method emulates
+        ``self`` being an instance of both ``CategoryObject`` and
+        ``cat.parent_class``, in that order, for attribute directory.
+
+        EXAMPLES::
+
+            sage: for s in dir(ZZ):
+            ....:     if s[:6] == &quot;_test_&quot;: print(s)
+            _test_additive_associativity
+            _test_an_element
+            _test_associativity
+            _test_cardinality
+            _test_category
+            _test_characteristic
+            _test_distributivity
+            _test_elements
+            _test_elements_eq_reflexive
+            _test_elements_eq_symmetric
+            _test_elements_eq_transitive
+            _test_elements_neq
+            _test_enumerated_set_contains
+            _test_enumerated_set_iter_cardinality
+            _test_enumerated_set_iter_list
+            _test_eq
+            _test_euclidean_degree
+            _test_gcd_vs_xgcd
+            _test_metric
+            _test_new
+            _test_not_implemented_methods
+            _test_one
+            _test_pickling
+            _test_prod
+            _test_quo_rem
+            _test_some_elements
+            _test_zero
+            _test_zero_divisors
+            sage: F = GF(9,'a')
+            sage: dir(F)
+            [..., '__class__', ..., '_test_pickling', ..., 'extension', ...]
+
+        </opaque><constant name="classmethod.__div__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/category_object.pyx (starting at line 903)
+
+        Implement Python 2 division as true division.
+
+        EXAMPLES::
+
+            sage: V = QQ^2
+            sage: V.__div__(V.span([(1,3)]))
+            Vector space quotient V/W of dimension 1 over Rational Field where
+            V: Vector space of dimension 2 over Rational Field
+            W: Vector space of degree 2 and dimension 1 over Rational Field
+            Basis matrix:
+            [1 3]
+            sage: V.__truediv__(V.span([(1,3)]))
+            Vector space quotient V/W of dimension 1 over Rational Field where
+            V: Vector space of dimension 2 over Rational Field
+            W: Vector space of degree 2 and dimension 1 over Rational Field
+            Basis matrix:
+            [1 3]
+        </opaque><constant name="classmethod.__getstate__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.__getstate__(self)
+File: sage/structure/category_object.pyx (starting at line 697)</opaque><constant name="classmethod.__rdiv__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">x.__rdiv__(y) &lt;==&gt; y/x</opaque><constant name="classmethod.__setstate__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.__setstate__(self, d)
+File: sage/structure/category_object.pyx (starting at line 716)</opaque><constant name="classmethod.__temporarily_change_names">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.__temporarily_change_names(self, names, latex_names)
+File: sage/structure/category_object.pyx (starting at line 495)
+
+        This is used by the variable names context manager.
+
+        TEST:
+
+        In an old version, it was impossible to temporarily change
+        the names if no names were previously assigned. But if one
+        wants to print elements of the quotient of such an &quot;unnamed&quot;
+        ring, an error resulted. That was fixed in :trac:`11068`::
+
+            sage: MS = MatrixSpace(GF(5),2,2)
+            sage: I = MS*[MS.0*MS.1,MS.2+MS.3]*MS
+            sage: Q.&lt;a,b,c,d&gt; = MS.quo(I)
+            sage: a     #indirect doctest
+            [1 0]
+            [0 0]
+
+        </opaque><constant name="classmethod._assign_names">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject._assign_names(self, names=None, normalize=True, ngens=None)
+File: sage/structure/category_object.pyx (starting at line 401)
+
+        Set the names of the generator of this object.
+
+        This can only be done once because objects with generators
+        are immutable, and is typically done during creation of the object.
+
+
+        EXAMPLES:
+        When we create this polynomial ring, self._assign_names is called by the constructor::
+
+            sage: R = QQ['x,y,abc']; R
+            Multivariate Polynomial Ring in x, y, abc over Rational Field
+            sage: R.2
+            abc
+
+        We can't rename the variables::
+
+            sage: R._assign_names(['a','b','c'])
+            Traceback (most recent call last):
+            ...
+            ValueError: variable names cannot be changed after object creation.
+        </opaque><constant name="classmethod._defining_names">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod._first_ngens">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject._first_ngens(self, n)
+File: sage/structure/category_object.pyx (starting at line 329)
+
+        Used by the preparser for ``R.&lt;x&gt; = ...``.
+
+        EXAMPLES::
+
+            sage: R.&lt;x&gt; = PolynomialRing(QQ)
+            sage: x
+            x
+            sage: parent(x)
+            Univariate Polynomial Ring in x over Rational Field
+
+        For orders, we correctly use the ring generator, see
+        :trac:`15348`::
+
+            sage: A.&lt;i&gt; = ZZ.extension(x^2 + 1)
+            sage: i
+            i
+            sage: parent(i)
+            Order in Number Field in i with defining polynomial x^2 + 1
+
+        ::
+
+            sage: B.&lt;z&gt; = EquationOrder(x^2 + 3)
+            sage: z.minpoly()
+            x^2 + 3
+        </opaque><constant name="classmethod._init_category_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject._init_category_(self, category)
+File: sage/structure/category_object.pyx (starting at line 150)
+
+        Sets the category or categories of this object.
+
+        INPUT:
+
+        - ``category`` -- a category, or list or tuple thereof, or ``None``
+
+        EXAMPLES::
+
+            sage: A = sage.structure.category_object.CategoryObject()
+            sage: A._init_category_(Rings())
+            sage: A.category()
+            Category of rings
+            sage: A._init_category_((Semigroups(), CommutativeAdditiveSemigroups()))
+            sage: A.category()
+            Join of Category of semigroups and Category of commutative additive semigroups
+            sage: A._init_category_(None)
+            sage: A.category()
+            Category of objects
+
+            sage: P = Parent(category = None)
+            sage: P.category()
+            Category of sets
+        </opaque><constant name="classmethod._is_category_initialized">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject._is_category_initialized(self)
+File: sage/structure/category_object.pyx (starting at line 224)</opaque><constant name="classmethod._refine_category_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject._refine_category_(self, category)
+File: sage/structure/category_object.pyx (starting at line 183)
+
+        Changes the category of ``self`` into a subcategory.
+
+        INPUT:
+
+        - ``category`` -- a category or list or tuple thereof
+
+        The new category is obtained by adjoining ``category`` to the
+        current one.
+
+        .. SEEALSO:: :function:`Category.join`
+
+        EXAMPLES::
+
+            sage: P = Parent()
+            sage: P.category()
+            Category of sets
+            sage: P._refine_category_(Magmas())
+            sage: P.category()
+            Category of magmas
+            sage: P._refine_category_(Magmas())
+            sage: P.category()
+            Category of magmas
+            sage: P._refine_category_(EnumeratedSets())
+            sage: P.category()
+            Category of enumerated magmas
+            sage: P._refine_category_([Semigroups(), CommutativeAdditiveSemigroups()])
+            sage: P.category()
+            Join of Category of semigroups and Category of commutative additive semigroups and Category of enumerated sets
+            sage: P._refine_category_((CommutativeAdditiveMonoids(), Monoids()))
+            sage: P.category()
+            Join of Category of monoids and Category of commutative additive monoids and Category of enumerated sets
+        </opaque><constant name="classmethod.base">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.base(self)
+File: sage/structure/category_object.pyx (starting at line 620)</opaque><constant name="classmethod.base_ring">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.base_ring(self)
+File: sage/structure/category_object.pyx (starting at line 564)
+
+        Return the base ring of ``self``.
+
+        INPUT:
+
+        - ``self`` -- an object over a base ring; typically a module
+
+        EXAMPLES::
+
+            sage: from sage.modules.module import Module
+            sage: Module(ZZ).base_ring()
+            Integer Ring
+
+            sage: F = FreeModule(ZZ,3)
+            sage: F.base_ring()
+            Integer Ring
+            sage: F.__class__.base_ring
+            &lt;method 'base_ring' of 'sage.structure.category_object.CategoryObject' objects&gt;
+
+        Note that the coordinates of the elements of a module can lie
+        in a bigger ring, the ``coordinate_ring``::
+
+            sage: M = (ZZ^2) * (1/2)
+            sage: v = M([1/2, 0])
+            sage: v.base_ring()
+            Integer Ring
+            sage: parent(v[0])
+            Rational Field
+            sage: v.coordinate_ring()
+            Rational Field
+
+        More examples::
+
+            sage: F = FreeAlgebra(QQ, 'x')
+            sage: F.base_ring()
+            Rational Field
+            sage: F.__class__.base_ring
+            &lt;method 'base_ring' of 'sage.structure.category_object.CategoryObject' objects&gt;
+
+            sage: E = CombinatorialFreeModule(ZZ, [1,2,3])
+            sage: F = CombinatorialFreeModule(ZZ, [2,3,4])
+            sage: H = Hom(E, F)
+            sage: H.base_ring()
+            Integer Ring
+            sage: H.__class__.base_ring
+            &lt;method 'base_ring' of 'sage.structure.category_object.CategoryObject' objects&gt;
+
+        .. TODO::
+
+            Move this method elsewhere (typically in the Modules
+            category) so as not to pollute the namespace of all
+            category objects.
+        </opaque><constant name="classmethod.categories">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.categories(self)
+File: sage/structure/category_object.pyx (starting at line 234)
+
+        Return the categories of ``self``.
+
+        EXAMPLES::
+
+            sage: ZZ.categories()
+            [Join of Category of euclidean domains
+                 and Category of infinite enumerated sets
+                 and Category of metric spaces,
+             Category of euclidean domains,
+             Category of principal ideal domains,
+             Category of unique factorization domains,
+             Category of gcd domains,
+             Category of integral domains,
+             Category of domains,
+             Category of commutative rings, ...
+             Category of monoids, ...,
+             Category of commutative additive groups, ...,
+             Category of sets, ...,
+             Category of objects]
+        </opaque><constant name="classmethod.gens_dict">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.gens_dict(self)
+File: sage/structure/category_object.pyx (starting at line 262)
+
+        Return a dictionary whose entries are ``{name:variable,...}``,
+        where ``name`` stands for the variable names of this
+        object (as strings) and ``variable`` stands for the
+        corresponding defining generators (as elements of this object).
+
+        EXAMPLES::
+
+            sage: B.&lt;a,b,c,d&gt; = BooleanPolynomialRing()
+            sage: B.gens_dict()
+            {'a': a, 'b': b, 'c': c, 'd': d}
+        </opaque><constant name="classmethod.gens_dict_recursive">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.gens_dict_recursive(self)
+File: sage/structure/category_object.pyx (starting at line 280)
+
+        Return the dictionary of generators of ``self`` and its base rings.
+
+        OUTPUT:
+
+        - a dictionary with string names of generators as keys and
+          generators of ``self`` and its base rings as values.
+
+        EXAMPLES::
+
+            sage: R = QQ['x,y']['z,w']
+            sage: sorted(R.gens_dict_recursive().items())
+            [('w', w), ('x', x), ('y', y), ('z', z)]
+        </opaque><constant name="classmethod.has_base">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.has_base(self, category=None)
+File: sage/structure/category_object.pyx (starting at line 556)</opaque><constant name="classmethod.inject_variables">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.inject_variables(self, scope=None, verbose=True)
+File: sage/structure/category_object.pyx (starting at line 528)
+
+        Inject the generators of self with their names into the
+        namespace of the Python code from which this function is
+        called.  Thus, e.g., if the generators of self are labeled
+        'a', 'b', and 'c', then after calling this method the
+        variables a, b, and c in the current scope will be set
+        equal to the generators of self.
+
+        NOTE: If Foo is a constructor for a Sage object with generators, and
+        Foo is defined in Cython, then it would typically call
+        ``inject_variables()`` on the object it creates.  E.g.,
+        ``PolynomialRing(QQ, 'y')`` does this so that the variable y is the
+        generator of the polynomial ring.
+        </opaque><constant name="classmethod.latex_name">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.latex_name(self)
+File: sage/structure/category_object.pyx (starting at line 689)</opaque><constant name="classmethod.latex_variable_names">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.latex_variable_names(self)
+File: sage/structure/category_object.pyx (starting at line 660)
+
+        Returns the list of variable names suitable for latex output.
+
+        All ``_SOMETHING`` substrings are replaced by ``_{SOMETHING}``
+        recursively so that subscripts of subscripts work.
+
+        EXAMPLES::
+
+            sage: R, x = PolynomialRing(QQ, 'x', 12).objgens()
+            sage: x
+            (x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11)
+            sage: R.latex_variable_names ()
+            ['x_{0}', 'x_{1}', 'x_{2}', 'x_{3}', 'x_{4}', 'x_{5}', 'x_{6}', 'x_{7}', 'x_{8}', 'x_{9}', 'x_{10}', 'x_{11}']
+            sage: f = x[0]^3 + 15/3 * x[1]^10
+            sage: print(latex(f))
+            5 x_{1}^{10} + x_{0}^{3}
+        </opaque><constant name="classmethod.normalize_names">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.normalize_names(self, ngens, names)
+File: sage/structure/category_object.pyx (starting at line 440)
+
+        TESTS::
+
+            sage: ZZ.normalize_names(1, &quot;x&quot;)
+            doctest:...: DeprecationWarning: The method normalize_names() has been changed to a function
+            See http://trac.sagemath.org/19675 for details.
+            ('x',)
+        </opaque><constant name="classmethod.objgen">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.objgen(self)
+File: sage/structure/category_object.pyx (starting at line 315)
+
+        Return the tuple ``(self, self.gen())``.
+
+        EXAMPLES::
+
+            sage: R, x = PolynomialRing(QQ,'x').objgen()
+            sage: R
+            Univariate Polynomial Ring in x over Rational Field
+            sage: x
+            x
+        </opaque><constant name="classmethod.objgens">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.objgens(self)
+File: sage/structure/category_object.pyx (starting at line 302)
+
+        Return the tuple ``(self, self.gens())``.
+
+        EXAMPLES::
+
+            sage: R = PolynomialRing(QQ, 3, 'x'); R
+            Multivariate Polynomial Ring in x0, x1, x2 over Rational Field
+            sage: R.objgens()
+            (Multivariate Polynomial Ring in x0, x1, x2 over Rational Field, (x0, x1, x2))
+        </opaque><constant name="classmethod.variable_name">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.variable_name(self)
+File: sage/structure/category_object.pyx (starting at line 478)
+
+        Return the first variable name.
+
+        OUTPUT: a string
+
+        EXAMPLES::
+
+            sage: R.&lt;z,y,a42&gt; = ZZ[]
+            sage: R.variable_name()
+            'z'
+            sage: R.&lt;x&gt; = InfinitePolynomialRing(ZZ)
+            sage: R.variable_name()
+            'x'
+        </opaque><constant name="classmethod.variable_names">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject.variable_names(self)
+File: sage/structure/category_object.pyx (starting at line 453)
+
+        Return the list of variable names corresponding to the generators.
+
+        OUTPUT: a tuple of strings
+
+        EXAMPLES::
+
+            sage: R.&lt;z,y,a42&gt; = QQ[]
+            sage: R.variable_names()
+            ('z', 'y', 'a42')
+            sage: S = R.quotient_ring(z+y)
+            sage: S.variable_names()
+            ('zbar', 'ybar', 'a42bar')
+
+        ::
+
+            sage: T.&lt;x&gt; = InfinitePolynomialRing(ZZ)
+            sage: T.variable_names()
+            ('x',)
+        </opaque></omdoc></theory></omdoc>

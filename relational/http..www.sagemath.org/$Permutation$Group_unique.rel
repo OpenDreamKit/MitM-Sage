@@ -1,0 +1,5 @@
+theory http://www.sagemath.org/?PermutationGroup_unique
+HasMeta http://www.sagemath.org/?PermutationGroup_unique http://www.sagemath.org/?Sage
+Includes http://www.sagemath.org/?PermutationGroup_unique http://www.sagemath.org/?CachedRepresentation
+Includes http://www.sagemath.org/?PermutationGroup_unique http://www.sagemath.org/?PermutationGroup_generic
+Includes http://www.sagemath.org/?PermutationGroup_unique http://www.sagemath.org/?group.FiniteGroup

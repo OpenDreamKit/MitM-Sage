@@ -1,0 +1,7 @@
+theory http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase
+HasMeta http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase http://www.sagemath.org/content/classes/sage/structure/parent_old?Parent
+Declares http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase?classmethod.base_extend
+constant http://www.sagemath.org/content/classes/sage/structure/parent_base?ParentWithBase?classmethod.base_extend

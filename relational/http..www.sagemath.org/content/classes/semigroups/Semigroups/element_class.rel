@@ -1,0 +1,8 @@
+theory http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class
+HasMeta http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class?classmethod.__pow__
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class?classmethod.__pow__
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class?classmethod._pow_
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?element_class?classmethod._pow_

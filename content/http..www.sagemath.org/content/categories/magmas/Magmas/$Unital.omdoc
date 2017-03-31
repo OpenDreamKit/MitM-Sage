@@ -96,7 +96,67 @@ File: sage/categories/coercion_methods.pyx (starting at line 248)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><constant name="element._div_">
+     </constant><opaque format="text">__truediv__(left, right)
+File: sage/categories/coercion_methods.pyx (starting at line 248)
+
+    Return the result of the division of ``left`` by ``right``, if possible.
+
+    This top-level implementation delegates the work to
+    the ``_div_`` method if ``left`` and ``right`` have
+    the same parent and to coercion otherwise. See the
+    extensive documentation at the top of
+    :ref:`sage.structure.element`.
+
+    INPUT:
+
+    - ``self`` -- an element of a :class:`unital magma &lt;Magmas.Unital&gt;`
+    - ``right`` -- an object
+
+    .. SEEALSO:: :meth:`Magmas.Unital.ElementMethods._div_`
+
+    EXAMPLES::
+
+        sage: G = FreeGroup(2)
+        sage: x0, x1 = G.group_generators()
+        sage: c1 = cartesian_product([x0, x1])
+        sage: c2 = cartesian_product([x1, x0])
+        sage: c1.__div__(c2)
+        (x0*x1^-1, x1*x0^-1)
+        sage: c1 / c2
+        (x0*x1^-1, x1*x0^-1)
+
+    Division supports coercion::
+
+        sage: C = cartesian_product([G, G])
+        sage: H = Hom(G, C)
+        sage: phi = H(lambda g: cartesian_product([g, g]))
+        sage: phi.register_as_coercion()
+        sage: x1 / c1
+        (x1*x0^-1, 1)
+        sage: c1 / x1
+        (x0*x1^-1, 1)
+
+    Depending on how the division itself is implemented in
+    ``_div_``, division may fail even when ``right``
+    actually divides ``left``::
+
+        sage: x = cartesian_product([2, 1])
+        sage: y = cartesian_product([1, 1])
+        sage: x / y
+        (2, 1)
+        sage: x / x
+        Traceback (most recent call last):
+        ...
+        TypeError: no conversion of this rational to integer
+
+    This is :meth:`Magmas.Unital.ElementMethods.__truediv__`, implemented
+    as a Cython method in :mod:`sage.categories.coercion_methods`::
+
+        sage: x.__truediv__.im_func is Magmas.Unital.ElementMethods.__truediv__.im_func
+        True
+        sage: x.__truediv__.im_func is sage.categories.coercion_methods.__truediv__
+        True
+    </opaque><constant name="element._div_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

@@ -1,0 +1,25 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/infinite_enumerated_sets/InfiniteEnumeratedSets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_enumerated_set_iter_cardinality">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Check that the methods :meth:`.cardinality` and
+            :meth:`.__iter__`. are consistent.
+
+            See also :class:`TestSuite`.
+
+            For infinite enumerated sets:
+
+               * :meth:`.cardinality` is supposed to return `infinity`
+
+               * :meth:`.list`` is supposed to raise a ``NotImplementedError``.
+
+            EXAMPLES::
+
+                sage: NN = InfiniteEnumeratedSets().example()
+                sage: NN._test_enumerated_set_iter_cardinality()
+            </opaque></omdoc></theory></omdoc>

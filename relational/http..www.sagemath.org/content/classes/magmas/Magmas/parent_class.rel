@@ -1,0 +1,12 @@
+theory http://www.sagemath.org/content/classes/magmas/Magmas?parent_class
+HasMeta http://www.sagemath.org/content/classes/magmas/Magmas?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/magmas/Magmas?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/magmas/Magmas?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/magmas/Magmas?parent_class http://www.sagemath.org/content/classes/magmas/Magmas?parent_class?classmethod.__init_extra__
+constant http://www.sagemath.org/content/classes/magmas/Magmas?parent_class?classmethod.__init_extra__
+Declares http://www.sagemath.org/content/classes/magmas/Magmas?parent_class http://www.sagemath.org/content/classes/magmas/Magmas?parent_class?classmethod.multiplication_table
+constant http://www.sagemath.org/content/classes/magmas/Magmas?parent_class?classmethod.multiplication_table
+Declares http://www.sagemath.org/content/classes/magmas/Magmas?parent_class http://www.sagemath.org/content/classes/magmas/Magmas?parent_class?classmethod.product
+constant http://www.sagemath.org/content/classes/magmas/Magmas?parent_class?classmethod.product
+Declares http://www.sagemath.org/content/classes/magmas/Magmas?parent_class http://www.sagemath.org/content/classes/magmas/Magmas?parent_class?classmethod.product_from_element_class_mul
+constant http://www.sagemath.org/content/classes/magmas/Magmas?parent_class?classmethod.product_from_element_class_mul

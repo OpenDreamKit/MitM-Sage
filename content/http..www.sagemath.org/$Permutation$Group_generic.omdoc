@@ -1,0 +1,12 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="PermutationGroup_generic" base="http://www.sagemath.org/" meta="http://www.sagemath.org/?Sage"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1735.72.0:1957.76.1"/></metadata><import from="http://www.sagemath.org/?group.FiniteGroup"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1779.73.2:1806.73.29"/></metadata></import><constant name="init">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1810.74.2:1854.74.46"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1816.74.8:1851.74.43"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="PythonFunction" name="pyfunction"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1816.74.8:1825.74.17"/></metadata></om:OMS><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1827.74.19:1851.74.43"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="PythonFunction" name="pyfunction_type"></om:OMS><om:OMS base="http://www.sagemath.org/" module="PythonUnknownType" name="pyunknown"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1828.74.20:1836.74.28"/></metadata></om:OMS><om:OMS base="http://www.sagemath.org/" module="PythonUnknownType" name="pyunknown"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1842.74.34:1850.74.42"/></metadata></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant></theory></omdoc>

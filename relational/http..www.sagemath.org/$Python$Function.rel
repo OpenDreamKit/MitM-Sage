@@ -1,0 +1,9 @@
+theory http://www.sagemath.org/?PythonFunction
+HasMeta http://www.sagemath.org/?PythonFunction http://www.sagemath.org/?Convenient
+Includes http://www.sagemath.org/?PythonFunction http://www.sagemath.org/?PythonBasicTypes
+Declares http://www.sagemath.org/?PythonFunction http://www.sagemath.org/?PythonFunction?pyfunction
+constant http://www.sagemath.org/?PythonFunction?pyfunction
+Declares http://www.sagemath.org/?PythonFunction http://www.sagemath.org/?PythonFunction?pyfunction_type
+constant http://www.sagemath.org/?PythonFunction?pyfunction_type
+Declares http://www.sagemath.org/?PythonFunction http://www.sagemath.org/?PythonFunction?magic_function
+constant http://www.sagemath.org/?PythonFunction?magic_function

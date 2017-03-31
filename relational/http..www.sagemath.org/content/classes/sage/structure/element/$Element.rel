@@ -1,0 +1,95 @@
+theory http://www.sagemath.org/content/classes/sage/structure/element?Element
+HasMeta http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.N
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.N
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__add__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__add__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__cmp__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__cmp__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__copy__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__copy__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__dir__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__dir__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__div__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__div__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__floordiv__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__floordiv__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__getmetaclass__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__getmetaclass__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__getstate__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__getstate__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__mod__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__mod__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__mul__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__mul__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__neg__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__neg__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__nonzero__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__nonzero__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__pos__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__pos__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__radd__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__radd__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rdiv__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rdiv__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rfloordiv__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rfloordiv__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rmod__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rmod__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rmul__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rmul__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rsub__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rsub__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rtruediv__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rtruediv__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rxor__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__rxor__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__setstate__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__setstate__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__sub__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__sub__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__truediv__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__truediv__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__xor__
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__xor__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._act_on_
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._act_on_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._acted_upon_
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._acted_upon_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._cmp_
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._cmp_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._coeff_repr
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._coeff_repr
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._im_gens_
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._im_gens_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._is_atomic
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._is_atomic
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._latex_coeff_repr
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._latex_coeff_repr
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._mpmath_
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._mpmath_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._repr_
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._repr_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._richcmp_
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._richcmp_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._set_parent
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._set_parent
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._test_eq
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod._test_eq
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.base_extend
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.base_extend
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.base_ring
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.base_ring
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.is_zero
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.is_zero
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.n
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.n
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.numerical_approx
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.numerical_approx
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.subs
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.subs
+Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.substitute
+constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.substitute

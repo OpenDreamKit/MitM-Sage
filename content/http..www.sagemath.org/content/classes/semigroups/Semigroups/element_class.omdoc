@@ -1,0 +1,69 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/semigroups/Semigroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.__pow__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``self`` to the `n^{th}` power.
+
+            INPUT:
+
+            - ``n`` -- a positive integer
+
+            EXAMPLES::
+
+                sage: S = Semigroups().example(&quot;leftzero&quot;)
+                sage: x = S(&quot;x&quot;)
+                sage: x^1, x^2, x^3, x^4, x^5
+                ('x', 'x', 'x', 'x', 'x')
+                sage: x^0
+                Traceback (most recent call last):
+                ...
+                AssertionError
+
+            TESTS::
+
+                sage: x._pow_(17)
+                'x'
+
+            </opaque><constant name="classmethod._pow_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``self`` to the `n^{th}` power.
+
+            INPUT:
+
+            - ``n`` -- a positive integer
+
+            EXAMPLES::
+
+                sage: S = Semigroups().example(&quot;leftzero&quot;)
+                sage: x = S(&quot;x&quot;)
+                sage: x^1, x^2, x^3, x^4, x^5
+                ('x', 'x', 'x', 'x', 'x')
+                sage: x^0
+                Traceback (most recent call last):
+                ...
+                AssertionError
+
+            TESTS::
+
+                sage: x._pow_(17)
+                'x'
+
+            </opaque></omdoc></theory></omdoc>

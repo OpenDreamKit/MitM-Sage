@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/?Python
+HasMeta http://www.sagemath.org/?Python http://www.sagemath.org/?Convenient
+Includes http://www.sagemath.org/?Python http://www.sagemath.org/?PythonBasicTypes
+Includes http://www.sagemath.org/?Python http://www.sagemath.org/?PythonFunction
+Includes http://www.sagemath.org/?Python http://www.sagemath.org/?PythonClass
+Includes http://www.sagemath.org/?Python http://www.sagemath.org/?PythonUnknownType

@@ -1,0 +1,28 @@
+theory http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class
+HasMeta http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.__truediv__
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.__truediv__
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod._test_associativity
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod._test_associativity
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.cayley_graph
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.cayley_graph
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.is_d_trivial
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.is_d_trivial
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.is_l_trivial
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.is_l_trivial
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.is_r_trivial
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.is_r_trivial
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.magma_generators
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.magma_generators
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.prod
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.prod
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.regular_representation
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.regular_representation
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.semigroup_generators
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.semigroup_generators
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.subsemigroup
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.subsemigroup
+Declares http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.trivial_representation
+constant http://www.sagemath.org/content/classes/semigroups/Semigroups?parent_class?classmethod.trivial_representation

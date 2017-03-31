@@ -1,0 +1,22 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Sage" base="http://www.sagemath.org/" meta="http://www.sagemath.org/?Python"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1579.63.0:1693.67.1"/></metadata><constant name="sage_type">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1606.64.2:1624.64.20"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://cds.omdoc.org/urtheories" module="Typed" name="type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1618.64.14:1621.64.17"/></metadata></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sageMMT">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1627.65.2:1655.65.30"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1637.65.12:1652.65.27"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Sage" name="sage_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1637.65.12:1645.65.20"/></metadata></om:OMS><om:OMS base="http://cds.omdoc.org/urtheories" module="Typed" name="type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1649.65.24:1652.65.27"/></metadata></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sagepy">
+       <metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1658.66.2:1691.66.35"/></metadata>
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1667.66.11:1689.66.33"/></metadata>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Sage" name="sage_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1667.66.11:1675.66.19"/></metadata></om:OMS><om:OMS base="http://www.sagemath.org/" module="PythonBasicTypes" name="python_type"><metadata><link rel="http://cds.omdoc.org/mmt?metadata?sourceRef" resource="http://www.sagemath.org/sage.mmt#1679.66.23:1689.66.33"/></metadata></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant></theory></omdoc>

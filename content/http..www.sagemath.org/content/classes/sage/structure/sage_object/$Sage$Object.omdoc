@@ -1,0 +1,994 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="SageObject" base="http://www.sagemath.org/content/classes/sage/structure/sage_object" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._ascii_art_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._ascii_art_(self)
+File: sage/structure/sage_object.pyx (starting at line 199)
+
+        Return an ASCII art representation.
+
+        To implement multi-line ASCII art output in a derived class
+        you must override this method. Unlike :meth:`_repr_`, which is
+        sometimes used for the hash key, the output of
+        :meth:`_ascii_art_` may depend on settings and is allowed to
+        change during runtime.
+
+        OUTPUT:
+
+        An :class:`~sage.typeset.ascii_art.AsciiArt` object, see
+        :mod:`sage.typeset.ascii_art` for details.
+
+        EXAMPLES:
+
+        You can use the :func:`~sage.typeset.ascii_art.ascii_art` function
+        to get the ASCII art representation of any object in Sage::
+
+            sage: ascii_art(integral(exp(x+x^2)/(x+1), x))
+              /
+             |
+             |   2
+             |  x  + x
+             | e
+             | ------- dx
+             |  x + 1
+             |
+            /
+
+        Alternatively, you can use the ``%display ascii_art/simple`` magic to
+        switch all output to ASCII art and back::
+
+            sage: from sage.repl.interpreter import get_test_shell
+            sage: shell = get_test_shell()
+            sage: shell.run_cell('tab = StandardTableaux(3)[2]; tab')
+            [[1, 2], [3]]
+            sage: shell.run_cell('%display ascii_art')
+            sage: shell.run_cell('tab')
+            1  2
+            3
+            sage: shell.run_cell('Tableaux.options(ascii_art=&quot;table&quot;, convention=&quot;French&quot;)')
+            sage: shell.run_cell('tab')
+            +---+
+            | 3 |
+            +---+---+
+            | 1 | 2 |
+            +---+---+
+            sage: shell.run_cell('%display plain')
+            sage: shell.run_cell('Tableaux.options._reset()')
+            sage: shell.quit()
+
+        TESTS::
+
+            sage: 1._ascii_art_()
+            1
+            sage: type(_)
+            &lt;class 'sage.typeset.ascii_art.AsciiArt'&gt;
+        </opaque><constant name="classmethod._axiom_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._axiom_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 731)</opaque><constant name="classmethod._axiom_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._axiom_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 737)</opaque><constant name="classmethod._cache_key">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._cache_key(self)
+File: sage/structure/sage_object.pyx (starting at line 339)
+
+        Return a hashable key which identifies this objects for caching. The
+        output must be hashable itself, or a tuple of objects which are
+        hashable or define a ``_cache_key``.
+
+        This method will only be called if the object itself is not hashable.
+
+        Some immutable objects (such as `p`-adic numbers) cannot implement a
+        reasonable hash function because their ``==`` operator has been
+        modified to return ``True`` for objects which might behave differently
+        in some computations::
+
+            sage: K.&lt;a&gt; = Qq(9)
+            sage: b = a + O(3)
+            sage: c = a + 3
+            sage: b
+            a + O(3)
+            sage: c
+            a + 3 + O(3^20)
+            sage: b == c
+            True
+            sage: b == a
+            True
+            sage: c == a
+            False
+
+        If such objects defined a non-trivial hash function, this would break
+        caching in many places. However, such objects should still be usable in
+        caches. This can be achieved by defining an appropriate
+        ``_cache_key``::
+
+            sage: hash(b)
+            Traceback (most recent call last):
+            ...
+            TypeError: unhashable type: 'sage.rings.padics.qadic_flint_CR.qAdicCappedRelativeElement'
+            sage: @cached_method
+            ....: def f(x): return x==a
+            sage: f(b)
+            True
+            sage: f(c) # if b and c were hashable, this would return True
+            False
+
+            sage: b._cache_key()
+            (..., ((0, 1),), 0, 1)
+            sage: c._cache_key()
+            (..., ((0, 1), (1,)), 0, 20)
+
+        An implementation must make sure that for elements ``a`` and ``b``,
+        if ``a != b``, then also ``a._cache_key() != b._cache_key()``.
+        In practice this means that the ``_cache_key`` should always include
+        the parent as its first argument::
+
+            sage: S.&lt;a&gt; = Qq(4)
+            sage: d = a + O(2)
+            sage: b._cache_key() == d._cache_key() # this would be True if the parents were not included
+            False
+
+        </opaque><constant name="classmethod._fricas_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._fricas_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 742)</opaque><constant name="classmethod._fricas_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._fricas_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 748)</opaque><constant name="classmethod._gap_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._gap_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 700)</opaque><constant name="classmethod._gap_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._gap_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 706)</opaque><constant name="classmethod._giac_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._giac_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 753)</opaque><constant name="classmethod._giac_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._giac_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 759)</opaque><constant name="classmethod._gp_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._gp_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 711)</opaque><constant name="classmethod._gp_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._gp_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 717)</opaque><constant name="classmethod._interface_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._interface_(self, I)
+File: sage/structure/sage_object.pyx (starting at line 648)
+
+        Return coercion of self to an object of the interface I.
+
+        The result of coercion is cached, unless self is not a C
+        extension class or ``self._interface_is_cached_()`` returns
+        False.
+        </opaque><constant name="classmethod._interface_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._interface_init_(self, I=None)
+File: sage/structure/sage_object.pyx (starting at line 688)</opaque><constant name="classmethod._interface_is_cached_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._interface_is_cached_(self)
+File: sage/structure/sage_object.pyx (starting at line 691)
+
+        Return True if the interface objects are cached.
+
+        If you have an object x and do gp(x), the result is cached if
+        this function returns True.
+        </opaque><constant name="classmethod._kash_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._kash_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 720)</opaque><constant name="classmethod._kash_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._kash_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 726)</opaque><constant name="classmethod._macaulay2_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._macaulay2_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 828)</opaque><constant name="classmethod._macaulay2_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._macaulay2_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 834)</opaque><constant name="classmethod._magma_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._magma_init_(self, magma)
+File: sage/structure/sage_object.pyx (starting at line 782)
+
+        Given a Magma interpreter M, return a string that evaluates in
+        that interpreter to the Magma object corresponding to self.
+        This function may call the magma interpreter when it runs.
+
+        INPUT:
+
+        - ``magma`` -- a Magma interface
+
+        OUTPUT:
+
+        - string
+
+        EXAMPLES::
+
+            sage: n = -3/7
+            sage: n._magma_init_(magma)
+            '-3/7'
+
+        Some other examples that illustrate conversion to Magma.
+        ::
+
+            sage: n = -3/7
+            sage: m2 = Magma()
+            sage: magma(n)                        # optional - magma
+            -3/7
+            sage: magma(n).parent()               # optional - magma
+            Magma
+            sage: magma(n).parent() is m2         # optional - magma
+            False
+            sage: magma(n).parent() is magma      # optional - magma
+            True
+
+        This example illustrates caching, which happens automatically
+        since K is a Python object::
+
+            sage: K.&lt;a&gt; = NumberField(x^3 + 2)
+            sage: magma(K) is magma(K)        # optional - magma
+            True
+            sage: magma2 = Magma()
+            sage: magma(K) is magma2(K)       # optional - magma
+            False
+        </opaque><constant name="classmethod._maple_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._maple_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 839)</opaque><constant name="classmethod._maple_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._maple_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 845)</opaque><constant name="classmethod._mathematica_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._mathematica_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 850)</opaque><constant name="classmethod._mathematica_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._mathematica_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 856)</opaque><constant name="classmethod._maxima_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._maxima_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 764)</opaque><constant name="classmethod._maxima_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._maxima_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 770)</opaque><constant name="classmethod._maxima_lib_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._maxima_lib_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 775)</opaque><constant name="classmethod._maxima_lib_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._maxima_lib_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 779)</opaque><constant name="classmethod._octave_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._octave_(self, G=None)
+File: sage/structure/sage_object.pyx (starting at line 861)</opaque><constant name="classmethod._octave_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._octave_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 867)</opaque><constant name="classmethod._pari_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._pari_(self)
+File: sage/structure/sage_object.pyx (starting at line 903)</opaque><constant name="classmethod._pari_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._pari_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 919)</opaque><constant name="classmethod._r_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._r_init_(self)
+File: sage/structure/sage_object.pyx (starting at line 872)
+
+        Return default string expression that evaluates in R to this
+        object.
+
+        OUTPUT:
+
+        - string
+
+        EXAMPLES::
+
+            sage: a = 2/3
+            sage: a._r_init_()
+            '2/3'
+        </opaque><constant name="classmethod._sage_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._sage_(self)
+File: sage/structure/sage_object.pyx (starting at line 645)</opaque><constant name="classmethod._singular_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._singular_(self, G=None, have_ring=False)
+File: sage/structure/sage_object.pyx (starting at line 891)</opaque><constant name="classmethod._singular_init_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._singular_init_(self, have_ring=False)
+File: sage/structure/sage_object.pyx (starting at line 897)</opaque><constant name="classmethod._test_category">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._test_category(self, **options)
+File: sage/structure/sage_object.pyx (starting at line 486)
+
+        Run generic tests on the method :meth:`.category`.
+
+        See also: :class:`TestSuite`.
+
+        EXAMPLES::
+
+            sage: O = SageObject()
+            sage: O._test_category()
+
+        Let us now write a broken :meth:`.category` method::
+
+            sage: class CCls(SageObject):
+            ....:     def category(self):
+            ....:         return 3
+            sage: CC = CCls()
+            sage: CC._test_category()
+            Traceback (most recent call last):
+            ...
+            AssertionError: False is not true
+        </opaque><constant name="classmethod._test_new">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._test_new(self, **options)
+File: sage/structure/sage_object.pyx (starting at line 51)
+
+        Check that ``cls.__new__(cls)`` does not crash Python,
+        where ``cls = type(self)``.
+
+        It is perfectly legal for ``__new__`` to raise ordinary
+        exceptions.
+
+        EXAMPLES::
+
+            sage: SageObject()._test_new()
+        </opaque><constant name="classmethod._test_not_implemented_methods">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._test_not_implemented_methods(self, **options)
+File: sage/structure/sage_object.pyx (starting at line 574)
+
+        Checks that all required methods for this object are implemented
+
+        TESTS::
+
+            sage: class Abstract(SageObject):
+            ....:     @abstract_method
+            ....:     def bla(self):
+            ....:         &quot;returns bla&quot;
+            sage: class Concrete(Abstract):
+            ....:     def bla(self):
+            ....:         return 1
+            sage: class IncompleteConcrete(Abstract):
+            ....:     pass
+            sage: Concrete()._test_not_implemented_methods()
+            sage: IncompleteConcrete()._test_not_implemented_methods()
+            Traceback (most recent call last):
+            ...
+            AssertionError: Not implemented method: bla
+
+        </opaque><constant name="classmethod._test_pickling">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._test_pickling(self, **options)
+File: sage/structure/sage_object.pyx (starting at line 613)
+
+        Checks that this object can be pickled and unpickled properly.
+
+        EXAMPLES::
+
+            sage: ZZ._test_pickling()
+
+        .. SEEALSO::
+
+            :func:`dumps`, :func:`loads`
+
+        TESTS::
+
+            sage: class Bla(SageObject): pass
+            sage: Bla()._test_pickling()
+            Traceback (most recent call last):
+            ...
+            PicklingError: Can't pickle &lt;class '__main__.Bla'&gt;: attribute lookup __main__.Bla failed
+
+        TODO: for a stronger test, this could send the object to a
+        remote Sage session, and get it back.
+        </opaque><constant name="classmethod._tester">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._tester(self, **options)
+File: sage/structure/sage_object.pyx (starting at line 535)
+
+        Returns a gadget attached to ``self`` providing testing utilities.
+
+        This is used by :class:`sage.misc.sage_unittest.TestSuite` and the
+        ``_test_*`` methods.
+
+        EXAMPLES::
+
+            sage: tester = ZZ._tester()
+
+            sage: tester.assert_(1 == 1)
+            sage: tester.assert_(1 == 0)
+            Traceback (most recent call last):
+            ...
+            AssertionError: False is not true
+            sage: tester.assert_(1 == 0, &quot;this is expected to fail&quot;)
+            Traceback (most recent call last):
+            ...
+            AssertionError: this is expected to fail
+
+            sage: tester.assertEquals(1, 1)
+            sage: tester.assertEquals(1, 0)
+            Traceback (most recent call last):
+            ...
+            AssertionError: 1 != 0
+
+        The available assertion testing facilities are the same as in
+        :class:`unittest.TestCase`, which see (actually, by a slight
+        abuse, tester is currently an instance of this class).
+
+        TESTS::
+
+            sage: ZZ._tester(tester = tester) is tester
+            True
+        </opaque><constant name="classmethod._unicode_art_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject._unicode_art_(self)
+File: sage/structure/sage_object.pyx (starting at line 262)
+
+        Return a unicode art representation.
+
+        To implement multi-line unicode art output in a derived class
+        you must override this method. Unlike :meth:`_repr_`, which is
+        sometimes used for the hash key, the output of
+        :meth:`_unicode_art_` may depend on settings and is allowed to
+        change during runtime.
+
+        OUTPUT:
+
+        An :class:`~sage.typeset.unicode_art.UnicodeArt` object, see
+        :mod:`sage.typeset.unicode_art` for details.
+
+        EXAMPLES:
+
+        You can use the :func:`~sage.typeset.unicode_art.unicode_art` function
+        to get the ASCII art representation of any object in Sage::
+
+            sage: unicode_art(integral(exp(x+x^2)/(x+1), x))
+            ⌠
+            ⎮   2
+            ⎮  x  + x
+            ⎮ ℯ
+            ⎮ ─────── dx
+            ⎮  x + 1
+            ⌡
+
+
+        Alternatively, you can use the ``%display ascii_art/simple`` magic to
+        switch all output to ASCII art and back::
+
+            sage: from sage.repl.interpreter import get_test_shell
+            sage: shell = get_test_shell()
+            sage: shell.run_cell('tab = StandardTableaux(3)[2]; tab')
+            [[1, 2], [3]]
+            sage: shell.run_cell('%display ascii_art')
+            sage: shell.run_cell('tab')
+            1  2
+            3
+            sage: shell.run_cell('Tableaux.options(ascii_art=&quot;table&quot;, convention=&quot;French&quot;)')
+            sage: shell.run_cell('tab')
+            +---+
+            | 3 |
+            +---+---+
+            | 1 | 2 |
+            +---+---+
+            sage: shell.run_cell('%display plain')
+            sage: shell.run_cell('Tableaux.options._reset()')
+            sage: shell.quit()
+
+        TESTS::
+
+            sage: 1._unicode_art_()
+            1
+            sage: type(_)
+            &lt;class 'sage.typeset.unicode_art.UnicodeArt'&gt;
+        </opaque><constant name="classmethod.category">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject.category(self)
+File: sage/structure/sage_object.pyx (starting at line 482)</opaque><constant name="classmethod.db">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject.db(self, name, compress=True)
+File: sage/structure/sage_object.pyx (starting at line 460)
+
+        Dumps self into the Sage database.  Use db(name) by itself to
+        reload.
+
+        The database directory is ``$HOME/.sage/db``
+
+        TESTS::
+
+            sage: SageObject().db(&quot;Test&quot;)
+            doctest:... DeprecationWarning: db() is deprecated.
+            See http://trac.sagemath.org/2536 for details.
+        </opaque><constant name="classmethod.dump">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject.dump(self, filename, compress=True)
+File: sage/structure/sage_object.pyx (starting at line 432)
+
+        Same as self.save(filename, compress)
+        </opaque><constant name="classmethod.dumps">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject.dumps(self, compress=True)
+File: sage/structure/sage_object.pyx (starting at line 438)
+
+        Dump ``self`` to a string ``s``, which can later be reconstituted
+        as ``self`` using ``loads(s)``.
+
+        There is an optional boolean argument ``compress`` which defaults to ``True``.
+
+        EXAMPLES::
+
+            sage: O=SageObject(); O.dumps()
+            'x\x9ck`J.NLO\xd5+.)*M.)-\x02\xb2\x80\xdc\xf8\xfc\xa4\xac\xd4\xe4\x12\xae` \xdb\x1f\xc2,d\xd4l,d\xd2\x03\x00\xb7X\x10\xf1'
+            sage: O.dumps(compress=False)
+            '\x80\x02csage.structure.sage_object\nSageObject\nq\x01)\x81q\x02.'
+        </opaque><constant name="classmethod.parent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject.parent(self)
+File: sage/structure/sage_object.pyx (starting at line 516)
+
+        Return the type of ``self`` to support the coercion framework.
+
+        EXAMPLES::
+
+            sage: t = log(sqrt(2) - 1) + log(sqrt(2) + 1); t
+            log(sqrt(2) + 1) + log(sqrt(2) - 1)
+            sage: u = t.maxima_methods()
+            sage: u.parent()
+            &lt;class 'sage.symbolic.maxima_wrapper.MaximaWrapper'&gt;
+        </opaque><constant name="classmethod.rename">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject.rename(self, x=None)
+File: sage/structure/sage_object.pyx (starting at line 73)
+
+        Change self so it prints as x, where x is a string.
+
+        .. NOTE::
+
+           This is *only* supported for Python classes that derive
+           from SageObject.
+
+        EXAMPLES::
+
+            sage: x = PolynomialRing(QQ, 'x', sparse=True).gen()
+            sage: g = x^3 + x - 5
+            sage: g
+            x^3 + x - 5
+            sage: g.rename('a polynomial')
+            sage: g
+            a polynomial
+            sage: g + x
+            x^3 + 2*x - 5
+            sage: h = g^100
+            sage: str(h)[:20]
+            'x^300 + 100*x^298 - '
+            sage: h.rename('x^300 + ...')
+            sage: h
+            x^300 + ...
+
+        Real numbers are not Python classes, so rename is not supported::
+
+            sage: a = 3.14
+            sage: type(a)
+            &lt;type 'sage.rings.real_mpfr.RealLiteral'&gt;
+            sage: a.rename('pi')
+            Traceback (most recent call last):
+            ...
+            NotImplementedError: object does not support renaming: 3.14000000000000
+
+        .. NOTE::
+
+           The reason C-extension types are not supported by default
+           is if they were then every single one would have to carry
+           around an extra attribute, which would be slower and waste
+           a lot of memory.
+
+           To support them for a specific class, add a
+           ``cdef public __custom_name`` attribute.
+        </opaque><constant name="classmethod.reset_name">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject.reset_name(self)
+File: sage/structure/sage_object.pyx (starting at line 130)
+
+        Remove the custom name of an object.
+
+        EXAMPLES::
+
+            sage: P.&lt;x&gt; = QQ[]
+            sage: P
+            Univariate Polynomial Ring in x over Rational Field
+            sage: P.rename('A polynomial ring')
+            sage: P
+            A polynomial ring
+            sage: P.reset_name()
+            sage: P
+            Univariate Polynomial Ring in x over Rational Field
+        </opaque><constant name="classmethod.save">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">SageObject.save(self, filename=None, compress=True)
+File: sage/structure/sage_object.pyx (starting at line 409)
+
+        Save self to the given filename.
+
+        EXAMPLES::
+
+            sage: f = x^3 + 5
+            sage: f.save(os.path.join(SAGE_TMP, 'file'))
+            sage: load(os.path.join(SAGE_TMP, 'file.sobj'))
+            x^3 + 5
+        </opaque></omdoc></theory></omdoc>

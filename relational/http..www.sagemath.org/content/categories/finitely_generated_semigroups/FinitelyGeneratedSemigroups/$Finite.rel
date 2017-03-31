@@ -5,3 +5,5 @@ Includes http://www.sagemath.org/content/categories/finitely_generated_semigroup
 Includes http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups
 Includes http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups
 Includes http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite http://www.sagemath.org/content/categories/finite_enumerated_sets?FiniteEnumeratedSets
+Declares http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite?Enumerated
+constant http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite?Enumerated

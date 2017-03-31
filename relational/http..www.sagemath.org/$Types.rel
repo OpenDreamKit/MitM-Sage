@@ -1,5 +1,5 @@
 theory http://www.sagemath.org/?Types
-HasMeta http://www.sagemath.org/?Types http://cds.omdoc.org/urtheories?LF
+HasMeta http://www.sagemath.org/?Types http://cds.omdoc.org/urtheories?PLF
 Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?object
 constant http://www.sagemath.org/?Types?object
 Declares http://www.sagemath.org/?Types http://www.sagemath.org/?Types?prop

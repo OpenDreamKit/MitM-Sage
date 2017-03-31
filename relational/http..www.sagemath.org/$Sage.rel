@@ -1,0 +1,8 @@
+theory http://www.sagemath.org/?Sage
+HasMeta http://www.sagemath.org/?Sage http://www.sagemath.org/?Python
+Declares http://www.sagemath.org/?Sage http://www.sagemath.org/?Sage?sage_type
+constant http://www.sagemath.org/?Sage?sage_type
+Declares http://www.sagemath.org/?Sage http://www.sagemath.org/?Sage?sageMMT
+constant http://www.sagemath.org/?Sage?sageMMT
+Declares http://www.sagemath.org/?Sage http://www.sagemath.org/?Sage?sagepy
+constant http://www.sagemath.org/?Sage?sagepy

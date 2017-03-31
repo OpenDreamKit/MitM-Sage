@@ -1,0 +1,9 @@
+theory http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement
+HasMeta http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement http://www.sagemath.org/content/classes/sage/structure/element?MonoidElement
+Declares http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement?classmethod.__invert__
+constant http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement?classmethod.__invert__
+Declares http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement?classmethod._div_
+constant http://www.sagemath.org/content/classes/sage/structure/element?MultiplicativeGroupElement?classmethod._div_

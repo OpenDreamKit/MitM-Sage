@@ -1,0 +1,60 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/finite_groups/FiniteGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.cayley_graph_disabled">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+
+            AUTHORS:
+
+            - Bobby Moretti (2007-08-10)
+
+            - Robert Miller (2008-05-01): editing
+            </opaque><constant name="classmethod.conjugacy_classes">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list with all the conjugacy classes of the group.
+
+            This will eventually be a fall-back method for groups not defined
+            over GAP. Right now just raises a ``NotImplementedError``, until
+            we include a non-GAP way of listing the conjugacy classes
+            representatives.
+
+            EXAMPLES::
+
+                sage: from sage.groups.group import FiniteGroup
+                sage: G = FiniteGroup()
+                sage: G.conjugacy_classes()
+                Traceback (most recent call last):
+                ...
+                NotImplementedError: Listing the conjugacy classes for
+                group &lt;type 'sage.groups.group.FiniteGroup'&gt; is not implemented
+            </opaque><constant name="classmethod.conjugacy_classes_representatives">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list of the conjugacy classes representatives of the group.
+
+            EXAMPLES::
+
+                sage: G = SymmetricGroup(3)
+                sage: G.conjugacy_classes_representatives()
+                [(), (1,2), (1,2,3)]
+           </opaque></omdoc></theory></omdoc>
