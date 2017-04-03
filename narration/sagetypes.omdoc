@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<omdoc base="http://www.sagemath.org/sagetypes.omdoc"><mref name="[http://www.sagemath.org/?Axioms]" target="http://www.sagemath.org/?Axioms"></mref><mref name="[http://www.sagemath.org/?Structures]" target="http://www.sagemath.org/?Structures"></mref></omdoc>
+<omdoc base="http://www.sagemath.org/sagetypes.omdoc"><mref name="[http://www.sagemath.org/?Structures]" target="http://www.sagemath.org/?Structures"></mref></omdoc>
