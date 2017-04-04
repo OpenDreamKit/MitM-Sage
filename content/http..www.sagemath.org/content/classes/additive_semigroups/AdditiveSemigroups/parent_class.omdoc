@@ -1,0 +1,32 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/additive_semigroups/AdditiveSemigroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_additive_associativity">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test associativity for (not necessarily all) elements of this
+            additive semigroup.
+
+            INPUT:
+
+            - ``options`` -- any keyword arguments accepted by :meth:`_tester`
+
+            EXAMPLES:
+
+            By default, this method tests only the elements returned by
+            ``self.some_elements()``::
+
+                sage: S = CommutativeAdditiveSemigroups().example()
+                sage: S._test_additive_associativity()
+
+            However, the elements tested can be customized with the
+            ``elements`` keyword argument::
+
+                sage: (a,b,c,d) = S.additive_semigroup_generators()
+                sage: S._test_additive_associativity(elements = (a, b+c, d))
+
+            See the documentation for :class:`TestSuite` for more information.
+            </opaque></omdoc></theory></omdoc>

@@ -1,0 +1,12 @@
+theory http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class
+HasMeta http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class?classmethod.__init_extra__
+constant http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class?classmethod.__init_extra__
+Declares http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class?classmethod.addition_table
+constant http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class?classmethod.addition_table
+Declares http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class?classmethod.summation
+constant http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class?classmethod.summation
+Declares http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class?classmethod.summation_from_element_class_add
+constant http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas?parent_class?classmethod.summation_from_element_class_add

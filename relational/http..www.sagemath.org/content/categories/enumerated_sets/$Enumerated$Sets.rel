@@ -3,10 +3,18 @@ HasMeta http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSet
 Includes http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/sets_cat?Sets
+Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?Enumerated
+constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?Enumerated
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?element.rank
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?element.rank
+Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.__getitem__
+constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.__getitem__
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.__iter__
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.__iter__
+Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.__len__
+constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.__len__
+Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._an_element_
+constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._an_element_
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._an_element_from_iterator
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._an_element_from_iterator
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._first_from_iterator
@@ -19,6 +27,8 @@ Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSe
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._iterator_from_unrank
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._list_default
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._list_default
+Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._list_from_iterator
+constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._list_from_iterator
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._next_from_iterator
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._next_from_iterator
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent._rank_from_iterator
@@ -35,13 +45,19 @@ Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSe
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.first
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.is_empty
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.is_empty
+Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.iterator_range
+constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.iterator_range
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.list
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.list
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.map
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.map
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.next
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.next
+Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.random_element
+constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.random_element
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.rank
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.rank
 Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.unrank
 constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.unrank
+Declares http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.unrank_range
+constant http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets?parent.unrank_range

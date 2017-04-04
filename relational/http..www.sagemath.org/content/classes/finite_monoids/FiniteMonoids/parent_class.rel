@@ -2,7 +2,5 @@ theory http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?pare
 HasMeta http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class http://www.sagemath.org/?Structures
-Declares http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class?classmethod.nerve
-constant http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class?classmethod.nerve
 Declares http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class?classmethod.rhodes_radical_congruence
 constant http://www.sagemath.org/content/classes/finite_monoids/FiniteMonoids?parent_class?classmethod.rhodes_radical_congruence

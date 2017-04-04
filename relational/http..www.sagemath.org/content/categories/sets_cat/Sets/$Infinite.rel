@@ -5,5 +5,9 @@ Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite http:
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite?Infinite
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite?Infinite
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite?parent.cardinality
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite?parent.cardinality
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite?parent.is_empty
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite?parent.is_empty
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite?parent.is_finite
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite?parent.is_finite

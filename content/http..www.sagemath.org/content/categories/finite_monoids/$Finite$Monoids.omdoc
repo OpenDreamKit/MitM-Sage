@@ -43,4 +43,52 @@
 
             TODO: more appropriate name? see, for example, Jean-Eric Pin's
             lecture notes on semigroups.
+            </opaque></omdoc><omdoc name="Parent Methods"><constant name="parent.rhodes_radical_congruence">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the Rhodes radical congruence of the semigroup.
+
+            The Rhodes radical congruence is the congruence induced on S by the
+            map `S \rightarrow kS \rightarrow kS / rad kS` with k a field.
+
+            INPUT:
+
+            - ``base_ring`` (default: `\QQ`) a field
+
+            OUTPUT:
+
+            - A list of couples (m, n) with `m \neq n` in the lexicographic
+              order for the enumeration of the monoid ``self``.
+
+            EXAMPLES::
+
+                sage: M = Monoids().Finite().example()
+                sage: M.rhodes_radical_congruence()
+                [(0, 6), (2, 8), (4, 10)]
+                sage: from sage.monoids.hecke_monoid import HeckeMonoid
+                sage: H3 = HeckeMonoid(SymmetricGroup(3))
+                sage: H3.repr_element_method(style=&quot;reduced&quot;)
+                sage: H3.rhodes_radical_congruence()
+                [([1, 2], [2, 1]), ([1, 2], [1, 2, 1]), ([2, 1], [1, 2, 1])]
+
+            By Maschke's theorem, every group algebra over `\QQ`
+            is semisimple hence the Rhodes radical of a group must be trivial::
+
+                sage: SymmetricGroup(3).rhodes_radical_congruence()
+                []
+                sage: DihedralGroup(10).rhodes_radical_congruence()
+                []
+
+            REFERENCES:
+
+            - [Rho69]_
             </opaque></omdoc></theory></omdoc>

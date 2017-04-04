@@ -1,0 +1,59 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/coalgebras_with_basis/CoalgebrasWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.coproduct_on_basis">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The coproduct of the algebra on the basis (optional).
+
+            INPUT:
+
+            - ``i`` -- the indices of an element of the basis of ``self``
+
+            Returns the coproduct of the corresponding basis elements
+            If implemented, the coproduct of the algebra is defined
+            from it by linearity.
+
+            EXAMPLES::
+
+                sage: A = HopfAlgebrasWithBasis(QQ).example(); A
+                An example of Hopf algebra with basis: the group algebra of the Dihedral group of order 6 as a permutation group over Rational Field
+                sage: (a, b) = A._group.gens()
+                sage: A.coproduct_on_basis(a)
+                B[(1,2,3)] # B[(1,2,3)]
+            </opaque><constant name="classmethod.counit_on_basis">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The counit of the algebra on the basis (optional).
+
+            INPUT:
+
+            - ``i`` -- the indices of an element of the basis of ``self``
+
+            Returns the counit of the corresponding basis elements
+            If implemented, the counit of the algebra is defined
+            from it by linearity.
+
+            EXAMPLES::
+
+                sage: A = HopfAlgebrasWithBasis(QQ).example(); A
+                An example of Hopf algebra with basis: the group algebra of the Dihedral group of order 6 as a permutation group over Rational Field
+                sage: (a, b) = A._group.gens()
+                sage: A.counit_on_basis(a)
+                1
+            </opaque></omdoc></theory></omdoc>

@@ -1,0 +1,36 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/simplicial_complexes/SimplicialComplexes" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.faces">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the faces of ``self``.
+
+            EXAMPLES::
+
+                sage: S = SimplicialComplex([[1,3,4], [1,2],[2,5],[4,5]])
+                sage: S.faces()
+                {-1: {()},
+                 0: {(1,), (2,), (3,), (4,), (5,)},
+                 1: {(1, 2), (1, 3), (1, 4), (2, 5), (3, 4), (4, 5)},
+                 2: {(1, 3, 4)}}
+            </opaque><constant name="classmethod.facets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the facets of ``self``.
+
+            EXAMPLES::
+
+                sage: S = SimplicialComplex([[1,3,4], [1,2],[2,5],[4,5]])
+                sage: S.facets()
+                {(1, 2), (1, 3, 4), (2, 5), (4, 5)}
+            </opaque></omdoc></theory></omdoc>

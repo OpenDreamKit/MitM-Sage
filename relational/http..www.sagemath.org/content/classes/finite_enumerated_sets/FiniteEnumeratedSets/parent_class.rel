@@ -16,5 +16,7 @@ Declares http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEn
 constant http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class?classmethod._test_enumerated_set_iter_cardinality
 Declares http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class?classmethod._unrank_from_list
 constant http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class?classmethod._unrank_from_list
+Declares http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class?classmethod.cardinality
+constant http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class?classmethod.cardinality
 Declares http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class?classmethod.last
 constant http://www.sagemath.org/content/classes/finite_enumerated_sets/FiniteEnumeratedSets?parent_class?classmethod.last

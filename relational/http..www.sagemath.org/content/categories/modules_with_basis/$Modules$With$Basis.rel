@@ -73,6 +73,8 @@ Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWi
 constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent._sum_of_monomials
 Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.basis
 constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.basis
+Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.cardinality
+constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.cardinality
 Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.echelon_form
 constant http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.echelon_form
 Declares http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis?parent.linear_combination

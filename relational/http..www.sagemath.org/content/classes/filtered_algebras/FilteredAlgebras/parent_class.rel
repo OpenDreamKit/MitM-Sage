@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/filtered_algebras/FilteredAlgebras?parent_class
+HasMeta http://www.sagemath.org/content/classes/filtered_algebras/FilteredAlgebras?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/filtered_algebras/FilteredAlgebras?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/filtered_algebras/FilteredAlgebras?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/filtered_algebras/FilteredAlgebras?parent_class http://www.sagemath.org/content/classes/filtered_algebras/FilteredAlgebras?parent_class?classmethod.graded_algebra
+constant http://www.sagemath.org/content/classes/filtered_algebras/FilteredAlgebras?parent_class?classmethod.graded_algebra

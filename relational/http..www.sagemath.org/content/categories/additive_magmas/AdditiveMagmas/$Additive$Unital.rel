@@ -11,8 +11,6 @@ Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagm
 constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?element.__neg__
 Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?element.__nonzero__
 constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?element.__nonzero__
-Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?element.__sub__
-constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?element.__sub__
 Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?element._sub_
 constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?element._sub_
 Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas?AdditiveUnital?element._test_nonzero_equal

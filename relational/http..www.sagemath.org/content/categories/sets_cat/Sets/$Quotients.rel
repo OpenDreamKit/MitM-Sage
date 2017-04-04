@@ -5,3 +5,5 @@ Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http
 Includes http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Subquotients
 Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?sage.categories.sets_cat.Sets.Quotients
 constant http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?sage.categories.sets_cat.Sets.Quotients
+Declares http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?parent._an_element_
+constant http://www.sagemath.org/content/categories/sets_cat/Sets?Quotients?parent._an_element_

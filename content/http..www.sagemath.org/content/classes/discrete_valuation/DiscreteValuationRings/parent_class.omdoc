@@ -1,0 +1,39 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/discrete_valuation/DiscreteValuationRings" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.residue_field">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the residue field of this ring.
+
+            EXAMPLES::
+
+                sage: Zp(5).residue_field()
+                Finite Field of size 5
+
+                sage: K.&lt;u&gt; = QQ[[]]
+                sage: K.residue_field()
+                Rational Field
+            </opaque><constant name="classmethod.uniformizer">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a uniformizer of this ring.
+
+            EXAMPLES::
+
+                sage: Zp(5).uniformizer()
+                5 + O(5^21)
+
+                sage: K.&lt;u&gt; = QQ[[]]
+                sage: K.uniformizer()
+                u
+            </opaque></omdoc></theory></omdoc>

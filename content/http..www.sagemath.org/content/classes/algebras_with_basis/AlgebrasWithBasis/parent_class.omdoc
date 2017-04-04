@@ -1,0 +1,56 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/algebras_with_basis/AlgebrasWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._product_from_combinatorial_algebra_multiply">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns left\*right where left and right are elements of self.
+            product() uses either _multiply or _multiply basis to carry out
+            the actual multiplication.
+
+            EXAMPLES::
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: a = s([2])
+                sage: s._product_from_combinatorial_algebra_multiply(a,a)
+                s[2, 2] + s[3, 1] + s[4]
+                sage: s.product(a,a)
+                s[2, 2] + s[3, 1] + s[4]
+            </opaque><constant name="classmethod.hochschild_complex">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the Hochschild complex of ``self`` with coefficients
+            in ``M``.
+
+            .. SEEALSO::
+
+                :class:`~sage.homology.hochschild_complex.HochschildComplex`
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: A = algebras.DifferentialWeyl(R)
+                sage: H = A.hochschild_complex(A)
+
+                sage: SGA = SymmetricGroupAlgebra(QQ, 3)
+                sage: T = SGA.trivial_representation()
+                sage: H = SGA.hochschild_complex(T)
+            </opaque></omdoc></theory></omdoc>

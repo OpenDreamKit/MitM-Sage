@@ -29,8 +29,8 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethodCallerNoArgs(inst, f, cache=None, name=None)
-File: sage/misc/cachefunc.pyx (starting at line 2099)
+     </constant><opaque format="text">CachedMethodCallerNoArgs(inst, f, cache=None, name=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2227)
 
     Utility class that is used by :class:`CachedMethod` to bind a
     cached method to an instance, in the case of a method that does
@@ -56,6 +56,41 @@ File: sage/misc/cachefunc.pyx (starting at line 2099)
         sage: I.gens() is I.gens()
         True
 
+    TESTS:
+
+    As of :trac:`15692` the contents of the cache are not pickled anymore::
+
+        sage: class A:
+        ....:    @cached_method
+        ....:    def bar(self):
+        ....:        return 4
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.bar()
+        4
+        sage: a.bar.cache
+        4
+        sage: b = loads(dumps(a))
+        sage: b.bar.cache
+
+    The parameter ``do_pickle`` can be used to change this behaviour::
+
+        sage: class A:
+        ....:    @cached_method(do_pickle=True)
+        ....:    def bar(self):
+        ....:        return 4
+
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.bar()
+        4
+        sage: a.bar.cache
+        4
+        sage: b = loads(dumps(a))
+        sage: b.bar.cache
+        4
+
     AUTHOR:
 
     - Simon King (2011-04)
@@ -70,8 +105,8 @@ File: sage/misc/cachefunc.pyx (starting at line 2099)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -127,6 +162,36 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
 
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::
 
@@ -155,8 +220,8 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethodCallerNoArgs(inst, f, cache=None, name=None)
-File: sage/misc/cachefunc.pyx (starting at line 2099)
+     </constant><opaque format="text">CachedMethodCallerNoArgs(inst, f, cache=None, name=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2227)
 
     Utility class that is used by :class:`CachedMethod` to bind a
     cached method to an instance, in the case of a method that does
@@ -181,6 +246,41 @@ File: sage/misc/cachefunc.pyx (starting at line 2099)
         True
         sage: I.gens() is I.gens()
         True
+
+    TESTS:
+
+    As of :trac:`15692` the contents of the cache are not pickled anymore::
+
+        sage: class A:
+        ....:    @cached_method
+        ....:    def bar(self):
+        ....:        return 4
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.bar()
+        4
+        sage: a.bar.cache
+        4
+        sage: b = loads(dumps(a))
+        sage: b.bar.cache
+
+    The parameter ``do_pickle`` can be used to change this behaviour::
+
+        sage: class A:
+        ....:    @cached_method(do_pickle=True)
+        ....:    def bar(self):
+        ....:        return 4
+
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.bar()
+        4
+        sage: a.bar.cache
+        4
+        sage: b = loads(dumps(a))
+        sage: b.bar.cache
+        4
 
     AUTHOR:
 

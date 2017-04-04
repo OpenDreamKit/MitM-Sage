@@ -1,0 +1,49 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/classical_crystals/ClassicalCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.lusztig_involution">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the Lusztig involution on the classical highest weight
+            crystal ``self``.
+
+            The Lusztig involution on a finite-dimensional highest weight
+            crystal `B(\lambda)` of highest weight `\lambda` maps the
+            highest weight vector to the lowest weight vector and the
+            Kashiwara operator `f_i` to `e_{i^*}`, where `i^*` is defined as
+            `\alpha_{i^*} = -w_0(\alpha_i)`. Here `w_0` is the longest element
+            of the Weyl group acting on the `i`-th simple root `\alpha_i`.
+
+            EXAMPLES::
+
+                sage: B = crystals.Tableaux(['A',3],shape=[2,1])
+                sage: b = B(rows=[[1,2],[4]])
+                sage: b.lusztig_involution()
+                [[1, 4], [3]]
+                sage: b.to_tableau().schuetzenberger_involution(n=4)
+                [[1, 4], [3]]
+
+                sage: all(b.lusztig_involution().to_tableau() == b.to_tableau().schuetzenberger_involution(n=4) for b in B)
+                True
+
+                sage: B = crystals.Tableaux(['D',4],shape=[1])
+                sage: [[b,b.lusztig_involution()] for b in B]
+                [[[[1]], [[-1]]], [[[2]], [[-2]]], [[[3]], [[-3]]], [[[4]], [[-4]]], [[[-4]],
+                [[4]]], [[[-3]], [[3]]], [[[-2]], [[2]]], [[[-1]], [[1]]]]
+
+                sage: B = crystals.Tableaux(['D',3],shape=[1])
+                sage: [[b,b.lusztig_involution()] for b in B]
+                [[[[1]], [[-1]]], [[[2]], [[-2]]], [[[3]], [[3]]], [[[-3]], [[-3]]],
+                [[[-2]], [[2]]], [[[-1]], [[1]]]]
+
+                sage: C = CartanType(['E',6])
+                sage: La = C.root_system().weight_lattice().fundamental_weights()
+                sage: T = crystals.HighestWeight(La[1])
+                sage: t = T[3]; t
+                [(-4, 2, 5)]
+                sage: t.lusztig_involution()
+                [(-2, -3, 4)]
+            </opaque></omdoc></theory></omdoc>

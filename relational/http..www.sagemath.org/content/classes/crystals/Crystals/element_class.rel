@@ -1,0 +1,42 @@
+theory http://www.sagemath.org/content/classes/crystals/Crystals?element_class
+HasMeta http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.Epsilon
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.Epsilon
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.Phi
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.Phi
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.all_paths_to_highest_weight
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.all_paths_to_highest_weight
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.cartan_type
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.cartan_type
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.e
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.e
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.e_string
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.e_string
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.epsilon
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.epsilon
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.f
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.f
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.f_string
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.f_string
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.index_set
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.index_set
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.is_highest_weight
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.is_highest_weight
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.is_lowest_weight
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.is_lowest_weight
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.phi
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.phi
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.phi_minus_epsilon
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.phi_minus_epsilon
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.s
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.s
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.subcrystal
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.subcrystal
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.to_highest_weight
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.to_highest_weight
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.to_lowest_weight
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.to_lowest_weight
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?element_class http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.weight
+constant http://www.sagemath.org/content/classes/crystals/Crystals?element_class?classmethod.weight

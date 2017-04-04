@@ -1,0 +1,70 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/hopf_algebras_with_basis/HopfAlgebrasWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_antipode">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test the antipode.
+
+            An *antipode* `S` of a Hopf algebra is a linear endomorphism of the
+            Hopf algebra that satisfies the following conditions (see
+            :wikipedia:`HopfAlgebra`).
+
+            - If `\mu` and `\Delta` denote the product and coproduct of the
+              Hopf algebra, respectively, then `S` satisfies
+
+              .. MATH::
+
+                  \mu \circ (S \tensor 1) \circ \Delta = unit \circ counit
+                  \mu \circ (1 \tensor S) \circ \Delta = unit \circ counit
+
+            - `S` is an *anti*-homomorphism
+
+            These properties are tested on :meth:`some_elements`.
+
+            TESTS::
+
+                sage: R = NonCommutativeSymmetricFunctions(QQ).ribbon()
+                sage: R._test_antipode()
+
+            ::
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: s._test_antipode()
+
+            </opaque><constant name="classmethod.antipode_on_basis">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            The antipode of the Hopf algebra on the basis (optional)
+
+            INPUT:
+
+             - ``x`` -- an index of an element of the basis of ``self``
+
+            Returns the antipode of the basis element indexed by ``x``.
+
+            If this method is implemented, then :meth:`antipode` is defined
+            from this by linearity.
+
+            EXAMPLES::
+
+                sage: A = HopfAlgebrasWithBasis(QQ).example()
+                sage: W = A.basis().keys(); W
+                Dihedral group of order 6 as a permutation group
+                sage: w = W.an_element(); w
+                (1,2,3)
+                sage: A.antipode_on_basis(w)
+                B[(1,3,2)]
+            </opaque></omdoc></theory></omdoc>

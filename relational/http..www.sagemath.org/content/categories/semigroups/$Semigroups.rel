@@ -9,18 +9,10 @@ Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http:/
 constant http://www.sagemath.org/content/categories/semigroups?Semigroups?element.__pow__
 Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?element._pow_
 constant http://www.sagemath.org/content/categories/semigroups?Semigroups?element._pow_
-Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.__truediv__
-constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.__truediv__
 Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent._test_associativity
 constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent._test_associativity
 Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.cayley_graph
 constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.cayley_graph
-Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.is_d_trivial
-constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.is_d_trivial
-Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.is_l_trivial
-constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.is_l_trivial
-Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.is_r_trivial
-constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.is_r_trivial
 Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.magma_generators
 constant http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.magma_generators
 Declares http://www.sagemath.org/content/categories/semigroups?Semigroups http://www.sagemath.org/content/categories/semigroups?Semigroups?parent.prod

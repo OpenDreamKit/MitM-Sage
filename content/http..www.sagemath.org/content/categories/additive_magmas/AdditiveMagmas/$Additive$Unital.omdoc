@@ -22,7 +22,33 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="element.__nonzero__">
+     </constant><opaque format="text">
+                Return the negation of ``self``, if it exists.
+
+                This top-level implementation delegates the job to
+                ``_neg_``, for those additive unital magmas which may
+                choose to implement it instead of ``__neg__`` for
+                consistency.
+
+                EXAMPLES::
+
+                    sage: F = CombinatorialFreeModule(QQ, ['a','b'])
+                    sage: a,b = F.basis()
+                    sage: - b
+                    -B['b']
+
+                TESTS::
+
+                    sage: F = CombinatorialFreeModule(ZZ, ['a','b'])
+                    sage: a,b = F.gens()
+                    sage: FF = cartesian_product((F,F))
+                    sage: x = cartesian_product([a,2*a-3*b]) ; x
+                    B[(0, 'a')] + 2*B[(1, 'a')] - 3*B[(1, 'b')]
+                    sage: x.parent() is FF
+                    True
+                    sage: -x
+                    -B[(0, 'a')] - 2*B[(1, 'a')] + 3*B[(1, 'b')]
+                </opaque><constant name="element.__nonzero__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -46,7 +72,7 @@
                     False
                     sage: bool(S.an_element())
                     True
-                 </opaque><constant name="element.__sub__">
+                 </opaque><constant name="element._sub_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -58,11 +84,7 @@
        
        
      </constant><opaque format="text">
-                Return the difference between ``left`` and ``right``, if it exists.
-
-                This top-level implementation delegates the work to
-                the ``_sub_`` method or to coercion. See the extensive
-                documentation at the top of :ref:`sage.structure.element`.
+                Default implementation of difference.
 
                 EXAMPLES::
 
@@ -70,18 +92,15 @@
                     sage: a,b = F.basis()
                     sage: a - b
                     B['a'] - B['b']
-                </opaque><constant name="element._sub_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="element._test_nonzero_equal">
+
+                TESTS:
+
+                Check that :trac:`18275` is fixed::
+
+                    sage: C = GF(5).cartesian_product(GF(5))
+                    sage: C.one() - C.one()
+                    (0, 0)
+                </opaque><constant name="element._test_nonzero_equal">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -90,7 +109,7 @@
        
        
      </constant><opaque format="text">
-                Test that ``.__nonzero__()`` behave consistently
+                Test that ``.__bool__()`` behave consistently
                 with `` == 0``.
 
                 TESTS::
@@ -170,33 +189,6 @@
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="parent.zero_element">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-                Backward compatibility alias for ``self.zero()``.
-
-                TESTS::
-
-                    sage: from sage.geometry.polyhedron.parent import Polyhedra
-                    sage: P = Polyhedra(QQ, 3)
-                    sage: P.zero_element()
-                    doctest:...: DeprecationWarning: .zero_element() is deprecated. Use .zero() instead
-                    See http://trac.sagemath.org/17694 for details.
-                    A 0-dimensional polyhedron in QQ^3 defined as the convex hull of 1 vertex
-                </opaque></omdoc><omdoc name="Subcategory Methods"><constant name="subcategory.AdditiveInverse">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
               <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
               <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
@@ -204,8 +196,8 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -260,6 +252,173 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a = A()
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="parent.zero_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Backward compatibility alias for ``self.zero()``.
+
+                TESTS::
+
+                    sage: from sage.geometry.polyhedron.parent import Polyhedra
+                    sage: P = Polyhedra(QQ, 3)
+                    sage: P.zero_element()
+                    doctest:...: DeprecationWarning: .zero_element() is deprecated. Use .zero() instead
+                    See http://trac.sagemath.org/17694 for details.
+                    A 0-dimensional polyhedron in QQ^3 defined as the convex hull of 1 vertex
+                </opaque></omdoc><omdoc name="Subcategory Methods"><constant name="subcategory.AdditiveInverse">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
 
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::

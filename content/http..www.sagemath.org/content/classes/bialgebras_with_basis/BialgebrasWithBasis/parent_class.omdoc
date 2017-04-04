@@ -1,0 +1,109 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/bialgebras_with_basis/BialgebrasWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.convolution_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the convolution product (a map) of the given maps.
+
+            Let `A` and `B` be bialgebras over a commutative ring `R`.
+            Given maps `f_i : A \to B` for `1 \leq i &lt; n`, define the
+            convolution product
+
+            .. MATH::
+
+                (f_1 * f_2 * \cdots * f_n) := \mu^{(n-1)} \circ (f_1 \otimes
+                f_2 \otimes \cdots \otimes f_n) \circ \Delta^{(n-1)},
+
+            where `\Delta^{(k)} := \bigl(\Delta \otimes
+            \mathrm{Id}^{\otimes(k-1)}\bigr) \circ \Delta^{(k-1)}`,
+            with `\Delta^{(1)} = \Delta` (the ordinary coproduct in `A`) and
+            `\Delta^{(0)} = \mathrm{Id}`; and with `\mu^{(k)} := \mu \circ
+            \bigl(\mu^{(k-1)} \otimes \mathrm{Id})` and `\mu^{(1)} = \mu`
+            (the ordinary product in `B`). See [Swe1969]_.
+
+            (In the literature, one finds, e.g., `\Delta^{(2)}` for what we
+            denote above as `\Delta^{(1)}`. See [KMN2012]_.)
+
+            INPUT:
+
+            - ``maps`` -- any number `n \geq 0` of linear maps `f_1, f_2,
+              \ldots, f_n` on ``self``; or a single ``list`` or ``tuple``
+              of such maps
+
+            OUTPUT:
+
+            - the new map `f_1 * f_2 * \cdots * f_2` representing their
+              convolution product
+
+            .. SEEALSO::
+
+                :meth:`sage.categories.bialgebras.ElementMethods.convolution_product`
+
+            AUTHORS:
+
+            - Aaron Lauve - 12 June 2015 - Sage Days 65
+
+            .. TODO::
+
+                Remove dependency on ``modules_with_basis`` methods.
+
+            EXAMPLES:
+
+            We construct some maps: the identity, the antipode and
+            projection onto the homogeneous componente of degree 2::
+
+                sage: Id = lambda x: x
+                sage: Antipode = lambda x: x.antipode()
+                sage: Proj2 = lambda x: x.parent().sum_of_terms([(m, c) for (m, c) in x if m.size() == 2])
+
+            Compute the convolution product of the identity with itself and
+            with the projection ``Proj2`` on the Hopf algebra of
+            non-commutative symmetric functions::
+
+                sage: R = NonCommutativeSymmetricFunctions(QQ).ribbon()
+                sage: T = R.convolution_product([Id, Id])
+                sage: [T(R(comp)) for comp in Compositions(3)]
+                [4*R[1, 1, 1] + R[1, 2] + R[2, 1],
+                 2*R[1, 1, 1] + 4*R[1, 2] + 2*R[2, 1] + 2*R[3],
+                 2*R[1, 1, 1] + 2*R[1, 2] + 4*R[2, 1] + 2*R[3],
+                 R[1, 2] + R[2, 1] + 4*R[3]]
+                sage: T = R.convolution_product(Proj2, Id)
+                sage: [T(R([i])) for i in range(1, 5)]
+                [0, R[2], R[2, 1] + R[3], R[2, 2] + R[4]]
+
+            Compute the convolution product of no maps on the Hopf algebra of
+            symmetric functions in non-commuting variables. This is the
+            composition of the counit with the unit::
+
+                sage: m = SymmetricFunctionsNonCommutingVariables(QQ).m()
+                sage: T = m.convolution_product()
+                sage: [T(m(lam)) for lam in SetPartitions(0).list() + SetPartitions(2).list()]
+                [m{}, 0, 0]
+
+            Compute the convolution product of the projection ``Proj2`` with
+            the identity on the Hopf algebra of symmetric functions in
+            non-commuting variables::
+
+                sage: T = m.convolution_product(Proj2, Id)
+                sage: [T(m(lam)) for lam in SetPartitions(3)]
+                [0,
+                 m{{1, 2}, {3}} + m{{1, 2, 3}},
+                 m{{1, 2}, {3}} + m{{1, 2, 3}},
+                 m{{1, 2}, {3}} + m{{1, 2, 3}},
+                 3*m{{1}, {2}, {3}} + 3*m{{1}, {2, 3}} + 3*m{{1, 3}, {2}}]
+
+            Compute the convolution product of the antipode with itself and the
+            identity map on group algebra of the symmetric group::
+
+                sage: G = SymmetricGroup(3)
+                sage: QG = GroupAlgebra(G, QQ)
+                sage: x = QG.sum_of_terms([(p,p.number_of_peaks() + p.number_of_inversions()) for p in Permutations(3)]); x
+                2*[1, 3, 2] + [2, 1, 3] + 3*[2, 3, 1] + 2*[3, 1, 2] + 3*[3, 2, 1]
+                sage: T = QG.convolution_product(Antipode, Antipode, Id)
+                sage: T(x)
+                2*[1, 3, 2] + [2, 1, 3] + 2*[2, 3, 1] + 3*[3, 1, 2] + 3*[3, 2, 1]
+            </opaque></omdoc></theory></omdoc>

@@ -1,0 +1,48 @@
+theory http://www.sagemath.org/content/classes/crystals/Crystals?parent_class
+HasMeta http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.Lambda
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.Lambda
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod._Hom_
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod._Hom_
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.__add__
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.__add__
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod._latex_
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod._latex_
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.cartan_type
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.cartan_type
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.connected_components
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.connected_components
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.connected_components_generators
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.connected_components_generators
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.crystal_morphism
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.crystal_morphism
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.digraph
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.digraph
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.direct_sum
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.direct_sum
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.dot_tex
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.dot_tex
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.index_set
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.index_set
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.is_connected
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.is_connected
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.latex
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.latex
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.latex_file
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.latex_file
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.metapost
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.metapost
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.number_of_connected_components
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.number_of_connected_components
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.plot
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.plot
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.plot3d
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.plot3d
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.subcrystal
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.subcrystal
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.tensor
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.tensor
+Declares http://www.sagemath.org/content/classes/crystals/Crystals?parent_class http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.weight_lattice_realization
+constant http://www.sagemath.org/content/classes/crystals/Crystals?parent_class?classmethod.weight_lattice_realization

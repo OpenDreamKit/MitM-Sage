@@ -114,7 +114,7 @@ See :trac:`10963` for details.
                     [('a', 1, 'a'), ('a', 1, 'b'), ('a', 2, 'a'), ('a', 2, 'b'), ('a', 3, 'a'), ('a', 3, 'b'),
                      ('b', 1, 'a'), ('b', 1, 'b'), ('b', 2, 'a'), ('b', 2, 'b'), ('b', 3, 'a'), ('b', 3, 'b')]
                     sage: C.__iter__.__module__
-                    'sage.categories.enumerated_sets'
+                    'sage.categories.sets_cat'
 
                     sage: F22 = GF(2).cartesian_product(GF(2))
                     sage: list(F22)
@@ -213,6 +213,37 @@ See :trac:`10963` for details.
 
                     sage: cartesian_product([QQ, ZZ, ZZ])._sets_keys()
                     {0, 1, 2}
+                </opaque><constant name="parent.cardinality">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return the cardinality of self.
+
+                EXAMPLES::
+
+                    sage: E = FiniteEnumeratedSet([1,2,3])
+                    sage: C = cartesian_product([E,SymmetricGroup(4)])
+                    sage: C.cardinality()
+                    72
+
+                    sage: E = FiniteEnumeratedSet([])
+                    sage: C = cartesian_product([E, ZZ, QQ])
+                    sage: C.cardinality()
+                    0
+
+                    sage: C = cartesian_product([ZZ, QQ])
+                    sage: C.cardinality()
+                    +Infinity
+
+                    sage: cartesian_product([GF(5), Permutations(10)]).cardinality()
+                    18144000
+                    sage: cartesian_product([GF(71)]*20).cardinality() == 71**20
+                    True
                 </opaque><constant name="parent.cartesian_factors">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -277,5 +308,60 @@ See :trac:`10963` for details.
                     sage: cartesian_product([S1,ZZ]).is_empty()
                     False
                     sage: cartesian_product([S1,S2,S1]).is_empty()
+                    True
+                </opaque><constant name="parent.is_finite">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return whether this set is finite.
+
+                EXAMPLES::
+
+                    sage: E = FiniteEnumeratedSet([1,2,3])
+                    sage: C = cartesian_product([E, SymmetricGroup(4)])
+                    sage: C.is_finite()
+                    True
+
+                    sage: cartesian_product([ZZ,ZZ]).is_finite()
+                    False
+                    sage: cartesian_product([ZZ, Set(), ZZ]).is_finite()
+                    True
+                </opaque><constant name="parent.random_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return a random element of this Cartesian product.
+
+                The extra arguments are passed down to each of the
+                factors of the Cartesian product.
+
+                EXAMPLES::
+
+                    sage: C = cartesian_product([Permutations(10)]*5)
+                    sage: C.random_element()           # random
+                    ([2, 9, 4, 7, 1, 8, 6, 10, 5, 3],
+                     [8, 6, 5, 7, 1, 4, 9, 3, 10, 2],
+                     [5, 10, 3, 8, 2, 9, 1, 4, 7, 6],
+                     [9, 6, 10, 3, 2, 1, 5, 8, 7, 4],
+                     [8, 5, 2, 9, 10, 3, 7, 1, 4, 6])
+
+                    sage: C = cartesian_product([ZZ]*10)
+                    sage: c1 = C.random_element()
+                    sage: c1                   # random
+                    (3, 1, 4, 1, 1, -3, 0, -4, -17, 2)
+                    sage: c2 = C.random_element(4,7)
+                    sage: c2                   # random
+                    (6, 5, 6, 4, 5, 6, 6, 4, 5, 5)
+                    sage: all(4 &lt;= i &lt; 7 for i in c2)
                     True
                 </opaque></omdoc></theory></omdoc>

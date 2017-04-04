@@ -1,0 +1,69 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis/Homsets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.__call_on_basis__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Construct a morphism in this homset from a function defined
+                on the basis.
+
+                INPUT:
+
+                - ``on_basis`` -- a function from the indices of the
+                  basis of the domain of ``self`` to the codomain of
+                  ``self``
+
+                This method simply delegates the work to
+                :meth:`ModulesWithBasis.ParentMethods.module_morphism`. It
+                is used by :meth:`Homset.__call__` to handle the
+                ``on_basis`` argument, and will disapear as soon as
+                the logic will be generalized.
+
+                EXAMPLES::
+
+                    sage: X = CombinatorialFreeModule(QQ, [1,2,3]);   X.rename(&quot;X&quot;)
+                    sage: Y = CombinatorialFreeModule(QQ, [1,2,3,4]); Y.rename(&quot;Y&quot;)
+                    sage: H = Hom(X, Y)
+                    sage: x = X.basis()
+
+                    sage: phi = H(on_basis = lambda i: Y.monomial(i) + 2*Y.monomial(i+1)) # indirect doctest
+                    sage: phi
+                    Generic morphism:
+                    From: X
+                    To:   Y
+                    sage: phi(x[1] + x[3])
+                    B[1] + 2*B[2] + B[3] + 2*B[4]
+
+                Diagonal functions can be constructed using the ``diagonal`` option::
+
+                    sage: X = CombinatorialFreeModule(QQ, [1,2,3,4]); X.rename(&quot;X&quot;)
+                    sage: Y = CombinatorialFreeModule(QQ, [1,2,3,4], key=&quot;Y&quot;); Y.rename(&quot;Y&quot;)
+                    sage: H = Hom(X, Y)
+                    sage: x = X.basis()
+                    sage: phi = H(diagonal = lambda x: x^2)
+                    sage: phi(x[1] + x[2] + x[3])
+                    B[1] + 4*B[2] + 9*B[3]
+
+                TESTS::
+
+                As for usual homsets, the argument can be a Python function::
+
+                    sage: phi = H(lambda x: Y.zero())
+                    sage: phi
+                    Generic morphism:
+                      From: X
+                      To:   Y
+                    sage: phi(x[1] + x[3])
+                    0
+
+               We check that the homset category is properly set up::
+
+                    sage: X = CombinatorialFreeModule(QQ, [1,2,3]);   X.rename(&quot;X&quot;)
+                    sage: Y = CombinatorialFreeModule(QQ, [1,2,3,4]); Y.rename(&quot;Y&quot;)
+                    sage: H = Hom(X, Y)
+                    sage: H.zero().category_for()
+                    Category of finite dimensional vector spaces with basis over Rational Field
+                </opaque></omdoc></theory></omdoc>

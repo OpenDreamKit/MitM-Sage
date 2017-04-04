@@ -1,0 +1,14 @@
+theory http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class
+HasMeta http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.image
+constant http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.image
+Declares http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.image_basis
+constant http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.image_basis
+Declares http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.kernel
+constant http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.kernel
+Declares http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.kernel_basis
+constant http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.kernel_basis
+Declares http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.matrix
+constant http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?morphism_class?classmethod.matrix

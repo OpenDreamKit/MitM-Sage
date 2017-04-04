@@ -1,0 +1,1341 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.absolute_covers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the list of covers of ``self`` in absolute order.
+
+            .. SEEALSO::
+
+                :meth:`absolute_length`
+
+            EXAMPLES::
+
+                sage: W = WeylGroup([&quot;A&quot;, 3])
+                sage: s = W.simple_reflections()
+                sage: w0 = s[1]
+                sage: w1 = s[1]*s[2]*s[3]
+                sage: w0.absolute_covers()
+                [
+                [0 0 1 0]  [0 1 0 0]  [0 0 0 1]  [0 1 0 0]  [0 1 0 0]
+                [1 0 0 0]  [1 0 0 0]  [1 0 0 0]  [0 0 1 0]  [0 0 0 1]
+                [0 1 0 0]  [0 0 0 1]  [0 0 1 0]  [1 0 0 0]  [0 0 1 0]
+                [0 0 0 1], [0 0 1 0], [0 1 0 0], [0 0 0 1], [1 0 0 0]
+                ]
+            </opaque><constant name="classmethod.absolute_le">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether ``self`` is smaller than ``other`` in the absolute
+            order.
+
+            A general reflection is an element of the form `w s_i w^{-1}`,
+            where `s_i` is a simple reflection. The absolute order is defined
+            analogously to the weak order but using general reflections rather
+            than just simple reflections.
+
+            This partial order can be used to define noncrossing partitions
+            associated with this Coxeter group.
+
+            .. SEEALSO::
+
+                :meth:`absolute_length`
+
+            EXAMPLES::
+
+                sage: W = WeylGroup([&quot;A&quot;, 3])
+                sage: s = W.simple_reflections()
+                sage: w0 = s[1]
+                sage: w1 = s[1]*s[2]*s[3]
+                sage: w0.absolute_le(w1)
+                True
+                sage: w1.absolute_le(w0)
+                False
+                sage: w1.absolute_le(w1)
+                True
+            </opaque><constant name="classmethod.absolute_length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the absolute length of ``self``.
+
+            The absolute length is the length of the shortest expression
+            of the element as a product of reflections.
+
+            For permutations in the symmetric groups, the absolute
+            length is the size minus the number of its disjoint
+            cycles.
+
+            .. SEEALSO::
+
+                :meth:`absolute_le`
+
+            EXAMPLES::
+
+                sage: W = WeylGroup([&quot;A&quot;, 3])
+                sage: s = W.simple_reflections()
+                sage: (s[1]*s[2]*s[3]).absolute_length()
+                3
+
+                sage: W = SymmetricGroup(4)
+                sage: s = W.simple_reflections()
+                sage: (s[3]*s[2]*s[1]).absolute_length()
+                3
+            </opaque><constant name="classmethod.apply_demazure_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the Demazure or 0-Hecke product of ``self`` with another Coxeter group element.
+
+            See :meth:`CoxeterGroups.ParentMethods.simple_projections`.
+
+            INPUT:
+
+            - ``element`` -- either an element of the same Coxeter
+                group as ``self`` or a tuple or a list (such as a
+                reduced word) of elements from the index set of the
+                Coxeter group.
+
+            - ``side`` -- 'left' or 'right' (default: 'right'); the
+                side of ``self`` on which the element should be
+                applied. If ``side`` is 'left' then the operation is
+                applied on the left.
+
+            - ``length_increasing`` -- a boolean (default True)
+                whether to act length increasingly or decreasingly
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['C',4],prefix=&quot;s&quot;)
+                sage: v = W.from_reduced_word([1,2,3,4,3,1])
+                sage: v.apply_demazure_product([1,3,4,3,3])
+                s4*s1*s2*s3*s4*s3*s1
+                sage: v.apply_demazure_product([1,3,4,3],side='left')
+                s3*s4*s1*s2*s3*s4*s2*s3*s1
+                sage: v.apply_demazure_product((1,3,4,3),side='left')
+                s3*s4*s1*s2*s3*s4*s2*s3*s1
+                sage: v.apply_demazure_product(v)
+                s2*s3*s4*s1*s2*s3*s4*s2*s3*s2*s1
+
+            </opaque><constant name="classmethod.apply_simple_projection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            INPUT:
+
+            - ``i`` - an element of the index set of the Coxeter group
+            - ``side`` - 'left' or 'right' (default: 'right')
+            - ``length_increasing`` - a boolean (default: True) specifying
+              the direction of the projection
+
+            Returns the result of the application of the simple
+            projection `\pi_i` (resp. `\overline\pi_i`) on ``self``.
+
+            See :meth:`CoxeterGroups.ParentMethods.simple_projections`
+            for the definition of the simple projections.
+
+            EXAMPLE::
+
+                sage: W=CoxeterGroups().example()
+                sage: w=W.an_element()
+                sage: w
+                (1, 2, 3, 0)
+                sage: w.apply_simple_projection(2)
+                (1, 2, 3, 0)
+                sage: w.apply_simple_projection(2, length_increasing=False)
+                (1, 2, 0, 3)
+                sage: W = WeylGroup(['C',4],prefix=&quot;s&quot;)
+                sage: v = W.from_reduced_word([1,2,3,4,3,1])
+                sage: v
+                s1*s2*s3*s4*s3*s1
+                sage: v.apply_simple_projection(2)
+                s1*s2*s3*s4*s3*s1*s2
+                sage: v.apply_simple_projection(2, side='left')
+                s1*s2*s3*s4*s3*s1
+                sage: v.apply_simple_projection(1, length_increasing = False)
+                s1*s2*s3*s4*s3
+
+            </opaque><constant name="classmethod.binary_factorizations">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the set of all the factorizations `self = u v` such
+            that `l(self) = l(u) + l(v)`.
+
+            Iterating through this set is Constant Amortized Time
+            (counting arithmetic operations in the Coxeter group as
+            constant time) complexity, and memory linear in the length
+            of `self`.
+
+            One can pass as optional argument a predicate p such that
+            `p(u)` implies `p(u')` for any `u` left factor of `self`
+            and `u'` left factor of `u`. Then this returns only the
+            factorizations `self = uv` such `p(u)` holds.
+
+            EXAMPLES:
+
+            We construct the set of all factorizations of the maximal
+            element of the group::
+
+                sage: W = WeylGroup(['A',3])
+                sage: s = W.simple_reflections()
+                sage: w0 = W.from_reduced_word([1,2,3,1,2,1])
+                sage: w0.binary_factorizations().cardinality()
+                24
+
+            The same number of factorizations, by bounded length::
+
+                sage: [w0.binary_factorizations(lambda u: u.length() &lt;= l).cardinality() for l in [-1,0,1,2,3,4,5,6]]
+                [0, 1, 4, 9, 15, 20, 23, 24]
+
+            The number of factorizations of the elements just below
+            the maximal element::
+
+                sage: [(s[i]*w0).binary_factorizations().cardinality() for i in [1,2,3]]
+                [12, 12, 12]
+                sage: w0.binary_factorizations(lambda u: False).cardinality()
+                0
+
+            TESTS::
+
+                sage: w0.binary_factorizations().category()
+                Category of finite enumerated sets
+            </opaque><constant name="classmethod.bruhat_le">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.bruhat_lower_covers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.bruhat_lower_covers_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.bruhat_upper_covers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.bruhat_upper_covers_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.canonical_matrix">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the matrix of ``self`` in the canonical faithful
+            representation.
+
+            This is an `n`-dimension real faithful essential representation,
+            where `n` is the number of generators of the Coxeter group.
+            Note that this is not always the most natural matrix
+            representation, for instance in type `A_n`.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup([&quot;A&quot;, 3])
+                sage: s = W.simple_reflections()
+                sage: (s[1]*s[2]*s[3]).canonical_matrix()
+                [ 0  0 -1]
+                [ 1  0 -1]
+                [ 0  1 -1]
+            </opaque><constant name="classmethod.coset_representative">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            INPUT:
+
+            - ``index_set`` - a subset (or iterable) of the nodes of the Dynkin diagram
+            - ``side`` - 'left' or 'right'
+
+            Returns the unique shortest element of the Coxeter group
+            $W$ which is in the same left (resp. right) coset as
+            ``self``, with respect to the parabolic subgroup $W_I$.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example(5)
+                sage: s = W.simple_reflections()
+                sage: w = s[2]*s[1]*s[3]
+                sage: w.coset_representative([]).reduced_word()
+                [2, 3, 1]
+                sage: w.coset_representative([1]).reduced_word()
+                [2, 3]
+                sage: w.coset_representative([1,2]).reduced_word()
+                [2, 3]
+                sage: w.coset_representative([1,3]                 ).reduced_word()
+                [2]
+                sage: w.coset_representative([2,3]                 ).reduced_word()
+                [2, 1]
+                sage: w.coset_representative([1,2,3]               ).reduced_word()
+                []
+                sage: w.coset_representative([],      side = 'left').reduced_word()
+                [2, 3, 1]
+                sage: w.coset_representative([1],     side = 'left').reduced_word()
+                [2, 3, 1]
+                sage: w.coset_representative([1,2],   side = 'left').reduced_word()
+                [3]
+                sage: w.coset_representative([1,3],   side = 'left').reduced_word()
+                [2, 3, 1]
+                sage: w.coset_representative([2,3],   side = 'left').reduced_word()
+                [1]
+                sage: w.coset_representative([1,2,3], side = 'left').reduced_word()
+                []
+
+            </opaque><constant name="classmethod.cover_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the set of reflections ``t`` such that ``self`` ``t`` covers ``self``.
+
+            If ``side`` is 'left', ``t`` ``self`` covers ``self``.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',4], prefix=&quot;s&quot;)
+                sage: w = W.from_reduced_word([3,1,2,1])
+                sage: w.cover_reflections()
+                [s3, s2*s3*s2, s4, s1*s2*s3*s4*s3*s2*s1]
+                sage: w.cover_reflections(side = 'left')
+                [s4, s2, s1*s2*s1, s3*s4*s3]
+
+            </opaque><constant name="classmethod.coxeter_sorting_word">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the ``c``-sorting word of ``self``.
+
+            For a Coxeter element `c` and an element `w`, the `c`-sorting
+            word of `w` is the lexicographic minimal reduced expression of
+            `w` in the infinite word `c^\infty`.
+
+            INPUT:
+
+            - ``c``-- a Coxeter element.
+
+            OUTPUT:
+
+            the ``c``-sorting word of ``self`` as a list of integers.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: c = W.from_reduced_word([0,2,1])
+                sage: w = W.from_reduced_word([1,2,1,0,1])
+                sage: w.coxeter_sorting_word(c)
+                [2, 1, 2, 0, 1]
+            </opaque><constant name="classmethod.deodhar_factor_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns Deodhar's Bruhat order factoring element.
+
+            INPUT:
+
+            - ``w`` is an element of the same Coxeter group ``W`` as ``self``
+            - ``index_set`` is a subset of Dynkin nodes defining a parabolic subgroup ``W'`` of ``W``
+
+            It is assumed that ``v = self`` and ``w`` are minimum length coset representatives
+            for ``W/W'`` such that ``v`` $\le$ ``w`` in Bruhat order.
+
+            OUTPUT:
+
+            Deodhar's element ``f(v,w)`` is the unique element of ``W'`` such that,
+            for all ``v'`` and ``w'`` in ``W'``, ``vv'`` $\le$ ``ww'`` in ``W`` if and only if
+            ``v'`` $\le$ ``f(v,w) * w'`` in ``W'`` where ``*`` is the Demazure product.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',5],prefix=&quot;s&quot;)
+                sage: v = W.from_reduced_word([5])
+                sage: w = W.from_reduced_word([4,5,2,3,1,2])
+                sage: v.deodhar_factor_element(w,[1,3,4])
+                s3*s1
+                sage: W=WeylGroup(['C',2])
+                sage: w=W.from_reduced_word([2,1])
+                sage: w.deodhar_factor_element(W.from_reduced_word([2]),[1])
+                Traceback (most recent call last):
+                ...
+                ValueError: [2, 1] is not of minimum length in its coset for the parabolic subgroup with index set [1]
+
+            REFERENCES:
+
+                - [Deo1987a]_
+            </opaque><constant name="classmethod.deodhar_lift_down">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Letting ``v = self``, given a Bruhat relation ``v W'`` $\ge$ ``w W'`` among cosets
+            with respect to the subgroup ``W'`` given by the Dynkin node subset ``index_set``,
+            returns the Bruhat-maximum lift ``x`` of ``wW'`` such that ``v`` $\ge$ ``x``.
+
+            INPUT:
+
+            - ``w`` is an element of the same Coxeter group ``W`` as ``self``.
+            - ``index_set`` is a subset of Dynkin nodes defining a parabolic subgroup ``W'``.
+
+            OUTPUT:
+
+            The unique Bruhat-maximum element ``x`` in ``W`` such that ``x W' = w W'``
+            and ``v $\ge$ ``x``.
+
+            .. SEEALSO:: :meth:`sage.categories.coxeter_groups.CoxeterGroups.ElementMethods.deodhar_lift_up`
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3],prefix=&quot;s&quot;)
+                sage: v = W.from_reduced_word([1,2,3,2])
+                sage: w = W.from_reduced_word([3,2])
+                sage: v.deodhar_lift_down(w, [3])
+                s2*s3*s2
+
+            </opaque><constant name="classmethod.deodhar_lift_up">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Letting ``v = self``, given a Bruhat relation ``v W'`` $\le$ ``w W'`` among cosets
+            with respect to the subgroup ``W'`` given by the Dynkin node subset ``index_set``,
+            returns the Bruhat-minimum lift ``x`` of ``wW'`` such that ``v`` $\le$ ``x``.
+
+            INPUT:
+
+            - ``w`` is an element of the same Coxeter group ``W`` as ``self``.
+            - ``index_set`` is a subset of Dynkin nodes defining a parabolic subgroup ``W'``.
+
+            OUTPUT:
+
+            The unique Bruhat-minimum element ``x`` in ``W`` such that ``x W' = w W'``
+            and ``v`` $\le$ ``x``.
+
+            .. SEEALSO:: :meth:`sage.categories.coxeter_groups.CoxeterGroups.ElementMethods.deodhar_lift_down`
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3],prefix=&quot;s&quot;)
+                sage: v = W.from_reduced_word([1,2,3])
+                sage: w = W.from_reduced_word([1,3,2])
+                sage: v.deodhar_lift_up(w, [3])
+                s1*s2*s3*s2
+
+            </opaque><constant name="classmethod.descents">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            INPUT:
+
+            - ``index_set`` - a subset (as a list or iterable) of the nodes of the Dynkin diagram;
+              (default: all of them)
+            - ``side`` - 'left' or 'right' (default: 'right')
+            - ``positive`` - a boolean (default: ``False``)
+
+            Returns the descents of self, as a list of elements of the
+            index_set.
+
+            The ``index_set`` option can be used to restrict to the
+            parabolic subgroup indexed by ``index_set``.
+
+            If positive is ``True``, then returns the non-descents
+            instead
+
+            TODO: find a better name for ``positive``: complement? non_descent?
+
+            Caveat: the return type may change to some other iterable
+            (tuple, ...) in the future. Please use keyword arguments
+            also, as the order of the arguments may change as well.
+
+            EXAMPLES::
+
+                sage: W=CoxeterGroups().example()
+                sage: s=W.simple_reflections()
+                sage: w=s[0]*s[1]
+                sage: w.descents()
+                [1]
+                sage: w=s[0]*s[2]
+                sage: w.descents()
+                [0, 2]
+
+                TODO: side, index_set, positive
+            </opaque><constant name="classmethod.first_descent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the first left (resp. right) descent of self, as
+            ane element of ``index_set``, or ``None`` if there is none.
+
+            See :meth:`.descents` for a description of the options.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: s = W.simple_reflections()
+                sage: w = s[2]*s[0]
+                sage: w.first_descent()
+                0
+                sage: w = s[0]*s[2]
+                sage: w.first_descent()
+                0
+                sage: w = s[0]*s[1]
+                sage: w.first_descent()
+                1
+            </opaque><constant name="classmethod.has_descent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns whether i is a (left/right) descent of self.
+
+            See :meth:`.descents` for a description of the options.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: s = W.simple_reflections()
+                sage: w = s[0] * s[1] * s[2]
+                sage: w.has_descent(2)
+                True
+                sage: [ w.has_descent(i)                  for i in [0,1,2] ]
+                [False, False, True]
+                sage: [ w.has_descent(i, side = 'left')   for i in [0,1,2] ]
+                [True, False, False]
+                sage: [ w.has_descent(i, positive = True) for i in [0,1,2] ]
+                [True, True, False]
+
+            This default implementation delegates the work to
+            :meth:`.has_left_descent` and :meth:`.has_right_descent`.
+            </opaque><constant name="classmethod.has_full_support">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether ``self`` has full support.
+
+            An element is said to have full support if its support contains
+            all simple reflections.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: w = W.from_reduced_word([1,2,1])
+                sage: w.has_full_support()
+                False
+                sage: w = W.from_reduced_word([1,2,1,0,1])
+                sage: w.has_full_support()
+                True
+                </opaque><constant name="classmethod.has_left_descent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns whether `i` is a left descent of self.
+
+            This default implementation uses that a left descent of
+            `w` is a right descent of `w^{-1}`.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example(); W
+                The symmetric group on {0, ..., 3}
+                sage: w = W.an_element(); w
+                (1, 2, 3, 0)
+                sage: w.has_left_descent(0)
+                True
+                sage: w.has_left_descent(1)
+                False
+                sage: w.has_left_descent(2)
+                False
+
+            TESTS::
+
+                sage: w.has_left_descent.__module__
+                'sage.categories.coxeter_groups'
+            </opaque><constant name="classmethod.has_right_descent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns whether ``i`` is a right descent of self.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example(); W
+                The symmetric group on {0, ..., 3}
+                sage: w = W.an_element(); w
+                (1, 2, 3, 0)
+                sage: w.has_right_descent(0)
+                False
+                sage: w.has_right_descent(1)
+                False
+                sage: w.has_right_descent(2)
+                True
+            </opaque><constant name="classmethod.inversions_as_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text"></opaque><constant name="classmethod.is_coxeter_sortable">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether ``self`` is ``c``-sortable.
+
+            Given a Coxeter element `c`, an element `w` is `c`-sortable if
+            its `c`-sorting word decomposes into a sequence of weakly
+            decreasing subwords of `c`.
+
+            INPUT:
+
+            - ``c`` -- a Coxeter element.
+            - ``sorting_word`` -- sorting word (default: None) used to
+              not recompute the ``c``-sorting word if already computed.
+
+            OUTPUT:
+
+            is ``self`` ``c``-sortable
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: c = W.from_reduced_word([0,2,1])
+                sage: w = W.from_reduced_word([1,2,1,0,1])
+                sage: w.coxeter_sorting_word(c)
+                [2, 1, 2, 0, 1]
+                sage: w.is_coxeter_sortable(c)
+                False
+                sage: w = W.from_reduced_word([0,2,1,0,2])
+                sage: w.coxeter_sorting_word(c)
+                [2, 0, 1, 2, 0]
+                sage: w.is_coxeter_sortable(c)
+                True
+                sage: W = CoxeterGroup(['A',3])
+                sage: c = W.from_reduced_word([1,2,3])
+                sage: len([w for w in W if w.is_coxeter_sortable(c)]) # number of c-sortable elements in A_3 (Catalan number)
+                14
+            </opaque><constant name="classmethod.is_grassmannian">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            INPUT:
+
+            - ``side`` - &quot;left&quot; or &quot;right&quot; (default: &quot;right&quot;)
+
+            Tests whether ``self`` is Grassmannian, i.e. it has at
+            most one descent on the right (resp. on the left).
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example(); W
+                The symmetric group on {0, ..., 3}
+                sage: s = W.simple_reflections()
+                sage: W.one().is_grassmannian()
+                True
+                sage: s[1].is_grassmannian()
+                True
+                sage: (s[1]*s[2]).is_grassmannian()
+                True
+                sage: (s[0]*s[1]).is_grassmannian()
+                True
+                sage: (s[1]*s[2]*s[1]).is_grassmannian()
+                False
+
+                sage: (s[0]*s[2]*s[1]).is_grassmannian(side = &quot;left&quot;)
+                False
+                sage: (s[0]*s[2]*s[1]).is_grassmannian(side = &quot;right&quot;)
+                True
+                sage: (s[0]*s[2]*s[1]).is_grassmannian()
+                True
+            </opaque><constant name="classmethod.left_inversions_as_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the set of reflections ``r`` such that ``r``  ``self`` &lt; ``self``.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3], prefix=&quot;s&quot;)
+                sage: w = W.from_reduced_word([3,1,2,1])
+                sage: w.left_inversions_as_reflections()
+                [s1, s3, s1*s2*s3*s2*s1, s2*s3*s2]
+
+            </opaque><constant name="classmethod.length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the length of ``self``.
+
+            This is the minimal length of
+            a product of simple reflections giving ``self``.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: s1 = W.simple_reflection(1)
+                sage: s2 = W.simple_reflection(2)
+                sage: s1.length()
+                1
+                sage: (s1*s2).length()
+                2
+                sage: W = CoxeterGroups().example()
+                sage: s = W.simple_reflections()
+                sage: w = s[0]*s[1]*s[0]
+                sage: w.length()
+                3
+                sage: W = CoxeterGroups().example()
+                sage: sum((x^w.length()) for w in W) - expand(prod(sum(x^i for i in range(j+1)) for j in range(4))) # This is scandalously slow!!!
+                0
+
+            .. SEEALSO::
+
+                :meth:`.reduced_word`
+
+            .. TODO::
+
+                Should use reduced_word_iterator (or reverse_iterator)
+            </opaque><constant name="classmethod.lower_cover_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the reflections ``t`` such that ``self`` covers ``self`` ``t``.
+
+            If ``side`` is 'left', ``self`` covers ``t`` ``self``.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3],prefix=&quot;s&quot;)
+                sage: w = W.from_reduced_word([3,1,2,1])
+                sage: w.lower_cover_reflections()
+                [s1*s2*s3*s2*s1, s2, s1]
+                sage: w.lower_cover_reflections(side = 'left')
+                [s2*s3*s2, s3, s1]
+
+            </opaque><constant name="classmethod.lower_covers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns all elements that ``self`` covers in weak order.
+
+            INPUT:
+
+            - side - 'left' or 'right' (default: 'right')
+            - index_set - a list of indices or None
+
+            OUTPUT: a list
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3])
+                sage: w = W.from_reduced_word([3,2,1])
+                sage: [x.reduced_word() for x in w.lower_covers()]
+                [[3, 2]]
+
+            To obtain covers for left weak order, set the option side to 'left'::
+
+                sage: [x.reduced_word() for x in w.lower_covers(side='left')]
+                [[2, 1]]
+                sage: w = W.from_reduced_word([3,2,3,1])
+                sage: [x.reduced_word() for x in w.lower_covers()]
+                [[2, 3, 2], [3, 2, 1]]
+
+            Covers w.r.t. a parabolic subgroup are obtained with the option ``index_set``::
+
+                sage: [x.reduced_word() for x in w.lower_covers(index_set = [1,2])]
+                [[2, 3, 2]]
+                sage: [x.reduced_word() for x in w.lower_covers(side='left')]
+                [[3, 2, 1], [2, 3, 1]]
+            </opaque><constant name="classmethod.min_demazure_product_greater">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Finds the unique Bruhat-minimum element ``u`` such that ``v`` $\le$ ``w`` * ``u`` where ``v`` is ``self``, ``w`` is ``element`` and ``*`` is the Demazure product.
+
+            INPUT:
+
+            - ``element`` is either an element of the same Coxeter group as ``self`` or a list (such as a reduced word) of elements from the index set of the Coxeter group.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',4],prefix=&quot;s&quot;)
+                sage: v = W.from_reduced_word([2,3,4,1,2])
+                sage: u = W.from_reduced_word([2,3,2,1])
+                sage: v.min_demazure_product_greater(u)
+                s4*s2
+                sage: v.min_demazure_product_greater([2,3,2,1])
+                s4*s2
+                sage: v.min_demazure_product_greater((2,3,2,1))
+                s4*s2
+
+            </opaque><constant name="classmethod.reduced_word">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a reduced word for ``self``.
+
+            This is a word `[i_1,i_2,\ldots,i_k]` of minimal length
+            such that
+            `s_{i_1} s_{i_2} \cdots s_{i_k} = \operatorname{self}`,
+            where the `s_i` are the simple reflections.
+
+            EXAMPLES::
+
+                sage: W=CoxeterGroups().example()
+                sage: s=W.simple_reflections()
+                sage: w=s[0]*s[1]*s[2]
+                sage: w.reduced_word()
+                [0, 1, 2]
+                sage: w=s[0]*s[2]
+                sage: w.reduced_word()
+                [2, 0]
+
+            .. SEEALSO::
+
+                - :meth:`.reduced_words`, :meth:`.reduced_word_reverse_iterator`,
+                - :meth:`length`, :meth:`reduced_word_graph`
+            </opaque><constant name="classmethod.reduced_word_graph">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the reduced word graph of ``self``.
+
+            The reduced word graph of an element `w` in a Coxeter group
+            is the graph whose vertices are the reduced words for `w`
+            (see :meth:`reduced_word` for a definition of this term),
+            and which has an `m`-colored edge between two reduced words
+            `x` and `y` whenever `x` and `y` differ by exactly one
+            length-`m` braid move (with `m \geq 2`).
+
+            This graph is always connected (a theorem due to Tits) and
+            has no multiple edges.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3], prefix='s')
+                sage: w0 = W.long_element()
+                sage: G = w0.reduced_word_graph()
+                sage: G.num_verts()
+                16
+                sage: len(w0.reduced_words())
+                16
+                sage: G.num_edges()
+                18
+                sage: len([e for e in G.edges() if e[2] == 2])
+                10
+                sage: len([e for e in G.edges() if e[2] == 3])
+                8
+
+            TESTS::
+
+                sage: p = Permutation([3,2,4,1])
+                sage: pp = WeylGroup(['A',3]).from_reduced_word(p.reduced_word())
+                sage: pp.reduced_word_graph()
+                Graph on 3 vertices
+
+                sage: w1 = W.one()
+                sage: G = w1.reduced_word_graph()
+                sage: G.num_verts()
+                1
+                sage: G.num_edges()
+                0
+
+            .. SEEALSO::
+
+                :meth:`.reduced_words`, :meth:`.reduced_word_reverse_iterator`,
+                :meth:`length`, :meth:`reduced_word`
+            </opaque><constant name="classmethod.reduced_word_reverse_iterator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a reverse iterator on a reduced word for ``self``.
+
+            EXAMPLES::
+
+                sage: W=CoxeterGroups().example()
+                sage: s = W.simple_reflections()
+                sage: sigma = s[0]*s[1]*s[2]
+                sage: rI=sigma.reduced_word_reverse_iterator()
+                sage: [i for i in rI]
+                [2, 1, 0]
+                sage: s[0]*s[1]*s[2]==sigma
+                True
+                sage: sigma.length()
+                3
+
+            .. SEEALSO::
+
+                :meth:`.reduced_word`
+
+            Default implementation: recursively remove the first right
+            descent until the identity is reached (see :meth:`.first_descent` and
+            :meth:`~sage.categories.complex_reflection_or_generalized_coxeter_groups.ComplexReflectionOrGeneralizedCoxeterGroups.ElementMethods.apply_simple_reflection`).
+            </opaque><constant name="classmethod.reduced_words">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return all reduced words for ``self``.
+
+            See :meth:`reduced_word` for the definition of a reduced
+            word.
+
+            EXAMPLES::
+
+                sage: W=CoxeterGroups().example()
+                sage: s=W.simple_reflections()
+                sage: w=s[0]*s[2]
+                sage: w.reduced_words()
+                [[2, 0], [0, 2]]
+                sage: W=WeylGroup(['E',6])
+                sage: w=W.from_reduced_word([2,3,4,2])
+                sage: w.reduced_words()
+                [[3, 2, 4, 2], [2, 3, 4, 2], [3, 4, 2, 4]]
+
+            TODO: the result should be full featured finite enumerated
+            set (e.g. counting can be done much faster than iterating).
+
+            .. SEEALSO::
+
+                :meth:`.reduced_word`, :meth:`.reduced_word_reverse_iterator`,
+                :meth:`length`, :meth:`reduced_word_graph`
+            </opaque><constant name="classmethod.support">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the support of ``self``, that is the simple reflections that
+            appear in the reduced expressions of ``self``.
+
+            OUTPUT:
+
+            The support of ``self`` as a set of integers
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: w = W.from_reduced_word([1,2,1])
+                sage: w.support()
+                {1, 2}
+            </opaque><constant name="classmethod.upper_covers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns all elements that cover ``self`` in weak order.
+
+            INPUT:
+
+            - side - 'left' or 'right' (default: 'right')
+            - index_set - a list of indices or None
+
+            OUTPUT: a list
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3])
+                sage: w = W.from_reduced_word([2,3])
+                sage: [x.reduced_word() for x in w.upper_covers()]
+                [[2, 3, 1], [2, 3, 2]]
+
+            To obtain covers for left weak order, set the option ``side`` to 'left'::
+
+                sage: [x.reduced_word() for x in w.upper_covers(side = 'left')]
+                [[1, 2, 3], [2, 3, 2]]
+
+            Covers w.r.t. a parabolic subgroup are obtained with the option ``index_set``::
+
+                sage: [x.reduced_word() for x in w.upper_covers(index_set = [1])]
+                [[2, 3, 1]]
+                sage: [x.reduced_word() for x in w.upper_covers(side = 'left', index_set = [1])]
+                [[1, 2, 3]]
+            </opaque><constant name="classmethod.weak_covers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns all elements that ``self`` covers in weak order.
+
+            INPUT:
+
+            - side - 'left' or 'right'  (default: 'right')
+            - positive - a boolean (default: False)
+            - index_set - a list of indices or None
+
+            OUTPUT: a list
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3])
+                sage: w = W.from_reduced_word([3,2,1])
+                sage: [x.reduced_word() for x in w.weak_covers()]
+                [[3, 2]]
+
+            To obtain instead elements that cover self, set ``positive = True``::
+
+                sage: [x.reduced_word() for x in w.weak_covers(positive = True)]
+                [[3, 1, 2, 1], [2, 3, 2, 1]]
+
+            To obtain covers for left weak order, set the option side to 'left'::
+
+                sage: [x.reduced_word() for x in w.weak_covers(side='left')]
+                [[2, 1]]
+                sage: w = W.from_reduced_word([3,2,3,1])
+                sage: [x.reduced_word() for x in w.weak_covers()]
+                [[2, 3, 2], [3, 2, 1]]
+                sage: [x.reduced_word() for x in w.weak_covers(side='left')]
+                [[3, 2, 1], [2, 3, 1]]
+
+            Covers w.r.t. a parabolic subgroup are obtained with the option ``index_set``::
+
+                sage: [x.reduced_word() for x in w.weak_covers(index_set = [1,2])]
+                [[2, 3, 2]]
+            </opaque><constant name="classmethod.weak_le">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            comparison in weak order
+
+            INPUT:
+
+            - other - an element of the same Coxeter group
+            - side - 'left' or 'right'  (default: 'right')
+
+            OUTPUT: a boolean
+
+            Returns whether ``self`` &lt;= ``other`` in left
+            (resp. right) weak order, that is if 'v' can be obtained
+            from 'v' by length increasing multiplication by simple
+            reflections on the left (resp. right).
+
+            EXAMPLES::
+
+                sage: W = WeylGroup([&quot;A&quot;,3])
+                sage: u = W.from_reduced_word([1,2])
+                sage: v = W.from_reduced_word([1,2,3,2])
+                sage: u.weak_le(u)
+                True
+                sage: u.weak_le(v)
+                True
+                sage: v.weak_le(u)
+                False
+                sage: v.weak_le(v)
+                True
+
+            Comparison for left weak order is achieved with the option ``side``::
+
+                sage: u.weak_le(v, side = 'left')
+                False
+
+            The implementation uses the equivalent condition that any
+            reduced word for `u` is a right (resp. left) prefix of
+            some reduced word for `v`.
+
+            Complexity: `O(l * c)`, where `l` is the minimum of the
+            lengths of `u` and of `v`, and `c` is the cost of the low
+            level methods :meth:`first_descent`, :meth:`has_descent`,
+            :meth:`~sage.categories.complex_reflection_or_generalized_coxeter_groups.ComplexReflectionOrGeneralizedCoxeterGroups.ElementMethods.apply_simple_reflection`),
+            etc. Those are typically `O(n)`, where `n` is the rank of the
+            Coxeter group.
+
+            We now run consistency tests with permutations::
+
+                sage: W = WeylGroup([&quot;A&quot;,3])
+                sage: P4 = Permutations(4)
+                sage: def P4toW(w): return W.from_reduced_word(w.reduced_word())
+                sage: for u in P4:  # long time (5s on sage.math, 2011)
+                ....:     for v in P4:
+                ....:         assert u.permutohedron_lequal(v) == P4toW(u).weak_le(P4toW(v))
+                ....:         assert u.permutohedron_lequal(v, side='left') == P4toW(u).weak_le(P4toW(v), side='left')
+            </opaque></omdoc></theory></omdoc>

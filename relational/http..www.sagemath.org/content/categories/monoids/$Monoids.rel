@@ -12,8 +12,6 @@ Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.s
 constant http://www.sagemath.org/content/categories/monoids?Monoids?element.powers
 Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent._test_prod
 constant http://www.sagemath.org/content/categories/monoids?Monoids?parent._test_prod
-Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent.monoid_generators
-constant http://www.sagemath.org/content/categories/monoids?Monoids?parent.monoid_generators
 Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent.one_element
 constant http://www.sagemath.org/content/categories/monoids?Monoids?parent.one_element
 Declares http://www.sagemath.org/content/categories/monoids?Monoids http://www.sagemath.org/content/categories/monoids?Monoids?parent.submonoid

@@ -1,0 +1,35 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/principal_ideal_domains/PrincipalIdealDomains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_gcd_vs_xgcd">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Check that gcd and xgcd are compatible if implemented.
+
+            This test will prevent things like :trac:`17671` to happen again.
+
+            TESTS::
+
+                sage: ZZ._test_gcd_vs_xgcd()
+                sage: QQ._test_gcd_vs_xgcd()
+                sage: QQ['x']._test_gcd_vs_xgcd()
+                sage: QQbar['x']._test_gcd_vs_xgcd()
+                sage: RR._test_gcd_vs_xgcd()
+                sage: RR['x']._test_gcd_vs_xgcd()
+
+            A slightly more involved example of polynomial ring with a non UFD
+            base ring::
+
+                sage: K = QuadraticField(5)
+                sage: O = K.maximal_order()
+                sage: O in UniqueFactorizationDomains()
+                False
+                sage: R = PolynomialRing(O, 'x')
+                sage: F = R.fraction_field()
+                sage: F in PrincipalIdealDomains()
+                True
+                sage: F._test_gcd_vs_xgcd()
+            </opaque></omdoc></theory></omdoc>

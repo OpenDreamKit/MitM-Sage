@@ -6,7 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><omdoc name="Element Methods"><constant name="element.__add__">
+     </constant><omdoc name="Element Methods"><constant name="element._add_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -17,80 +17,24 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">__add__(Element self, right)
-File: sage/categories/coercion_methods.pyx (starting at line 24)
+     </constant><opaque format="text">
+            Return the sum of ``self`` and ``right``.
 
-    Return the sum of ``self`` and ``right``.
+            INPUT:
 
-    This calls the ``_add_`` method of ``self``, if it is
-    available and the two elements have the same parent.
+            - ``self``, ``right`` -- two elements with the same parent
 
-    Otherwise, the job is delegated to the coercion model.
+            OUTPUT:
 
-    Do not override; instead implement an ``_add_`` method in the
-    element class or a ``summation`` method in the parent class.
+            - an element of the same parent
 
-    .. SEEALSO:: :meth:`AdditiveMagmas.ElementMethods._add_`
+            EXAMPLES::
 
-    EXAMPLES::
-
-        sage: F = CommutativeAdditiveSemigroups().example()
-        sage: (a,b,c,d) = F.additive_semigroup_generators()
-        sage: a + b
-        a + b
-        sage: a.__add__(b)
-        a + b
-
-    This is :meth:`AdditiveMagmas.ElementMethods.__add__`, implemented as a
-    Cython method in :mod:`sage.categories.coercion_methods`::
-
-        sage: a.__add__.im_func is AdditiveMagmas.ElementMethods.__add__.im_func
-        True
-        sage: a.__add__.im_func is sage.categories.coercion_methods.__add__
-        True
-    </opaque><constant name="element.__radd__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">__radd__(Element self, left)
-File: sage/categories/coercion_methods.pyx (starting at line 60)
-
-    Handles the sum of two elements, when the left hand side
-    needs to be coerced first.
-
-    EXAMPLES::
-
-        sage: F = CommutativeAdditiveSemigroups().example()
-        sage: (a,b,c,d) = F.additive_semigroup_generators()
-        sage: a.__radd__(b)
-        a + b
-
-    This is :meth:`AdditiveMagmas.ElementMethods.__radd__`, implemented
-    as a Cython method in :mod:`sage.categories.coercion_methods`::
-
-        sage: a.__radd__.im_func is AdditiveMagmas.ElementMethods.__radd__.im_func
-        True
-        sage: a.__radd__.im_func is sage.categories.coercion_methods.__radd__
-        True
-    </opaque><constant name="element._add_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="element._add_parent">
+                sage: F = CommutativeAdditiveSemigroups().example()
+                sage: (a,b,c,d) = F.additive_semigroup_generators()
+                sage: a._add_(b)
+                a + b
+            </opaque><constant name="element._add_parent">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -421,8 +365,8 @@ File: sage/categories/coercion_methods.pyx (starting at line 60)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -477,6 +421,36 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a = A()
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
 
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::
@@ -509,8 +483,8 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -565,6 +539,36 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a = A()
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
 
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::
@@ -597,8 +601,8 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -653,6 +657,36 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a = A()
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
 
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::

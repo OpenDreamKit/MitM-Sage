@@ -1,0 +1,100 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/affine_weyl_groups/AffineWeylGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.affine_grassmannian_to_core">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Bijection between affine Grassmannian elements of type `A_k^{(1)}` and `(k+1)`-cores.
+
+            INPUT:
+
+            - ``self`` -- an affine Grassmannian element of some affine Weyl group of type `A_k^{(1)}`
+
+            Recall that an element `w` of an affine Weyl group is
+            affine Grassmannian if all its all reduced words end in 0, see :meth:`is_affine_grassmannian`.
+
+            OUTPUT:
+
+            - a `(k+1)`-core
+
+            See also :meth:`affine_grassmannian_to_partition`.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',2,1])
+                sage: w = W.from_reduced_word([0,2,1,0])
+                sage: la = w.affine_grassmannian_to_core(); la
+                [4, 2]
+                sage: type(la)
+                &lt;class 'sage.combinat.core.Cores_length_with_category.element_class'&gt;
+                sage: la.to_grassmannian() == w
+                True
+
+                sage: w = W.from_reduced_word([0,2,1])
+                sage: w.affine_grassmannian_to_core()
+                Traceback (most recent call last):
+                ...
+                ValueError: Error! this only works on type 'A' affine Grassmannian elements
+            </opaque><constant name="classmethod.affine_grassmannian_to_partition">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Bijection between affine Grassmannian elements of type `A_k^{(1)}` and `k`-bounded partitions.
+
+            INPUT:
+
+            - ``self`` is affine Grassmannian element of the affine Weyl group of type `A_k^{(1)}` (i.e. all reduced words end in 0)
+
+            OUTPUT:
+
+            - `k`-bounded partition
+
+            See also :meth:`affine_grassmannian_to_core`.
+
+            EXAMPLES::
+
+                sage: k = 2
+                sage: W = WeylGroup(['A',k,1])
+                sage: w = W.from_reduced_word([0,2,1,0])
+                sage: la = w.affine_grassmannian_to_partition(); la
+                [2, 2]
+                sage: la.from_kbounded_to_grassmannian(k) == w
+                True
+            </opaque><constant name="classmethod.is_affine_grassmannian">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Tests whether ``self`` is affine Grassmannian
+
+            An element of an affine Weyl group is *affine Grassmannian*
+            if any of the following equivalent properties holds:
+
+             - all reduced words for self end with 0.
+             - self is the identity, or 0 is its single right descent.
+             - self is a mimimal coset representative for W / cl W.
+
+            EXAMPLES::
+
+                sage: W=WeylGroup(['A',3,1])
+                sage: w=W.from_reduced_word([2,1,0])
+                sage: w.is_affine_grassmannian()
+                True
+                sage: w=W.from_reduced_word([2,0])
+                sage: w.is_affine_grassmannian()
+                False
+                sage: W.one().is_affine_grassmannian()
+                True
+            </opaque></omdoc></theory></omdoc>

@@ -1,0 +1,26 @@
+theory http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class
+HasMeta http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.bruhat_lower_covers_coroots
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.bruhat_lower_covers_coroots
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.bruhat_upper_covers_coroots
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.bruhat_upper_covers_coroots
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.inversion_arrangement
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.inversion_arrangement
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.inversions
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.inversions
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.is_pieri_factor
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.is_pieri_factor
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.left_pieri_factorizations
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.left_pieri_factorizations
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.quantum_bruhat_successors
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.quantum_bruhat_successors
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.reflection_to_coroot
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.reflection_to_coroot
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.reflection_to_root
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.reflection_to_root
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.stanley_symmetric_function
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.stanley_symmetric_function
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.stanley_symmetric_function_as_polynomial
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?element_class?classmethod.stanley_symmetric_function_as_polynomial

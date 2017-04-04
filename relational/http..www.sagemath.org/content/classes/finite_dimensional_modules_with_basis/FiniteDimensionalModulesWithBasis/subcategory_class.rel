@@ -1,0 +1,4 @@
+theory http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?subcategory_class http://www.sagemath.org/?Structures

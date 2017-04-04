@@ -1,0 +1,12 @@
+theory http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class
+HasMeta http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class?classmethod._test_stembridge_local_axioms
+constant http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class?classmethod._test_stembridge_local_axioms
+Declares http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class?classmethod.demazure_operator
+constant http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class?classmethod.demazure_operator
+Declares http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class?classmethod.demazure_subcrystal
+constant http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class?classmethod.demazure_subcrystal
+Declares http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class?classmethod.dual_equivalence_graph
+constant http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals?parent_class?classmethod.dual_equivalence_graph

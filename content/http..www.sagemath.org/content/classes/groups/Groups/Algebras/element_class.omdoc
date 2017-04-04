@@ -1,0 +1,59 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/groups/Groups/Algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.central_form">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return ``self`` expressed in the canonical basis of the center
+                of the group algebra.
+
+                INPUT:
+
+                - ``self`` -- an element of the center of the group algebra
+
+                OUTPUT:
+
+                - A formal linear combination of the conjugacy class
+                  representatives representing its coordinates in the
+                  canonical basis of the center. See
+                  :meth:`Groups.Algebras.ParentMethods.center_basis` for
+                  details.
+
+                .. WARNING::
+
+                    - This method requires the underlying group to
+                      have a method ``conjugacy_classes_representatives``
+                      (every permutation group has one, thanks GAP!).
+                    - This method does not check that the element is
+                      indeed central. Use the method
+                      :meth:`Monoids.Algebras.ElementMethods.is_central`
+                      for this purpose.
+                    - This function has a complexity linear in the
+                      number of conjugacy classes of the group. One
+                      could easily implement a function whose
+                      complexity is linear in the size of the support
+                      of ``self``.
+
+                EXAMPLES::
+
+                    sage: QS3 = SymmetricGroup(3).algebra(QQ)
+                    sage: A = QS3([2,3,1]) + QS3([3,1,2])
+                    sage: A.central_form()
+                    B[(1,2,3)]
+                    sage: QS4 = SymmetricGroup(4).algebra(QQ)
+                    sage: B = sum(len(s.cycle_type())*QS4(s) for s in Permutations(4))
+                    sage: B.central_form()
+                    4*B[()] + 3*B[(1,2)] + 2*B[(1,2)(3,4)] + 2*B[(1,2,3)] + B[(1,2,3,4)]
+
+                    sage: QG = GroupAlgebras(QQ).example(PermutationGroup([[(1,2,3),(4,5)],[(3,4)]]))
+                    sage: sum(i for i in QG.basis()).central_form()
+                    B[()] + B[(4,5)] + B[(3,4,5)] + B[(2,3)(4,5)] + B[(2,3,4,5)] + B[(1,2)(3,4,5)] + B[(1,2,3,4,5)]
+
+                .. SEEALSO::
+
+                    - :meth:`Groups.Algebras.ParentMethods.center_basis`
+                    - :meth:`Monoids.Algebras.ElementMethods.is_central`
+                </opaque></omdoc></theory></omdoc>

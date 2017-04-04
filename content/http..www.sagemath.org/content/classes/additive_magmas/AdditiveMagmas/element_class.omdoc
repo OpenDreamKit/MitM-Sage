@@ -1,0 +1,61 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._add_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the sum of ``self`` and ``right``.
+
+            INPUT:
+
+            - ``self``, ``right`` -- two elements with the same parent
+
+            OUTPUT:
+
+            - an element of the same parent
+
+            EXAMPLES::
+
+                sage: F = CommutativeAdditiveSemigroups().example()
+                sage: (a,b,c,d) = F.additive_semigroup_generators()
+                sage: a._add_(b)
+                a + b
+            </opaque><constant name="classmethod._add_parent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the sum of the two elements, calculated using
+            the ``summation`` method of the parent.
+
+            This is the default implementation of _add_ if
+            ``summation`` is implemented in the parent.
+
+            INPUT:
+
+            - ``other`` -- an element of the parent of ``self``
+
+            OUTPUT:
+
+            - an element of the parent of ``self``
+
+            EXAMPLES::
+
+                sage: S = CommutativeAdditiveSemigroups().example()
+                sage: (a,b,c,d) = S.additive_semigroup_generators()
+                sage: a._add_parent(b)
+                a + b
+            </opaque></omdoc></theory></omdoc>

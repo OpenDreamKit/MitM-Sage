@@ -1,0 +1,70 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/super_modules/SuperModules" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.is_even">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return if ``self`` is an even element.
+
+            EXAMPLES::
+
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_even()
+                False
+                sage: C.basis()[2,2].is_even()
+                True
+            </opaque><constant name="classmethod.is_even_odd">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``0`` if ``self`` is an even element or ``1``
+            if an odd element.
+
+            .. NOTE::
+
+                The default implementation assumes that the even/odd is
+                determined by the parity of :meth:`degree`.
+
+                Overwrite this method if the even/odd behavior is desired
+                to be independent.
+
+            EXAMPLES::
+
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_even_odd()
+                1
+                sage: C.basis()[2,2].is_even_odd()
+                0
+            </opaque><constant name="classmethod.is_odd">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return if ``self`` is an odd element.
+
+            EXAMPLES::
+
+                sage: cat = Algebras(QQ).WithBasis().Super()
+                sage: C = CombinatorialFreeModule(QQ, Partitions(), category=cat)
+                sage: C.degree_on_basis = sum
+                sage: C.basis()[2,2,1].is_odd()
+                True
+                sage: C.basis()[2,2].is_odd()
+                False
+            </opaque></omdoc></theory></omdoc>

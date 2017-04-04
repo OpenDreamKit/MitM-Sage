@@ -9,7 +9,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 601)
+     </constant><opaque format="text">File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 598)
 
         Return the ith permutation cycle in the disjoint cycle
         representation of self.
@@ -22,7 +22,7 @@
 
         OUTPUT: a permutation group element
 
-        EXAMPLES::
+        EXAMPLE::
 
             sage: G = PermutationGroup([[(1,2,3),(4,5)]],5)
             sage: g = G.gen(0)
@@ -42,7 +42,7 @@
        
        
      </constant><opaque format="text">PermutationGroupElement._act_on_array_on_position(self, ClonableIntArray x) -&gt; ClonableIntArray
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 763)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 760)
 
         Returns the right action of ``self`` on the ClonableIntArray
         ``x``. This is the action on positions.
@@ -67,7 +67,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 763)
        
        
      </constant><opaque format="text">PermutationGroupElement._act_on_list_on_position(self, list x) -&gt; list
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 735)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 732)
 
         Returns the right action of ``self`` on the list ``x``. This is the
         action on positions.
@@ -100,7 +100,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 735)
        
        
      </constant><opaque format="text">PermutationGroupElement._gap_cycle_string(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 908)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 905)
 
         Returns a cycle string for this permutation compatible with
         the GAP numbering.
@@ -129,7 +129,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 908)
        
        
      </constant><opaque format="text">PermutationGroupElement._gap_list(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 884)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 881)
 
         Returns this permutation in list notation compatible with the
         GAP numbering.
@@ -158,7 +158,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 884)
        
        
      </constant><opaque format="text">PermutationGroupElement._latex_(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 584)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 581)
 
         Returns a latex representation of this permutation.
 
@@ -183,7 +183,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 584)
        
        
      </constant><opaque format="text">PermutationGroupElement._mul_(left, _right)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 849)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 846)
 
         EXAMPLES::
 
@@ -204,7 +204,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 849)
        
        
      </constant><opaque format="text">PermutationGroupElement.cycle_string(self, singletons=False)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1291)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1288)
 
         Return string representation of this permutation.
 
@@ -229,7 +229,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1291)
        
        
      </constant><opaque format="text">PermutationGroupElement.cycle_tuples(self, singletons=False)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1233)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1230)
 
         Return self as a list of disjoint cycles, represented as tuples
         rather than permutation group elements.
@@ -275,7 +275,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1233)
        
        
      </constant><opaque format="text">PermutationGroupElement.cycle_type(self, singletons=True, as_list=False)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1310)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1307)
 
         Return the partition that gives the cycle type of ``g`` as an element of
         ``self``.
@@ -321,7 +321,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1310)
        
        
      </constant><opaque format="text">PermutationGroupElement.cycles(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1200)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1197)
 
         Return self as a list of disjoint cycles.
 
@@ -343,7 +343,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1200)
        
        
      </constant><opaque format="text">PermutationGroupElement.dict(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1019)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1016)
 
         Returns a dictionary associating each element of the domain with its
         image.
@@ -356,7 +356,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1019)
             sage: v = g.dict(); v
             {1: 2, 2: 3, 3: 4, 4: 1}
             sage: type(v[1])
-            &lt;... 'int'&gt;
+            &lt;type 'int'&gt;
             sage: x = G([2,1]); x
             (1,2)
             sage: x.dict()
@@ -370,7 +370,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1019)
        
        
      </constant><opaque format="text">PermutationGroupElement.domain(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 932)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 929)
 
         Returns the domain of self.
 
@@ -382,7 +382,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 932)
             sage: v = x.domain(); v
             [2, 1, 4, 3]
             sage: type(v[0])
-            &lt;... 'int'&gt;
+            &lt;type 'int'&gt;
             sage: x = G([2,1]); x
             (1,2)
             sage: x.domain()
@@ -413,7 +413,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 932)
        
        
      </constant><opaque format="text">PermutationGroupElement.has_descent(self, i, side='right', positive=False)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1356)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1353)
 
         INPUT:
 
@@ -467,7 +467,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1356)
        
        
      </constant><opaque format="text">PermutationGroupElement.inverse(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1088)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1085)
 
         Returns the inverse permutation.
 
@@ -505,7 +505,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1088)
        
        
      </constant><opaque format="text">PermutationGroupElement.matrix(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1414)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1411)
 
         Returns deg x deg permutation matrix associated to the permutation
         self
@@ -535,7 +535,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1414)
        
        
      </constant><opaque format="text">PermutationGroupElement.orbit(self, n, bool sorted=True)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1156)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1153)
 
         Returns the orbit of the integer `n` under this group
         element, as a sorted list.
@@ -566,7 +566,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1156)
        
        
      </constant><opaque format="text">PermutationGroupElement.sign(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1120)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1117)
 
         Returns the sign of self, which is `(-1)^{s}`, where
         `s` is the number of swaps.
@@ -594,7 +594,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1120)
        
        
      </constant><opaque format="text">PermutationGroupElement.tuple(self)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1000)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 997)
 
         Return tuple of images of the domain under self.
 
@@ -623,7 +623,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1000)
        
        
      </constant><opaque format="text">PermutationGroupElement.word_problem(self, words, display=True)
-File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1437)
+File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1434)
 
         G and H are permutation groups, g in G, H is a subgroup of G
         generated by a list (words) of elements of G. If g is in H, return
@@ -635,7 +635,7 @@ File: sage/groups/perm_gps/permgroup_element.pyx (starting at line 1437)
         functions &quot;EpimorphismFromFreeGroup&quot; and
         &quot;PreImagesRepresentative&quot;.
 
-        EXAMPLES::
+        EXAMPLE::
 
             sage: G = PermutationGroup([[(1,2,3),(4,5)],[(3,4)]], canonicalize=False)
             sage: g1, g2 = G.gens()

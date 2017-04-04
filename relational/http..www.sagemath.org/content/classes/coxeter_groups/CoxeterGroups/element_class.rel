@@ -1,0 +1,84 @@
+theory http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class
+HasMeta http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.absolute_covers
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.absolute_covers
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.absolute_le
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.absolute_le
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.absolute_length
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.absolute_length
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.apply_demazure_product
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.apply_demazure_product
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.apply_simple_projection
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.apply_simple_projection
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.binary_factorizations
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.binary_factorizations
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_le
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_le
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_lower_covers
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_lower_covers
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_lower_covers_reflections
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_lower_covers_reflections
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_upper_covers
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_upper_covers
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_upper_covers_reflections
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.bruhat_upper_covers_reflections
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.canonical_matrix
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.canonical_matrix
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.coset_representative
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.coset_representative
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.cover_reflections
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.cover_reflections
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.coxeter_sorting_word
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.coxeter_sorting_word
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.deodhar_factor_element
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.deodhar_factor_element
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.deodhar_lift_down
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.deodhar_lift_down
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.deodhar_lift_up
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.deodhar_lift_up
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.descents
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.descents
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.first_descent
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.first_descent
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.has_descent
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.has_descent
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.has_full_support
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.has_full_support
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.has_left_descent
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.has_left_descent
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.has_right_descent
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.has_right_descent
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.inversions_as_reflections
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.inversions_as_reflections
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.is_coxeter_sortable
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.is_coxeter_sortable
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.is_grassmannian
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.is_grassmannian
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.left_inversions_as_reflections
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.left_inversions_as_reflections
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.length
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.length
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.lower_cover_reflections
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.lower_cover_reflections
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.lower_covers
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.lower_covers
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.min_demazure_product_greater
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.min_demazure_product_greater
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.reduced_word
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.reduced_word
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.reduced_word_graph
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.reduced_word_graph
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.reduced_word_reverse_iterator
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.reduced_word_reverse_iterator
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.reduced_words
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.reduced_words
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.support
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.support
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.upper_covers
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.upper_covers
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.weak_covers
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.weak_covers
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.weak_le
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?element_class?classmethod.weak_le

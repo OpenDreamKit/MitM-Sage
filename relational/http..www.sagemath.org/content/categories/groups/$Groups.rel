@@ -16,7 +16,7 @@ Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sag
 constant http://www.sagemath.org/content/categories/groups?Groups?parent.group_generators
 Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.holomorph
 constant http://www.sagemath.org/content/categories/groups?Groups?parent.holomorph
-Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.is_abelian
-constant http://www.sagemath.org/content/categories/groups?Groups?parent.is_abelian
+Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.monoid_generators
+constant http://www.sagemath.org/content/categories/groups?Groups?parent.monoid_generators
 Declares http://www.sagemath.org/content/categories/groups?Groups http://www.sagemath.org/content/categories/groups?Groups?parent.semidirect_product
 constant http://www.sagemath.org/content/categories/groups?Groups?parent.semidirect_product

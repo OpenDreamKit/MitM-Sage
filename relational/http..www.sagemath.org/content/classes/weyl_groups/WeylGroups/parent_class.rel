@@ -1,0 +1,8 @@
+theory http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class
+HasMeta http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class?classmethod.pieri_factors
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class?classmethod.pieri_factors
+Declares http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class?classmethod.quantum_bruhat_graph
+constant http://www.sagemath.org/content/classes/weyl_groups/WeylGroups?parent_class?classmethod.quantum_bruhat_graph

@@ -1,0 +1,107 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/euclidean_domains/EuclideanDomains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_euclidean_degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test that the assumptions on a euclidean degree are met.
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: R._test_euclidean_degree()
+
+            .. SEEALSO::
+
+                :meth:`_test_quo_rem`
+            </opaque><constant name="classmethod._test_quo_rem">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test that the assumptions on a quotient with remainder of an
+            euclidean domain are met.
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: R._test_quo_rem()
+
+            .. SEEALSO::
+
+                :meth:`_test_euclidean_degree`
+            </opaque><constant name="classmethod.gcd_free_basis">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Compute a set of coprime elements that can be used to express the
+            elements of ``elts``.
+
+            INPUT:
+
+            - ``elts`` - A sequence of elements of ``self``.
+
+            OUTPUT:
+
+            A GCD-free basis (also called a coprime base) of ``elts``; that is,
+            a set of pairwise relatively prime elements of ``self`` such that
+            any element of ``elts`` can be written as a product of elements of
+            the set.
+
+            ALGORITHM:
+
+            Naive implementation of the algorithm described in Section 4.8 of
+            Bach &amp; Shallit [BS1996]_.
+
+            EXAMPLES::
+
+                sage: ZZ.gcd_free_basis([1])
+                []
+                sage: ZZ.gcd_free_basis([4, 30, 14, 49])
+                [2, 15, 7]
+
+                sage: Pol.&lt;x&gt; = QQ[]
+                sage: Pol.gcd_free_basis([
+                ....:     (x+1)^3*(x+2)^3*(x+3), (x+1)*(x+2)*(x+3),
+                ....:     (x+1)*(x+2)*(x+4)])
+                [x + 3, x + 4, x^2 + 3*x + 2]
+
+            TESTS::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: QQ.gcd_free_basis([x+1,x+2])
+                Traceback (most recent call last):
+                ...
+                TypeError: unable to convert x + 1 to an element of Rational Field
+            </opaque><constant name="classmethod.is_euclidean_domain">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return True, since this in an object of the category of Euclidean domains.
+
+            EXAMPLES::
+
+                sage: Parent(QQ,category=EuclideanDomains()).is_euclidean_domain()
+                True
+
+            </opaque></omdoc></theory></omdoc>

@@ -1,0 +1,41 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/coalgebras/Coalgebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.coproduct">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the coproduct of ``self``
+
+            EXAMPLES::
+
+                sage: A = HopfAlgebrasWithBasis(QQ).example(); A
+                An example of Hopf algebra with basis: the group algebra of the Dihedral group of order 6 as a permutation group over Rational Field
+                sage: [a,b] = A.algebra_generators()
+                sage: a, a.coproduct()
+                (B[(1,2,3)], B[(1,2,3)] # B[(1,2,3)])
+                sage: b, b.coproduct()
+                (B[(1,3)], B[(1,3)] # B[(1,3)])
+            </opaque><constant name="classmethod.counit">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the counit of ``self``
+
+            EXAMPLES::
+
+                sage: A = HopfAlgebrasWithBasis(QQ).example(); A
+                An example of Hopf algebra with basis: the group algebra of the Dihedral group of order 6 as a permutation group over Rational Field
+                sage: [a,b] = A.algebra_generators()
+                sage: a, a.counit()
+                (B[(1,2,3)], 1)
+                sage: b, b.counit()
+                (B[(1,3)], 1)
+            </opaque></omdoc></theory></omdoc>

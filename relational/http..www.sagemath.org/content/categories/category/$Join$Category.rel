@@ -2,5 +2,5 @@ theory http://www.sagemath.org/content/categories/category?JoinCategory
 HasMeta http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/?Structures
-Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/weyl_groups?WeylGroups
-Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets
+Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/groups?Groups
+Includes http://www.sagemath.org/content/categories/category?JoinCategory http://www.sagemath.org/content/categories/finitely_generated_semigroups?FinitelyGeneratedSemigroups

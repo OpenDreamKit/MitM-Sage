@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis/TensorProducts?element_class
+HasMeta http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis/TensorProducts?element_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis/TensorProducts?element_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis/TensorProducts?element_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis/TensorProducts?element_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis/TensorProducts?element_class?classmethod.apply_multilinear_morphism
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis/TensorProducts?element_class?classmethod.apply_multilinear_morphism

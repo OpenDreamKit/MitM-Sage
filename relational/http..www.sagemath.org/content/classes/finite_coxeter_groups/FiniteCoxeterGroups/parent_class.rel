@@ -1,0 +1,24 @@
+theory http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class
+HasMeta http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.bhz_poset
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.bhz_poset
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.bruhat_poset
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.bruhat_poset
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.cambrian_lattice
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.cambrian_lattice
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.inversion_sequence
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.inversion_sequence
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.long_element
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.long_element
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.m_cambrian_lattice
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.m_cambrian_lattice
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.reflections_from_w0
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.reflections_from_w0
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.shard_poset
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.shard_poset
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.weak_lattice
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.weak_lattice
+Declares http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.weak_poset
+constant http://www.sagemath.org/content/classes/finite_coxeter_groups/FiniteCoxeterGroups?parent_class?classmethod.weak_poset

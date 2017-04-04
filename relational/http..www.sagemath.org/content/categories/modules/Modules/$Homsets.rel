@@ -2,7 +2,7 @@ theory http://www.sagemath.org/content/categories/modules/Modules?Homsets
 HasMeta http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/?Structures
-Includes http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/modules?Modules
+Includes http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces
 Includes http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/homsets?HomsetsOf
 Declares http://www.sagemath.org/content/categories/modules/Modules?Homsets http://www.sagemath.org/content/categories/modules/Modules?Homsets?sage.categories.modules.Modules.Homsets
 constant http://www.sagemath.org/content/categories/modules/Modules?Homsets?sage.categories.modules.Modules.Homsets

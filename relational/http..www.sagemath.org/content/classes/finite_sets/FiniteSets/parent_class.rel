@@ -2,5 +2,5 @@ theory http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_cla
 HasMeta http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class http://www.sagemath.org/?Structures
-Declares http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class?classmethod.list
-constant http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class?classmethod.list
+Declares http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class?classmethod.is_finite
+constant http://www.sagemath.org/content/classes/finite_sets/FiniteSets?parent_class?classmethod.is_finite

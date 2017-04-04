@@ -1,0 +1,16 @@
+theory http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class
+HasMeta http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod._test_graded_components
+constant http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod._test_graded_components
+Declares http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.generating_series
+constant http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.generating_series
+Declares http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.graded_component
+constant http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.graded_component
+Declares http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.grading
+constant http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.grading
+Declares http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.grading_set
+constant http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.grading_set
+Declares http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.subset
+constant http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading?parent_class?classmethod.subset

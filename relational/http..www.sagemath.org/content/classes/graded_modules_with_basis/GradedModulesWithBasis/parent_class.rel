@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/graded_modules_with_basis/GradedModulesWithBasis?parent_class
+HasMeta http://www.sagemath.org/content/classes/graded_modules_with_basis/GradedModulesWithBasis?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/graded_modules_with_basis/GradedModulesWithBasis?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/graded_modules_with_basis/GradedModulesWithBasis?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/graded_modules_with_basis/GradedModulesWithBasis?parent_class http://www.sagemath.org/content/classes/graded_modules_with_basis/GradedModulesWithBasis?parent_class?classmethod.degree_negation
+constant http://www.sagemath.org/content/classes/graded_modules_with_basis/GradedModulesWithBasis?parent_class?classmethod.degree_negation

@@ -1,0 +1,4 @@
+theory http://www.sagemath.org/content/classes/magmas/Magmas/Algebras?parent_class
+HasMeta http://www.sagemath.org/content/classes/magmas/Magmas/Algebras?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/magmas/Magmas/Algebras?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/magmas/Magmas/Algebras?parent_class http://www.sagemath.org/?Structures

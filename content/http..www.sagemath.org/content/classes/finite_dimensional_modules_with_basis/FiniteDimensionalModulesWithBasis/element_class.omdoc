@@ -1,0 +1,31 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.dense_coefficient_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list of *all* coefficients of ``self``.
+
+            By default, this list is ordered in the same way as the
+            indexing set of the basis of the parent of ``self``.
+
+            INPUT:
+
+            - ``order`` -- (optional) an ordering of the basis indexing set
+
+            EXAMPLES::
+
+                sage: v = vector([0, -1, -3])
+                sage: v.dense_coefficient_list()
+                [0, -1, -3]
+                sage: v.dense_coefficient_list([2,1,0])
+                [-3, -1, 0]
+                sage: sorted(v.coefficients())
+                [-3, -1]
+            </opaque></omdoc></theory></omdoc>

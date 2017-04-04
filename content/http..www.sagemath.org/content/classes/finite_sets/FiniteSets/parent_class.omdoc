@@ -1,4 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/finite_sets/FiniteSets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.list">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/finite_sets/FiniteSets" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.is_finite">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -6,4 +6,12 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque></omdoc></theory></omdoc>
+     </constant><opaque format="text">
+            Return ``True`` since ``self`` is finite.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C.is_finite()
+                True
+            </opaque></omdoc></theory></omdoc>

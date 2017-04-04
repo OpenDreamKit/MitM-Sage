@@ -9,7 +9,24 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="classmethod._mul_parent">
+     </constant><opaque format="text">
+            Product of two elements
+
+            INPUT:
+
+            - ``self``, ``right`` -- two elements with the same parent
+
+            OUTPUT:
+
+            - an element of the same parent
+
+            EXAMPLES::
+
+                sage: S = Semigroups().example(&quot;free&quot;)
+                sage: x = S('a'); y = S('b')
+                sage: x._mul_(y)
+                'ab'
+            </opaque><constant name="classmethod._mul_parent">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

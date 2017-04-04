@@ -2,5 +2,5 @@ theory http://www.sagemath.org/content/categories/coalgebras/Coalgebras?TensorPr
 HasMeta http://www.sagemath.org/content/categories/coalgebras/Coalgebras?TensorProducts http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?TensorProducts http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?TensorProducts http://www.sagemath.org/?Structures
-Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?TensorProducts http://www.sagemath.org/content/categories/modules/Modules?TensorProducts
+Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?TensorProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?TensorProducts
 Includes http://www.sagemath.org/content/categories/coalgebras/Coalgebras?TensorProducts http://www.sagemath.org/content/categories/coalgebras?Coalgebras

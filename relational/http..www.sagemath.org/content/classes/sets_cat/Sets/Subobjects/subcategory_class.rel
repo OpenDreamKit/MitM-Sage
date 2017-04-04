@@ -1,0 +1,4 @@
+theory http://www.sagemath.org/content/classes/sets_cat/Sets/Subobjects?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/sets_cat/Sets/Subobjects?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sets_cat/Sets/Subobjects?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sets_cat/Sets/Subobjects?subcategory_class http://www.sagemath.org/?Structures

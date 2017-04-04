@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/principal_ideal_domains/PrincipalIdealDomains?parent_class
+HasMeta http://www.sagemath.org/content/classes/principal_ideal_domains/PrincipalIdealDomains?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/principal_ideal_domains/PrincipalIdealDomains?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/principal_ideal_domains/PrincipalIdealDomains?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/principal_ideal_domains/PrincipalIdealDomains?parent_class http://www.sagemath.org/content/classes/principal_ideal_domains/PrincipalIdealDomains?parent_class?classmethod._test_gcd_vs_xgcd
+constant http://www.sagemath.org/content/classes/principal_ideal_domains/PrincipalIdealDomains?parent_class?classmethod._test_gcd_vs_xgcd

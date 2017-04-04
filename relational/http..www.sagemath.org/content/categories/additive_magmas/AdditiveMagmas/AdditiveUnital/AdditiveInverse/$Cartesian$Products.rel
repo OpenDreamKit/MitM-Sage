@@ -4,3 +4,5 @@ Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagm
 Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital/AdditiveInverse?CartesianProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital/AdditiveInverse?CartesianProducts http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?CartesianProducts
 Includes http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital/AdditiveInverse?CartesianProducts http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?AdditiveInverse
+Declares http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital/AdditiveInverse?CartesianProducts http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital/AdditiveInverse?CartesianProducts?element._neg_
+constant http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital/AdditiveInverse?CartesianProducts?element._neg_

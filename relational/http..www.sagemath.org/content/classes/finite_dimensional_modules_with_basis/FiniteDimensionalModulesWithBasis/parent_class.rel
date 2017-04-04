@@ -1,0 +1,10 @@
+theory http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class
+HasMeta http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class?classmethod.annihilator
+constant http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class?classmethod.annihilator
+Declares http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class?classmethod.annihilator_basis
+constant http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class?classmethod.annihilator_basis
+Declares http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class?classmethod.quotient_module
+constant http://www.sagemath.org/content/classes/finite_dimensional_modules_with_basis/FiniteDimensionalModulesWithBasis?parent_class?classmethod.quotient_module

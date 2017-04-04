@@ -1,0 +1,16 @@
+theory http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class
+HasMeta http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod._derivative
+constant http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod._derivative
+Declares http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.denominator
+constant http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.denominator
+Declares http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.derivative
+constant http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.derivative
+Declares http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.factor
+constant http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.factor
+Declares http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.numerator
+constant http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.numerator
+Declares http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.partial_fraction_decomposition
+constant http://www.sagemath.org/content/classes/quotient_fields/QuotientFields?element_class?classmethod.partial_fraction_decomposition

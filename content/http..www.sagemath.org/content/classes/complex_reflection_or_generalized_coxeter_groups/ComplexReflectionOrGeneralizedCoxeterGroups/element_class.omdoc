@@ -1,0 +1,414 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/complex_reflection_or_generalized_coxeter_groups/ComplexReflectionOrGeneralizedCoxeterGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.__invert__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the inverse of ``self``.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['B',7])
+                sage: w = W.an_element()
+                sage: u = w.inverse()
+                sage: u == ~w
+                True
+                sage: u * w == w * u
+                True
+                sage: u * w
+                [1 0 0 0 0 0 0]
+                [0 1 0 0 0 0 0]
+                [0 0 1 0 0 0 0]
+                [0 0 0 1 0 0 0]
+                [0 0 0 0 1 0 0]
+                [0 0 0 0 0 1 0]
+                [0 0 0 0 0 0 1]
+            </opaque><constant name="classmethod.apply_conjugation_by_simple_reflection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Conjugate ``self`` by the ``i``-th simple reflection.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['A',3])
+                sage: w = W.from_reduced_word([3,1,2,1])
+                sage: w.apply_conjugation_by_simple_reflection(1).reduced_word()
+                [3, 2]
+            </opaque><constant name="classmethod.apply_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the result of the (left/right) multiplication of
+            ``self`` by ``word``.
+
+            INPUT:
+
+            - ``word`` -- a sequence of indices of reflections
+            - ``side`` -- (default: ``'right'``) indicates multiplying
+              from left or right
+            - ``word_type`` -- (optional, default: ``'all'``):
+              either ``'simple'``, ``'distinguished'``, or ``'all'``
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,3))          # optional - gap3
+                sage: W.one().apply_reflections([1])        # optional - gap3
+                (1,4)(2,3)(5,6)
+                sage: W.one().apply_reflections([2])        # optional - gap3
+                (1,3)(2,5)(4,6)
+                sage: W.one().apply_reflections([2,1])      # optional - gap3
+                (1,2,6)(3,4,5)
+
+
+                sage: W = CoxeterGroups().example()
+                sage: w = W.an_element(); w
+                (1, 2, 3, 0)
+                sage: w.apply_reflections([0,1], word_type='simple')
+                (2, 3, 1, 0)
+                sage: w
+                (1, 2, 3, 0)
+                sage: w.apply_reflections([0,1], side='left', word_type='simple')
+                (0, 1, 3, 2)
+
+
+                sage: W = ReflectionGroup((1,1,3))          # optional - gap3
+                sage: W.one().apply_reflections([1], word_type='distinguished')   # optional - gap3
+                (1,4)(2,3)(5,6)
+                sage: W.one().apply_reflections([2],   word_type='distinguished')   # optional - gap3
+                (1,3)(2,5)(4,6)
+                sage: W.one().apply_reflections([3],   word_type='distinguished')   # optional - gap3
+                (1,5)(2,4)(3,6)
+                sage: W.one().apply_reflections([2,1], word_type='distinguished')   # optional - gap3
+                (1,2,6)(3,4,5)
+
+                sage: W = ReflectionGroup((1,1,3), hyperplane_index_set=['A','B','C']); W   # optional - gap3
+                Irreducible real reflection group of rank 2 and type A2
+                sage: W.one().apply_reflections(['A'], word_type='distinguished')   # optional - gap3
+                (1,4)(2,3)(5,6)
+            </opaque><constant name="classmethod.apply_simple_reflection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``self`` multiplied by the simple reflection ``s[i]``.
+
+            INPUT:
+
+            - ``i`` -- an element of the index set
+            - ``side`` -- (default: ``&quot;right&quot;``) ``&quot;left&quot;`` or ``&quot;right&quot;``
+
+            This default implementation simply calls
+            :meth:`apply_simple_reflection_left` or
+            :meth:`apply_simple_reflection_right`.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: w = W.an_element(); w
+                (1, 2, 3, 0)
+                sage: w.apply_simple_reflection(0, side = &quot;left&quot;)
+                (0, 2, 3, 1)
+                sage: w.apply_simple_reflection(1, side = &quot;left&quot;)
+                (2, 1, 3, 0)
+                sage: w.apply_simple_reflection(2, side = &quot;left&quot;)
+                (1, 3, 2, 0)
+
+                sage: w.apply_simple_reflection(0, side = &quot;right&quot;)
+                (2, 1, 3, 0)
+                sage: w.apply_simple_reflection(1, side = &quot;right&quot;)
+                (1, 3, 2, 0)
+                sage: w.apply_simple_reflection(2, side = &quot;right&quot;)
+                (1, 2, 0, 3)
+
+            By default, ``side`` is ``&quot;right&quot;``::
+
+                sage: w.apply_simple_reflection(0)
+                (2, 1, 3, 0)
+
+            Some tests with a complex reflection group::
+
+                sage: from sage.categories.complex_reflection_groups import ComplexReflectionGroups
+                sage: W = ComplexReflectionGroups().example(); W
+                5-colored permutations of size 3
+                sage: w = W.an_element(); w
+                [[1, 0, 0], [3, 1, 2]]
+                sage: w.apply_simple_reflection(1, side=&quot;left&quot;)
+                [[0, 1, 0], [1, 3, 2]]
+                sage: w.apply_simple_reflection(2, side=&quot;left&quot;)
+                [[1, 0, 0], [3, 2, 1]]
+                sage: w.apply_simple_reflection(3, side=&quot;left&quot;)
+                [[1, 0, 1], [3, 1, 2]]
+
+                sage: w.apply_simple_reflection(1, side=&quot;right&quot;)
+                [[1, 0, 0], [3, 2, 1]]
+                sage: w.apply_simple_reflection(2, side=&quot;right&quot;)
+                [[1, 0, 0], [2, 1, 3]]
+                sage: w.apply_simple_reflection(3, side=&quot;right&quot;)
+                [[2, 0, 0], [3, 1, 2]]
+
+            TESTS::
+
+                sage: w.apply_simple_reflection_right.__module__
+                'sage.categories.complex_reflection_or_generalized_coxeter_groups'
+            </opaque><constant name="classmethod.apply_simple_reflection_left">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``self`` multiplied by the simple reflection ``s[i]``
+            on the left.
+
+            This low level method is used intensively. Coxeter groups
+            are encouraged to override this straightforward
+            implementation whenever a faster approach exists.
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: w = W.an_element(); w
+                (1, 2, 3, 0)
+                sage: w.apply_simple_reflection_left(0)
+                (0, 2, 3, 1)
+                sage: w.apply_simple_reflection_left(1)
+                (2, 1, 3, 0)
+                sage: w.apply_simple_reflection_left(2)
+                (1, 3, 2, 0)
+
+            EXAMPLES::
+
+                sage: from sage.categories.complex_reflection_groups import ComplexReflectionGroups
+                sage: W = ComplexReflectionGroups().example()
+                sage: w = W.an_element(); w
+                [[1, 0, 0], [3, 1, 2]]
+                sage: w.apply_simple_reflection_left(1)
+                [[0, 1, 0], [1, 3, 2]]
+                sage: w.apply_simple_reflection_left(2)
+                [[1, 0, 0], [3, 2, 1]]
+                sage: w.apply_simple_reflection_left(3)
+                [[1, 0, 1], [3, 1, 2]]
+
+            TESTS::
+
+                sage: w.apply_simple_reflection_left.__module__
+                'sage.categories.complex_reflection_or_generalized_coxeter_groups'
+            </opaque><constant name="classmethod.apply_simple_reflection_right">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``self`` multiplied by the simple reflection ``s[i]``
+            on the right.
+
+            This low level method is used intensively. Coxeter groups
+            are encouraged to override this straightforward
+            implementation whenever a faster approach exists.
+
+            EXAMPLES::
+
+                sage: W=CoxeterGroups().example()
+                sage: w = W.an_element(); w
+                (1, 2, 3, 0)
+                sage: w.apply_simple_reflection_right(0)
+                (2, 1, 3, 0)
+                sage: w.apply_simple_reflection_right(1)
+                (1, 3, 2, 0)
+                sage: w.apply_simple_reflection_right(2)
+                (1, 2, 0, 3)
+
+                sage: from sage.categories.complex_reflection_groups import ComplexReflectionGroups
+                sage: W = ComplexReflectionGroups().example()
+                sage: w = W.an_element(); w
+                [[1, 0, 0], [3, 1, 2]]
+                sage: w.apply_simple_reflection_right(1)
+                [[1, 0, 0], [3, 2, 1]]
+                sage: w.apply_simple_reflection_right(2)
+                [[1, 0, 0], [2, 1, 3]]
+                sage: w.apply_simple_reflection_right(3)
+                [[2, 0, 0], [3, 1, 2]]
+
+            TESTS::
+
+                sage: w.apply_simple_reflection_right.__module__
+                'sage.categories.complex_reflection_or_generalized_coxeter_groups'
+            </opaque><constant name="classmethod.apply_simple_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the result of the (left/right) multiplication of
+            ``self`` by ``word``.
+
+            INPUT:
+
+            - ``word`` -- a sequence of indices of simple reflections
+            - ``side`` -- (default: ``'right'``) indicates multiplying
+              from left or right
+
+            This is a specialized implementation of
+            :meth:`apply_reflections` for the simple reflections. The
+            rationale for its existence are:
+
+            - It can take advantage of ``apply_simple_reflection``,
+              which often is less expensive than computing a product.
+
+            - It reduced burden on implementations that would want to
+              provide an optimized version of this method.
+
+            EXAMPLES::
+
+               sage: W = CoxeterGroups().example()
+               sage: w = W.an_element(); w
+               (1, 2, 3, 0)
+               sage: w.apply_simple_reflections([0,1])
+               (2, 3, 1, 0)
+               sage: w
+               (1, 2, 3, 0)
+               sage: w.apply_simple_reflections([0,1],side='left')
+               (0, 1, 3, 2)
+            </opaque><constant name="classmethod.inverse">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the inverse of ``self``.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['B',7])
+                sage: w = W.an_element()
+                sage: u = w.inverse()
+                sage: u == ~w
+                True
+                sage: u * w == w * u
+                True
+                sage: u * w
+                [1 0 0 0 0 0 0]
+                [0 1 0 0 0 0 0]
+                [0 0 1 0 0 0 0]
+                [0 0 0 1 0 0 0]
+                [0 0 0 0 1 0 0]
+                [0 0 0 0 0 1 0]
+                [0 0 0 0 0 0 1]
+            </opaque><constant name="classmethod.is_reflection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether ``self`` is a reflection.
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
+                sage: [t.is_reflection() for t in W.reflections()]      # optional - gap3
+                [True, True, True, True, True, True]
+                sage: len([t for t in W.reflections() if t.is_reflection()])    # optional - gap3
+                6
+
+                sage: W = ReflectionGroup((2,1,3))                      # optional - gap3
+                sage: [t.is_reflection() for t in W.reflections()]      # optional - gap3
+                [True, True, True, True, True, True, True, True, True]
+                sage: len([t for t in W.reflections() if t.is_reflection()])    # optional - gap3
+                9
+            </opaque><constant name="classmethod.reflection_length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the reflection length of ``self``.
+
+            This is the minimal length of a factorization of ``self``
+            into reflections.
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,2))                      # optional - gap3
+                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
+                [0, 1]
+
+                sage: W = ReflectionGroup((2,1,2))                      # optional - gap3
+                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
+                [0, 1, 1, 1, 1, 2, 2, 2]
+
+                sage: W = ReflectionGroup((3,1,2))                      # optional - gap3
+                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
+                [0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+
+                sage: W = ReflectionGroup((2,2,2))                      # optional - gap3
+                sage: sorted([t.reflection_length() for t in W])        # optional - gap3
+                [0, 1, 1, 2]
+            </opaque></omdoc></theory></omdoc>

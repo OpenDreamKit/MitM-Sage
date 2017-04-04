@@ -1,0 +1,34 @@
+theory http://www.sagemath.org/content/classes/rings/Rings?parent_class
+HasMeta http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod._Hom_
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod._Hom_
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.__getitem__
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.__getitem__
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.__truediv__
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.__truediv__
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod._ideal_class_
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod._ideal_class_
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod._mul_
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod._mul_
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod._test_characteristic
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod._test_characteristic
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.bracket
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.bracket
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.characteristic
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.characteristic
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.ideal
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.ideal
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.ideal_monoid
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.ideal_monoid
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.is_ring
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.is_ring
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.is_zero
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.is_zero
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.quo
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.quo
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.quotient
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.quotient
+Declares http://www.sagemath.org/content/classes/rings/Rings?parent_class http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.quotient_ring
+constant http://www.sagemath.org/content/classes/rings/Rings?parent_class?classmethod.quotient_ring

@@ -6,7 +6,30 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><omdoc name="Parent Methods"><constant name="parent.facade_for">
+     </constant><omdoc name="Parent Methods"><constant name="parent._an_element_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Try to return an element of ``self``, as per
+            :meth:`Sets.ParentMethods.an_element`.
+
+            For each parent ``self`` is a facade for, this default
+            implementation tries the method ``an_element`` until it finds an
+            element in ``self``. If none is found raise a
+            ``NotImplementedError``.
+
+            EXAMPLES::
+
+                sage: S = Sets().Facade().example(); S
+                An example of facade set: the monoid of positive integers
+                sage: S.an_element()
+                1
+            </opaque><constant name="parent.facade_for">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

@@ -7,8 +7,6 @@ Declares http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumer
 constant http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets?classmethod.__iter__
 Declares http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets?classmethod._element_constructor_default
 constant http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets?classmethod._element_constructor_default
-Declares http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets?classmethod._element_constructor_facade
-constant http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets?classmethod._element_constructor_facade
 Declares http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets?classmethod._is_a
 constant http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets?classmethod._is_a
 Declares http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets http://www.sagemath.org/content/classes/sage/sets/disjoint_union_enumerated_sets?DisjointUnionEnumeratedSets?classmethod._repr_

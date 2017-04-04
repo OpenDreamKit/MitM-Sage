@@ -6,4 +6,21 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant></theory></omdoc>
+     </constant><omdoc name="Parent Methods"><constant name="parent._an_element_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return an element of ``self``, as per
+                :meth:`Sets.ParentMethods.an_element`
+
+                EXAMPLES::
+
+                    sage: S = FiniteEnumeratedSets().IsomorphicObjects().example()
+                    sage: S.an_element()  # indirect doctest
+                    1
+                </opaque></omdoc></theory></omdoc>

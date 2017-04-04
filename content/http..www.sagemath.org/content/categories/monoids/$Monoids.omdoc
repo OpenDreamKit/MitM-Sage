@@ -98,15 +98,7 @@
             ``elements`` keyword argument::
 
                 sage: S._test_prod(elements = (S('a'), S('b')))
-            </opaque><constant name="parent.monoid_generators">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="parent.one_element">
+            </opaque><constant name="parent.one_element">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

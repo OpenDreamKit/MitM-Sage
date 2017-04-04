@@ -1,0 +1,923 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.__getitem__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the coefficient of ``m`` in ``self``.
+
+            EXAMPLES::
+
+                sage: p = Partition([2,1])
+                sage: q = Partition([1,1,1])
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: a = s(p)
+                sage: a._coefficient_fast([2,1])
+                Traceback (most recent call last):
+                ...
+                TypeError: unhashable type: 'list'
+
+            ::
+
+                sage: a._coefficient_fast(p)
+                1
+                sage: a._coefficient_fast(q)
+                0
+                sage: a[p]
+                1
+                sage: a[q]
+                0
+            </opaque><constant name="classmethod.__len__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the number of basis elements whose coefficients in
+            ``self`` are nonzero.
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] - 3*B['c']
+                sage: len(f)
+                2
+
+            ::
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: z = s([4]) + s([2,1]) + s([1,1,1]) + s([1])
+                sage: len(z)
+                4
+            </opaque><constant name="classmethod.coefficient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the coefficient of ``m`` in ``self`` and raise an error
+            if ``m`` is not in the basis indexing set.
+
+            INPUT:
+
+            - ``m`` -- a basis index of the parent of ``self``
+
+            OUTPUT:
+
+            The ``B[m]``-coordinate of ``self`` with respect to the basis
+            ``B``. Here, ``B`` denotes the given basis of the parent of
+            ``self``.
+
+            EXAMPLES::
+
+                sage: s = CombinatorialFreeModule(QQ, Partitions())
+                sage: z = s([4]) - 2*s([2,1]) + s([1,1,1]) + s([1])
+                sage: z.coefficient([4])
+                1
+                sage: z.coefficient([2,1])
+                -2
+                sage: z.coefficient(Partition([2,1]))
+                -2
+                sage: z.coefficient([1,2])
+                Traceback (most recent call last):
+                ...
+                AssertionError: [1, 2] should be an element of Partitions
+                sage: z.coefficient(Composition([2,1]))
+                Traceback (most recent call last):
+                ...
+                AssertionError: [2, 1] should be an element of Partitions
+
+            Test that ``coefficient`` also works for those parents that do
+            not yet have an element_class::
+
+                sage: G = DihedralGroup(3)
+                sage: F = CombinatorialFreeModule(QQ, G)
+                sage: hasattr(G, &quot;element_class&quot;)
+                False
+                sage: g = G.an_element()
+                sage: (2*F.monomial(g)).coefficient(g)
+                2
+            </opaque><constant name="classmethod.coefficients">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list of the (non-zero) coefficients appearing on
+            the basis elements in ``self`` (in an arbitrary order).
+
+            INPUT:
+
+            - ``sort`` -- (default: ``True``) to sort the coefficients
+              based upon the default ordering of the indexing set
+
+            .. SEEALSO::
+
+                :meth:`~sage.categories.finite_dimensional_modules_with_basis.FiniteDimensionalModulesWithBasis.ElementMethods.dense_coefficient_list`
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] - 3*B['c']
+                sage: f.coefficients()
+                [1, -3]
+                sage: f = B['c'] - 3*B['a']
+                sage: f.coefficients()
+                [-3, 1]
+
+            ::
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: z = s([4]) + s([2,1]) + s([1,1,1]) + s([1])
+                sage: z.coefficients()
+                [1, 1, 1, 1]
+            </opaque><constant name="classmethod.is_zero">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``True`` if and only if ``self == 0``.
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] - 3*B['c']
+                sage: f.is_zero()
+                False
+                sage: F.zero().is_zero()
+                True
+
+            ::
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: s([2,1]).is_zero()
+                False
+                sage: s(0).is_zero()
+                True
+                sage: (s([2,1]) - s([2,1])).is_zero()
+                True
+            </opaque><constant name="classmethod.leading_coefficient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the leading coefficient of ``self``.
+
+            This is the coefficient of the term whose corresponding basis element is
+            maximal. Note that this may not be the term which actually appears
+            first when ``self`` is printed.  If the default term ordering is not
+            what is desired, a comparison function, ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, 0 if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;)
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + X.monomial(3)
+                sage: x.leading_coefficient()
+                1
+                sage: def cmp(x,y): return y-x
+                sage: x.leading_coefficient(cmp=cmp)
+                3
+
+                sage: def key(x): return -x
+                sage: x.leading_coefficient(key=key)
+                3
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.leading_coefficient()
+                -5
+            </opaque><constant name="classmethod.leading_item">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the pair ``(k, c)`` where
+
+            .. MATH::
+
+                c \cdot (\mbox{the basis element indexed by } k)
+
+            is the leading term of ``self``.
+
+            Here 'leading term' means that the corresponding basis element is
+            maximal.  Note that this may not be the term which actually appears
+            first when ``self`` is printed.  If the default term ordering is not
+            what is desired, a comparison function, ``cmp(x,y)``, can be
+            provided.  This should return a negative value if ``x &lt; y``, ``0``
+            if ``x == y`` and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + 4*X.monomial(3)
+                sage: x.leading_item()
+                (3, 4)
+                sage: def cmp(x,y): return y-x
+                sage: x.leading_item(cmp=cmp)
+                (1, 3)
+
+                sage: def key(x): return -x
+                sage: x.leading_item(key=key)
+                (1, 3)
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.leading_item()
+                ([3], -5)
+            </opaque><constant name="classmethod.leading_monomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the leading monomial of ``self``.
+
+            This is the monomial whose corresponding basis element is
+            maximal. Note that this may not be the term which actually appears
+            first when ``self`` is printed. If the default term ordering is not
+            what is desired, a comparison function, ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, ``0`` if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + X.monomial(3)
+                sage: x.leading_monomial()
+                B[3]
+                sage: def cmp(x,y): return y-x
+                sage: x.leading_monomial(cmp=cmp)
+                B[1]
+
+                sage: def key(x): return -x
+                sage: x.leading_monomial(key=key)
+                B[1]
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.leading_monomial()
+                s[3]
+            </opaque><constant name="classmethod.leading_support">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the maximal element of the support of ``self``. Note
+            that this may not be the term which actually appears first when
+            ``self`` is printed.
+
+            If the default ordering of the basis elements is not what is
+            desired, a comparison function, ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, ``0`` if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + 4*X.monomial(3)
+                sage: x.leading_support()
+                3
+                sage: def cmp(x,y): return y-x
+                sage: x.leading_support(cmp=cmp)
+                doctest:...: DeprecationWarning: the 'cmp' keyword is deprecated, use 'key' instead
+                See http://trac.sagemath.org/21043 for details.
+                1
+
+                sage: def key(x): return -x
+                sage: x.leading_support(key=key)
+                1
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.leading_support()
+                [3]
+            </opaque><constant name="classmethod.leading_term">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the leading term of ``self``.
+
+            This is the term whose corresponding basis element is
+            maximal. Note that this may not be the term which actually appears
+            first when ``self`` is printed. If the default term ordering is not
+            what is desired, a comparison function, ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, 0 if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + X.monomial(3)
+                sage: x.leading_term()
+                B[3]
+                sage: def cmp(x,y): return y-x
+                sage: x.leading_term(cmp=cmp)
+                3*B[1]
+
+                sage: def key(x): return -x
+                sage: x.leading_term(key=key)
+                3*B[1]
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.leading_term()
+                -5*s[3]
+            </opaque><constant name="classmethod.length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the number of basis elements whose coefficients in
+            ``self`` are nonzero.
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] - 3*B['c']
+                sage: f.length()
+                2
+
+            ::
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: z = s([4]) + s([2,1]) + s([1,1,1]) + s([1])
+                sage: z.length()
+                4
+            </opaque><constant name="classmethod.map_coefficients">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Mapping a function on coefficients.
+
+            INPUT:
+
+            - ``f`` -- an endofunction on the coefficient ring of the
+              free module
+
+            Return a new element of ``self.parent()`` obtained by applying the
+            function ``f`` to all of the coefficients of ``self``.
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] - 3*B['c']
+                sage: f.map_coefficients(lambda x: x+5)
+                6*B['a'] + 2*B['c']
+
+            Killed coefficients are handled properly::
+
+                sage: f.map_coefficients(lambda x: 0)
+                0
+                sage: list(f.map_coefficients(lambda x: 0))
+                []
+
+            ::
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: a = s([2,1])+2*s([3,2])
+                sage: a.map_coefficients(lambda x: x*2)
+                2*s[2, 1] + 4*s[3, 2]
+            </opaque><constant name="classmethod.map_item">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Mapping a function on items.
+
+            INPUT:
+
+            - ``f`` -- a function mapping pairs ``(index, coeff)`` to
+              other such pairs
+
+            Return a new element of ``self.parent()`` obtained by
+            applying the function `f` to all items ``(index, coeff)`` of
+            ``self``.
+
+            EXAMPLES::
+
+                sage: B = CombinatorialFreeModule(ZZ, [-1, 0, 1])
+                sage: x = B.an_element(); x
+                2*B[-1] + 2*B[0] + 3*B[1]
+                sage: x.map_item(lambda i, c: (-i, 2*c))
+                6*B[-1] + 4*B[0] + 4*B[1]
+
+            ``f`` needs not be injective::
+
+                sage: x.map_item(lambda i, c: (1, 2*c))
+                14*B[1]
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = lambda m,c: (m.conjugate(), 2*c)
+                sage: a = s([2,1]) + s([1,1,1])
+                sage: a.map_item(f)
+                2*s[2, 1] + 2*s[3]
+            </opaque><constant name="classmethod.map_support">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Mapping a function on the support.
+
+            INPUT:
+
+            - ``f`` -- an endofunction on the indices of the free module
+
+            Return a new element of ``self.parent()`` obtained by
+            applying the function ``f`` to all of the objects indexing
+            the basis elements.
+
+            EXAMPLES::
+
+                sage: B = CombinatorialFreeModule(ZZ, [-1, 0, 1])
+                sage: x = B.an_element(); x
+                2*B[-1] + 2*B[0] + 3*B[1]
+                sage: x.map_support(lambda i: -i)
+                3*B[-1] + 2*B[0] + 2*B[1]
+
+            ``f`` needs not be injective::
+
+                sage: x.map_support(lambda i: 1)
+                7*B[1]
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: a = s([2,1])+2*s([3,2])
+                sage: a.map_support(lambda x: x.conjugate())
+                s[2, 1] + 2*s[2, 2, 1]
+
+            TESTS::
+
+                sage: B.zero()      # This actually failed at some point!!! See #8890
+                0
+
+                sage: y = B.zero().map_support(lambda i: i/0); y
+                0
+                sage: y.parent() is B
+                True
+            </opaque><constant name="classmethod.map_support_skip_none">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Mapping a function on the support.
+
+            INPUT:
+
+            - ``f`` -- an endofunction on the indices of the free module
+
+            Returns a new element of ``self.parent()`` obtained by
+            applying the function `f` to all of the objects indexing
+            the basis elements.
+
+            EXAMPLES::
+
+                sage: B = CombinatorialFreeModule(ZZ, [-1, 0, 1])
+                sage: x = B.an_element(); x
+                2*B[-1] + 2*B[0] + 3*B[1]
+                sage: x.map_support_skip_none(lambda i: -i if i else None)
+                3*B[-1] + 2*B[1]
+
+            ``f`` needs not be injective::
+
+                sage: x.map_support_skip_none(lambda i: 1 if i else None)
+                5*B[1]
+
+            TESTS::
+
+                sage: y = x.map_support_skip_none(lambda i: None); y
+                0
+                sage: y.parent() is B
+                True
+            </opaque><constant name="classmethod.monomial_coefficients">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a dictionary whose keys are indices of basis elements
+            in the support of ``self`` and whose values are the
+            corresponding coefficients.
+
+            INPUT:
+
+            - ``copy`` -- (default: ``True``) if ``self`` is internally
+              represented by a dictionary ``d``, then make a copy of ``d``;
+              if ``False``, then this can cause undesired behavior by
+              mutating ``d``
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] + 3*B['c']
+                sage: d = f.monomial_coefficients()
+                sage: d['a']
+                1
+                sage: d['c']
+                3
+
+            TESTS:
+
+            We check that we make a copy of the coefficient dictionary::
+
+                sage: F = CombinatorialFreeModule(ZZ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] + 3*B['c']
+                sage: d = f.monomial_coefficients()
+                sage: d['a'] = 5
+                sage: f
+                B['a'] + 3*B['c']
+            </opaque><constant name="classmethod.monomials">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list of the monomials of ``self`` (in an arbitrary
+            order).
+
+            The monomials of an element `a` are defined to be the basis
+            elements whose corresponding coefficients of `a` are
+            non-zero.
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] + 2*B['c']
+                sage: f.monomials()
+                [B['a'], B['c']]
+
+                sage: (F.zero()).monomials()
+                []
+            </opaque><constant name="classmethod.support">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list of the objects indexing the basis of
+            ``self.parent()`` whose corresponding coefficients of
+            ``self`` are non-zero.
+
+            This method returns these objects in an arbitrary order.
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] - 3*B['c']
+                sage: sorted(f.support())
+                ['a', 'c']
+
+            ::
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: z = s([4]) + s([2,1]) + s([1,1,1]) + s([1])
+                sage: sorted(z.support())
+                [[1], [1, 1, 1], [2, 1], [4]]
+            </opaque><constant name="classmethod.support_of_term">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the support of ``self``, where ``self`` is a monomial
+            (possibly with coefficient).
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1,2,3,4]); X.rename(&quot;X&quot;)
+                sage: X.monomial(2).support_of_term()
+                2
+                sage: X.term(3, 2).support_of_term()
+                3
+
+            An exception is raised if ``self`` has more than one term::
+
+                sage: (X.monomial(2) + X.monomial(3)).support_of_term()
+                Traceback (most recent call last):
+                ...
+                ValueError: B[2] + B[3] is not a single term
+            </opaque><constant name="classmethod.tensor">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the tensor product of its arguments, as an element of
+            the tensor product of the parents of those elements.
+
+            EXAMPLES::
+
+                sage: C = AlgebrasWithBasis(QQ)
+                sage: A = C.example()
+                sage: (a,b,c) = A.algebra_generators()
+                sage: a.tensor(b, c)
+                B[word: a] # B[word: b] # B[word: c]
+
+            FIXME: is this a policy that we want to enforce on all parents?
+            </opaque><constant name="classmethod.terms">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list of the (non-zero) terms of ``self`` (in an
+            arbitrary order).
+
+            .. SEEALSO:: :meth:`monomials`
+
+            EXAMPLES::
+
+                sage: F = CombinatorialFreeModule(QQ, ['a','b','c'])
+                sage: B = F.basis()
+                sage: f = B['a'] + 2*B['c']
+                sage: f.terms()
+                [B['a'], 2*B['c']]
+            </opaque><constant name="classmethod.trailing_coefficient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the trailing coefficient of ``self``.
+
+            This is the coefficient of the monomial whose corresponding basis element is
+            minimal. Note that this may not be the term which actually appears
+            last when ``self`` is printed. If the default term ordering is not
+            what is desired, a comparison function ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, 0 if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + X.monomial(3)
+                sage: x.trailing_coefficient()
+                3
+                sage: def cmp(x,y): return y-x
+                sage: x.trailing_coefficient(cmp=cmp)
+                1
+
+                sage: def key(x): return -x
+                sage: x.trailing_coefficient(key=key)
+                1
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.trailing_coefficient()
+                2
+            </opaque><constant name="classmethod.trailing_item">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the pair ``(c, k)`` where ``c*self.parent().monomial(k)``
+            is the trailing term of ``self``.
+
+            This is the monomial whose corresponding basis element is
+            minimal. Note that this may not be the term which actually appears
+            last when ``self`` is printed.  If the default term ordering is not
+            what is desired, a comparison function ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, 0 if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + X.monomial(3)
+                sage: x.trailing_item()
+                (1, 3)
+                sage: def cmp(x,y): return y-x
+                sage: x.trailing_item(cmp=cmp)
+                (3, 1)
+
+                sage: def key(x): return -x
+                sage: x.trailing_item(key=key)
+                (3, 1)
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.trailing_item()
+                ([1], 2)
+            </opaque><constant name="classmethod.trailing_monomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the trailing monomial of ``self``.
+
+            This is the monomial whose corresponding basis element is
+            minimal. Note that this may not be the term which actually appears
+            last when ``self`` is printed. If the default term ordering is not
+            what is desired, a comparison function ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, 0 if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + X.monomial(3)
+                sage: x.trailing_monomial()
+                B[1]
+                sage: def cmp(x,y): return y-x
+                sage: x.trailing_monomial(cmp=cmp)
+                B[3]
+
+                sage: def key(x): return -x
+                sage: x.trailing_monomial(key=key)
+                B[3]
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.trailing_monomial()
+                s[1]
+            </opaque><constant name="classmethod.trailing_support">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the minimal element of the support of ``self``. Note
+            that this may not be the term which actually appears last when
+            ``self`` is printed.
+
+            If the default ordering of the basis elements is not what is
+            desired, a comparison function, ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, `0` if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + 4*X.monomial(3)
+                sage: x.trailing_support()
+                1
+                sage: def cmp(x,y): return y-x
+                sage: x.trailing_support(cmp=cmp)
+                doctest:...: DeprecationWarning: the 'cmp' keyword is deprecated, use 'key' instead
+                See http://trac.sagemath.org/21043 for details.
+                3
+
+                sage: def key(x): return -x
+                sage: x.trailing_support(key=key)
+                3
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.trailing_support()
+                [1]
+            </opaque><constant name="classmethod.trailing_term">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the trailing term of ``self``.
+
+            This is the term whose corresponding basis element is
+            minimal. Note that this may not be the term which actually appears
+            last when ``self`` is printed. If the default term ordering is not
+            what is desired, a comparison function ``cmp(x,y)``, can be provided.
+            This should return a negative value if ``x &lt; y``, 0 if ``x == y``
+            and a positive value if ``x &gt; y``.
+
+            EXAMPLES::
+
+                sage: X = CombinatorialFreeModule(QQ, [1, 2, 3]); X.rename(&quot;X&quot;); x = X.basis()
+                sage: x = 3*X.monomial(1) + 2*X.monomial(2) + X.monomial(3)
+                sage: x.trailing_term()
+                3*B[1]
+                sage: def cmp(x,y): return y-x
+                sage: x.trailing_term(cmp=cmp)
+                B[3]
+
+                sage: def key(x): return -x
+                sage: x.trailing_term(key=key)
+                B[3]
+
+                sage: s = SymmetricFunctions(QQ).schur()
+                sage: f = 2*s[1] + 3*s[2,1] - 5*s[3]
+                sage: f.trailing_term()
+                2*s[1]
+            </opaque></omdoc></theory></omdoc>
