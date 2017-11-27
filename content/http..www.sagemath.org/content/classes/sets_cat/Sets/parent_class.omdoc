@@ -48,15 +48,7 @@ File: sage/misc/lazy_import.pyx (starting at line 135)
                 False
                 sage: P(5) in P
                 True
-            </opaque><constant name="classmethod._an_element_">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="classmethod._element_constructor_from_element_class">
+            </opaque><constant name="classmethod._element_constructor_from_element_class">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -142,7 +134,7 @@ File: sage/misc/lazy_import.pyx (starting at line 135)
                 Traceback (most recent call last):
                 ...
                 AssertionError: the output of the method cardinality must either
-                be a Sage integer or infinity. Not &lt;... 'int'&gt;.
+                be a Sage integer or infinity. Not &lt;type 'int'&gt;.
             </opaque><constant name="classmethod._test_elements">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -617,15 +609,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
         sage: b.f()
         1
 
-    </opaque><constant name="classmethod.cardinality">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="classmethod.cartesian_product">
+    </opaque><constant name="classmethod.cartesian_product">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
@@ -688,15 +672,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
                 Category of Cartesian products of commutative rings and
                 Category of posets and
                 Category of Cartesian products of enumerated sets
-            </opaque><constant name="classmethod.is_finite">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="classmethod.is_parent_of">
+            </opaque><constant name="classmethod.is_parent_of">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -729,15 +705,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
                 (True, False)
                 sage: int(1) in S, S.is_parent_of(int(1))
                 (True, False)
-            </opaque><constant name="classmethod.random_element">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="classmethod.some_elements">
+            </opaque><constant name="classmethod.some_elements">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

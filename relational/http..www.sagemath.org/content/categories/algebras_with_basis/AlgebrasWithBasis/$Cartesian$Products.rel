@@ -4,6 +4,6 @@ Includes http://www.sagemath.org/content/categories/algebras_with_basis/Algebras
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis
 Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras/Algebras?CartesianProducts
-Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/modules_with_basis/ModulesWithBasis?CartesianProducts
+Includes http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces/WithBasis?CartesianProducts
 Declares http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?parent.one_from_cartesian_product_of_one_basis
 constant http://www.sagemath.org/content/categories/algebras_with_basis/AlgebrasWithBasis?CartesianProducts?parent.one_from_cartesian_product_of_one_basis

@@ -1,0 +1,42 @@
+theory http://www.sagemath.org/content/classes/posets/Posets?parent_class
+HasMeta http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.directed_subset
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.directed_subset
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.ge
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.ge
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.gt
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.gt
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.is_antichain_of_poset
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.is_antichain_of_poset
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.is_chain_of_poset
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.is_chain_of_poset
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.is_order_filter
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.is_order_filter
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.is_order_ideal
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.is_order_ideal
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.le
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.le
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.lower_covers
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.lower_covers
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.lt
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.lt
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.order_filter
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.order_filter
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.order_ideal
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.order_ideal
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.order_ideal_toggle
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.order_ideal_toggle
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.order_ideal_toggles
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.order_ideal_toggles
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.principal_lower_set
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.principal_lower_set
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.principal_order_filter
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.principal_order_filter
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.principal_order_ideal
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.principal_order_ideal
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.principal_upper_set
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.principal_upper_set
+Declares http://www.sagemath.org/content/classes/posets/Posets?parent_class http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.upper_covers
+constant http://www.sagemath.org/content/classes/posets/Posets?parent_class?classmethod.upper_covers

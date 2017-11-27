@@ -2,7 +2,7 @@ theory http://www.sagemath.org/content/categories/filtered_modules_with_basis?Fi
 HasMeta http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/?Structures
-Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/modules_with_basis?ModulesWithBasis
+Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?WithBasis
 Includes http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules?FilteredModules
 Declares http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?element.degree
 constant http://www.sagemath.org/content/categories/filtered_modules_with_basis?FilteredModulesWithBasis?element.degree

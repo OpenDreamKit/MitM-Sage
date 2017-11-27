@@ -1,0 +1,104 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.__neg__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return the negation of ``self``, if it exists.
+
+                This top-level implementation delegates the job to
+                ``_neg_``, for those additive unital magmas which may
+                choose to implement it instead of ``__neg__`` for
+                consistency.
+
+                EXAMPLES::
+
+                    sage: F = CombinatorialFreeModule(QQ, ['a','b'])
+                    sage: a,b = F.basis()
+                    sage: - b
+                    -B['b']
+
+                TESTS::
+
+                    sage: F = CombinatorialFreeModule(ZZ, ['a','b'])
+                    sage: a,b = F.gens()
+                    sage: FF = cartesian_product((F,F))
+                    sage: x = cartesian_product([a,2*a-3*b]) ; x
+                    B[(0, 'a')] + 2*B[(1, 'a')] - 3*B[(1, 'b')]
+                    sage: x.parent() is FF
+                    True
+                    sage: -x
+                    -B[(0, 'a')] - 2*B[(1, 'a')] + 3*B[(1, 'b')]
+                </opaque><constant name="classmethod.__nonzero__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return whether ``self`` is not zero.
+
+                All parents in the category ``CommutativeAdditiveMonoids()``
+                should implement this method.
+
+                .. note:: This is currently not useful because this method is
+                   overridden by ``Element``.
+
+                TESTS::
+
+                    sage: S = CommutativeAdditiveMonoids().example()
+                    sage: bool(S.zero())
+                    False
+                    sage: bool(S.an_element())
+                    True
+                 </opaque><constant name="classmethod._sub_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Default implementation of difference.
+
+                EXAMPLES::
+
+                    sage: F = CombinatorialFreeModule(QQ, ['a','b'])
+                    sage: a,b = F.basis()
+                    sage: a - b
+                    B['a'] - B['b']
+
+                TESTS:
+
+                Check that :trac:`18275` is fixed::
+
+                    sage: C = GF(5).cartesian_product(GF(5))
+                    sage: C.one() - C.one()
+                    (0, 0)
+                </opaque><constant name="classmethod._test_nonzero_equal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Test that ``.__bool__()`` behave consistently
+                with `` == 0``.
+
+                TESTS::
+
+                    sage: S = CommutativeAdditiveMonoids().example()
+                    sage: S.zero()._test_nonzero_equal()
+                    sage: S.an_element()._test_nonzero_equal()
+                </opaque></omdoc></theory></omdoc>

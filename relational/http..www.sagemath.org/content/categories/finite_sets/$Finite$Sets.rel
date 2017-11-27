@@ -5,5 +5,5 @@ Includes http://www.sagemath.org/content/categories/finite_sets?FiniteSets http:
 Includes http://www.sagemath.org/content/categories/finite_sets?FiniteSets http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/finite_sets?FiniteSets http://www.sagemath.org/content/categories/finite_sets?FiniteSets?Finite
 constant http://www.sagemath.org/content/categories/finite_sets?FiniteSets?Finite
-Declares http://www.sagemath.org/content/categories/finite_sets?FiniteSets http://www.sagemath.org/content/categories/finite_sets?FiniteSets?parent.list
-constant http://www.sagemath.org/content/categories/finite_sets?FiniteSets?parent.list
+Declares http://www.sagemath.org/content/categories/finite_sets?FiniteSets http://www.sagemath.org/content/categories/finite_sets?FiniteSets?parent.is_finite
+constant http://www.sagemath.org/content/categories/finite_sets?FiniteSets?parent.is_finite

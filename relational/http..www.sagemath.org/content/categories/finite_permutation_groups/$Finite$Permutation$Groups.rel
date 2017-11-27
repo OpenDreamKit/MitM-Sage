@@ -5,7 +5,5 @@ Includes http://www.sagemath.org/content/categories/finite_permutation_groups?Fi
 Includes http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups
 Includes http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finite_groups?FiniteGroups
 Includes http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite
-Declares http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?Enumerated
-constant http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?Enumerated
 Declares http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?parent.cycle_index
 constant http://www.sagemath.org/content/categories/finite_permutation_groups?FinitePermutationGroups?parent.cycle_index

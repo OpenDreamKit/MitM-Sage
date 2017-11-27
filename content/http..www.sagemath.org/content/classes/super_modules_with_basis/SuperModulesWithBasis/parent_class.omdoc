@@ -1,0 +1,36 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/super_modules_with_basis/SuperModulesWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._even_odd_on_basis">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the parity of the basis element indexed by ``m``.
+
+            OUTPUT:
+
+            ``0`` if ``m`` is for an even element or ``1`` if ``m``
+            is for an odd element.
+
+            .. NOTE::
+
+                The default implementation assumes that the even/odd is
+                determined by the parity of :meth:`degree`.
+
+                Overwrite this method if the even/odd behavior is desired
+                to be independent.
+
+            EXAMPLES::
+
+                sage: Q = QuadraticForm(QQ, 2, [1,2,3])
+                sage: C.&lt;x,y&gt; = CliffordAlgebra(Q)
+                sage: C._even_odd_on_basis((0,))
+                1
+                sage: C._even_odd_on_basis((0,1))
+                0
+            </opaque></omdoc></theory></omdoc>

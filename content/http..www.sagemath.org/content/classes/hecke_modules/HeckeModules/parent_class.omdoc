@@ -1,0 +1,56 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/hecke_modules/HeckeModules" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._Hom_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the homset from ``self`` to ``Y`` in the category ``category``
+
+            INPUT:
+
+            - ``Y`` -- an Hecke module
+            - ``category`` -- a subcategory of :class:`HeckeModules`() or None
+
+            The sole purpose of this method is to construct the homset
+            as a :class:`~sage.modular.hecke.homspace.HeckeModuleHomspace`. If
+            ``category`` is specified and is not a subcategory of
+            :class:`HeckeModules`, a ``TypeError`` is raised instead
+
+            This method is not meant to be called directly. Please use
+            :func:`sage.categories.homset.Hom` instead.
+
+            EXAMPLES::
+
+                sage: M = ModularForms(Gamma0(7), 4)
+                sage: H = M._Hom_(M, category = HeckeModules(QQ)); H
+                Set of Morphisms from Modular Forms space of dimension 3 for Congruence Subgroup Gamma0(7) of weight 4 over Rational Field to Modular Forms space of dimension 3 for Congruence Subgroup Gamma0(7) of weight 4 over Rational Field in Category of Hecke modules over Rational Field
+                sage: H.__class__
+                &lt;class 'sage.modular.hecke.homspace.HeckeModuleHomspace_with_category'&gt;
+                sage: TestSuite(H).run(skip=[&quot;_test_elements&quot;, &quot;_test_an_element&quot;, &quot;_test_elements_eq&quot;,
+                ....:                        &quot;_test_elements_eq_reflexive&quot;, &quot;_test_elements_eq_transitive&quot;,
+                ....:                        &quot;_test_elements_eq_symmetric&quot;, &quot;_test_elements_neq&quot;, &quot;_test_some_elements&quot;,
+                ....:                        &quot;_test_zero&quot;, &quot;_test_additive_associativity&quot;,
+                ....:                        &quot;_test_one&quot;, &quot;_test_associativity&quot;, &quot;_test_prod&quot;])
+
+            Fixing :meth:`_test_zero` (``__call__`` should accept a
+            function as input) and :meth:`_test_elements*` (modular
+            form morphisms elements should inherit from categories) is
+            :trac:`12879`.
+
+            TESTS::
+
+                sage: H = M._Hom_(M, category = HeckeModules(GF(5))); H
+                Traceback (most recent call last):
+                ...
+                TypeError: Category of Hecke modules over Finite Field of size 5 is not a subcategory of Category of Hecke modules over Rational Field
+
+            </opaque></omdoc></theory></omdoc>

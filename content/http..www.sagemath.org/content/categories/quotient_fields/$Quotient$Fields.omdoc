@@ -34,7 +34,7 @@
 
             - Derivative of ``self`` with respect to ``var``
 
-            .. seealso::
+            .. SEEALSO::
 
                :meth:`derivative`
 
@@ -97,7 +97,7 @@
             documentation for the global derivative() function for more
             details.
 
-            .. seealso::
+            .. SEEALSO::
 
                :meth:`_derivative`
 

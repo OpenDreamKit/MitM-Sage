@@ -14,15 +14,7 @@
                 sage: S = FiniteSemigroups().example(alphabet=('x','y'))
                 sage: sorted(S.idempotents())
                 ['x', 'xy', 'y', 'yx']
-            </opaque><constant name="classmethod.isomorphism_transformation_monoid">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text"></opaque><constant name="classmethod.j_classes">
+            </opaque><constant name="classmethod.j_classes">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

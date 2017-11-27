@@ -1,0 +1,36 @@
+theory http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class
+HasMeta http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._apply_module_endomorphism
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._apply_module_endomorphism
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._apply_module_morphism
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._apply_module_morphism
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._module_morphism
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._module_morphism
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._repr_
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._repr_
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._sum_of_monomials
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod._sum_of_monomials
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.basis
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.basis
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.cardinality
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.cardinality
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.echelon_form
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.echelon_form
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.linear_combination
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.linear_combination
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.module_morphism
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.module_morphism
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.monomial
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.monomial
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.monomial_or_zero_if_none
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.monomial_or_zero_if_none
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.submodule
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.submodule
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.sum_of_terms
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.sum_of_terms
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.tensor
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.tensor
+Declares http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.term
+constant http://www.sagemath.org/content/classes/modules_with_basis/ModulesWithBasis?parent_class?classmethod.term

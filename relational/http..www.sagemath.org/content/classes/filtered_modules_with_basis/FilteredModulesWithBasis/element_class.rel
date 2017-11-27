@@ -1,0 +1,18 @@
+theory http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class
+HasMeta http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.degree
+constant http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.degree
+Declares http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.degree_on_basis
+constant http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.degree_on_basis
+Declares http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.homogeneous_component
+constant http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.homogeneous_component
+Declares http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.homogeneous_degree
+constant http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.homogeneous_degree
+Declares http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.is_homogeneous
+constant http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.is_homogeneous
+Declares http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.maximal_degree
+constant http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.maximal_degree
+Declares http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.truncate
+constant http://www.sagemath.org/content/classes/filtered_modules_with_basis/FilteredModulesWithBasis?element_class?classmethod.truncate

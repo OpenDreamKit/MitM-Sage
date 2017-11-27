@@ -1,0 +1,34 @@
+theory http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class
+HasMeta http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod._test_descents
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod._test_descents
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod._test_has_descent
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod._test_has_descent
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod._test_reduced_word
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod._test_reduced_word
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod._test_simple_projections
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod._test_simple_projections
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.bruhat_interval
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.bruhat_interval
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.canonical_representation
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.canonical_representation
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.coxeter_element
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.coxeter_element
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.demazure_product
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.demazure_product
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.elements_of_length
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.elements_of_length
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.grassmannian_elements
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.grassmannian_elements
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.random_element_of_length
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.random_element_of_length
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.simple_projection
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.simple_projection
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.simple_projections
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.simple_projections
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.standard_coxeter_elements
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.standard_coxeter_elements
+Declares http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.weak_order_ideal
+constant http://www.sagemath.org/content/classes/coxeter_groups/CoxeterGroups?parent_class?classmethod.weak_order_ideal

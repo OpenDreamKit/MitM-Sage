@@ -5,10 +5,6 @@ Includes http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagm
 Includes http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas http://www.sagemath.org/content/categories/sets_cat?Sets
 Declares http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?sage.categories.additive_magmas.AdditiveMagmas
 constant http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?sage.categories.additive_magmas.AdditiveMagmas
-Declares http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?element.__add__
-constant http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?element.__add__
-Declares http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?element.__radd__
-constant http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?element.__radd__
 Declares http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?element._add_
 constant http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?element._add_
 Declares http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas http://www.sagemath.org/content/categories/additive_magmas?AdditiveMagmas?element._add_parent

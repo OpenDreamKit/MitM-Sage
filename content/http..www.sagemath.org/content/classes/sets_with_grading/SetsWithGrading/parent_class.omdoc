@@ -1,0 +1,120 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/sets_with_grading/SetsWithGrading" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_graded_components">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test that some graded components of ``self`` are parent with
+            initialized category and that the parent has a properly implemented
+            ``grading()`` method.
+
+            EXAMPLES::
+
+                sage: SetsWithGrading().example()._test_graded_components()
+            </opaque><constant name="classmethod.generating_series">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Default implementation for generating series.
+
+            OUTPUT:
+
+            A series, indexed by the grading set.
+
+            EXAMPLES::
+
+                sage: N = SetsWithGrading().example(); N
+                Non negative integers
+                sage: N.generating_series()
+                1/(-z + 1)
+            </opaque><constant name="classmethod.graded_component">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the graded component of ``self`` with grade ``grade``.
+
+            The default implementation just calls the method :meth:`subset()`
+            with the first argument ``grade``.
+
+            EXAMPLES::
+
+                sage: N = SetsWithGrading().example(); N
+                Non negative integers
+                sage: N.graded_component(3)
+                {3}
+            </opaque><constant name="classmethod.grading">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the grading of the element ``elt`` of ``self``.
+
+            This default implementation calls ``elt.grade()``.
+
+            EXAMPLES::
+
+                sage: N = SetsWithGrading().example(); N
+                Non negative integers
+                sage: N.grading(4)
+                4
+            </opaque><constant name="classmethod.grading_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the set ``self`` is graded by. By default, this is
+            the set of non-negative integers.
+
+            EXAMPLES::
+
+                sage: SetsWithGrading().example().grading_set()
+                Non negative integers
+            </opaque><constant name="classmethod.subset">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the subset of ``self`` described by the given parameters.
+
+            .. SEEALSO::
+
+                -:meth:`graded_component()`
+
+            EXAMPLES::
+
+                sage: W = WeightedIntegerVectors([3,2,1]); W
+                Integer vectors weighted by [3, 2, 1]
+                sage: W.subset(4)
+                Integer vectors of 4 weighted by [3, 2, 1]
+            </opaque></omdoc></theory></omdoc>

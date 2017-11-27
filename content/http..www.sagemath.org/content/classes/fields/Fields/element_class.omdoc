@@ -1,0 +1,102 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/fields/Fields" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.lcm">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Least common multiple.
+
+            .. NOTE::
+
+                Since we are in a field and the least common multiple is only
+                determined up to a unit, it is correct to either return zero or
+                one. Note that fraction fields of unique factorization domains
+                provide a more sophisticated lcm.
+
+            EXAMPLES::
+
+                sage: GF(2)(1).lcm(GF(2)(0))
+                0
+                sage: GF(2)(1).lcm(GF(2)(1))
+                1
+
+            For field of characteristic zero, the lcm of integers is considered
+            as if they were elements of the integer ring::
+
+                sage: lcm(15.0,12.0)
+                60.0000000000000
+
+            But for others floating point numbers, it is just `0.0` or `1.0`::
+
+                sage: lcm(3.2, 2.18)
+                1.00000000000000
+
+                sage: lcm(0.0, 0.0)
+                0.000000000000000
+
+            AUTHOR:
+
+            - Simon King (2011-02) -- :trac:`10771`
+            - Vincent Delecroix (2015) -- :trac:`17671`
+            </opaque><constant name="classmethod.xgcd">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Compute the extended gcd of ``self`` and ``other``.
+
+            INPUT:
+
+            - ``other`` -- an element with the same parent as ``self``
+
+            OUTPUT:
+
+            A tuple ``(r, s, t)`` of elements in the parent of ``self`` such
+            that ``r = s * self + t * other``. Since the computations are done
+            over a field, ``r`` is zero if ``self`` and ``other`` are zero,
+            and one otherwise.
+
+            AUTHORS:
+
+            - Julian Rueth (2012-10-19): moved here from
+              :class:`sage.structure.element.FieldElement`
+
+            EXAMPLES::
+
+                sage: K = GF(5)
+                sage: K(2).xgcd(K(1))
+                (1, 3, 0)
+                sage: K(0).xgcd(K(4))
+                (1, 0, 4)
+                sage: K(1).xgcd(K(1))
+                (1, 1, 0)
+                sage: GF(5)(0).xgcd(GF(5)(0))
+                (0, 0, 0)
+
+            The xgcd of non-zero floating point numbers will be a triple of
+            floating points. But if the input are two integral floating points
+            the result is a floating point version of the standard gcd on
+            `\ZZ`::
+
+                sage: xgcd(12.0, 8.0)
+                (4.00000000000000, 1.00000000000000, -1.00000000000000)
+
+                sage: xgcd(3.1, 2.98714)
+                (1.00000000000000, 0.322580645161290, 0.000000000000000)
+
+                sage: xgcd(0.0, 1.1)
+                (1.00000000000000, 0.000000000000000, 0.909090909090909)
+            </opaque></omdoc></theory></omdoc>

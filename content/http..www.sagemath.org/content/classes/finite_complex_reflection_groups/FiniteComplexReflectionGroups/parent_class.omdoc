@@ -1,0 +1,459 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_codegrees">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test the method :meth:`degrees`.
+
+            INPUT:
+
+            - ``options`` -- any keyword arguments accepted by :meth:`_tester`
+
+            EXAMPLES:
+
+                sage: from sage.categories.complex_reflection_groups import ComplexReflectionGroups
+                sage: W = ComplexReflectionGroups().Finite().example(); W   # optional - gap3
+                Reducible real reflection group of rank 4 and type A2 x B2
+                sage: W._test_codegrees()                  # optional - gap3
+
+                sage: W = SymmetricGroup(5)
+                sage: W._test_codegrees()
+
+            We now break the implementation of W.degrees and check that this is caught::
+
+                sage: W.codegrees = lambda: (1/1,5)
+                sage: W._test_codegrees()
+                Traceback (most recent call last):
+                ...
+                AssertionError: the codegrees should be integers
+
+                sage: W.codegrees = lambda: (2,1,-1)
+                sage: W._test_codegrees()
+                Traceback (most recent call last):
+                ...
+                AssertionError: the codegrees should be nonnegative
+
+            We restore W to its normal state::
+
+                sage: del W.codegrees
+                sage: W._test_codegrees()
+
+            See the documentation for :class:`TestSuite` for more information.
+            </opaque><constant name="classmethod._test_degrees">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test the method :meth:`degrees`.
+
+            INPUT:
+
+            - ``options`` -- any keyword arguments accepted by :meth:`_tester`
+
+            EXAMPLES:
+
+                sage: from sage.categories.complex_reflection_groups import ComplexReflectionGroups
+                sage: W = ComplexReflectionGroups().Finite().example(); W   # optional - gap3
+                Reducible real reflection group of rank 4 and type A2 x B2
+                sage: W._test_degrees()                    # optional - gap3
+
+                sage: W = SymmetricGroup(5)
+                sage: W._test_degrees()
+
+            We now break the implementation of W.degrees and check that this is caught::
+
+                sage: W.degrees = lambda: (1/1,5)
+                sage: W._test_degrees()
+                Traceback (most recent call last):
+                ...
+                AssertionError: the degrees should be integers
+
+                sage: W.degrees = lambda: (1,2,3)
+                sage: W._test_degrees()
+                Traceback (most recent call last):
+                ...
+                AssertionError: the degrees should be larger than 2
+
+            We restore W to its normal state::
+
+                sage: del W.degrees
+                sage: W._test_degrees()
+
+            See the documentation for :class:`TestSuite` for more information.
+            </opaque><constant name="classmethod.codegrees">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the codegrees of ``self``.
+
+            OUTPUT: a tuple of Sage integers
+
+            EXAMPLES::
+
+                sage: W = ColoredPermutations(1,4)
+                sage: W.codegrees()
+                (2, 1, 0)
+
+                sage: W = ColoredPermutations(3,3)
+                sage: W.codegrees()
+                (6, 3, 0)
+
+                sage: W = ReflectionGroup(31)              # optional - gap3
+                sage: W.codegrees()                        # optional - gap3
+                (28, 16, 12, 0)
+            </opaque><constant name="classmethod.degrees">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the degrees of ``self``.
+
+            OUTPUT: a tuple of Sage integers
+
+            EXAMPLES::
+
+                sage: W = ColoredPermutations(1,4)
+                sage: W.degrees()
+                (2, 3, 4)
+
+                sage: W = ColoredPermutations(3,3)
+                sage: W.degrees()
+                (3, 6, 9)
+
+                sage: W = ReflectionGroup(31)              # optional - gap3
+                sage: W.degrees()                          # optional - gap3
+                (8, 12, 20, 24)
+            </opaque><constant name="classmethod.is_real">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether ``self`` is real.
+
+            A complex reflection group is *real* if it is isomorphic
+            to a reflection group in `GL(V)` over a real vector space `V`.
+            Equivalently its character table has real entries.
+
+            This implementation uses the following statement: an
+            irreducible complex reflection group is real if and only
+            if `2` is a degree of ``self`` with multiplicity one.
+            Hence, in general we just need to compare the number of
+            occurences of `2` as degree of ``self`` and the number of
+            irreducible components.
+
+            EXAMPLES::
+
+                sage: W = ColoredPermutations(1,3)
+                sage: W.is_real()
+                True
+
+                sage: W = ColoredPermutations(4,3)
+                sage: W.is_real()
+                False
+
+            .. TODO::
+
+                 Add an example of non real finite complex reflection
+                 group that is generated by order 2 reflections.
+            </opaque><constant name="classmethod.is_well_generated">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether ``self`` is well-generated.
+
+            A finite complex reflection group is *well generated* if
+            the number of its simple reflections coincides with its rank.
+
+            .. SEEALSO:: :meth:`ComplexReflectionGroups.Finite.WellGenerated`
+
+            .. NOTE::
+
+                - All finite real reflection groups are well generated.
+                - The complex reflection groups of type `G(r,1,n)` and
+                  of type `G(r,r,n)` are well generated.
+                - The complex reflection groups of type `G(r,p,n)`
+                  with `1 &lt; p &lt; r` are *not* well generated.
+
+                - The direct product of two well generated finite
+                  complex reflection group is still well generated.
+
+            EXAMPLES::
+
+                sage: W = ColoredPermutations(1,3)
+                sage: W.is_well_generated()
+                True
+
+                sage: W = ColoredPermutations(4,3)
+                sage: W.is_well_generated()
+                True
+
+                sage: W = ReflectionGroup((4,2,3))         # optional - gap3
+                sage: W.is_well_generated()                # optional - gap3
+                False
+
+                sage: W = ReflectionGroup((4,4,3))         # optional - gap3
+                sage: W.is_well_generated()                # optional - gap3
+                True
+            </opaque><constant name="classmethod.number_of_reflection_hyperplanes">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.number_of_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque></omdoc></theory></omdoc>

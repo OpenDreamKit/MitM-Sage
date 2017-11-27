@@ -1,0 +1,22 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="subcategory_class" base="http://www.sagemath.org/content/classes/crystals/Crystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.TensorProducts">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the full subcategory of objects of ``self`` constructed
+            as tensor products.
+
+            .. SEEALSO::
+
+                - :class:`.tensor.TensorProductsCategory`
+                - :class:`~.covariant_functorial_construction.RegressiveCovariantFunctorialConstruction`.
+
+            EXAMPLES::
+
+                sage: HighestWeightCrystals().TensorProducts()
+                Category of tensor products of highest weight crystals
+            </opaque></omdoc></theory></omdoc>

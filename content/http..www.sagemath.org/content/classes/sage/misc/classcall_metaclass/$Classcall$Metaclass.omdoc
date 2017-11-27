@@ -1,0 +1,192 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="ClasscallMetaclass" base="http://www.sagemath.org/content/classes/sage/misc/classcall_metaclass" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.__contains__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/misc/classcall_metaclass.pyx (starting at line 413)
+
+        This method implements membership testing for a class
+
+        Let ``cls`` be a class in :class:`ClasscallMetaclass`, and consider
+        a call of the form::
+
+            x in cls
+
+        If ``cls`` defines a method ``__classcontains__``, then this
+        results in a call to::
+
+           cls.__classcontains__(cls, x)
+
+        .. warning:: for technical reasons, ``__classcontains__`` must
+            be defined as a :func:`staticmethod`, even though it
+            receives the class itself as its first argument.
+
+        EXAMPLES:
+
+        We construct a class which implements membership testing, and
+        which contains ``1`` and no other x::
+
+            sage: from sage.misc.classcall_metaclass import ClasscallMetaclass
+            sage: class Foo(object):
+            ....:     __metaclass__ = ClasscallMetaclass
+            ....:     @staticmethod
+            ....:     def __classcontains__(cls, x):
+            ....:         return x == 1
+            sage: 1 in Foo
+            True
+            sage: 2 in Foo
+            False
+
+        We now check that for a class without ``__classcontains__``
+        method, we emulate the usual error message::
+
+            sage: from sage.misc.classcall_metaclass import ClasscallMetaclass
+            sage: class Bar(object):
+            ....:     __metaclass__ = ClasscallMetaclass
+            sage: 1 in Bar
+            Traceback (most recent call last):
+            ...
+            TypeError: argument of type 'type' is not iterable
+        </opaque><constant name="classmethod.__get__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/misc/classcall_metaclass.pyx (starting at line 335)
+
+        This method implements instance binding behavior for nested classes.
+
+        Suppose that a class ``Outer`` contains a nested class ``cls`` which
+        is an instance of this metaclass. For any object ``obj`` of ``cls``,
+        this method implements a instance binding behavior for ``obj.cls`` by
+        delegating it to ``cls.__classget__(Outer, obj, owner)`` if available.
+        Otherwise, ``obj.cls`` results in ``cls``, as usual.
+
+        Similarly, a class binding as in ``Outer.cls`` is delegated
+        to ``cls.__classget__(Outer, None, owner)`` if available and
+        to ``cls`` if not.
+
+        .. warning:: for technical reasons, ``__classget__`` must be
+            defined as a :func:`staticmethod`, even though it receives
+            the class itself as its first argument.
+
+        For technical details, and in particular the description of the
+        ``owner`` argument, see the Section :python:`Implementing Descriptor
+        &lt;reference/datamodel.html#implementing-descriptors&gt;` in the Python
+        reference manual.
+
+        EXAMPLES:
+
+        We show how to implement a nested class ``Outer.Inner`` with a
+        binding behavior, as if it was a method of ``Outer``: namely,
+        for ``obj`` an instance of ``Outer``, calling
+        ``obj.Inner(...)`` is equivalent to ``Outer.Inner(obj, ...)``::
+
+            sage: import functools
+            sage: from sage.misc.nested_class import NestedClassMetaclass
+            sage: from sage.misc.classcall_metaclass import ClasscallMetaclass
+            sage: class Outer:
+            ....:     __metaclass__ = NestedClassMetaclass # workaround for python pickling bug
+            ...
+            ....:     class Inner(object):
+            ....:         __metaclass__ = ClasscallMetaclass
+            ....:         @staticmethod
+            ....:         def __classget__(cls, instance, owner):
+            ....:             print(&quot;calling __classget__(%s, %s, %s)&quot; % (
+            ....:                        cls, instance, owner))
+            ....:             if instance is None:
+            ....:                 return cls
+            ....:             return functools.partial(cls, instance)
+            ....:         def __init__(self, instance):
+            ....:             self.instance = instance
+            sage: obj = Outer()
+            sage: bar = obj.Inner()
+            calling __classget__(&lt;class '__main__.Outer.Inner'&gt;, &lt;__main__.Outer object at 0x...&gt;, &lt;class '__main__.Outer'&gt;)
+            sage: bar.instance == obj
+            True
+
+        Calling ``Outer.Inner`` returns the (unbinded) class as usual::
+
+            sage: Inner = Outer.Inner
+            calling __classget__(&lt;class '__main__.Outer.Inner'&gt;, None, &lt;class '__main__.Outer'&gt;)
+            sage: Inner
+            &lt;class '__main__.Outer.Inner'&gt;
+            sage: type(bar) is Inner
+            True
+
+        .. warning:: Inner has to be a new style class (i.e. a subclass of object).
+
+        .. warning::
+
+            calling ``obj.Inner`` does no longer return a class::
+
+                sage: bind = obj.Inner
+                calling __classget__(&lt;class '__main__.Outer.Inner'&gt;, &lt;__main__.Outer object at 0x...&gt;, &lt;class '__main__.Outer'&gt;)
+                sage: bind
+                &lt;functools.partial object at 0x...&gt;
+        </opaque><constant name="classmethod._set_classcall">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">ClasscallMetaclass._set_classcall(cls, function)
+File: sage/misc/classcall_metaclass.pyx (starting at line 122)
+
+        Change dynamically the classcall function for this class
+
+        EXAMPLES::
+
+            sage: from sage.misc.classcall_metaclass import ClasscallMetaclass
+            sage: class FOO(object):
+            ....:     __metaclass__ = ClasscallMetaclass
+            sage: FOO()
+            &lt;__main__.FOO object at ...&gt;
+
+        For efficiency reason, the resolution of the ``__classcall__``
+        method is done once for all, upon creation of the class. Thus,
+        later dynamic changes to this method are ignored by FOO::
+
+            sage: FOO.__classcall__ = ConstantFunction(1)
+            sage: FOO()
+            &lt;__main__.FOO object at ...&gt;
+
+        but not by subclasses created later on::
+
+            sage: class BAR(FOO): pass
+            sage: BAR()
+            1
+
+        To update the ``classcall`` special function for FOO, one
+        should use this setter::
+
+            sage: FOO._set_classcall(ConstantFunction(2))
+            sage: FOO()
+            2
+
+        Note that it has no influence on subclasses::
+
+            sage: class BAR(FOO): pass
+            sage: BAR()
+            1
+        </opaque></omdoc></theory></omdoc>

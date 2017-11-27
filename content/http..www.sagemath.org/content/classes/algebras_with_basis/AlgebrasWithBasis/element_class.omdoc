@@ -1,0 +1,40 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/algebras_with_basis/AlgebrasWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.__invert__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the inverse of ``self`` if ``self`` is a multiple of one,
+            and one is in the basis of this algebra. Otherwise throws
+            an error.
+
+            Caveat: this generic implementation is not complete; there
+            may be invertible elements in the algebra that can't be
+            inversed this way. It is correct though for graded
+            connected algebras with basis.
+
+            .. WARNING::
+
+                This might produce a result which does not belong to
+                the parent of ``self``, yet believes to do so. For
+                instance, inverting 2 times the unity will produce 1/2
+                times the unity, even if 1/2 is not in the base ring.
+                Handle with care.
+
+            EXAMPLES::
+
+                sage: C = AlgebrasWithBasis(QQ).example()
+                sage: x = C(2); x
+                2*B[word: ]
+                sage: ~x
+                1/2*B[word: ]
+                sage: a = C.algebra_generators().first(); a
+                B[word: a]
+                sage: ~a
+                Traceback (most recent call last):
+                ...
+                ValueError: cannot invert self (= B[word: a])
+            </opaque></omdoc></theory></omdoc>

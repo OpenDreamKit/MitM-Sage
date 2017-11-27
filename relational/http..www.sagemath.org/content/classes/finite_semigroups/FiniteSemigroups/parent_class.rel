@@ -4,8 +4,6 @@ Includes http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigro
 Includes http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class http://www.sagemath.org/?Structures
 Declares http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class?classmethod.idempotents
 constant http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class?classmethod.idempotents
-Declares http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class?classmethod.isomorphism_transformation_monoid
-constant http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class?classmethod.isomorphism_transformation_monoid
 Declares http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class?classmethod.j_classes
 constant http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class?classmethod.j_classes
 Declares http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class http://www.sagemath.org/content/classes/finite_semigroups/FiniteSemigroups?parent_class?classmethod.j_classes_of_idempotents

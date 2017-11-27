@@ -3,10 +3,6 @@ HasMeta http://www.sagemath.org/content/categories/modules?Modules http://www.sa
 Includes http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/bimodules?Bimodules
-Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?element.__mul__
-constant http://www.sagemath.org/content/categories/modules?Modules?element.__mul__
-Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?element.__rmul__
-constant http://www.sagemath.org/content/categories/modules?Modules?element.__rmul__
 Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?parent.tensor_square
 constant http://www.sagemath.org/content/categories/modules?Modules?parent.tensor_square
 Declares http://www.sagemath.org/content/categories/modules?Modules http://www.sagemath.org/content/categories/modules?Modules?subcategory.DualObjects

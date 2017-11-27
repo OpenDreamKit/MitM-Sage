@@ -79,7 +79,82 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="classmethod.__len__">
+     </constant><opaque format="text">
+            An iterator for the enumerated set.
+
+            ``iter(self)`` allows the combinatorial class to be treated as an
+            iterable. This is the default implementation from the category
+            ``EnumeratedSets()``; it just goes through the iterator of the set
+            to count the number of objects.
+
+            By decreasing order of priority, the second column of the
+            following array shows which method is used to define
+            ``__iter__``, when the methods of the first column are overloaded:
+
+            +------------------------+---------------------------------+
+            | Needed methods         | Default ``__iterator`` provided |
+            +========================+=================================+
+            | ``first`` and ``next`` | ``_iterator_from_next``         |
+            +------------------------+---------------------------------+
+            | ``unrank``             | ``_iterator_from_unrank``       |
+            +------------------------+---------------------------------+
+            | ``list`                | ``_iterator_from_next``         |
+            +------------------------+---------------------------------+
+
+            It is also possible to override ``__iter__`` method itself. Then
+            the methods of the first column are defined using  ``__iter__``
+
+            If none of these are provided, raise a ``NotImplementedError``.
+
+            EXAMPLES::
+
+            We start with an example where nothing is implemented::
+
+                sage: class broken(UniqueRepresentation, Parent):
+                ....:     def __init__(self):
+                ....:         Parent.__init__(self, category = EnumeratedSets())
+                ....:
+                sage: it = iter(broken()); [next(it), next(it), next(it)]
+                Traceback (most recent call last):
+                ...
+                NotImplementedError: iterator called but not implemented
+
+            Here is what happens when ``first`` and ``next`` are implemented::
+
+                sage: class set_first_next(UniqueRepresentation, Parent):
+                ....:     def __init__(self):
+                ....:         Parent.__init__(self, category = EnumeratedSets())
+                ....:     def first(self):
+                ....:         return 0
+                ....:     def next(self, elt):
+                ....:         return elt+1
+                ....:
+                sage: it = iter(set_first_next()); [next(it), next(it), next(it)]
+                [0, 1, 2]
+
+            Let us try with ``unrank``::
+
+                sage: class set_unrank(UniqueRepresentation, Parent):
+                ....:     def __init__(self):
+                ....:         Parent.__init__(self, category = EnumeratedSets())
+                ....:     def unrank(self, i):
+                ....:         return i + 5
+                ....:
+                sage: it = iter(set_unrank()); [next(it), next(it), next(it)]
+                [5, 6, 7]
+
+            Let us finally try with ``list``::
+
+                sage: class set_list(UniqueRepresentation, Parent):
+                ....:     def __init__(self):
+                ....:         Parent.__init__(self, category = EnumeratedSets())
+                ....:     def list(self):
+                ....:         return [5, 6, 7]
+                ....:
+                sage: it = iter(set_list()); [next(it), next(it), next(it)]
+                [5, 6, 7]
+
+            </opaque><constant name="classmethod.__len__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -96,7 +171,125 @@
                 5
                 sage: len(MatrixSpace(GF(2), 3, 3))
                 512
-            </opaque><constant name="classmethod._an_element_from_iterator">
+            </opaque><constant name="classmethod._an_element_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod._an_element_from_iterator">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -800,7 +993,34 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
                 11
 
             TODO: specify the behavior when ``obj`` is not in ``self``.
-            </opaque><constant name="classmethod.rank">
+            </opaque><constant name="classmethod.random_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a random element in ``self``.
+
+            Unless otherwise stated, and for finite enumerated sets,
+            the probability is uniform.
+
+            This is a generic implementation from the category
+            ``EnumeratedSets()``. It raise a ``NotImplementedError``
+            since one does not know whether the set is finite.
+
+            EXAMPLES::
+
+                sage: class broken(UniqueRepresentation, Parent):
+                ....:  def __init__(self):
+                ....:      Parent.__init__(self, category = EnumeratedSets())
+                sage: broken().random_element()
+                Traceback (most recent call last):
+                ...
+                NotImplementedError: unknown cardinality
+                </opaque><constant name="classmethod.rank">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

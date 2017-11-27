@@ -1,12 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FinitePermutationGroups" base="http://www.sagemath.org/content/categories/finite_permutation_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups"></import><import from="http://www.sagemath.org/content/categories/finite_groups?FiniteGroups"></import><import from="http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite"></import><constant name="Enumerated">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="ded"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Axioms" name="Enumerated"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><omdoc name="Parent Methods"><constant name="parent.cycle_index">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="FinitePermutationGroups" base="http://www.sagemath.org/content/categories/finite_permutation_groups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/permutation_groups?PermutationGroups"></import><import from="http://www.sagemath.org/content/categories/finite_groups?FiniteGroups"></import><import from="http://www.sagemath.org/content/categories/finitely_generated_semigroups/FinitelyGeneratedSemigroups?Finite"></import><omdoc name="Parent Methods"><constant name="parent.cycle_index">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

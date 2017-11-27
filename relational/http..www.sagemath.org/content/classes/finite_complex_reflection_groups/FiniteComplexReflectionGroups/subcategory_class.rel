@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?subcategory_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?subcategory_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?subcategory_class?classmethod.WellGenerated
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?subcategory_class?classmethod.WellGenerated

@@ -1,0 +1,22 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/sets_cat/Sets/Subquotients" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.lift">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Lift ``self`` to the ambient space for its parent.
+
+                EXAMPLES::
+
+                    sage: S = Semigroups().Subquotients().example()
+                    sage: s = S.an_element()
+                    sage: s, s.parent()
+                    (42, An example of a (sub)quotient semigroup: a quotient of the left zero semigroup)
+                    sage: S.lift(s), S.lift(s).parent()
+                    (42, An example of a semigroup: the left zero semigroup)
+                    sage: s.lift(), s.lift().parent()
+                    (42, An example of a semigroup: the left zero semigroup)
+                </opaque></omdoc></theory></omdoc>

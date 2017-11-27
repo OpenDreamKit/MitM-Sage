@@ -1,0 +1,92 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/euclidean_domains/EuclideanDomains" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.euclidean_degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the degree of this element as an element of a euclidean
+            domain, i.e., for elements `a`, `b` the euclidean degree `f`
+            satisfies the usual properties:
+
+            1. if `b` is not zero, then there are elements `q` and `r` such
+               that `a = bq + r` with `r = 0` or `f(r) &lt; f(b)`
+            2. if `a,b` are not zero, then `f(a) \leq f(ab)`
+
+            .. NOTE::
+
+                The name ``euclidean_degree`` was chosen because the euclidean
+                function has different names in different contexts, e.g.,
+                absolute value for integers, degree for polynomials.
+
+            OUTPUT:
+
+            For non-zero elements, a natural number. For the zero element, this
+            might raise an exception or produce some other output, depending on
+            the implementation.
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: x.euclidean_degree()
+                1
+                sage: ZZ.one().euclidean_degree()
+                1
+            </opaque><constant name="classmethod.gcd">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the greatest common divisor of this element and ``other``.
+
+            INPUT:
+
+            - ``other`` -- an element in the same ring as ``self``
+
+            ALGORITHM:
+
+            Algorithm 3.2.1 in [Coh1993]_.
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = PolynomialRing(QQ, sparse=True)
+                sage: EuclideanDomains().element_class.gcd(x,x+1)
+                -1
+            </opaque><constant name="classmethod.quo_rem">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the quotient and remainder of the division of this element
+            by the non-zero element ``other``.
+
+            INPUT:
+
+            - ``other`` -- an element in the same euclidean domain
+
+            OUTPUT:
+
+            a pair of elements
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: x.quo_rem(x)
+                (1, 0)
+            </opaque></omdoc></theory></omdoc>

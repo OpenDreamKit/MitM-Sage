@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/algebras/Algebras?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/algebras/Algebras?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/algebras/Algebras?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/algebras/Algebras?subcategory_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/algebras/Algebras?subcategory_class http://www.sagemath.org/content/classes/algebras/Algebras?subcategory_class?classmethod.Semisimple
+constant http://www.sagemath.org/content/classes/algebras/Algebras?subcategory_class?classmethod.Semisimple

@@ -1,0 +1,811 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/complex_reflection_or_generalized_coxeter_groups/ComplexReflectionOrGeneralizedCoxeterGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.distinguished_reflection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the `i`-th distinguished reflection of ``self``.
+
+            INPUT:
+
+            - ``i`` -- an element of the index set of the distinguished reflections.
+
+            .. SEEALSO::
+
+                - :meth:`distinguished_reflections`
+                - :meth:`hyperplane_index_set`
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=('a','b','c','d','e','f'))  # optional - gap3
+                sage: for i in W.hyperplane_index_set():                    # optional - gap3
+                ....:     print('%s %s'%(i, W.distinguished_reflection(i))) # optional - gap3
+                a (1,7)(2,4)(5,6)(8,10)(11,12)
+                b (1,4)(2,8)(3,5)(7,10)(9,11)
+                c (2,5)(3,9)(4,6)(8,11)(10,12)
+                d (1,8)(2,7)(3,6)(4,10)(9,12)
+                e (1,6)(2,9)(3,8)(5,11)(7,12)
+                f (1,11)(3,10)(4,9)(5,7)(6,12)
+            </opaque><constant name="classmethod.distinguished_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.from_reduced_word">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return an element of ``self`` from its (reduced) word.
+
+            INPUT:
+
+            - ``word`` -- a list (or iterable) of elements of the
+              index set of ``self`` (resp. of the distinguished
+              or of all reflections)
+            - ``word_type`` -- (optional, default: ``'simple'``):
+              either ``'simple'``, ``'distinguished'``, or ``'all'``
+
+            If ``word`` is `[i_1,i_2,\ldots,i_k]`, then this returns
+            the corresponding product of simple reflections
+            `s_{i_1} s_{i_2} \cdots s_{i_k}`.
+
+            If ``word_type`` is ``'distinguished'`` (resp. ``'all'``),
+            then the product of the distinguished reflections (resp. all
+            reflections) is returned.
+
+            .. NOTE::
+
+                The main use case is for constructing elements from
+                reduced words, hence the name of this method.
+                However, the input word need *not* be reduced.
+
+            .. SEEALSO::
+
+                - :meth:`index_set`
+                - :meth:`reflections_index_set`
+                - :meth:`hyperplane_index_set`
+                - :meth:`~ComplexReflectionOrGeneralizedCoxeterGroups.ElementMethods.apply_simple_reflections`
+                - :meth:`~CoxeterGroup.ElementMethods.reduced_word`
+                - :meth:`~CoxeterGroup.ParentMethods._test_reduced_word`
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: W
+                The symmetric group on {0, ..., 3}
+                sage: s = W.simple_reflections()
+                sage: W.from_reduced_word([0,2,0,1])
+                (0, 3, 1, 2)
+                sage: W.from_reduced_word((0,2,0,1))
+                (0, 3, 1, 2)
+                sage: s[0]*s[2]*s[0]*s[1]
+                (0, 3, 1, 2)
+
+            We now experiment with the different values for
+            ``word_type`` for the colored symmetric group::
+
+                sage: W = ColoredPermutations(1,4)
+                sage: W.from_reduced_word([1,2,1,2,1,2])
+                [[0, 0, 0, 0], [1, 2, 3, 4]]
+
+                sage: W.from_reduced_word([1, 2, 3]).reduced_word()
+                [1, 2, 3]
+
+                sage: W = ReflectionGroup((1,1,4))           # optional - gap3
+                sage: W.from_reduced_word([1,2,3], word_type='all').reduced_word()  # optional - gap3
+                [1, 2, 3]
+
+                sage: W.from_reduced_word([1,2,3], word_type='all').reduced_word_in_reflections()   # optional - gap3
+                [1, 2, 3]
+
+                sage: W.from_reduced_word([1,2,3]).reduced_word_in_reflections()    # optional - gap3
+                [1, 2, 3]
+
+            TESTS::
+
+                sage: W=WeylGroup(['E',6])
+                sage: W.from_reduced_word([2,3,4,2])
+                [ 0  1  0  0  0  0  0  0]
+                [ 0  0 -1  0  0  0  0  0]
+                [-1  0  0  0  0  0  0  0]
+                [ 0  0  0  1  0  0  0  0]
+                [ 0  0  0  0  1  0  0  0]
+                [ 0  0  0  0  0  1  0  0]
+                [ 0  0  0  0  0  0  1  0]
+                [ 0  0  0  0  0  0  0  1]
+            </opaque><constant name="classmethod.hyperplane_index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the index set of the distinguished reflections of ``self``.
+
+            This is also the index set of the reflection hyperplanes
+            of ``self``, hence the name. This name is slightly abusive
+            since the concept of reflection hyperplanes is not defined
+            for all generalized Coxeter groups. However for all
+            practical purposes this is only used for complex
+            reflection groups, and there this is the desirable name.
+
+            .. SEEALSO::
+
+                - :meth:`distinguished_reflection`
+                - :meth:`distinguished_reflections`
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
+                sage: W.hyperplane_index_set()                          # optional - gap3
+                (1, 2, 3, 4, 5, 6)
+                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=[1,3,'asdf',7,9,11])    # optional - gap3
+                sage: W.hyperplane_index_set()                          # optional - gap3
+                (1, 3, 'asdf', 7, 9, 11)
+                sage: W = ReflectionGroup((1,1,4), hyperplane_index_set=('a','b','c','d','e','f'))  # optional - gap3
+                sage: W.hyperplane_index_set()                          # optional - gap3
+                ('a', 'b', 'c', 'd', 'e', 'f')
+            </opaque><constant name="classmethod.index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the index set of (the simple reflections of)
+            ``self``, as a list (or iterable).
+
+            .. SEEALSO::
+
+                - :meth:`simple_reflection`
+                - :meth:`simple_reflections`
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().Finite().example(); W
+                The 5-th dihedral group of order 10
+                sage: W.index_set()
+                (1, 2)
+
+                sage: W = ColoredPermutations(1, 4)
+                sage: W.index_set()
+                (1, 2, 3)
+                sage: W = ReflectionGroup((1,1,4), index_set=[1,3,'asdf'])  # optional - gap3
+                sage: W.index_set()                                     # optional - gap3
+                (1, 3, 'asdf')
+                sage: W = ReflectionGroup((1,1,4), index_set=('a','b','c')) # optional - gap3
+                sage: W.index_set()                                     # optional - gap3
+                ('a', 'b', 'c')
+            </opaque><constant name="classmethod.irreducible_component_index_sets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return a list containing the index sets of the irreducible components of
+            ``self`` as finite reflection groups.
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup([1,1,3], [3,1,3], 4); W       # optional - gap3
+                Reducible complex reflection group of rank 7 and type A2 x G(3,1,3) x ST4
+                sage: sorted(W.irreducible_component_index_sets())      # optional - gap3
+                [[1, 2], [3, 4, 5], [6, 7]]
+
+            ALGORITHM:
+
+                Take the connected components of the graph on the
+                index set with edges (i,j) where s[i] and s[j] don't
+                commute.
+            </opaque><constant name="classmethod.irreducible_components">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the irreducible components of ``self`` as finite
+            reflection groups.
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup([1,1,3], [3,1,3], 4)          # optional - gap3
+                sage: W.irreducible_components()                        # optional - gap3
+                [Irreducible real reflection group of rank 2 and type A2,
+                 Irreducible complex reflection group of rank 3 and type G(3,1,3),
+                 Irreducible complex reflection group of rank 2 and type ST4]
+            </opaque><constant name="classmethod.is_irreducible">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``True`` if ``self`` is irreducible.
+
+            EXAMPLES::
+
+                sage: W = ColoredPermutations(1,3); W
+                1-colored permutations of size 3
+                sage: W.is_irreducible()
+                True
+
+                sage: W = ReflectionGroup((1,1,3),(2,1,3)); W           # optional - gap3
+                Reducible real reflection group of rank 5 and type A2 x B3
+                sage: W.is_irreducible()                                # optional - gap3
+                False
+            </opaque><constant name="classmethod.is_reducible">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``True`` if ``self`` is not irreducible.
+
+            EXAMPLES::
+
+                sage: W = ColoredPermutations(1,3); W
+                1-colored permutations of size 3
+                sage: W.is_reducible()
+                False
+
+                sage: W = ReflectionGroup((1,1,3), (2,1,3)); W          # optional - gap3
+                Reducible real reflection group of rank 5 and type A2 x B3
+                sage: W.is_reducible()                                  # optional - gap3
+                True
+            </opaque><constant name="classmethod.number_of_irreducible_components">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the number of irreducible components of ``self``.
+
+            EXAMPLES::
+
+                sage: SymmetricGroup(3).number_of_irreducible_components()
+                1
+
+                sage: ColoredPermutations(1,3).number_of_irreducible_components()
+                1
+
+                sage: ReflectionGroup((1,1,3),(2,1,3)).number_of_irreducible_components()   # optional - gap3
+                2
+
+            TESTS::
+
+                sage: SymmetricGroup(3).number_of_irreducible_components.__module__
+                'sage.categories.complex_reflection_or_generalized_coxeter_groups'
+            </opaque><constant name="classmethod.number_of_simple_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the number of simple reflections of ``self``.
+
+            EXAMPLES::
+
+                sage: W = ColoredPermutations(1,3)
+                sage: W.number_of_simple_reflections()
+                2
+                sage: W = ColoredPermutations(2,3)
+                sage: W.number_of_simple_reflections()
+                3
+                sage: W = ColoredPermutations(4,3)
+                sage: W.number_of_simple_reflections()
+                3
+                sage: W = ReflectionGroup((4,2,3))                      # optional - gap3
+                sage: W.number_of_simple_reflections()                  # optional - gap3
+                4
+            </opaque><constant name="classmethod.reflection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the `i`-th reflection of ``self``.
+
+            For `i` in `1,\dots,N`, this gives the `i`-th reflection of
+            ``self``.
+
+            .. SEEALSO::
+
+                - :meth:`reflections_index_set`
+                - :meth:`reflections`
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
+                sage: for i in W.reflection_index_set():                # optional - gap3
+                ....:     print('%s %s'%(i, W.reflection(i)))           # optional - gap3
+                1 (1,7)(2,4)(5,6)(8,10)(11,12)
+                2 (1,4)(2,8)(3,5)(7,10)(9,11)
+                3 (2,5)(3,9)(4,6)(8,11)(10,12)
+                4 (1,8)(2,7)(3,6)(4,10)(9,12)
+                5 (1,6)(2,9)(3,8)(5,11)(7,12)
+                6 (1,11)(3,10)(4,9)(5,7)(6,12)
+            </opaque><constant name="classmethod.reflection_index_set">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the index set of the reflections of ``self``.
+
+            .. SEEALSO::
+
+                - :meth:`reflection`
+                - :meth:`reflections`
+
+            EXAMPLES::
+
+                sage: W = ReflectionGroup((1,1,4))                      # optional - gap3
+                sage: W.reflection_index_set()                          # optional - gap3
+                (1, 2, 3, 4, 5, 6)
+                sage: W = ReflectionGroup((1,1,4), reflection_index_set=[1,3,'asdf',7,9,11])    # optional - gap3
+                sage: W.reflection_index_set()                          # optional - gap3
+                (1, 3, 'asdf', 7, 9, 11)
+                sage: W = ReflectionGroup((1,1,4), reflection_index_set=('a','b','c','d','e','f'))  # optional - gap3
+                sage: W.reflection_index_set()                          # optional - gap3
+                ('a', 'b', 'c', 'd', 'e', 'f')
+            </opaque><constant name="classmethod.reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.simple_reflection">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the `i`-th simple reflection `s_i` of ``self``.
+
+            INPUT:
+
+            - ``i`` -- an element from the index set
+
+            .. SEEALSO::
+
+                - :meth:`index_set`
+                - :meth:`simple_reflections`
+
+            EXAMPLES::
+
+                sage: W = CoxeterGroups().example()
+                sage: W
+                The symmetric group on {0, ..., 3}
+                sage: W.simple_reflection(1)
+                (0, 2, 1, 3)
+                sage: s = W.simple_reflections()
+                sage: s[1]
+                (0, 2, 1, 3)
+
+                sage: W = ReflectionGroup((1,1,4), index_set=[1,3,'asdf'])  # optional - gap3
+                sage: for i in W.index_set():                           # optional - gap3
+                ....:     print('%s %s'%(i, W.simple_reflection(i)))    # optional - gap3
+                1 (1,7)(2,4)(5,6)(8,10)(11,12)
+                3 (1,4)(2,8)(3,5)(7,10)(9,11)
+                asdf (2,5)(3,9)(4,6)(8,11)(10,12)
+            </opaque><constant name="classmethod.simple_reflection_orders">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the orders of the simple reflections.
+
+            EXAMPLES::
+
+                sage: W = WeylGroup(['B',3])
+                sage: W.simple_reflection_orders()
+                [2, 2, 2]
+                sage: W = CoxeterGroup(['C',4])
+                sage: W.simple_reflection_orders()
+                [2, 2, 2, 2]
+                sage: SymmetricGroup(5).simple_reflection_orders()
+                [2, 2, 2, 2]
+                sage: C = ColoredPermutations(4, 3)
+                sage: C.simple_reflection_orders()
+                [2, 2, 4]
+            </opaque><constant name="classmethod.simple_reflections">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque></omdoc></theory></omdoc>

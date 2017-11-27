@@ -6,7 +6,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><omdoc name="Parent Methods"><constant name="parent.list">
+     </constant><omdoc name="Parent Methods"><constant name="parent.is_finite">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -14,4 +14,12 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque></omdoc></theory></omdoc>
+     </constant><opaque format="text">
+            Return ``True`` since ``self`` is finite.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C.is_finite()
+                True
+            </opaque></omdoc></theory></omdoc>

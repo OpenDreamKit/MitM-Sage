@@ -48,10 +48,7 @@
             sage: U([1,3,2])   # indirect doctest
             Traceback (most recent call last):
             ...
-            ValueError: value [1, 3, 2] does not belong to Disjoint union of
-             Finite family {1: Partitions of the integer 1,
-                 2: Partitions of the integer 2,
-                 3: Partitions of the integer 3}
+            ValueError: Value [1, 3, 2] does not belong to Disjoint union of Finite family {1: Partitions of the integer 1, 2: Partitions of the integer 2, 3: Partitions of the integer 3}
 
             sage: U = DisjointUnionEnumeratedSets(
             ....:          Family([1,2,3], Partitions), keepkey=True, facade=False)
@@ -62,63 +59,7 @@
             sage: U((4,[2,1]))   # indirect doctest
             Traceback (most recent call last):
             ...
-            ValueError: value (4, [2, 1]) does not belong to Disjoint union of
-             Finite family {1: Partitions of the integer 1,
-                 2: Partitions of the integer 2,
-                 3: Partitions of the integer 3}
-        </opaque><constant name="classmethod._element_constructor_facade">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-        TESTS::
-
-            sage: X = DisjointUnionEnumeratedSets({i: Partitions(i) for i in range(5)})
-            sage: X([1]).parent()
-            Partitions of the integer 1
-            sage: X([2,1,1]).parent()  # indirect doctest
-            Partitions of the integer 4
-            sage: X([6])
-            Traceback (most recent call last):
-            ...
-            ValueError: cannot coerce `[6]` in any parent in `Finite family {...}`
-
-        We need to call the element constructor directly when ``keepkey=True``
-        because this returns a `tuple`, where the coercion framework requires
-        an :class:`Element` be returned.
-
-            sage: X = DisjointUnionEnumeratedSets({i: Partitions(i) for i in range(5)},
-            ....:                                 keepkey=True)
-            sage: p = X._element_constructor_((0, []))  # indirect doctest
-            sage: p[1].parent()
-            Partitions of the integer 0
- 
-        Test that facade parents can create and properly access elements
-        that are tuples (fixed by :trac:`22382`)::
-
-            sage: f = lambda mu: cartesian_product([mu.standard_tableaux(), 
-            ....:                                   mu.standard_tableaux()])
-            sage: tabs = DisjointUnionEnumeratedSets(Family(Partitions(4), f))
-            sage: s = StandardTableau([[1,3],[2,4]])
-            sage: (s,s) in tabs
-            True
-            sage: ss = tabs( (s,s) )
-            sage: ss[0]
-            [[1, 3], [2, 4]]
-
-        We do not coerce when one of the elements is already in the set::
-
-            sage: X = DisjointUnionEnumeratedSets([QQ, ZZ])
-            sage: x = X(2)
-            sage: x.parent() is ZZ
-            True
+            ValueError: Value (4, [2, 1]) does not belong to Disjoint union of Finite family {1: Partitions of the integer 1, 2: Partitions of the integer 2, 3: Partitions of the integer 3}
         </opaque><constant name="classmethod._is_a">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -131,10 +72,8 @@
        
        
      </constant><opaque format="text">
-        Check if a Sage object ``x`` belongs to ``self``.
-
-        This methods is a helper for :meth:`__contains__` and the
-        constructor :meth:`_element_constructor_`.
+        Check if a Sage object belongs to self. This methods is a helper for
+        :meth:`__contains__` and the constructor :meth:`_element_constructor_`.
 
         EXAMPLES::
 
@@ -157,7 +96,7 @@
 
             sage: U = DisjointUnionEnumeratedSets({1: FiniteEnumeratedSet([1,2,3]),
             ....:                                  2: FiniteEnumeratedSet([4,5,6])})
-            sage: U
+            sage: U  # indirect doctest
             Disjoint union of Finite family {1: {1, 2, 3}, 2: {4, 5, 6}}
         </opaque><constant name="classmethod.cardinality">
        

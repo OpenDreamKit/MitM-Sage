@@ -1,4 +1,35 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/finite_groups/FiniteGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.cayley_graph_disabled">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/finite_groups/FiniteGroups" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.cardinality">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the cardinality of ``self``, as per
+            :meth:`EnumeratedSets.ParentMethods.cardinality`.
+
+            This default implementation calls :meth:`.order` if
+            available, and otherwise resorts to
+            :meth:`._cardinality_from_iterator`. This is for backward
+            compatibility only. Finite groups should override this
+            method instead of :meth:`.order`.
+
+            EXAMPLES:
+
+            We need to use a finite group which uses this default
+            implementation of cardinality::
+
+                sage: R.&lt;x&gt; = PolynomialRing(QQ)
+                sage: f = x^4 - 17*x^3 - 2*x + 1
+                sage: G = f.galois_group(pari_group=True); G
+                PARI group [24, -1, 5, &quot;S4&quot;] of degree 4
+                sage: G.cardinality.__module__
+                'sage.categories.finite_groups'
+                sage: G.cardinality()
+                24
+            </opaque><constant name="classmethod.cayley_graph_disabled">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

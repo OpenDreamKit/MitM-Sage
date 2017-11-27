@@ -4,7 +4,5 @@ Includes http://www.sagemath.org/content/categories/infinite_enumerated_sets?Inf
 Includes http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/content/categories/enumerated_sets?EnumeratedSets
 Includes http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/content/categories/sets_cat/Sets?Infinite
-Declares http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets?Enumerated
-constant http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets?Enumerated
 Declares http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets?parent._test_enumerated_set_iter_cardinality
 constant http://www.sagemath.org/content/categories/infinite_enumerated_sets?InfiniteEnumeratedSets?parent._test_enumerated_set_iter_cardinality

@@ -14,149 +14,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><omdoc name="Element Methods"><constant name="element.__div__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">__truediv__(left, right)
-File: sage/categories/coercion_methods.pyx (starting at line 248)
-
-    Return the result of the division of ``left`` by ``right``, if possible.
-
-    This top-level implementation delegates the work to
-    the ``_div_`` method if ``left`` and ``right`` have
-    the same parent and to coercion otherwise. See the
-    extensive documentation at the top of
-    :ref:`sage.structure.element`.
-
-    INPUT:
-
-    - ``self`` -- an element of a :class:`unital magma &lt;Magmas.Unital&gt;`
-    - ``right`` -- an object
-
-    .. SEEALSO:: :meth:`Magmas.Unital.ElementMethods._div_`
-
-    EXAMPLES::
-
-        sage: G = FreeGroup(2)
-        sage: x0, x1 = G.group_generators()
-        sage: c1 = cartesian_product([x0, x1])
-        sage: c2 = cartesian_product([x1, x0])
-        sage: c1.__div__(c2)
-        (x0*x1^-1, x1*x0^-1)
-        sage: c1 / c2
-        (x0*x1^-1, x1*x0^-1)
-
-    Division supports coercion::
-
-        sage: C = cartesian_product([G, G])
-        sage: H = Hom(G, C)
-        sage: phi = H(lambda g: cartesian_product([g, g]))
-        sage: phi.register_as_coercion()
-        sage: x1 / c1
-        (x1*x0^-1, 1)
-        sage: c1 / x1
-        (x0*x1^-1, 1)
-
-    Depending on how the division itself is implemented in
-    ``_div_``, division may fail even when ``right``
-    actually divides ``left``::
-
-        sage: x = cartesian_product([2, 1])
-        sage: y = cartesian_product([1, 1])
-        sage: x / y
-        (2, 1)
-        sage: x / x
-        Traceback (most recent call last):
-        ...
-        TypeError: no conversion of this rational to integer
-
-    This is :meth:`Magmas.Unital.ElementMethods.__truediv__`, implemented
-    as a Cython method in :mod:`sage.categories.coercion_methods`::
-
-        sage: x.__truediv__.im_func is Magmas.Unital.ElementMethods.__truediv__.im_func
-        True
-        sage: x.__truediv__.im_func is sage.categories.coercion_methods.__truediv__
-        True
-    </opaque><constant name="element.__truediv__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">__truediv__(left, right)
-File: sage/categories/coercion_methods.pyx (starting at line 248)
-
-    Return the result of the division of ``left`` by ``right``, if possible.
-
-    This top-level implementation delegates the work to
-    the ``_div_`` method if ``left`` and ``right`` have
-    the same parent and to coercion otherwise. See the
-    extensive documentation at the top of
-    :ref:`sage.structure.element`.
-
-    INPUT:
-
-    - ``self`` -- an element of a :class:`unital magma &lt;Magmas.Unital&gt;`
-    - ``right`` -- an object
-
-    .. SEEALSO:: :meth:`Magmas.Unital.ElementMethods._div_`
-
-    EXAMPLES::
-
-        sage: G = FreeGroup(2)
-        sage: x0, x1 = G.group_generators()
-        sage: c1 = cartesian_product([x0, x1])
-        sage: c2 = cartesian_product([x1, x0])
-        sage: c1.__div__(c2)
-        (x0*x1^-1, x1*x0^-1)
-        sage: c1 / c2
-        (x0*x1^-1, x1*x0^-1)
-
-    Division supports coercion::
-
-        sage: C = cartesian_product([G, G])
-        sage: H = Hom(G, C)
-        sage: phi = H(lambda g: cartesian_product([g, g]))
-        sage: phi.register_as_coercion()
-        sage: x1 / c1
-        (x1*x0^-1, 1)
-        sage: c1 / x1
-        (x0*x1^-1, 1)
-
-    Depending on how the division itself is implemented in
-    ``_div_``, division may fail even when ``right``
-    actually divides ``left``::
-
-        sage: x = cartesian_product([2, 1])
-        sage: y = cartesian_product([1, 1])
-        sage: x / y
-        (2, 1)
-        sage: x / x
-        Traceback (most recent call last):
-        ...
-        TypeError: no conversion of this rational to integer
-
-    This is :meth:`Magmas.Unital.ElementMethods.__truediv__`, implemented
-    as a Cython method in :mod:`sage.categories.coercion_methods`::
-
-        sage: x.__truediv__.im_func is Magmas.Unital.ElementMethods.__truediv__.im_func
-        True
-        sage: x.__truediv__.im_func is sage.categories.coercion_methods.__truediv__
-        True
-    </opaque><constant name="element._div_">
+     </constant><omdoc name="Element Methods"><constant name="element._div_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -273,8 +131,8 @@ File: sage/categories/coercion_methods.pyx (starting at line 248)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -329,6 +187,36 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a = A()
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
 
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::
@@ -361,8 +249,8 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -417,6 +305,36 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a = A()
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
 
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::

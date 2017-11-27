@@ -10,7 +10,7 @@
        
        
      </constant><opaque format="text">ParentWithGens.gen(self, i=0)
-File: sage/structure/parent_gens.pyx (starting at line 142)</opaque><constant name="classmethod.gens">
+File: sage/structure/parent_gens.pyx (starting at line 141)</opaque><constant name="classmethod.gens">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -19,7 +19,7 @@ File: sage/structure/parent_gens.pyx (starting at line 142)</opaque><constant na
        
        
      </constant><opaque format="text">ParentWithGens.gens(self)
-File: sage/structure/parent_gens.pyx (starting at line 146)
+File: sage/structure/parent_gens.pyx (starting at line 145)
 
        Return a tuple whose entries are the generators for this
        object, in order.
@@ -32,4 +32,4 @@ File: sage/structure/parent_gens.pyx (starting at line 146)
        
        
      </constant><opaque format="text">ParentWithGens.ngens(self)
-File: sage/structure/parent_gens.pyx (starting at line 137)</opaque></omdoc></theory></omdoc>
+File: sage/structure/parent_gens.pyx (starting at line 136)</opaque></omdoc></theory></omdoc>

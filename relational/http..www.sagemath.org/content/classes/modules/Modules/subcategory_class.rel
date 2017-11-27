@@ -1,0 +1,22 @@
+theory http://www.sagemath.org/content/classes/modules/Modules?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.DualObjects
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.DualObjects
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.Filtered
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.Filtered
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.FiniteDimensional
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.FiniteDimensional
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.Graded
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.Graded
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.Super
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.Super
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.TensorProducts
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.TensorProducts
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.WithBasis
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.WithBasis
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.base_ring
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.base_ring
+Declares http://www.sagemath.org/content/classes/modules/Modules?subcategory_class http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.dual
+constant http://www.sagemath.org/content/classes/modules/Modules?subcategory_class?classmethod.dual

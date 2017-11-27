@@ -5,3 +5,5 @@ Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianPro
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids?Monoids
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/semigroups/Semigroups?CartesianProducts
 Includes http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/magmas/Magmas/Unital?CartesianProducts
+Declares http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?parent.monoid_generators
+constant http://www.sagemath.org/content/categories/monoids/Monoids?CartesianProducts?parent.monoid_generators

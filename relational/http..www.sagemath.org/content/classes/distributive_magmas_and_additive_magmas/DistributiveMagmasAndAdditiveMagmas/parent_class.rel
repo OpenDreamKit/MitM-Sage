@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas?parent_class
+HasMeta http://www.sagemath.org/content/classes/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas?parent_class http://www.sagemath.org/content/classes/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas?parent_class?classmethod._test_distributivity
+constant http://www.sagemath.org/content/classes/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas?parent_class?classmethod._test_distributivity

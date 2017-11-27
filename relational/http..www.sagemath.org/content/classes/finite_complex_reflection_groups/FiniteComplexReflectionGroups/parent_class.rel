@@ -1,0 +1,20 @@
+theory http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class
+HasMeta http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod._test_codegrees
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod._test_codegrees
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod._test_degrees
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod._test_degrees
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.codegrees
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.codegrees
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.degrees
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.degrees
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.is_real
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.is_real
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.is_well_generated
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.is_well_generated
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.number_of_reflection_hyperplanes
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.number_of_reflection_hyperplanes
+Declares http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.number_of_reflections
+constant http://www.sagemath.org/content/classes/finite_complex_reflection_groups/FiniteComplexReflectionGroups?parent_class?classmethod.number_of_reflections

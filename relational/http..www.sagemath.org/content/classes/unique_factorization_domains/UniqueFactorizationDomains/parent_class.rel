@@ -1,0 +1,8 @@
+theory http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class
+HasMeta http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class?classmethod._gcd_univariate_polynomial
+constant http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class?classmethod._gcd_univariate_polynomial
+Declares http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class?classmethod.is_unique_factorization_domain
+constant http://www.sagemath.org/content/classes/unique_factorization_domains/UniqueFactorizationDomains?parent_class?classmethod.is_unique_factorization_domain

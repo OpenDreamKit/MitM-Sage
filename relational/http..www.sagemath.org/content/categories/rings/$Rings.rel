@@ -10,6 +10,8 @@ Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagem
 constant http://www.sagemath.org/content/categories/rings?Rings?parent._Hom_
 Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.__getitem__
 constant http://www.sagemath.org/content/categories/rings?Rings?parent.__getitem__
+Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent.__truediv__
+constant http://www.sagemath.org/content/categories/rings?Rings?parent.__truediv__
 Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent._ideal_class_
 constant http://www.sagemath.org/content/categories/rings?Rings?parent._ideal_class_
 Declares http://www.sagemath.org/content/categories/rings?Rings http://www.sagemath.org/content/categories/rings?Rings?parent._mul_

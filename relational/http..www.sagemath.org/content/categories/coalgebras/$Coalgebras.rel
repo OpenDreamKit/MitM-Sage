@@ -2,7 +2,7 @@ theory http://www.sagemath.org/content/categories/coalgebras?Coalgebras
 HasMeta http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/?Structures
-Includes http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/modules?Modules
+Includes http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/vector_spaces?VectorSpaces
 Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?sage.categories.coalgebras.Coalgebras
 constant http://www.sagemath.org/content/categories/coalgebras?Coalgebras?sage.categories.coalgebras.Coalgebras
 Declares http://www.sagemath.org/content/categories/coalgebras?Coalgebras http://www.sagemath.org/content/categories/coalgebras?Coalgebras?element.coproduct

@@ -1,0 +1,32 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/distributive_magmas_and_additive_magmas/DistributiveMagmasAndAdditiveMagmas" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_distributivity">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test the distributivity of `*` on `+` on (not necessarily
+            all) elements of this set.
+
+            INPUT:
+
+            - ``options`` -- any keyword arguments accepted by :meth:`_tester`
+
+            EXAMPLES:
+
+            By default, this method runs the tests only on the
+            elements returned by ``self.some_elements()``::
+
+                sage: NN.some_elements()
+                [0, 1, 3, 42]
+                sage: NN._test_distributivity()
+
+            However, the elements tested can be customized with the
+            ``elements`` keyword argument::
+
+                sage: CC._test_distributivity(elements=[CC(0),CC(1),CC(3),CC(I)])
+
+            See the documentation for :class:`TestSuite` for more information.
+            </opaque></omdoc></theory></omdoc>

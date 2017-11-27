@@ -1,0 +1,12 @@
+theory http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class
+HasMeta http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class?classmethod._test_zero
+constant http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class?classmethod._test_zero
+Declares http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class?classmethod.is_empty
+constant http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class?classmethod.is_empty
+Declares http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class?classmethod.zero
+constant http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class?classmethod.zero
+Declares http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class?classmethod.zero_element
+constant http://www.sagemath.org/content/classes/additive_magmas/AdditiveMagmas/AdditiveUnital?parent_class?classmethod.zero_element

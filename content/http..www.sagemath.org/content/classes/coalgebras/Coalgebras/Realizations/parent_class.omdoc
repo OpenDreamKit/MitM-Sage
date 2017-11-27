@@ -1,0 +1,70 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/coalgebras/Coalgebras/Realizations" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.coproduct_by_coercion">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return the coproduct by coercion if ``coproduct_by_basis``
+                is not implemented.
+
+                EXAMPLES::
+
+                    sage: Sym = SymmetricFunctions(QQ)
+                    sage: m = Sym.monomial()
+                    sage: f = m[2,1]
+                    sage: f.coproduct.__module__
+                    'sage.categories.coalgebras'
+                    sage: m.coproduct_on_basis
+                    NotImplemented
+                    sage: m.coproduct == m.coproduct_by_coercion
+                    True
+                    sage: f.coproduct()
+                    m[] # m[2, 1] + m[1] # m[2] + m[2] # m[1] + m[2, 1] # m[]
+
+                ::
+
+                    sage: N = NonCommutativeSymmetricFunctions(QQ)
+                    sage: R = N.ribbon()
+                    sage: R.coproduct_by_coercion.__module__
+                    'sage.categories.coalgebras'
+                    sage: R.coproduct_on_basis
+                    NotImplemented
+                    sage: R.coproduct == R.coproduct_by_coercion
+                    True
+                    sage: R[1].coproduct()
+                    R[] # R[1] + R[1] # R[]
+                </opaque><constant name="classmethod.counit_by_coercion">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+                Return the counit of ``x`` if ``counit_by_basis`` is
+                not implemented.
+
+                EXAMPLES::
+
+                    sage: sp = SymmetricFunctions(QQ).sp()
+                    sage: sp.an_element()
+                    2*sp[] + 2*sp[1] + 3*sp[2]
+                    sage: sp.counit(sp.an_element())
+                    2
+
+                    sage: o = SymmetricFunctions(QQ).o()
+                    sage: o.an_element()
+                    2*o[] + 2*o[1] + 3*o[2]
+                    sage: o.counit(o.an_element())
+                    -1
+                </opaque></omdoc></theory></omdoc>

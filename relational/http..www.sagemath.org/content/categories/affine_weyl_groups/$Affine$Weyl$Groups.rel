@@ -3,6 +3,8 @@ HasMeta http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeyl
 Includes http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/?Structures
 Includes http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/content/categories/category?JoinCategory
+Declares http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?Infinite
+constant http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?Infinite
 Declares http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?element.affine_grassmannian_to_core
 constant http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?element.affine_grassmannian_to_core
 Declares http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups http://www.sagemath.org/content/categories/affine_weyl_groups?AffineWeylGroups?element.affine_grassmannian_to_partition

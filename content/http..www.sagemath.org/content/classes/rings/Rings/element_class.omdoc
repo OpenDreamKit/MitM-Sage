@@ -1,0 +1,28 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="element_class" base="http://www.sagemath.org/content/classes/rings/Rings" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.is_unit">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return whether this element is a unit in the ring.
+
+            .. NOTE::
+
+                This is a generic implementation for (non-commutative) rings
+                which only works for the one element, its additive inverse, and
+                the zero element.  Most rings should provide a more specialized
+                implementation.
+
+            EXAMPLES::
+
+                sage: MS = MatrixSpace(ZZ, 2)
+                sage: MS.one().is_unit()
+                True
+                sage: MS.zero().is_unit()
+                False
+                sage: MS([1,2,3,4]).is_unit()
+                False
+            </opaque></omdoc></theory></omdoc>

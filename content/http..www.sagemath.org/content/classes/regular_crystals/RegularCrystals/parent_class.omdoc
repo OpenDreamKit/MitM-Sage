@@ -1,0 +1,284 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/regular_crystals/RegularCrystals" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._test_stembridge_local_axioms">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            This implements tests for the Stembridge local characterization
+            on the finite crystal ``self``.
+
+            The current implementation only uses the rules for simply-laced
+            types.  Crystals of other types should still pass the test, but
+            expansion of this test to non-simply laced type would be desirable.
+
+            One can specify an index set smaller than the full index set of
+            the crystal, using the option ``index_set``.
+
+            Running with ``verbose=True`` will print each node for which a
+            local axiom test applies.
+
+            Running with ``complete=True`` will continue to run the test past
+            the first failure of the local axioms.  This is probably only
+            useful in conjunction with the verbose option, to see all places
+            where the local axioms fail.
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',3], shape=[2,1])
+                sage: T._test_stembridge_local_axioms()
+                True
+                sage: T._test_stembridge_local_axioms(verbose=True)
+                True
+                sage: T._test_stembridge_local_axioms(index_set=[1,3])
+                True
+
+                sage: B=Crystals().example(choice='naive')
+                sage: B._test_stembridge_local_axioms()
+                Traceback (most recent call last):
+                ...
+                AssertionError: None
+            </opaque><constant name="classmethod.demazure_operator">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Returns the application of Demazure operators `D_i` for `i` from
+            ``reduced_word`` on ``element``.
+
+            INPUT:
+
+            - ``element`` -- an element of a free module indexed by the
+              underlying crystal
+            - ``reduced_word`` -- a reduced word of the Weyl group of the
+              same type as the underlying crystal
+
+            OUTPUT:
+
+            - an element of the free module indexed by the underlying crystal
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: C = CombinatorialFreeModule(QQ,T)
+                sage: t = T.highest_weight_vector()
+                sage: b = 2*C(t)
+                sage: T.demazure_operator(b,[1,2,1])
+                2*B[[[1, 1], [2]]] + 2*B[[[1, 2], [2]]] + 2*B[[[1, 3], [2]]] + 2*B[[[1, 1], [3]]]
+                + 2*B[[[1, 2], [3]]] + 2*B[[[1, 3], [3]]] + 2*B[[[2, 2], [3]]] + 2*B[[[2, 3], [3]]]
+
+            The Demazure operator is idempotent::
+
+                sage: T = crystals.Tableaux(&quot;A1&quot;,shape=[4])
+                sage: C = CombinatorialFreeModule(QQ,T)
+                sage: b = C(T.module_generators[0]); b
+                B[[[1, 1, 1, 1]]]
+                sage: e = T.demazure_operator(b,[1]); e
+                B[[[1, 1, 1, 1]]] + B[[[1, 1, 1, 2]]] + B[[[1, 1, 2, 2]]] + B[[[1, 2, 2, 2]]] + B[[[2, 2, 2, 2]]]
+                sage: e == T.demazure_operator(e,[1])
+                True
+
+                sage: all(T.demazure_operator(T.demazure_operator(C(t),[1]),[1]) == T.demazure_operator(C(t),[1]) for t in T)
+                True
+            </opaque><constant name="classmethod.demazure_subcrystal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the subcrystal corresponding to the application of
+            Demazure operators `D_i` for `i` from ``reduced_word`` on
+            ``element``.
+
+            INPUT:
+
+            - ``element`` -- an element of a free module indexed by the
+              underlying crystal
+            - ``reduced_word`` -- a reduced word of the Weyl group of the
+              same type as the underlying crystal
+            - ``only_support`` -- (default: ``True``) only include arrows
+              corresponding to the support of ``reduced_word``
+
+            OUTPUT:
+
+            - the Demazure subcrystal 
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',2], shape=[2,1])
+                sage: t = T.highest_weight_vector()
+                sage: S = T.demazure_subcrystal(t, [1,2])
+                sage: list(S)
+                [[[1, 1], [2]], [[1, 1], [3]], [[1, 2], [2]],
+                 [[1, 2], [3]], [[2, 2], [3]]]
+                sage: S = T.demazure_subcrystal(t, [2,1])
+                sage: list(S)
+                [[[1, 1], [2]], [[1, 1], [3]], [[1, 2], [2]],
+                 [[1, 3], [2]], [[1, 3], [3]]]
+
+            We construct an example where we don't only want the arrows
+            indicated by the support of the reduced word::
+
+                sage: K = crystals.KirillovReshetikhin(['A',1,1], 1, 2)
+                sage: mg = K.module_generator()
+                sage: S = K.demazure_subcrystal(mg, [1])
+                sage: S.digraph().edges()
+                [([[1, 1]], [[1, 2]], 1), ([[1, 2]], [[2, 2]], 1)]
+                sage: S = K.demazure_subcrystal(mg, [1], only_support=False)
+                sage: S.digraph().edges()
+                [([[1, 1]], [[1, 2]], 1),
+                 ([[1, 2]], [[1, 1]], 0),
+                 ([[1, 2]], [[2, 2]], 1),
+                 ([[2, 2]], [[1, 2]], 0)]
+            </opaque><constant name="classmethod.dual_equivalence_graph">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the dual equivalence graph indexed by ``index_set``
+            on the subset ``X`` of ``self``.
+
+            Let `b \in B` be an element of weight `0`, so `\varepsilon_j(b)
+            = \varphi_j(b)` for all `j \in I`, where `I` is the indexing
+            set. We say `b'` is an `i`-elementary dual equivalence
+            transformation of `b` (where `i \in I`) if
+
+            * `\varepsilon_i(b) = 1` and `\varepsilon_{i-1}(b) = 0`, and
+            * `b' = f_{i-1} f_i e_{i-1} e_i b`.
+
+            We can do the inverse procedure by interchanging `i` and `i-1`
+            above.
+
+            .. NOTE::
+
+                If the index set is not an ordered interval, we let
+                `i - 1` mean the index appearing before `i` in `I`.
+
+            This definition comes from [As2008]_ Section 4 (where our
+            `\varphi_j(b)` and `\varepsilon_j(b)` are denoted by
+            `\epsilon(b, j)` and `-\delta(b, j)`, respectively).
+
+            The dual equivalence graph of `B` is defined to be the
+            colored graph whose vertices are the elements of `B` of
+            weight `0`, and whose edges of color `i` (for `i \in I`)
+            connect pairs `\{ b, b' \}` such that `b'` is an
+            `i`-elementary dual equivalence transformation of `b`.
+
+            .. NOTE::
+
+                This dual equivalence graph is a generalization of
+                `\mathcal{G}\left(\mathcal{X}\right)` in [As2008]_
+                Section 4 except we do not require
+                `\varepsilon_i(b) = 0, 1` for all `i`.
+
+            This definition can be generalized by choosing a subset `X`
+            of the set of all vertices of `B` of weight `0`, and
+            restricting the dual equivalence graph to the vertex set
+            `X`.
+
+            INPUT:
+
+            - ``X`` -- (optional) the vertex set `X` (default:
+              the whole set of vertices of ``self`` of weight `0`)
+            - ``index_set`` -- (optional) the index set `I`
+              (default: the whole index set of ``self``); this has
+              to be a subset of the index set of ``self`` (as a list
+              or tuple)
+            - ``directed`` -- (default: ``True``) whether to have the
+              dual equivalence graph be directed, where the head of
+              an edge `b - b'` is `b` and the tail is
+              `b' = f_{i-1} f_i e_{i-1} e_i b`)
+
+            .. SEEALSO::
+
+                :meth:`sage.combinat.partition.Partition.dual_equivalence_graph`
+
+            EXAMPLES::
+
+                sage: T = crystals.Tableaux(['A',3], shape=[2,2])
+                sage: G = T.dual_equivalence_graph()
+                sage: sorted(G.edges())
+                [([[1, 3], [2, 4]], [[1, 2], [3, 4]], 2),
+                 ([[1, 2], [3, 4]], [[1, 3], [2, 4]], 3)]
+                sage: T = crystals.Tableaux(['A',4], shape=[3,2])
+                sage: G = T.dual_equivalence_graph()
+                sage: sorted(G.edges())
+                [([[1, 3, 5], [2, 4]], [[1, 3, 4], [2, 5]], 4),
+                 ([[1, 3, 5], [2, 4]], [[1, 2, 5], [3, 4]], 2),
+                 ([[1, 3, 4], [2, 5]], [[1, 2, 4], [3, 5]], 2),
+                 ([[1, 2, 5], [3, 4]], [[1, 3, 5], [2, 4]], 3),
+                 ([[1, 2, 4], [3, 5]], [[1, 2, 3], [4, 5]], 3),
+                 ([[1, 2, 3], [4, 5]], [[1, 2, 4], [3, 5]], 4)]
+
+                sage: T = crystals.Tableaux(['A',4], shape=[3,1])
+                sage: G = T.dual_equivalence_graph(index_set=[1,2,3])
+                sage: G.vertices()
+                [[[1, 3, 4], [2]], [[1, 2, 4], [3]], [[1, 2, 3], [4]]]
+                sage: G.edges()
+                [([[1, 3, 4], [2]], [[1, 2, 4], [3]], 2),
+                 ([[1, 2, 4], [3]], [[1, 2, 3], [4]], 3)]
+
+            TESTS::
+
+                sage: T = crystals.Tableaux(['A',4], shape=[3,1])
+                sage: G = T.dual_equivalence_graph(index_set=[2,3])
+                sage: sorted(G.edges())
+                [([[1, 2, 4], [3]], [[1, 2, 3], [4]], 3),
+                 ([[2, 4, 5], [3]], [[2, 3, 5], [4]], 3)]
+                sage: sorted(G.vertices())
+                [[[1, 3, 4], [2]],
+                 [[1, 2, 4], [3]],
+                 [[2, 4, 5], [3]],
+                 [[1, 2, 3], [4]],
+                 [[2, 3, 5], [4]],
+                 [[1, 1, 1], [5]],
+                 [[1, 1, 5], [5]],
+                 [[1, 5, 5], [5]],
+                 [[2, 3, 4], [5]]]
+            </opaque></omdoc></theory></omdoc>

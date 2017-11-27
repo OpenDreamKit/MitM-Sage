@@ -12,7 +12,7 @@ Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http
 constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.group_generators
 Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.holomorph
 constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.holomorph
-Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.is_abelian
-constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.is_abelian
+Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.monoid_generators
+constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.monoid_generators
 Declares http://www.sagemath.org/content/classes/groups/Groups?parent_class http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.semidirect_product
 constant http://www.sagemath.org/content/classes/groups/Groups?parent_class?classmethod.semidirect_product

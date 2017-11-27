@@ -2,4 +2,5 @@ theory http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects
 HasMeta http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/vector_spaces/VectorSpaces?DualObjects
 Includes http://www.sagemath.org/content/categories/algebras/Algebras?DualObjects http://www.sagemath.org/content/categories/coalgebras?Coalgebras

@@ -7,7 +7,7 @@
        
        
      </constant><opaque format="text">Parent._an_element(self)
-File: sage/structure/parent_old.pyx (starting at line 358)</opaque><constant name="classmethod._an_element_c">
+File: sage/structure/parent_old.pyx (starting at line 357)</opaque><constant name="classmethod._an_element_c">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -16,7 +16,7 @@ File: sage/structure/parent_old.pyx (starting at line 358)</opaque><constant nam
        
        
      </constant><opaque format="text">Parent._an_element_c(self)
-File: sage/structure/parent_old.pyx (starting at line 362)</opaque><constant name="classmethod._an_element_impl">
+File: sage/structure/parent_old.pyx (starting at line 361)</opaque><constant name="classmethod._an_element_impl">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -25,7 +25,7 @@ File: sage/structure/parent_old.pyx (starting at line 362)</opaque><constant nam
        
        
      </constant><opaque format="text">Parent._an_element_impl(self)
-File: sage/structure/parent_old.pyx (starting at line 328)</opaque><constant name="classmethod._coerce_">
+File: sage/structure/parent_old.pyx (starting at line 327)</opaque><constant name="classmethod._coerce_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -37,7 +37,7 @@ File: sage/structure/parent_old.pyx (starting at line 328)</opaque><constant nam
        
        
      </constant><opaque format="text">Parent._coerce_(self, x)
-File: sage/structure/parent_old.pyx (starting at line 239)</opaque><constant name="classmethod._coerce_c">
+File: sage/structure/parent_old.pyx (starting at line 238)</opaque><constant name="classmethod._coerce_c">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -49,7 +49,7 @@ File: sage/structure/parent_old.pyx (starting at line 239)</opaque><constant nam
        
        
      </constant><opaque format="text">Parent._coerce_c(self, x)
-File: sage/structure/parent_old.pyx (starting at line 245)</opaque><constant name="classmethod._coerce_impl">
+File: sage/structure/parent_old.pyx (starting at line 244)</opaque><constant name="classmethod._coerce_impl">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -61,7 +61,7 @@ File: sage/structure/parent_old.pyx (starting at line 245)</opaque><constant nam
        
        
      </constant><opaque format="text">Parent._coerce_impl(self, x)
-File: sage/structure/parent_old.pyx (starting at line 268)
+File: sage/structure/parent_old.pyx (starting at line 267)
 
         Canonically coerce x in assuming that the parent of x is not
         equal to self.
@@ -80,7 +80,7 @@ File: sage/structure/parent_old.pyx (starting at line 268)
        
        
      </constant><opaque format="text">Parent._coerce_try(self, x, v)
-File: sage/structure/parent_old.pyx (starting at line 276)
+File: sage/structure/parent_old.pyx (starting at line 275)
 
         Given a list v of rings, try to coerce x canonically into each
         one in turn.  Return the __call__ coercion of the result into
@@ -102,7 +102,7 @@ File: sage/structure/parent_old.pyx (starting at line 276)
        
        
      </constant><opaque format="text">Parent.coerce_map_from_c(self, S)
-File: sage/structure/parent_old.pyx (starting at line 114)
+File: sage/structure/parent_old.pyx (starting at line 113)
 
         EXAMPLES:
 
@@ -138,7 +138,7 @@ File: sage/structure/parent_old.pyx (starting at line 114)
        
        
      </constant><opaque format="text">Parent.get_action_c(self, S, op, bool self_on_left)
-File: sage/structure/parent_old.pyx (starting at line 208)</opaque><constant name="classmethod.get_action_impl">
+File: sage/structure/parent_old.pyx (starting at line 207)</opaque><constant name="classmethod.get_action_impl">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -156,7 +156,7 @@ File: sage/structure/parent_old.pyx (starting at line 208)</opaque><constant nam
        
        
      </constant><opaque format="text">Parent.get_action_impl(self, S, op, self_on_left)
-File: sage/structure/parent_old.pyx (starting at line 227)</opaque><constant name="classmethod.has_coerce_map_from_c">
+File: sage/structure/parent_old.pyx (starting at line 226)</opaque><constant name="classmethod.has_coerce_map_from_c">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -168,7 +168,7 @@ File: sage/structure/parent_old.pyx (starting at line 227)</opaque><constant nam
        
        
      </constant><opaque format="text">Parent.has_coerce_map_from_c(self, S)
-File: sage/structure/parent_old.pyx (starting at line 299)
+File: sage/structure/parent_old.pyx (starting at line 298)
 
         Return True if there is a natural map from S to self.
         Otherwise, return False.

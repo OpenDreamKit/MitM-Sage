@@ -1,2 +1,5 @@
-document http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis.omdoc
-Declares http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis.omdoc http://www.sagemath.org/content/categories/graded_hopf_algebras_with_basis?GradedHopfAlgebrasWithBasis
+document http://www.sagemath.org/content/classes/gcd_domains/GcdDomains.omdoc
+Declares http://www.sagemath.org/content/classes/gcd_domains/GcdDomains.omdoc http://www.sagemath.org/content/classes/gcd_domains/GcdDomains?subcategory_class
+Declares http://www.sagemath.org/content/classes/gcd_domains/GcdDomains.omdoc http://www.sagemath.org/content/classes/gcd_domains/GcdDomains?parent_class
+Declares http://www.sagemath.org/content/classes/gcd_domains/GcdDomains.omdoc http://www.sagemath.org/content/classes/gcd_domains/GcdDomains?morphism_class
+Declares http://www.sagemath.org/content/classes/gcd_domains/GcdDomains.omdoc http://www.sagemath.org/content/classes/gcd_domains/GcdDomains?element_class

@@ -1,0 +1,23 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="subcategory_class" base="http://www.sagemath.org/content/classes/algebras/Algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.Semisimple">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the subcategory of semisimple objects of ``self``.
+
+            .. NOTE::
+
+                This mimics the syntax of axioms for a smooth
+                transition if ``Semisimple`` becomes one.
+
+            EXAMPLES::
+
+                sage: Algebras(QQ).Semisimple()
+                Category of semisimple algebras over Rational Field
+                sage: Algebras(QQ).WithBasis().FiniteDimensional().Semisimple()
+                Category of finite dimensional semisimple algebras with basis over Rational Field
+            </opaque></omdoc></theory></omdoc>

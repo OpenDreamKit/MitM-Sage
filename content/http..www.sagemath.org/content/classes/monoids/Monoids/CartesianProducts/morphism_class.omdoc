@@ -1,0 +1,1 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="morphism_class" base="http://www.sagemath.org/content/classes/monoids/Monoids/CartesianProducts" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import></theory></omdoc>

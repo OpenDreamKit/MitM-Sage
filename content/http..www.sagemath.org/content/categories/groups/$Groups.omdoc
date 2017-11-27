@@ -299,7 +299,7 @@
             Arrange an ordering of elements into cosets of a normal
             subgroup close to size `\sqrt{n}`.  Then the quotient
             group structure is often apparent in the table.  See
-            comments on Trac #7555.
+            comments on :trac:`7555`.
 
             AUTHOR:
 
@@ -335,7 +335,18 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="parent.holomorph">
+     </constant><opaque format="text">
+            Returns group generators for self.
+
+            This default implementation calls :meth:`.gens`, for
+            backward compatibility.
+
+            EXAMPLES::
+
+                sage: A = AlternatingGroup(4)
+                sage: A.group_generators()
+                Family ((2,3,4), (1,2,3))
+            </opaque><constant name="parent.holomorph">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -359,7 +370,7 @@
                 Traceback (most recent call last):
                 ...
                 NotImplementedError: holomorph of General Linear Group of degree 4 over Rational Field not yet implemented
-            </opaque><constant name="parent.is_abelian">
+            </opaque><constant name="parent.monoid_generators">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -367,7 +378,23 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="parent.semidirect_product">
+     </constant><opaque format="text">
+            Return the generators of ``self`` as a monoid.
+
+            Let `G` be a group with generating set `X`. In general, the
+            generating set of `G` as a monoid is given by `X \cup X^{-1}`,
+            where `X^{-1}` is the set of inverses of `X`. If `G` is a finite
+            group, then the generating set as a monoid is `X`.
+
+            EXAMPLES::
+
+                sage: A = AlternatingGroup(4)
+                sage: A.monoid_generators()
+                Family ((2,3,4), (1,2,3))
+                sage: F.&lt;x,y&gt; = FreeGroup()
+                sage: F.monoid_generators()
+                Family (x, y, x^-1, y^-1)
+            </opaque><constant name="parent.semidirect_product">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

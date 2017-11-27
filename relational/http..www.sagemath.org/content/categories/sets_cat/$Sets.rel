@@ -13,8 +13,6 @@ Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sag
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.CartesianProduct
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.__contains__
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.__contains__
-Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent._an_element_
-constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent._an_element_
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent._element_constructor_from_element_class
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent._element_constructor_from_element_class
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent._test_an_element
@@ -37,22 +35,18 @@ Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sag
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.algebra
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.an_element
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.an_element
-Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.cardinality
-constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.cardinality
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.cartesian_product
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.cartesian_product
-Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.is_finite
-constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.is_finite
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.is_parent_of
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.is_parent_of
-Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.random_element
-constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.random_element
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?parent.some_elements
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?parent.some_elements
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Algebras
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Algebras
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.CartesianProducts
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.CartesianProducts
+Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Enumerated
+constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Enumerated
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Facade
 constant http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Facade
 Declares http://www.sagemath.org/content/categories/sets_cat?Sets http://www.sagemath.org/content/categories/sets_cat?Sets?subcategory.Facades

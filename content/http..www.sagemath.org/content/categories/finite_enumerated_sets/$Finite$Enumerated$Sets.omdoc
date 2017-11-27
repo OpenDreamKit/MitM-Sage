@@ -7,9 +7,7 @@
        
        
      </constant><opaque format="text">
-            The cardinality of ``self``.
-
-            OUTPUT: an ``Integer``
+            Return the cardinality of ``self``.
 
             This brute force implementation of :meth:`cardinality`
             iterates through the elements of ``self`` to count them.
@@ -21,6 +19,8 @@
                 sage: C._cardinality_from_iterator()
                 3
 
+            TESTS:
+
             This is the default implementation of :meth:`cardinality`
             from the category ``FiniteEnumeratedSet()``. To test this,
             we need a fresh example::
@@ -30,8 +30,6 @@
                 sage: C = FreshExample(); C.rename(&quot;FreshExample&quot;)
                 sage: C.cardinality
                 &lt;bound method FreshExample_with_category._cardinality_from_iterator of FreshExample&gt;
-
-            TESTS:
 
             This method shall return an ``Integer``; we test this
             here, because :meth:`_test_enumerated_set_iter_cardinality`
@@ -51,13 +49,13 @@
             Here is a more complete example::
 
                 sage: class TestParent(Parent):
-                ...     def __init__(self):
-                ...         Parent.__init__(self, category=FiniteEnumeratedSets())
-                ...     def __iter__(self):
-                ...         yield 1
-                ...         return
-                ...     def cardinality(self, dummy_arg):
-                ...         return 1 # we don't want to change the semantics of cardinality()
+                ....:   def __init__(self):
+                ....:       Parent.__init__(self, category=FiniteEnumeratedSets())
+                ....:   def __iter__(self):
+                ....:       yield 1
+                ....:       return
+                ....:   def cardinality(self, dummy_arg):
+                ....:       return 1 # we don't want to change the semantics of cardinality()
                 sage: P = TestParent()
                 sage: P.cardinality(-1)
                 1
@@ -109,8 +107,8 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -166,6 +164,36 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
 
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::
 
@@ -208,28 +236,6 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
                 sage: C = FiniteEnumeratedSets().example()
                 sage: C._last_from_unrank()
                 3
-            </opaque><constant name="parent._list_from_iterator">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-            The list of the elements of ``self``.
-
-            This implementation computes this list from the iterator
-            of ``self``. This is used by the default implementation of
-            :meth:`list`.
-
-            EXAMPLES::
-
-                sage: C = FiniteEnumeratedSets().example()
-                sage: C._list_from_iterator()
-                [1, 2, 3]
-                sage: C.list() # indirect doctest
-                [1, 2, 3]
             </opaque><constant name="parent._random_element_from_unrank">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -274,7 +280,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
             :meth:`._cardinality_from_iterator`, or if ``self`` is too
             big.
 
-            .. seealso:: :class:`TestSuite`.
+            .. SEEALSO:: :class:`TestSuite`.
 
             EXAMPLES::
 
@@ -285,8 +291,8 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
 
                 sage: from sage.categories.examples.finite_enumerated_sets import Example
                 sage: class CCls(Example):
-                ...       def cardinality(self):
-                ...           return 4
+                ....:     def cardinality(self):
+                ....:         return 4
                 sage: CC = CCls()
                 sage: CC._test_enumerated_set_iter_cardinality()
                 Traceback (most recent call last):
@@ -323,6 +329,75 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
                 sage: C = FiniteEnumeratedSets().example()
                 sage: C._unrank_from_list(1)
                 2
+            </opaque><constant name="parent.cardinality">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the cardinality of ``self``.
+
+            This brute force implementation of :meth:`cardinality`
+            iterates through the elements of ``self`` to count them.
+
+            EXAMPLES::
+
+                sage: C = FiniteEnumeratedSets().example(); C
+                An example of a finite enumerated set: {1,2,3}
+                sage: C._cardinality_from_iterator()
+                3
+
+            TESTS:
+
+            This is the default implementation of :meth:`cardinality`
+            from the category ``FiniteEnumeratedSet()``. To test this,
+            we need a fresh example::
+
+                sage: from sage.categories.examples.finite_enumerated_sets import Example
+                sage: class FreshExample(Example): pass
+                sage: C = FreshExample(); C.rename(&quot;FreshExample&quot;)
+                sage: C.cardinality
+                &lt;bound method FreshExample_with_category._cardinality_from_iterator of FreshExample&gt;
+
+            This method shall return an ``Integer``; we test this
+            here, because :meth:`_test_enumerated_set_iter_cardinality`
+            does not do it for us::
+
+                sage: type(C._cardinality_from_iterator())
+                &lt;type 'sage.rings.integer.Integer'&gt;
+
+            We ignore additional inputs since during doctests classes which
+            override ``cardinality()`` call up to the category rather than
+            their own ``cardinality()`` method (see :trac:`13688`)::
+
+                sage: C = FiniteEnumeratedSets().example()
+                sage: C._cardinality_from_iterator(algorithm='testing')
+                3
+
+            Here is a more complete example::
+
+                sage: class TestParent(Parent):
+                ....:   def __init__(self):
+                ....:       Parent.__init__(self, category=FiniteEnumeratedSets())
+                ....:   def __iter__(self):
+                ....:       yield 1
+                ....:       return
+                ....:   def cardinality(self, dummy_arg):
+                ....:       return 1 # we don't want to change the semantics of cardinality()
+                sage: P = TestParent()
+                sage: P.cardinality(-1)
+                1
+                sage: v = P.list(); v
+                [1]
+                sage: P.cardinality()
+                1
+                sage: P.cardinality('use alt algorithm') # Used to break here: see trac #13688
+                1
+                sage: P.cardinality(dummy_arg='use alg algorithm') # Used to break here: see trac #13688
+                1
             </opaque><constant name="parent.last">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -334,8 +409,8 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None)
-File: sage/misc/cachefunc.pyx (starting at line 2442)
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
 
     A decorator that creates a cached version of an instance
     method of a class.
@@ -390,6 +465,36 @@ File: sage/misc/cachefunc.pyx (starting at line 2442)
         sage: a = A()
         sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
         True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
 
     Cached methods can not be copied like usual methods, see :trac:`12603`.
     Copying them can lead to very surprising results::

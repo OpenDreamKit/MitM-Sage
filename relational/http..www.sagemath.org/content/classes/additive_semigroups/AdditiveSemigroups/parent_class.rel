@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/additive_semigroups/AdditiveSemigroups?parent_class
+HasMeta http://www.sagemath.org/content/classes/additive_semigroups/AdditiveSemigroups?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/additive_semigroups/AdditiveSemigroups?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/additive_semigroups/AdditiveSemigroups?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/additive_semigroups/AdditiveSemigroups?parent_class http://www.sagemath.org/content/classes/additive_semigroups/AdditiveSemigroups?parent_class?classmethod._test_additive_associativity
+constant http://www.sagemath.org/content/classes/additive_semigroups/AdditiveSemigroups?parent_class?classmethod._test_additive_associativity

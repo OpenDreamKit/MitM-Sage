@@ -1,0 +1,8 @@
+theory http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class
+HasMeta http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class?classmethod.Compact
+constant http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class?classmethod.Compact
+Declares http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class?classmethod.Connected
+constant http://www.sagemath.org/content/classes/topological_spaces/TopologicalSpaces?subcategory_class?classmethod.Connected

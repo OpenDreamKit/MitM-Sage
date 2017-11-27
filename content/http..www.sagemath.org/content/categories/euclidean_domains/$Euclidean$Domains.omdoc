@@ -53,19 +53,23 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">NamedBinopMethod(func, name=None, obj=None)
-File: sage/structure/element.pyx (starting at line 3287)
+     </constant><opaque format="text">
+            Return the greatest common divisor of this element and ``other``.
 
-    A decorator to be used on binary operation methods that should operate
-    on elements of the same parent. If the parents of the arguments differ,
-    coercion is performed, then the method is re-looked up by name on the
-    first argument.
+            INPUT:
 
-    In short, using the ``NamedBinopMethod`` (alias ``coerce_binop``) decorator
-    on a method gives it the exact same semantics of the basic arithmetic
-    operations like ``_add_``, ``_sub_``, etc. in that both operands are
-    guaranteed to have exactly the same parent.
-    </opaque><constant name="element.quo_rem">
+            - ``other`` -- an element in the same ring as ``self``
+
+            ALGORITHM:
+
+            Algorithm 3.2.1 in [Coh1993]_.
+
+            EXAMPLES::
+
+                sage: R.&lt;x&gt; = PolynomialRing(QQ, sparse=True)
+                sage: EuclideanDomains().element_class.gcd(x,x+1)
+                -1
+            </opaque><constant name="element.quo_rem">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -84,7 +88,9 @@ File: sage/structure/element.pyx (starting at line 3287)
 
             - ``other`` -- an element in the same euclidean domain
 
-            OUTPUT
+            OUTPUT:
+
+            a pair of elements
 
             EXAMPLES::
 
@@ -159,11 +165,7 @@ File: sage/structure/element.pyx (starting at line 3287)
             ALGORITHM:
 
             Naive implementation of the algorithm described in Section 4.8 of
-            Bach &amp; Shallit [BachShallit1996]_.
-
-            .. [BachShallit1996] Eric Bach, Jeffrey Shallit.
-                *Algorithmic Number Theory, Vol. 1: Efficient Algorithms*.
-                MIT Press, 1996. ISBN 978-0262024051.
+            Bach &amp; Shallit [BS1996]_.
 
             EXAMPLES::
 
@@ -177,6 +179,14 @@ File: sage/structure/element.pyx (starting at line 3287)
                 ....:     (x+1)^3*(x+2)^3*(x+3), (x+1)*(x+2)*(x+3),
                 ....:     (x+1)*(x+2)*(x+4)])
                 [x + 3, x + 4, x^2 + 3*x + 2]
+
+            TESTS::
+
+                sage: R.&lt;x&gt; = QQ[]
+                sage: QQ.gcd_free_basis([x+1,x+2])
+                Traceback (most recent call last):
+                ...
+                TypeError: unable to convert x + 1 to an element of Rational Field
             </opaque><constant name="parent.is_euclidean_domain">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>

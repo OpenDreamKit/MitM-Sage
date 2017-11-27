@@ -6,3 +6,5 @@ Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids
 Includes http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups
 Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?element.pseudo_order
 constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?element.pseudo_order
+Declares http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?parent.rhodes_radical_congruence
+constant http://www.sagemath.org/content/categories/finite_monoids?FiniteMonoids?parent.rhodes_radical_congruence

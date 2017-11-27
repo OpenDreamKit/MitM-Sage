@@ -8,6 +8,8 @@ Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?
 constant http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.__iter__
 Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.__len__
 constant http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.__len__
+Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod._an_element_
+constant http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod._an_element_
 Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod._an_element_from_iterator
 constant http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod._an_element_from_iterator
 Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod._first_from_iterator
@@ -46,6 +48,8 @@ Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?
 constant http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.map
 Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.next
 constant http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.next
+Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.random_element
+constant http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.random_element
 Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.rank
 constant http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.rank
 Declares http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class http://www.sagemath.org/content/classes/enumerated_sets/EnumeratedSets?parent_class?classmethod.unrank

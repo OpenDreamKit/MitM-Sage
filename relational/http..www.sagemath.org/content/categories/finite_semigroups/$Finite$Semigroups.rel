@@ -6,8 +6,6 @@ Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemi
 Includes http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_sets?FiniteSets
 Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.idempotents
 constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.idempotents
-Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.isomorphism_transformation_monoid
-constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.isomorphism_transformation_monoid
 Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_classes
 constant http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_classes
 Declares http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups http://www.sagemath.org/content/categories/finite_semigroups?FiniteSemigroups?parent.j_classes_of_idempotents
