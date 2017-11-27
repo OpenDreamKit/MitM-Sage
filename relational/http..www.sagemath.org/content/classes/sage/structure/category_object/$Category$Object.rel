@@ -29,6 +29,8 @@ Declares http://www.sagemath.org/content/classes/sage/structure/category_object?
 constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._is_category_initialized
 Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._refine_category_
 constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._refine_category_
+Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._underlying_class
+constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod._underlying_class
 Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.base
 constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.base
 Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.base_ring
@@ -47,8 +49,6 @@ Declares http://www.sagemath.org/content/classes/sage/structure/category_object?
 constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.latex_name
 Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.latex_variable_names
 constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.latex_variable_names
-Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.normalize_names
-constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.normalize_names
 Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.objgen
 constant http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.objgen
 Declares http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject http://www.sagemath.org/content/classes/sage/structure/category_object?CategoryObject?classmethod.objgens

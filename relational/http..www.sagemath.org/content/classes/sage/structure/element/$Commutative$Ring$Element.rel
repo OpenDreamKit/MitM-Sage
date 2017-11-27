@@ -1,0 +1,15 @@
+theory http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement
+HasMeta http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/content/classes/sage/structure/element?RingElement
+Declares http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.divides
+constant http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.divides
+Declares http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.inverse_mod
+constant http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.inverse_mod
+Declares http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.is_square
+constant http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.is_square
+Declares http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.mod
+constant http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.mod
+Declares http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.sqrt
+constant http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement?classmethod.sqrt

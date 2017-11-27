@@ -1,0 +1,9 @@
+theory http://www.sagemath.org/content/categories/mmt?GAP
+HasMeta http://www.sagemath.org/content/categories/mmt?GAP http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/mmt?GAP http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/mmt?GAP http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/mmt?GAP http://www.sagemath.org/content/categories/fields?Fields
+Includes http://www.sagemath.org/content/categories/mmt?GAP http://www.sagemath.org/content/categories/mmt/Unital?GAP
+Includes http://www.sagemath.org/content/categories/mmt?GAP http://www.sagemath.org/content/categories/mmt/Commutative?GAP
+Includes http://www.sagemath.org/content/categories/mmt?GAP http://www.sagemath.org/content/categories/mmt/Modules?GAP
+Includes http://www.sagemath.org/content/categories/mmt?GAP http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional

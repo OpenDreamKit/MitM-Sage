@@ -1,0 +1,49 @@
+theory http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras
+HasMeta http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/modules?Modules
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?sage.categories.lie_algebras.LieAlgebras
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?sage.categories.lie_algebras.LieAlgebras
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element._bracket_
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element._bracket_
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element.bracket
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element.bracket
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element.killing_form
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element.killing_form
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element.lift
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element.lift
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element.to_vector
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?element.to_vector
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent._construct_UEA
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent._construct_UEA
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent._test_antisymmetry
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent._test_antisymmetry
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent._test_distributivity
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent._test_distributivity
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent._test_jacobi_identity
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent._test_jacobi_identity
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.bracket
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.bracket
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.from_vector
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.from_vector
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.ideal
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.ideal
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_abelian
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_abelian
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_commutative
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_commutative
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_ideal
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_ideal
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_nilpotent
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_nilpotent
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_solvable
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.is_solvable
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.killing_form
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.killing_form
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.module
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.module
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.subalgebra
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.subalgebra
+Declares http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.universal_enveloping_algebra
+constant http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras?parent.universal_enveloping_algebra

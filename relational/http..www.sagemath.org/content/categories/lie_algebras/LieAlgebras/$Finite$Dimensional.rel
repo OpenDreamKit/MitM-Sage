@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/categories/lie_algebras/LieAlgebras?FiniteDimensional
+HasMeta http://www.sagemath.org/content/categories/lie_algebras/LieAlgebras?FiniteDimensional http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/lie_algebras/LieAlgebras?FiniteDimensional http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/lie_algebras/LieAlgebras?FiniteDimensional http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/lie_algebras/LieAlgebras?FiniteDimensional http://www.sagemath.org/content/categories/lie_algebras?LieAlgebras
+Includes http://www.sagemath.org/content/categories/lie_algebras/LieAlgebras?FiniteDimensional http://www.sagemath.org/content/categories/modules/Modules?FiniteDimensional

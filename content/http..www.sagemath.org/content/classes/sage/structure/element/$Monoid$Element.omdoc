@@ -12,7 +12,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 2272)
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 2278)
 
         Return the (integral) power of self.
         </opaque><constant name="classmethod.__rpow__">
@@ -29,7 +29,7 @@
        
        
      </constant><opaque format="text">MonoidElement.multiplicative_order(self)
-File: sage/structure/element.pyx (starting at line 2266)
+File: sage/structure/element.pyx (starting at line 2272)
 
         Return the multiplicative order of self.
         </opaque><constant name="classmethod.order">
@@ -41,7 +41,7 @@ File: sage/structure/element.pyx (starting at line 2266)
        
        
      </constant><opaque format="text">MonoidElement.order(self)
-File: sage/structure/element.pyx (starting at line 2260)
+File: sage/structure/element.pyx (starting at line 2266)
 
         Return the multiplicative order of self.
         </opaque><constant name="classmethod.powers">
@@ -56,7 +56,7 @@ File: sage/structure/element.pyx (starting at line 2260)
        
        
      </constant><opaque format="text">MonoidElement.powers(self, n)
-File: sage/structure/element.pyx (starting at line 2280)
+File: sage/structure/element.pyx (starting at line 2286)
 
         Return the list `[x^0, x^1, \ldots, x^{n-1}]`.
 

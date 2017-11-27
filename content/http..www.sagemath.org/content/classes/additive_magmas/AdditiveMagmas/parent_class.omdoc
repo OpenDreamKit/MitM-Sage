@@ -251,39 +251,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Return the sum of ``x`` and ``y``.
-
-            The binary addition operator of this additive magma.
-
-            INPUT:
-
-             - ``x``, ``y`` -- elements of this additive magma
-
-            EXAMPLES::
-
-                sage: S = CommutativeAdditiveSemigroups().example()
-                sage: (a,b,c,d) = S.additive_semigroup_generators()
-                sage: S.summation(a, b)
-                a + b
-
-            A parent in ``AdditiveMagmas()`` must
-            either implement :meth:`.summation` in the parent class or
-            ``_add_`` in the element class. By default, the addition
-            method on elements ``x._add_(y)`` calls
-            ``S.summation(x,y)``, and reciprocally.
-
-            As a bonus effect, ``S.summation`` by itself models the
-            binary function from ``S`` to ``S``::
-
-                sage: bin = S.summation
-                sage: bin(a,b)
-                a + b
-
-            Here, ``S.summation`` is just a bound method. Whenever
-            possible, it is recommended to enrich ``S.summation`` with
-            extra mathematical structure. Lazy attributes can come
-            handy for this.
-
-            .. TODO:: Add an example.
-            </opaque></omdoc></theory></omdoc>
+     </constant></omdoc></theory></omdoc>

@@ -1,0 +1,9 @@
+theory http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras
+HasMeta http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras http://www.sagemath.org/content/categories/algebras_with_basis?AlgebrasWithBasis
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras http://www.sagemath.org/content/categories/additive_semigroups/AdditiveSemigroups?Algebras
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras http://www.sagemath.org/content/categories/additive_magmas/AdditiveMagmas/AdditiveUnital?Algebras
+Declares http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras?parent.group
+constant http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Algebras?parent.group

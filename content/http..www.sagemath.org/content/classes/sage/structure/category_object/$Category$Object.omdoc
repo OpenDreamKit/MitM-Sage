@@ -13,7 +13,7 @@
        
        
      </constant><opaque format="text">CategoryObject.Hom(self, codomain, cat=None)
-File: sage/structure/category_object.pyx (starting at line 626)
+File: sage/structure/category_object.pyx (starting at line 638)
 
         Return the homspace ``Hom(self, codomain, cat)`` of all
         homomorphisms from self to codomain in the category cat.  The
@@ -48,7 +48,7 @@ File: sage/structure/category_object.pyx (starting at line 626)
        
        
      </constant><opaque format="text">CategoryObject.__dir__(self)
-File: sage/structure/category_object.pyx (starting at line 855)
+File: sage/structure/category_object.pyx (starting at line 868)
 
         Let cat be the category of ``self``. This method emulates
         ``self`` being an instance of both ``CategoryObject`` and
@@ -75,6 +75,7 @@ File: sage/structure/category_object.pyx (starting at line 855)
             _test_enumerated_set_iter_list
             _test_eq
             _test_euclidean_degree
+            _test_fraction_field
             _test_gcd_vs_xgcd
             _test_metric
             _test_new
@@ -101,7 +102,7 @@ File: sage/structure/category_object.pyx (starting at line 855)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">File: sage/structure/category_object.pyx (starting at line 903)
+     </constant><opaque format="text">File: sage/structure/category_object.pyx (starting at line 917)
 
         Implement Python 2 division as true division.
 
@@ -129,7 +130,7 @@ File: sage/structure/category_object.pyx (starting at line 855)
        
        
      </constant><opaque format="text">CategoryObject.__getstate__(self)
-File: sage/structure/category_object.pyx (starting at line 697)</opaque><constant name="classmethod.__rdiv__">
+File: sage/structure/category_object.pyx (starting at line 709)</opaque><constant name="classmethod.__rdiv__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
@@ -146,7 +147,7 @@ File: sage/structure/category_object.pyx (starting at line 697)</opaque><constan
        
        
      </constant><opaque format="text">CategoryObject.__setstate__(self, d)
-File: sage/structure/category_object.pyx (starting at line 716)</opaque><constant name="classmethod.__temporarily_change_names">
+File: sage/structure/category_object.pyx (starting at line 728)</opaque><constant name="classmethod.__temporarily_change_names">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -161,11 +162,11 @@ File: sage/structure/category_object.pyx (starting at line 716)</opaque><constan
        
        
      </constant><opaque format="text">CategoryObject.__temporarily_change_names(self, names, latex_names)
-File: sage/structure/category_object.pyx (starting at line 495)
+File: sage/structure/category_object.pyx (starting at line 507)
 
         This is used by the variable names context manager.
 
-        TEST:
+        TESTS:
 
         In an old version, it was impossible to temporarily change
         the names if no names were previously assigned. But if one
@@ -197,7 +198,7 @@ File: sage/structure/category_object.pyx (starting at line 495)
        
        
      </constant><opaque format="text">CategoryObject._assign_names(self, names=None, normalize=True, ngens=None)
-File: sage/structure/category_object.pyx (starting at line 401)
+File: sage/structure/category_object.pyx (starting at line 426)
 
         Set the names of the generator of this object.
 
@@ -349,7 +350,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
        
        
      </constant><opaque format="text">CategoryObject._first_ngens(self, n)
-File: sage/structure/category_object.pyx (starting at line 329)
+File: sage/structure/category_object.pyx (starting at line 354)
 
         Used by the preparser for ``R.&lt;x&gt; = ...``.
 
@@ -387,7 +388,7 @@ File: sage/structure/category_object.pyx (starting at line 329)
        
        
      </constant><opaque format="text">CategoryObject._init_category_(self, category)
-File: sage/structure/category_object.pyx (starting at line 150)
+File: sage/structure/category_object.pyx (starting at line 151)
 
         Sets the category or categories of this object.
 
@@ -420,7 +421,7 @@ File: sage/structure/category_object.pyx (starting at line 150)
        
        
      </constant><opaque format="text">CategoryObject._is_category_initialized(self)
-File: sage/structure/category_object.pyx (starting at line 224)</opaque><constant name="classmethod._refine_category_">
+File: sage/structure/category_object.pyx (starting at line 225)</opaque><constant name="classmethod._refine_category_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -432,7 +433,7 @@ File: sage/structure/category_object.pyx (starting at line 224)</opaque><constan
        
        
      </constant><opaque format="text">CategoryObject._refine_category_(self, category)
-File: sage/structure/category_object.pyx (starting at line 183)
+File: sage/structure/category_object.pyx (starting at line 184)
 
         Changes the category of ``self`` into a subcategory.
 
@@ -465,6 +466,32 @@ File: sage/structure/category_object.pyx (starting at line 183)
             sage: P._refine_category_((CommutativeAdditiveMonoids(), Monoids()))
             sage: P.category()
             Join of Category of monoids and Category of commutative additive monoids and Category of enumerated sets
+        </opaque><constant name="classmethod._underlying_class">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CategoryObject._underlying_class(self)
+File: sage/structure/category_object.pyx (starting at line 259)
+
+        Return the underlying class (class without the attached
+        categories) of the given object.
+
+        OUTPUT: A class
+
+        EXAMPLES::
+
+            sage: type(QQ)
+            &lt;class 'sage.rings.rational_field.RationalField_with_category'&gt;
+            sage: QQ._underlying_class()
+            &lt;class 'sage.rings.rational_field.RationalField'&gt;
+            sage: type(ZZ)
+            &lt;type 'sage.rings.integer_ring.IntegerRing_class'&gt;
+            sage: ZZ._underlying_class()
+            &lt;type 'sage.rings.integer_ring.IntegerRing_class'&gt;
         </opaque><constant name="classmethod.base">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -474,7 +501,7 @@ File: sage/structure/category_object.pyx (starting at line 183)
        
        
      </constant><opaque format="text">CategoryObject.base(self)
-File: sage/structure/category_object.pyx (starting at line 620)</opaque><constant name="classmethod.base_ring">
+File: sage/structure/category_object.pyx (starting at line 632)</opaque><constant name="classmethod.base_ring">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -483,7 +510,7 @@ File: sage/structure/category_object.pyx (starting at line 620)</opaque><constan
        
        
      </constant><opaque format="text">CategoryObject.base_ring(self)
-File: sage/structure/category_object.pyx (starting at line 564)
+File: sage/structure/category_object.pyx (starting at line 576)
 
         Return the base ring of ``self``.
 
@@ -545,7 +572,7 @@ File: sage/structure/category_object.pyx (starting at line 564)
        
        
      </constant><opaque format="text">CategoryObject.categories(self)
-File: sage/structure/category_object.pyx (starting at line 234)
+File: sage/structure/category_object.pyx (starting at line 235)
 
         Return the categories of ``self``.
 
@@ -575,7 +602,7 @@ File: sage/structure/category_object.pyx (starting at line 234)
        
        
      </constant><opaque format="text">CategoryObject.gens_dict(self)
-File: sage/structure/category_object.pyx (starting at line 262)
+File: sage/structure/category_object.pyx (starting at line 287)
 
         Return a dictionary whose entries are ``{name:variable,...}``,
         where ``name`` stands for the variable names of this
@@ -596,7 +623,7 @@ File: sage/structure/category_object.pyx (starting at line 262)
        
        
      </constant><opaque format="text">CategoryObject.gens_dict_recursive(self)
-File: sage/structure/category_object.pyx (starting at line 280)
+File: sage/structure/category_object.pyx (starting at line 305)
 
         Return the dictionary of generators of ``self`` and its base rings.
 
@@ -622,7 +649,7 @@ File: sage/structure/category_object.pyx (starting at line 280)
        
        
      </constant><opaque format="text">CategoryObject.has_base(self, category=None)
-File: sage/structure/category_object.pyx (starting at line 556)</opaque><constant name="classmethod.inject_variables">
+File: sage/structure/category_object.pyx (starting at line 568)</opaque><constant name="classmethod.inject_variables">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -637,7 +664,7 @@ File: sage/structure/category_object.pyx (starting at line 556)</opaque><constan
        
        
      </constant><opaque format="text">CategoryObject.inject_variables(self, scope=None, verbose=True)
-File: sage/structure/category_object.pyx (starting at line 528)
+File: sage/structure/category_object.pyx (starting at line 540)
 
         Inject the generators of self with their names into the
         namespace of the Python code from which this function is
@@ -660,7 +687,7 @@ File: sage/structure/category_object.pyx (starting at line 528)
        
        
      </constant><opaque format="text">CategoryObject.latex_name(self)
-File: sage/structure/category_object.pyx (starting at line 689)</opaque><constant name="classmethod.latex_variable_names">
+File: sage/structure/category_object.pyx (starting at line 701)</opaque><constant name="classmethod.latex_variable_names">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -669,7 +696,7 @@ File: sage/structure/category_object.pyx (starting at line 689)</opaque><constan
        
        
      </constant><opaque format="text">CategoryObject.latex_variable_names(self)
-File: sage/structure/category_object.pyx (starting at line 660)
+File: sage/structure/category_object.pyx (starting at line 672)
 
         Returns the list of variable names suitable for latex output.
 
@@ -686,29 +713,6 @@ File: sage/structure/category_object.pyx (starting at line 660)
             sage: f = x[0]^3 + 15/3 * x[1]^10
             sage: print(latex(f))
             5 x_{1}^{10} + x_{0}^{3}
-        </opaque><constant name="classmethod.normalize_names">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA>
-      </om:OMA>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">CategoryObject.normalize_names(self, ngens, names)
-File: sage/structure/category_object.pyx (starting at line 440)
-
-        TESTS::
-
-            sage: ZZ.normalize_names(1, &quot;x&quot;)
-            doctest:...: DeprecationWarning: The method normalize_names() has been changed to a function
-            See http://trac.sagemath.org/19675 for details.
-            ('x',)
         </opaque><constant name="classmethod.objgen">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -718,7 +722,7 @@ File: sage/structure/category_object.pyx (starting at line 440)
        
        
      </constant><opaque format="text">CategoryObject.objgen(self)
-File: sage/structure/category_object.pyx (starting at line 315)
+File: sage/structure/category_object.pyx (starting at line 340)
 
         Return the tuple ``(self, self.gen())``.
 
@@ -738,7 +742,7 @@ File: sage/structure/category_object.pyx (starting at line 315)
        
        
      </constant><opaque format="text">CategoryObject.objgens(self)
-File: sage/structure/category_object.pyx (starting at line 302)
+File: sage/structure/category_object.pyx (starting at line 327)
 
         Return the tuple ``(self, self.gens())``.
 
@@ -757,7 +761,7 @@ File: sage/structure/category_object.pyx (starting at line 302)
        
        
      </constant><opaque format="text">CategoryObject.variable_name(self)
-File: sage/structure/category_object.pyx (starting at line 478)
+File: sage/structure/category_object.pyx (starting at line 490)
 
         Return the first variable name.
 
@@ -780,7 +784,7 @@ File: sage/structure/category_object.pyx (starting at line 478)
        
        
      </constant><opaque format="text">CategoryObject.variable_names(self)
-File: sage/structure/category_object.pyx (starting at line 453)
+File: sage/structure/category_object.pyx (starting at line 465)
 
         Return the list of variable names corresponding to the generators.
 

@@ -7,8 +7,6 @@ Declares http://www.sagemath.org/content/classes/sage/structure/element?Element 
 constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.N
 Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__add__
 constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__add__
-Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__cmp__
-constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__cmp__
 Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__copy__
 constant http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__copy__
 Declares http://www.sagemath.org/content/classes/sage/structure/element?Element http://www.sagemath.org/content/classes/sage/structure/element?Element?classmethod.__dir__

@@ -3,12 +3,11 @@ HasMeta http://www.sagemath.org/?PythonClass http://www.sagemath.org/?Convenient
 Includes http://www.sagemath.org/?PythonClass http://www.sagemath.org/?PythonBasicTypes
 Declares http://www.sagemath.org/?PythonClass http://www.sagemath.org/?PythonClass?PythonClassTheory
 theory http://www.sagemath.org/?PythonClass/PythonClassTheory
-HasMeta http://www.sagemath.org/?PythonClass/PythonClassTheory http://www.sagemath.org/?Convenient
 Declares http://www.sagemath.org/?PythonClass/PythonClassTheory http://www.sagemath.org/?PythonClass/PythonClassTheory?docstring
 constant http://www.sagemath.org/?PythonClass/PythonClassTheory?docstring
 Declares http://www.sagemath.org/?PythonClass/PythonClassTheory http://www.sagemath.org/?PythonClass/PythonClassTheory?name
 constant http://www.sagemath.org/?PythonClass/PythonClassTheory?name
-Declares http://www.sagemath.org/?PythonClass http://www.sagemath.org/?PythonClass?[http://www.sagemath.org/?PythonClass/PythonClassTheory]
-deriveddeclaration http://www.sagemath.org/?PythonClass?[http://www.sagemath.org/?PythonClass/PythonClassTheory]
-Declares http://www.sagemath.org/?PythonClass http://www.sagemath.org/?PythonClass?pyclass
-constant http://www.sagemath.org/?PythonClass?pyclass
+Declares http://www.sagemath.org/?PythonClass http://www.sagemath.org/?PythonClass?FromTheory
+constant http://www.sagemath.org/?PythonClass?FromTheory
+Declares http://www.sagemath.org/?PythonClass http://www.sagemath.org/?PythonClass?FromTheory/[http://www.sagemath.org/?PythonClass/PythonClassTheory]
+constant http://www.sagemath.org/?PythonClass?FromTheory/[http://www.sagemath.org/?PythonClass/PythonClassTheory]

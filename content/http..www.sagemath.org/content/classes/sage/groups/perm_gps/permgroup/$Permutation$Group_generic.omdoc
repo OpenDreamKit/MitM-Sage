@@ -1,10 +1,40 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="PermutationGroup_generic" base="http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/groups/old?FiniteGroup"></import><omdoc name="Methods"><constant name="classmethod.__cmp__">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="PermutationGroup_generic" base="http://www.sagemath.org/content/classes/sage/groups/perm_gps/permgroup" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/groups/old?FiniteGroup"></import><omdoc name="Methods"><constant name="classmethod.__iter__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return an iterator over the elements of this group.
+
+        EXAMPLES::
+
+            sage: G = PermutationGroup([[(1,2,3)], [(1,2)]])
+            sage: [a for a in G]
+            [(), (1,2), (1,2,3), (2,3), (1,3,2), (1,3)]
+
+        Test that it is possible to iterate through moderately large groups
+        (:trac:`18239`)::
+
+            sage: p = [(i,i+1) for i in range(1,601,2)]
+            sage: q = [tuple(range(1+i,601,3)) for i in range(3)]
+            sage: A = PermutationGroup([p,q])
+            sage: A.cardinality()
+            60000
+            sage: for x in A:    # long time - 2 secs
+            ....:     pass       # long time
+        </opaque><constant name="classmethod.__richcmp__">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
               <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
               <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
       </om:OMA>
       </om:OMA></om:OMOBJ></type>
        
@@ -42,33 +72,6 @@
             True
             sage: H3 &lt; H1 # since H3 is a subgroup of H1
             True
-        </opaque><constant name="classmethod.__iter__">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">
-        Return an iterator over the elements of this group.
-
-        EXAMPLES::
-
-            sage: G = PermutationGroup([[(1,2,3)], [(1,2)]])
-            sage: [a for a in G]
-            [(), (1,2), (1,2,3), (2,3), (1,3,2), (1,3)]
-
-        Test that it is possible to iterate through moderately large groups
-        (:trac:`18239`)::
-
-            sage: p = [(i,i+1) for i in range(1,601,2)]
-            sage: q = [tuple(range(1+i,601,3)) for i in range(3)]
-            sage: A = PermutationGroup([p,q])
-            sage: A.cardinality()
-            60000
-            sage: for x in A:    # long time - 2 secs
-            ....:     pass       # long time
         </opaque><constant name="classmethod._domain_gap">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -294,6 +297,14 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
             ....:     [(9,10), (8,10), (7,10), (6,10), (5,10), (4,10), (3,10), (2,10)]]
             sage: [SymmetricGroup(n).subgroup(gen)._order() for gen in special_gens]
             [6, 24, 120, 720, 5040, 40320, 362880]
+
+        Checks that output is a Sage integer (:trac:`23778`)::
+
+            sage: P = PermutationGroup(['(1,2)','(1,3)'])
+            sage: P.cardinality()
+            6
+            sage: isinstance(P.cardinality(), Integer)
+            True
         </opaque><constant name="classmethod._regular_subgroup_gap">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -305,114 +316,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
-File: sage/misc/cachefunc.pyx (starting at line 2607)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    The parameter ``do_pickle`` can be used to enable pickling of the cache.
-    Usually the cache is not stored when pickling::
-
-        sage: class A(object):
-        ....:     @cached_method
-        ....:     def f(self, x): return None
-        sage: import __main__
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        0
-
-    When ``do_pickle`` is set, the pickle contains the contents of the cache::
-
-        sage: class A(object):
-        ....:     @cached_method(do_pickle=True)
-        ....:     def f(self, x): return None
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        1
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="classmethod._repr_">
+     </constant><constant name="classmethod._repr_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -632,6 +536,11 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
             sage: G = PermutationGroup([])
             sage: G.order()
             1
+
+        ``cardinality`` is just an alias::
+
+            sage: PermutationGroup([(1,2,3)]).cardinality()
+            3
         </opaque><constant name="classmethod.center">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -1209,6 +1118,46 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
             Traceback (most recent call last):
             ...
             TypeError: junk does not convert to a permutation group element
+        </opaque><constant name="classmethod.construction">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the construction of ``self``.
+
+        EXAMPLES::
+
+            sage: P1 = PermutationGroup([[(1,2)]])
+            sage: P1.construction()
+            (PermutationGroupFunctor[(1,2)], Permutation Group with generators [()])
+
+            sage: PermutationGroup([]).construction() is None
+            True
+
+        This allows us to perform computations like the following::
+
+            sage: P1 = PermutationGroup([[(1,2)]]); p1 = P1.gen()
+            sage: P2 = PermutationGroup([[(1,3)]]); p2 = P2.gen()
+            sage: p = p1*p2; p
+            (1,2,3)
+            sage: p.parent()
+            Permutation Group with generators [(1,2), (1,3)]
+            sage: p.parent().domain()
+            {1, 2, 3}
+
+        Note that this will merge permutation groups with different
+        domains::
+
+            sage: g1 = PermutationGroupElement([(1,2),(3,4,5)])
+            sage: g2 = PermutationGroup([('a','b')], domain=['a', 'b']).gens()[0]
+            sage: g2
+            ('a','b')
+            sage: p = g1*g2; p
+            (1,2)(3,4,5)('a','b')
         </opaque><constant name="classmethod.cosets">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -1729,114 +1678,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
-File: sage/misc/cachefunc.pyx (starting at line 2607)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    The parameter ``do_pickle`` can be used to enable pickling of the cache.
-    Usually the cache is not stored when pickling::
-
-        sage: class A(object):
-        ....:     @cached_method
-        ....:     def f(self, x): return None
-        sage: import __main__
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        0
-
-    When ``do_pickle`` is set, the pickle contains the contents of the cache::
-
-        sage: class A(object):
-        ....:     @cached_method(do_pickle=True)
-        ....:     def f(self, x): return None
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        1
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="classmethod.holomorph">
+     </constant><constant name="classmethod.holomorph">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -2912,114 +2754,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
-File: sage/misc/cachefunc.pyx (starting at line 2607)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    The parameter ``do_pickle`` can be used to enable pickling of the cache.
-    Usually the cache is not stored when pickling::
-
-        sage: class A(object):
-        ....:     @cached_method
-        ....:     def f(self, x): return None
-        sage: import __main__
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        0
-
-    When ``do_pickle`` is set, the pickle contains the contents of the cache::
-
-        sage: class A(object):
-        ....:     @cached_method(do_pickle=True)
-        ....:     def f(self, x): return None
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        1
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="classmethod.orbits">
+     </constant><constant name="classmethod.orbits">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -3030,114 +2765,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
-File: sage/misc/cachefunc.pyx (starting at line 2607)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    The parameter ``do_pickle`` can be used to enable pickling of the cache.
-    Usually the cache is not stored when pickling::
-
-        sage: class A(object):
-        ....:     @cached_method
-        ....:     def f(self, x): return None
-        sage: import __main__
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        0
-
-    When ``do_pickle`` is set, the pickle contains the contents of the cache::
-
-        sage: class A(object):
-        ....:     @cached_method(do_pickle=True)
-        ....:     def f(self, x): return None
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        1
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="classmethod.poincare_series">
+     </constant><constant name="classmethod.poincare_series">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -3152,7 +2780,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
        
        
      </constant><opaque format="text">
-        Returns the Poincare series of `G \mod p` (`p \geq 2` must be a prime),
+        Return the Poincaré series of `G \mod p` (`p \geq 2` must be a prime),
         for `n` large.
 
         In other words, if you input a finite group `G`, a prime `p`, and a
@@ -3392,114 +3020,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
-File: sage/misc/cachefunc.pyx (starting at line 2607)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    The parameter ``do_pickle`` can be used to enable pickling of the cache.
-    Usually the cache is not stored when pickling::
-
-        sage: class A(object):
-        ....:     @cached_method
-        ....:     def f(self, x): return None
-        sage: import __main__
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        0
-
-    When ``do_pickle`` is set, the pickle contains the contents of the cache::
-
-        sage: class A(object):
-        ....:     @cached_method(do_pickle=True)
-        ....:     def f(self, x): return None
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        1
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="classmethod.socle">
+     </constant><constant name="classmethod.socle">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -3862,8 +3383,6 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
             [Subgroup of (Cyclic group of order 14 as a permutation group) generated by [()],
              Subgroup of (Cyclic group of order 14 as a permutation group) generated by [(1,8)(2,9)(3,10)(4,11)(5,12)(6,13)(7,14)],
              Subgroup of (Cyclic group of order 14 as a permutation group) generated by [(1,3,5,7,9,11,13)(2,4,6,8,10,12,14)],
-             Subgroup of (Cyclic group of order 14 as a permutation group) generated by [(1,2,3,4,5,6,7,8,9,10,11,12,13,14), (1,3,5,7,9,11,13)(2,4,6,8,10,12,14)]]
-
              Subgroup of (Cyclic group of order 14 as a permutation group) generated by [(1,2,3,4,5,6,7,8,9,10,11,12,13,14)]]
 
         AUTHOR:

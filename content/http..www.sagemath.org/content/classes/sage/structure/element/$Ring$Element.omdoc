@@ -1,0 +1,262 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="RingElement" base="http://www.sagemath.org/content/classes/sage/structure/element" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement"></import><omdoc name="Methods"><constant name="classmethod.__invert__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 2469)</opaque><constant name="classmethod.__pow__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/structure/element.pyx (starting at line 2371)
+
+        Return the (integral) power of self.
+
+        EXAMPLES::
+
+            sage: a = Integers(389)['x']['y'](37)
+            sage: p = sage.structure.element.RingElement.__pow__
+            sage: p(a,2)
+            202
+            sage: p(a,2,1)
+            Traceback (most recent call last):
+            ...
+            RuntimeError: __pow__ dummy argument not used
+            sage: p(a,388)
+            1
+            sage: p(a,2^120)
+            81
+            sage: p(a,0)
+            1
+            sage: p(a,1) == a
+            True
+            sage: p(a,2) * p(a,3) == p(a,5)
+            True
+            sage: p(a,3)^2 == p(a,6)
+            True
+            sage: p(a,57) * p(a,43) == p(a,100)
+            True
+            sage: p(a,-1) == 1/a
+            True
+            sage: p(a,200) * p(a,-64) == p(a,136)
+            True
+            sage: p(2, 1/2)
+            Traceback (most recent call last):
+            ...
+            NotImplementedError: non-integral exponents not supported
+
+        TESTS::
+
+        These aren't testing this code, but they are probably good to have around::
+
+            sage: 2r**(SR(2)-1-1r)
+            1
+            sage: 2r^(1/2)
+            sqrt(2)
+
+        Exponent overflow should throw an OverflowError (:trac:`2956`)::
+
+            sage: K.&lt;x,y&gt; = AA[]
+            sage: x^(2^64 + 12345)
+            Traceback (most recent call last):
+            ...
+            OverflowError: exponent overflow (2147483648)
+
+        Another example from :trac:`2956` which always overflows
+        with Singular 4::
+
+            sage: K.&lt;x,y&gt; = ZZ[]
+            sage: (x^12345)^54321
+            Traceback (most recent call last):
+            ...
+            OverflowError: exponent overflow (670592745)
+
+        </opaque><constant name="classmethod.__rpow__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">y.__rpow__(x[, z]) &lt;==&gt; pow(x, y[, z])</opaque><constant name="classmethod._div_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">RingElement._div_(self, other)
+File: sage/structure/element.pyx (starting at line 2459)
+
+        Default implementation of division using the fraction field.
+        </opaque><constant name="classmethod.abs">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">RingElement.abs(self)
+File: sage/structure/element.pyx (starting at line 2512)
+
+        Return the absolute value of ``self``.  (This just calls the ``__abs__``
+        method, so it is equivalent to the ``abs()`` built-in function.)
+
+        EXAMPLES::
+
+            sage: RR(-1).abs()
+            1.00000000000000
+            sage: ZZ(-1).abs()
+            1
+            sage: CC(I).abs()
+            1.00000000000000
+            sage: Mod(-15, 37).abs()
+            Traceback (most recent call last):
+            ...
+            ArithmeticError: absolute valued not defined on integers modulo n.
+        </opaque><constant name="classmethod.is_nilpotent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">RingElement.is_nilpotent(self)
+File: sage/structure/element.pyx (starting at line 2487)
+
+        Return ``True`` if ``self`` is nilpotent, i.e., some power of ``self``
+        is 0.
+
+        TESTS::
+
+            sage: a = QQ(2)
+            sage: a.is_nilpotent()
+            False
+            sage: a = QQ(0)
+            sage: a.is_nilpotent()
+            True
+            sage: m = matrix(QQ,3,[[3,2,3],[9,0,3],[-9,0,-3]])
+            sage: m.is_nilpotent()
+            Traceback (most recent call last):
+            ...
+            AttributeError: ... object has no attribute 'is_nilpotent'
+        </opaque><constant name="classmethod.is_one">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">RingElement.is_one(self)
+File: sage/structure/element.pyx (starting at line 2368)</opaque><constant name="classmethod.is_prime">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">RingElement.is_prime(self)
+File: sage/structure/element.pyx (starting at line 2532)
+
+        Is ``self`` a prime element?
+
+        A *prime* element is a non-zero, non-unit element `p` such that,
+        whenever `p` divides `ab` for some `a` and `b`, then `p`
+        divides `a` or `p` divides `b`.
+
+        EXAMPLES:
+
+        For polynomial rings, prime is the same as irreducible::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: x.is_prime()
+            True
+            sage: (x^2 + y^3).is_prime()
+            True
+            sage: (x^2 - y^2).is_prime()
+            False
+            sage: R(0).is_prime()
+            False
+            sage: R(2).is_prime()
+            False
+
+        For the Gaussian integers::
+
+            sage: K.&lt;i&gt; = QuadraticField(-1)
+            sage: ZI = K.ring_of_integers()
+            sage: ZI(3).is_prime()
+            True
+            sage: ZI(5).is_prime()
+            False
+            sage: ZI(2+i).is_prime()
+            True
+            sage: ZI(0).is_prime()
+            False
+            sage: ZI(1).is_prime()
+            False
+
+        In fields, an element is never prime::
+
+            sage: RR(0).is_prime()
+            False
+            sage: RR(2).is_prime()
+            False
+
+        For integers, prime numbers are redefined to be positive::
+
+            sage: RingElement.is_prime(-2)
+            True
+            sage: Integer.is_prime(-2)
+            False
+        </opaque><constant name="classmethod.multiplicative_order">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">RingElement.multiplicative_order(self)
+File: sage/structure/element.pyx (starting at line 2478)
+
+        Return the multiplicative order of ``self``, if ``self`` is a unit,
+        or raise ``ArithmeticError`` otherwise.
+        </opaque><constant name="classmethod.powers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">RingElement.powers(self, n)
+File: sage/structure/element.pyx (starting at line 2439)
+
+        Return the list `[x^0, x^1, \ldots, x^{n-1}]`.
+
+        EXAMPLES::
+
+            sage: 5.powers(3)
+            [1, 5, 25]
+        </opaque></omdoc></theory></omdoc>

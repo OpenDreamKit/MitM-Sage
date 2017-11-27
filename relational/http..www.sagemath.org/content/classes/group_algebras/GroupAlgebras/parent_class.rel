@@ -1,0 +1,12 @@
+theory http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class
+HasMeta http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class http://www.sagemath.org/?Structures
+Declares http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class?classmethod._latex_
+constant http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class?classmethod._latex_
+Declares http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class?classmethod.center_basis
+constant http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class?classmethod.center_basis
+Declares http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class?classmethod.group
+constant http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class?classmethod.group
+Declares http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class?classmethod.is_integral_domain
+constant http://www.sagemath.org/content/classes/group_algebras/GroupAlgebras?parent_class?classmethod.is_integral_domain

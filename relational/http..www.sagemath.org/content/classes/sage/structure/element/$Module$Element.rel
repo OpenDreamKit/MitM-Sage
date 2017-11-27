@@ -1,0 +1,17 @@
+theory http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement
+HasMeta http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/content/classes/sage/structure/element?Element
+Declares http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod._lmul_
+constant http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod._lmul_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod._neg_
+constant http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod._neg_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod._rmul_
+constant http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod._rmul_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod._sub_
+constant http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod._sub_
+Declares http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod.additive_order
+constant http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod.additive_order
+Declares http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod.order
+constant http://www.sagemath.org/content/classes/sage/structure/element?ModuleElement?classmethod.order

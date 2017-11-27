@@ -1,0 +1,15 @@
+theory http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations
+HasMeta http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/category?JoinCategory
+Declares http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?AdditiveUnital
+constant http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?AdditiveUnital
+Declares http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?AdditiveInverse
+constant http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?AdditiveInverse
+Declares http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?AdditiveAssociative
+constant http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?AdditiveAssociative
+Declares http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?AdditiveCommutative
+constant http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?AdditiveCommutative
+Declares http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?Distributive
+constant http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?WithRealizations?Distributive

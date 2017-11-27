@@ -1,0 +1,17 @@
+theory http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions
+HasMeta http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/content/classes/sage/structure/parent?Parent
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.Element
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.Element
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.__reversed__
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.__reversed__
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod._element_constructor_
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod._element_constructor_
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.global_options
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.global_options
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.options
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.options
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.subset
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions?classmethod.subset

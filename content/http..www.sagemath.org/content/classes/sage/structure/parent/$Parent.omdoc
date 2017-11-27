@@ -9,7 +9,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 1054)
+     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 1040)
 
         True if there is an element of self that is equal to x under
         ==, or if x is already an element of self.  Also, True in other
@@ -107,7 +107,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 1229)
+     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 1215)
 
         Returns the `n^{th}` item or slice `n` of self,
         by getting self as a list.
@@ -152,15 +152,18 @@
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
               <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
               <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
       </om:OMA>
       </om:OMA>
       </om:OMA>
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Parent.__make_element_class__(self, cls, name=None, inherit=None)
-File: sage/structure/parent.pyx (starting at line 587)
+     </constant><opaque format="text">Parent.__make_element_class__(self, cls, name=None, module=None, inherit=None)
+File: sage/structure/parent.pyx (starting at line 571)
 
         A utility to construct classes for the elements of this
         parent, with appropriate inheritance from the element class of
@@ -176,7 +179,7 @@ File: sage/structure/parent.pyx (starting at line 587)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 961)
+     </constant><opaque format="text">File: sage/structure/parent.pyx (starting at line 946)
 
         This is a multiplication method that more or less directly
         calls another attribute ``_mul_`` (single underscore). This
@@ -193,7 +196,8 @@ File: sage/structure/parent.pyx (starting at line 587)
         it is a ring, from the point of view of categories::
 
             sage: MS.category()
-            Category of infinite algebras over (quotient fields and metric spaces)
+            Category of infinite finite dimensional algebras with basis
+             over (number fields and quotient fields and metric spaces)
             sage: MS in Rings()
             True
 
@@ -262,7 +266,7 @@ File: sage/structure/parent.pyx (starting at line 587)
        
        
      </constant><opaque format="text">Parent._an_element_(self)
-File: sage/structure/parent.pyx (starting at line 2571)
+File: sage/structure/parent.pyx (starting at line 2592)
 
         Returns an element of self. Want it in sufficient generality
         that poorly-written functions won't work when they're not
@@ -309,7 +313,7 @@ File: sage/structure/parent.pyx (starting at line 2571)
        
        
      </constant><opaque format="text">Parent._cmp_(left, right) -&gt; int
-File: sage/structure/parent.pyx (starting at line 1212)
+File: sage/structure/parent.pyx (starting at line 1198)
 
         Check for Python class defining ``__cmp__``
         </opaque><constant name="classmethod._coerce_map_from_">
@@ -324,7 +328,7 @@ File: sage/structure/parent.pyx (starting at line 1212)
        
        
      </constant><opaque format="text">Parent._coerce_map_from_(self, S)
-File: sage/structure/parent.pyx (starting at line 1936)
+File: sage/structure/parent.pyx (starting at line 1973)
 
         Override this method to specify coercions beyond those specified
         in coerce_list.
@@ -348,7 +352,7 @@ File: sage/structure/parent.pyx (starting at line 1936)
        
        
      </constant><opaque format="text">Parent._coerce_map_via(self, v, S)
-File: sage/structure/parent.pyx (starting at line 1850)
+File: sage/structure/parent.pyx (starting at line 1887)
 
         This attempts to construct a morphism from S to self by passing through
         one of the items in v (tried in order).
@@ -373,10 +377,10 @@ File: sage/structure/parent.pyx (starting at line 1850)
 
             sage: copy(CDF._coerce_map_via([ZZ, RR, CC], int))
             Composite map:
-              From: Set of Python objects of type 'int'
+              From: Set of Python objects of class 'int'
               To:   Complex Double Field
               Defn:   Native morphism:
-                      From: Set of Python objects of type 'int'
+                      From: Set of Python objects of class 'int'
                       To:   Integer Ring
                     then
                       Native morphism:
@@ -411,7 +415,7 @@ File: sage/structure/parent.pyx (starting at line 1850)
        
        
      </constant><opaque format="text">Parent._convert_map_from_(self, S)
-File: sage/structure/parent.pyx (starting at line 2379)
+File: sage/structure/parent.pyx (starting at line 2419)
 
         Override this method to provide additional conversions beyond those
         given in convert_list.
@@ -422,7 +426,7 @@ File: sage/structure/parent.pyx (starting at line 2379)
 
         This MUST return a Map from S to self, or None. If None is returned
         then a generic map will be provided.
-        </opaque><constant name="classmethod._generic_convert_map">
+        </opaque><constant name="classmethod._generic_coerce_map">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -433,8 +437,49 @@ File: sage/structure/parent.pyx (starting at line 2379)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">Parent._generic_convert_map(self, S)
-File: sage/structure/parent.pyx (starting at line 1816)
+     </constant><opaque format="text">Parent._generic_coerce_map(self, S)
+File: sage/structure/parent.pyx (starting at line 1803)
+
+        Returns a default coercion map based on the data provided to
+        :meth:`_populate_coercion_lists_`.
+        
+        This method differs from :meth:`_generic_convert_map` only in setting
+        the category for the map to the meet of the category of this parent
+        and ``S``.
+
+        EXAMPLES::
+
+            sage: QQ['x']._generic_coerce_map(ZZ)
+            Conversion map:
+                From: Integer Ring
+                To:   Univariate Polynomial Ring in x over Rational Field
+
+
+        TESTS:
+
+        We check that :trac:`23184` has been resolved::
+
+            sage: QQ['x', 'y']._generic_coerce_map(QQ).category_for()
+            Category of unique factorization domains
+            sage: QQ[['x']].coerce_map_from(QQ).category_for()
+            Category of euclidean domains
+
+        </opaque><constant name="classmethod._generic_convert_map">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Parent._generic_convert_map(self, S, category=None)
+File: sage/structure/parent.pyx (starting at line 1836)
 
         Returns the default conversion map based on the data provided to
         :meth:`_populate_coercion_lists_`.
@@ -446,7 +491,24 @@ File: sage/structure/parent.pyx (starting at line 1816)
         ``DefaultConvertMap`` or ``DefaultConvertMap_unique``
         depending on whether or not init_no_parent is set.
 
-        EXAMPLES:
+        EXAMPLES::
+
+            sage: QQ['x']._generic_convert_map(SR)
+            Conversion via _polynomial_ method map:
+              From: Symbolic Ring
+              To:   Univariate Polynomial Ring in x over Rational Field
+            sage: GF(11)._generic_convert_map(GF(7))
+            Conversion map:
+              From: Finite Field of size 7
+              To:   Finite Field of size 11
+
+        TESTS:
+
+        We check that `trac`:23184 has been resolved::
+
+            sage: QQ[['x']].coerce_map_from(QQ).category_for()
+            Category of euclidean domains
+
         </opaque><constant name="classmethod._get_action_">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -465,7 +527,7 @@ File: sage/structure/parent.pyx (starting at line 1816)
        
        
      </constant><opaque format="text">Parent._get_action_(self, S, op, bool self_on_left)
-File: sage/structure/parent.pyx (starting at line 2509)
+File: sage/structure/parent.pyx (starting at line 2549)
 
         Override this method to provide an action of self on S or S on self
         beyond what was specified in action_list.
@@ -484,7 +546,7 @@ File: sage/structure/parent.pyx (starting at line 2509)
        
        
      </constant><opaque format="text">Parent._internal_coerce_map_from(self, S)
-File: sage/structure/parent.pyx (starting at line 1985)
+File: sage/structure/parent.pyx (starting at line 2022)
 
         Return the :class:`Map` object to coerce from ``S`` to ``self`` that
         is used internally by the coercion system if one exists, or ``None``
@@ -499,11 +561,11 @@ File: sage/structure/parent.pyx (starting at line 1985)
             sage: ZZ._internal_coerce_map_from(int)
             (map internal to coercion system -- copy before use)
             Native morphism:
-              From: Set of Python objects of type 'int'
+              From: Set of Python objects of class 'int'
               To:   Integer Ring
             sage: copy(ZZ._internal_coerce_map_from(int))
             Native morphism:
-              From: Set of Python objects of type 'int'
+              From: Set of Python objects of class 'int'
               To:   Integer Ring
             sage: copy(QQ._internal_coerce_map_from(ZZ))
             Natural morphism:
@@ -552,7 +614,7 @@ File: sage/structure/parent.pyx (starting at line 1985)
        
        
      </constant><opaque format="text">Parent._internal_convert_map_from(self, S)
-File: sage/structure/parent.pyx (starting at line 2306)
+File: sage/structure/parent.pyx (starting at line 2346)
 
         This function returns a :class:`Map` from `S` to `self`,
         which may or may not succeed on all inputs.
@@ -585,7 +647,7 @@ File: sage/structure/parent.pyx (starting at line 2306)
        
        
      </constant><opaque format="text">Parent._introspect_coerce(self)
-File: sage/structure/parent.pyx (starting at line 751)
+File: sage/structure/parent.pyx (starting at line 736)
 
         Used for debugging the coercion model.
 
@@ -618,7 +680,7 @@ File: sage/structure/parent.pyx (starting at line 751)
        
        
      </constant><opaque format="text">Parent._is_valid_homomorphism_(self, codomain, im_gens)
-File: sage/structure/parent.pyx (starting at line 1279)
+File: sage/structure/parent.pyx (starting at line 1265)
 
        Return True if ``im_gens`` defines a valid homomorphism
        from self to codomain; otherwise return False.
@@ -659,7 +721,7 @@ File: sage/structure/parent.pyx (starting at line 1279)
        
        
      </constant><opaque format="text">Parent._populate_coercion_lists_(self, coerce_list=[], action_list=[], convert_list=[], embedding=None, convert_method_name=None, element_constructor=None, init_no_parent=None, bool unpickling=False)
-File: sage/structure/parent.pyx (starting at line 1422)
+File: sage/structure/parent.pyx (starting at line 1408)
 
         This function allows one to specify coercions, actions, conversions
         and embeddings involving this parent.
@@ -703,7 +765,7 @@ File: sage/structure/parent.pyx (starting at line 1422)
        
        
      </constant><opaque format="text">Parent._repr_option(self, key)
-File: sage/structure/parent.pyx (starting at line 828)
+File: sage/structure/parent.pyx (starting at line 813)
 
         Metadata about the :meth:`_repr_` output.
 
@@ -744,7 +806,7 @@ File: sage/structure/parent.pyx (starting at line 828)
        
        
      </constant><opaque format="text">Parent._set_element_constructor(self)
-File: sage/structure/parent.pyx (starting at line 604)
+File: sage/structure/parent.pyx (starting at line 589)
 
         This function is used in translating from the old to the new coercion model.
 
@@ -756,8 +818,8 @@ File: sage/structure/parent.pyx (starting at line 604)
 
         EXAMPLES::
 
-            sage: k = GF(5); k._element_constructor # indirect doctest
-            &lt;bound method FiniteField_prime_modn_with_category._element_constructor_ of Finite Field of size 5&gt;
+            sage: k = GF(5)
+            sage: k._set_element_constructor()
         </opaque><constant name="classmethod._test_eq">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -767,7 +829,7 @@ File: sage/structure/parent.pyx (starting at line 604)
        
        
      </constant><opaque format="text">Parent._test_eq(self, **options)
-File: sage/structure/parent.pyx (starting at line 690)
+File: sage/structure/parent.pyx (starting at line 675)
 
         Test that ``self`` is equal to ``self`` and different to ``None``.
 
@@ -806,7 +868,7 @@ File: sage/structure/parent.pyx (starting at line 690)
        
        
      </constant><opaque format="text">Parent._unset_category(self)
-File: sage/structure/parent.pyx (starting at line 483)
+File: sage/structure/parent.pyx (starting at line 465)
 
         Remove the information on ``self``'s category.
 
@@ -871,7 +933,7 @@ File: sage/structure/parent.pyx (starting at line 483)
        
        
      </constant><opaque format="text">Parent._unset_coercions_used(self)
-File: sage/structure/parent.pyx (starting at line 1497)
+File: sage/structure/parent.pyx (starting at line 1483)
 
         Pretend that this parent has never been interrogated by the coercion
         model, so that it is possible to add coercions, conversions, and
@@ -889,7 +951,7 @@ File: sage/structure/parent.pyx (starting at line 1497)
        
        
      </constant><opaque format="text">Parent._unset_embedding(self)
-File: sage/structure/parent.pyx (starting at line 1510)
+File: sage/structure/parent.pyx (starting at line 1496)
 
         Pretend that this parent has never been interrogated by the
         coercion model, and remove any existing embedding.
@@ -911,7 +973,7 @@ File: sage/structure/parent.pyx (starting at line 1510)
        
        
      </constant><opaque format="text">Parent.an_element(self)
-File: sage/structure/parent.pyx (starting at line 2540)
+File: sage/structure/parent.pyx (starting at line 2561)
 
         Returns a (preferably typical) element of this parent.
 
@@ -947,7 +1009,7 @@ File: sage/structure/parent.pyx (starting at line 2540)
        
        
      </constant><opaque format="text">Parent.coerce(self, x)
-File: sage/structure/parent.pyx (starting at line 1168)
+File: sage/structure/parent.pyx (starting at line 1154)
 
         Return x as an element of self, if and only if there is a canonical
         coercion from the parent of x to self.
@@ -975,7 +1037,7 @@ File: sage/structure/parent.pyx (starting at line 1168)
        
        
      </constant><opaque format="text">Parent.coerce_embedding(self)
-File: sage/structure/parent.pyx (starting at line 1789)
+File: sage/structure/parent.pyx (starting at line 1776)
 
         Return the embedding of ``self`` into some other parent, if such a
         parent exists.
@@ -1011,7 +1073,7 @@ File: sage/structure/parent.pyx (starting at line 1789)
        
        
      </constant><opaque format="text">Parent.coerce_map_from(self, S)
-File: sage/structure/parent.pyx (starting at line 1948)
+File: sage/structure/parent.pyx (starting at line 1985)
 
         Return a :class:`Map` object to coerce from ``S`` to ``self`` if one
         exists, or ``None`` if no such coercion exists.
@@ -1045,31 +1107,6 @@ File: sage/structure/parent.pyx (starting at line 1948)
             sage: m = Sym.monomial()
             sage: Ht = Sym.macdonald().Ht()
             sage: phi = m.coerce_map_from(P)
-        </opaque><constant name="classmethod.construction">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
-              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
-              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
-      </om:OMA></om:OMOBJ></type>
-       
-       
-     </constant><opaque format="text">Parent.construction(self)
-File: sage/structure/parent.pyx (starting at line 2519)
-
-        Returns a pair (functor, parent) such that functor(parent) return self.
-        If this ring does not have a functorial construction, return None.
-
-        EXAMPLES::
-
-            sage: QQ.construction()
-            (FractionField, Integer Ring)
-            sage: f, R = QQ['x'].construction()
-            sage: f
-            Poly[x]
-            sage: R
-            Rational Field
-            sage: f(R)
-            Univariate Polynomial Ring in x over Rational Field
         </opaque><constant name="classmethod.convert_map_from">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -1082,7 +1119,7 @@ File: sage/structure/parent.pyx (starting at line 2519)
        
        
      </constant><opaque format="text">Parent.convert_map_from(self, S)
-File: sage/structure/parent.pyx (starting at line 2279)
+File: sage/structure/parent.pyx (starting at line 2319)
 
         This function returns a :class:`Map` from `S` to `self`,
         which may or may not succeed on all inputs.
@@ -1129,7 +1166,7 @@ File: sage/structure/parent.pyx (starting at line 2279)
        
        
      </constant><opaque format="text">Parent.get_action(self, S, op=operator.mul, bool self_on_left=True, self_el=None, S_el=None)
-File: sage/structure/parent.pyx (starting at line 2393)
+File: sage/structure/parent.pyx (starting at line 2433)
 
         Returns an action of self on S or S on self.
 
@@ -1153,7 +1190,7 @@ File: sage/structure/parent.pyx (starting at line 2393)
        
        
      </constant><opaque format="text">Parent.has_coerce_map_from(self, S) -&gt; bool
-File: sage/structure/parent.pyx (starting at line 1912)
+File: sage/structure/parent.pyx (starting at line 1949)
 
         Return True if there is a natural map from S to self.
         Otherwise, return False.
@@ -1186,7 +1223,7 @@ File: sage/structure/parent.pyx (starting at line 1912)
        
        
      </constant><opaque format="text">Parent.hom(self, im_gens, codomain=None, check=None)
-File: sage/structure/parent.pyx (starting at line 1333)
+File: sage/structure/parent.pyx (starting at line 1319)
 
        Return the unique homomorphism from self to codomain that
        sends ``self.gens()`` to the entries of ``im_gens``.
@@ -1246,7 +1283,7 @@ File: sage/structure/parent.pyx (starting at line 1333)
            sage: f(7)
            2
            sage: f
-           Ring Coercion morphism:
+           Natural morphism:
              From: Integer Ring
              To:   Finite Field of size 5
 
@@ -1256,7 +1293,7 @@ File: sage/structure/parent.pyx (starting at line 1333)
            sage: QQ.hom(ZZ)
            Traceback (most recent call last):
            ...
-           TypeError: Natural coercion morphism from Rational Field to Integer Ring not defined.
+           TypeError: natural coercion morphism from Rational Field to Integer Ring not defined 
        </opaque><constant name="classmethod.is_atomic_repr">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
@@ -1266,7 +1303,7 @@ File: sage/structure/parent.pyx (starting at line 1333)
        
        
      </constant><opaque format="text">Parent.is_atomic_repr(self)
-File: sage/structure/parent.pyx (starting at line 870)
+File: sage/structure/parent.pyx (starting at line 855)
 
         The old way to signal atomic string reps.
 
@@ -1292,7 +1329,7 @@ File: sage/structure/parent.pyx (starting at line 870)
        
        
      </constant><opaque format="text">Parent.is_coercion_cached(self, domain) -&gt; bool
-File: sage/structure/parent.pyx (starting at line 1527)
+File: sage/structure/parent.pyx (starting at line 1513)
 
 
         </opaque><constant name="classmethod.is_conversion_cached">
@@ -1307,7 +1344,7 @@ File: sage/structure/parent.pyx (starting at line 1527)
        
        
      </constant><opaque format="text">Parent.is_conversion_cached(self, domain) -&gt; bool
-File: sage/structure/parent.pyx (starting at line 1533)
+File: sage/structure/parent.pyx (starting at line 1519)
 
         </opaque><constant name="classmethod.is_exact">
        
@@ -1318,7 +1355,7 @@ File: sage/structure/parent.pyx (starting at line 1533)
        
        
      </constant><opaque format="text">Parent.is_exact(self) -&gt; bool
-File: sage/structure/parent.pyx (starting at line 2638)
+File: sage/structure/parent.pyx (starting at line 2659)
 
         Test whether the ring is exact.
 
@@ -1355,7 +1392,7 @@ File: sage/structure/parent.pyx (starting at line 2638)
        
        
      </constant><opaque format="text">Parent.register_action(self, action)
-File: sage/structure/parent.pyx (starting at line 1584)
+File: sage/structure/parent.pyx (starting at line 1571)
 
         Update the coercion model to use ``action`` to act on self.
 
@@ -1420,7 +1457,7 @@ File: sage/structure/parent.pyx (starting at line 1584)
        
        
      </constant><opaque format="text">Parent.register_coercion(self, mor)
-File: sage/structure/parent.pyx (starting at line 1538)
+File: sage/structure/parent.pyx (starting at line 1524)
 
         Update the coercion model to use `mor : P \to \text{self}` to coerce
         from a parent ``P`` into ``self``.
@@ -1463,7 +1500,7 @@ File: sage/structure/parent.pyx (starting at line 1538)
        
        
      </constant><opaque format="text">Parent.register_conversion(self, mor)
-File: sage/structure/parent.pyx (starting at line 1652)
+File: sage/structure/parent.pyx (starting at line 1639)
 
         Update the coercion model to use `\text{mor} : P \to \text{self}` to convert
         from ``P`` into ``self``.
@@ -1494,7 +1531,7 @@ File: sage/structure/parent.pyx (starting at line 1652)
        
        
      </constant><opaque format="text">Parent.register_embedding(self, embedding)
-File: sage/structure/parent.pyx (starting at line 1687)
+File: sage/structure/parent.pyx (starting at line 1674)
 
         Add embedding to coercion model.
 

@@ -25,6 +25,8 @@ Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent ht
 constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._coerce_map_via
 Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._convert_map_from_
 constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._convert_map_from_
+Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._generic_coerce_map
+constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._generic_coerce_map
 Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._generic_convert_map
 constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._generic_convert_map
 Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod._get_action_
@@ -59,8 +61,6 @@ Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent ht
 constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce_embedding
 Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce_map_from
 constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.coerce_map_from
-Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.construction
-constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.construction
 Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.convert_map_from
 constant http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.convert_map_from
 Declares http://www.sagemath.org/content/classes/sage/structure/parent?Parent http://www.sagemath.org/content/classes/sage/structure/parent?Parent?classmethod.get_action

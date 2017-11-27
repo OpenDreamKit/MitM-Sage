@@ -1,0 +1,245 @@
+theory http://www.sagemath.org/content/classes/sage/combinat/partition?Partition
+HasMeta http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialElement
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.__next__
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.__next__
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._initial_degree
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._initial_degree
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_diagram
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_diagram
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_exp_high
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_exp_high
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_exp_low
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_exp_low
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_list
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_list
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_young_diagram
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._latex_young_diagram
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_compact_high
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_compact_high
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_compact_low
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_compact_low
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_diagram
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_diagram
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_exp_high
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_exp_high
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_exp_low
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_exp_low
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_list
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod._repr_list
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.add_cell
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.add_cell
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.add_horizontal_border_strip
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.add_horizontal_border_strip
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.add_vertical_border_strip
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.add_vertical_border_strip
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.addable_cells
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.addable_cells
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.addable_cells_residue
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.addable_cells_residue
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.arm_cells
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.arm_cells
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.arm_length
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.arm_length
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.arm_lengths
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.arm_lengths
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.arms_legs_coeff
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.arms_legs_coeff
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.atom
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.atom
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.attacking_pairs
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.attacking_pairs
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.aut
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.aut
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.beta_numbers
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.beta_numbers
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.cell_poset
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.cell_poset
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.cells
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.cells
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.centralizer_size
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.centralizer_size
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.character_polynomial
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.character_polynomial
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.components
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.components
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.conjugacy_class_size
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.conjugacy_class_size
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.conjugate
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.conjugate
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.contains
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.contains
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.content
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.content
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.core
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.core
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.corners
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.corners
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.corners_residue
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.corners_residue
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.crank
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.crank
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.defect
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.defect
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.degree
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.degree
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.dimension
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.dimension
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.dominated_partitions
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.dominated_partitions
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.dominates
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.dominates
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.down
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.down
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.down_list
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.down_list
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.dual_equivalence_graph
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.dual_equivalence_graph
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.evaluation
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.evaluation
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.ferrers_diagram
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.ferrers_diagram
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.frobenius_coordinates
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.frobenius_coordinates
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.frobenius_rank
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.frobenius_rank
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.from_kbounded_to_grassmannian
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.from_kbounded_to_grassmannian
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.from_kbounded_to_reduced_word
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.from_kbounded_to_reduced_word
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.garnir_tableau
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.garnir_tableau
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.generalized_pochhammer_symbol
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.generalized_pochhammer_symbol
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.get_part
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.get_part
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hook_length
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hook_length
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hook_lengths
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hook_lengths
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hook_polynomial
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hook_polynomial
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hook_product
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hook_product
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hooks
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.hooks
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.initial_column_tableau
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.initial_column_tableau
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.initial_tableau
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.initial_tableau
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.inside_corners
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.inside_corners
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.inside_corners_residue
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.inside_corners_residue
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.is_core
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.is_core
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.is_empty
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.is_empty
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.jacobi_trudi
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.jacobi_trudi
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_atom
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_atom
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_boundary
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_boundary
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_conjugate
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_conjugate
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_interior
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_interior
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_irreducible
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_irreducible
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_skew
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_skew
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_split
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.k_split
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.larger_lex
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.larger_lex
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.leg_cells
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.leg_cells
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.leg_length
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.leg_length
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.leg_lengths
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.leg_lengths
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.length
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.length
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.level
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.level
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.lower_hook
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.lower_hook
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.lower_hook_lengths
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.lower_hook_lengths
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.next
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.next
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.outer_rim
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.outer_rim
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.outline
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.outline
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.outside_corners
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.outside_corners
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.outside_corners_residue
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.outside_corners_residue
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.plancherel_measure
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.plancherel_measure
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.power
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.power
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.pp
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.pp
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.prime_degree
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.prime_degree
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.quotient
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.quotient
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.reading_tableau
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.reading_tableau
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.removable_cells
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.removable_cells
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.removable_cells_residue
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.removable_cells_residue
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.remove_cell
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.remove_cell
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.remove_horizontal_border_strip
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.remove_horizontal_border_strip
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.residue
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.residue
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.rim
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.rim
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.sign
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.sign
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.size
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.size
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.standard_tableaux
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.standard_tableaux
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.suter_diagonal_slide
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.suter_diagonal_slide
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.t_completion
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.t_completion
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_core
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_core
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_dyck_word
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_dyck_word
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_exp
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_exp
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_exp_dict
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_exp_dict
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_list
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.to_list
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.top_garnir_tableau
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.top_garnir_tableau
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.up
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.up
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.up_list
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.up_list
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.upper_hook
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.upper_hook
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.upper_hook_lengths
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.upper_hook_lengths
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.weighted_size
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.weighted_size
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.young_subgroup
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.young_subgroup
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.young_subgroup_generators
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.young_subgroup_generators
+Declares http://www.sagemath.org/content/classes/sage/combinat/partition?Partition http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.zero_one_sequence
+constant http://www.sagemath.org/content/classes/sage/combinat/partition?Partition?classmethod.zero_one_sequence

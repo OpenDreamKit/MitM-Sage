@@ -1,0 +1,23 @@
+theory http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject
+HasMeta http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__add__
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__add__
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__bool__
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__bool__
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__contains__
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__contains__
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__getitem__
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__getitem__
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__iter__
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__iter__
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__len__
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__len__
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__nonzero__
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.__nonzero__
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod._repr_
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod._repr_
+Declares http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.index
+constant http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject?classmethod.index

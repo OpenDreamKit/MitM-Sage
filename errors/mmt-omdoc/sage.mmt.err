@@ -1,2 +1,34 @@
 <errors>
+<error target="structure-parser" sref="http://www.sagemath.org/sage.mmt#1287.48.13:1293.48.19" type="info.kwarc.mmt.api.SourceError" shortMsg="expected ':', '=', '#', '##', '@', 'role', found pyclass" level="2">
+  source error (structure-parser) at http://www.sagemath.org/sage.mmt#1287.48.13:1293.48.19
+  <stacktrace>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.makeError(StructureParser.scala:160)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser$$anonfun$readConstant$4.apply(StructureParser.scala:917)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser$$anonfun$readConstant$4.apply(StructureParser.scala:917)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.errorCont(StructureParser.scala:155)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.readConstant(StructureParser.scala:917)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.readInModuleAux(StructureParser.scala:645)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.readInModule(StructureParser.scala:461)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser$$anonfun$readTheory$1.apply$mcV$sp(StructureParser.scala:725)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser$$anonfun$readTheory$1.apply(StructureParser.scala:725)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser$$anonfun$readTheory$1.apply(StructureParser.scala:725)</element>
+    <element>info.kwarc.mmt.api.frontend.Logger$class.logGroup(Log.scala:34)</element>
+    <element>info.kwarc.mmt.api.parser.Parser.logGroup(Parser.scala:226)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.readTheory(StructureParser.scala:724)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.info$kwarc$mmt$api$parser$KeywordBasedParser$$readInDocument(StructureParser.scala:411)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser$$anonfun$apply$1.apply$mcV$sp(StructureParser.scala:179)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser$$anonfun$apply$1.apply(StructureParser.scala:179)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser$$anonfun$apply$1.apply(StructureParser.scala:179)</element>
+    <element>info.kwarc.mmt.api.frontend.Logger$class.logGroup(Log.scala:34)</element>
+    <element>info.kwarc.mmt.api.parser.Parser.logGroup(Parser.scala:226)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.apply(StructureParser.scala:178)</element>
+    <element>info.kwarc.mmt.api.parser.KeywordBasedParser.apply(StructureParser.scala:169)</element>
+    <element>info.kwarc.mmt.api.checking.TwoStepInterpreter.apply(Interpreter.scala:90)</element>
+    <element>info.kwarc.mmt.api.checking.Interpreter.importDocument(Interpreter.scala:43)</element>
+    <element>info.kwarc.mmt.api.archives.Importer.buildFile(Index.scala:39)</element>
+    <element>info.kwarc.mmt.api.archives.TraversingBuildTarget.runBuildTask(BuildTarget.scala:528)</element>
+    <element>info.kwarc.mmt.api.archives.TraversingBuildTarget.checkOrRunBuildTask(BuildTarget.scala:455)</element>
+    <element>info.kwarc.mmt.api.archives.BuildQueue$$anon$1.run(BuildQueue.scala:496)</element>
+  </stacktrace>
+</error>
 </errors>

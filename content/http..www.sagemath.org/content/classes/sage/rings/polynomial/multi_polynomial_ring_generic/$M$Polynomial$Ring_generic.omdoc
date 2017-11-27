@@ -1,0 +1,998 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="MPolynomialRing_generic" base="http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial_ring_generic" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing"></import><omdoc name="Methods"><constant name="classmethod._extract_polydict">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._extract_polydict(self, x)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 372)
+
+        Assuming other_vars is a subset of ``self.variable_names()``,
+        convert the dict of ETuples with respect to other_vars to
+        a dict with respect to ``self.variable_names()``.
+        </opaque><constant name="classmethod._latex_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._latex_(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 463)</opaque><constant name="classmethod._macaulay_resultant_getS">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._macaulay_resultant_getS(self, mon_deg_tuple, dlist)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 1035)
+
+        In the Macaulay resultant algorithm the list of all monomials of the total degree is partitioned into sets `S_i`.
+        This function returns the index `i` for the set `S_i` for the given monomial.
+
+        INPUT:
+
+        - ``mon_deg_tuple`` -- a list representing a monomial of a degree `d`
+        - ``dlist`` -- a list of degrees `d_i` of the polynomials in question, where
+        `d =  sum(dlist) - len(dlist) + 1`
+
+        OUTPUT:
+
+        - the index `i` such that the input monomial is in `S_i`
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt; = PolynomialRing(ZZ, 2)
+            sage: R._macaulay_resultant_getS([1,1,0],[2,1,1]) # the monomial xy where the total degree = 2
+            1
+
+            sage: R._macaulay_resultant_getS([29,21,8],[10,20,30])
+            0
+
+            sage: R._macaulay_resultant_getS(list(range(9))+[10],list(range(1,11)))
+            9
+        </opaque><constant name="classmethod._macaulay_resultant_is_reduced">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._macaulay_resultant_is_reduced(self, mon_degs, dlist)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 1066)
+
+        Helper function for the Macaulay resultant algorithm.
+        A monomial in the variables `x_0,...,x_n` is called reduced with respect to the list of degrees `d_0,...,d_n`
+        if the degree of `x_i` in the monomial is `&gt;= d_i` for exactly one `i`. This function checks this property for a monomial.
+
+        INPUT:
+
+        - ``mon_degs`` -- a monomial represented by a vector of degrees
+        - ``dlist`` -- a list of degrees with respect to which we check reducedness
+
+        OUTPUT:
+
+        - True/False
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: R._macaulay_resultant_is_reduced([2,3,1],[2,3,3]) # the monomial x^2*y^3*z is not reduced w.r.t. degrees vector [2,3,3]
+            False
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: R._macaulay_resultant_is_reduced([1,3,2],[2,3,3]) # the monomial x*y^3*z^2 is not reduced w.r.t. degrees vector [2,3,3]
+            True
+        </opaque><constant name="classmethod._macaulay_resultant_universal_polynomials">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._macaulay_resultant_universal_polynomials(self, dlist)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 1094)
+
+        Given a list of degrees, this function returns a list of ``len(dlist)`` polynomials with ``len(dlist)`` variables,
+        with generic coefficients. This is useful for generating polynomials for tests,
+        and for getting a universal macaulay resultant for the given degrees.
+
+        INPUT:
+
+        - ``dlist`` -- a list of degrees.
+
+        OUTPUT:
+
+        - a list of polynomials of the given degrees with general coefficients.
+        - a polynomial ring over ``self`` generated by the coefficients of the output polynomials.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt; = PolynomialRing(ZZ, 2)
+            sage: R._macaulay_resultant_universal_polynomials([1,1,2])
+            ([u0*x0 + u1*x1 + u2*x2, u3*x0 + u4*x1 + u5*x2, u6*x0^2 + u7*x0*x1 + u9*x1^2 + u8*x0*x2 + u10*x1*x2 + u11*x2^2], Multivariate Polynomial Ring in x0, x1, x2 over Multivariate Polynomial Ring in u0, u1, u2, u3, u4, u5, u6, u7, u8, u9, u10, u11 over Integer Ring)
+        </opaque><constant name="classmethod._monomial_order_function">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._monomial_order_function(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 671)</opaque><constant name="classmethod._mpoly_base_ring">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._mpoly_base_ring(self, vars=None)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 640)
+
+        Returns the base ring if this is viewed as a polynomial ring over vars.
+        See also MPolynomial._mpoly_dict_recursive.
+        </opaque><constant name="classmethod._precomp_counts">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._precomp_counts(self, n, d)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 685)
+
+        Given a number of variable n and a degree d return a tuple (C,t)
+        such that C is a list of the cardinalities of the sets of
+        monomials up to degree d (including) in n variables and t is the
+        sum of these cardinalities.
+
+        INPUT:
+
+        - ``n`` -- number of variables
+        - ``d`` -- degree
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(ZZ)
+            sage: C,t = P._precomp_counts(10,2)
+            sage: C[0]
+            1
+            sage: C[1]
+            10
+            sage: C[2]
+            55
+            sage: t
+            66
+
+        TESTS::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(ZZ)
+            sage: C,t = P._precomp_counts(1,2)
+            sage: C[0]
+            1
+            sage: C[1]
+            1
+            sage: C[2]
+            1
+            sage: t
+            3
+
+        </opaque><constant name="classmethod._random_monomial_upto_degree_class">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._random_monomial_upto_degree_class(self, n, degree, counts=None, total=None)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 768)
+
+        Choose a random exponent tuple for `n` variables with a random
+        degree `d`, i.e. choose the degree uniformly at random first
+        before choosing a random monomial.
+
+        INPUT:
+
+        - ``n`` -- number of variables
+        - ``degree`` -- degree of monomials
+        - ``counts`` -- ignored
+        - ``total`` -- ignored
+
+        EXAMPLES::
+
+            sage: K.&lt;x,y,z,w&gt; = QQ[]
+            sage: K._random_monomial_upto_degree_class(5, 7)
+            (0, 0, 0, 3, 0)
+            </opaque><constant name="classmethod._random_monomial_upto_degree_uniform">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._random_monomial_upto_degree_uniform(self, n, degree, counts=None, total=None)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 797)
+
+        Choose a random exponent tuple for `n` variables with a random
+        degree up to `d`, i.e. choose a random monomial uniformly random
+        from all monomials up to degree `d`. This discriminates against
+        smaller degrees because there are more monomials of bigger
+        degrees.
+
+        INPUT:
+
+        - ``n`` -- number of variables
+        - ``degree`` -- degree of monomials
+        - ``counts`` -- ignored
+        - ``total`` -- ignored
+
+        EXAMPLES::
+
+            sage: K.&lt;x,y,z,w&gt; = QQ[]
+            sage: K._random_monomial_upto_degree_uniform(4, 3)
+            (1, 0, 0, 1)
+            </opaque><constant name="classmethod._repr_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._repr_(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 412)
+
+        Return string representation of this object.
+
+        EXAMPLES::
+
+            sage: PolynomialRing(QQ, names=[])
+            Multivariate Polynomial Ring in no variables over Rational Field
+
+            sage: PolynomialRing(QQ, names=['x', 'y'])
+            Multivariate Polynomial Ring in x, y over Rational Field
+        </opaque><constant name="classmethod._to_monomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic._to_monomial(self, i, n, d)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 730)
+
+        Given an index i, a number of variables n and a degree d return
+        the i-th monomial of degree d in n variables.
+
+        INPUT:
+
+        - ``i`` -- index: 0 &lt;= i &lt; binom(n+d-1,n-1)
+        - ``n`` -- number of variables
+        - ``d`` -- degree
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(QQ)
+            sage: P._to_monomial(0,10,2)
+            (0, 0, 0, 0, 0, 0, 0, 0, 0, 2)
+            sage: P._to_monomial(8,10,2)
+            (0, 0, 0, 0, 0, 0, 1, 1, 0, 0)
+            sage: P._to_monomial(54,10,2)
+            (2, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+        .. NOTE::
+
+            We do not check if the provided index/rank is within the allowed
+            range. If it is not an infinite loop will occur.
+        </opaque><constant name="classmethod.change_ring">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.change_ring(self, base_ring=None, names=None, order=None)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 986)
+
+        Return a new multivariate polynomial ring which isomorphic to
+        self, but has a different ordering given by the parameter
+        'order' or names given by the parameter 'names'.
+
+        INPUT:
+
+        - ``base_ring`` -- a base ring
+        - ``names`` -- variable names
+        - ``order`` -- a term order
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = PolynomialRing(GF(127),3,order='lex')
+            sage: x &gt; y^2
+            True
+            sage: Q.&lt;x,y,z&gt; = P.change_ring(order='degrevlex')
+            sage: x &gt; y^2
+            False
+        </opaque><constant name="classmethod.characteristic">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.characteristic(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 592)
+
+        Return the characteristic of this polynomial ring.
+
+        EXAMPLES::
+
+            sage: R = PolynomialRing(QQ, 'x', 3)
+            sage: R.characteristic()
+            0
+            sage: R = PolynomialRing(GF(7),'x', 20)
+            sage: R.characteristic()
+            7
+        </opaque><constant name="classmethod.completion">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.completion(self, names, prec=20, extras=None)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 158)
+
+        Return the completion of self with respect to the ideal
+        generated by the variable(s) ``names``.
+
+        INPUT:
+
+        - ``names`` -- variable or list/tuple of variables (given either
+          as elements of the polynomial ring or as strings)
+
+        - ``prec`` -- default precision of resulting power series ring
+
+        - ``extras`` -- deprecated and ignored
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z,w&gt; = PolynomialRing(ZZ)
+            sage: P.completion('w')
+            Power Series Ring in w over Multivariate Polynomial Ring in x, y, z over Integer Ring
+            sage: P.completion((w,x,y))
+            Multivariate Power Series Ring in w, x, y over Univariate Polynomial Ring in z over Integer Ring
+            sage: Q.&lt;w,x,y,z&gt; = P.completion(); Q
+            Multivariate Power Series Ring in w, x, y, z over Integer Ring
+
+            sage: H = PolynomialRing(PolynomialRing(ZZ,3,'z'),4,'f'); H
+            Multivariate Polynomial Ring in f0, f1, f2, f3 over
+            Multivariate Polynomial Ring in z0, z1, z2 over Integer Ring
+
+            sage: H.completion(H.gens())
+            Multivariate Power Series Ring in f0, f1, f2, f3 over
+            Multivariate Polynomial Ring in z0, z1, z2 over Integer Ring
+
+            sage: H.completion(H.gens()[2])
+            Power Series Ring in f2 over
+            Multivariate Polynomial Ring in f0, f1, f3 over
+            Multivariate Polynomial Ring in z0, z1, z2 over Integer Ring
+
+        TESTS::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(ZZ)
+            sage: P.completion([]) is P
+            True
+            sage: P.completion(SR.var('x'))
+            Traceback (most recent call last):
+            ...
+            TypeError: x is not an element of Multivariate Polynomial Ring in x, y over Integer Ring
+            sage: P.completion(x + y)
+            Traceback (most recent call last):
+            ...
+            ValueError: x + y is not a variable of Multivariate Polynomial Ring in x, y over Integer Ring
+            sage: P.completion('q')
+            Traceback (most recent call last):
+            ...
+            ValueError: q is not a variable of Multivariate Polynomial Ring in x, y over Integer Ring
+            sage: P.completion(p='x')
+            doctest:...: DeprecationWarning: use the option 'names' instead of 'p'
+            See http://trac.sagemath.org/23377 for details.
+            Power Series Ring in x over Univariate Polynomial Ring in y over Integer Ring
+            sage: P.completion('x', extras=&quot;foo&quot;)
+            doctest:...: DeprecationWarning: the 'extras' keyword to completion() is deprecated and ignored
+            See http://trac.sagemath.org/23377 for details.
+            Power Series Ring in x over Univariate Polynomial Ring in y over Integer Ring
+        </opaque><constant name="classmethod.construction">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.construction(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 122)
+
+        Returns a functor F and base ring R such that F(R) == self.
+
+        EXAMPLES::
+
+            sage: S = ZZ['x,y']
+            sage: F, R = S.construction(); R
+            Integer Ring
+            sage: F
+            MPoly[x,y]
+            sage: F(R) == S
+            True
+            sage: F(R) == ZZ['x']['y']
+            False
+
+        </opaque><constant name="classmethod.flattening_morphism">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod.irrelevant_ideal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.irrelevant_ideal(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 143)
+
+        Return the irrelevant ideal of this multivariate polynomial
+        ring, which is the ideal generated by all of the indeterminate
+        generators of this ring.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt; = QQ[]
+            sage: R.irrelevant_ideal()
+            Ideal (x, y, z) of Multivariate Polynomial Ring in x, y, z over Rational Field
+        </opaque><constant name="classmethod.macaulay_resultant">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.macaulay_resultant(self, *args, **kwds)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 1133)
+
+        This is an implementation of the Macaulay Resultant. It computes
+        the resultant of universal polynomials as well as polynomials
+        with constant coefficients. This is a project done in
+        sage days 55. It's based on the implementation in Maple by
+        Manfred Minimair, which in turn is based on the references listed below:
+        It calculates the Macaulay resultant for a list of polynomials,
+        up to sign!
+
+        REFERENCES:
+
+        .. [CLO] \D. Cox, J. Little, D. O'Shea. Using Algebraic Geometry.
+                 Springer, 2005.
+
+        .. [Can] \J. Canny. Generalised characteristic polynomials.
+                 J. Symbolic Comput. Vol. 9, No. 3, 1990, 241--250.
+
+        .. [Mac] \F.S. Macaulay. The algebraic theory of modular systems
+                 Cambridge university press, 1916.
+
+        AUTHORS:
+
+        - Hao Chen, Solomon Vishkautsan (7-2014)
+
+        INPUT:
+
+        - ``args`` -- a list of `n` homogeneous polynomials in `n` variables.
+                  works when ``args[0]`` is the list of polynomials,
+                  or ``args`` is itself the list of polynomials
+
+        kwds:
+
+        - ``sparse`` -- boolean (optional - default: ``False``)
+                     if ``True`` function creates sparse matrices.
+
+        OUTPUT:
+
+        - the macaulay resultant, an element of the base ring of ``self``
+
+        .. TODO::
+            Working with sparse matrices should usually give faster results,
+            but with the current implementation it actually works slower.
+            There should be a way to improve performance with regards to this.
+
+        EXAMPLES:
+
+        The number of polynomials has to match the number of variables::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: R.macaulay_resultant([y,x+z])
+            Traceback (most recent call last):
+            ...
+            TypeError: number of polynomials(= 2) must equal number of variables (= 3)
+
+        The polynomials need to be all homogeneous::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: R.macaulay_resultant([y, x+z, z+x^3])
+            Traceback (most recent call last):
+            ...
+            TypeError: resultant for non-homogeneous polynomials is not supported
+
+        All polynomials must be in the same ring::
+
+            sage: S.&lt;x,y&gt; = PolynomialRing(QQ, 2)
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: S.macaulay_resultant([y, z+x])
+            Traceback (most recent call last):
+            ...
+            TypeError: not all inputs are polynomials in the calling ring
+
+        The following example recreates Proposition 2.10 in Ch.3 in [CLO]::
+
+            sage: K.&lt;x,y&gt; = PolynomialRing(ZZ, 2)
+            sage: flist,R = K._macaulay_resultant_universal_polynomials([1,1,2])
+            sage: R.macaulay_resultant(flist)
+            u2^2*u4^2*u6 - 2*u1*u2*u4*u5*u6 + u1^2*u5^2*u6 - u2^2*u3*u4*u7 + u1*u2*u3*u5*u7 + u0*u2*u4*u5*u7 - u0*u1*u5^2*u7 + u1*u2*u3*u4*u8 - u0*u2*u4^2*u8 - u1^2*u3*u5*u8 + u0*u1*u4*u5*u8 + u2^2*u3^2*u9 - 2*u0*u2*u3*u5*u9 + u0^2*u5^2*u9 - u1*u2*u3^2*u10 + u0*u2*u3*u4*u10 + u0*u1*u3*u5*u10 - u0^2*u4*u5*u10 + u1^2*u3^2*u11 - 2*u0*u1*u3*u4*u11 + u0^2*u4^2*u11
+
+        The following example degenerates into the determinant of a `3*3` matrix::
+
+            sage: K.&lt;x,y&gt; = PolynomialRing(ZZ, 2)
+            sage: flist,R = K._macaulay_resultant_universal_polynomials([1,1,1])
+            sage: R.macaulay_resultant(flist)
+            -u2*u4*u6 + u1*u5*u6 + u2*u3*u7 - u0*u5*u7 - u1*u3*u8 + u0*u4*u8
+
+        The following example is by Patrick Ingram(arxiv:1310.4114)::
+
+            sage: U = PolynomialRing(ZZ,'y',2); y0,y1 = U.gens()
+            sage: R = PolynomialRing(U,'x',3); x0,x1,x2 = R.gens()
+            sage: f0 = y0*x2^2 - x0^2 + 2*x1*x2
+            sage: f1 = y1*x2^2 - x1^2 + 2*x0*x2
+            sage: f2 = x0*x1 - x2^2
+            sage: flist = [f0,f1,f2]
+            sage: R.macaulay_resultant([f0,f1,f2])
+            y0^2*y1^2 - 4*y0^3 - 4*y1^3 + 18*y0*y1 - 27
+
+        a simple example with constant rational coefficients::
+
+            sage: R.&lt;x,y,z,w&gt; = PolynomialRing(QQ,4)
+            sage: R.macaulay_resultant([w,z,y,x])
+            1
+
+        an example where the resultant vanishes::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: R.macaulay_resultant([x+y,y^2,x])
+            0
+
+        an example of bad reduction at a prime `p = 5`::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: R.macaulay_resultant([y,x^3+25*y^2*x,5*z])
+            125
+
+        The input can given as an unpacked list of polynomials::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: R.macaulay_resultant(y,x^3+25*y^2*x,5*z)
+            125
+
+        an example when the coefficients live in a finite field::
+
+            sage: F = FiniteField(11)
+            sage: R.&lt;x,y,z,w&gt; = PolynomialRing(F,4)
+            sage: R.macaulay_resultant([z,x^3,5*y,w])
+            4
+
+        example when the denominator in the algorithm vanishes(in this case
+        the resultant is the constant term of the quotient of
+        char polynomials of numerator/denominator)::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3)
+            sage: R.macaulay_resultant([y, x+z, z^2])
+            -1
+
+        when there are only 2 polynomials, macaulay resultant degenerates to the traditional resultant::
+
+            sage: R.&lt;x&gt; = PolynomialRing(QQ,1)
+            sage: f =  x^2+1; g = x^5+1
+            sage: fh = f.homogenize()
+            sage: gh = g.homogenize()
+            sage: RH = fh.parent()
+            sage: f.resultant(g) == RH.macaulay_resultant([fh,gh])
+            True
+
+        </opaque><constant name="classmethod.monomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.monomial(self, *exponents)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 1017)
+
+        Return the monomial with given exponents.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(ZZ, 3)
+            sage: R.monomial(1,1,1)
+            x*y*z
+            sage: e=(1,2,3)
+            sage: R.monomial(*e)
+            x*y^2*z^3
+            sage: m = R.monomial(1,2,3)
+            sage: R.monomial(*m.degrees()) == m
+            True
+        </opaque><constant name="classmethod.remove_var">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.remove_var(self, *var, order=None)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 248)
+
+        Remove a variable or sequence of variables from self.
+
+        If ``order`` is not specified, then the subring inherits the
+        term order of the original ring, if possible.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z,w&gt; = PolynomialRing(ZZ)
+            sage: P.remove_var(z)
+            Multivariate Polynomial Ring in x, y, w over Integer Ring
+            sage: P.remove_var(z,x)
+            Multivariate Polynomial Ring in y, w over Integer Ring
+            sage: P.remove_var(y,z,x)
+            Univariate Polynomial Ring in w over Integer Ring
+
+        Removing all variables results in the base ring::
+
+            sage: P.remove_var(y,z,x,w)
+            Integer Ring
+
+        If possible, the term order is kept::
+
+            sage: R.&lt;x,y,z,w&gt; = PolynomialRing(ZZ, order='deglex')
+            sage: R.remove_var(y).term_order()
+            Degree lexicographic term order
+
+            sage: R.&lt;x,y,z,w&gt; = PolynomialRing(ZZ, order='lex')
+            sage: R.remove_var(y).term_order()
+            Lexicographic term order
+
+        Be careful with block orders when removing variables::
+
+            sage: R.&lt;x,y,z,u,v&gt; = PolynomialRing(ZZ, order='deglex(2),lex(3)')
+            sage: R.remove_var(x,y,z)
+            Traceback (most recent call last):
+            ...
+            ValueError: impossible to use the original term order (most likely because it was a block order). Please specify the term order for the subring
+            sage: R.remove_var(x,y,z, order='degrevlex')
+            Multivariate Polynomial Ring in u, v over Integer Ring
+
+        </opaque><constant name="classmethod.repr_long">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.repr_long(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 430)
+
+        Return structured string representation of self.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = PolynomialRing(QQ,order=TermOrder('degrevlex',1)+TermOrder('lex',2))
+            sage: print(P.repr_long())
+            Polynomial Ring
+             Base Ring : Rational Field
+                  Size : 3 Variables
+              Block  0 : Ordering : degrevlex
+                         Names    : x
+              Block  1 : Ordering : lex
+                         Names    : y, z
+        </opaque><constant name="classmethod.term_order">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.term_order(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 589)</opaque><constant name="classmethod.univariate_ring">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.univariate_ring(self, x)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 305)
+
+        Return a univariate polynomial ring whose base ring comprises all but one variables of self.
+
+        INPUT:
+
+        - ``x`` -- a variable of self.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.univariate_ring(y)
+            Univariate Polynomial Ring in y over Multivariate Polynomial Ring in x, z over Rational Field
+        </opaque><constant name="classmethod.variable_names_recursive">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.variable_names_recursive(self, depth=sage.rings.infinity.infinity)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 612)
+
+        Returns the list of variable names of this and its base rings, as if
+        it were a single multi-variate polynomial.
+
+        EXAMPLES::
+
+            sage: R = QQ['x,y']['z,w']
+            sage: R.variable_names_recursive()
+            ('x', 'y', 'z', 'w')
+            sage: R.variable_names_recursive(3)
+            ('y', 'z', 'w')
+
+        </opaque><constant name="classmethod.weyl_algebra">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_generic.weyl_algebra(self)
+File: sage/rings/polynomial/multi_polynomial_ring_generic.pyx (starting at line 1339)
+
+        Return the Weyl algebra generated from ``self``.
+
+        EXAMPLES::
+
+            sage: R = QQ['x,y,z']
+            sage: W = R.weyl_algebra(); W
+            Differential Weyl algebra of polynomials in x, y, z over Rational Field
+            sage: W.polynomial_ring() == R
+            True
+        </opaque></omdoc></theory></omdoc>

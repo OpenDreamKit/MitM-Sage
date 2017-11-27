@@ -1,0 +1,180 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="CombinatorialObject" base="http://www.sagemath.org/content/classes/sage/combinat/combinat" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/structure/sage_object?SageObject"></import><omdoc name="Methods"><constant name="classmethod.__add__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        EXAMPLES::
+
+            sage: c = CombinatorialObject([1,2,3])
+            sage: c + [4]
+            [1, 2, 3, 4]
+            sage: type(_)
+            &lt;... 'list'&gt;
+        </opaque><constant name="classmethod.__bool__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if ``self`` is non-zero.
+
+        We consider a list to be zero if it has length zero.
+
+        TESTS::
+
+            sage: c = CombinatorialObject([1,2,3])
+            sage: not c
+            False
+            sage: c = CombinatorialObject([])
+            sage: not c
+            True
+
+        Check that :trac:`14065` is fixed::
+
+            sage: from sage.structure.element import Element
+            sage: class Foo(CombinatorialObject, Element): pass
+            ...
+            sage: f = Foo([4])
+            sage: not f
+            False
+            sage: f = Foo([])
+            sage: not f
+            True
+
+        .. WARNING::
+
+            :class:`CombinatorialObject` must come **before** :class:`Element`
+            for this to work because :class:`Element` is ahead of
+            :class:`CombinatorialObject` in the MRO (method resolution
+            order)::
+
+                sage: from sage.structure.element import Element
+                sage: class Bar(Element, CombinatorialObject):
+                ....:     def __init__(self, l):
+                ....:         CombinatorialObject.__init__(self, l)
+                sage: b = Bar([4])
+                sage: not b
+                False
+
+        </opaque><constant name="classmethod.__contains__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        EXAMPLES::
+
+            sage: c = CombinatorialObject([1,2,3])
+            sage: 1 in c
+            True
+            sage: 5 in c
+            False
+        </opaque><constant name="classmethod.__getitem__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        EXAMPLES::
+
+            sage: c = CombinatorialObject([1,2,3])
+            sage: c[0]
+            1
+            sage: c[1:]
+            [2, 3]
+            sage: type(_)
+            &lt;... 'list'&gt;
+        </opaque><constant name="classmethod.__iter__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        EXAMPLES::
+
+            sage: c = CombinatorialObject([1,2,3])
+            sage: list(iter(c))
+            [1, 2, 3]
+        </opaque><constant name="classmethod.__len__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        EXAMPLES::
+
+            sage: c = CombinatorialObject([1,2,3])
+            sage: len(c)
+            3
+            sage: c.__len__()
+            3
+        </opaque><constant name="classmethod.__nonzero__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod._repr_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        EXAMPLES::
+
+            sage: c = CombinatorialObject([1,2,3])
+            sage: c.__repr__()
+            '[1, 2, 3]'
+        </opaque><constant name="classmethod.index">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        EXAMPLES::
+
+            sage: c = CombinatorialObject([1,2,3])
+            sage: c.index(1)
+            0
+            sage: c.index(3)
+            2
+        </opaque></omdoc></theory></omdoc>

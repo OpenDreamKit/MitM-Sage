@@ -1,0 +1,19 @@
+theory http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing
+HasMeta http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/content/classes/sage/rings/ring?Ring
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.__pow__
+constant http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.__pow__
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.__rpow__
+constant http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.__rpow__
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod._pseudo_fraction_field
+constant http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod._pseudo_fraction_field
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.extension
+constant http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.extension
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.fraction_field
+constant http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.fraction_field
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.frobenius_endomorphism
+constant http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.frobenius_endomorphism
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.krull_dimension
+constant http://www.sagemath.org/content/classes/sage/rings/ring?CommutativeRing?classmethod.krull_dimension

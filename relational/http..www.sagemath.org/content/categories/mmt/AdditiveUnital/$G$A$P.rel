@@ -2,6 +2,6 @@ theory http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP
 HasMeta http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP http://www.sagemath.org/?Types
 Includes http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP http://www.sagemath.org/?Axioms
 Includes http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP http://www.sagemath.org/?Structures
-Includes http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP
 Includes http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP http://www.sagemath.org/content/categories/mmt/AdditiveSemigroups?GAP
+Includes http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP
 Includes http://www.sagemath.org/content/categories/mmt/AdditiveUnital?GAP http://www.sagemath.org/content/categories/additive_monoids?AdditiveMonoids

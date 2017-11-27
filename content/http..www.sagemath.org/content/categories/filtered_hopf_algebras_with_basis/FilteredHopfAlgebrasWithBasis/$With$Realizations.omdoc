@@ -1,0 +1,41 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="WithRealizations" base="http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/category?JoinCategory"></import><constant name="AdditiveUnital">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="ded"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Axioms" name="AdditiveUnital"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="AdditiveInverse">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="ded"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Axioms" name="AdditiveInverse"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="AdditiveAssociative">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="ded"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Axioms" name="AdditiveAssociative"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="AdditiveCommutative">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="ded"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Axioms" name="AdditiveCommutative"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="Distributive">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="apply"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="ded"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Axioms" name="Distributive"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant></theory></omdoc>

@@ -1,0 +1,69 @@
+theory http://www.sagemath.org/content/classes/sage/rings/ring?Ring
+HasMeta http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/structure/parent_gens?ParentWithGens
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__iter__
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__iter__
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__len__
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__len__
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__rtruediv__
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__rtruediv__
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__rxor__
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__rxor__
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__truediv__
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__truediv__
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__xor__
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.__xor__
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod._ideal_class_
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod._ideal_class_
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod._random_nonzero_element
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod._random_nonzero_element
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.cardinality
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.cardinality
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.epsilon
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.epsilon
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.ideal
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.ideal
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.ideal_monoid
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.ideal_monoid
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_commutative
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_commutative
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_field
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_field
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_finite
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_finite
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_integral_domain
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_integral_domain
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_noetherian
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_noetherian
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_prime_field
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_prime_field
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_ring
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_ring
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_subring
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.is_subring
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.one
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.one
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.order
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.order
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.principal_ideal
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.principal_ideal
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.quo
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.quo
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.quotient
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.quotient
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.quotient_ring
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.quotient_ring
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.random_element
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.random_element
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.unit_ideal
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.unit_ideal
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.zero
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.zero
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.zero_ideal
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.zero_ideal
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.zeta
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.zeta
+Declares http://www.sagemath.org/content/classes/sage/rings/ring?Ring http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.zeta_order
+constant http://www.sagemath.org/content/classes/sage/rings/ring?Ring?classmethod.zeta_order

@@ -263,22 +263,22 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="classmethod.bruhat_lower_covers_reflections">
+     </constant><constant name="classmethod.bruhat_lower_covers_reflections">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="classmethod.bruhat_upper_covers">
+     </constant><constant name="classmethod.bruhat_upper_covers">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="classmethod.bruhat_upper_covers_reflections">
+     </constant><constant name="classmethod.bruhat_upper_covers_reflections">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="classmethod.canonical_matrix">
+     </constant><constant name="classmethod.canonical_matrix">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -755,7 +755,7 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="classmethod.is_coxeter_sortable">
+     </constant><constant name="classmethod.is_coxeter_sortable">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

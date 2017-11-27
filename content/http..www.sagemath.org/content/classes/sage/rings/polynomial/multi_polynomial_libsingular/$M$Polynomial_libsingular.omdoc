@@ -1,0 +1,1830 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="MPolynomial_libsingular" base="http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial_libsingular" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial"></import><omdoc name="Methods"><constant name="classmethod.__deepcopy__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.__deepcopy__(self, memo={})
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2030)
+
+        Deep copy ``self``
+
+        TESTS::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: p = x^2 + y^2
+            sage: p is deepcopy(p)
+            False
+            sage: p == deepcopy(p)
+            True
+            sage: p.parent() is deepcopy(p).parent()
+            True
+        </opaque><constant name="classmethod.__getitem__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3063)
+
+        Same as ``self.monomial_coefficient`` but for exponent vectors.
+
+        INPUT:
+
+        - ``x`` - a tuple or, in case of a single-variable MPolynomial
+          ring x can also be an integer.
+
+        EXAMPLES::
+
+            sage: R.&lt;x, y&gt; = QQ[]
+            sage: f = -10*x^3*y + 17*x*y
+            sage: f[3,1]
+            -10
+            sage: f[1,1]
+            17
+            sage: f[0,1]
+            0
+
+            sage: R.&lt;x&gt; = PolynomialRing(GF(7), implementation=&quot;singular&quot;); R
+            Multivariate Polynomial Ring in x over Finite Field of size 7
+            sage: f = 5*x^2 + 3; f
+            -2*x^2 + 3
+            sage: f[2]
+            5
+        </opaque><constant name="classmethod._add_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._add_(left, right)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2260)
+
+        Add left and right.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt;=PolynomialRing(QQ,3)
+            sage: 3/2*x + 1/2*y + 1 #indirect doctest
+            3/2*x + 1/2*y + 1
+        </opaque><constant name="classmethod._derivative">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._derivative(self, MPolynomial_libsingular var)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 5075)
+
+        Differentiates this polynomial with respect to the provided
+        variable. This is completely symbolic so it is also defined
+        over finite fields.
+
+        INPUT:
+
+        - ``variable`` - the derivative is taken with respect to variable
+
+        - ``have_ring`` - ignored, accepted for compatibility reasons
+
+        .. NOTE:: See also :meth:`derivative`
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt; = PolynomialRing(QQ,2)
+            sage: f = 3*x^3*y^2 + 5*y^2 + 3*x + 2
+            sage: f._derivative(x)
+            9*x^2*y^2 + 3
+            sage: f._derivative(y)
+            6*x^3*y + 10*y
+
+        The derivative is also defined over finite fields::
+
+            sage: R.&lt;x,y&gt; = PolynomialRing(GF(2**8, 'a'),2)
+            sage: f = x^3*y^2 + y^2 + x + 2
+            sage: f._derivative(x)
+            x^2*y^2 + 1
+
+        </opaque><constant name="classmethod._floordiv_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._floordiv_(self, right)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3985)
+
+        Perform division with remainder and return the quotient.
+
+        INPUT:
+
+        - ``right`` - something coercible to an MPolynomial_libsingular
+          in ``self.parent()``
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt; = GF(32003)[]
+            sage: f = y*x^2 + x + 1
+            sage: f//x
+            x*y + 1
+            sage: f//y
+            x^2
+
+            sage: P.&lt;x,y&gt; = ZZ[]
+            sage: x//y
+            0
+            sage: (x+y)//y
+            1
+
+            sage: P.&lt;x,y&gt; = QQ[]
+            sage: (x+y)//y
+            1
+            sage: (x)//y
+            0
+
+            sage: P.&lt;x,y&gt; = Zmod(1024)[]
+            sage: (x+y)//x
+            1
+            sage: (x+y)//(2*x)
+            Traceback (most recent call last):
+            ...
+            NotImplementedError: Division of multivariate polynomials over non fields by non-monomials not implemented.
+        </opaque><constant name="classmethod._homogenize">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._homogenize(self, int var)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3212)
+
+        Return ``self`` if ``self`` is homogeneous.  Otherwise return
+        a homogenized polynomial constructed by modifying the degree
+        of the variable with index ``var``.
+
+        INPUT:
+
+        - ``var`` - an integer indicating which variable to use to
+          homogenize (``0 &lt;= var &lt; parent(self).ngens()``)
+
+        OUTPUT:
+            a multivariate polynomial
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y&gt; = QQ[]
+            sage: f = x^2 + y + 1 + 5*x*y^10
+            sage: g = f.homogenize('z'); g # indirect doctest
+            5*x*y^10 + x^2*z^9 + y*z^10 + z^11
+            sage: g.parent()
+            Multivariate Polynomial Ring in x, y, z over Rational Field
+            sage: f._homogenize(0)
+            2*x^11 + x^10*y + 5*x*y^10
+
+        SEE: ``self.homogenize``
+        </opaque><constant name="classmethod._latex_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._latex_(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2557)
+
+        Return a polynomial LaTeX representation of this polynomial.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: f = - 1*x^2*y - 25/27 * y^3 - z^2
+            sage: latex(f)  # indirect doctest
+            - x^{2} y - rac{25}{27} y^{3} - z^{2}
+        </opaque><constant name="classmethod._mul_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._mul_(left, right)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2317)
+
+        Multiply left and right.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt;=PolynomialRing(QQ,3)
+            sage: (3/2*x - 1/2*y - 1) * (3/2*x + 1/2*y + 1) # indirect doctest
+            9/4*x^2 - 1/4*y^2 - y - 1
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(QQ,order='lex')
+            sage: (x^2^15) * x^2^15
+            Traceback (most recent call last):
+            ...
+            OverflowError: exponent overflow (...)
+        </opaque><constant name="classmethod._new_constant_poly">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._new_constant_poly(self, x, MPolynomialRing_libsingular P) -&gt; MPolynomial_libsingular
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2049)
+
+        Quickly create a new constant polynomial with value x in the parent P.
+
+        ASSUMPTION:
+
+        The value x must be an element of the base ring. That assumption is
+        not verified.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: x._new_constant_poly(2/1,R)
+            2
+
+        </opaque><constant name="classmethod._repr_short_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._repr_short_(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2535)
+
+        This is a faster but less pretty way to print polynomials. If
+        available it uses the short SINGULAR notation.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt;=PolynomialRing(QQ,2)
+            sage: f = x^3 + y
+            sage: f._repr_short_()
+            'x3+y'
+        </opaque><constant name="classmethod._repr_with_changed_varnames">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._repr_with_changed_varnames(self, varnames)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2573)
+
+        Return string representing this polynomial but change the
+        variable names to ``varnames``.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: f = - 1*x^2*y - 25/27 * y^3 - z^2
+            sage: print(f._repr_with_changed_varnames(['FOO', 'BAR', 'FOOBAR']))
+            -FOO^2*BAR - 25/27*BAR^3 - FOOBAR^2
+        </opaque><constant name="classmethod._variable_indices_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular._variable_indices_(self, sort=True)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3748)
+
+        Return the indices of all variables occurring in self.  This
+        index is the index as Sage uses them (starting at zero), not
+        as SINGULAR uses them (starting at one).
+
+        INPUT:
+
+        - ``sort`` - specifies whether the indices shall be sorted
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = GF(2)[]
+            sage: f = x*z^2 + z + 1
+            sage: f._variable_indices_()
+            [0, 2]
+
+        </opaque><constant name="classmethod.add_m_mul_q">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.add_m_mul_q(self, MPolynomial_libsingular m, MPolynomial_libsingular q)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 4971)
+
+        Return ``self + m*q``, where ``m`` must be a monomial and
+        ``q`` a polynomial.
+
+        INPUT:
+
+        - ``m`` - a monomial
+        - ``q``  - a polynomial
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt;=PolynomialRing(QQ,3)
+            sage: x.add_m_mul_q(y,z)
+            y*z + x
+
+        TESTS::
+
+            sage: R.&lt;x,y,z&gt;=PolynomialRing(QQ,3)
+            sage: P.&lt;x,y,z&gt;=PolynomialRing(QQ,3)
+            sage: P(0).add_m_mul_q(P(0),P(1))
+            0
+            sage: x.add_m_mul_q(R.gen(),R.gen(1))
+            x*y + x
+        </opaque><constant name="classmethod.coefficient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.coefficient(self, degrees)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2791)
+
+        Return the coefficient of the variables with the degrees
+        specified in the python dictionary ``degrees``.
+        Mathematically, this is the coefficient in the base ring
+        adjoined by the variables of this ring not listed in
+        ``degrees``.  However, the result has the same parent as this
+        polynomial.
+
+        This function contrasts with the function
+        ``monomial_coefficient`` which returns the coefficient in the
+        base ring of a monomial.
+
+        INPUT:
+
+        - ``degrees`` - Can be any of:
+                - a dictionary of degree restrictions
+                - a list of degree restrictions (with None in the unrestricted variables)
+                - a monomial (very fast, but not as flexible)
+
+        OUTPUT:
+            element of the parent of this element.
+
+        .. NOTE::
+
+           For coefficients of specific monomials, look at :meth:`monomial_coefficient`.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: f=x*y+y+5
+            sage: f.coefficient({x:0,y:1})
+            1
+            sage: f.coefficient({x:0})
+            y + 5
+            sage: f=(1+y+y^2)*(1+x+x^2)
+            sage: f.coefficient({x:0})
+            y^2 + y + 1
+            sage: f.coefficient([0,None])
+            y^2 + y + 1
+            sage: f.coefficient(x)
+            y^2 + y + 1
+
+
+        Be aware that this may not be what you think! The physical
+        appearance of the variable x is deceiving -- particularly if
+        the exponent would be a variable. ::
+
+            sage: f.coefficient(x^0) # outputs the full polynomial
+            x^2*y^2 + x^2*y + x*y^2 + x^2 + x*y + y^2 + x + y + 1
+            sage: R.&lt;x,y&gt; = GF(389)[]
+            sage: f=x*y+5
+            sage: c=f.coefficient({x:0,y:0}); c
+            5
+            sage: parent(c)
+            Multivariate Polynomial Ring in x, y over Finite Field of size 389
+
+        AUTHOR:
+
+        - Joel B. Mohler (2007.10.31)
+        </opaque><constant name="classmethod.constant_coefficient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.constant_coefficient(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3626)
+
+        Return the constant coefficient of this multivariate
+        polynomial.
+
+        EXAMPLES::
+
+            sage: P.&lt;x, y&gt; = QQ[]
+            sage: f = 3*x^2 - 2*y + 7*x^2*y^2 + 5
+            sage: f.constant_coefficient()
+            5
+            sage: f = 3*x^2
+            sage: f.constant_coefficient()
+            0
+        </opaque><constant name="classmethod.degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.degree(self, MPolynomial_libsingular x=None, int std_grading=False)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2587)
+
+        Return the maximal degree of this polynomial in ``x``, where
+        ``x`` must be one of the generators for the parent of this
+        polynomial.
+
+        INPUT:
+
+        - ``x`` - (default: ``None``) a multivariate polynomial which is (or
+          coerces to) a generator of the parent of self. If ``x`` is ``None``,
+          return the total degree, which is the maximum degree of any monomial.
+          Note that a matrix term ordering alters the grading of the generators
+          of the ring; see the tests below.  To avoid this behavior, use either
+          ``exponents()`` for the exponents themselves, or the optional
+          argument ``std_grading=False``.
+
+        OUTPUT:
+            integer
+
+        EXAMPLES::
+
+            sage: R.&lt;x, y&gt; = QQ[]
+            sage: f = y^2 - x^9 - x
+            sage: f.degree(x)
+            9
+            sage: f.degree(y)
+            2
+            sage: (y^10*x - 7*x^2*y^5 + 5*x^3).degree(x)
+            3
+            sage: (y^10*x - 7*x^2*y^5 + 5*x^3).degree(y)
+            10
+
+        TESTS::
+
+            sage: P.&lt;x, y&gt; = QQ[]
+            sage: P(0).degree(x)
+            -1
+            sage: P(1).degree(x)
+            0
+
+        With a matrix term ordering, the grading of the generators is
+        determined by the first row of the matrix.  This affects the behavior
+        of ``degree()`` when no variable is specified.
+        To evaluate the degree with a standard grading, use the optional
+        argument ``std_grading=True``.
+
+            sage: tord = TermOrder(matrix([3,0,1,1,1,0,1,0,0]))
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3,order=tord)
+            sage: (x^3*y+x*z^4).degree()
+            9
+            sage: (x^3*y+x*z^4).degree(std_grading=True)
+            5
+            sage: x.degree(x), y.degree(y), z.degree(z)
+            (1, 1, 1)
+
+        The following example is inspired by :trac:`11652`::
+
+            sage: R.&lt;p,q,t&gt; = ZZ[]
+            sage: poly = p+q^2+t^3
+            sage: poly = poly.polynomial(t)[0]
+            sage: poly
+            q^2 + p
+
+        There is no canonical coercion from ``R`` to the parent of ``poly``, so
+        this doesn't work::
+
+            sage: poly.degree(q)
+            Traceback (most recent call last):
+            ...
+            TypeError: argument must canonically coerce to parent
+
+        Using a non-canonical coercion does work, but we require this
+        to be done explicitly, since it can lead to confusing results
+        if done automatically::
+
+            sage: poly.degree(poly.parent()(q))
+            2
+            sage: poly.degree(poly.parent()(p))
+            1
+            sage: T.&lt;x,y&gt; = ZZ[]
+            sage: poly.degree(poly.parent()(x))  # noncanonical coercions can be confusing
+            1
+
+        The argument to degree has to be a generator::
+
+            sage: pp = poly.parent().gen(0)
+            sage: poly.degree(pp)
+            1
+            sage: poly.degree(pp+1)
+            Traceback (most recent call last):
+            ...
+            TypeError: argument must be a generator
+
+        Canonical coercions are used::
+
+            sage: S = ZZ['p,q']
+            sage: poly.degree(S.0)
+            1
+            sage: poly.degree(S.1)
+            2
+        </opaque><constant name="classmethod.degrees">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.degrees(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2765)
+
+        Returns a tuple with the maximal degree of each variable in
+        this polynomial.  The list of degrees is ordered by the order
+        of the generators.
+
+        EXAMPLES::
+
+            sage: R.&lt;y0,y1,y2&gt; = PolynomialRing(QQ,3)
+            sage: q = 3*y0*y1*y1*y2; q
+            3*y0*y1^2*y2
+            sage: q.degrees()
+            (1, 2, 1)
+            sage: (q + y0^5).degrees()
+            (5, 2, 1)
+        </opaque><constant name="classmethod.dict">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.dict(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2966)
+
+        Return a dictionary representing self. This dictionary is in
+        the same format as the generic MPolynomial: The dictionary
+        consists of ``ETuple:coefficient`` pairs.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt; = QQ[]
+            sage: f=2*x*y^3*z^2 + 1/7*x^2 + 2/3
+            sage: f.dict()
+            {(0, 0, 0): 2/3, (1, 3, 2): 2, (2, 0, 0): 1/7}
+        </opaque><constant name="classmethod.discriminant">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.discriminant(self, variable)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 5304)
+
+        Returns the discriminant of self with respect to the given variable.
+
+        INPUT:
+
+          - ``variable`` - The variable with respect to which we compute
+              the discriminant
+
+        OUTPUT:
+
+          - An element of the base ring of the polynomial ring.
+
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt;=QQ[]
+            sage: f=4*x*y^2 + 1/4*x*y*z + 3/2*x*z^2 - 1/2*z^2
+            sage: f.discriminant(x)
+            1
+            sage: f.discriminant(y)
+            -383/16*x^2*z^2 + 8*x*z^2
+            sage: f.discriminant(z)
+            -383/16*x^2*y^2 + 8*x*y^2
+
+        Note that, unlike the univariate case, the result lives in
+        the same ring as the polynomial::
+
+            sage: R.&lt;x,y&gt;=QQ[]
+            sage: f=x^5*y+3*x^2*y^2-2*x+y-1
+            sage: f.discriminant(y)
+            x^10 + 2*x^5 + 24*x^3 + 12*x^2 + 1
+            sage: f.polynomial(y).discriminant()
+            x^10 + 2*x^5 + 24*x^3 + 12*x^2 + 1
+            sage: f.discriminant(y).parent()==f.polynomial(y).discriminant().parent()
+            False
+
+        AUTHOR:
+            Miguel Marco
+        </opaque><constant name="classmethod.exponents">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.exponents(self, as_ETuples=True)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3123)
+
+        Return the exponents of the monomials appearing in this
+        polynomial.
+
+        INPUT:
+
+        - ``as_ETuples`` - (default: ``True``) if true returns the result as an list of ETuples
+                          otherwise returns a list of tuples
+
+
+        EXAMPLES::
+
+            sage: R.&lt;a,b,c&gt; = QQ[]
+            sage: f = a^3 + b + 2*b^2
+            sage: f.exponents()
+            [(3, 0, 0), (0, 2, 0), (0, 1, 0)]
+            sage: f.exponents(as_ETuples=False)
+            [(3, 0, 0), (0, 2, 0), (0, 1, 0)]
+        </opaque><constant name="classmethod.factor">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.factor(self, proof=True)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 4071)
+
+        Return the factorization of this polynomial.
+
+        INPUT:
+
+        - ``proof`` - ignored.
+
+        EXAMPLES::
+
+            sage: R.&lt;x, y&gt; = QQ[]
+            sage: f = (x^3 + 2*y^2*x) * (x^2 + x + 1); f
+            x^5 + 2*x^3*y^2 + x^4 + 2*x^2*y^2 + x^3 + 2*x*y^2
+            sage: F = f.factor()
+            sage: F
+            x * (x^2 + x + 1) * (x^2 + 2*y^2)
+
+        Next we factor the same polynomial, but over the finite field
+        of order 3.::
+
+            sage: R.&lt;x, y&gt; = GF(3)[]
+            sage: f = (x^3 + 2*y^2*x) * (x^2 + x + 1); f
+            x^5 - x^3*y^2 + x^4 - x^2*y^2 + x^3 - x*y^2
+            sage: F = f.factor()
+            sage: F # order is somewhat random
+            (-1) * x * (-x + y) * (x + y) * (x - 1)^2
+
+        Next we factor a polynomial, but over a finite field of order 9.::
+
+            sage: K.&lt;a&gt; = GF(3^2)
+            sage: R.&lt;x, y&gt; = K[]
+            sage: f = (x^3 + 2*a*y^2*x) * (x^2 + x + 1); f
+            x^5 + (-a)*x^3*y^2 + x^4 + (-a)*x^2*y^2 + x^3 + (-a)*x*y^2
+            sage: F = f.factor()
+            sage: F
+            ((-a)) * x * (x - 1)^2 * ((-a + 1)*x^2 + y^2)
+            sage: f - F
+            0
+
+        Next we factor a polynomial over a number field.::
+
+            sage: p = var('p')
+            sage: K.&lt;s&gt; = NumberField(p^3-2)
+            sage: KXY.&lt;x,y&gt; = K[]
+            sage: factor(x^3 - 2*y^3)
+            (x + (-s)*y) * (x^2 + (s)*x*y + (s^2)*y^2)
+            sage: k = (x^3-2*y^3)^5*(x+s*y)^2*(2/3 + s^2)
+            sage: k.factor()
+            ((s^2 + 2/3)) * (x + (s)*y)^2 * (x + (-s)*y)^5 * (x^2 + (s)*x*y + (s^2)*y^2)^5
+
+        This shows that ticket :trac:`2780` is fixed, i.e. that the unit
+        part of the factorization is set correctly::
+
+            sage: x = var('x')
+            sage: K.&lt;a&gt; = NumberField(x^2 + 1)
+            sage: R.&lt;y, z&gt; = PolynomialRing(K)
+            sage: f = 2*y^2 + 2*z^2
+            sage: F = f.factor(); F.unit()
+            2
+
+        Another example::
+
+            sage: R.&lt;x,y,z&gt; = GF(32003)[]
+            sage: f = 9*(x-1)^2*(y+z)
+            sage: f.factor()
+            (9) * (y + z) * (x - 1)^2
+
+            sage: R.&lt;x,w,v,u&gt; = QQ['x','w','v','u']
+            sage: p = (4*v^4*u^2 - 16*v^2*u^4 + 16*u^6 - 4*v^4*u + 8*v^2*u^3 + v^4)
+            sage: p.factor()
+            (-2*v^2*u + 4*u^3 + v^2)^2
+            sage: R.&lt;a,b,c,d&gt; = QQ[]
+            sage: f =  (-2) * (a - d) * (-a + b) * (b - d) * (a - c) * (b - c) * (c - d)
+            sage: F = f.factor(); F
+            (-2) * (c - d) * (-b + c) * (b - d) * (-a + c) * (-a + b) * (a - d)
+            sage: F[0][0]
+            c - d
+            sage: F.unit()
+            -2
+
+        Constant elements are factorized in the base rings. ::
+
+            sage: P.&lt;x,y&gt; = ZZ[]
+            sage: P(2^3*7).factor()
+            2^3 * 7
+            sage: P.&lt;x,y&gt; = GF(2)[]
+            sage: P(1).factor()
+            1
+
+        Factorization for finite prime fields with characteristic
+        `&gt; 2^{29}` is not supported ::
+
+            sage: q = 1073741789
+            sage: T.&lt;aa, bb&gt; = PolynomialRing(GF(q))
+            sage: f = aa^2 + 12124343*bb*aa + 32434598*bb^2
+            sage: f.factor()
+            Traceback (most recent call last):
+            ...
+            NotImplementedError: Factorization of multivariate polynomials over prime fields with characteristic &gt; 2^29 is not implemented.
+
+        Factorization over the integers is now supported, see :trac:`17840`::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(ZZ)
+            sage: f = 12 * (3*x*y + 4) * (5*x - 2) * (2*y + 7)^2
+            sage: f.factor()
+            2^2 * 3 * (2*y + 7)^2 * (5*x - 2) * (3*x*y + 4)
+            sage: g = -12 * (x^2 - y^2)
+            sage: g.factor()
+            (-1) * 2^2 * 3 * (x - y) * (x + y)
+            sage: factor(-4*x*y - 2*x + 2*y + 1)
+            (-1) * (2*y + 1) * (2*x - 1)
+
+        Factorization over non-integral domains is not supported ::
+
+            sage: R.&lt;x,y&gt; = PolynomialRing(Zmod(4))
+            sage: f = (2*x + 1) * (x^2 + x + 1)
+            sage: f.factor()
+            Traceback (most recent call last):
+            ...
+            NotImplementedError: Factorization of multivariate polynomials over Ring of integers modulo 4 is not implemented.
+
+        TESTS:
+
+        This shows that :trac:`10270` is fixed::
+
+            sage: R.&lt;x,y,z&gt; = GF(3)[]
+            sage: f = x^2*z^2+x*y*z-y^2
+            sage: f.factor()
+            x^2*z^2 + x*y*z - y^2
+
+        This checks that :trac:`11838` is fixed::
+
+            sage: K = GF(4,'a')
+            sage: a = K.gens()[0]
+            sage: R.&lt;x,y&gt; = K[]
+            sage: p=x^8*y^3 + x^2*y^9 + a*x^9 + a*x*y^4
+            sage: q=y^11 + (a)*y^10 + (a + 1)*x*y^3
+            sage: f = p*q
+            sage: f.factor()
+            x * y^3 * (y^8 + (a)*y^7 + (a + 1)*x) * (x^7*y^3 + x*y^9 + (a)*x^8 + (a)*y^4)
+
+        We test several examples which were known to return wrong
+        results in the past (see :trac:`10902`)::
+
+            sage: R.&lt;x,y&gt; = GF(2)[]
+            sage: p = x^3*y^7 + x^2*y^6 + x^2*y^3
+            sage: q = x^3*y^5
+            sage: f = p*q
+            sage: p.factor()*q.factor()
+            x^5 * y^8 * (x*y^4 + y^3 + 1)
+            sage: f.factor()
+            x^5 * y^8 * (x*y^4 + y^3 + 1)
+            sage: f.factor().expand() == f
+            True
+
+        ::
+
+            sage: R.&lt;x,y&gt; = GF(2)[]
+            sage: p=x^8 + y^8; q=x^2*y^4 + x
+            sage: f=p*q
+            sage: lf = f.factor()
+            sage: f-lf
+            0
+
+        ::
+
+            sage: R.&lt;x,y&gt; = GF(3)[]
+            sage: p = -x*y^9 + x
+            sage: q = -x^8*y^2
+            sage: f = p*q
+            sage: f
+            x^9*y^11 - x^9*y^2
+            sage: f.factor()
+            y^2 * (y - 1)^9 * x^9
+            sage: f - f.factor()
+            0
+
+        ::
+
+            sage: R.&lt;x,y&gt; = GF(5)[]
+            sage: p=x^27*y^9 + x^32*y^3 + 2*x^20*y^10 - x^4*y^24 - 2*x^17*y
+            sage: q=-2*x^10*y^24 + x^9*y^24 - 2*x^3*y^30
+            sage: f=p*q; f-f.factor()
+            0
+
+        ::
+
+            sage: R.&lt;x,y&gt; = GF(7)[]
+            sage: p=-3*x^47*y^24
+            sage: q=-3*x^47*y^37 - 3*x^24*y^49 + 2*x^56*y^8 + 3*x^29*y^15 - x^2*y^33
+            sage: f=p*q
+            sage: f-f.factor()
+            0
+
+        The following examples used to give a Segmentation Fault, see
+        :trac:`12918` and :trac:`13129`::
+
+            sage: R.&lt;x,y&gt; = GF(2)[]
+            sage: f = x^6 + x^5 + y^5 + y^4
+            sage: f.factor()
+            x^6 + x^5 + y^5 + y^4
+            sage: f = x^16*y + x^10*y + x^9*y + x^6*y + x^5 + x*y + y^2
+            sage: f.factor()
+            x^16*y + x^10*y + x^9*y + x^6*y + x^5 + x*y + y^2
+
+        Test :trac:`12928`::
+
+            sage: R.&lt;x,y&gt; = GF(2)[]
+            sage: p = x^2 + y^2 + x + 1
+            sage: q = x^4 + x^2*y^2 + y^4 + x*y^2 + x^2 + y^2 + 1
+            sage: factor(p*q)
+            (x^2 + y^2 + x + 1) * (x^4 + x^2*y^2 + y^4 + x*y^2 + x^2 + y^2 + 1)
+
+        Check that :trac:`13770` is fixed::
+
+            sage: U.&lt;y,t&gt; = GF(2)[]
+            sage: f = y*t^8 + y^5*t^2 + y*t^6 + t^7 + y^6 + y^5*t + y^2*t^4 + y^2*t^2 + y^2*t + t^3 + y^2 + t^2
+            sage: l = f.factor()
+            sage: l[0][0]==t^2 + y + t + 1 or l[1][0]==t^2 + y + t + 1
+            True
+
+        The following used to sometimes take a very long time or get
+        stuck, see :trac:`12846`. These 100 iterations should take less
+        than 1 second::
+
+            sage: K.&lt;a&gt; = GF(4)
+            sage: R.&lt;x,y&gt; = K[]
+            sage: f = (a + 1)*x^145*y^84 + (a + 1)*x^205*y^17 + x^32*y^112 + x^92*y^45
+            sage: for i in range(100):
+            ....:     assert len(f.factor()) == 4
+
+        Test for :trac:`20435`::
+
+            sage: x,y = polygen(ZZ,'x,y')
+            sage: p = x**2-y**2
+            sage: z = factor(p); z
+            (x - y) * (x + y)
+            sage: z[0][0].parent()
+            Multivariate Polynomial Ring in x, y over Integer Ring
+
+        Test for :trac:`17680`::
+
+            sage: R.&lt;a,r,v,n,g,f,h,o&gt; = QQ[]
+            sage: f = 248301045*a^2*r^10*n^2*o^10+570807000*a^2*r^9*n*o^9-137945025*a^2*r^8*n^2*o^8+328050000*a^2*r^8*o^8-253692000*a^2*r^7*n*o^7+30654450*a^2*r^6*n^2*o^6-109350000*a^2*r^6*o^6+42282000*a^2*r^5*n*o^5-3406050*a^2*r^4*n^2*o^4-22457088*a*r^2*v*n^2*o^6+12150000*a^2*r^4*o^4-3132000*a^2*r^3*n*o^3+189225*a^2*r^2*n^2*o^2+2495232*a*v*n^2*o^4-450000*a^2*r^2*o^2+87000*a^2*r*n*o-4205*a^2*n^2
+            sage: len(factor(f))
+            4
+        </opaque><constant name="classmethod.hamming_weight">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.number_of_terms(self) -&gt; long
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2999)
+
+        Return the number of non-zero coefficients of this polynomial.
+
+        This is also called weight, :meth:`hamming_weight` or sparsity.
+
+        EXAMPLES::
+
+            sage: R.&lt;x, y&gt; = ZZ[]
+            sage: f = x^3 - y
+            sage: f.number_of_terms()
+            2
+            sage: R(0).number_of_terms()
+            0
+            sage: f = (x+y)^100
+            sage: f.number_of_terms()
+            101
+
+        The method :meth:`hamming_weight` is an alias::
+
+            sage: f.hamming_weight()
+            101
+        </opaque><constant name="classmethod.integral">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.integral(self, MPolynomial_libsingular var)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 5132)
+
+        Integrates this polynomial with respect to the provided
+        variable.
+
+        One requires that `\QQ` is contained in the ring.
+
+        INPUT:
+
+        - ``variable`` - the integral is taken with respect to variable
+
+        EXAMPLES::
+
+            sage: R.&lt;x, y&gt; = PolynomialRing(QQ, 2)
+            sage: f = 3*x^3*y^2 + 5*y^2 + 3*x + 2
+            sage: f.integral(x)
+            3/4*x^4*y^2 + 5*x*y^2 + 3/2*x^2 + 2*x
+            sage: f.integral(y)
+            x^3*y^3 + 5/3*y^3 + 3*x*y + 2*y
+
+        Check that :trac:`15896` is solved::
+
+            sage: s = x+y
+            sage: s.integral(x)+x
+            1/2*x^2 + x*y + x
+            sage: s.integral(x)*s
+            1/2*x^3 + 3/2*x^2*y + x*y^2
+
+        TESTS::
+
+            sage: z, w = polygen(QQ, 'z, w')
+            sage: f.integral(z)
+            Traceback (most recent call last):
+            ...
+            TypeError: the variable is not in the same ring as self
+
+            sage: f.integral(y**2)
+            Traceback (most recent call last):
+            ...
+            TypeError: not a variable in the same ring as self
+
+            sage: x,y = polygen(ZZ,'x,y')
+            sage: y.integral(x)
+            Traceback (most recent call last):
+            ...
+            TypeError: the ring must contain the rational numbers
+        </opaque><constant name="classmethod.inverse_of_unit">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.inverse_of_unit(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3162)
+
+        Return the inverse of this polynomial if it is a unit.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: x.inverse_of_unit()
+            Traceback (most recent call last):
+            ...
+            ArithmeticError: Element is not a unit.
+
+            sage: R(1/2).inverse_of_unit()
+            2
+        </opaque><constant name="classmethod.is_constant">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.is_constant(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3844)
+
+        Return ``True`` if this polynomial is constant.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = PolynomialRing(GF(127))
+            sage: x.is_constant()
+            False
+            sage: P(1).is_constant()
+            True
+        </opaque><constant name="classmethod.is_monomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.is_monomial(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3253)
+
+        Return ``True`` if this polynomial is a monomial.  A monomial
+        is defined to be a product of generators with coefficient 1.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = PolynomialRing(QQ)
+            sage: x.is_monomial()
+            True
+            sage: (2*x).is_monomial()
+            False
+            sage: (x*y).is_monomial()
+            True
+            sage: (x*y + x).is_monomial()
+            False
+        </opaque><constant name="classmethod.is_squarefree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.is_squarefree(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 4786)
+
+        Return ``True`` if this polynomial is square free.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = PolynomialRing(QQ)
+            sage: f= x^2 + 2*x*y + 1/2*z
+            sage: f.is_squarefree()
+            True
+            sage: h = f^2
+            sage: h.is_squarefree()
+            False
+        </opaque><constant name="classmethod.is_univariate">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.is_univariate(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3728)
+
+        Return ``True`` if self is a univariate polynomial, that is if
+        self contains only one variable.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = GF(2)[]
+            sage: f = x^2 + 1
+            sage: f.is_univariate()
+            True
+            sage: f = y*x^2 + 1
+            sage: f.is_univariate()
+            False
+            sage: f = P(0)
+            sage: f.is_univariate()
+            True
+        </opaque><constant name="classmethod.lc">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.lc(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3900)
+
+        Leading coefficient of this polynomial with respect to the
+        term order of ``self.parent()``.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt;=PolynomialRing(GF(7),3,order='lex')
+            sage: f = 3*x^1*y^2 + 2*y^3*z^4
+            sage: f.lc()
+            3
+
+            sage: f = 5*x^3*y^2*z^4 + 4*x^3*y^2*z^1
+            sage: f.lc()
+            5
+        </opaque><constant name="classmethod.lcm">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.lcm(self, MPolynomial_libsingular g)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 4716)
+
+        Return the least common multiple of ``self`` and `g`.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: p = (x+y)*(y+z)
+            sage: q = (z^4+2)*(y+z)
+            sage: lcm(p,q)
+            x*y*z^4 + y^2*z^4 + x*z^5 + y*z^5 + 2*x*y + 2*y^2 + 2*x*z + 2*y*z
+
+            sage: P.&lt;x,y,z&gt; = ZZ[]
+            sage: p = 2*(x+y)*(y+z)
+            sage: q = 3*(z^4+2)*(y+z)
+            sage: lcm(p,q)
+            6*x*y*z^4 + 6*y^2*z^4 + 6*x*z^5 + 6*y*z^5 + 12*x*y + 12*y^2 + 12*x*z + 12*y*z
+
+            sage: r.&lt;x,y&gt; = PolynomialRing(GF(2**8, 'a'), 2)
+            sage: a = r.base_ring().0
+            sage: f = (a^2+a)*x^2*y + (a^4+a^3+a)*y + a^5
+            sage: f.lcm(x^4)
+            (a^2 + a)*x^6*y + (a^4 + a^3 + a)*x^4*y + (a^5)*x^4
+
+            sage: w = var('w')
+            sage: r.&lt;x,y&gt; = PolynomialRing(NumberField(w^4 + 1, 'a'), 2)
+            sage: a = r.base_ring().0
+            sage: f = (a^2+a)*x^2*y + (a^4+a^3+a)*y + a^5
+            sage: f.lcm(x^4)
+            (a^2 + a)*x^6*y + (a^3 + a - 1)*x^4*y + (-a)*x^4
+        </opaque><constant name="classmethod.lm">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.lm(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3858)
+
+        Returns the lead monomial of self with respect to the term
+        order of ``self.parent()``. In Sage a monomial is a product of
+        variables in some power without a coefficient.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt;=PolynomialRing(GF(7),3,order='lex')
+            sage: f = x^1*y^2 + y^3*z^4
+            sage: f.lm()
+            x*y^2
+            sage: f = x^3*y^2*z^4 + x^3*y^2*z^1
+            sage: f.lm()
+            x^3*y^2*z^4
+
+            sage: R.&lt;x,y,z&gt;=PolynomialRing(QQ,3,order='deglex')
+            sage: f = x^1*y^2*z^3 + x^3*y^2*z^0
+            sage: f.lm()
+            x*y^2*z^3
+            sage: f = x^1*y^2*z^4 + x^1*y^1*z^5
+            sage: f.lm()
+            x*y^2*z^4
+
+            sage: R.&lt;x,y,z&gt;=PolynomialRing(GF(127),3,order='degrevlex')
+            sage: f = x^1*y^5*z^2 + x^4*y^1*z^3
+            sage: f.lm()
+            x*y^5*z^2
+            sage: f = x^4*y^7*z^1 + x^4*y^2*z^3
+            sage: f.lm()
+            x^4*y^7*z
+
+        </opaque><constant name="classmethod.lt">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.lt(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3933)
+
+        Leading term of this polynomial. In Sage a term is a product
+        of variables in some power and a coefficient.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt;=PolynomialRing(GF(7),3,order='lex')
+            sage: f = 3*x^1*y^2 + 2*y^3*z^4
+            sage: f.lt()
+            3*x*y^2
+
+            sage: f = 5*x^3*y^2*z^4 + 4*x^3*y^2*z^1
+            sage: f.lt()
+            -2*x^3*y^2*z^4
+        </opaque><constant name="classmethod.monomial_coefficient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.monomial_coefficient(self, MPolynomial_libsingular mon)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2908)
+
+        Return the coefficient in the base ring of the monomial mon in
+        ``self``, where mon must have the same parent as self.
+
+        This function contrasts with the function ``coefficient``
+        which returns the coefficient of a monomial viewing this
+        polynomial in a polynomial ring over a base ring having fewer
+        variables.
+
+        INPUT:
+
+        - ``mon`` - a monomial
+
+        OUTPUT:
+
+        coefficient in base ring
+
+        .. SEEALSO::
+
+            For coefficients in a base ring of fewer variables,
+            look at ``coefficient``.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y&gt; = QQ[]
+
+            The parent of the return is a member of the base ring.
+            sage: f = 2 * x * y
+            sage: c = f.monomial_coefficient(x*y); c
+            2
+            sage: c.parent()
+            Rational Field
+
+            sage: f = y^2 + y^2*x - x^9 - 7*x + 5*x*y
+            sage: f.monomial_coefficient(y^2)
+            1
+            sage: f.monomial_coefficient(x*y)
+            5
+            sage: f.monomial_coefficient(x^9)
+            -1
+            sage: f.monomial_coefficient(x^10)
+            0
+        </opaque><constant name="classmethod.monomials">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.monomials(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3563)
+
+        Return the list of monomials in self. The returned list is
+        decreasingly ordered by the term ordering of
+        ``self.parent()``.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: f = x + 3/2*y*z^2 + 2/3
+            sage: f.monomials()
+            [y*z^2, x, 1]
+            sage: f = P(3/2)
+            sage: f.monomials()
+            [1]
+
+        TESTS::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: f = x
+            sage: f.monomials()
+            [x]
+
+        Check if :trac:`12706` is fixed::
+
+            sage: f = P(0)
+            sage: f.monomials()
+            []
+
+        Check if :trac:`7152` is fixed::
+
+            sage: x=var('x')
+            sage: K.&lt;rho&gt; = NumberField(x**2 + 1)
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: p = rho*x
+            sage: q = x
+            sage: p.monomials()
+            [x]
+            sage: q.monomials()
+            [x]
+            sage: p.monomials()
+            [x]
+        </opaque><constant name="classmethod.number_of_terms">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.nvariables">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.nvariables(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3828)
+
+        Return the number variables in this polynomial.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = PolynomialRing(GF(127))
+            sage: f = x*y + z
+            sage: f.nvariables()
+            3
+            sage: f = x + y
+            sage: f.nvariables()
+            2
+        </opaque><constant name="classmethod.quo_rem">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.quo_rem(self, MPolynomial_libsingular right)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 4804)
+
+        Returns quotient and remainder of self and right.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: f = y*x^2 + x + 1
+            sage: f.quo_rem(x)
+            (x*y + 1, 1)
+            sage: f.quo_rem(y)
+            (x^2, x + 1)
+
+            sage: R.&lt;x,y&gt; = ZZ[]
+            sage: f = 2*y*x^2 + x + 1
+            sage: f.quo_rem(x)
+            (2*x*y + 1, 1)
+            sage: f.quo_rem(y)
+            (2*x^2, x + 1)
+            sage: f.quo_rem(3*x)
+            (2*x*y + 1, -4*x^2*y - 2*x + 1)
+
+        TESTS::
+
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: R(0).quo_rem(R(1))
+            (0, 0)
+            sage: R(1).quo_rem(R(0))
+            Traceback (most recent call last):
+            ...
+            ZeroDivisionError
+
+        </opaque><constant name="classmethod.reduce">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.reduce(self, I)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 4464)
+
+        Return the normal form of self w.r.t. ``I``, i.e. return the
+        remainder of this polynomial with respect to the polynomials
+        in ``I``. If the polynomial set/list ``I`` is not a (strong)
+        Groebner basis the result is not canonical.
+
+        A strong Groebner basis ``G`` of ``I`` implies that for every
+        leading term ``t`` of ``I`` there exists an element ``g`` of ``G``,
+        such that the leading term of ``g`` divides ``t``.
+
+        INPUT:
+
+        - ``I`` - a list/set of polynomials. If ``I`` is an ideal, the
+          generators are used.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: f1 = -2 * x^2 + x^3
+            sage: f2 = -2 * y + x* y
+            sage: f3 = -x^2 + y^2
+            sage: F = Ideal([f1,f2,f3])
+            sage: g = x*y - 3*x*y^2
+            sage: g.reduce(F)
+            -6*y^2 + 2*y
+            sage: g.reduce(F.gens())
+            -6*y^2 + 2*y
+
+        `\ZZ` is also supported. ::
+
+            sage: P.&lt;x,y,z&gt; = ZZ[]
+            sage: f1 = -2 * x^2 + x^3
+            sage: f2 = -2 * y + x* y
+            sage: f3 = -x^2 + y^2
+            sage: F = Ideal([f1,f2,f3])
+            sage: g = x*y - 3*x*y^2
+            sage: g.reduce(F)
+            -6*y^2 + 2*y
+            sage: g.reduce(F.gens())
+            -6*y^2 + 2*y
+
+            sage: f = 3*x
+            sage: f.reduce([2*x,y])
+            3*x
+        </opaque><constant name="classmethod.resultant">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.resultant(self, MPolynomial_libsingular other, variable=None)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 5214)
+
+        Compute the resultant of this polynomial and the first
+        argument with respect to the variable given as the second
+        argument.
+
+        If a second argument is not provide the first variable of
+        the parent is chosen.
+
+        INPUT:
+
+        - ``other`` - polynomial
+
+        - ``variable`` - optional variable (default: ``None``)
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(QQ,2)
+            sage: a = x+y
+            sage: b = x^3-y^3
+            sage: c = a.resultant(b); c
+            -2*y^3
+            sage: d = a.resultant(b,y); d
+            2*x^3
+
+        The SINGULAR example::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(GF(32003),3)
+            sage: f = 3 * (x+2)^3 + y
+            sage: g = x+y+z
+            sage: f.resultant(g,x)
+            3*y^3 + 9*y^2*z + 9*y*z^2 + 3*z^3 - 18*y^2 - 36*y*z - 18*z^2 + 35*y + 36*z - 24
+
+        Resultants are also supported over the Integers::
+
+            sage: R.&lt;x,y,a,b,u&gt;=PolynomialRing(ZZ, 5, order='lex')
+            sage: r = (x^4*y^2+x^2*y-y).resultant(x*y-y*a-x*b+a*b+u,x)
+            sage: r
+            y^6*a^4 - 4*y^5*a^4*b - 4*y^5*a^3*u + y^5*a^2 - y^5 + 6*y^4*a^4*b^2 + 12*y^4*a^3*b*u - 4*y^4*a^2*b + 6*y^4*a^2*u^2 - 2*y^4*a*u + 4*y^4*b - 4*y^3*a^4*b^3 - 12*y^3*a^3*b^2*u + 6*y^3*a^2*b^2 - 12*y^3*a^2*b*u^2 + 6*y^3*a*b*u - 4*y^3*a*u^3 - 6*y^3*b^2 + y^3*u^2 + y^2*a^4*b^4 + 4*y^2*a^3*b^3*u - 4*y^2*a^2*b^3 + 6*y^2*a^2*b^2*u^2 - 6*y^2*a*b^2*u + 4*y^2*a*b*u^3 + 4*y^2*b^3 - 2*y^2*b*u^2 + y^2*u^4 + y*a^2*b^4 + 2*y*a*b^3*u - y*b^4 + y*b^2*u^2
+
+        TESTS::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(QQ, order='degrevlex')
+            sage: a = x+y
+            sage: b = x^3-y^3
+            sage: c = a.resultant(b); c
+            -2*y^3
+            sage: d = a.resultant(b,y); d
+            2*x^3
+
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(ZZ,2)
+            sage: f = x+y
+            sage: g=y^2+x
+            sage: f.resultant(g,y)
+            x^2 + x
+        </opaque><constant name="classmethod.sub_m_mul_q">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.sub_m_mul_q(self, MPolynomial_libsingular m, MPolynomial_libsingular q)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 4892)
+
+        Return ``self - m*q``, where ``m`` must be a monomial and
+        ``q`` a polynomial.
+
+        INPUT:
+
+        - ``m`` - a monomial
+        - ``q`` - a polynomial
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt;=PolynomialRing(QQ,3)
+            sage: x.sub_m_mul_q(y,z)
+            -y*z + x
+
+        TESTS::
+
+            sage: Q.&lt;x,y,z&gt;=PolynomialRing(QQ,3)
+            sage: P.&lt;x,y,z&gt;=PolynomialRing(QQ,3)
+            sage: P(0).sub_m_mul_q(P(0),P(1))
+            0
+            sage: x.sub_m_mul_q(Q.gen(1),Q.gen(2))
+            -y*z + x
+         </opaque><constant name="classmethod.total_degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.total_degree(self, int std_grading=False)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 2706)
+
+        Return the total degree of ``self``, which is the maximum degree
+        of all monomials in ``self``.
+
+        EXAMPLES::
+
+            sage: R.&lt;x,y,z&gt; = QQ[]
+            sage: f=2*x*y^3*z^2
+            sage: f.total_degree()
+            6
+            sage: f=4*x^2*y^2*z^3
+            sage: f.total_degree()
+            7
+            sage: f=99*x^6*y^3*z^9
+            sage: f.total_degree()
+            18
+            sage: f=x*y^3*z^6+3*x^2
+            sage: f.total_degree()
+            10
+            sage: f=z^3+8*x^4*y^5*z
+            sage: f.total_degree()
+            10
+            sage: f=z^9+10*x^4+y^8*x^2
+            sage: f.total_degree()
+            10
+
+        TESTS::
+
+            sage: R.&lt;x,y,z&gt; = QQ[]
+            sage: R(0).total_degree()
+            -1
+            sage: R(1).total_degree()
+            0
+
+        With a matrix term ordering, the grading changes.
+        To evaluate the total degree using the standard grading,
+        use the optional argument``std_grading=True``::
+
+            sage: tord=TermOrder(matrix([3,0,1,1,1,0,1,0,0]))
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(QQ,3,order=tord)
+            sage: (x^2*y).total_degree()
+            6
+            sage: (x^2*y).total_degree(std_grading=True)
+            3
+        </opaque><constant name="classmethod.univariate_polynomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.univariate_polynomial(self, R=None)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3654)
+
+        Returns a univariate polynomial associated to this
+        multivariate polynomial.
+
+        INPUT:
+
+        - ``R`` - (default: ``None``) PolynomialRing
+
+        If this polynomial is not in at most one variable, then a
+        ``ValueError`` exception is raised.  This is checked using the
+        :meth:`is_univariate()` method.  The new Polynomial is over
+        the same base ring as the given ``MPolynomial`` and in the
+        variable ``x`` if no ring ``R`` is provided.
+
+        EXAMPLES::
+
+            sage: R.&lt;x, y&gt; = QQ[]
+            sage: f = 3*x^2 - 2*y + 7*x^2*y^2 + 5
+            sage: f.univariate_polynomial()
+            Traceback (most recent call last):
+            ...
+            TypeError: polynomial must involve at most one variable
+            sage: g = f.subs({x:10}); g
+            700*y^2 - 2*y + 305
+            sage: g.univariate_polynomial ()
+            700*y^2 - 2*y + 305
+            sage: g.univariate_polynomial(PolynomialRing(QQ,'z'))
+            700*z^2 - 2*z + 305
+
+        Here's an example with a constant multivariate polynomial::
+
+            sage: g = R(1)
+            sage: h = g.univariate_polynomial(); h
+            1
+            sage: h.parent()
+            Univariate Polynomial Ring in x over Rational Field
+        </opaque><constant name="classmethod.variable">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.variable(self, i=0)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3811)
+
+
+        Return the i-th variable occurring in self. The index i is the
+        index in ``self.variables()``.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = GF(2)[]
+            sage: f = x*z^2 + z + 1
+            sage: f.variables()
+            (x, z)
+            sage: f.variable(1)
+            z
+        </opaque><constant name="classmethod.variables">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular.variables(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 3781)
+
+        Return a tuple of all variables occurring in self.
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = GF(2)[]
+            sage: f = x*z^2 + z + 1
+            sage: f.variables()
+            (x, z)
+        </opaque></omdoc></theory></omdoc>

@@ -336,27 +336,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Return the inverse of ``self``.
-
-            EXAMPLES::
-
-                sage: W = WeylGroup(['B',7])
-                sage: w = W.an_element()
-                sage: u = w.inverse()
-                sage: u == ~w
-                True
-                sage: u * w == w * u
-                True
-                sage: u * w
-                [1 0 0 0 0 0 0]
-                [0 1 0 0 0 0 0]
-                [0 0 1 0 0 0 0]
-                [0 0 0 1 0 0 0]
-                [0 0 0 0 1 0 0]
-                [0 0 0 0 0 1 0]
-                [0 0 0 0 0 0 1]
-            </opaque><constant name="classmethod.is_reflection">
+     </constant><constant name="classmethod.is_reflection">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

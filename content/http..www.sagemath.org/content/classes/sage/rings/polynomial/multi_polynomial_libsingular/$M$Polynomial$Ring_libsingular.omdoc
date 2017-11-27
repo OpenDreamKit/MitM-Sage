@@ -1,0 +1,666 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="MPolynomialRing_libsingular" base="http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial_libsingular" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial_ring_generic?MPolynomialRing_generic"></import><omdoc name="Methods"><constant name="classmethod.Element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomial_libsingular(MPolynomialRing_libsingular parent)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 1972)
+
+    A multivariate polynomial implemented using libSINGULAR.
+    </opaque><constant name="classmethod.__copy__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular.__copy__(self)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 435)
+
+        Copy ``self``.
+
+        The ring is unique and immutable, so we do not copy.
+
+        TESTS::
+
+            sage: import gc
+            sage: from sage.rings.polynomial.multi_polynomial_libsingular import MPolynomialRing_libsingular
+            sage: from sage.libs.singular.ring import ring_refcount_dict
+            sage: gc.collect()  # random output
+            sage: n = len(ring_refcount_dict)
+            sage: R = MPolynomialRing_libsingular(GF(547), 2, ('x', 'y'), TermOrder('degrevlex', 2))
+            sage: len(ring_refcount_dict) == n + 1
+            True
+
+            sage: Q = copy(R)   # indirect doctest
+            sage: p = R.gen(0) ^2+R.gen(1)^2
+            sage: q = copy(p)
+            sage: del R
+            sage: del Q
+            sage: del p
+            sage: del q
+            sage: gc.collect() # random output
+            sage: len(ring_refcount_dict) == n
+            False
+        </opaque><constant name="classmethod.__deepcopy__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular.__deepcopy__(self, memo)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 465)
+
+        Deep copy ``self``.
+
+        The ring should be immutable, so we do not copy.
+
+        TESTS::
+
+            sage: R.&lt;x,y&gt; = GF(547)[]
+            sage: R is deepcopy(R)   # indirect doctest
+            True
+        </opaque><constant name="classmethod._element_constructor_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular._element_constructor_(self, element)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 524)
+
+        Construct a new element in this polynomial ring by converting
+        ``element`` into ``self`` if possible.
+
+        INPUT:
+
+        - ``element`` -- several types are supported, see below
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+
+        We can coerce elements of self to self::
+
+            sage: P._coerce_(x*y + 1/2)
+            x*y + 1/2
+
+        We can coerce elements for a ring with the same algebraic properties::
+
+            sage: from sage.rings.polynomial.multi_polynomial_libsingular import MPolynomialRing_libsingular
+            sage: R.&lt;x,y,z&gt; = MPolynomialRing_libsingular(QQ,3)
+            sage: P == R
+            True
+
+            sage: P is R
+            False
+
+            sage: P._coerce_(x*y + 1)
+            x*y + 1
+
+        We can coerce base ring elements::
+
+            sage: P._coerce_(3/2)
+            3/2
+
+        and all kinds of integers::
+
+            sage: P._coerce_(ZZ(1))
+            1
+
+            sage: P._coerce_(int(1))
+            1
+
+            sage: k.&lt;a&gt; = GF(2^8)
+            sage: P.&lt;x,y&gt; = PolynomialRing(k,2)
+            sage: P._coerce_(a)
+            (a)
+
+            sage: z = QQ['z'].0
+            sage: K.&lt;s&gt; = NumberField(z^2 - 2)
+            sage: P.&lt;x,y&gt; = PolynomialRing(K, 2)
+            sage: P._coerce_(1/2*s)
+            (1/2*s)
+
+        TESTS::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(GF(127))
+            sage: P(&quot;111111111111111111111111111111111111111111111111111111111&quot;)
+            21
+            sage: P.&lt;x,y&gt; = PolynomialRing(QQ)
+            sage: P(&quot;111111111111111111111111111111111111111111111111111111111&quot;)
+            111111111111111111111111111111111111111111111111111111111
+            sage: P(&quot;31367566080&quot;)
+            31367566080
+
+        Check if :trac:`7582` is fixed::
+
+            sage: R.&lt;x,y,z&gt; = PolynomialRing(CyclotomicField(2),3)
+            sage: R.coerce(1)
+            1
+
+        Check if :trac:`6160` is fixed::
+
+            sage: x=var('x')
+            sage: K.&lt;j&gt; = NumberField(x-1728)
+            sage: R.&lt;b,c&gt; = K[]
+            sage: R.coerce(1)
+            1
+
+        Check if coercion from zero variable polynomial rings work
+        (:trac:`7951`)::
+
+            sage: P = PolynomialRing(QQ,0,'')
+            sage: R.&lt;x,y&gt; = QQ[]
+            sage: P(5)*x
+            5*x
+            sage: P = PolynomialRing(ZZ,0,'')
+            sage: R.&lt;x,y&gt; = GF(127)[]
+            sage: R.coerce(P(5))
+            5
+
+        Conversion from strings::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P('x+y + 1/4')
+            x + y + 1/4
+
+        Coercion from SINGULAR elements::
+
+            sage: P._singular_()
+            polynomial ring, over a field, global ordering
+            //   coefficients: QQ
+            //   number of vars : 3
+            //        block   1 : ordering dp
+            //                  : names    x y z
+            //        block   2 : ordering C
+
+            sage: P._singular_().set_ring()
+            sage: P(singular('x + 3/4'))
+            x + 3/4
+
+        Coercion from symbolic variables::
+
+            sage: R = QQ['x,y,z']
+            sage: var('x')
+            x
+            sage: R(x)
+            x
+
+        Coercion from 'similar' rings, which maps by index::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: R.&lt;a,b,c&gt; = ZZ[]
+            sage: P(a)
+            x
+
+        ::
+
+            sage: P.&lt;x,y&gt; = QQ[]
+            sage: R.&lt;a,b,c&gt; = QQ[]
+            sage: R(x)
+            a
+
+        Coercion from PARI objects::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P(pari('x^2 + y'))
+            x^2 + y
+            sage: P(pari('x*y'))
+            x*y
+
+        Coercion from boolean polynomials, also by index::
+
+            sage: B.&lt;x,y,z&gt; = BooleanPolynomialRing(3)
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P(B.gen(0))
+            x
+
+        If everything else fails, we try to coerce to the base ring::
+
+            sage: R.&lt;x,y,z&gt; = GF(3)[]
+            sage: R(1/2)
+            -1
+
+        Finally, conversions from other polynomial rings which are not
+        coercions are provided. Variables are mapped as follows. Say,
+        we are mapping an element from `P` to `Q` (this ring). If the
+        variables of `P` are a subset of `Q`, we perform a name
+        preserving conversion::
+
+            sage: P.&lt;y_2, y_1, z_3, z_2, z_1&gt; = GF(3)[]
+            sage: Q = GF(3)['y_4', 'y_3', 'y_2', 'y_1', 'z_5', 'z_4', 'z_3', 'z_2', 'z_1']
+            sage: Q(y_1*z_2^2*z_1)
+            y_1*z_2^2*z_1
+
+        Otherwise, if `P` has less than or equal the number of
+        variables as `Q`, we perform a conversion by index::
+
+            sage: P.&lt;a,b,c&gt; = GF(2)[]
+            sage: Q = GF(2)['c','b','d','e']
+            sage: f = Q.convert_map_from(P)
+            sage: f(a), f(b), f(c)
+            (c, b, d)
+
+        ::
+
+            sage: P.&lt;a,b,c&gt; = GF(2)[]
+            sage: Q = GF(2)['c','b','d']
+            sage: f = Q.convert_map_from(P)
+            sage: f(a),f(b),f(c)
+            (c, b, d)
+
+        In all other cases, we fail::
+
+            sage: P.&lt;a,b,c,f&gt; = GF(2)[]
+            sage: Q = GF(2)['c','d','e']
+            sage: f = Q.convert_map_from(P)
+            sage: f(a)
+            Traceback (most recent call last):
+            ...
+            TypeError: Could not find a mapping of the passed element to this ring.
+
+        Coerce in a polydict where a coefficient reduces to 0 but isn't 0. ::
+
+            sage: R.&lt;x,y&gt; = QQ[]; S.&lt;xx,yy&gt; = GF(5)[]; S( (5*x*y + x + 17*y)._mpoly_dict_recursive() )
+            xx + 2*yy
+
+        Coerce in a polynomial one of whose coefficients reduces to 0. ::
+
+            sage: R.&lt;x,y&gt; = QQ[]; S.&lt;xx,yy&gt; = GF(5)[]; S(5*x*y + x + 17*y)
+            xx + 2*yy
+
+        Some other examples that illustrate the same coercion idea::
+
+            sage: R.&lt;x,y&gt; = ZZ[]
+            sage: S.&lt;xx,yy&gt; = GF(25,'a')[]
+            sage: S(5*x*y + x + 17*y)
+            xx + 2*yy
+
+            sage: S.&lt;xx,yy&gt; = Integers(5)[]
+            sage: S(5*x*y + x + 17*y)
+            xx + 2*yy
+
+        See :trac:`5292`::
+
+            sage: R.&lt;x&gt; = QQ[]; S.&lt;q,t&gt; = QQ[]; F = FractionField(S);
+            sage: x in S
+            False
+            sage: x in F
+            False
+
+        Check if :trac:`8228` is fixed::
+
+            sage: P.&lt;x,y&gt; = Zmod(10)[]; P(0)
+            0
+            sage: P.&lt;x,y&gt; = Zmod(2^10)[]; P(0)
+            0
+
+        And :trac:`7597` is fixed if this does not segfault::
+
+            sage: F2 = GF(2)
+            sage: F.&lt;x&gt; = GF(2^8)
+            sage: R4.&lt;a,b&gt; = PolynomialRing(F)
+            sage: R.&lt;u,v&gt; = PolynomialRing(F2)
+            sage: P = a
+            sage: (P(0,0).polynomial()[0])*u
+            0
+            sage: P(a,b)
+            a
+
+        Check that :trac:`15746` is fixed::
+
+            sage: R.&lt;x,y&gt; = GF(7)[]
+            sage: R(2^31)
+            2
+
+        Check that :trac:`17964` is fixed::
+
+            sage: K.&lt;a&gt; = QuadraticField(17)
+            sage: Q.&lt;x,y&gt; = K[]
+            sage: f = (-3*a)*y + (5*a)
+            sage: p = K.primes_above(5)[0]
+            sage: R = K.residue_field(p)
+            sage: S = R['x','y']
+            sage: S(f)
+            (2*abar)*y
+
+        </opaque><constant name="classmethod._macaulay2_set_ring">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular._macaulay2_set_ring(self, macaulay2=macaulay2_default)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 1170)
+
+        Set the associated M2 ring.
+
+        INPUT:
+
+        - ``macaulay2`` - M2 instance
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(QQ)
+            sage: M2 = P._macaulay2_set_ring() # optional - macaulay2
+        </opaque><constant name="classmethod.monomial_all_divisors">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular.monomial_all_divisors(self, MPolynomial_libsingular t)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 1921)
+
+        Return a list of all monomials that divide ``t``.
+
+        Coefficients are ignored.
+
+        INPUT:
+
+        - ``t`` - a monomial
+
+        OUTPUT:
+            a list of monomials
+
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_all_divisors(x^2*z^3)
+            [x, x^2, z, x*z, x^2*z, z^2, x*z^2, x^2*z^2, z^3, x*z^3, x^2*z^3]
+
+        ALGORITHM: addwithcarry idea by Toon Segers
+        </opaque><constant name="classmethod.monomial_divides">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular.monomial_divides(self, MPolynomial_libsingular a, MPolynomial_libsingular b)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 1705)
+
+        Return ``False`` if a does not divide b and ``True``
+        otherwise.
+
+        Coefficients are ignored.
+
+        INPUT:
+
+        - ``a`` -- monomial
+
+        - ``b`` -- monomial
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_divides(x*y*z, x^3*y^2*z^4)
+            True
+            sage: P.monomial_divides(x^3*y^2*z^4, x*y*z)
+            False
+
+        TESTS::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_divides(P(1), P(0))
+            True
+            sage: P.monomial_divides(P(1), x)
+            True
+        </opaque><constant name="classmethod.monomial_lcm">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular.monomial_lcm(self, MPolynomial_libsingular f, MPolynomial_libsingular g)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 1755)
+
+        LCM for monomials. Coefficients are ignored.
+
+        INPUT:
+
+        - ``f`` - monomial
+
+        - ``g`` - monomial
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_lcm(3/2*x*y,x)
+            x*y
+
+        TESTS::
+
+            sage: R.&lt;x,y,z&gt; = QQ[]
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_lcm(x*y,R.gen())
+            x*y
+
+            sage: P.monomial_lcm(P(3/2),P(2/3))
+            1
+
+            sage: P.monomial_lcm(x,P(1))
+            x
+        </opaque><constant name="classmethod.monomial_pairwise_prime">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular.monomial_pairwise_prime(self, MPolynomial_libsingular g, MPolynomial_libsingular h)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 1860)
+
+        Return ``True`` if ``h`` and ``g`` are pairwise prime. Both
+        are treated as monomials.
+
+        Coefficients are ignored.
+
+        INPUT:
+
+        - ``h`` - monomial
+        - ``g`` - monomial
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_pairwise_prime(x^2*z^3, y^4)
+            True
+
+            sage: P.monomial_pairwise_prime(1/2*x^3*y^2, 3/4*y^3)
+            False
+
+        TESTS::
+
+            sage: Q.&lt;x,y,z&gt; = QQ[]
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_pairwise_prime(x^2*z^3, Q('y^4'))
+            True
+
+            sage: P.monomial_pairwise_prime(1/2*x^3*y^2, Q(0))
+            True
+
+            sage: P.monomial_pairwise_prime(P(1/2),x)
+            False
+        </opaque><constant name="classmethod.monomial_quotient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular.monomial_quotient(self, MPolynomial_libsingular f, MPolynomial_libsingular g, coeff=False)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 1612)
+
+        Return ``f/g``, where both ``f`` and`` ``g`` are treated as
+        monomials.
+
+        Coefficients are ignored by default.
+
+        INPUT:
+
+        - ``f`` - monomial
+        - ``g`` - monomial
+        - ``coeff`` - divide coefficients as well (default: ``False``)
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_quotient(3/2*x*y,x)
+            y
+
+            sage: P.monomial_quotient(3/2*x*y,x,coeff=True)
+            3/2*y
+
+        Note, that `\ZZ` behaves different if ``coeff=True``::
+
+            sage: P.monomial_quotient(2*x,3*x)
+            1
+
+            sage: P.&lt;x,y&gt; = PolynomialRing(ZZ)
+            sage: P.monomial_quotient(2*x,3*x,coeff=True)
+            Traceback (most recent call last):
+            ...
+            ArithmeticError: Cannot divide these coefficients.
+
+        TESTS::
+
+            sage: R.&lt;x,y,z&gt; = QQ[]
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: P.monomial_quotient(x*y,x)
+            y
+
+            sage: P.monomial_quotient(x*y,R.gen())
+            y
+
+            sage: P.monomial_quotient(P(0),P(1))
+            0
+
+            sage: P.monomial_quotient(P(1),P(0))
+            Traceback (most recent call last):
+            ...
+            ZeroDivisionError
+
+            sage: P.monomial_quotient(P(3/2),P(2/3), coeff=True)
+            9/4
+
+            sage: P.monomial_quotient(x,y) # Note the wrong result
+            x*y^65535*z^65535
+
+            sage: P.monomial_quotient(x,P(1))
+            x
+
+        .. warning::
+
+           Assumes that the head term of f is a multiple of the head
+           term of g and return the multiplicant m. If this rule is
+           violated, funny things may happen.
+        </opaque><constant name="classmethod.monomial_reduce">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">MPolynomialRing_libsingular.monomial_reduce(self, MPolynomial_libsingular f, G)
+File: sage/rings/polynomial/multi_polynomial_libsingular.pyx (starting at line 1805)
+
+        Try to find a ``g`` in ``G`` where ``g.lm()`` divides
+        ``f``. If found ``(flt,g)`` is returned, ``(0,0)`` otherwise,
+        where ``flt`` is ``f/g.lm()``.
+
+        It is assumed that ``G`` is iterable and contains *only*
+        elements in this polynomial ring.
+
+        Coefficients are ignored.
+
+        INPUT:
+
+        - ``f`` - monomial
+        - ``G`` - list/set of mpolynomials
+
+        EXAMPLES::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: f = x*y^2
+            sage: G = [ 3/2*x^3 + y^2 + 1/2, 1/4*x*y + 2/7, 1/2  ]
+            sage: P.monomial_reduce(f,G)
+            (y, 1/4*x*y + 2/7)
+
+        TESTS::
+
+            sage: P.&lt;x,y,z&gt; = QQ[]
+            sage: f = x*y^2
+            sage: G = [ 3/2*x^3 + y^2 + 1/2, 1/4*x*y + 2/7, 1/2  ]
+
+            sage: P.monomial_reduce(P(0),G)
+            (0, 0)
+
+            sage: P.monomial_reduce(f,[P(0)])
+            (0, 0)
+        </opaque></omdoc></theory></omdoc>

@@ -317,7 +317,7 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque><constant name="classmethod.stanley_symmetric_function">
+     </constant><constant name="classmethod.stanley_symmetric_function">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -394,4 +394,4 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><opaque format="text"></opaque></omdoc></theory></omdoc>
+     </constant></omdoc></theory></omdoc>

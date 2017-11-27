@@ -1,0 +1,244 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="GroupAlgebras" base="http://www.sagemath.org/content/categories/group_algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/categories/hopf_algebras_with_basis?HopfAlgebrasWithBasis"></import><import from="http://www.sagemath.org/content/categories/monoids/Monoids?Algebras"></import><omdoc name="Element Methods"><constant name="element.central_form">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``self`` expressed in the canonical basis of the center
+            of the group algebra.
+
+            INPUT:
+
+            - ``self`` -- an element of the center of the group algebra
+
+            OUTPUT:
+
+            - A formal linear combination of the conjugacy class
+              representatives representing its coordinates in the
+              canonical basis of the center. See
+              :meth:`Groups.Algebras.ParentMethods.center_basis` for
+              details.
+
+            .. WARNING::
+
+                - This method requires the underlying group to
+                  have a method ``conjugacy_classes_representatives``
+                  (every permutation group has one, thanks GAP!).
+                - This method does not check that the element is
+                  indeed central. Use the method
+                  :meth:`Monoids.Algebras.ElementMethods.is_central`
+                  for this purpose.
+                - This function has a complexity linear in the
+                  number of conjugacy classes of the group. One
+                  could easily implement a function whose
+                  complexity is linear in the size of the support
+                  of ``self``.
+
+            EXAMPLES::
+
+                sage: QS3 = SymmetricGroup(3).algebra(QQ)
+                sage: A = QS3([2,3,1]) + QS3([3,1,2])
+                sage: A.central_form()
+                B[(1,2,3)]
+                sage: QS4 = SymmetricGroup(4).algebra(QQ)
+                sage: B = sum(len(s.cycle_type())*QS4(s) for s in Permutations(4))
+                sage: B.central_form()
+                4*B[()] + 3*B[(1,2)] + 2*B[(1,2)(3,4)] + 2*B[(1,2,3)] + B[(1,2,3,4)]
+
+                sage: QG = GroupAlgebras(QQ).example(PermutationGroup([[(1,2,3),(4,5)],[(3,4)]]))
+                sage: sum(i for i in QG.basis()).central_form()
+                B[()] + B[(4,5)] + B[(3,4,5)] + B[(2,3)(4,5)] + B[(2,3,4,5)] + B[(1,2)(3,4,5)] + B[(1,2,3,4,5)]
+
+            .. SEEALSO::
+
+                - :meth:`Groups.Algebras.ParentMethods.center_basis`
+                - :meth:`Monoids.Algebras.ElementMethods.is_central`
+            </opaque></omdoc><omdoc name="Parent Methods"><constant name="parent._latex_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Latex string of ``self``.
+
+            EXAMPLES::
+
+                sage: A = GroupAlgebra(KleinFourGroup(), ZZ)
+                sage: latex(A) # indirect doctest
+                \Bold{Z}[\langle (3,4), (1,2) \rangle]
+            </opaque><constant name="parent.center_basis">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="parent.group">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the underlying group of the group algebra.
+
+            EXAMPLES::
+
+                sage: GroupAlgebras(QQ).example(GL(3, GF(11))).group()
+                General Linear Group of degree 3 over Finite Field of size 11
+                sage: SymmetricGroup(10).algebra(QQ).group()
+                Symmetric group of order 10! as a permutation group
+            </opaque><constant name="parent.is_integral_domain">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``True`` if ``self`` is an integral domain.
+
+            This is false unless ``self.base_ring()`` is an integral
+            domain, and even then it is false unless ``self.group()``
+            has no nontrivial elements of finite order. I don't know
+            if this condition suffices, but it obviously does if the
+            group is abelian and finitely generated.
+
+            EXAMPLES::
+
+                sage: GroupAlgebra(SymmetricGroup(2)).is_integral_domain()
+                False
+                sage: GroupAlgebra(SymmetricGroup(1)).is_integral_domain()
+                True
+                sage: GroupAlgebra(SymmetricGroup(1), IntegerModRing(4)).is_integral_domain()
+                False
+                sage: GroupAlgebra(AbelianGroup(1)).is_integral_domain()
+                True
+                sage: GroupAlgebra(AbelianGroup(2, [0,2])).is_integral_domain()
+                False
+                sage: GroupAlgebra(GL(2, ZZ)).is_integral_domain() # not implemented
+                False
+            </opaque></omdoc></theory></omdoc>

@@ -7,7 +7,7 @@
        
        
      </constant><opaque format="text">Group.is_abelian(self)
-File: sage/groups/old.pyx (starting at line 99)
+File: sage/groups/old.pyx (starting at line 100)
 
         Return True if this group is abelian.
 
@@ -28,7 +28,7 @@ File: sage/groups/old.pyx (starting at line 99)
        
        
      </constant><opaque format="text">Group.is_commutative(self)
-File: sage/groups/old.pyx (starting at line 114)
+File: sage/groups/old.pyx (starting at line 115)
 
         Return True if this group is commutative. This is an alias for
         is_abelian, largely to make groups work well with the Factorization
@@ -50,7 +50,7 @@ File: sage/groups/old.pyx (starting at line 114)
        
        
      </constant><opaque format="text">Group.is_finite(self)
-File: sage/groups/old.pyx (starting at line 146)
+File: sage/groups/old.pyx (starting at line 147)
 
         Returns True if this group is finite.
 
@@ -71,7 +71,7 @@ File: sage/groups/old.pyx (starting at line 146)
        
        
      </constant><opaque format="text">Group.is_multiplicative(self)
-File: sage/groups/old.pyx (starting at line 161)
+File: sage/groups/old.pyx (starting at line 162)
 
         Returns True if the group operation is given by \* (rather than
         +).
@@ -93,7 +93,7 @@ File: sage/groups/old.pyx (starting at line 161)
        
        
      </constant><opaque format="text">Group.order(self)
-File: sage/groups/old.pyx (starting at line 130)
+File: sage/groups/old.pyx (starting at line 131)
 
         Returns the number of elements of this group, which is either a
         positive integer or infinity.
@@ -118,7 +118,7 @@ File: sage/groups/old.pyx (starting at line 130)
        
        
      </constant><opaque format="text">Group.quotient(self, H)
-File: sage/groups/old.pyx (starting at line 192)
+File: sage/groups/old.pyx (starting at line 193)
 
         Return the quotient of this group by the normal subgroup
         `H`.
@@ -143,7 +143,7 @@ File: sage/groups/old.pyx (starting at line 192)
        
        
      </constant><opaque format="text">Group.random_element(self, bound=None)
-File: sage/groups/old.pyx (starting at line 177)
+File: sage/groups/old.pyx (starting at line 178)
 
         Return a random element of this group.
 

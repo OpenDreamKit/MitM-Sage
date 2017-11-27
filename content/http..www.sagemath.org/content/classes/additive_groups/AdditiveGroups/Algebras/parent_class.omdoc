@@ -1,0 +1,18 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/additive_groups/AdditiveGroups/Algebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod.group">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the underlying group of the group algebra.
+
+            EXAMPLES::
+
+                sage: GroupAlgebras(QQ).example(GL(3, GF(11))).group()
+                General Linear Group of degree 3 over Finite Field of size 11
+                sage: SymmetricGroup(10).algebra(QQ).group()
+                Symmetric group of order 10! as a permutation group
+            </opaque></omdoc></theory></omdoc>

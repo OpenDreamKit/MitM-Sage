@@ -10,4 +10,4 @@
        
        
      </constant><opaque format="text">ParentWithBase.base_extend(self, X)
-File: sage/structure/parent_base.pyx (starting at line 85)</opaque></omdoc></theory></omdoc>
+File: sage/structure/parent_base.pyx (starting at line 48)</opaque></omdoc></theory></omdoc>

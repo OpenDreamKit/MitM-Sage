@@ -1,0 +1,492 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="parent_class" base="http://www.sagemath.org/content/classes/lie_algebras/LieAlgebras" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><omdoc name="Methods"><constant name="classmethod._construct_UEA">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the universal enveloping algebra of ``self``.
+
+            Unlike :meth:`universal_enveloping_algebra`, this method does not
+            (usually) construct the canonical lift morphism from ``self``
+            to the universal enveloping algebra (let alone register it
+            as a coercion).
+
+            One should implement this method and the ``lift`` method for
+            the element class to construct the morphism the universal
+            enveloping algebra.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: L._construct_UEA()
+                Noncommutative Multivariate Polynomial Ring in b0, b1, b2
+                 over Rational Field, nc-relations: {}
+
+            ::
+
+                sage: L = LieAlgebra(QQ, 3, 'x', abelian=True)
+                sage: L.universal_enveloping_algebra() # indirect doctest
+                Multivariate Polynomial Ring in x0, x1, x2 over Rational Field
+            </opaque><constant name="classmethod._test_antisymmetry">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test that the antisymmetry axiom is satisfied on (not
+            necessarily all) elements of this set.
+
+            INPUT:
+
+            - ``options`` -- any keyword arguments accepted by :meth:`_tester`.
+
+            EXAMPLES:
+
+            By default, this method runs the tests only on the
+            elements returned by ``self.some_elements()``::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: L._test_antisymmetry()
+
+            However, the elements tested can be customized with the
+            ``elements`` keyword argument::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: x,y = L.lie_algebra_generators()
+                sage: L._test_antisymmetry(elements=[x+y, x, 2*y, x.bracket(y)])
+
+            See the documentation for :class:`TestSuite` for more information.
+            </opaque><constant name="classmethod._test_distributivity">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test the distributivity of the Lie bracket `[,]` on `+` on (not
+            necessarily all) elements of this set.
+
+            INPUT:
+
+            - ``options`` -- any keyword arguments accepted by :meth:`_tester`.
+
+            TESTS::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: L._test_distributivity()
+
+            EXAMPLES:
+
+            By default, this method runs the tests only on the
+            elements returned by ``self.some_elements()``::
+
+                sage: L = LieAlgebra(QQ, 3, 'x,y,z', representation=&quot;polynomial&quot;)
+                sage: L.some_elements()
+                [x + y + z]
+                sage: L._test_distributivity()
+
+            However, the elements tested can be customized with the
+            ``elements`` keyword argument::
+
+                sage: L = LieAlgebra(QQ, cartan_type=['A', 2]) # todo: not implemented - #16821
+                sage: h1 = L.gen(0) # todo: not implemented - #16821
+                sage: h2 = L.gen(1) # todo: not implemented - #16821
+                sage: e2 = L.gen(3) # todo: not implemented - #16821
+                sage: L._test_distributivity(elements=[h1, h2, e2]) # todo: not implemented - #16821
+
+            See the documentation for :class:`TestSuite` for more information.
+            </opaque><constant name="classmethod._test_jacobi_identity">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Test that the Jacobi identity is satisfied on (not
+            necessarily all) elements of this set.
+
+            INPUT:
+
+            - ``options`` -- any keyword arguments accepted by :meth:`_tester`.
+
+            EXAMPLES:
+
+            By default, this method runs the tests only on the
+            elements returned by ``self.some_elements()``::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: L._test_jacobi_identity()
+
+            However, the elements tested can be customized with the
+            ``elements`` keyword argument::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: x,y = L.lie_algebra_generators()
+                sage: L._test_jacobi_identity(elements=[x+y, x, 2*y, x.bracket(y)])
+
+            See the documentation for :class:`TestSuite` for more information.
+            </opaque><constant name="classmethod.bracket">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the Lie bracket ``[lhs, rhs]`` after coercing ``lhs`` and
+            ``rhs`` into elements of ``self``.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: x,y = L.lie_algebra_generators()
+                sage: L.bracket(x, x + y)
+                -[1, 3, 2] + [3, 2, 1]
+                sage: L.bracket(x, 0)
+                0
+                sage: L.bracket(0, x)
+                0
+            </opaque><constant name="classmethod.from_vector">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the element of ``self`` corresponding to the
+            vector ``v`` in ``self.module()``.
+
+            Implement this if you implement :meth:`module`; see the
+            documentation of the latter for how this is to be done.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: u = L.from_vector(vector(QQ, (1, 0, 0))); u
+                (1, 0, 0)
+                sage: parent(u) is L
+                True
+            </opaque><constant name="classmethod.ideal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the ideal of ``self`` generated by ``gens``.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: a, b, c = L.lie_algebra_generators()
+                sage: L.ideal([2*a - c, b + c])
+                An example of a finite dimensional Lie algebra with basis:
+                 the 2-dimensional abelian Lie algebra over Rational Field
+                 with basis matrix:
+                [   1    0 -1/2]
+                [   0    1    1]
+
+            ::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: x,y = L.lie_algebra_generators()
+                sage: L.ideal([x + y])
+                Traceback (most recent call last):
+                ...
+                NotImplementedError: ideals not yet implemented: see #16824
+            </opaque><constant name="classmethod.is_abelian">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return ``True`` if this Lie algebra is abelian.
+
+            A Lie algebra `\mathfrak{g}` is abelian if `[x, y] = 0` for all
+            `x, y \in \mathfrak{g}`.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: L.is_abelian()
+                False
+                sage: R = QQ['x,y']
+                sage: L = LieAlgebras(QQ).example(R.gens())
+                sage: L.is_abelian()
+                True
+
+            ::
+
+                sage: L.&lt;x&gt; = LieAlgebra(QQ,1)  # todo: not implemented - #16823
+                sage: L.is_abelian()  # todo: not implemented - #16823
+                True
+                sage: L.&lt;x,y&gt; = LieAlgebra(QQ,2)  # todo: not implemented - #16823
+                sage: L.is_abelian()  # todo: not implemented - #16823
+                False
+            </opaque><constant name="classmethod.is_commutative">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return if ``self`` is commutative. This is equivalent to ``self``
+            being abelian.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: L.is_commutative()
+                False
+
+            ::
+
+                sage: L.&lt;x&gt; = LieAlgebra(QQ, 1) # todo: not implemented - #16823
+                sage: L.is_commutative() # todo: not implemented - #16823
+                True
+            </opaque><constant name="classmethod.is_ideal">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return if ``self`` is an ideal of ``A``.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: L.is_ideal(L)
+                True
+            </opaque><constant name="classmethod.is_nilpotent">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return if ``self`` is a nilpotent Lie algebra.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: L.is_nilpotent()
+                True
+            </opaque><constant name="classmethod.is_solvable">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return if ``self`` is a solvable Lie algebra.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: L.is_solvable()
+                True
+            </opaque><constant name="classmethod.killing_form">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the Killing form of ``x`` and ``y``.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: a, b, c = L.lie_algebra_generators()
+                sage: L.killing_form(a, b+c)
+                0
+            </opaque><constant name="classmethod.module">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return an `R`-module which is isomorphic to the
+            underlying `R`-module of ``self``.
+
+            The rationale behind this method is to enable linear
+            algebraic functionality on ``self`` (such as
+            computing the span of a list of vectors in ``self``)
+            via an isomorphism from ``self`` to an `R`-module
+            (typically, although not always, an `R`-module of
+            the form `R^n` for an `n \in \NN`) on which such
+            functionality already exists. For this method to be
+            of any use, it should return an `R`-module which has
+            linear algebraic functionality that ``self`` does
+            not have.
+
+            For instance, if ``self`` has ordered basis
+            `(e, f, h)`, then ``self.module()`` will be the
+            `R`-module `R^3`, and the elements `e`, `f` and
+            `h` of ``self`` will correspond to the basis
+            vectors `(1, 0, 0)`, `(0, 1, 0)` and `(0, 0, 1)`
+            of ``self.module()``.
+
+            This method :meth:`module` needs to be set whenever
+            a finite-dimensional Lie algebra with basis is
+            intended to support linear algebra (which is, e.g.,
+            used in the computation of centralizers and lower
+            central series). One then needs to also implement
+            the `R`-module isomorphism from ``self`` to
+            ``self.module()`` in both directions; that is,
+            implement:
+
+            * a ``to_vector`` ElementMethod which sends every
+              element of ``self`` to the corresponding element of
+              ``self.module()``;
+
+            * a ``from_vector`` ParentMethod which sends every
+              element of ``self.module()`` to an element
+              of ``self``.
+
+            The ``from_vector`` method will automatically serve
+            as an element constructor of ``self`` (that is,
+            ``self(v)`` for any ``v`` in ``self.module()`` will
+            return ``self.from_vector(v)``).
+
+            .. TODO::
+
+                Ensure that this is actually so.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: L.module()
+                Vector space of dimension 3 over Rational Field
+            </opaque><constant name="classmethod.subalgebra">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the subalgebra of ``self`` generated by ``gens``.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: a, b, c = L.lie_algebra_generators()
+                sage: L.subalgebra([2*a - c, b + c])
+                An example of a finite dimensional Lie algebra with basis:
+                 the 2-dimensional abelian Lie algebra over Rational Field
+                 with basis matrix:
+                [   1    0 -1/2]
+                [   0    1    1]
+
+            ::
+
+                sage: L = LieAlgebras(QQ).example()
+                sage: x,y = L.lie_algebra_generators()
+                sage: L.subalgebra([x + y])
+                Traceback (most recent call last):
+                ...
+                NotImplementedError: subalgebras not yet implemented: see #17416
+            </opaque><constant name="classmethod.universal_enveloping_algebra">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+            Return the universal enveloping algebra of ``self``.
+
+            EXAMPLES::
+
+                sage: L = LieAlgebras(QQ).FiniteDimensional().WithBasis().example()
+                sage: L.universal_enveloping_algebra()
+                Noncommutative Multivariate Polynomial Ring in b0, b1, b2
+                 over Rational Field, nc-relations: {}
+
+            ::
+
+                sage: L = LieAlgebra(QQ, 3, 'x', abelian=True)
+                sage: L.universal_enveloping_algebra()
+                Multivariate Polynomial Ring in x0, x1, x2 over Rational Field
+
+            .. SEEALSO::
+
+                :meth:`lift`
+            </opaque></omdoc></theory></omdoc>

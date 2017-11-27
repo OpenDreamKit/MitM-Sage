@@ -329,114 +329,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
-File: sage/misc/cachefunc.pyx (starting at line 2607)
-
-    A decorator that creates a cached version of an instance
-    method of a class.
-
-    .. NOTE::
-
-        For proper behavior, the method must be a pure function (no side
-        effects). Arguments to the method must be hashable or transformed into
-        something hashable using ``key`` or they must define
-        :meth:`sage.structure.sage_object.SageObject._cache_key`.
-
-    EXAMPLES::
-
-        sage: class Foo(object):
-        ....:     @cached_method
-        ....:     def f(self, t, x=2):
-        ....:         print('computing')
-        ....:         return t**x
-        sage: a = Foo()
-
-    The example shows that the actual computation
-    takes place only once, and that the result is
-    identical for equivalent input::
-
-        sage: res = a.f(3, 2); res
-        computing
-        9
-        sage: a.f(t = 3, x = 2) is res
-        True
-        sage: a.f(3) is res
-        True
-
-    Note, however, that the :class:`CachedMethod` is replaced by a
-    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
-    as soon as it is bound to an instance or class::
-
-        sage: P.&lt;a,b,c,d&gt; = QQ[]
-        sage: I = P*[a,b]
-        sage: type(I.__class__.gens)
-        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
-
-    So, you would hardly ever see an instance of this class alive.
-
-    The parameter ``key`` can be used to pass a function which creates a
-    custom cache key for inputs. In the following example, this parameter is
-    used to ignore the ``algorithm`` keyword for caching::
-
-        sage: class A(object):
-        ....:     def _f_normalize(self, x, algorithm): return x
-        ....:     @cached_method(key=_f_normalize)
-        ....:     def f(self, x, algorithm='default'): return x
-        sage: a = A()
-        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
-        True
-
-    The parameter ``do_pickle`` can be used to enable pickling of the cache.
-    Usually the cache is not stored when pickling::
-
-        sage: class A(object):
-        ....:     @cached_method
-        ....:     def f(self, x): return None
-        sage: import __main__
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        0
-
-    When ``do_pickle`` is set, the pickle contains the contents of the cache::
-
-        sage: class A(object):
-        ....:     @cached_method(do_pickle=True)
-        ....:     def f(self, x): return None
-        sage: __main__.A = A
-        sage: a = A()
-        sage: a.f(1)
-        sage: len(a.f.cache)
-        1
-        sage: b = loads(dumps(a))
-        sage: len(b.f.cache)
-        1
-
-    Cached methods can not be copied like usual methods, see :trac:`12603`.
-    Copying them can lead to very surprising results::
-
-        sage: class A:
-        ....:     @cached_method
-        ....:     def f(self):
-        ....:         return 1
-        sage: class B:
-        ....:     g=A.f
-        ....:     def f(self):
-        ....:         return 2
-
-        sage: b=B()
-        sage: b.f()
-        2
-        sage: b.g()
-        1
-        sage: b.f()
-        1
-
-    </opaque><constant name="parent._first_from_iterator">
+     </constant><constant name="parent._first_from_iterator">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -817,20 +710,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            The &quot;first&quot; element of ``self``.
-
-            ``self.first()`` returns the first element of the set
-            ``self``. This is a generic implementation from the category
-            ``EnumeratedSets()`` which can be used when the method ``__iter__`` is
-            provided.
-
-            EXAMPLES::
-
-                sage: C = FiniteEnumeratedSets().example()
-                sage: C.first() # indirect doctest
-                1
-            </opaque><constant name="parent.is_empty">
+     </constant><constant name="parent.is_empty">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -919,31 +799,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Return a list of the elements of ``self``.
-
-            The elements of set ``x`` are created and cached on the fist call
-            of ``x.list()``. Then each call of ``x.list()`` returns a new list
-            from the cached result. Thus in looping, it may be better to do
-            ``for e in x:``, not ``for e in x.list():``.
-
-            If ``x`` is not known to be finite, then an exception is raised.
-
-            EXAMPLES::
-
-                sage: (GF(3)^2).list()
-                [(0, 0), (1, 0), (2, 0), (0, 1), (1, 1), (2, 1), (0, 2), (1, 2), (2, 2)]
-                sage: R = Integers(11)
-                sage: R.list()
-                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                sage: l = R.list(); l
-                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                sage: l.remove(0); l
-                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-                sage: R.list()
-                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-            </opaque><constant name="parent.map">
+     </constant><constant name="parent.map">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -1003,26 +859,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            The &quot;next&quot; element after ``obj`` in ``self``.
-
-            ``self.next(e)`` returns the element of the set ``self`` which
-            follows ``e``. This is a generic implementation from the category
-            ``EnumeratedSets()`` which can be used when the method ``__iter__``
-            is provided.
-
-            Remark: this is the default (brute force) implementation
-            of the category ``EnumeratedSets()``. Its complexity is
-            `O(r)`, where `r` is the rank of ``obj``.
-
-            EXAMPLES::
-
-                sage: C = InfiniteEnumeratedSets().example()
-                sage: C._next_from_iterator(10) # indirect doctest
-                11
-
-            TODO: specify the behavior when ``obj`` is not in ``self``.
-            </opaque><constant name="parent.random_element">
+     </constant><constant name="parent.random_element">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -1060,29 +897,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            The rank of an element of ``self``
-
-            ``self.rank(x)`` returns the rank of `x`, that is its
-            position in the enumeration of ``self``. This is an
-            integer between ``0`` and ``n-1`` where ``n`` is the
-            cardinality of ``self``, or None if `x` is not in `self`.
-
-            This is the default (brute force) implementation from the
-            category ``EnumeratedSets()`` which can be used when the
-            method ``__iter__`` is provided. Its complexity is `O(r)`,
-            where `r` is the rank of ``obj``. For infinite enumerated
-            sets, this won't terminate when `x` is not in ``self``
-
-            EXAMPLES::
-
-                sage: C = FiniteEnumeratedSets().example()
-                sage: list(C)
-                [1, 2, 3]
-                sage: C.rank(3) # indirect doctest
-                2
-                sage: C.rank(5) # indirect doctest
-            </opaque><constant name="parent.unrank">
+     </constant><constant name="parent.unrank">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -1093,28 +908,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            The ``r``-th element of ``self``
-
-            ``self.unrank(r)`` returns the ``r``-th element of ``self``, where
-            ``r`` is an integer between ``0`` and ``n-1`` where ``n`` is the
-            cardinality of ``self``.
-
-            This is the default (brute force) implementation from the
-            category ``EnumeratedSets()`` which can be used when the
-            method ``__iter__`` is provided. Its complexity is `O(r)`,
-            where `r` is the rank of ``obj``.
-
-            EXAMPLES::
-
-                sage: C = FiniteEnumeratedSets().example()
-                sage: C.unrank(2) # indirect doctest
-                3
-                sage: C._unrank_from_iterator(5)
-                Traceback (most recent call last):
-                ...
-                ValueError: the value must be between 0 and 2 inclusive
-            </opaque><constant name="parent.unrank_range">
+     </constant><constant name="parent.unrank_range">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

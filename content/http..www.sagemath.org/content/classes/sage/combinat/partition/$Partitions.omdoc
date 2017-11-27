@@ -1,0 +1,335 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Partitions" base="http://www.sagemath.org/content/classes/sage/combinat/partition" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/structure/parent?Parent"></import><omdoc name="Methods"><constant name="classmethod.Element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+    A partition `p` of a nonnegative integer `n` is a
+    non-increasing list of positive integers (the *parts* of the
+    partition) with total sum `n`.
+
+    A partition is often represented as a diagram consisting of **cells**,
+    or **boxes**, placed in rows on top of each other such that the number of
+    cells in the `i^{th}` row, reading from top to bottom, is the `i^{th}`
+    part of the partition. The rows are left-justified (and become shorter
+    and shorter the farther down one goes). This diagram is called the
+    **Young diagram** of the partition, or more precisely its Young diagram
+    in English notation. (French and Russian notations are variations on this
+    representation.)
+
+    The coordinate system related to a partition applies from the top
+    to the bottom and from left to right. So, the corners of the
+    partition ``[5, 3, 1]`` are ``[[0,4], [1,2], [2,0]]``.
+
+    For display options, see :meth:`Partitions.options`.
+
+    .. NOTE::
+
+        Partitions are 0 based with coordinates in the form of (row-index,
+        column-index). For example consider the partition
+        ``mu=Partition([4,3,2,2])``, the first part is ``mu[0]`` (which is 4),
+        the second is ``mu[1]``, and so on, and the upper-left cell in English
+        convention is ``(0, 0)``.
+
+    A partition can be specified in one of the following ways:
+
+    - a list (the default)
+    - using exponential notation
+    - by Frobenius coordinates
+    - specifying its `0-1` sequence
+    - specifying the core and the quotient
+
+    See the examples below.
+
+    EXAMPLES:
+
+    Creating partitions though parents::
+
+        sage: mu = Partitions(8)([3,2,1,1,1]); mu
+        [3, 2, 1, 1, 1]
+        sage: nu = Partition([3,2,1,1,1]); nu
+        [3, 2, 1, 1, 1]
+        sage: mu == nu
+        True
+        sage: mu is nu
+        False
+        sage: mu in Partitions()
+        True
+        sage: mu.parent()
+        Partitions of the integer 8
+        sage: mu.size()
+        8
+        sage: mu.category()
+        Category of elements of Partitions of the integer 8
+        sage: nu.parent()
+        Partitions
+        sage: nu.category()
+        Category of elements of Partitions
+        sage: mu[0]
+        3
+        sage: mu[1]
+        2
+        sage: mu[2]
+        1
+        sage: mu.pp()
+        ***
+        **
+        *
+        *
+        *
+        sage: mu.removable_cells()
+        [(0, 2), (1, 1), (4, 0)]
+        sage: mu.down_list()
+        [[2, 2, 1, 1, 1], [3, 1, 1, 1, 1], [3, 2, 1, 1]]
+        sage: mu.addable_cells()
+        [(0, 3), (1, 2), (2, 1), (5, 0)]
+        sage: mu.up_list()
+        [[4, 2, 1, 1, 1], [3, 3, 1, 1, 1], [3, 2, 2, 1, 1], [3, 2, 1, 1, 1, 1]]
+        sage: mu.conjugate()
+        [5, 2, 1]
+        sage: mu.dominates(nu)
+        True
+        sage: nu.dominates(mu)
+        True
+
+    Creating partitions using ``Partition``::
+
+        sage: Partition([3,2,1])
+        [3, 2, 1]
+        sage: Partition(exp=[2,1,1])
+        [3, 2, 1, 1]
+        sage: Partition(core=[2,1], quotient=[[2,1],[3],[1,1,1]])
+        [11, 5, 5, 3, 2, 2, 2]
+        sage: Partition(frobenius_coordinates=([3,2],[4,0]))
+        [4, 4, 1, 1, 1]
+        sage: Partitions().from_zero_one([1, 1, 1, 1, 0, 1, 0])
+        [5, 4]
+        sage: [2,1] in Partitions()
+        True
+        sage: [2,1,0] in Partitions()
+        True
+        sage: Partition([1,2,3])
+        Traceback (most recent call last):
+        ...
+        ValueError: [1, 2, 3] is not an element of Partitions
+
+    Sage ignores trailing zeros at the end of partitions::
+
+        sage: Partition([3,2,1,0])
+        [3, 2, 1]
+        sage: Partitions()([3,2,1,0])
+        [3, 2, 1]
+        sage: Partitions(6)([3,2,1,0])
+        [3, 2, 1]
+
+    TESTS:
+
+    Check that only trailing zeros are stripped::
+
+        sage: TestSuite( Partition([]) ).run()
+        sage: TestSuite( Partition([4,3,2,2,2,1]) ).run()
+        sage: Partition([3,2,2,2,1,0,0,0])
+        [3, 2, 2, 2, 1]
+        sage: Partition([3,0,2,2,2,1,0])
+        Traceback (most recent call last):
+        ...
+        ValueError: [3, 0, 2, 2, 2, 1, 0] is not an element of Partitions
+        sage: Partition([0,7,3])
+        Traceback (most recent call last):
+        ...
+        ValueError: [0, 7, 3] is not an element of Partitions
+    </opaque><constant name="classmethod.__reversed__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        A reversed iterator.
+
+        EXAMPLES::
+
+            sage: [x for x in reversed(Partitions(4))]
+            [[1, 1, 1, 1], [2, 1, 1], [2, 2], [3, 1], [4]]
+        </opaque><constant name="classmethod._element_constructor_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Construct an element with ``self`` as parent.
+
+        EXAMPLES::
+
+            sage: P = Partitions()
+            sage: p = P([3,3,1]); p
+            [3, 3, 1]
+            sage: P(p) is p
+            True
+            sage: P([3, 2, 1, 0])
+            [3, 2, 1]
+
+            sage: PT = PartitionTuples()
+            sage: elt = PT([[4,4,2,2,1]]); elt
+            ([4, 4, 2, 2, 1])
+            sage: P(elt)
+            [4, 4, 2, 2, 1]
+        </opaque><constant name="classmethod.global_options">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">Deprecated: Use :meth:`options` instead.
+See :trac:`18555` for details.
+
+</opaque><constant name="classmethod.options">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+Sets and displays the global options for elements of the partition,
+skew partition, and partition tuple classes.  If no parameters are
+set, then the function returns a copy of the options dictionary.
+
+The ``options`` to partitions can be accessed as the method
+:obj:`Partitions.options` of :class:`Partitions` and
+related parent classes.
+
+
+OPTIONS:
+
+- ``convention`` -- (default: ``English``)
+  Sets the convention used for displaying tableaux and partitions
+
+  - ``English`` -- use the English convention
+  - ``French``  -- use the French convention
+
+- ``diagram_str`` -- (default: ``*``)
+  The character used for the cells when printing Ferrers diagrams
+
+- ``display`` -- (default: ``list``)
+  Specifies how partitions should be printed
+
+  - ``array``           -- alias for ``diagram``
+  - ``compact``         -- alias for ``compact_low``
+  - ``compact_high``    -- compact form of ``exp_high``
+  - ``compact_low``     -- compact form of ``exp_low``
+  - ``diagram``         -- as a Ferrers diagram
+  - ``exp``             -- alias for ``exp_low``
+  - ``exp_high``        -- in exponential form (highest first)
+  - ``exp_low``         -- in exponential form (lowest first)
+  - ``ferrers_diagram`` -- alias for ``diagram``
+  - ``list``            -- displayed as a list
+  - ``young_diagram``   -- alias for ``diagram``
+
+- ``latex`` -- (default: ``young_diagram``)
+  Specifies how partitions should be latexed
+
+  - ``array``           -- alias for ``diagram``
+  - ``diagram``         -- latex as a Ferrers diagram
+  - ``exp``             -- alias for ``exp_low``
+  - ``exp_high``        -- latex as a list in exponential notation (highest first)
+  - ``exp_low``         -- as a list latex in exponential notation (lowest first)
+  - ``ferrers_diagram`` -- alias for ``diagram``
+  - ``list``            -- latex as a list
+  - ``young_diagram``   -- latex as a Young diagram
+
+- ``latex_diagram_str`` -- (default: ``\ast``)
+  The character used for the cells when latexing Ferrers diagrams
+
+- ``notation`` -- alternative name for ``convention``
+
+
+
+
+EXAMPLES::
+
+    sage: P = Partition([4,2,2,1])
+    sage: P
+    [4, 2, 2, 1]
+    sage: Partitions.options.display=&quot;exp&quot;
+    sage: P
+    1, 2^2, 4
+    sage: Partitions.options.display=&quot;exp_high&quot;
+    sage: P
+    4, 2^2, 1
+
+It is also possible to use user defined functions for the ``display`` and
+``latex`` options::
+
+    sage: Partitions.options(display=lambda mu: '&lt;%s&gt;' % ','.join('%s'%m for m in mu._list)); P
+    &lt;4,2,2,1&gt;
+    sage: Partitions.options(latex=lambda mu: '\\Diagram{%s}' % ','.join('%s'%m for m in mu._list)); latex(P)
+    \Diagram{4,2,2,1}
+    sage: Partitions.options(display=&quot;diagram&quot;, diagram_str=&quot;#&quot;)
+    sage: P
+    ####
+    ##
+    ##
+    #
+    sage: Partitions.options(diagram_str=&quot;*&quot;, convention=&quot;french&quot;)
+    sage: print(P.ferrers_diagram())
+    *
+    **
+    **
+    ****
+
+Changing the ``convention`` for partitions also changes the ``convention``
+option for tableaux and vice versa::
+
+    sage: T = Tableau([[1,2,3],[4,5]])
+    sage: T.pp()
+      4  5
+      1  2  3
+    sage: Tableaux.options.convention=&quot;english&quot;
+    sage: print(P.ferrers_diagram())
+    ****
+    **
+    **
+    *
+    sage: T.pp()
+      1  2  3
+      4  5
+    sage: Partitions.options._reset()
+
+See :class:`~sage.structure.global_options.GlobalOptions` for more features of these options.</opaque><constant name="classmethod.subset">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``self`` if no arguments are given, otherwise raises a
+        ``ValueError``.
+
+        EXAMPLES::
+
+            sage: P = Partitions(5, starting=[3,1]); P
+            Partitions of the integer 5 starting with [3, 1]
+            sage: P.subset()
+            Partitions of the integer 5 starting with [3, 1]
+            sage: P.subset(ending=[3,1])
+            Traceback (most recent call last):
+            ...
+            ValueError: Invalid combination of arguments
+        </opaque></omdoc></theory></omdoc>

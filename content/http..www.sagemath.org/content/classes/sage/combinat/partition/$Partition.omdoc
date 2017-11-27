@@ -1,0 +1,4111 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Partition" base="http://www.sagemath.org/content/classes/sage/combinat/partition" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialElement"></import><omdoc name="Methods"><constant name="classmethod.__next__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the partition that lexicographically follows ``self``. If
+        ``self`` is the last partition, then return ``False``.
+
+        EXAMPLES::
+
+            sage: next(Partition([4]))
+            [3, 1]
+            sage: next(Partition([1,1,1,1]))
+            False
+        </opaque><constant name="classmethod._initial_degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">CachedMethod(f, name=None, key=None, do_pickle=None)
+File: sage/misc/cachefunc.pyx (starting at line 2607)
+
+    A decorator that creates a cached version of an instance
+    method of a class.
+
+    .. NOTE::
+
+        For proper behavior, the method must be a pure function (no side
+        effects). Arguments to the method must be hashable or transformed into
+        something hashable using ``key`` or they must define
+        :meth:`sage.structure.sage_object.SageObject._cache_key`.
+
+    EXAMPLES::
+
+        sage: class Foo(object):
+        ....:     @cached_method
+        ....:     def f(self, t, x=2):
+        ....:         print('computing')
+        ....:         return t**x
+        sage: a = Foo()
+
+    The example shows that the actual computation
+    takes place only once, and that the result is
+    identical for equivalent input::
+
+        sage: res = a.f(3, 2); res
+        computing
+        9
+        sage: a.f(t = 3, x = 2) is res
+        True
+        sage: a.f(3) is res
+        True
+
+    Note, however, that the :class:`CachedMethod` is replaced by a
+    :class:`CachedMethodCaller` or :class:`CachedMethodCallerNoArgs`
+    as soon as it is bound to an instance or class::
+
+        sage: P.&lt;a,b,c,d&gt; = QQ[]
+        sage: I = P*[a,b]
+        sage: type(I.__class__.gens)
+        &lt;type 'sage.misc.cachefunc.CachedMethodCallerNoArgs'&gt;
+
+    So, you would hardly ever see an instance of this class alive.
+
+    The parameter ``key`` can be used to pass a function which creates a
+    custom cache key for inputs. In the following example, this parameter is
+    used to ignore the ``algorithm`` keyword for caching::
+
+        sage: class A(object):
+        ....:     def _f_normalize(self, x, algorithm): return x
+        ....:     @cached_method(key=_f_normalize)
+        ....:     def f(self, x, algorithm='default'): return x
+        sage: a = A()
+        sage: a.f(1, algorithm=&quot;default&quot;) is a.f(1) is a.f(1, algorithm=&quot;algorithm&quot;)
+        True
+
+    The parameter ``do_pickle`` can be used to enable pickling of the cache.
+    Usually the cache is not stored when pickling::
+
+        sage: class A(object):
+        ....:     @cached_method
+        ....:     def f(self, x): return None
+        sage: import __main__
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        0
+
+    When ``do_pickle`` is set, the pickle contains the contents of the cache::
+
+        sage: class A(object):
+        ....:     @cached_method(do_pickle=True)
+        ....:     def f(self, x): return None
+        sage: __main__.A = A
+        sage: a = A()
+        sage: a.f(1)
+        sage: len(a.f.cache)
+        1
+        sage: b = loads(dumps(a))
+        sage: len(b.f.cache)
+        1
+
+    Cached methods can not be copied like usual methods, see :trac:`12603`.
+    Copying them can lead to very surprising results::
+
+        sage: class A:
+        ....:     @cached_method
+        ....:     def f(self):
+        ....:         return 1
+        sage: class B:
+        ....:     g=A.f
+        ....:     def f(self):
+        ....:         return 2
+
+        sage: b=B()
+        sage: b.f()
+        2
+        sage: b.g()
+        1
+        sage: b.f()
+        1
+
+    </opaque><constant name="classmethod._latex_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a LaTeX version of ``self``.
+
+        For more on the latex options, see :meth:`Partitions.options`.
+
+        EXAMPLES::
+
+            sage: mu = Partition([2, 1])
+            sage: Partitions.options.latex='diagram'; latex(mu)       # indirect doctest
+            {\def\lr#1{\multicolumn{1}{@{\hspace{.6ex}}c@{\hspace{.6ex}}}{\raisebox{-.3ex}{$#1$}}}
+            \raisebox{-.6ex}{$\begin{array}[b]{*{2}c}\\
+            \lr{\ast}&amp;\lr{\ast}\\
+            \lr{\ast}\\
+            \end{array}$}
+            }
+            sage: Partitions.options.latex='exp_high'; latex(mu)      # indirect doctest
+            2,1
+            sage: Partitions.options.latex='exp_low'; latex(mu)       # indirect doctest
+            1,2
+            sage: Partitions.options.latex='list'; latex(mu)          # indirect doctest
+            [2, 1]
+            sage: Partitions.options.latex='young_diagram'; latex(mu) # indirect doctest
+            {\def\lr#1{\multicolumn{1}{|@{\hspace{.6ex}}c@{\hspace{.6ex}}|}{\raisebox{-.3ex}{$#1$}}}
+            \raisebox{-.6ex}{$\begin{array}[b]{*{2}c}\cline{1-2}
+            \lr{\phantom{x}}&amp;\lr{\phantom{x}}\\\cline{1-2}
+            \lr{\phantom{x}}\\\cline{1-1}
+            \end{array}$}
+            }
+
+            sage: Partitions.options(latex=&quot;young_diagram&quot;, convention=&quot;french&quot;)
+            sage: Partitions.options.latex='exp_high'; latex(mu)      # indirect doctest
+            2,1
+            sage: Partitions.options.latex='exp_low'; latex(mu)       # indirect doctest
+            1,2
+            sage: Partitions.options.latex='list'; latex(mu)          # indirect doctest
+            [2, 1]
+            sage: Partitions.options.latex='young_diagram'; latex(mu) # indirect doctest
+            {\def\lr#1{\multicolumn{1}{|@{\hspace{.6ex}}c@{\hspace{.6ex}}|}{\raisebox{-.3ex}{$#1$}}}
+            \raisebox{-.6ex}{$\begin{array}[t]{*{2}c}\cline{1-1}
+            \lr{\phantom{x}}\\\cline{1-2}
+            \lr{\phantom{x}}&amp;\lr{\phantom{x}}\\\cline{1-2}
+            \end{array}$}
+            }
+
+            sage: Partitions.options._reset()
+        </opaque><constant name="classmethod._latex_diagram">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        LaTeX output as a Ferrers' diagram.
+
+        EXAMPLES::
+
+            sage: print(Partition([2, 1])._latex_diagram())
+            {\def\lr#1{\multicolumn{1}{@{\hspace{.6ex}}c@{\hspace{.6ex}}}{\raisebox{-.3ex}{$#1$}}}
+            \raisebox{-.6ex}{$\begin{array}[b]{*{2}c}\\
+            \lr{\ast}&amp;\lr{\ast}\\
+            \lr{\ast}\\
+            \end{array}$}
+            }
+            sage: print(Partition([])._latex_diagram())
+            {\emptyset}
+        </opaque><constant name="classmethod._latex_exp_high">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        LaTeX output in exponential notation (highest first).
+
+        EXAMPLES::
+
+            sage: print(Partition([2,2,1])._latex_exp_high())
+            2^{2},1
+            sage: print(Partition([])._latex_exp_high())
+            {\emptyset}
+        </opaque><constant name="classmethod._latex_exp_low">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        LaTeX output in exponential notation (lowest first).
+
+        EXAMPLES::
+
+            sage: print(Partition([2,2,1])._latex_exp_low())
+            1,2^{2}
+            sage: print(Partition([])._latex_exp_low())
+            {\emptyset}
+        </opaque><constant name="classmethod._latex_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        LaTeX output as a list.
+
+        EXAMPLES::
+
+            sage: print(Partition([2, 1])._latex_list())
+            [2, 1]
+            sage: print(Partition([])._latex_list())
+            []
+        </opaque><constant name="classmethod._latex_young_diagram">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        LaTeX output as a Young diagram.
+
+        EXAMPLES::
+
+            sage: print(Partition([2, 1])._latex_young_diagram())
+            {\def\lr#1{\multicolumn{1}{|@{\hspace{.6ex}}c@{\hspace{.6ex}}|}{\raisebox{-.3ex}{$#1$}}}
+            \raisebox{-.6ex}{$\begin{array}[b]{*{2}c}\cline{1-2}
+            \lr{\phantom{x}}&amp;\lr{\phantom{x}}\\\cline{1-2}
+            \lr{\phantom{x}}\\\cline{1-1}
+            \end{array}$}
+            }
+            sage: print(Partition([])._latex_young_diagram())
+            {\emptyset}
+        </opaque><constant name="classmethod._repr_compact_high">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a string representation of ``self`` in compact form (exponential
+        form with highest first).
+
+        EXAMPLES::
+
+            sage: print(Partition([7,7,7,3,3,2,1,1,1,1,1,1,1])._repr_compact_high())
+            7^3,3^2,2,1^7
+            sage: print(Partition([])._repr_compact_low())
+            -
+        </opaque><constant name="classmethod._repr_compact_low">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a string representation of ``self`` in compact form (exponential
+        form with lowest first).
+
+        EXAMPLES::
+
+            sage: print(Partition([7,7,7,3,3,2,1,1,1,1,1,1,1])._repr_compact_low())
+            1^7,2,3^2,7^3
+            sage: print(Partition([])._repr_compact_low())
+            -
+        </opaque><constant name="classmethod._repr_diagram">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a representation of ``self`` as a Ferrers diagram.
+
+        EXAMPLES::
+
+            sage: print(Partition([7,7,7,3,3,2,1,1,1,1,1,1,1])._repr_diagram())
+            *******
+            *******
+            *******
+            ***
+            ***
+            **
+            *
+            *
+            *
+            *
+            *
+            *
+            *
+        </opaque><constant name="classmethod._repr_exp_high">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a string representation of ``self`` in exponential form (highest
+        first).
+
+        EXAMPLES::
+
+            sage: print(Partition([7,7,7,3,3,2,1,1,1,1,1,1,1])._repr_exp_high())
+            7^3, 3^2, 2, 1^7
+
+            sage: print(Partition([])._repr_exp_high())
+            -
+        </opaque><constant name="classmethod._repr_exp_low">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a string representation of ``self`` in exponential form (lowest
+        first).
+
+        EXAMPLES::
+
+            sage: print(Partition([7,7,7,3,3,2,1,1,1,1,1,1,1])._repr_exp_low())
+            1^7, 2, 3^2, 7^3
+            sage: print(Partition([])._repr_exp_low())
+            -
+        </opaque><constant name="classmethod._repr_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a string representation of ``self`` as a list.
+
+        EXAMPLES::
+
+            sage: print(Partition([7,7,7,3,3,2,1,1,1,1,1,1,1])._repr_list())
+            [7, 7, 7, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1]
+        </opaque><constant name="classmethod.add_cell">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a partition corresponding to ``self`` with a cell added in
+        row ``i``. (This does not change ``self``.)
+
+        EXAMPLES::
+
+            sage: Partition([3, 2, 1, 1]).add_cell(0)
+            [4, 2, 1, 1]
+            sage: cell = [4, 0]; Partition([3, 2, 1, 1]).add_cell(*cell)
+            [3, 2, 1, 1, 1]
+        </opaque><constant name="classmethod.add_horizontal_border_strip">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of all the partitions that can be obtained by adding
+        a horizontal border strip of length ``k`` to ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([]).add_horizontal_border_strip(0)
+            [[]]
+            sage: Partition([]).add_horizontal_border_strip(2)
+            [[2]]
+            sage: Partition([2,2]).add_horizontal_border_strip(2)
+            [[2, 2, 2], [3, 2, 1], [4, 2]]
+            sage: Partition([3,2,2]).add_horizontal_border_strip(2)
+            [[3, 2, 2, 2], [3, 3, 2, 1], [4, 2, 2, 1], [4, 3, 2], [5, 2, 2]]
+
+        .. TODO::
+
+            Reimplement like ``remove_horizontal_border_strip`` using
+            :class:`IntegerListsLex`
+        </opaque><constant name="classmethod.add_vertical_border_strip">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of all the partitions that can be obtained by adding
+        a vertical border strip of length ``k`` to ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([]).add_vertical_border_strip(0)
+            [[]]
+            sage: Partition([]).add_vertical_border_strip(2)
+            [[1, 1]]
+            sage: Partition([2,2]).add_vertical_border_strip(2)
+            [[3, 3], [3, 2, 1], [2, 2, 1, 1]]
+            sage: Partition([3,2,2]).add_vertical_border_strip(2)
+            [[4, 3, 2], [4, 2, 2, 1], [3, 3, 3], [3, 3, 2, 1], [3, 2, 2, 1, 1]]
+        </opaque><constant name="classmethod.addable_cells">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the outside corners of the partition ``self``.
+
+        An outside corner (also called a cocorner) of a partition
+        `\lambda` is a cell on `\ZZ^2` which does not belong to
+        the Young diagram of `\lambda` but can be added to this Young
+        diagram to still form a straight-shape Young diagram.
+
+        The entries of the list returned are pairs of the form `(i,j)`,
+        where `i` and `j` are the coordinates of the respective corner.
+        The coordinates are counted from `0`.
+
+        EXAMPLES::
+
+            sage: Partition([2,2,1]).outside_corners()
+            [(0, 2), (2, 1), (3, 0)]
+            sage: Partition([2,2]).outside_corners()
+            [(0, 2), (2, 0)]
+            sage: Partition([6,3,3,1,1,1]).outside_corners()
+            [(0, 6), (1, 3), (3, 1), (6, 0)]
+            sage: Partition([]).outside_corners()
+            [(0, 0)]
+        </opaque><constant name="classmethod.addable_cells_residue">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the outside corners of the partition ``self``
+        having ``l``-residue ``i``.
+
+        An outside corner (also called a cocorner) of a partition
+        `\lambda` is a cell on `\ZZ^2` which does not belong to
+        the Young diagram of `\lambda` but can be added to this Young
+        diagram to still form a straight-shape Young diagram. See
+        :meth:`residue` for the definition of the ``l``-residue.
+
+        The entries of the list returned are pairs of the form `(i,j)`,
+        where `i` and `j` are the coordinates of the respective corner.
+        The coordinates are counted from `0`.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).outside_corners_residue(0, 3)
+            [(0, 3), (3, 0)]
+            sage: Partition([3,2,1]).outside_corners_residue(1, 3)
+            [(1, 2)]
+            sage: Partition([3,2,1]).outside_corners_residue(2, 3)
+            [(2, 1)]
+        </opaque><constant name="classmethod.arm_cells">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the list of the cells of the arm of cell `(i,j)` in ``self``.
+
+        The arm of cell `c = (i,j)` is the boxes that appear to the right of
+        `c`.
+
+        The cell coordinates are zero-based, i. e., the northwesternmost
+        cell is `(0,0)`.
+
+        INPUT:
+
+        - ``i, j`` -- two integers
+
+        OUTPUT:
+
+        A list of pairs of integers
+
+        EXAMPLES::
+
+            sage: Partition([4,4,3,1]).arm_cells(1,1)
+            [(1, 2), (1, 3)]
+
+            sage: Partition([]).arm_cells(0,0)
+            Traceback (most recent call last):
+            ...
+            ValueError: The cell is not in the diagram
+
+        </opaque><constant name="classmethod.arm_length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the length of the arm of cell `(i,j)` in ``self``.
+
+        The arm of cell `(i,j)` is the cells that appear to the right of
+        cell `(i,j)`.
+
+        The cell coordinates are zero-based, i. e., the northwesternmost
+        cell is `(0,0)`.
+
+        INPUT:
+
+        - ``i, j`` -- two integers
+
+        OUTPUT:
+
+        An integer or a ``ValueError``
+
+        EXAMPLES::
+
+            sage: p = Partition([2,2,1])
+            sage: p.arm_length(0, 0)
+            1
+            sage: p.arm_length(0, 1)
+            0
+            sage: p.arm_length(2, 0)
+            0
+            sage: Partition([3,3]).arm_length(0, 0)
+            2
+            sage: Partition([3,3]).arm_length(*[0,0])
+            2
+        </opaque><constant name="classmethod.arm_lengths">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a tableau of shape ``self`` where each cell is filled with
+        its arm length. The optional boolean parameter ``flat`` provides
+        the option of returning a flat list.
+
+        EXAMPLES::
+
+            sage: Partition([2,2,1]).arm_lengths()
+            [[1, 0], [1, 0], [0]]
+            sage: Partition([2,2,1]).arm_lengths(flat=True)
+            [1, 0, 1, 0, 0]
+            sage: Partition([3,3]).arm_lengths()
+            [[2, 1, 0], [2, 1, 0]]
+            sage: Partition([3,3]).arm_lengths(flat=True)
+            [2, 1, 0, 2, 1, 0]
+        </opaque><constant name="classmethod.arms_legs_coeff">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        This is a statistic on a cell `c = (i,j)` in the diagram of partition
+        `p` given by
+
+        .. MATH::
+
+            \frac{ 1 - q^a \cdot t^{\ell + 1} }{ 1 - q^{a + 1} \cdot t^{\ell} }
+
+        where `a` is the arm length of `c` and `\ell` is the leg length of `c`.
+
+        The coordinates ``i`` and ``j`` of the cell are understood to be
+        `0`-based, so that ``(0, 0)`` is the northwesternmost cell (in
+        English notation).
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).arms_legs_coeff(1,1)
+            (-t + 1)/(-q + 1)
+            sage: Partition([3,2,1]).arms_legs_coeff(0,0)
+            (-q^2*t^3 + 1)/(-q^3*t^2 + 1)
+            sage: Partition([3,2,1]).arms_legs_coeff(*[0,0])
+            (-q^2*t^3 + 1)/(-q^3*t^2 + 1)
+        </opaque><constant name="classmethod.atom">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the standard tableaux of size ``self.size()`` whose
+        atom is equal to ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([2,1]).atom()
+            [[[1, 2], [3]]]
+            sage: Partition([3,2,1]).atom()
+            [[[1, 2, 3, 6], [4, 5]], [[1, 2, 3], [4, 5], [6]]]
+        </opaque><constant name="classmethod.attacking_pairs">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the attacking pairs of the Young diagram of
+        ``self``.
+
+        A pair of cells `(c, d)` of a Young diagram (in English notation) is
+        said to be attacking if one of the following conditions holds:
+
+        1. `c` and `d` lie in the same row with `c` strictly to the west
+           of `d`.
+
+        2. `c` is in the row immediately to the south of `d`, and `c`
+           lies strictly east of `d`.
+
+        This particular method returns each pair `(c, d)` as a tuple,
+        where each of `c` and `d` is given as a tuple `(i, j)` with
+        `i` and `j` zero-based (so `i = 0` means that the cell lies
+        in the topmost row).
+
+        EXAMPLES::
+
+            sage: p = Partition([3, 2])
+            sage: p.attacking_pairs()
+            [((0, 0), (0, 1)),
+             ((0, 0), (0, 2)),
+             ((0, 1), (0, 2)),
+             ((1, 0), (1, 1)),
+             ((1, 1), (0, 0))]
+            sage: Partition([]).attacking_pairs()
+            []
+        </opaque><constant name="classmethod.aut">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a factor for the number of permutations with cycle type
+        ``self``.
+
+        This method returns `1^{j_1}j_1! \cdots n^{j_n}j_n!` where
+        `j_k` is the number of parts in ``self`` equal to `k`.
+
+        The number of permutations having ``self`` as a cycle type is
+        given by
+
+        .. MATH::
+
+            \frac{n!}{1^{j_1}j_1! \cdots n^{j_n}j_n!}
+
+        (where `n` is the size of ``self``).
+
+        EXAMPLES::
+
+            sage: Partition([2,1]).aut()
+            2
+        </opaque><constant name="classmethod.beta_numbers">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the set of beta numbers corresponding to ``self``.
+
+        The optional argument ``length`` specifies the length of the beta set
+        (which must be at least the length of ``self``).
+
+        For more on beta numbers, see :meth:`frobenius_coordinates`.
+
+        EXAMPLES::
+
+            sage: Partition([4,3,2]).beta_numbers()
+            [6, 4, 2]
+            sage: Partition([4,3,2]).beta_numbers(5)
+            [8, 6, 4, 1, 0]
+            sage: Partition([]).beta_numbers()
+            []
+            sage: Partition([]).beta_numbers(3)
+            [2, 1, 0]
+            sage: Partition([6,4,1,1]).beta_numbers()
+            [9, 6, 2, 1]
+            sage: Partition([6,4,1,1]).beta_numbers(6)
+            [11, 8, 4, 3, 1, 0]
+            sage: Partition([1,1,1]).beta_numbers()
+            [3, 2, 1]
+            sage: Partition([1,1,1]).beta_numbers(4)
+            [4, 3, 2, 0]
+        </opaque><constant name="classmethod.cell_poset">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the Young diagram of ``self`` as a poset. The optional
+        keyword variable ``orientation`` determines the order relation
+        of the poset.
+
+        The poset always uses the set of cells of the Young diagram
+        of ``self`` as its ground set. The order relation of the poset
+        depends on the ``orientation`` variable (which defaults to
+        ``&quot;SE&quot;``). Concretely, ``orientation`` has to be specified to
+        one of the strings ``&quot;NW&quot;``, ``&quot;NE&quot;``, ``&quot;SW&quot;``, and ``&quot;SE&quot;``,
+        standing for &quot;northwest&quot;, &quot;northeast&quot;, &quot;southwest&quot; and
+        &quot;southeast&quot;, respectively. If ``orientation`` is ``&quot;SE&quot;``, then
+        the order relation of the poset is such that a cell `u` is
+        greater or equal to a cell `v` in the poset if and only if `u`
+        lies weakly southeast of `v` (this means that `u` can be
+        reached from `v` by a sequence of south and east steps; the
+        sequence is allowed to consist of south steps only, or of east
+        steps only, or even be empty). Similarly the order relation is
+        defined for the other three orientations. The Young diagram is
+        supposed to be drawn in English notation.
+
+        The elements of the poset are the cells of the Young diagram
+        of ``self``, written as tuples of zero-based coordinates (so
+        that `(3, 7)` stands for the `8`-th cell of the `4`-th row,
+        etc.).
+
+        EXAMPLES::
+
+            sage: p = Partition([3,3,1])
+            sage: Q = p.cell_poset(); Q
+            Finite poset containing 7 elements
+            sage: sorted(Q)
+            [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0)]
+            sage: sorted(Q.maximal_elements())
+            [(1, 2), (2, 0)]
+            sage: Q.minimal_elements()
+            [(0, 0)]
+            sage: sorted(Q.upper_covers((1, 0)))
+            [(1, 1), (2, 0)]
+            sage: Q.upper_covers((1, 1))
+            [(1, 2)]
+
+            sage: P = p.cell_poset(orientation=&quot;NW&quot;); P
+            Finite poset containing 7 elements
+            sage: sorted(P)
+            [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0)]
+            sage: sorted(P.minimal_elements())
+            [(1, 2), (2, 0)]
+            sage: P.maximal_elements()
+            [(0, 0)]
+            sage: P.upper_covers((2, 0))
+            [(1, 0)]
+            sage: sorted(P.upper_covers((1, 2)))
+            [(0, 2), (1, 1)]
+            sage: sorted(P.upper_covers((1, 1)))
+            [(0, 1), (1, 0)]
+            sage: sorted([len(P.upper_covers(v)) for v in P])
+            [0, 1, 1, 1, 1, 2, 2]
+
+            sage: R = p.cell_poset(orientation=&quot;NE&quot;); R
+            Finite poset containing 7 elements
+            sage: sorted(R)
+            [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0)]
+            sage: R.maximal_elements()
+            [(0, 2)]
+            sage: R.minimal_elements()
+            [(2, 0)]
+            sage: sorted([len(R.upper_covers(v)) for v in R])
+            [0, 1, 1, 1, 1, 2, 2]
+            sage: R.is_isomorphic(P)
+            False
+            sage: R.is_isomorphic(P.dual())
+            False
+
+        Linear extensions of ``p.cell_poset()`` are in 1-to-1 correspondence
+        with standard Young tableaux of shape `p`::
+
+            sage: all( len(p.cell_poset().linear_extensions())
+            ....:      == len(p.standard_tableaux())
+            ....:      for n in range(8) for p in Partitions(n) )
+            True
+
+        This is not the case for northeast orientation::
+
+            sage: q = Partition([3, 1])
+            sage: q.cell_poset(orientation=&quot;NE&quot;).is_chain()
+            True
+
+        TESTS:
+
+        We check that the posets are really what they should be for size
+        up to `7`::
+
+            sage: def check_NW(n):
+            ....:     for p in Partitions(n):
+            ....:         P = p.cell_poset(orientation=&quot;NW&quot;)
+            ....:         for c in p.cells():
+            ....:             for d in p.cells():
+            ....:                 if P.le(c, d) != (c[0] &gt;= d[0]
+            ....:                                   and c[1] &gt;= d[1]):
+            ....:                     return False
+            ....:     return True
+            sage: all( check_NW(n) for n in range(8) )
+            True
+
+            sage: def check_NE(n):
+            ....:     for p in Partitions(n):
+            ....:         P = p.cell_poset(orientation=&quot;NE&quot;)
+            ....:         for c in p.cells():
+            ....:             for d in p.cells():
+            ....:                 if P.le(c, d) != (c[0] &gt;= d[0]
+            ....:                                   and c[1] &lt;= d[1]):
+            ....:                     return False
+            ....:     return True
+            sage: all( check_NE(n) for n in range(8) )
+            True
+
+            sage: def test_duality(n, ori1, ori2):
+            ....:     for p in Partitions(n):
+            ....:         P = p.cell_poset(orientation=ori1)
+            ....:         Q = p.cell_poset(orientation=ori2)
+            ....:         for c in p.cells():
+            ....:             for d in p.cells():
+            ....:                 if P.lt(c, d) != Q.lt(d, c):
+            ....:                     return False
+            ....:     return True
+            sage: all( test_duality(n, &quot;NW&quot;, &quot;SE&quot;) for n in range(8) )
+            True
+            sage: all( test_duality(n, &quot;NE&quot;, &quot;SW&quot;) for n in range(8) )
+            True
+            sage: all( test_duality(n, &quot;NE&quot;, &quot;SE&quot;) for n in range(4) )
+            False
+        </opaque><constant name="classmethod.cells">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the coordinates of the cells of ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([2,2]).cells()
+            [(0, 0), (0, 1), (1, 0), (1, 1)]
+            sage: Partition([3,2]).cells()
+            [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1)]
+        </opaque><constant name="classmethod.centralizer_size">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the size of the centralizer of any permutation of cycle type
+        ``self``.
+
+        If `m_i` is the multiplicity of `i` as a part of `p`, this is given by
+
+        .. MATH::
+
+           \prod_i m_i! i^{m_i}.
+
+        Including the optional parameters `t` and `q` gives the `q,t` analog,
+        which is the former product times
+
+        .. MATH::
+
+           \prod_{i=1}^{\mathrm{length}(p)} \frac{1 - q^{p_i}}{1 - t^{p_i}}.
+
+        See [Ker]_.
+
+        EXAMPLES::
+
+            sage: Partition([2,2,1]).centralizer_size()
+            8
+            sage: Partition([2,2,2]).centralizer_size()
+            48
+            sage: Partition([2,2,1]).centralizer_size(q=2, t=3)
+            9/16
+            sage: Partition([]).centralizer_size()
+            1
+            sage: Partition([]).centralizer_size(q=2, t=4)
+            1
+        </opaque><constant name="classmethod.character_polynomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the character polynomial associated to the partition
+        ``self``.
+
+        The character polynomial `q_\mu` associated to a partition `\mu`
+        is defined by
+
+        .. MATH::
+
+            q_\mu(x_1, x_2, \ldots, x_k) = \downarrow \sum_{\alpha \vdash k}
+            \frac{ \chi^\mu_\alpha }{1^{a_1}2^{a_2}\cdots k^{a_k}a_1!a_2!\cdots
+            a_k!} \prod_{i=1}^{k} (ix_i-1)^{a_i}
+
+        where `k` is the size of `\mu`, and `a_i` is the multiplicity of
+        `i` in `\alpha`.
+
+        It is computed in the following manner:
+
+        1. Expand the Schur function `s_\mu` in the power-sum basis,
+
+        2. Replace each `p_i` with `ix_i-1`,
+
+        3. Apply the umbral operator `\downarrow` to the resulting polynomial.
+
+        EXAMPLES::
+
+            sage: Partition([1]).character_polynomial()
+            x - 1
+            sage: Partition([1,1]).character_polynomial()
+            1/2*x0^2 - 3/2*x0 - x1 + 1
+            sage: Partition([2,1]).character_polynomial()
+            1/3*x0^3 - 2*x0^2 + 8/3*x0 - x2
+        </opaque><constant name="classmethod.components">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list containing the shape of ``self``.
+
+        This method exists only for compatibility with
+        :class:`PartitionTuples`.
+
+        EXAMPLES::
+
+            sage: Partition([3,2]).components()
+            [[3, 2]]
+        </opaque><constant name="classmethod.conjugacy_class_size">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the size of the conjugacy class of the symmetric group
+        indexed by ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([2,2,2]).conjugacy_class_size()
+            15
+            sage: Partition([2,2,1]).conjugacy_class_size()
+            15
+            sage: Partition([2,1,1]).conjugacy_class_size()
+            6
+
+        REFERENCES:
+
+        .. [Ker] Kerber, A. 'Algebraic Combinatorics via Finite Group Actions'
+           1.3 p24
+        </opaque><constant name="classmethod.conjugate">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the conjugate partition of the partition ``self``. This
+        is also called the associated partition or the transpose in the
+        literature.
+
+        EXAMPLES::
+
+            sage: Partition([2,2]).conjugate()
+            [2, 2]
+            sage: Partition([6,3,1]).conjugate()
+            [3, 2, 2, 1, 1, 1]
+
+        The conjugate partition is obtained by transposing the Ferrers
+        diagram of the partition (see :meth:`.ferrers_diagram`)::
+
+            sage: print(Partition([6,3,1]).ferrers_diagram())
+            ******
+            ***
+            *
+            sage: print(Partition([6,3,1]).conjugate().ferrers_diagram())
+            ***
+            **
+            **
+            *
+            *
+            *
+        </opaque><constant name="classmethod.contains">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if ``x`` is a partition whose Ferrers diagram is
+        contained in the Ferrers diagram of ``self``.
+
+        EXAMPLES::
+
+            sage: p = Partition([3,2,1])
+            sage: p.contains([2,1])
+            True
+            sage: all(p.contains(mu) for mu in Partitions(3))
+            True
+            sage: all(p.contains(mu) for mu in Partitions(4))
+            False
+        </opaque><constant name="classmethod.content">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the content of the cell at row `r` and column `c`.
+
+        The content of a cell is `c - r`.
+
+        For consistency with partition tuples there is also an optional
+        ``multicharge`` argument which is an offset to the usual content. By
+        setting the ``multicharge`` equal to the 0-element of the ring
+        `\ZZ/e\ZZ`, the corresponding `e`-residue will be returned. This is
+        the content modulo `e`.
+
+        The content (and residue) do not strictly depend on the partition,
+        however, this method is included because it is often useful in the
+        context of partitions.
+
+        EXAMPLES::
+
+            sage: Partition([2,1]).content(1,0)
+            -1
+            sage: p = Partition([3,2])
+            sage: sum([p.content(*c) for c in p.cells()])
+            2
+
+        and now we return the 3-residue of a cell::
+
+            sage: Partition([2,1]).content(1,0, multicharge=[IntegerModRing(3)(0)])
+            2
+        </opaque><constant name="classmethod.core">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ``length``-core of the partition -- in the literature
+        the core is commonly referred to as the `k`-core, `p`-core,
+        `r`-core, ... .
+
+        The `r`-core of a partition `\lambda` can be obtained by
+        repeatedly removing rim hooks of size `r` from (the Young diagram
+        of) `\lambda` until this is no longer possible. The remaining
+        partition is the core.
+
+        EXAMPLES::
+
+            sage: Partition([6,3,2,2]).core(3)
+            [2, 1, 1]
+            sage: Partition([]).core(3)
+            []
+            sage: Partition([8,7,7,4,1,1,1,1,1]).core(3)
+            [2, 1, 1]
+
+        TESTS::
+
+            sage: Partition([3,3,3,2,1]).core(3)
+            []
+            sage: Partition([10,8,7,7]).core(4)
+            []
+            sage: Partition([21,15,15,9,6,6,6,3,3]).core(3)
+            []
+        </opaque><constant name="classmethod.corners">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the corners of the partition ``self``.
+
+        A corner of a partition `\lambda` is a cell of the Young diagram
+        of `\lambda` which can be removed from the Young diagram while
+        still leaving a straight shape behind.
+
+        The entries of the list returned are pairs of the form `(i,j)`,
+        where `i` and `j` are the coordinates of the respective corner.
+        The coordinates are counted from `0`.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).corners()
+            [(0, 2), (1, 1), (2, 0)]
+            sage: Partition([3,3,1]).corners()
+            [(1, 2), (2, 0)]
+            sage: Partition([]).corners()
+            []
+        </opaque><constant name="classmethod.corners_residue">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the corners of the partition ``self`` having
+        ``l``-residue ``i``.
+
+        A corner of a partition `\lambda` is a cell of the Young diagram
+        of `\lambda` which can be removed from the Young diagram while
+        still leaving a straight shape behind. See :meth:`residue` for
+        the definition of the ``l``-residue.
+
+        The entries of the list returned are pairs of the form `(i,j)`,
+        where `i` and `j` are the coordinates of the respective corner.
+        The coordinates are counted from `0`.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).corners_residue(0, 3)
+            [(1, 1)]
+            sage: Partition([3,2,1]).corners_residue(1, 3)
+            [(2, 0)]
+            sage: Partition([3,2,1]).corners_residue(2, 3)
+            [(0, 2)]
+        </opaque><constant name="classmethod.crank">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the Dyson crank of ``self``.
+
+        The Dyson crank of a partition `\lambda` is defined as follows:
+        If `\lambda` contains at least one `1`, then the crank is
+        `\mu(\lambda) - \omega(\lambda)`, where `\omega(\lambda)` is the
+        number of `1`s in `\lambda`, and `\mu(\lambda)` is the number of
+        parts of `\lambda` larger than `\omega(\lambda)`. If `\lambda`
+        contains no `1`, then the crank is simply the largest part of
+        `\lambda`.
+
+        REFERENCES:
+
+        .. [AG1988] George E. Andrews, F. G. Garvan,
+           *Dyson's crank of a partition*.
+           Bull. Amer. Math. Soc. (N.S.) Volume 18, Number 2 (1988),
+           167-171.
+           http://projecteuclid.org/euclid.bams/1183554533
+
+        EXAMPLES::
+
+            sage: Partition([]).crank()
+            0
+            sage: Partition([3,2,2]).crank()
+            3
+            sage: Partition([5,4,2,1,1]).crank()
+            0
+            sage: Partition([1,1,1]).crank()
+            -3
+            sage: Partition([6,4,4,3]).crank()
+            6
+            sage: Partition([6,3,3,1,1]).crank()
+            1
+            sage: Partition([6]).crank()
+            6
+            sage: Partition([5,1]).crank()
+            0
+            sage: Partition([4,2]).crank()
+            4
+            sage: Partition([4,1,1]).crank()
+            -1
+            sage: Partition([3,3]).crank()
+            3
+            sage: Partition([3,2,1]).crank()
+            1
+            sage: Partition([3,1,1,1]).crank()
+            -3
+            sage: Partition([2,2,2]).crank()
+            2
+            sage: Partition([2,2,1,1]).crank()
+            -2
+            sage: Partition([2,1,1,1,1]).crank()
+            -4
+            sage: Partition([1,1,1,1,1,1]).crank()
+            -6
+        </opaque><constant name="classmethod.defect">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ``e``-defect or the ``e``-weight of ``self``.
+
+        The `e`-defect is the number of (connected) `e`-rim hooks that
+        can be removed from the partition.
+
+        The defect of a partition is given by 
+
+        .. MATH::
+
+            \text{defect}(\beta) = (\Lambda, \beta) - \tfrac12(\beta, \beta)
+
+        where `\Lambda = \sum_r \Lambda_{\kappa_r}` for the multicharge
+        `(\kappa_1, \ldots, \kappa_{\ell})` and 
+        `\beta = \sum_{(r,c)} \alpha_{(c-r) \pmod e}`, with the sum
+        being over the cells in the partition.
+
+        EXAMPLES::
+
+            sage: Partition([4,3,2]).defect(3)
+            3
+            sage: Partition([0]).defect(3)
+            0
+            sage: Partition([3]).defect(3)
+            1
+            sage: Partition([6]).defect(3)
+            2
+            sage: Partition([9]).defect(3)
+            3
+            sage: Partition([12]).defect(3)
+            4
+
+        TESTS::
+
+            sage: all(mu.core(e).size() + e * mu.defect(e) == 9
+            ....:     for mu in Partitions(9) for e in [2,3,4])
+            True
+        </opaque><constant name="classmethod.degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ``e``-th degree of ``self``.
+
+        The `e`-th degree of a partition `\lambda` is the sum of the `e`-th
+        degrees of the standard tableaux of shape `\lambda`. The `e`-th degree
+        is the exponent of `\Phi_e(q)` in the Gram determinant of the Specht
+        module for a semisimple Iwahori-Hecke algebra of type `A` with
+        parameter `q`.
+
+        INPUT:
+
+        - ``e`` -- an  integer  `e &gt; 1`
+
+        OUTPUT:
+
+        A non-negative integer.
+
+        EXAMPLES::
+
+            sage: Partition([4,3]).degree(2)
+            28
+            sage: Partition([4,3]).degree(3)
+            15
+            sage: Partition([4,3]).degree(4)
+            8
+            sage: Partition([4,3]).degree(5)
+            13
+            sage: Partition([4,3]).degree(6)
+            0
+            sage: Partition([4,3]).degree(7)
+            0
+
+        Therefore,  the Gram determinant of `S(5,3)` when the Hecke parameter
+        `q` is &quot;generic&quot; is
+
+        .. MATH::
+
+            q^N \Phi_2(q)^{28} \Phi_3(q)^{15} \Phi_4(q)^8 \Phi_5(q)^{13}
+
+        for some integer `N`. Compare with :meth:`prime_degree`.
+        </opaque><constant name="classmethod.dimension">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the number of paths from the ``smaller`` partition to
+        the partition ``self``, where each step consists of adding a
+        `k`-ribbon while keeping a partition.
+
+        Note that a 1-ribbon is just a single cell, so this counts paths
+        in the Young graph when `k = 1`.
+
+        Note also that the default case (`k = 1` and ``smaller = []``)
+        gives the dimension of the irreducible representation of the
+        symmetric group corresponding to ``self``.
+
+        INPUT:
+
+        - ``smaller`` -- a partition (default: an empty list ``[]``)
+
+        - `k` -- a positive integer (default: 1)
+
+        OUTPUT:
+
+        The number of such paths
+
+        EXAMPLES:
+
+        Looks at the number of ways of getting from ``[5,4]`` to the empty
+        partition, removing one cell at a time::
+
+            sage: mu = Partition([5,4])
+            sage: mu.dimension()
+            42
+
+        Same, but removing one 3-ribbon at a time. Note that the 3-core of
+        ``mu`` is empty::
+
+            sage: mu.dimension(k=3)
+            3
+
+        The 2-core of ``mu`` is not the empty partition::
+
+            sage: mu.dimension(k=2)
+            0
+
+        Indeed, the 2-core of ``mu`` is ``[1]``::
+
+            sage: mu.dimension(Partition([1]),k=2)
+            2
+
+        TESTS:
+
+        Checks that the sum of squares of dimensions of characters of the
+        symmetric group is the order of the group::
+
+            sage: all(sum(mu.dimension()^2 for mu in Partitions(i))==factorial(i) for i in range(10))
+            True
+
+        A check coming from the theory of `k`-differentiable posets::
+
+            sage: k=2; core = Partition([2,1])
+            sage: all(sum(mu.dimension(core,k=2)^2
+            ....:         for mu in Partitions(3+i*2) if mu.core(2) == core)
+            ....:     == 2^i*factorial(i) for i in range(10))
+            True
+
+        Checks that the dimension satisfies the obvious recursion relation::
+
+            sage: test = lambda larger, smaller: larger.dimension(smaller) == sum(mu.dimension(smaller) for mu in larger.down())
+            sage: all(test(larger,smaller) for l in range(1,10) for s in range(0,10)
+            ....:     for larger in Partitions(l) for smaller in Partitions(s) if smaller != larger)
+            True
+
+        ALGORITHM:
+
+        Depending on the parameters given, different simplifications
+        occur. When `k=1` and ``smaller`` is empty, this function uses
+        the hook formula. When `k=1` and ``smaller`` is not empty, it
+        uses a formula from [ORV]_.
+
+        When `k \neq 1`, we first check that both ``self`` and
+        ``smaller`` have the same `k`-core, then use the `k`-quotients
+        and the same algorithm on each of the `k`-quotients.
+
+        REFERENCES:
+
+        .. [ORV] Grigori Olshanski, Amitai Regev, Anatoly Vershik,
+           *Frobenius-Schur functions*,
+           :arxiv:`math/0110077v1`.
+           Possibly newer version at
+           http://www.wisdom.weizmann.ac.il/~regev/papers/FrobeniusSchurFunctions.ps
+
+        AUTHORS:
+
+        - Paul-Olivier Dehaye (2011-06-07)
+        </opaque><constant name="classmethod.dominated_partitions">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the partitions dominated by `n`. If ``rows`` is
+        specified, then it only returns the ones whose number of rows
+        is at most ``rows``.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).dominated_partitions()
+            [[3, 2, 1], [3, 1, 1, 1], [2, 2, 2], [2, 2, 1, 1], [2, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]
+            sage: Partition([3,2,1]).dominated_partitions(rows=3)
+            [[3, 2, 1], [2, 2, 2]]
+        </opaque><constant name="classmethod.dominates">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if ``self`` dominates the partition ``p2``. Otherwise
+        it returns ``False``.
+
+        EXAMPLES::
+
+            sage: p = Partition([3,2])
+            sage: p.dominates([3,1])
+            True
+            sage: p.dominates([2,2])
+            True
+            sage: p.dominates([2,1,1])
+            True
+            sage: p.dominates([3,3])
+            False
+            sage: p.dominates([4])
+            False
+            sage: Partition([4]).dominates(p)
+            False
+            sage: Partition([]).dominates([1])
+            False
+            sage: Partition([]).dominates([])
+            True
+            sage: Partition([1]).dominates([])
+            True
+        </opaque><constant name="classmethod.down">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a generator for partitions that can be obtained from ``self``
+        by removing a cell.
+
+        EXAMPLES::
+
+            sage: [p for p in Partition([2,1,1]).down()]
+            [[1, 1, 1], [2, 1]]
+            sage: [p for p in Partition([3,2]).down()]
+            [[2, 2], [3, 1]]
+            sage: [p for p in Partition([3,2,1]).down()]
+            [[2, 2, 1], [3, 1, 1], [3, 2]]
+
+        TESTS:
+
+        We check that :trac:`11435` is fixed::
+
+            sage: Partition([]).down_list() #indirect doctest
+            []
+        </opaque><constant name="classmethod.down_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the partitions that can be obtained from ``self``
+        by removing a cell.
+
+        EXAMPLES::
+
+            sage: Partition([2,1,1]).down_list()
+            [[1, 1, 1], [2, 1]]
+            sage: Partition([3,2]).down_list()
+            [[2, 2], [3, 1]]
+            sage: Partition([3,2,1]).down_list()
+            [[2, 2, 1], [3, 1, 1], [3, 2]]
+            sage: Partition([]).down_list()  #checks :trac:`11435`
+            []
+        </opaque><constant name="classmethod.dual_equivalence_graph">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the dual equivalence graph of ``self``.
+
+        Two permutations `p` and `q` in the symmetric group `S_n`
+        differ by an `i`-*elementary dual equivalence (or dual Knuth)
+        relation* (where `i` is an integer with `1 &lt; i &lt; n`) when the
+        following two conditions are satisfied:
+
+        - In the one-line notation of the permutation `p`, the letter
+          `i` does not appear inbetween `i-1` and `i+1`.
+
+        - The permutation `q` is obtained from `p` by switching two
+          of the three letters `i-1, i, i+1` (in its one-line
+          notation) -- namely, the leftmost and the rightmost one
+          in order of their appearance in `p`.
+
+        Notice that this is equivalent to the statement that the
+        permutations `p^{-1}` and `q^{-1}` differ by an elementary
+        Knuth equivalence at positions `i-1, i, i+1`.
+
+        Two standard Young tableaux of shape `\lambda` differ by an
+        `i`-elementary dual equivalence relation (of color `i`), if
+        their reading words differ by an `i`-elementary dual
+        equivalence relation.
+
+        The *dual equivalence graph* of the partition `\lambda` is the
+        edge-colored graph whose vertices are the standard Young
+        tableaux of shape `\lambda`, and whose edges colored by `i` are
+        given by the `i`-elementary dual equivalences.
+
+        INPUT:
+
+        - ``directed`` -- (default: ``False``) whether to have the dual
+          equivalence graph be directed (where we have a directed edge
+          `S \to T` if `i` appears to the left of `i+1` in the
+          reading word of `T`; otherwise we have the directed edge
+          `T \to S`)
+
+        - ``coloring`` -- (optional) a function which sends each
+          integer `i &gt; 1` to a color (as a string, e.g., ``'red'`` or
+          ``'black'``) to be used when visually representing the
+          resulting graph using dot2tex; the default choice is
+          ``2 -&gt; 'red', 3 -&gt; 'blue', 4 -&gt; 'green', 5 -&gt; 'purple',
+          6 -&gt; 'brown', 7 -&gt; 'orange', 8 -&gt; 'yellow', anything greater
+          than 8 -&gt; 'black'``.
+
+        REFERENCES:
+
+        .. [AssafDEG] Sami Assaf. *Dual equivalence graphs and a
+           combinatorial proof of LLT and Macdonald positivity*.
+           (2008). :arxiv:`1005.3759v5`.
+
+        EXAMPLES::
+
+            sage: P = Partition([3,1,1])
+            sage: G = P.dual_equivalence_graph()
+            sage: sorted(G.edges())
+            [([[1, 2, 3], [4], [5]], [[1, 2, 4], [3], [5]], 3),
+             ([[1, 2, 4], [3], [5]], [[1, 2, 5], [3], [4]], 4),
+             ([[1, 2, 4], [3], [5]], [[1, 3, 4], [2], [5]], 2),
+             ([[1, 2, 5], [3], [4]], [[1, 3, 5], [2], [4]], 2),
+             ([[1, 3, 4], [2], [5]], [[1, 3, 5], [2], [4]], 4),
+             ([[1, 3, 5], [2], [4]], [[1, 4, 5], [2], [3]], 3)]
+            sage: G = P.dual_equivalence_graph(directed=True)
+            sage: sorted(G.edges())
+            [([[1, 2, 4], [3], [5]], [[1, 2, 3], [4], [5]], 3),
+             ([[1, 2, 5], [3], [4]], [[1, 2, 4], [3], [5]], 4),
+             ([[1, 3, 4], [2], [5]], [[1, 2, 4], [3], [5]], 2),
+             ([[1, 3, 5], [2], [4]], [[1, 2, 5], [3], [4]], 2),
+             ([[1, 3, 5], [2], [4]], [[1, 3, 4], [2], [5]], 4),
+             ([[1, 4, 5], [2], [3]], [[1, 3, 5], [2], [4]], 3)]
+
+        TESTS::
+
+            sage: G = Partition([1]).dual_equivalence_graph()
+            sage: G.vertices()
+            [[[1]]]
+            sage: G = Partition([]).dual_equivalence_graph()
+            sage: G.vertices()
+            [[]]
+
+            sage: P = Partition([3,1,1])
+            sage: G = P.dual_equivalence_graph(coloring=lambda x: 'red')
+            sage: G2 = P.dual_equivalence_graph(coloring={2: 'black', 3: 'blue', 4: 'cyan', 5: 'grey'})
+            sage: G is G2
+            False
+            sage: G == G2
+            True
+        </opaque><constant name="classmethod.evaluation">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the evaluation of ``self``.
+
+        The **commutative evaluation**, often shortened to **evaluation**, of
+        a word (we think of a partition as a word in `\{1, 2, 3, \ldots\}`)
+        is its image in the free commutative monoid. In other words,
+        this counts how many occurrences there are of each letter.
+
+        This is also is known as **Parikh vector** and **abelianization** and
+        has the same output as :meth:`to_exp()`.
+
+        EXAMPLES::
+
+            sage: Partition([4,3,1,1]).evaluation()
+            [2, 0, 1, 1]
+        </opaque><constant name="classmethod.ferrers_diagram">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the Ferrers diagram of ``self``.
+
+        EXAMPLES::
+
+            sage: mu=Partition([5,5,2,1])
+            sage: Partitions.options(diagram_str='*', convention=&quot;english&quot;)
+            sage: print(mu.ferrers_diagram())
+            *****
+            *****
+            **
+            *
+            sage: Partitions.options(diagram_str='#')
+            sage: print(mu.ferrers_diagram())
+            #####
+            #####
+            ##
+            #
+            sage: Partitions.options.convention=&quot;french&quot;
+            sage: print(mu.ferrers_diagram())
+            #
+            ##
+            #####
+            #####
+            sage: print(Partition([]).ferrers_diagram())
+            -
+            sage: Partitions.options(diagram_str='-')
+            sage: print(Partition([]).ferrers_diagram())
+            (/)
+            sage: Partitions.options._reset()
+        </opaque><constant name="classmethod.frobenius_coordinates">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a pair of sequences of Frobenius coordinates aka beta numbers
+        of the partition.
+
+        These are two strictly decreasing sequences of nonnegative integers
+        of the same length.
+
+        EXAMPLES::
+
+            sage: Partition([]).frobenius_coordinates()
+            ([], [])
+            sage: Partition([1]).frobenius_coordinates()
+            ([0], [0])
+            sage: Partition([3,3,3]).frobenius_coordinates()
+            ([2, 1, 0], [2, 1, 0])
+            sage: Partition([9,1,1,1,1,1,1]).frobenius_coordinates()
+            ([8], [6])
+
+        </opaque><constant name="classmethod.frobenius_rank">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the Frobenius rank of the partition ``self``.
+
+        The Frobenius rank of a partition
+        `\lambda = (\lambda_1, \lambda_2, \lambda_3, \cdots)` is
+        defined to be the largest `i` such that `\lambda_i \geq i`.
+        In other words, it is the number of cells on the main diagonal
+        of `\lambda`. In yet other words, it is the size of the largest
+        square fitting into the Young diagram of `\lambda`.
+
+        EXAMPLES::
+
+            sage: Partition([]).frobenius_rank()
+            0
+            sage: Partition([1]).frobenius_rank()
+            1
+            sage: Partition([3,3,3]).frobenius_rank()
+            3
+            sage: Partition([9,1,1,1,1,1]).frobenius_rank()
+            1
+            sage: Partition([2,1,1,1,1,1]).frobenius_rank()
+            1
+            sage: Partition([2,2,1,1,1,1]).frobenius_rank()
+            2
+            sage: Partition([3,2]).frobenius_rank()
+            2
+            sage: Partition([3,2,2]).frobenius_rank()
+            2
+            sage: Partition([8,4,4,4,4]).frobenius_rank()
+            4
+            sage: Partition([8,4,1]).frobenius_rank()
+            2
+            sage: Partition([3,3,1]).frobenius_rank()
+            2
+        </opaque><constant name="classmethod.from_kbounded_to_grassmannian">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Maps a `k`-bounded partition to a Grassmannian element in
+        the affine Weyl group of type `A_k^{(1)}`.
+
+        For details, see the documentation of the method
+        :meth:`from_kbounded_to_reduced_word` .
+
+        EXAMPLES::
+
+            sage: p=Partition([2,1,1])
+            sage: p.from_kbounded_to_grassmannian(2)
+            [-1  1  1]
+            [-2  2  1]
+            [-2  1  2]
+            sage: p=Partition([])
+            sage: p.from_kbounded_to_grassmannian(2)
+            [1 0 0]
+            [0 1 0]
+            [0 0 1]
+        </opaque><constant name="classmethod.from_kbounded_to_reduced_word">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Maps a `k`-bounded partition to a reduced word for an element in
+        the affine permutation group.
+
+        This uses the fact that there is a bijection between `k`-bounded
+        partitions and `(k+1)`-cores and an action of the affine nilCoxeter
+        algebra of type `A_k^{(1)}` on `(k+1)`-cores as described in [LM2006]_.
+
+        REFERENCES:
+
+        .. [LM2006] MR2167475 (2006j:05214)
+           L. Lapointe, J. Morse. Tableaux on `k+1`-cores, reduced words for affine permutations, and `k`-Schur expansions.
+           J. Combin. Theory Ser. A 112 (2005), no. 1, 44--81.
+
+        EXAMPLES::
+
+            sage: p=Partition([2,1,1])
+            sage: p.from_kbounded_to_reduced_word(2)
+            [2, 1, 2, 0]
+            sage: p=Partition([3,1])
+            sage: p.from_kbounded_to_reduced_word(3)
+            [3, 2, 1, 0]
+            sage: p.from_kbounded_to_reduced_word(2)
+            Traceback (most recent call last):
+            ...
+            ValueError: the partition must be 2-bounded
+            sage: p=Partition([])
+            sage: p.from_kbounded_to_reduced_word(2)
+            []
+        </opaque><constant name="classmethod.garnir_tableau">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the Garnir tableau of shape ``self`` corresponding to the cell
+        ``cell``. If ``cell`` `= (a,c)` then `(a+1,c)` must belong to the
+        diagram of ``self``.
+
+        The Garnir tableaux play an important role in integral and
+        non-semisimple representation theory because they determine the
+        &quot;straightening&quot; rules for the Specht modules over an arbitrary ring.
+
+        The Garnir tableaux are the &quot;first&quot; non-standard tableaux which arise
+        when you act by simple transpositions. If `(a,c)` is a cell in the
+        Young diagram of a partition, which is not at the bottom of its
+        column, then the corresponding Garnir tableau has the integers
+        `1, 2, \ldots, n` entered in order from left to right along the rows
+        of the diagram up to the cell `(a,c-1)`, then along the cells
+        `(a+1,1)` to `(a+1,c)`, then `(a,c)` until the end of row `a` and
+        then continuing from left to right in the remaining positions. The
+        examples below probably make this clearer!
+
+        .. NOTE::
+
+            The function also sets ``g._garnir_cell``, where ``g`` is the
+            resulting Garnir tableau, equal to ``cell`` which is used by
+            some other functions.
+
+        EXAMPLES::
+
+            sage: g=Partition([5,3,3,2]).garnir_tableau((0,2)); g.pp()
+              1  2  6  7  8
+              3  4  5
+              9 10 11
+             12 13
+            sage: g.is_row_strict(); g.is_column_strict()
+            True
+            False
+
+            sage: Partition([5,3,3,2]).garnir_tableau(0,2).pp()
+              1  2  6  7  8
+              3  4  5
+              9 10 11
+             12 13
+            sage: Partition([5,3,3,2]).garnir_tableau(2,1).pp()
+              1  2  3  4  5
+              6  7  8
+              9 12 13
+             10 11
+            sage: Partition([5,3,3,2]).garnir_tableau(2,2).pp()
+            Traceback (most recent call last):
+            ...
+            ValueError: (row+1, col) must be inside the diagram
+
+        .. SEEALSO::
+
+            - :meth:`top_garnir_tableau`
+        </opaque><constant name="classmethod.generalized_pochhammer_symbol">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the generalized Pochhammer symbol
+        `(a)_{self}^{(\alpha)}`. This is the product over all
+        cells `(i,j)` in ``self`` of `a - (i-1) / \alpha + j - 1`.
+
+        EXAMPLES::
+
+            sage: Partition([2,2]).generalized_pochhammer_symbol(2,1)
+            12
+        </opaque><constant name="classmethod.get_part">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the `i^{th}` part of ``self``, or ``default`` if it does
+        not exist.
+
+        EXAMPLES::
+
+            sage: p = Partition([2,1])
+            sage: p.get_part(0), p.get_part(1), p.get_part(2)
+            (2, 1, 0)
+            sage: p.get_part(10,-1)
+            -1
+            sage: Partition([]).get_part(0)
+            0
+        </opaque><constant name="classmethod.hook_length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the length of the hook of cell `(i,j)` in ``self``.
+
+        The (length of the) hook of cell `(i,j)` of a partition `\lambda`
+        is
+
+        .. MATH::
+
+            \lambda_i + \lambda^{\prime}_j - i - j + 1
+
+        where `\lambda^{\prime}` is the conjugate partition. In English
+        convention, the hook length is the number of cells horizontally
+        to the right and vertically below the cell `(i,j)` (including
+        that cell).
+
+        EXAMPLES::
+
+            sage: p = Partition([2,2,1])
+            sage: p.hook_length(0, 0)
+            4
+            sage: p.hook_length(0, 1)
+            2
+            sage: p.hook_length(2, 0)
+            1
+            sage: Partition([3,3]).hook_length(0, 0)
+            4
+            sage: cell = [0,0]; Partition([3,3]).hook_length(*cell)
+            4
+        </opaque><constant name="classmethod.hook_lengths">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a tableau of shape ``self`` with the cells filled in with the
+        hook lengths.
+
+        In each cell, put the sum of one plus the number of cells
+        horizontally to the right and vertically below the cell (the
+        hook length).
+
+        For example, consider the partition ``[3,2,1]`` of 6 with Ferrers
+        diagram::
+
+            # # #
+            # #
+            #
+
+        When we fill in the cells with the hook lengths, we obtain::
+
+            5 3 1
+            3 1
+            1
+
+        EXAMPLES::
+
+            sage: Partition([2,2,1]).hook_lengths()
+            [[4, 2], [3, 1], [1]]
+            sage: Partition([3,3]).hook_lengths()
+            [[4, 3, 2], [3, 2, 1]]
+            sage: Partition([3,2,1]).hook_lengths()
+            [[5, 3, 1], [3, 1], [1]]
+            sage: Partition([2,2]).hook_lengths()
+            [[3, 2], [2, 1]]
+            sage: Partition([5]).hook_lengths()
+            [[5, 4, 3, 2, 1]]
+
+        REFERENCES:
+
+        - http://mathworld.wolfram.com/HookLengthFormula.html
+        </opaque><constant name="classmethod.hook_polynomial">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the two-variable hook polynomial.
+
+        EXAMPLES::
+
+            sage: R.&lt;q,t&gt; = PolynomialRing(QQ)
+            sage: a = Partition([2,2]).hook_polynomial(q,t)
+            sage: a == (1 - t)*(1 - q*t)*(1 - t^2)*(1 - q*t^2)
+            True
+            sage: a = Partition([3,2,1]).hook_polynomial(q,t)
+            sage: a == (1 - t)^3*(1 - q*t^2)^2*(1 - q^2*t^3)
+            True
+        </opaque><constant name="classmethod.hook_product">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the Jack hook-product.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).hook_product(x)
+            (2*x + 3)*(x + 2)^2
+            sage: Partition([2,2]).hook_product(x)
+            2*(x + 2)*(x + 1)
+        </opaque><constant name="classmethod.hooks">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a sorted list of the hook lengths in ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).hooks()
+            [5, 3, 3, 1, 1, 1]
+        </opaque><constant name="classmethod.initial_column_tableau">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the initial column tableau of shape ``self``.
+
+        The initial column taleau of shape self is the standard tableau 
+        that has the numbers `1` to `n`, where `n` is the :meth:`size` of ``self``,
+        entered in order from top to bottom and then left to right down the
+        columns of ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([3,2]).initial_column_tableau()
+            [[1, 3, 5], [2, 4]]
+        </opaque><constant name="classmethod.initial_tableau">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the :class:`standard tableau&lt;StandardTableau&gt;` which has the
+        numbers `1, 2, \ldots, n` where `n` is the :meth:`size` of ``self``
+        entered in order from left to right along the rows of each component,
+        where the components are ordered from left to right.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,2]).initial_tableau()
+            [[1, 2, 3], [4, 5], [6, 7]]
+        </opaque><constant name="classmethod.inside_corners">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.inside_corners_residue">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.is_core">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Tests whether the partition is a `k`-core or not. Visuallly, this can
+        be checked by trying to remove border strips of size `k` from ``self``.
+        If this is not possible, then ``self`` is a `k`-core.
+
+        A partition is said to be a *`k`-core* if it has no hooks of length
+        `k`. Equivalently, a partition is said to be a `k`-core if it is its
+        own `k`-core (where the latter is defined as in :meth:`core`).
+
+        EXAMPLES::
+
+            sage: p = Partition([12,8,5,5,2,2,1])
+            sage: p.is_core(4)
+            False
+            sage: p.is_core(5)
+            True
+            sage: p.is_core(0)
+            True
+        </opaque><constant name="classmethod.is_empty">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if ``self`` is the empty partition.
+
+        EXAMPLES::
+
+            sage: Partition([]).is_empty()
+            True
+            sage: Partition([2,1,1]).is_empty()
+            False
+        </opaque><constant name="classmethod.jacobi_trudi">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the Jacobi-Trudi matrix of ``self`` thought of as a skew
+        partition. See :meth:`SkewPartition.jacobi_trudi()
+        &lt;sage.combinat.skew_partition.SkewPartition.jacobi_trudi&gt;`.
+
+        EXAMPLES::
+
+            sage: part = Partition([3,2,1])
+            sage: jt = part.jacobi_trudi(); jt
+            [h[3] h[1]    0]
+            [h[4] h[2]  h[]]
+            [h[5] h[3] h[1]]
+            sage: s = SymmetricFunctions(QQ).schur()
+            sage: h = SymmetricFunctions(QQ).homogeneous()
+            sage: h( s(part) )
+            h[3, 2, 1] - h[3, 3] - h[4, 1, 1] + h[5, 1]
+            sage: jt.det()
+            h[3, 2, 1] - h[3, 3] - h[4, 1, 1] + h[5, 1]
+        </opaque><constant name="classmethod.k_atom">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the standard tableaux of size ``self.size()`` whose
+        ``k``-atom is equal to ``self``.
+
+        EXAMPLES::
+
+            sage: p = Partition([3,2,1])
+            sage: p.k_atom(1)
+            []
+            sage: p.k_atom(3)
+            [[[1, 1, 1], [2, 2], [3]],
+             [[1, 1, 1, 2], [2], [3]],
+             [[1, 1, 1, 3], [2, 2]],
+             [[1, 1, 1, 2, 3], [2]]]
+            sage: Partition([3,2,1]).k_atom(4)
+            [[[1, 1, 1], [2, 2], [3]], [[1, 1, 1, 3], [2, 2]]]
+
+        TESTS::
+
+            sage: Partition([1]).k_atom(1)
+            [[[1]]]
+            sage: Partition([1]).k_atom(2)
+            [[[1]]]
+            sage: Partition([]).k_atom(1)
+            [[]]
+        </opaque><constant name="classmethod.k_boundary">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the skew partition formed by removing the cells of the
+        ``k``-interior, see :meth:`k_interior`.
+
+        EXAMPLES::
+
+            sage: p = Partition([3,2,1])
+            sage: p.k_boundary(2)
+            [3, 2, 1] / [2, 1]
+            sage: p.k_boundary(3)
+            [3, 2, 1] / [1]
+
+            sage: p = Partition([12,8,5,5,2,2,1])
+            sage: p.k_boundary(4)
+            [12, 8, 5, 5, 2, 2, 1] / [8, 5, 2, 2]
+        </opaque><constant name="classmethod.k_conjugate">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ``k``-conjugate of ``self``.
+
+        The `k`-conjugate is the partition that is given by the columns of
+        the `k`-skew diagram of the partition.
+
+        We can also define the `k`-conjugate in the following way. Let `P`
+        denote the bijection from `(k+1)`-cores to `k`-bounded partitions. The
+        `k`-conjugate of a `(k+1)`-core `\lambda` is
+
+        .. MATH::
+
+            \lambda^{(k)} = P^{-1}\left( (P(\lambda))^{\prime} \right).
+
+        EXAMPLES::
+
+            sage: p = Partition([4,3,2,2,1,1])
+            sage: p.k_conjugate(4)
+            [3, 2, 2, 1, 1, 1, 1, 1, 1]
+        </opaque><constant name="classmethod.k_interior">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the partition consisting of the cells of ``self`` whose hook
+        lengths are greater than ``k``.
+
+        EXAMPLES::
+
+            sage: p = Partition([3,2,1])
+            sage: p.hook_lengths()
+            [[5, 3, 1], [3, 1], [1]]
+            sage: p.k_interior(2)
+            [2, 1]
+            sage: p.k_interior(3)
+            [1]
+
+            sage: p = Partition([])
+            sage: p.k_interior(3)
+            []
+        </opaque><constant name="classmethod.k_irreducible">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the partition with all `r \times (k+1-r)` rectangles removed.
+
+        If ``self`` is a `k`-bounded partition, then this method will return the partition
+        where all rectangles of dimension `r \times (k+1-r)` for `1 \leq r \leq k`
+        have been deleted.
+
+        If ``self`` is not a `k`-bounded partition then the method will raise an error.
+
+        INPUT:
+
+        - ``k`` -- a non-negative integer
+
+        OUTPUT:
+
+        - a partition
+
+        EXAMPLES::
+
+            sage: Partition([3,2,2,1,1,1]).k_irreducible(4)
+            [3, 2, 2, 1, 1, 1]
+            sage: Partition([3,2,2,1,1,1]).k_irreducible(3)
+            []
+            sage: Partition([3,3,3,2,2,2,2,2,1,1,1,1]).k_irreducible(3)
+            [2, 1]
+        </opaque><constant name="classmethod.k_skew">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the `k`-skew partition.
+
+        The `k`-skew diagram of a `k`-bounded partition is the skew diagram
+        denoted `\lambda/^k` satisfying the conditions:
+
+        1. row `i` of `\lambda/^k` has length `\lambda_i`,
+
+        2. no cell in `\lambda/^k` has hook-length exceeding `k`,
+
+        3. every square above the diagram of `\lambda/^k` has hook
+           length exceeding `k`.
+
+        REFERENCES:
+
+        .. [LM2004] Lapointe, L. and Morse, J. 'Order Ideals in Weak Subposets
+           of Young's Lattice and Associated Unimodality Conjectures'. Ann.
+           Combin. (2004)
+
+        EXAMPLES::
+
+            sage: p = Partition([4,3,2,2,1,1])
+            sage: p.k_skew(4)
+            [9, 5, 3, 2, 1, 1] / [5, 2, 1]
+        </opaque><constant name="classmethod.k_split">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ``k``-split of ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([4,3,2,1]).k_split(3)
+            []
+            sage: Partition([4,3,2,1]).k_split(4)
+            [[4], [3, 2], [1]]
+            sage: Partition([4,3,2,1]).k_split(5)
+            [[4, 3], [2, 1]]
+            sage: Partition([4,3,2,1]).k_split(6)
+            [[4, 3, 2], [1]]
+            sage: Partition([4,3,2,1]).k_split(7)
+            [[4, 3, 2, 1]]
+            sage: Partition([4,3,2,1]).k_split(8)
+            [[4, 3, 2, 1]]
+        </opaque><constant name="classmethod.larger_lex">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``True`` if ``self`` is larger than ``rhs`` in lexicographic
+        order. Otherwise return ``False``.
+
+        EXAMPLES::
+
+            sage: p = Partition([3,2])
+            sage: p.larger_lex([3,1])
+            True
+            sage: p.larger_lex([1,4])
+            True
+            sage: p.larger_lex([3,2,1])
+            False
+            sage: p.larger_lex([3])
+            True
+            sage: p.larger_lex([5])
+            False
+            sage: p.larger_lex([3,1,1,1,1,1,1,1])
+            True
+        </opaque><constant name="classmethod.leg_cells">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the list of the cells of the leg of cell `(i,j)` in ``self``.
+
+        The leg of cell `c = (i,j)` is defined to be the cells below `c` (in
+        English convention).
+
+        The cell coordinates are zero-based, i. e., the northwesternmost
+        cell is `(0,0)`.
+
+        INPUT:
+
+        - ``i, j`` -- two integers
+
+        OUTPUT:
+
+        A list of pairs of integers
+
+        EXAMPLES::
+
+            sage: Partition([4,4,3,1]).leg_cells(1,1)
+            [(2, 1)]
+            sage: Partition([4,4,3,1]).leg_cells(0,1)
+            [(1, 1), (2, 1)]
+
+            sage: Partition([]).leg_cells(0,0)
+            Traceback (most recent call last):
+            ...
+            ValueError: The cell is not in the diagram
+        </opaque><constant name="classmethod.leg_length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the length of the leg of cell `(i,j)` in ``self``.
+
+        The leg of cell `c = (i,j)` is defined to be the cells below `c`
+        (in English convention).
+
+        The cell coordinates are zero-based, i. e., the northwesternmost
+        cell is `(0,0)`.
+
+        INPUT:
+
+        - ``i, j`` -- two integers
+
+        OUTPUT:
+
+        An integer or a ``ValueError``
+
+        EXAMPLES::
+
+            sage: p = Partition([2,2,1])
+            sage: p.leg_length(0, 0)
+            2
+            sage: p.leg_length(0,1)
+            1
+            sage: p.leg_length(2,0)
+            0
+            sage: Partition([3,3]).leg_length(0, 0)
+            1
+            sage: cell = [0,0]; Partition([3,3]).leg_length(*cell)
+            1
+        </opaque><constant name="classmethod.leg_lengths">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a tableau of shape ``self`` with each cell filled in with
+        its leg length.  The optional boolean parameter ``flat`` provides
+        the option of returning a flat list.
+
+        EXAMPLES::
+
+            sage: Partition([2,2,1]).leg_lengths()
+            [[2, 1], [1, 0], [0]]
+            sage: Partition([2,2,1]).leg_lengths(flat=True)
+            [2, 1, 1, 0, 0]
+            sage: Partition([3,3]).leg_lengths()
+            [[1, 1, 1], [0, 0, 0]]
+            sage: Partition([3,3]).leg_lengths(flat=True)
+            [1, 1, 1, 0, 0, 0]
+        </opaque><constant name="classmethod.length">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the number of parts in ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([3,2]).length()
+            2
+            sage: Partition([2,2,1]).length()
+            3
+            sage: Partition([]).length()
+            0
+        </opaque><constant name="classmethod.level">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the level of ``self``, which is always 1.
+
+        This method exists only for compatibility with
+        :class:`PartitionTuples`.
+
+        EXAMPLES::
+
+            sage: Partition([4,3,2]).level()
+            1
+        </opaque><constant name="classmethod.lower_hook">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the lower hook length of the cell `(i,j)` in ``self``.
+        When ``alpha = 1``, this is just the normal hook length.
+
+        The lower hook length of a cell `(i,j)` in a partition
+        `\kappa` is defined by
+
+        .. MATH::
+
+            h_*^\kappa(i,j) = \kappa^\prime_j - i + 1 + \alpha(\kappa_i - j).
+
+        EXAMPLES::
+
+            sage: p = Partition([2,1])
+            sage: p.lower_hook(0,0,1)
+            3
+            sage: p.hook_length(0,0)
+            3
+            sage: [ p.lower_hook(i,j,x) for i,j in p.cells() ]
+            [x + 2, 1, 1]
+        </opaque><constant name="classmethod.lower_hook_lengths">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a tableau of shape ``self`` with the cells filled in with the
+        lower hook lengths. When ``alpha = 1``, these are just the normal hook
+        lengths.
+
+        The lower hook length of a cell `(i,j)` in a partition
+        `\kappa` is defined by
+
+        .. MATH::
+
+            h_*^\kappa(i,j) = \kappa^\prime_j - i + 1 + \alpha(\kappa_i - j).
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).lower_hook_lengths(x)
+            [[2*x + 3, x + 2, 1], [x + 2, 1], [1]]
+            sage: Partition([3,2,1]).lower_hook_lengths(1)
+            [[5, 3, 1], [3, 1], [1]]
+            sage: Partition([3,2,1]).hook_lengths()
+            [[5, 3, 1], [3, 1], [1]]
+        </opaque><constant name="classmethod.next">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.outer_rim">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the outer rim of ``self``.
+
+        The outer rim of a partition `\lambda` is defined as the cells which do
+        not belong to `\lambda` and which are adjacent to cells in `\lambda`.
+
+        EXAMPLES:
+
+        The outer rim of the partition `[4,1]` consists of the cells marked
+        with ``#`` below::
+
+            ****#
+            *####
+            ##
+
+        ::
+
+            sage: Partition([4,1]).outer_rim()
+            [(2, 0), (2, 1), (1, 1), (1, 2), (1, 3), (1, 4), (0, 4)]
+
+            sage: Partition([2,2,1]).outer_rim()
+            [(3, 0), (3, 1), (2, 1), (2, 2), (1, 2), (0, 2)]
+            sage: Partition([2,2]).outer_rim()
+            [(2, 0), (2, 1), (2, 2), (1, 2), (0, 2)]
+            sage: Partition([6,3,3,1,1]).outer_rim()
+            [(5, 0), (5, 1), (4, 1), (3, 1), (3, 2), (3, 3), (2, 3), (1, 3), (1, 4), (1, 5), (1, 6), (0, 6)]
+            sage: Partition([]).outer_rim()
+            [(0, 0)]
+        </opaque><constant name="classmethod.outline">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the outline of the partition ``self``.
+
+        This is a piecewise linear function, normalized so that the area
+        under the partition ``[1]`` is 2.
+
+        INPUT:
+
+        - variable -- a variable (default: ``'x'`` in the symbolic ring)
+
+        EXAMPLES::
+
+            sage: [Partition([5,4]).outline()(x=i) for i in range(-10,11)]
+            [10, 9, 8, 7, 6, 5, 6, 5, 6, 5, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+            sage: Partition([]).outline()
+            abs(x)
+
+            sage: Partition([1]).outline()
+            abs(x + 1) + abs(x - 1) - abs(x)
+
+            sage: y=sage.symbolic.ring.var(&quot;y&quot;)
+            sage: Partition([6,5,1]).outline(variable=y)
+            abs(y + 6) - abs(y + 5) + abs(y + 4) - abs(y + 3) + abs(y - 1) - abs(y - 2) + abs(y - 3)
+
+        TESTS::
+
+            sage: integrate(Partition([1]).outline()-abs(x),(x,-10,10))
+            2
+        </opaque><constant name="classmethod.outside_corners">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.outside_corners_residue">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.plancherel_measure">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the probability of ``self`` under the Plancherel probability
+        measure on partitions of the same size.
+
+        This probability distribution comes from the uniform distribution
+        on permutations via the Robinson-Schensted correspondence.
+
+        See :wikipedia:`Plancherel\_measure`
+        and :meth:`Partitions_n.random_element_plancherel`.
+
+        EXAMPLES::
+
+            sage: Partition([]).plancherel_measure()
+            1
+            sage: Partition([1]).plancherel_measure()
+            1
+            sage: Partition([2]).plancherel_measure()
+            1/2
+            sage: [mu.plancherel_measure() for mu in Partitions(3)]
+            [1/6, 2/3, 1/6]
+            sage: Partition([5,4]).plancherel_measure()
+            7/1440
+
+        TESTS::
+
+            sage: all(sum(mu.plancherel_measure() for mu in Partitions(n))==1 for n in range(10))
+            True
+        </opaque><constant name="classmethod.power">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the cycle type of the `k`-th power of any permutation
+        with cycle type ``self`` (thus describes the powermap of
+        symmetric groups).
+
+        Equivalent to GAP's ``PowerPartition``.
+
+        EXAMPLES::
+
+            sage: p = Partition([5,3])
+            sage: p.power(1)
+            [5, 3]
+            sage: p.power(2)
+            [5, 3]
+            sage: p.power(3)
+            [5, 1, 1, 1]
+            sage: p.power(4)
+            [5, 3]
+
+        Now let us compare this to the power map on `S_8`::
+
+            sage: G = SymmetricGroup(8)
+            sage: g = G([(1,2,3,4,5),(6,7,8)])
+            sage: g
+            (1,2,3,4,5)(6,7,8)
+            sage: g^2
+            (1,3,5,2,4)(6,8,7)
+            sage: g^3
+            (1,4,2,5,3)
+            sage: g^4
+            (1,5,4,3,2)(6,7,8)
+
+        ::
+
+            sage: Partition([3,2,1]).power(3)
+            [2, 1, 1, 1, 1]
+        </opaque><constant name="classmethod.pp">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Prints the Ferrers diagram.
+
+        See :meth:`ferrers_diagram` for more on the Ferrers diagram.
+
+        EXAMPLES::
+
+            sage: Partition([5,5,2,1]).pp()
+            *****
+            *****
+            **
+            *
+            sage: Partitions.options.convention='French'
+            sage: Partition([5,5,2,1]).pp()
+            *
+            **
+            *****
+            *****
+            sage: Partitions.options._reset()
+        </opaque><constant name="classmethod.prime_degree">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the prime degree for the prime integer``p`` for ``self``.
+
+        INPUT:
+
+        - ``p`` -- a prime integer
+
+        OUTPUT:
+
+        A non-negative integer 
+
+        The degree of a partition `\lambda` is the sum of the
+        `e`-:meth:`degree` of the standard tableaux of shape `\lambda`, for
+        `e` a poer of the prime `p`. The prime degree gives the exponent of
+        `p` in the Gram determinant of the integal Specht module of the
+        symmetric group.
+
+        EXAMPLES::
+
+            sage: Partition([4,3]).prime_degree(2)
+            36
+            sage: Partition([4,3]).prime_degree(3)
+            15
+            sage: Partition([4,3]).prime_degree(5)
+            13
+            sage: Partition([4,3]).prime_degree(7)
+            0
+
+        THerefore, the Gram determinant of `S(5,3)` when `q = 1` is 
+        `2^{36} 3^{15} 5^{13}`.  Compare with :meth:`degree`.
+        </opaque><constant name="classmethod.quotient">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the quotient of the partition  -- in the literature the
+        quotient is commonly referred to as the `k`-quotient, `p`-quotient,
+        `r`-quotient, ... .
+
+        The `r`-quotient of a partition `\lambda` is a list of `r`
+        partitions (labelled from `0` to `r-1`), constructed in the following
+        way. Label each cell in the Young diagram of `\lambda` with its
+        content modulo `r`. Let `R_i` be the set of rows ending in a cell
+        labelled `i`, and `C_i` be the set of columns ending in a cell
+        labelled `i`. Then the `j`-th component of the quotient of
+        `\lambda` is the partition defined by intersecting `R_j` with
+        `C_{j+1}`. (See Theorem 2.7.37 in [JamesKerber]_.)
+
+        REFERENCES:
+
+        .. [JamesKerber] Gordon James, Adalbert Kerber,
+           *The Representation Theory of the Symmetric Group*,
+           Encyclopedia of Mathematics and its Applications, vol. 16,
+           Addison-Wesley 1981.
+
+        EXAMPLES::
+
+            sage: Partition([7,7,5,3,3,3,1]).quotient(3)
+            ([2], [1], [2, 2, 2])
+
+        TESTS::
+
+            sage: Partition([8,7,7,4,1,1,1,1,1]).quotient(3)
+            ([2, 1], [2, 2], [2])
+            sage: Partition([10,8,7,7]).quotient(4)
+            ([2], [3], [2], [1])
+            sage: Partition([6,3,3]).quotient(3)
+            ([1], [1], [2])
+            sage: Partition([3,3,3,2,1]).quotient(3)
+            ([1], [1, 1], [1])
+            sage: Partition([6,6,6,3,3,3]).quotient(3)
+            ([2, 1], [2, 1], [2, 1])
+            sage: Partition([21,15,15,9,6,6,6,3,3]).quotient(3)
+            ([5, 2, 1], [5, 2, 1], [7, 3, 2])
+            sage: Partition([21,15,15,9,6,6,3,3]).quotient(3)
+            ([5, 2], [5, 2, 1], [7, 3, 1])
+            sage: Partition([14,12,11,10,10,10,10,9,6,4,3,3,2,1]).quotient(5)
+            ([3, 3], [2, 2, 1], [], [3, 3, 3], [1])
+
+            sage: all(p == Partition(core=p.core(k), quotient=p.quotient(k))
+            ....:     for i in range(10) for p in Partitions(i)
+            ....:     for k in range(1,6))
+            True
+        </opaque><constant name="classmethod.reading_tableau">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the RSK recording tableau of the reading word of the
+        (standard) tableau `T` labeled down (in English convention)
+        each column to the shape of ``self``.
+
+        For an example of the tableau `T`, consider the partition
+        `\lambda = (3,2,1)`, then we have::
+
+            1 4 6
+            2 5
+            3
+
+        For more, see :func:`~sage.combinat.rsk.RSK()`.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).reading_tableau()
+            [[1, 3, 6], [2, 5], [4]]
+        </opaque><constant name="classmethod.removable_cells">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.removable_cells_residue">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.remove_cell">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the partition obtained by removing a cell at the end of row
+        ``i`` of ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([2,2]).remove_cell(1)
+            [2, 1]
+            sage: Partition([2,2,1]).remove_cell(2)
+            [2, 2]
+            sage: #Partition([2,2]).remove_cell(0)
+
+        ::
+
+            sage: Partition([2,2]).remove_cell(1,1)
+            [2, 1]
+            sage: #Partition([2,2]).remove_cell(1,0)
+        </opaque><constant name="classmethod.remove_horizontal_border_strip">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the partitions obtained from ``self`` by removing an
+        horizontal border strip of length ``k``.
+
+        EXAMPLES::
+
+            sage: Partition([5,3,1]).remove_horizontal_border_strip(0).list()
+            [[5, 3, 1]]
+            sage: Partition([5,3,1]).remove_horizontal_border_strip(1).list()
+            [[5, 3], [5, 2, 1], [4, 3, 1]]
+            sage: Partition([5,3,1]).remove_horizontal_border_strip(2).list()
+            [[5, 2], [5, 1, 1], [4, 3], [4, 2, 1], [3, 3, 1]]
+            sage: Partition([5,3,1]).remove_horizontal_border_strip(3).list()
+            [[5, 1], [4, 2], [4, 1, 1], [3, 3], [3, 2, 1]]
+            sage: Partition([5,3,1]).remove_horizontal_border_strip(4).list()
+            [[4, 1], [3, 2], [3, 1, 1]]
+            sage: Partition([5,3,1]).remove_horizontal_border_strip(5).list()
+            [[3, 1]]
+            sage: Partition([5,3,1]).remove_horizontal_border_strip(6).list()
+            []
+
+        The result is returned as an instance of
+        :class:`Partitions_with_constraints`::
+
+            sage: Partition([5,3,1]).remove_horizontal_border_strip(5)
+            The subpartitions of [5, 3, 1] obtained by removing an horizontal border strip of length 5
+
+        TESTS::
+
+            sage: Partition([3,2,2]).remove_horizontal_border_strip(2).list()
+            [[3, 2], [2, 2, 1]]
+            sage: Partition([3,2,2]).remove_horizontal_border_strip(2).first().parent()
+            The subpartitions of [3, 2, 2] obtained by removing an horizontal border strip of length 2
+            sage: Partition([]).remove_horizontal_border_strip(0).list()
+            [[]]
+            sage: Partition([]).remove_horizontal_border_strip(6).list()
+            []
+        </opaque><constant name="classmethod.residue">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ``l``-residue of the cell at row ``r`` and column ``c``.
+
+        The `\ell`-residue of a cell is `c - r` modulo `\ell`.
+
+        This does not strictly depend upon the partition, however, this method
+        is included because it is often useful in the context of partitions.
+
+        EXAMPLES::
+
+            sage: Partition([2,1]).residue(1, 0, 3)
+            2
+        </opaque><constant name="classmethod.rim">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the rim of ``self``.
+
+        The rim of a partition `\lambda` is defined as the cells which belong
+        to `\lambda` and which are adjacent to cells not in `\lambda`.
+
+        EXAMPLES:
+
+        The rim of the partition `[5,5,2,1]` consists of the cells marked with
+        ``#`` below::
+
+            ****#
+            *####
+            ##
+            #
+
+            sage: Partition([5,5,2,1]).rim()
+            [(3, 0), (2, 0), (2, 1), (1, 1), (1, 2), (1, 3), (1, 4), (0, 4)]
+
+            sage: Partition([2,2,1]).rim()
+            [(2, 0), (1, 0), (1, 1), (0, 1)]
+            sage: Partition([2,2]).rim()
+            [(1, 0), (1, 1), (0, 1)]
+            sage: Partition([6,3,3,1,1]).rim()
+            [(4, 0), (3, 0), (2, 0), (2, 1), (2, 2), (1, 2), (0, 2), (0, 3), (0, 4), (0, 5)]
+            sage: Partition([]).rim()
+            []
+        </opaque><constant name="classmethod.sign">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the sign of any permutation with cycle type ``self``.
+
+        This function corresponds to a homomorphism from the symmetric
+        group `S_n` into the cyclic group of order 2, whose kernel
+        is exactly the alternating group `A_n`. Partitions of sign
+        `1` are called even partitions while partitions of sign
+        `-1` are called odd.
+
+        EXAMPLES::
+
+            sage: Partition([5,3]).sign()
+            1
+            sage: Partition([5,2]).sign()
+            -1
+
+        Zolotarev's lemma states that the Legendre symbol
+        `\left(\frac{a}{p}\right)` for an integer
+        `a \pmod p` (`p` a prime number), can be computed
+        as sign(p_a), where sign denotes the sign of a permutation and
+        p_a the permutation of the residue classes `\pmod p`
+        induced by modular multiplication by `a`, provided
+        `p` does not divide `a`.
+
+        We verify this in some examples.
+
+        ::
+
+            sage: F = GF(11)
+            sage: a = F.multiplicative_generator();a
+            2
+            sage: plist = [int(a*F(x)) for x in range(1,11)]; plist
+            [2, 4, 6, 8, 10, 1, 3, 5, 7, 9]
+
+        This corresponds to the permutation (1, 2, 4, 8, 5, 10, 9, 7, 3, 6)
+        (acting the set `\{1,2,...,10\}`) and to the partition
+        [10].
+
+        ::
+
+            sage: p = PermutationGroupElement('(1, 2, 4, 8, 5, 10, 9, 7, 3, 6)')
+            sage: p.sign()
+            -1
+            sage: Partition([10]).sign()
+            -1
+            sage: kronecker_symbol(11,2)
+            -1
+
+        Now replace `2` by `3`::
+
+            sage: plist = [int(F(3*x)) for x in range(1,11)]; plist
+            [3, 6, 9, 1, 4, 7, 10, 2, 5, 8]
+            sage: list(range(1, 11))
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            sage: p = PermutationGroupElement('(3,4,8,7,9)')
+            sage: p.sign()
+            1
+            sage: kronecker_symbol(3,11)
+            1
+            sage: Partition([5,1,1,1,1,1]).sign()
+            1
+
+        In both cases, Zolotarev holds.
+
+        REFERENCES:
+
+        :wikipedia:`Zolotarev's_lemma`
+        </opaque><constant name="classmethod.size">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the size of ``self``.
+
+        EXAMPLES::
+
+            sage: Partition([2,2]).size()
+            4
+            sage: Partition([3,2,1]).size()
+            6
+        </opaque><constant name="classmethod.standard_tableaux">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the :class:`standard tableaux&lt;StandardTableaux&gt;` of this shape.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,2,1]).standard_tableaux()
+            Standard tableaux of shape [3, 2, 2, 1]
+        </opaque><constant name="classmethod.suter_diagonal_slide">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the image of ``self`` in `Y_n` under Suter's diagonal slide
+        `\sigma_n`, where the notations used are those defined in [Sut2002]_.
+
+        The set `Y_n` is defined as the set of all partitions
+        `\lambda` such that the hook length of the `(0, 0)`-cell (i.e. the
+        northwestern most cell in English notation) of `\lambda` is less
+        than `n`, including the empty partition.
+
+        The map `\sigma_n` sends a partition (with non-zero entries)
+        `(\lambda_1, \lambda_2, \ldots, \lambda_m) \in Y_n` to the partition
+        `(\lambda_2 + 1, \lambda_3 + 1, \ldots, \lambda_m + 1,
+        \underbrace{1, 1, \ldots, 1}_{n - m - \lambda_1\text{ ones}})`.
+        In other words, it pads the partition with trailing zeroes
+        until it has length `n - \lambda_1`, then removes its first
+        part, and finally adds `1` to each part.
+
+        By Theorem 2.1 of [Sut2002]_, the dihedral group `D_n` with
+        `2n` elements acts on `Y_n` by letting the primitive rotation
+        act as `\sigma_n` and the reflection act as conjugation of
+        partitions (:meth:`conjugate()`). This action is faithful if
+        `n \geq 3`.
+
+        INPUT:
+
+        - ``n`` -- nonnegative integer
+
+        - ``exp`` -- (default: 1) how many times `\sigma_n` should be applied
+
+        OUTPUT:
+
+        The result of applying Suter's diagonal slide `\sigma_n` to
+        ``self``, assuming that ``self`` lies in `Y_n`. If the
+        optional argument ``exp`` is set, then the slide
+        `\sigma_n` is applied not just once, but ``exp`` times
+        (note that ``exp`` is allowed to be negative, since
+        the slide has finite order).
+
+        EXAMPLES::
+
+            sage: Partition([5,4,1]).suter_diagonal_slide(8)
+            [5, 2]
+            sage: Partition([5,4,1]).suter_diagonal_slide(9)
+            [5, 2, 1]
+            sage: Partition([]).suter_diagonal_slide(7)
+            [1, 1, 1, 1, 1, 1]
+            sage: Partition([]).suter_diagonal_slide(1)
+            []
+            sage: Partition([]).suter_diagonal_slide(7, exp=-1)
+            [6]
+            sage: Partition([]).suter_diagonal_slide(1, exp=-1)
+            []
+            sage: P7 = Partitions(7)
+            sage: all( p == p.suter_diagonal_slide(9, exp=-1).suter_diagonal_slide(9)
+            ....:      for p in P7 )
+            True
+            sage: all( p == p.suter_diagonal_slide(9, exp=3)
+            ....:            .suter_diagonal_slide(9, exp=3)
+            ....:            .suter_diagonal_slide(9, exp=3)
+            ....:      for p in P7 )
+            True
+            sage: all( p == p.suter_diagonal_slide(9, exp=6)
+            ....:            .suter_diagonal_slide(9, exp=6)
+            ....:            .suter_diagonal_slide(9, exp=6)
+            ....:      for p in P7 )
+            True
+            sage: all( p == p.suter_diagonal_slide(9, exp=-1)
+            ....:            .suter_diagonal_slide(9, exp=1)
+            ....:      for p in P7 )
+            True
+
+        Check of the assertion in [Sut2002]_ that `\sigma_n\bigl( \sigma_n(
+        \lambda^{\prime})^{\prime} \bigr) = \lambda`::
+
+            sage: all( p.suter_diagonal_slide(8).conjugate()
+            ....:      == p.conjugate().suter_diagonal_slide(8, exp=-1)
+            ....:      for p in P7 )
+            True
+
+        Check of Claim 1 in [Sut2002]_::
+
+            sage: P5 = Partitions(5)
+            sage: all( all( (p.suter_diagonal_slide(6) in q.suter_diagonal_slide(6).down())
+            ....:           or (q.suter_diagonal_slide(6) in p.suter_diagonal_slide(6).down())
+            ....:           for p in q.down() )
+            ....:      for q in P5 )
+            True
+
+        TESTS:
+
+        Check for ``exp = 0``::
+
+            sage: P = Partitions(4)
+            sage: all(p == p.suter_diagonal_slide(7, 0) for p in P)
+            True
+
+        Check for invalid input::
+
+            sage: p = Partition([2,1])
+            sage: p.hook_length(0, 0)
+            3
+            sage: p.suter_diagonal_slide(2)
+            Traceback (most recent call last):
+            ...
+            ValueError: the hook length must be less than n
+
+        REFERENCES:
+
+        .. [Sut2002] Ruedi Suter.
+           *Young's Lattice and Dihedral Symmetries*.
+           Europ. J. Combinatorics (2002) 23, 233--238.
+           http://www.sciencedirect.com/science/article/pii/S0195669801905414
+        </opaque><constant name="classmethod.t_completion">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ``t``-completion of the partition ``self``.
+
+        If `\lambda = (\lambda_1, \lambda_2, \lambda_3, \ldots)` is a
+        partition and `t` is an integer greater or equal to
+        `\left\lvert \lambda \right\rvert + \lambda_1`, then the
+        `t`-*completion of* `\lambda` is defined as the partition
+        `(t - \left\lvert \lambda \right\rvert, \lambda_1, \lambda_2,
+        \lambda_3, \ldots)` of `t`. This partition is denoted by `\lambda[t]`
+        in [BOR09]_, by `\lambda_{[t]}` in [BdVO12]_, and by `\lambda(t)`
+        in [CO10]_.
+
+        REFERENCES:
+
+        .. [BOR09] Emmanuel Briand, Rosa Orellana, Mercedes Rosas.
+           *The stability of the Kronecker products of Schur
+           functions*.
+           :arxiv:`0907.4652v2`.
+
+        .. [CO10] Jonathan Comes, Viktor Ostrik.
+           *On blocks of Deligne's category*
+           `\underline{\mathrm{Rep}}(S_t)`.
+           :arxiv:`0910.5695v2`,
+           http://pages.uoregon.edu/jcomes/blocks.pdf
+
+        .. [BdVO12] Christopher Bowman, Maud De Visscher, Rosa Orellana.
+           *The partition algebra and the Kronecker coefficients*.
+           :arXiv:`1210.5579v6`.
+
+        EXAMPLES::
+
+            sage: Partition([]).t_completion(0)
+            []
+            sage: Partition([]).t_completion(1)
+            [1]
+            sage: Partition([]).t_completion(2)
+            [2]
+            sage: Partition([]).t_completion(3)
+            [3]
+            sage: Partition([2, 1]).t_completion(5)
+            [2, 2, 1]
+            sage: Partition([2, 1]).t_completion(6)
+            [3, 2, 1]
+            sage: Partition([4, 2, 2, 1]).t_completion(13)
+            [4, 4, 2, 2, 1]
+            sage: Partition([4, 2, 2, 1]).t_completion(19)
+            [10, 4, 2, 2, 1]
+            sage: Partition([4, 2, 2, 1]).t_completion(10)
+            Traceback (most recent call last):
+            ...
+            ValueError: 10-completion is not defined
+            sage: Partition([4, 2, 2, 1]).t_completion(5)
+            Traceback (most recent call last):
+            ...
+            ValueError: 5-completion is not defined
+        </opaque><constant name="classmethod.to_core">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Maps the `k`-bounded partition ``self`` to its corresponding `k+1`-core.
+
+        See also :meth:`k_skew`.
+
+        EXAMPLES::
+
+            sage: p = Partition([4,3,2,2,1,1])
+            sage: c = p.to_core(4); c
+            [9, 5, 3, 2, 1, 1]
+            sage: type(c)
+            &lt;class 'sage.combinat.core.Cores_length_with_category.element_class'&gt;
+            sage: c.to_bounded_partition() == p
+            True
+        </opaque><constant name="classmethod.to_dyck_word">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the ``n``-Dyck word whose corresponding partition is
+        ``self`` (or, if ``n`` is not specified, the `n`-Dyck word with
+        smallest `n` to satisfy this property).
+
+        If `w` is an `n`-Dyck word (that is, a Dyck word with `n` open
+        symbols and `n` close symbols), then the Dyck path corresponding
+        to `w` can be regarded as a lattice path in the northeastern
+        half of an `n \times n`-square. The region to the northeast of
+        this Dyck path can be regarded as a partition. It is called the
+        partition corresponding to the Dyck word `w`. (See
+        :meth:`~sage.combinat.dyck_word.DyckWord.to_partition`.)
+
+        For every partition `\lambda` and every nonnegative integer `n`,
+        there exists at most one `n`-Dyck word `w` such that the
+        partition corresponding to `w` is `\lambda` (in fact, such `w`
+        exists if and only if `\lambda_i + i \leq n` for every `i`,
+        where `\lambda` is written in the form
+        `(\lambda_1, \lambda_2, \ldots, \lambda_k)` with `\lambda_k &gt; 0`).
+        This method computes this `w` for a given `\lambda` and `n`.
+        If `n` is not specified, this method computes the `w` for the
+        smallest possible `n` for which such an `w` exists.
+        (The minimality of `n` means that the partition demarcated by the
+        Dyck path touches the diagonal.)
+
+        EXAMPLES::
+
+            sage: Partition([2,2]).to_dyck_word()
+            [1, 1, 0, 0, 1, 1, 0, 0]
+            sage: Partition([2,2]).to_dyck_word(4)
+            [1, 1, 0, 0, 1, 1, 0, 0]
+            sage: Partition([2,2]).to_dyck_word(5)
+            [1, 1, 1, 0, 0, 1, 1, 0, 0, 0]
+            sage: Partition([6,3,1]).to_dyck_word()
+            [1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0]
+            sage: Partition([]).to_dyck_word()
+            []
+            sage: Partition([]).to_dyck_word(3)
+            [1, 1, 1, 0, 0, 0]
+
+        The partition corresponding to ``self.dyck_word()`` is ``self``
+        indeed::
+
+            sage: all( p.to_dyck_word().to_partition() == p
+            ....:      for p in Partitions(5) )
+            True
+        </opaque><constant name="classmethod.to_exp">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the multiplicities of the parts of a partition.
+        Use the optional parameter ``k`` to get a return list of length at
+        least ``k``.
+
+        EXAMPLES::
+
+            sage: Partition([3,2,2,1]).to_exp()
+            [1, 2, 1]
+            sage: Partition([3,2,2,1]).to_exp(5)
+            [1, 2, 1, 0, 0]
+
+        TESTS::
+
+            sage: [parent(x) for x in Partition([3,2,2,1]).to_exp(5)]
+            [Integer Ring, Integer Ring, Integer Ring, Integer Ring, Integer Ring]
+        </opaque><constant name="classmethod.to_exp_dict">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a dictionary containing the multiplicities of the parts of
+        ``self``.
+
+        EXAMPLES::
+
+            sage: p = Partition([4,2,2,1])
+            sage: d = p.to_exp_dict()
+            sage: d[4]
+            1
+            sage: d[2]
+            2
+            sage: d[1]
+            1
+            sage: 5 in d
+            False
+        </opaque><constant name="classmethod.to_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return ``self`` as a list.
+
+        EXAMPLES::
+
+            sage: p = Partition([2,1]).to_list(); p
+            [2, 1]
+            sage: type(p)
+            &lt;... 'list'&gt;
+
+        TESTS::
+
+            sage: p = Partition([2,1])
+            sage: pl = p.to_list()
+            sage: pl[0] = 0; p
+            [2, 1]
+        </opaque><constant name="classmethod.top_garnir_tableau">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the most dominant *standard* tableau which dominates the
+        corresponding Garnir tableau and has the same ``e``-residue.
+
+        The Garnir tableau play an important role in integral and non-semisimple
+        representation theory because they determine the &quot;straightening&quot; rules
+        for the Specht modules. The *top Garnir tableaux* arise in the graded
+        representation theory of the symmetric groups and higher level Hecke
+        algebras. They were introduced in [KMR]_.
+
+        If the Garnir node is ``cell=(r,c)`` and `m` and `M` are the entries
+        in the cells ``(r,c)`` and ``(r+1,c)``, respectively, in the initial
+        tableau then the top ``e``-Garnir tableau is obtained by inserting the
+        numbers `m, m+1, \ldots, M` in order from left to right first in the
+        cells in row ``r+1`` which are not in the ``e``-Garnir belt, then in
+        the cell in rows ``r`` and ``r+1`` which are in the Garnir belt and
+        then, finally, in the remaining cells in row ``r`` which are not in
+        the Garnir belt. All other entries in the tableau remain unchanged.
+
+        If ``e = 0``, or if there are no ``e``-bricks in either row ``r``
+        or ``r+1``, then the top Garnir tableau is the corresponding Garnir
+        tableau.
+
+        EXAMPLES::
+
+            sage: Partition([5,4,3,2]).top_garnir_tableau(2,(0,2)).pp()
+               1  2  4  5  8
+               3  6  7  9
+              10 11 12
+              13 14
+            sage: Partition([5,4,3,2]).top_garnir_tableau(3,(0,2)).pp()
+               1  2  3  4  5
+               6  7  8  9
+              10 11 12
+              13 14
+            sage: Partition([5,4,3,2]).top_garnir_tableau(4,(0,2)).pp()
+               1  2  6  7  8
+               3  4  5  9
+              10 11 12
+              13 14
+            sage: Partition([5,4,3,2]).top_garnir_tableau(0,(0,2)).pp()
+               1  2  6  7  8
+               3  4  5  9
+              10 11 12
+              13 14
+
+        TESTS::
+
+            sage: Partition([5,4,3,2]).top_garnir_tableau(0,(3,2)).pp()
+            Traceback (most recent call last):
+            ...
+            ValueError: (4,2)=(row+1,col) must be inside the diagram
+
+        REFERENCE:
+
+        - [KMR]_
+        </opaque><constant name="classmethod.up">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns a generator for partitions that can be obtained from ``self``
+        by adding a cell.
+
+        EXAMPLES::
+
+            sage: [p for p in Partition([2,1,1]).up()]
+            [[3, 1, 1], [2, 2, 1], [2, 1, 1, 1]]
+            sage: [p for p in Partition([3,2]).up()]
+            [[4, 2], [3, 3], [3, 2, 1]]
+            sage: [p for p in Partition([]).up()]
+            [[1]]
+        </opaque><constant name="classmethod.up_list">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a list of the partitions that can be formed from ``self`` by
+        adding a cell.
+
+        EXAMPLES::
+
+            sage: Partition([2,1,1]).up_list()
+            [[3, 1, 1], [2, 2, 1], [2, 1, 1, 1]]
+            sage: Partition([3,2]).up_list()
+            [[4, 2], [3, 3], [3, 2, 1]]
+            sage: Partition([]).up_list()
+            [[1]]
+        </opaque><constant name="classmethod.upper_hook">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the upper hook length of the cell `(i,j)` in ``self``.
+        When ``alpha = 1``, this is just the normal hook length.
+
+        The upper hook length of a cell `(i,j)` in a partition
+        `\kappa` is defined by
+
+        .. MATH::
+
+            h^*_\kappa(i,j) = \kappa^\prime_j - i + \alpha(\kappa_i - j + 1).
+
+        EXAMPLES::
+
+            sage: p = Partition([2,1])
+            sage: p.upper_hook(0,0,1)
+            3
+            sage: p.hook_length(0,0)
+            3
+            sage: [ p.upper_hook(i,j,x) for i,j in p.cells() ]
+            [2*x + 1, x, x]
+        </opaque><constant name="classmethod.upper_hook_lengths">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a tableau of shape ``self`` with the cells filled in with the
+        upper hook lengths. When ``alpha = 1``, these are just the normal hook
+        lengths.
+
+        The upper hook length of a cell `(i,j)` in a partition
+        `\kappa` is defined by
+
+        .. MATH::
+
+            h^*_\kappa(i,j) = \kappa^\prime_j - i + \alpha(\kappa_i - j + 1).
+
+        EXAMPLES::
+
+            sage: Partition([3,2,1]).upper_hook_lengths(x)
+            [[3*x + 2, 2*x + 1, x], [2*x + 1, x], [x]]
+            sage: Partition([3,2,1]).upper_hook_lengths(1)
+            [[5, 3, 1], [3, 1], [1]]
+            sage: Partition([3,2,1]).hook_lengths()
+            [[5, 3, 1], [3, 1], [1]]
+        </opaque><constant name="classmethod.weighted_size">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the weighted size of ``self``.
+
+        The weighted size of a partition `\lambda` is
+
+        .. MATH::
+
+            \sum_i i \cdot \lambda_i,
+
+        where `\lambda = (\lambda_0, \lambda_1, \lambda_2, \cdots )`.
+
+        This also the sum of the leg length of every cell in `\lambda`, or
+
+        .. MATH::
+
+            \sum_i \binom{\lambda^{\prime}_i}{2}
+
+        where `\lambda^{\prime}` is the conjugate partition of `\lambda`.
+
+        EXAMPLES::
+
+            sage: Partition([2,2]).weighted_size()
+            2
+            sage: Partition([3,3,3]).weighted_size()
+            9
+            sage: Partition([5,2]).weighted_size()
+            2
+            sage: Partition([]).weighted_size()
+            0
+        </opaque><constant name="classmethod.young_subgroup">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><constant name="classmethod.young_subgroup_generators">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return an indexing set for the generators of the corresponding Young
+        subgroup. Here the generators correspond to the simple adjacent
+        transpositions `s_i = (i \; i+1)`.
+
+        EXAMPLES::
+
+            sage: Partition([4,2]).young_subgroup_generators()
+            [1, 2, 3, 5]
+            sage: Partition([1,1,1]).young_subgroup_generators()
+            []
+            sage: Partition([2,2]).young_subgroup_generators()
+            [1, 3]
+
+        .. SEEALSO::
+
+            :meth:`young_subgroup`
+        </opaque><constant name="classmethod.zero_one_sequence">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Compute the finite `0-1` sequence of the partition.
+
+        The full `0-1` sequence is the sequence (infinite in both
+        directions) indicating the steps taken when following the
+        outer rim of the diagram of the partition. We use the convention
+        that in English convention, a 1 corresponds to an East step, and
+        a 0 corresponds to a North step.
+
+        Note that every full `0-1` sequence starts with infinitely many 0's and
+        ends with infinitely many 1's.
+
+        One place where these arise is in the affine symmetric group where
+        one takes an affine permutation `w` and every `i` such that
+        `w(i) \leq 0` corresponds to a 1 and `w(i) &gt; 0` corresponds to a 0.
+        See pages 24-25 of [LLMMSZ13]_ for connections to affine Grassmannian
+        elements (note there they use the French convention for their
+        partitions).
+
+        These are also known as **path sequences**, **Maya diagrams**,
+        **plus-minus diagrams**, **Comet code** [Sta-EC2]_, among others.
+
+        OUTPUT:
+
+        The finite `0-1` sequence is obtained from the full `0-1`
+        sequence by omitting all heading 0's and trailing 1's. The
+        output sequence is finite, starts with a 1 and ends with a
+        0 (unless it is empty, for the empty partition). Its length
+        is the sum of the first part of the partition with the
+        length of the partition.
+
+        REFERENCES:
+
+        .. [LLMMSZ13] Thomas Lam, Luc Laponte, Jennifer Morse, Anne Schilling,
+           Mark Shimozono, and Mike Zabrocki. `k`-Schur Functions and Affine
+           Schubert Calculus. 2013. :arxiv:`1301.3569`.
+
+        EXAMPLES::
+
+            sage: Partition([5,4]).zero_one_sequence()
+            [1, 1, 1, 1, 0, 1, 0]
+            sage: Partition([]).zero_one_sequence()
+            []
+            sage: Partition([2]).zero_one_sequence()
+            [1, 1, 0]
+
+        TESTS::
+
+            sage: all(Partitions().from_zero_one(mu.zero_one_sequence()) == mu for n in range(10) for mu in Partitions(n))
+            True
+        </opaque></omdoc></theory></omdoc>

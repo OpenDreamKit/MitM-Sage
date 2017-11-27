@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Finite
+HasMeta http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Finite http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Finite http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Finite http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Finite http://www.sagemath.org/content/categories/additive_groups?AdditiveGroups
+Includes http://www.sagemath.org/content/categories/additive_groups/AdditiveGroups?Finite http://www.sagemath.org/content/categories/finite_sets?FiniteSets

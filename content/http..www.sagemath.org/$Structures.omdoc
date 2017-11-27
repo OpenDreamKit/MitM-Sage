@@ -1,269 +1,4 @@
-<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Structures" base="http://www.sagemath.org/" meta="http://www.sagemath.org/?Types"><constant name="sage.categories.magmas.Magmas">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.complete_discrete_valuation.CompleteDiscreteValuationRings">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.graded_modules.GradedModules">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.simplicial_complexes.SimplicialComplexes">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.additive_magmas.AdditiveMagmas">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.permutation_groups.PermutationGroups">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.ring_ideals.RingIdeals">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.schemes.Schemes">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.algebra_ideals.AlgebraIdeals">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.euclidean_domains.EuclideanDomains">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.g_sets.GSets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.algebra_modules.AlgebraModules">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.discrete_valuation.DiscreteValuationFields">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.hecke_modules.HeckeModules">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.left_modules.LeftModules">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.commutative_ring_ideals.CommutativeRingIdeals">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_with_partial_maps.SetsWithPartialMaps">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.modular_abelian_varieties.ModularAbelianVarieties">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.number_fields.NumberFields">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.matrix_algebras.MatrixAlgebras">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.posets.Posets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.groupoid.Groupoid">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.category_types.Elements">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.crystals.Crystals">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.pointed_sets.PointedSets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.hopf_algebras.HopfAlgebras">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.quotient_fields.QuotientFields">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.lattice_posets.LatticePosets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.category_types.ChainComplexes">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_with_grading.SetsWithGrading">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.function_fields.FunctionFields">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_cat.Sets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.right_modules.RightModules">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.discrete_valuation.DiscreteValuationRings">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.coalgebras.Coalgebras">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.additive_magmas.AdditiveMagmas.Homsets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_cat.Sets.Algebras">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.modules_with_basis.ModulesWithBasis.Homsets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.magmas.Magmas.Unital">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_cat.Sets.Subobjects">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.hecke_modules.HeckeModules.Homsets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.filtered_modules.FilteredModules">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.metric_spaces.MetricSpaces">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_cat.Sets.IsomorphicObjects">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_cat.Sets.Quotients">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.crystals.Crystals.TensorProducts">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.modules.Modules.Homsets">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_cat.Sets.Subquotients">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.sets_cat.Sets.CartesianProducts">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.topological_spaces.TopologicalSpaces">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.modules.Modules.TensorProducts">
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Structures" base="http://www.sagemath.org/" meta="http://www.sagemath.org/?Types"><constant name="sage.categories.additive_magmas.AdditiveMagmas">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
        
@@ -273,27 +8,12 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets">
+     </constant><constant name="sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital.Homsets">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="sage.categories.complex_reflection_or_generalized_coxeter_groups.ComplexReflectionOrGeneralizedCoxeterGroups">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.super_modules.SuperModules">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.homsets.HomsetsOf">
-       
-       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
-       
-       
-     </constant><constant name="sage.categories.homsets.Homsets">
+     </constant><constant name="sage.categories.additive_magmas.AdditiveMagmas.Homsets">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
        
@@ -308,7 +28,292 @@
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
        
        
-     </constant><constant name="sage.categories.additive_magmas.AdditiveMagmas.AdditiveUnital.Homsets">
+     </constant><constant name="sage.categories.algebra_ideals.AlgebraIdeals">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.algebra_modules.AlgebraModules">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.category_types.ChainComplexes">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.category_types.Elements">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.coalgebras.Coalgebras">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.commutative_algebra_ideals.CommutativeAlgebraIdeals">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.commutative_ring_ideals.CommutativeRingIdeals">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.complete_discrete_valuation.CompleteDiscreteValuationFields">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.complete_discrete_valuation.CompleteDiscreteValuationRings">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.complex_reflection_or_generalized_coxeter_groups.ComplexReflectionOrGeneralizedCoxeterGroups">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.crystals.Crystals">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.crystals.Crystals.TensorProducts">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.discrete_valuation.DiscreteValuationFields">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.discrete_valuation.DiscreteValuationRings">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.euclidean_domains.EuclideanDomains">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.filtered_modules.FilteredModules">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.function_fields.FunctionFields">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.g_sets.GSets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.graded_modules.GradedModules">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.groupoid.Groupoid">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.hecke_modules.HeckeModules">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.hecke_modules.HeckeModules.Homsets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.homsets.Homsets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.homsets.HomsetsOf">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.hopf_algebras.HopfAlgebras">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.lattice_posets.LatticePosets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.left_modules.LeftModules">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.magmas.Magmas">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.magmas.Magmas.Unital">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.matrix_algebras.MatrixAlgebras">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.metric_spaces.MetricSpaces">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.modular_abelian_varieties.ModularAbelianVarieties">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.modular_abelian_varieties.ModularAbelianVarieties.Homsets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.modules.Modules.Homsets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.modules.Modules.TensorProducts">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.modules_with_basis.ModulesWithBasis.Homsets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.number_fields.NumberFields">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.partially_ordered_monoids.PartiallyOrderedMonoids">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.permutation_groups.PermutationGroups">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.pointed_sets.PointedSets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.posets.Posets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.quotient_fields.QuotientFields">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.right_modules.RightModules">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.ring_ideals.RingIdeals">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.schemes.Schemes">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_cat.Sets">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_cat.Sets.Algebras">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_cat.Sets.CartesianProducts">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_cat.Sets.IsomorphicObjects">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_cat.Sets.Quotients">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_cat.Sets.Subobjects">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_cat.Sets.Subquotients">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_with_grading.SetsWithGrading">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.sets_with_partial_maps.SetsWithPartialMaps">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.simplicial_complexes.SimplicialComplexes">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.super_modules.SuperModules">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.topological_spaces.TopologicalSpaces">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
+       
+       
+     </constant><constant name="sage.categories.lie_algebras.LieAlgebras">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMS base="http://www.sagemath.org/" module="Types" name="structural"></om:OMS></om:OMOBJ></type>
        

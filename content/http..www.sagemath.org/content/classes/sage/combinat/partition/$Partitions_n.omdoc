@@ -1,0 +1,298 @@
+<omdoc xmlns="http://omdoc.org/ns" xmlns:om="http://www.openmath.org/OpenMath"><theory name="Partitions_n" base="http://www.sagemath.org/content/classes/sage/combinat/partition" meta="http://www.sagemath.org/?Types"><import from="http://www.sagemath.org/?Axioms"></import><import from="http://www.sagemath.org/?Structures"></import><import from="http://www.sagemath.org/content/classes/sage/combinat/partition?Partitions"></import><omdoc name="Methods"><constant name="classmethod.__iter__">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        An iterator for the partitions of `n`.
+
+        EXAMPLES::
+
+            sage: [x for x in Partitions(4)]
+            [[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
+        </opaque><constant name="classmethod._repr_">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a string representation of ``self``.
+
+        TESTS::
+
+            sage: Partitions(5) # indirect doctest
+            Partitions of the integer 5
+        </opaque><constant name="classmethod.cardinality">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the number of partitions of the specified size.
+
+        INPUT:
+
+        - ``algorithm``  - (default: ``'flint'``)
+
+          - ``'flint'`` -- use FLINT (currently the fastest)
+          - ``'bober'`` -- Use Jonathan Bober's implementation (*very* fast)
+          - ``'gap'`` -- use GAP (VERY *slow*)
+          - ``'pari'`` -- use PARI. Speed seems the same as GAP until
+            `n` is in the thousands, in which case PARI is faster.
+
+        It is possible to associate with every partition of the integer `n` a
+        conjugacy class of permutations in the symmetric group on `n` points
+        and vice versa. Therefore the number of partitions `p_n` is the number
+        of conjugacy classes of the symmetric group on `n` points.
+
+        EXAMPLES::
+
+            sage: v = Partitions(5).list(); v
+            [[5], [4, 1], [3, 2], [3, 1, 1], [2, 2, 1], [2, 1, 1, 1], [1, 1, 1, 1, 1]]
+            sage: len(v)
+            7
+            sage: Partitions(5).cardinality(algorithm='gap')
+            7
+            sage: Partitions(5).cardinality(algorithm='pari')
+            7
+            sage: Partitions(5).cardinality(algorithm='bober')
+            7
+            sage: number_of_partitions(5, algorithm='flint')
+            7
+
+        The input must be a nonnegative integer or a ``ValueError`` is raised.
+
+        ::
+
+            sage: Partitions(10).cardinality()
+            42
+            sage: Partitions(3).cardinality()
+            3
+            sage: Partitions(10).cardinality()
+            42
+            sage: Partitions(3).cardinality(algorithm='pari')
+            3
+            sage: Partitions(10).cardinality(algorithm='pari')
+            42
+            sage: Partitions(40).cardinality()
+            37338
+            sage: Partitions(100).cardinality()
+            190569292
+
+        A generating function for `p_n` is given by the reciprocal of
+        Euler's function:
+
+        .. MATH::
+
+           \sum_{n=0}^{\infty} p_n x^n = \prod_{k=1}^{\infty} \frac{1}{1-x^k}.
+
+        We use Sage to verify that the first several coefficients do
+        indeed agree::
+
+            sage: q = PowerSeriesRing(QQ, 'q', default_prec=9).gen()
+            sage: prod([(1-q^k)^(-1) for k in range(1,9)])  ## partial product of
+            1 + q + 2*q^2 + 3*q^3 + 5*q^4 + 7*q^5 + 11*q^6 + 15*q^7 + 22*q^8 + O(q^9)
+            sage: [Partitions(k).cardinality() for k in range(2,10)]
+            [2, 3, 5, 7, 11, 15, 22, 30]
+
+        Another consistency test for ``n`` up to 500::
+
+            sage: len([n for n in [1..500] if Partitions(n).cardinality() != Partitions(n).cardinality(algorithm='pari')])
+            0
+
+        REFERENCES:
+
+        - :wikipedia:`Partition\_(number\_theory)`
+        </opaque><constant name="classmethod.first">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Returns the lexicographically first partition of a positive integer
+        `n`. This is the partition ``[n]``.
+
+        EXAMPLES::
+
+            sage: Partitions(4).first()
+            [4]
+        </opaque><constant name="classmethod.last">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the lexicographically last partition of the positive
+        integer `n`. This is the all-ones partition.
+
+        EXAMPLES::
+
+            sage: Partitions(4).last()
+            [1, 1, 1, 1]
+        </opaque><constant name="classmethod.next">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return the lexicographically next partition after the partition ``p``.
+
+        EXAMPLES::
+
+            sage: Partitions(4).next([4])
+            [3, 1]
+            sage: Partitions(4).next([1,1,1,1]) is None
+            True
+        </opaque><constant name="classmethod.random_element">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a random partitions of `n` for the specified measure.
+
+        INPUT:
+
+        - ``measure`` -- ``'uniform'`` or ``'Plancherel'``
+          (default: ``'uniform'``)
+
+        .. SEEALSO::
+
+            - :meth:`random_element_uniform`
+            - :meth:`random_element_plancherel`
+
+        EXAMPLES::
+
+            sage: Partitions(5).random_element() # random
+            [2, 1, 1, 1]
+            sage: Partitions(5).random_element(measure='Plancherel') # random
+            [2, 1, 1, 1]
+        </opaque><constant name="classmethod.random_element_plancherel">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a random partition of `n` (for the Plancherel measure).
+
+        This probability distribution comes from the uniform distribution
+        on permutations via the Robinson-Schensted correspondence.
+
+        See :wikipedia:`Plancherel\_measure`
+        and :meth:`Partition.plancherel_measure`.
+
+        EXAMPLES::
+
+            sage: Partitions(5).random_element_plancherel()   # random
+            [2, 1, 1, 1]
+            sage: Partitions(20).random_element_plancherel()  # random
+            [9, 3, 3, 2, 2, 1]
+
+        TESTS::
+
+            sage: all(Part.random_element_plancherel() in Part
+            ....:     for Part in map(Partitions, range(10)))
+            True
+
+        Check that :trac:`18752` is fixed::
+
+            sage: P = Partitions(5)
+            sage: la = P.random_element_plancherel()
+            sage: la.parent() is P
+            True
+
+        ALGORITHM:
+
+        - insert by Robinson-Schensted a uniform random permutations of n and
+          returns the shape of the resulting tableau. The complexity is
+          `O(n\ln(n))` which is likely optimal. However, the implementation
+          could be optimized.
+
+        AUTHOR:
+
+        - Florent Hivert (2009-11-23)
+        </opaque><constant name="classmethod.random_element_uniform">
+       
+       <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
+              <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
+              <om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS><om:OMS base="http://www.sagemath.org/" module="Types" name="object"></om:OMS>
+      </om:OMA></om:OMOBJ></type>
+       
+       
+     </constant><opaque format="text">
+        Return a random partition of `n` with uniform probability.
+
+        EXAMPLES::
+
+            sage: Partitions(5).random_element_uniform()  # random
+            [2, 1, 1, 1]
+            sage: Partitions(20).random_element_uniform() # random
+            [9, 3, 3, 2, 2, 1]
+
+        TESTS::
+
+            sage: all(Part.random_element_uniform() in Part
+            ....:     for Part in map(Partitions, range(10)))
+            True
+
+        Check that :trac:`18752` is fixed::
+
+            sage: P = Partitions(5)
+            sage: la = P.random_element_uniform()
+            sage: la.parent() is P
+            True
+
+        ALGORITHM:
+
+         - It is a python Implementation of RANDPAR, see [nw]_.  The
+           complexity is unknown, there may be better algorithms.
+
+           .. TODO::
+
+               Check in Knuth AOCP4.
+
+         - There is also certainly a lot of room for optimizations, see
+           comments in the code.
+
+        REFERENCES:
+
+        .. [nw] Nijenhuis, Wilf, Combinatorial Algorithms, Academic Press
+           (1978).
+
+        AUTHOR:
+
+        - Florent Hivert (2009-11-23)
+        </opaque></omdoc></theory></omdoc>

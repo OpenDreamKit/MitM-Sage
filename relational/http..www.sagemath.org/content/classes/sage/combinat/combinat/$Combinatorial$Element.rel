@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialElement
+HasMeta http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialElement http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialElement http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialElement http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialElement http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialObject
+Includes http://www.sagemath.org/content/classes/sage/combinat/combinat?CombinatorialElement http://www.sagemath.org/content/classes/sage/structure/element?Element

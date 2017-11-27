@@ -43,27 +43,4 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Return ``self`` to the `n^{th}` power.
-
-            INPUT:
-
-            - ``n`` -- a positive integer
-
-            EXAMPLES::
-
-                sage: S = Semigroups().example(&quot;leftzero&quot;)
-                sage: x = S(&quot;x&quot;)
-                sage: x^1, x^2, x^3, x^4, x^5
-                ('x', 'x', 'x', 'x', 'x')
-                sage: x^0
-                Traceback (most recent call last):
-                ...
-                AssertionError
-
-            TESTS::
-
-                sage: x._pow_(17)
-                'x'
-
-            </opaque></omdoc></theory></omdoc>
+     </constant></omdoc></theory></omdoc>

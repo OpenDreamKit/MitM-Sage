@@ -485,25 +485,7 @@
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Return the direct sum of ``self`` with ``X``.
-
-            EXAMPLES::
-
-                sage: B = crystals.Tableaux(['A',2], shape=[2,1])
-                sage: C = crystals.Letters(['A',2])
-                sage: B.direct_sum(C)
-                Direct sum of the crystals Family
-                (The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
-                 The crystal of letters for type ['A', 2])
-
-            As a shorthand, we can use ``+``::
-
-                sage: B + C
-                Direct sum of the crystals Family
-                (The crystal of tableaux of type ['A', 2] and shape(s) [[2, 1]],
-                 The crystal of letters for type ['A', 2])
-            </opaque><constant name="classmethod.dot_tex">
+     </constant><constant name="classmethod.dot_tex">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>
@@ -665,23 +647,7 @@ File: sage/misc/cachefunc.pyx (starting at line 2607)
       </om:OMA></om:OMOBJ></type>
        
        
-     </constant><opaque format="text">
-            Returns the crystal graph as a latex string. This can be exported
-            to a file with self.latex_file('filename').
-
-            EXAMPLES::
-
-                sage: T = crystals.Tableaux(['A',2],shape=[1])
-                sage: T._latex_()  # optional - dot2tex graphviz
-                '...tikzpicture...'
-                sage: view(T) # optional - dot2tex graphviz, not tested (opens external window)
-
-            One can for example also color the edges using the following options::
-
-                sage: T = crystals.Tableaux(['A',2],shape=[1])
-                sage: T._latex_(color_by_label = {0:&quot;black&quot;, 1:&quot;red&quot;, 2:&quot;blue&quot;})   #optional - dot2tex graphviz
-                '...tikzpicture...'
-            </opaque><constant name="classmethod.latex_file">
+     </constant><constant name="classmethod.latex_file">
        
        <type><om:OMOBJ xmlns:om="http://www.openmath.org/OpenMath"><om:OMA>
               <om:OMS base="http://cds.omdoc.org/urtheories" module="LambdaPi" name="arrow"></om:OMS>

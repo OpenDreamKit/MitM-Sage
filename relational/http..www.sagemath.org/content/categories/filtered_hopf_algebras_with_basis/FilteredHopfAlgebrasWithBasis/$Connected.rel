@@ -1,0 +1,6 @@
+theory http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?Connected
+HasMeta http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?Connected http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?Connected http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?Connected http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?Connected http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis?FilteredHopfAlgebrasWithBasis
+Includes http://www.sagemath.org/content/categories/filtered_hopf_algebras_with_basis/FilteredHopfAlgebrasWithBasis?Connected http://www.sagemath.org/content/categories/filtered_modules/FilteredModules?Connected

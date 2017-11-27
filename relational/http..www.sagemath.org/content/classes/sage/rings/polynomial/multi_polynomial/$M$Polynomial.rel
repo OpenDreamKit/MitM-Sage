@@ -1,0 +1,91 @@
+theory http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial
+HasMeta http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/?Types
+Includes http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/?Axioms
+Includes http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/?Structures
+Includes http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/structure/element?CommutativeRingElement
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.__float__
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.__float__
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.__int__
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.__int__
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.__iter__
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.__iter__
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.__long__
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.__long__
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._complex_double_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._complex_double_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._complex_mpfr_field_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._complex_mpfr_field_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._fast_callable_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._fast_callable_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._fast_float_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._fast_float_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._integer_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._integer_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._libgap_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._libgap_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._mod_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._mod_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._mpfr_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._mpfr_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._mpoly_dict_recursive
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._mpoly_dict_recursive
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._norm_over_nonprime_finite_field
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._norm_over_nonprime_finite_field
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._polynomial_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._polynomial_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._rational_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._rational_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._real_double_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._real_double_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._symbolic_
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod._symbolic_
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.args
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.args
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.change_ring
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.change_ring
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.coefficients
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.coefficients
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.content
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.content
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.denominator
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.denominator
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.derivative
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.derivative
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.gcd
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.gcd
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.gradient
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.gradient
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.homogenize
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.homogenize
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.is_generator
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.is_generator
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.is_homogeneous
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.is_homogeneous
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.is_unit
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.is_unit
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.jacobian_ideal
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.jacobian_ideal
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.lift
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.lift
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.macaulay_resultant
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.macaulay_resultant
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.map_coefficients
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.map_coefficients
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.newton_polytope
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.newton_polytope
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.nth_root
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.nth_root
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.numerator
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.numerator
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.polynomial
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.polynomial
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.reduced_form
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.reduced_form
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.specialization
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.specialization
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.sylvester_matrix
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.sylvester_matrix
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.truncate
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.truncate
+Declares http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.weighted_degree
+constant http://www.sagemath.org/content/classes/sage/rings/polynomial/multi_polynomial?MPolynomial?classmethod.weighted_degree
