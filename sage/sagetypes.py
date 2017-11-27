@@ -5,9 +5,11 @@ EXAMPLES::
 
     sage: from sagetypes import Exporter
     sage: e = Exporter()
+    sage: e.harvest_categories()
     sage: e.harvest_sage_object(TransitiveGroups())
-    sage: e.harvest_sage_object(TransitiveGroup(4,1))
-    sage: e.harvest_sage_object(TransitiveGroup(4,1).an_element())
+    sage: for P in [ TransitiveGroup(4,1), Partitions(100), QQ['x,y'] ]:
+    ....:     e.harvest_sage_object(P)
+    ....:     e.harvest_sage_object(P.an_element())
     sage: e.save('transitive_groups.json')
 
 ..  TODO::
