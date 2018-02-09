@@ -109,6 +109,70 @@ openmath.convert.register_to_python('python',
                                     apply_global_python_function
                                     )
 
+
+
+def OMList(l):
+    """
+    Convert a list of OM objects into an OM object
+
+    EXAMPLES::
+
+        sage: OMList([om.OMInteger(2), om.OMInteger(2)])
+        OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None), arguments=[OMInteger(integer=2, id=None), OMInteger(integer=2, id=None)], id=None, cdbase=None)
+    """
+    return om.OMApplication(elem=om.OMSymbol(name='list', cd='list1', id=None, cdbase=None),
+                            arguments=l, id=None, cdbase=None)
+
+def OMTuple(l):
+    """
+    Convert a list of OM objects into an OM object
+
+    EXAMPLES::
+
+       sage: o = OMTuple([om.OMInteger(2), om.OMInteger(3)]); o
+       OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
+                     arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                                              arguments=[OMString(string=u'__builtin__.tuple', id=None)],
+                                              id=None, cdbase=None),
+                                OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
+                                              arguments=[OMInteger(integer=2, id=None), OMInteger(integer=3, id=None)],
+                                              id=None, cdbase=None)], id=None, cdbase=None)
+       sage: openmath.convert.to_python(o)
+       (2, 3)
+    """
+    return om.OMApplication(elem=om.OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
+                            arguments=[om.OMApplication(elem=om.OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                                                        arguments=[om.OMString(string=u'__builtin__.tuple', id=None)],
+                                                       id=None, cdbase=None),
+                                       OMList(l)
+                                      ],
+                            id=None, cdbase=None)
+
+def OMDict(d):
+    """
+    Convert a list of OM objects into an OM object
+
+    EXAMPLES::
+
+       sage: o = OMTuple([om.OMInteger(2), om.OMInteger(3)]); o
+       OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
+                     arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                                              arguments=[OMString(string=u'__builtin__.tuple', id=None)],
+                                              id=None, cdbase=None),
+                                OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
+                                              arguments=[OMInteger(integer=2, id=None), OMInteger(integer=3, id=None)],
+                                              id=None, cdbase=None)], id=None, cdbase=None)
+       sage: openmath.convert.to_python(o)
+       (2, 3)
+    """
+    return om.OMApplication(elem=om.OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
+                            arguments=[om.OMApplication(elem=om.OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                                                        arguments=[om.OMString(string=u'__builtin__.dict', id=None)],
+                                                       id=None, cdbase=None),
+                                       OMList(d.items())
+                                      ],
+                            id=None, cdbase=None)
+
 def OMtest_pickling(l):
     o = OMloads(dumps(l))
     l2 = openmath.convert.to_python(o)
@@ -123,22 +187,24 @@ class OMUnpickler(Unpickler):
     This can be seen as a lazy unpickler that produces an OpenMath
     object as intermediate step.
 
+    EXAMPLES::
+
         sage: from pickle_openmath import *
 
-    Constants:
+    Constants::
 
         sage: OMloads(dumps(False))
-        OMSymbol(name='false', cd='logic1', id=None, cdbase=None)
+        OMSymbol(name='false', cd='logic1', id=None, cdbase=None) 
         sage: OMtest_pickling(False)
 
         sage: OMloads(dumps(True))
         OMSymbol(name='true', cd='logic1', id=None, cdbase=None)
         sage: OMtest_pickling(True)
 
-        sage: OMloads(dumps(None))     # todo: not implemented
-        sage: OMtest_pickling(None)    # todo: not implemented
+        sage: OMloads(dumps(None)) # todo: not implemented
+        sage: OMtest_pickling(None) # todo: not implemented
 
-    Strings:
+    Strings::
 
         sage: OMloads(dumps('coucou'))
         OMString(string='coucou', id=None)
@@ -208,10 +274,19 @@ class OMUnpickler(Unpickler):
                       id=None, cdbase=None)
         sage: OMtest_pickling(s)
 
-    Lists of sets of Sage integers:
+    Lists of sets of Sage integers::
 
         sage: OMtest_pickling([{1,3}, {2}])
+
+    Sage parents::
+
+        sage: OMtest_pickling(Partitions(3))
+
+    Sage objects::
+
+        sage: OMloads(dumps(Partition([2,1]))) # todo: not implemented
     """
+
     # Only needed for print-debug purposes
     def load(self):
         """Read a pickled object representation from the open file.
@@ -231,69 +306,53 @@ class OMUnpickler(Unpickler):
         except _Stop, stopinst:
             return stopinst.value
 
-    dispatch = copy.copy(Unpickler.dispatch)
+    dispatch = { key: Unpickler.dispatch[key]
+                 for key in [pickle.PROTO,
+                             pickle.STOP,
+                             pickle.BINPUT, # ?
+                             pickle.BINGET, # ?
+                             pickle.MARK,   # ?
+                             pickle.TUPLE1, # are those used to produced actual tuples, or only intermediate results?
+                             pickle.TUPLE2,
+                             pickle.TUPLE3,
+                             pickle.EMPTY_TUPLE,
+                             pickle.EMPTY_DICT,
+                             pickle.NONE,
+                             pickle.TUPLE,
+                             pickle.SETITEMS,
+                             pickle.NEWFALSE,
+                             pickle.NEWTRUE,
+                             pickle.INT[0],
+                             pickle.BININT1[0],
+                             pickle.STRING[0],
+                             pickle.SHORT_BINSTRING,
+                             pickle.EMPTY_LIST[0],
+                             pickle.APPEND[0],
+                             pickle.APPENDS[0],
+                            ]
+               }# copy.copy(Unpickler.dispatch)
 
-    # Constants
+    # Finalization
+    def load_stop(self):
+        value = self.stack.pop()
+        value = self.finalize(value)
+        raise _Stop(value)
+    dispatch[pickle.STOP] = load_stop
 
-    def load_false(self):
-        Unpickler.load_false(self)
-        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
-    dispatch[pickle.NEWFALSE] = load_false
-
-    def load_true(self):
-        Unpickler.load_true(self)
-        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
-    dispatch[pickle.NEWTRUE] = load_true
-
-    # Integer types
-    def load_int(self):
-        Unpickler.load_int(self)
-        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
-    dispatch[pickle.INT[0]] = load_int
-
-    def load_binint1(self):
-        Unpickler.load_binint1(self)
-        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
-    dispatch[pickle.BININT1[0]] = load_binint1
-
-    # String types
-    def load_string(self):
-        Unpickler.load_string(self)
-        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
-    dispatch[pickle.STRING[0]] = load_string
-
-    def load_short_binstring(self):
-        Unpickler.load_short_binstring(self)
-        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
-    dispatch[pickle.SHORT_BINSTRING] = load_short_binstring
-
-    # Containers
-    def load_list(self):
-        super(OMUnpickler, self).load_list()
-        self.stack.append(om.OMList(self.stack.pop()))
-    dispatch[pickle.LIST[0]] = load_list
-
-    def load_empty_list(self):
-        # This is assuming we own the OpenMath object
-        self.append(openmath.convert.to_openmath([]))
-    dispatch[pickle.EMPTY_LIST[0]] = load_empty_list
-
-    def load_append(self):
-        stack = self.stack
-        value = stack.pop()
-        list = stack[-1]
-        list.arguments.append(value)
-    dispatch[pickle.APPEND[0]] = load_append
-
-
-    def load_appends(self):
-        stack = self.stack
-        mark = self.marker()
-        list = stack[mark - 1].arguments
-        list.extend(stack[mark + 1:])
-        del stack[mark:]
-
-    dispatch[pickle.APPENDS[0]] = load_appends
+    def finalize(self, value):
+        if isinstance(value, openmath.openmath.OMApplication):
+            for i in range(len(value.arguments)):
+                value.arguments[i] = self.finalize(value.arguments[i])
+        if isinstance(value, openmath.openmath.OMAny):
+            return value
+        elif isinstance(value, list):
+            return OMList([self.finalize(arg) for arg in value])
+        elif isinstance(value, tuple):
+            return OMTuple([self.finalize(arg) for arg in value])
+        elif isinstance(value, dict):
+            return OMDict(value)
+        else:
+            return openmath.convert.to_openmath(value)
 
     def load_global(self):
         module = self.readline()[:-1].decode("utf-8")
