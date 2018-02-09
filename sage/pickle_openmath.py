@@ -13,6 +13,8 @@ import zlib
 from openmath import openmath as om
 from six.moves import cStringIO as StringIO
 import openmath.convert
+from sage.structure.sage_object import dumps
+
 
 ##############################################################################
 # Shorthands
@@ -107,7 +109,11 @@ openmath.convert.register_to_python('python',
                                     apply_global_python_function
                                     )
 
-
+def OMtest_pickling(l):
+    o = OMloads(dumps(l))
+    l2 = openmath.convert.to_python(o)
+    assert l == l2
+    assert type(l) is type(l2)
 
 class OMUnpickler(Unpickler):
     """
@@ -117,27 +123,73 @@ class OMUnpickler(Unpickler):
     This can be seen as a lazy unpickler that produces an OpenMath
     object as intermediate step.
 
+        sage: from pickle_openmath import *
 
+    Constants:
+
+        sage: OMloads(dumps(False))
+        OMSymbol(name='false', cd='logic1', id=None, cdbase=None)
+        sage: OMtest_pickling(False)
+
+        sage: OMloads(dumps(True))
+        OMSymbol(name='true', cd='logic1', id=None, cdbase=None)
+        sage: OMtest_pickling(True)
+
+        sage: OMloads(dumps(None))     # todo: not implemented
+        sage: OMtest_pickling(None)    # todo: not implemented
+
+    Strings:
+
+        sage: OMloads(dumps('coucou'))
+        OMString(string='coucou', id=None)
+        sage: openmath.convert.to_python(_)
+        'coucou'
+
+    Python integers::
 
         sage: OMloads(dumps(3r))
-        OMInteger(3, id=None)
+        OMInteger(integer=3, id=None)
+        sage: openmath.convert.to_python(_)
+        3
+        sage: OMtest_pickling(3r)
+
+    Sage integers::
 
         sage: OMloads(dumps(3))
-        OMApplication(OMSymbol('apply_function', 'python', id=None, cdbase=None), (OMApplication(OMSymbol('load_global', 'python', id=None, cdbase=None), [OMString(u'sage.rings.integer.make_integer', id=None)], id=None, cdbase=None), '3'), id=None, cdbase=None)
+        OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
+                      arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                                               arguments=[OMString(string=u'sage.rings.integer.make_integer', id=None)],
+                                               id=None, cdbase=None),
+                                 OMString(string='3', id=None)],
+                      id=None, cdbase=None)
+        sage: OMtest_pickling(3)
+
+    Lists of integers::
 
         sage: l = [3r, 1r, 2r]
         sage: o = OMloads(dumps(l)); o
-        OMApplication(OMSymbol('list', 'list1', id=None, cdbase=None), [], id=None, cdbase=None)
-        sage: o.arguments
-        [OMInteger(3, id=None), OMInteger(1, id=None), OMInteger(2, id=None)]
-        sage: openmath.convert.to_python(o) == l
-        True
+        OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
+                      arguments=[OMInteger(integer=3, id=None),
+                                 OMInteger(integer=1, id=None),
+                                 OMInteger(integer=2, id=None)],
+                      id=None, cdbase=None)
 
-        sage: s = {1}
-        sage: o = OMloads(dumps(s)); o
-        sage: openmath.convert.to_python(o) == s
+    Sets of integers::
 
+        sage: s = {1r}
+        sage: OMloads(dumps(s))
+        OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
+                      arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                                               arguments=[OMString(string=u'__builtin__.set', id=None)],
+                                               id=None, cdbase=None),
+                                 OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
+                                               arguments=[OMInteger(integer=1, id=None)], id=None, cdbase=None)],
+                      id=None, cdbase=None)
+        sage: OMtest_pickling(s)
 
+    Lists of sets of Sage integers:
+
+        sage: OMtest_pickling([{1,3}, {2}])
     """
     # Only needed for print-debug purposes
     def load(self):
@@ -159,16 +211,42 @@ class OMUnpickler(Unpickler):
             return stopinst.value
 
     dispatch = copy.copy(Unpickler.dispatch)
+
+    # Constants
+
+    def load_false(self):
+        Unpickler.load_false(self)
+        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
+    dispatch[pickle.NEWFALSE] = load_false
+
+    def load_true(self):
+        Unpickler.load_true(self)
+        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
+    dispatch[pickle.NEWTRUE] = load_true
+
+    # Integer types
     def load_int(self):
         Unpickler.load_int(self)
-        self.stack.append(om.OMInteger(self.stack.pop()))
+        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
     dispatch[pickle.INT[0]] = load_int
 
     def load_binint1(self):
         Unpickler.load_binint1(self)
-        self.stack.append(om.OMInteger(self.stack.pop()))
+        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
     dispatch[pickle.BININT1[0]] = load_binint1
 
+    # String types
+    def load_string(self):
+        Unpickler.load_string(self)
+        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
+    dispatch[pickle.STRING[0]] = load_string
+
+    def load_short_binstring(self):
+        Unpickler.load_short_binstring(self)
+        self.stack.append(openmath.convert.to_openmath(self.stack.pop()))
+    dispatch[pickle.SHORT_BINSTRING] = load_short_binstring
+
+    # Containers
     def load_list(self):
         super(OMUnpickler, self).load_list()
         self.stack.append(om.OMList(self.stack.pop()))
