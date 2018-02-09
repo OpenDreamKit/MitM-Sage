@@ -34,3 +34,5 @@ all.*.tex
 .!*.tex
 *.clog
 .DS_Store
+*.pyc
+*.egg-info
