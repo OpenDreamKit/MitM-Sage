@@ -164,6 +164,27 @@ class OMUnpickler(Unpickler):
                       id=None, cdbase=None)
         sage: OMtest_pickling(3)
 
+    Sage real numbers::
+
+        sage: OMtest_pickling(1.1+1.1)
+
+    But not quite yet real literals::
+
+        sage: OMtest_pickling(1.1)
+        Traceback (most recent call last):
+        ...
+        AssertionError
+        sage: l = 1.1
+        sage: o = OMloads(dumps(1.1))
+        sage: l2 = openmath.convert.to_python(o); l2
+        1.10000000000000
+        sage: l2 == l
+        True
+        sage: type(l2)
+        <type 'sage.rings.real_mpfr.RealNumber'>
+        sage: type(l)
+        <type 'sage.rings.real_mpfr.RealLiteral'>
+
     Lists of integers::
 
         sage: l = [3r, 1r, 2r]
