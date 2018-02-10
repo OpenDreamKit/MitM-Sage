@@ -109,7 +109,19 @@ openmath.convert.register_to_python('python',
                                     apply_global_python_function
                                     )
 
+def OMNone():
+    """
+    Return an OM object for :obj:`None`
 
+    EXAMPLES::
+
+        sage: OMNone()
+        OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                      arguments=[OMString(string='__builtin__.None', id=None)],
+                      id=None, cdbase=None)
+    """
+    return om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
+                            [om.OMString("__builtin__.None")])
 
 def OMList(l):
     """
@@ -201,8 +213,12 @@ class OMUnpickler(Unpickler):
         OMSymbol(name='true', cd='logic1', id=None, cdbase=None)
         sage: OMtest_pickling(True)
 
-        sage: OMloads(dumps(None)) # todo: not implemented
-        sage: OMtest_pickling(None) # todo: not implemented
+        sage: OMloads(dumps(None))
+        OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                      arguments=[OMString(string='__builtin__.None', id=None)],
+                      id=None, cdbase=None)
+
+        sage: OMtest_pickling(None)
 
     Strings::
 
@@ -281,6 +297,13 @@ class OMUnpickler(Unpickler):
     Sage parents::
 
         sage: OMtest_pickling(Partitions(3))
+        sage: OMtest_pickling(QQ)
+        sage: OMtest_pickling(RR)
+        sage: OMtest_pickling(Algebras(QQ))
+        sage: OMtest_pickling(SymmetricFunctions(QQ))
+        sage: OMtest_pickling(SymmetricFunctions(QQ).s())
+
+        sage: OMtest_pickling(GF(3))
 
     Sage objects::
 
@@ -351,6 +374,8 @@ class OMUnpickler(Unpickler):
             return OMTuple([self.finalize(arg) for arg in value])
         elif isinstance(value, dict):
             return OMDict(value)
+        elif value is None:
+            return OMNone()
         else:
             return openmath.convert.to_openmath(value)
 
