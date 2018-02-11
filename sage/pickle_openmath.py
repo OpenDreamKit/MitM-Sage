@@ -7,7 +7,6 @@
 from pickle import Pickler, Unpickler, _Stop #, _Unframer, dumps, bytes_types,
 import io
 import pickle
-import copy
 import importlib
 import zlib
 from openmath import openmath as om
@@ -98,13 +97,70 @@ def apply_function(f, *args):
     return f(*args)
 register_python_function(apply_function)
 
-def cls_new(o):
-    data = [openmath.convert.to_python(arg) for arg in o.arguments]
-    return data[0].__new__(data[0], *data[1:])
+def cls_new(cls, *args):
+    return cls.__new__(cls, *args)
 register_python_function(cls_new)
 
-def apply_global_python_function(o):
-    f = openmath.convert.to_python(o.arguments[0]).split(".")
+def cls_build(inst, state):
+    """
+    Apply the setstate protocol to initialize `inst` from `state`.
+
+    INPUT:
+
+    - ``inst`` -- a raw instance of a class
+    - ``state`` -- the state to restore; typically a dictionary mapping attribute names to their values
+
+    EXAMPLES::
+
+        sage: class A(object): pass
+        sage: inst = A.__new__(A)
+        sage: state = {"foo": 1, "bar": 4}
+        sage: inst2 = cls_build(inst,state)
+        sage: inst is inst2
+        True
+        sage: inst.foo
+        1
+        sage: inst.bar
+        4
+    """
+    # Copied from Pickler.load_build
+    setstate = getattr(inst, "__setstate__", None)
+    if setstate:
+        setstate(state)
+        return inst
+    slotstate = None
+    if isinstance(state, tuple) and len(state) == 2:
+        state, slotstate = state
+    if state:
+        try:
+            d = inst.__dict__
+            try:
+                for k, v in state.iteritems():
+                    d[intern(k)] = v
+            # keys in state don't have to be strings
+            # don't blow up, but don't go out of our way
+            except TypeError:
+                d.update(state)
+
+        except RuntimeError:
+            # XXX In restricted execution, the instance's __dict__
+            # is not accessible.  Use the old way of unpickling
+            # the instance variables.  This is a semantic
+            # difference when unpickling in restricted
+            # vs. unrestricted modes.
+            # Note, however, that cPickle has never tried to do the
+            # .update() business, and always uses
+            #     PyObject_SetItem(inst.__dict__, key, value) in a
+            # loop over state.items().
+            for k, v in state.items():
+                setattr(inst, k, v)
+    if slotstate:
+        for k, v in slotstate.items():
+            setattr(inst, k, v)
+    return inst
+register_python_function(cls_build)
+
+
 # Unused
 def apply_global_python_function(f, *args):
     f = f.split(".")
@@ -169,26 +225,25 @@ def OMTuple(l):
 
 def OMDict(d):
     """
-    Convert a list of OM objects into an OM object
+    Convert a dictionary (or list of items thereof) of OM objects into an OM object
 
     EXAMPLES::
 
-       sage: o = OMTuple([om.OMInteger(2), om.OMInteger(3)]); o
-       OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
-                     arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                                              arguments=[OMString(string=u'__builtin__.tuple', id=None)],
-                                              id=None, cdbase=None),
-                                OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
-                                              arguments=[OMInteger(integer=2, id=None), OMInteger(integer=3, id=None)],
-                                              id=None, cdbase=None)], id=None, cdbase=None)
-       sage: openmath.convert.to_python(o)
-       (2, 3)
+        sage: a = om.OMInteger(1)
+        sage: b = om.OMInteger(3)
+        sage: o = OMDict([(a,b), (b,b)])
+        sage: o
+        OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None), arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None), arguments=[OMString(string=u'__builtin__.dict', id=None)], id=None, cdbase=None), OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None), arguments=[OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None), arguments=[OMInteger(integer=1, id=None), OMInteger(integer=3, id=None)], id=None, cdbase=None), OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None), arguments=[OMInteger(integer=3, id=None), OMInteger(integer=3, id=None)], id=None, cdbase=None)], id=None, cdbase=None)], id=None, cdbase=None)
+        sage: openmath.convert.to_python(o)
+        {1: 3, 3: 3}
     """
+    if isinstance(d, dict):
+        d = d.items()
     return om.OMApplication(elem=om.OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
                             arguments=[om.OMApplication(elem=om.OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
                                                         arguments=[om.OMString(string=u'__builtin__.dict', id=None)],
                                                        id=None, cdbase=None),
-                                       OMList(d.items())
+                                       OMList([OMList(item) for item in d])
                                       ],
                             id=None, cdbase=None)
 
@@ -301,6 +356,23 @@ class OMUnpickler(Unpickler):
 
         sage: OMtest_pickling([{1,3}, {2}])
 
+    Dictionaries::
+
+        sage: OMtest_pickling({})
+        sage: OMtest_pickling({1:3})
+
+    Class instances::
+
+        sage: class A(object):
+        ....:     def __eq__(self, other):
+        ....:         return type(self) is type(other) and self.__dict__ == other.__dict__
+        sage: import __main__; __main__.A = A     # Usual trick
+        sage: a = A()
+        sage: OMtest_pickling(a)
+        sage: a.foo = 1
+        sage: a.bar = 4
+        sage: OMtest_pickling(a)
+
     Sage parents::
 
         sage: OMtest_pickling(Partitions(3))
@@ -314,7 +386,8 @@ class OMUnpickler(Unpickler):
 
     Sage objects::
 
-        sage: OMloads(dumps(Partition([2,1]))) # todo: not implemented
+        sage: OMloads(dumps(Partition([2,1]))) # todo: not tested
+        sage: OMtest_pickling(Partition([2,1]))
     """
 
     # Only needed for print-debug purposes
@@ -349,6 +422,7 @@ class OMUnpickler(Unpickler):
                              pickle.EMPTY_DICT,
                              pickle.NONE,
                              pickle.TUPLE,
+                             pickle.SETITEM,
                              pickle.SETITEMS,
                              pickle.NEWFALSE,
                              pickle.NEWTRUE,
@@ -380,7 +454,8 @@ class OMUnpickler(Unpickler):
         elif isinstance(value, tuple):
             return OMTuple([self.finalize(arg) for arg in value])
         elif isinstance(value, dict):
-            return OMDict(value)
+            return OMDict([(self.finalize(key), self.finalize(v))
+                            for key, v in value.items()])
         elif value is None:
             return OMNone()
         else:
@@ -414,7 +489,14 @@ class OMUnpickler(Unpickler):
         self.append(obj)
     dispatch[pickle.NEWOBJ[0]] = load_newobj
 
-    # TODO load_build, to restore the state
+    def load_build(self):
+        stack = self.stack
+        state = stack.pop()
+        inst = stack.pop()
+        obj =  om.OMApplication(om.OMSymbol(name='cls_build', cd='python'),
+                                (inst, state))
+        self.append(obj)
+    dispatch[pickle.BUILD[0]] = load_build
 
 """
 
