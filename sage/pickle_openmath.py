@@ -38,31 +38,45 @@ class MyPickler(Pickler):
 # Those are mostly lazy versions of unpickling operations
 ##############################################################################
 
-def load_global(o):
+def register_python_function(f):
+    """
+    Register
+
+
+    """
+    def binding(o):
+        args = [openmath.convert.to_python(arg) for arg in o.arguments]
+        return f(*args)
+    binding.__name__ = f.__name__
+    openmath.convert.register_to_python('python',
+                                        f.__name__,
+                                        binding
+                                       )
+
+def load_global(f):
     """
     Evaluate an OpenMath construct that loads a global symbol
 
     EXAMPLES::
 
+        sage: load_global('math.sin')
+        <built-in function sin>
+
         sage: o = om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
         ....:                      [om.OMString("math.sin")])
-        sage: load_global(o)
-        <built-in function sin>
         sage: openmath.convert.to_python(o)
         <built-in function sin>
     """
-    f = openmath.convert.to_python(o.arguments[0]).split(".")
+    f = f.split(".")
     module = '.'.join(f[:-1])
     if not module:
         module = "sage.all"
     module = importlib.import_module(module)
     return getattr(module, f[-1])
+register_python_function(load_global)
 
-openmath.convert.register_to_python('python',
-                                    'load_global',
-                                    load_global
-                                    )
-def apply_function(o):
+# TODO: replace with the standard python function for this
+def apply_function(f, *args):
     """
     Evaluate an OpenMath function application
 
@@ -70,44 +84,37 @@ def apply_function(o):
 
         sage: import openmath.openmath as om
         sage: import math
+
+        sage: apply_function(math.sin, 3.14) == math.sin(3.14)
+        True
+
         sage: f = om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
         ....:                      [om.OMString("math.sin")])
-
         sage: o = om.OMApplication(om.OMSymbol(name='apply_function', cd='python'),
         ....:                      [f, om.OMFloat(3.14)])
-        sage: apply_function(o)
+        sage: openmath.convert.to_python(o)
         0.0015926529164868282
-
-        sage: apply_function(o) == math.sin(3.14)
-        True
     """
-    data = [openmath.convert.to_python(arg) for arg in o.arguments]
-    return data[0](*data[1:])
-openmath.convert.register_to_python('python',
-                                    'apply_function',
-                                    apply_function
-                                    )
+    return f(*args)
+register_python_function(apply_function)
 
 def cls_new(o):
     data = [openmath.convert.to_python(arg) for arg in o.arguments]
     return data[0].__new__(data[0], *data[1:])
-openmath.convert.register_to_python('python',
-                                    'cls_new',
-                                    cls_new
-                                    )
+register_python_function(cls_new)
 
 def apply_global_python_function(o):
     f = openmath.convert.to_python(o.arguments[0]).split(".")
+# Unused
+def apply_global_python_function(f, *args):
+    f = f.split(".")
     module = '.'.join(f[:-1])
     if not module:
         module = "sage.all"
     module = importlib.import_module(module)
     f = getattr(module, f[-1])
-    return f(*[openmath.convert.to_python(arg) for arg in o.arguments[1:]])
-openmath.convert.register_to_python('python',
-                                    'apply_global_function',
-                                    apply_global_python_function
-                                    )
+    return f(*args)
+register_python_function(apply_global_python_function)
 
 def OMNone():
     """
