@@ -5,5 +5,4 @@ FROM sagemath/sagemath:8.0-2
 # Make sure the contents of our repo are in ${HOME}
 COPY sage ${HOME}/sage/
 
-RUN cd sage && sage -pip install --user -e 
-.
+RUN cd sage && sage -pip install --user -e .
