@@ -1,12 +1,19 @@
-# Sage -> Math-in-the-Middle exporter
+# Sage and Math-in-the-Middle
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/OpenDreamKit/MitM-Sage/master).
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/OpenDreamKit/MitM-Sage/master)
 
-## Exporting Sage's API to MMT
+This repository contains utilities to integrate
+[SageMath](http://sagemath.org) in the in-development
+Math-in-the-Middle (MitM) interoperability layer between computational
+math software.
+
+## Exporting Sage's Content Dictionaries (API) to MMT
 
 Output browsable at: https://odk.mathhub.info/mh/mmt/?http://www.sagemath.org
 
-### How to regenerate Sage's Content Dictionary (usually done by @nthiery, upon request)
+### How to regenerate the Content Dictionaries
+
+(usually done by @nthiery, upon request)
 
 Install this package and its dependencies:
 
@@ -32,7 +39,9 @@ Commit the output file:
 Alternatively, you can use the binder link above, run the commands in
 a fresh notebook, and download the produced sagetypes.json.
 
-### How to process Sage's output (usually done by Dennis Müller, upon request)
+### How to process Sage's Content Dictionaries
+
+(usually done by Dennis Müller, upon request)
 
 Partial instructions, written by @pdehaye:
 
@@ -44,7 +53,7 @@ Build the omdoc archive from the json export generated above:
 
     build ODK/Sage sage-omdoc
 
-## System-near OpenMath export for Sage
+## Generic system-near OpenMath export for Python and Sage objects
 
-See the [demo notebook](sage/openmath_pickle_demo), or run it on
+See the [demo notebook](sage/openmath_pickle_demo.ipynb), or run it on
 [Binder](https://mybinder.org/v2/gh/OpenDreamKit/MitM-Sage/master?filepath=sage%2Fopenmath_pickle_demo.ipynb).
