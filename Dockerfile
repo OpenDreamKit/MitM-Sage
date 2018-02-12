@@ -6,4 +6,4 @@ FROM sagemath/sagemath:8.0-2
 COPY --chown=sage:sage README.md ${HOME}/
 COPY --chown=sage:sage sage ${HOME}/sage/
 
-RUN cd sage && sage -pip install --user -e .
+RUN cd sage && sage -pip install -e .
