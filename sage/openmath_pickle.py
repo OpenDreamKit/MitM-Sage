@@ -1,8 +1,139 @@
-
 # coding: utf-8
+"""
+A generic OpenMath exporter for Python based on the pickle protocol
 
-# In[20]:
+EXAMPLES::
 
+    sage: from openmath_pickle import to_openmath, test_openmath
+
+Constants::
+
+    sage: to_openmath(False)
+    OMSymbol(name='false', cd='logic1', id=None, cdbase=None)
+
+``test_openmath`` checks that serializing to openmath and back
+rebuilds the same object up to equality::
+
+    sage: test_openmath(False)
+
+    sage: to_openmath(True)
+    OMSymbol(name='true', cd='logic1', id=None, cdbase=None)
+    sage: test_openmath(True)
+
+    sage: to_openmath(None)
+    OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                  arguments=[OMString(string='__builtin__.None', id=None)],
+                  id=None, cdbase=None)
+    sage: test_openmath(None)
+
+Strings::
+
+    sage: to_openmath('coucou')
+    OMString(string='coucou', id=None)
+    sage: openmath.convert.to_python(_)
+    'coucou'
+
+Integers::
+
+    sage: to_openmath(3r)
+    OMInteger(integer=3, id=None)
+    sage: openmath.convert.to_python(_)
+    3
+    sage: test_openmath(3r)
+
+Sage integers::
+
+    sage: to_openmath(3)
+    OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
+                  arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                                           arguments=[OMString(string=u'sage.rings.integer.make_integer', id=None)],
+                                           id=None, cdbase=None),
+                             OMString(string='3', id=None)],
+                  id=None, cdbase=None)
+    sage: test_openmath(3)
+
+Sage real numbers::
+
+    sage: test_openmath(1.1+1.1)
+
+But not quite yet real literals::
+
+    sage: test_openmath(1.1)
+    Traceback (most recent call last):
+    ...
+    AssertionError
+    sage: l = 1.1
+    sage: o = to_openmath(1.1)
+    sage: l2 = openmath.convert.to_python(o); l2
+    1.10000000000000
+    sage: l2 == l
+    True
+    sage: type(l2)
+    <type 'sage.rings.real_mpfr.RealNumber'>
+    sage: type(l)
+    <type 'sage.rings.real_mpfr.RealLiteral'>
+
+Lists of integers::
+
+    sage: l = [3r, 1r, 2r]
+    sage: to_openmath(l)
+    OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
+                  arguments=[OMInteger(integer=3, id=None),
+                             OMInteger(integer=1, id=None),
+                             OMInteger(integer=2, id=None)],
+                  id=None, cdbase=None)
+
+Sets of integers::
+
+    sage: s = {1r}
+    sage: to_openmath(s)
+    OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
+                  arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
+                                           arguments=[OMString(string=u'__builtin__.set', id=None)],
+                                           id=None, cdbase=None),
+                             OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
+                                           arguments=[OMInteger(integer=1, id=None)], id=None, cdbase=None)],
+                  id=None, cdbase=None)
+    sage: test_openmath(s)
+
+Lists of sets of Sage integers::
+
+    sage: test_openmath([{1,3}, {2}])
+
+Dictionaries::
+
+    sage: test_openmath({})
+    sage: test_openmath({1:3})
+
+Class instances::
+
+    sage: class A(object):
+    ....:     def __eq__(self, other):
+    ....:         return type(self) is type(other) and self.__dict__ == other.__dict__
+    sage: import __main__; __main__.A = A     # Usual trick
+    sage: a = A()
+    sage: test_openmath(a)
+    sage: a.foo = 1
+    sage: a.bar = 4
+    sage: test_openmath(a)
+
+Sage parents::
+
+    sage: test_openmath(Partitions(3))
+    sage: test_openmath(QQ)
+    sage: test_openmath(RR)
+    sage: test_openmath(Algebras(QQ))
+    sage: test_openmath(SymmetricFunctions(QQ))
+    sage: test_openmath(SymmetricFunctions(QQ).s())
+
+    sage: test_openmath(GF(3))
+
+Sage objects::
+
+    sage: to_openmath(Partition([2,1]))
+    OMApplication(...)
+    sage: test_openmath(Partition([2,1]))
+"""
 
 from pickle import Pickler, Unpickler, _Stop #, _Unframer, dumps, bytes_types,
 import io
@@ -18,6 +149,9 @@ from sage.structure.sage_object import dumps
 ##############################################################################
 # Shorthands
 ##############################################################################
+
+def to_openmath(o):
+    return OMloads(dumps(o))
 
 def OMloads(str):
     str = zlib.decompress(str)
@@ -247,7 +381,7 @@ def OMDict(d):
                                       ],
                             id=None, cdbase=None)
 
-def OMtest_pickling(l):
+def test_openmath(l):
     o = OMloads(dumps(l))
     l2 = openmath.convert.to_python(o)
     assert l == l2
@@ -260,134 +394,6 @@ class OMUnpickler(Unpickler):
 
     This can be seen as a lazy unpickler that produces an OpenMath
     object as intermediate step.
-
-    EXAMPLES::
-
-        sage: from pickle_openmath import *
-
-    Constants::
-
-        sage: OMloads(dumps(False))
-        OMSymbol(name='false', cd='logic1', id=None, cdbase=None) 
-        sage: OMtest_pickling(False)
-
-        sage: OMloads(dumps(True))
-        OMSymbol(name='true', cd='logic1', id=None, cdbase=None)
-        sage: OMtest_pickling(True)
-
-        sage: OMloads(dumps(None))
-        OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                      arguments=[OMString(string='__builtin__.None', id=None)],
-                      id=None, cdbase=None)
-
-        sage: OMtest_pickling(None)
-
-    Strings::
-
-        sage: OMloads(dumps('coucou'))
-        OMString(string='coucou', id=None)
-        sage: openmath.convert.to_python(_)
-        'coucou'
-
-    Python integers::
-
-        sage: OMloads(dumps(3r))
-        OMInteger(integer=3, id=None)
-        sage: openmath.convert.to_python(_)
-        3
-        sage: OMtest_pickling(3r)
-
-    Sage integers::
-
-        sage: OMloads(dumps(3))
-        OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
-                      arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                                               arguments=[OMString(string=u'sage.rings.integer.make_integer', id=None)],
-                                               id=None, cdbase=None),
-                                 OMString(string='3', id=None)],
-                      id=None, cdbase=None)
-        sage: OMtest_pickling(3)
-
-    Sage real numbers::
-
-        sage: OMtest_pickling(1.1+1.1)
-
-    But not quite yet real literals::
-
-        sage: OMtest_pickling(1.1)
-        Traceback (most recent call last):
-        ...
-        AssertionError
-        sage: l = 1.1
-        sage: o = OMloads(dumps(1.1))
-        sage: l2 = openmath.convert.to_python(o); l2
-        1.10000000000000
-        sage: l2 == l
-        True
-        sage: type(l2)
-        <type 'sage.rings.real_mpfr.RealNumber'>
-        sage: type(l)
-        <type 'sage.rings.real_mpfr.RealLiteral'>
-
-    Lists of integers::
-
-        sage: l = [3r, 1r, 2r]
-        sage: o = OMloads(dumps(l)); o
-        OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
-                      arguments=[OMInteger(integer=3, id=None),
-                                 OMInteger(integer=1, id=None),
-                                 OMInteger(integer=2, id=None)],
-                      id=None, cdbase=None)
-
-    Sets of integers::
-
-        sage: s = {1r}
-        sage: OMloads(dumps(s))
-        OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
-                      arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                                               arguments=[OMString(string=u'__builtin__.set', id=None)],
-                                               id=None, cdbase=None),
-                                 OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
-                                               arguments=[OMInteger(integer=1, id=None)], id=None, cdbase=None)],
-                      id=None, cdbase=None)
-        sage: OMtest_pickling(s)
-
-    Lists of sets of Sage integers::
-
-        sage: OMtest_pickling([{1,3}, {2}])
-
-    Dictionaries::
-
-        sage: OMtest_pickling({})
-        sage: OMtest_pickling({1:3})
-
-    Class instances::
-
-        sage: class A(object):
-        ....:     def __eq__(self, other):
-        ....:         return type(self) is type(other) and self.__dict__ == other.__dict__
-        sage: import __main__; __main__.A = A     # Usual trick
-        sage: a = A()
-        sage: OMtest_pickling(a)
-        sage: a.foo = 1
-        sage: a.bar = 4
-        sage: OMtest_pickling(a)
-
-    Sage parents::
-
-        sage: OMtest_pickling(Partitions(3))
-        sage: OMtest_pickling(QQ)
-        sage: OMtest_pickling(RR)
-        sage: OMtest_pickling(Algebras(QQ))
-        sage: OMtest_pickling(SymmetricFunctions(QQ))
-        sage: OMtest_pickling(SymmetricFunctions(QQ).s())
-
-        sage: OMtest_pickling(GF(3))
-
-    Sage objects::
-
-        sage: OMloads(dumps(Partition([2,1]))) # todo: not tested
-        sage: OMtest_pickling(Partition([2,1]))
     """
 
     # Only needed for print-debug purposes
