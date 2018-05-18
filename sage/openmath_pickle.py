@@ -471,6 +471,8 @@ class OMUnpickler(Unpickler):
         module = self.readline()[:-1].decode("utf-8")
         name = self.readline()[:-1].decode("utf-8")
         func_name = module+"."+name
+        # Variant: om.OMSymbol(name='func_name', **cd_of(func_name))
+        # where cd_of would return {'cdbase': 'sagemath.org', 'cd': 'sagemath'}
         self.append(om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
                                      [om.OMString(func_name)]))
         #def func(*args):
