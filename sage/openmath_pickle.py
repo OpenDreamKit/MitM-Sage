@@ -9,7 +9,7 @@ EXAMPLES::
 Constants::
 
     sage: to_openmath(False)
-    OMSymbol(name='false', cd='logic1', id=None, cdbase=None)
+    OMSymbol(name='false', cd='logic1', id=None, cdbase='http://www.openmath.org/cd')
 
 ``test_openmath`` checks that serializing to openmath and back
 rebuilds the same object up to equality::
@@ -17,20 +17,22 @@ rebuilds the same object up to equality::
     sage: test_openmath(False)
 
     sage: to_openmath(True)
-    OMSymbol(name='true', cd='logic1', id=None, cdbase=None)
+    OMSymbol(name='true', cd='logic1', id=None, cdbase='http://www.openmath.org/cd')
     sage: test_openmath(True)
 
     sage: to_openmath(None)
-    OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                  arguments=[OMString(string='__builtin__.None', id=None)],
-                  id=None, cdbase=None)
+    OMSymbol(name='None', cd='__builtin__', id=None, cdbase='http://python.org')
     sage: test_openmath(None)
 
 Strings::
 
     sage: to_openmath('coucou')
-    OMString(string='coucou', id=None)
+    OMBytes(bytes='coucou', id=None)
     sage: openmath.convert.to_python(_)
+    'coucou'
+    sage: to_openmath(u'coucou')          # todo: not implemented
+    OMString(string='coucou', id=None)
+    sage: openmath.convert.to_python(_)   # todo: not implemented
     'coucou'
 
 Integers::
@@ -44,12 +46,8 @@ Integers::
 Sage integers::
 
     sage: to_openmath(3)
-    OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
-                  arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                                           arguments=[OMString(string=u'sage.rings.integer.make_integer', id=None)],
-                                           id=None, cdbase=None),
-                             OMString(string='3', id=None)],
-                  id=None, cdbase=None)
+    OMApplication(elem=OMSymbol(name='make_integer', cd='sage.rings.integer', id=None, cdbase='http://python.org'),
+                  arguments=[OMBytes(bytes='3', id=None)], id=None, cdbase=None)
     sage: test_openmath(3)
 
 Sage real numbers::
@@ -77,23 +75,21 @@ Lists of integers::
 
     sage: l = [3r, 1r, 2r]
     sage: to_openmath(l)
-    OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
-                  arguments=[OMInteger(integer=3, id=None),
-                             OMInteger(integer=1, id=None),
-                             OMInteger(integer=2, id=None)],
-                  id=None, cdbase=None)
+    OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase='http://www.openmath.org/cd'),
+             arguments=[OMInteger(integer=3, id=None),
+                        OMInteger(integer=1, id=None),
+                        OMInteger(integer=2, id=None)],
+             id=None, cdbase=None)
 
 Sets of integers::
 
     sage: s = {1r}
     sage: to_openmath(s)
-    OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
-                  arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                                           arguments=[OMString(string=u'__builtin__.set', id=None)],
-                                           id=None, cdbase=None),
-                             OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
-                                           arguments=[OMInteger(integer=1, id=None)], id=None, cdbase=None)],
-                  id=None, cdbase=None)
+    OMApplication(elem=OMSymbol(name='set', cd='__builtin__', id=None, cdbase='http://python.org'),
+             arguments=[OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase='http://www.openmath.org/cd'),
+                                 arguments=[OMInteger(integer=1, id=None)],
+                                 id=None, cdbase=None)],
+             id=None, cdbase=None)
     sage: test_openmath(s)
 
 Lists of sets of Sage integers::
@@ -116,6 +112,13 @@ Class instances::
     sage: a.foo = 1
     sage: a.bar = 4
     sage: test_openmath(a)
+
+Functions::
+
+        sage: f = om.OMSymbol(cdbase="http://python.org", cd='math', name='sin')
+        sage: o = om.OMApplication(f, [om.OMFloat(3.14)])
+        sage: openmath.convert.to_python(o)
+        0.0015926529164868282
 
 Sage parents::
 
@@ -171,69 +174,43 @@ class MyPickler(Pickler):
 # Those are mostly lazy versions of unpickling operations
 ##############################################################################
 
-def register_python_function(f):
-    """
-    Register
+om_converter = openmath.convert.DefaultConverter
 
-
+def load_python_global(module, name):
     """
-    def binding(o):
-        args = [openmath.convert.to_python(arg) for arg in o.arguments]
-        return f(*args)
-    binding.__name__ = f.__name__
-    openmath.convert.register_to_python('python',
-                                        f.__name__,
-                                        binding
-                                       )
-
-def load_global(f):
-    """
-    Evaluate an OpenMath construct that loads a global symbol
+    Evaluate an OpenMath symbol describing a global Python object
 
     EXAMPLES::
 
-        sage: load_global('math.sin')
+        sage: load_python_global('math', 'sin')
         <built-in function sin>
 
-        sage: o = om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
-        ....:                      [om.OMString("math.sin")])
+        sage: o = om.OMSymbol(cdbase="http://python.org", cd='math', name='sin')
         sage: openmath.convert.to_python(o)
         <built-in function sin>
     """
-    f = f.split(".")
-    module = '.'.join(f[:-1])
-    if not module:
-        module = "sage.all"
     module = importlib.import_module(module)
-    return getattr(module, f[-1])
-register_python_function(load_global)
+    return getattr(module, name)
 
-# TODO: replace with the standard python function for this
-def apply_function(f, *args):
+cdbase="http://python.org"
+
+om_converter.register_to_python_cdbase(base=cdbase, py=load_python_global)
+
+def tuple_from_sequence(*args):
     """
-    Evaluate an OpenMath function application
+    Construct a tuple from a sequence (not list!) of objects
 
     EXAMPLES::
 
-        sage: import openmath.openmath as om
-        sage: import math
-
-        sage: apply_function(math.sin, 3.14) == math.sin(3.14)
-        True
-
-        sage: f = om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
-        ....:                      [om.OMString("math.sin")])
-        sage: o = om.OMApplication(om.OMSymbol(name='apply_function', cd='python'),
-        ....:                      [f, om.OMFloat(3.14)])
-        sage: openmath.convert.to_python(o)
-        0.0015926529164868282
+        sage: tuple_from_sequence(1, 2, 3)
+        (1, 2, 3)
+        sage: tuple([1, 2, 3])
+        (1, 2, 3)
     """
-    return f(*args)
-register_python_function(apply_function)
+    return tuple(args)
 
 def cls_new(cls, *args):
     return cls.__new__(cls, *args)
-register_python_function(cls_new)
 
 def cls_build(inst, state):
     """
@@ -292,19 +269,6 @@ def cls_build(inst, state):
         for k, v in slotstate.items():
             setattr(inst, k, v)
     return inst
-register_python_function(cls_build)
-
-
-# Unused
-def apply_global_python_function(f, *args):
-    f = f.split(".")
-    module = '.'.join(f[:-1])
-    if not module:
-        module = "sage.all"
-    module = importlib.import_module(module)
-    f = getattr(module, f[-1])
-    return f(*args)
-register_python_function(apply_global_python_function)
 
 def OMNone():
     """
@@ -313,12 +277,9 @@ def OMNone():
     EXAMPLES::
 
         sage: OMNone()
-        OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                      arguments=[OMString(string='__builtin__.None', id=None)],
-                      id=None, cdbase=None)
+        OMSymbol(name='None', cd='__builtin__', id=None, cdbase='http://python.org')
     """
-    return om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
-                            [om.OMString("__builtin__.None")])
+    return om.OMSymbol(cdbase=cdbase, cd='__builtin__', name='None')
 
 def OMList(l):
     """
@@ -327,10 +288,15 @@ def OMList(l):
     EXAMPLES::
 
         sage: OMList([om.OMInteger(2), om.OMInteger(2)])
-        OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None), arguments=[OMInteger(integer=2, id=None), OMInteger(integer=2, id=None)], id=None, cdbase=None)
+        OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase='http://www.openmath.org/cd'),
+                 arguments=[OMInteger(integer=2, id=None),
+                            OMInteger(integer=2, id=None)],
+                 id=None, cdbase=None)
     """
-    return om.OMApplication(elem=om.OMSymbol(name='list', cd='list1', id=None, cdbase=None),
-                            arguments=l, id=None, cdbase=None)
+    # Except for the conversion of operands, this duplicates the default
+    # implementation of python's list conversion to openmath in py_openmath
+    return om.OMApplication(elem=om.OMSymbol(cdbase=om_converter._omBase, cd='list1', name='list', ),
+                            arguments=l)
 
 def OMTuple(l):
     """
@@ -339,23 +305,15 @@ def OMTuple(l):
     EXAMPLES::
 
        sage: o = OMTuple([om.OMInteger(2), om.OMInteger(3)]); o
-       OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
-                     arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                                              arguments=[OMString(string=u'__builtin__.tuple', id=None)],
-                                              id=None, cdbase=None),
-                                OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None),
-                                              arguments=[OMInteger(integer=2, id=None), OMInteger(integer=3, id=None)],
-                                              id=None, cdbase=None)], id=None, cdbase=None)
+       OMApplication(elem=OMSymbol(name='tuple_from_sequence', cd='openmath_pickle', id=None, cdbase='http://python.org'),
+         arguments=[OMInteger(integer=2, id=None),
+                    OMInteger(integer=3, id=None)],
+         id=None, cdbase=None)
        sage: openmath.convert.to_python(o)
        (2, 3)
     """
-    return om.OMApplication(elem=om.OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
-                            arguments=[om.OMApplication(elem=om.OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                                                        arguments=[om.OMString(string=u'__builtin__.tuple', id=None)],
-                                                       id=None, cdbase=None),
-                                       OMList(l)
-                                      ],
-                            id=None, cdbase=None)
+    return om.OMApplication(elem=om.OMSymbol(cdbase=cdbase, cd='openmath_pickle',  name='tuple_from_sequence'),
+                            arguments=l)
 
 def OMDict(d):
     """
@@ -367,19 +325,23 @@ def OMDict(d):
         sage: b = om.OMInteger(3)
         sage: o = OMDict([(a,b), (b,b)])
         sage: o
-        OMApplication(elem=OMSymbol(name='apply_function', cd='python', id=None, cdbase=None), arguments=[OMApplication(elem=OMSymbol(name='load_global', cd='python', id=None, cdbase=None), arguments=[OMString(string=u'__builtin__.dict', id=None)], id=None, cdbase=None), OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None), arguments=[OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None), arguments=[OMInteger(integer=1, id=None), OMInteger(integer=3, id=None)], id=None, cdbase=None), OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase=None), arguments=[OMInteger(integer=3, id=None), OMInteger(integer=3, id=None)], id=None, cdbase=None)], id=None, cdbase=None)], id=None, cdbase=None)
+        OMApplication(elem=OMSymbol(name='dict', cd='__builtin__', id=None, cdbase='http://python.org'),
+          arguments=[OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase='http://www.openmath.org/cd'),
+              arguments=[OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase='http://www.openmath.org/cd'),
+                  arguments=[OMInteger(integer=1, id=None), OMInteger(integer=3, id=None)], id=None, cdbase=None),
+                OMApplication(elem=OMSymbol(name='list', cd='list1', id=None, cdbase='http://www.openmath.org/cd'),
+                  arguments=[OMInteger(integer=3, id=None),
+                             OMInteger(integer=3, id=None)],
+                  id=None, cdbase=None)],
+              id=None, cdbase=None)],
+            id=None, cdbase=None)
         sage: openmath.convert.to_python(o)
         {1: 3, 3: 3}
     """
     if isinstance(d, dict):
         d = d.items()
-    return om.OMApplication(elem=om.OMSymbol(name='apply_function', cd='python', id=None, cdbase=None),
-                            arguments=[om.OMApplication(elem=om.OMSymbol(name='load_global', cd='python', id=None, cdbase=None),
-                                                        arguments=[om.OMString(string=u'__builtin__.dict', id=None)],
-                                                       id=None, cdbase=None),
-                                       OMList([OMList(item) for item in d])
-                                      ],
-                            id=None, cdbase=None)
+    return om.OMApplication(elem=om.OMSymbol(cdbase=cdbase, cd='__builtin__',  name='dict'),
+                            arguments=[OMList(OMList(item) for item in d)])
 
 def test_openmath(l):
     o = OMloads(dumps(l))
@@ -473,26 +435,26 @@ class OMUnpickler(Unpickler):
         func_name = module+"."+name
         # Variant: om.OMSymbol(name='func_name', **cd_of(func_name))
         # where cd_of would return {'cdbase': 'sagemath.org', 'cd': 'sagemath'}
-        self.append(om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
-                                     [om.OMString(func_name)]))
+        #self.append(om.OMApplication(om.OMSymbol(name='load_global', cd='python'),
+        #                             [om.OMString(func_name)]))
         #def func(*args):
         #    return om.OMApplication(om.OMSymbol(name='apply_function', cd='python'),
         #                            (om.OMString(func_name),)+args)
         #self.append(func)
+        self.append(om.OMSymbol(cdbase=cdbase, cd=module, name=name))
     dispatch[pickle.GLOBAL[0]] = load_global
 
     def load_reduce(self):
         stack = self.stack
         args = stack.pop()
         func = stack[-1]
-        stack[-1] = om.OMApplication(om.OMSymbol(name='apply_function', cd='python'),
-                                     (func,)+args)
+        stack[-1] = om.OMApplication(func, args)
     dispatch[pickle.REDUCE[0]] = load_reduce
 
     def load_newobj(self):
         args = self.stack.pop()
         cls = self.stack.pop()
-        obj =  om.OMApplication(om.OMSymbol(name='cls_new', cd='python'),
+        obj =  om.OMApplication(om.OMSymbol(cdbase=cdbase, cd="openmath_pickle", name='cls_new'),
                                 (cls,) + args)
         self.append(obj)
     dispatch[pickle.NEWOBJ[0]] = load_newobj
@@ -501,7 +463,7 @@ class OMUnpickler(Unpickler):
         stack = self.stack
         state = stack.pop()
         inst = stack.pop()
-        obj =  om.OMApplication(om.OMSymbol(name='cls_build', cd='python'),
+        obj =  om.OMApplication(om.OMSymbol(cdbase=cdbase, cd="openmath_pickle", name='cls_build'),
                                 (inst, state))
         self.append(obj)
     dispatch[pickle.BUILD[0]] = load_build
