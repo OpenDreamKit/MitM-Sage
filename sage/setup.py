@@ -42,7 +42,9 @@ setup(
     ],
     keywords='SageMath',
     packages=find_packages(),
-    install_requires = ['openmath'],
-    dependency_links=['https://github.com/nthiery/sage-gap-semantic-interface/tarball/master'], # 'Sage'
+    install_requires = ['scscp'], # openmath
+    dependency_links=['https://github.com/nthiery/sage-gap-semantic-interface/tarball/master',
+                      'http://github.com/OpenMath/py-openmath/tarball/convert-pickle'
+                     ], # 'Sage'
     cmdclass = {'test': SageTest},
 )
