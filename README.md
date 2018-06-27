@@ -7,6 +7,11 @@ This repository contains utilities to integrate
 Math-in-the-Middle (MitM) interoperability layer between computational
 math software.
 
+## Generic system-near OpenMath export for Python and Sage objects
+
+See the [demo notebook](sage/openmath_pickle_demo.ipynb), or run it on
+[![Binder@EGI](https://binderhub.fedcloud-tf.fedcloud.eu/badge.svg)](https://binderhub.fedcloud-tf.fedcloud.eu/v2/gh/nthiery/sage-openmath-demo/master?filepath=openmath-pickle-scscp-demo.ipynb)
+
 ## Exporting Sage's Content Dictionaries (API) to MMT
 
 Output browsable at: https://odk.mathhub.info/mh/mmt/?http://www.sagemath.org
@@ -52,8 +57,3 @@ Make sure you have the necessary MMT plugin installed. From jEdit console:
 Build the omdoc archive from the json export generated above:
 
     build ODK/Sage sage-omdoc
-
-## Generic system-near OpenMath export for Python and Sage objects
-
-See the [demo notebook](sage/openmath_pickle_demo.ipynb), or run it on
-[Binder](https://mybinder.org/v2/gh/OpenDreamKit/MitM-Sage/master?filepath=sage%2Fopenmath_pickle_demo.ipynb).
