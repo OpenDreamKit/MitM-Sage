@@ -11,4 +11,4 @@ FROM sagemath/sagemath@sha256:e933509b105f36b9b7de892af847ade7753e058c5d9e0c0f28
 COPY --chown=sage:sage README.md ${HOME}/
 COPY --chown=sage:sage sage ${HOME}/
 
-RUN cd sage && sage -pip install -e .
+RUN sage -pip install -e .
