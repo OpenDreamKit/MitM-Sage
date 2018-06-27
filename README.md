@@ -10,7 +10,7 @@ math software.
 ## Generic system-near OpenMath export for Python and Sage objects
 
 See the [demo notebook](sage/openmath_pickle_demo.ipynb), or run it on
-[![Binder@EGI](https://binderhub.fedcloud-tf.fedcloud.eu/badge.svg)](https://binderhub.fedcloud-tf.fedcloud.eu/v2/gh/nthiery/sage-openmath-demo/master?filepath=openmath_pickle_demo.ipynb)
+[Binder@EGI](https://binderhub.fedcloud-tf.fedcloud.eu/v2/gh/nthiery/sage-openmath-demo/master?filepath=openmath_pickle_demo.ipynb)
 
 ## Exporting Sage's Content Dictionaries (API) to MMT
 
