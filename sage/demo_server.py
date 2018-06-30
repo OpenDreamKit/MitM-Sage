@@ -99,7 +99,7 @@ class SCSCPRequestHandler(socketserver.BaseRequestHandler):
                                              self.server.version.decode(),
                                              self.server.description)
 
-class Server(socketserver.ThreadingMixIn, socketserver.TCPServer, object):
+class Server(socketserver.ForkingMixIn, socketserver.TCPServer, object):
     allow_reuse_address = True
     
     def __init__(self, host='localhost', port=26133,
