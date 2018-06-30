@@ -1,10 +1,12 @@
+import sage.all
+
 import socket
 try:
     import socketserver
 except:
     import SocketServer as socketserver
 import logging
-from openmath import openmath as om, convert as conv
+from openmath import openmath as om, convert_pickle as conv
 
 from scscp.client import TimeoutError, CONNECTED
 from scscp.server import SCSCPServer
