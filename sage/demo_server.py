@@ -21,6 +21,8 @@ CD_ARITH1 = {
     'divide'      : lambda x,y: x/y,
     'times'       : lambda x,y: x*y,
     'power'       : lambda x,y: x**y,
+    'apply'       : lambda f,*args: f(*args),
+    'eval'        : lambda x: x,
 }
 
 class SCSCPRequestHandler(socketserver.BaseRequestHandler):
