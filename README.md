@@ -14,7 +14,7 @@ See the [demo notebook](sage/openmath_pickle_demo.ipynb), or run it on
 
 ## Generic SCSCP server for SageMath
 
-See the [demo notebook](demo_sage_scscp.ipynb), or run it on
+See the [demo notebook](sage/demo_sage_scscp.ipynb), or run it on
 [Binder@EGI](https://binderhub.fedcloud-tf.fedcloud.eu/v2/gh/OpenDreamKit/MitM-Sage/master?filepath=sage/demo_sage_scscp.ipynb)
 
 ## Exporting Sage's Content Dictionaries (API) to MMT
