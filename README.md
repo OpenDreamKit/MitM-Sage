@@ -12,6 +12,11 @@ math software.
 See the [demo notebook](sage/openmath_pickle_demo.ipynb), or run it on
 [Binder@EGI](https://binderhub.fedcloud-tf.fedcloud.eu/v2/gh/OpenDreamKit/MitM-Sage/master?filepath=sage/openmath_pickle_demo.ipynb)
 
+## Generic SCSCP server for SageMath
+
+See the [demo notebook](demo_sage_scscp.ipynb), or run it on
+[Binder@EGI](https://binderhub.fedcloud-tf.fedcloud.eu/v2/gh/OpenDreamKit/MitM-Sage/master?filepath=sage/demo_sage_scscp.ipynb)
+
 ## Exporting Sage's Content Dictionaries (API) to MMT
 
 Output browsable at: https://odk.mathhub.info/mh/mmt/?http://www.sagemath.org
