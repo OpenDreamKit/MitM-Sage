@@ -11,4 +11,6 @@ FROM sagemath/sagemath@sha256:e933509b105f36b9b7de892af847ade7753e058c5d9e0c0f28
 COPY --chown=sage:sage README.md ${HOME}/
 COPY --chown=sage:sage sage ${HOME}/sage/
 
-RUN cd sage && sage -pip install -e .
+RUN cd sage && sage -pip install -e . --process-dependency-links --upgrade
+
+# CMD sage sage/demo_sage_scscp_server.py > sage/demo_sage_scscp_server.log 2>&1
