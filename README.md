@@ -23,31 +23,16 @@ Output browsable at: https://odk.mathhub.info/mh/mmt/?http://www.sagemath.org
 
 ### How to regenerate the Content Dictionaries
 
-(usually done by @nthiery, upon request)
-
-Install this package and its dependencies:
+Run this [notebook](sage/export.ipynb), either on
+[Binder@EGI](https://binderhub.fedcloud-tf.fedcloud.eu/v2/gh/OpenDreamKit/MitM-Sage/master?filepath=sage/export.ipynb),
+or after installing this package and its dependencies in SageMath:
 
     cd sage;
     sage -pip install --user -e .
 
-Run the following commands:
-
-    sage: from sagetypes import Exporter
-    sage: e = Exporter()
-    sage: e.harvest_categories()
-    sage: e.save('sagetypes.json')
-
-One can also selectively harvest specific objects, classes and
-categories before saving. For example::
-
-    sage: e.harvest_sage_object(TransitiveGroups())
-
-Commit the output file:
+Optional: commit the output file:
 
     git commit -m "Update Sage's CDs" sagetypes.json
-
-Alternatively, you can use the binder link above, run the commands in
-a fresh notebook, and download the produced sagetypes.json.
 
 ### How to process Sage's Content Dictionaries
 
