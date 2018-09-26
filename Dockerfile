@@ -8,7 +8,7 @@ FROM sagemath/sagemath:8.3
 COPY --chown=sage:sage README.md ${HOME}/
 COPY --chown=sage:sage sage ${HOME}/sage/
 
-RUN sage -i database_gap
+# RUN sage -i database_gap # requires a base Sage docker image with build artifacts
 RUN cd sage && sage -pip install -e . --process-dependency-links --upgrade
 
 # CMD sage sage/demo_sage_scscp_server.py > sage/demo_sage_scscp_server.log 2>&1
