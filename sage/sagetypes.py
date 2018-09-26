@@ -104,6 +104,7 @@ def category_name(category):
 
 def class_name(cls):
     """
+    Return the full name of a class or global function
 
     """
     return cls.__module__+"."+cls.__name__
@@ -121,7 +122,7 @@ class Exporter(object):
 
         sage: e = Exporter()
         sage: e._database
-        {'categories': {}, 'classes': {}}
+        {'categories': {}, 'classes': {}, 'functions': {}}
 
     Let's harvest metadata from a class:
 
@@ -144,7 +145,8 @@ class Exporter(object):
         if file is None:
             self._database = {
                 'categories': {},
-                'classes' : {}
+                'classes' : {},
+                'functions': {},
                 }
         else:
             self._database = json.load(file)
@@ -229,7 +231,7 @@ class Exporter(object):
                           for c in cls.__bases__
                               if issubclass(c, SageObject)],
             "methods": { key:
-                self.harvest_method(method, semantic.get(key, {}))
+                self.harvest_function(method, semantic.get(key, {}), store=False)
                 for (key, method) in cls.__dict__.iteritems()
                 if key not in ["__doc__", "__module__", "_sage_src_lines_", "_reduction"]
                 and (callable(method) or isinstance(method, AbstractMethod))
@@ -274,14 +276,23 @@ class Exporter(object):
             data['construction'] = [self.harvest_sage_object(x)['name'] for x in construction]
         return data
 
-    def harvest_method(self, method, semantic={}):
+    def harvest_function(self, method, semantic={}, store=True):
         """
-        Export metadata about a single method, including stuff in `semantic`
+        Harvest metadata about a single function/method, including stuff in
+        `semantic`
+
+        INPUT:
+
+            - ``store`` -- a boolean (default: True): whether to store
+              the harvested information, or just return it
+
+        Storing is meant for global functions, non storing for methods
+        of classes whose data will be stored in the class
 
         EXAMPLES::
 
             sage: def f(x,y): pass
-            sage: Exporter().harvest_method(f, {"gap":"coucou"})
+            sage: Exporter().harvest_method(f, {"gap":"coucou"}, store=False)
             {'__doc__': None,
              'args': ['x', 'y'],
              'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
@@ -299,6 +310,10 @@ class Exporter(object):
         except TypeError:
             result = {}
         result.update(semantic)
+
+        if store:
+            result['name'] = class_name(method)
+            self._database['functions'][result['name']] = result
         return result
 
     def harvest_categories(self):
