@@ -8,8 +8,8 @@ EXAMPLES::
     sage: e.harvest_categories()
     sage: e.harvest_sage_object(TransitiveGroups())
     sage: for P in [ TransitiveGroup(4,1), Partitions(100), QQ['x,y'] ]:
-    ....:     e.harvest_sage_object(P)
-    ....:     e.harvest_sage_object(P.an_element())
+    ....:     _ = e.harvest_sage_object(P)
+    ....:     _ = e.harvest_sage_object(P.an_element())
     sage: e.save('transitive_groups.json')
 
 ..  TODO::
@@ -281,7 +281,7 @@ class Exporter(object):
         EXAMPLES::
 
             sage: def f(x,y): pass
-            sage: harvest_method(f, {"gap":"coucou"})
+            sage: Exporter().harvest_method(f, {"gap":"coucou"})
             {'__doc__': None,
              'args': ['x', 'y'],
              'argspec': ArgSpec(args=['x', 'y'], varargs=None, keywords=None, defaults=None),
