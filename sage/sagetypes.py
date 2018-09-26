@@ -18,49 +18,9 @@ EXAMPLES::
     - How to separate mathematical metadata from technical stuff
     - Currently, the metadata for an instance is added to that of its class;
       if there are several instances with the same class, the last one wins
-
-    sage: import openmath.convert
-    sage: from openmath import openmath as om
-    sage: o = om.OMApplication(om.OMSymbol(name='apply_function', cd='python'),
-    ....:                                  [openmath.convert.to_openmath(x) for x in
-                                            ["sage.rings.finite_rings.integer_mod_ring.IntegerModRing", int(3)]])
-    sage: openmath.convert.to_python(o)
-    Ring of integers modulo 3
-
-    sage: o = om.OMApplication(om.OMSymbol(name='apply_function', cd='python'),
-    ....:                                  [openmath.convert.to_openmath(x) for x in
-    ....:                                  ["GL", int(3), int(4)]])
-    sage: openmath.convert.to_python(o)
-    General Linear Group of degree 3 over Finite Field in a of size 2^2
-
-    n = 3
-    GL(n, n)
-
-    om.OMAttribution(om.OMAttributionPairs([ [ om.OMSymbol(name='n'), om.OMInteger(3) ] ],
-                     om.OMApplication(om.OMSymbol(name='apply_function', cd='python'),
-                                      [OMString("GL"), n
-
-    
 """
 
-import json, importlib
-import openmath.convert
-
-def apply_python_function(o):
-    f = openmath.convert.to_python(o.arguments[0]).split(".")
-    module = '.'.join(f[:-1])
-    if not module:
-        module = "sage.all"
-    module = importlib.import_module(module)
-    f = getattr(module, f[-1])
-    return f(*[openmath.convert.to_python(arg) for arg in o.arguments[1:]])
-openmath.convert.register_to_python('python',
-                                    'apply_function',
-                                    apply_python_function
-                                    )
-
-
-
+import json
 from sage.misc.misc import attrcall
 from sage.misc.cachefunc import cached_function
 from sage.misc.abstract_method import AbstractMethod
