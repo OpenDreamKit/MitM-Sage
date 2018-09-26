@@ -267,10 +267,12 @@ class Exporter(object):
             data['categories'] = [self.harvest_category(category)['name']
                                   for category in categories]
         try:
-            construction = self.construction()
-            data['construction'] = [self.harvest_sage_object(x)['name'] for x in construction]
+            construction = obj.construction()
         except AttributeError:
-            pass
+            construction = None
+        if construction:
+            data['construction'] = [self.harvest_sage_object(x)['name'] for x in construction]
+        return data
 
     def harvest_method(self, method, semantic={}):
         """
