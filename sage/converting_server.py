@@ -11,6 +11,10 @@ from scscp import scscp
 
 from scscp.socketserver import SCSCPServerRequestHandler, SCSCPSocketServer
 
+# improve sage openmath serialisation
+# imported only for side-effects
+import MitM
+
 MitMBase = "http://opendreamkit.org/MitM"
 MitMCD = "computation"
 MitMEval = "sage_eval"
