@@ -4,17 +4,18 @@ makes MitM functionality available from within Python
 (does not actually depend on Sage at this point but might in the future)
 """
 
-from openmath.dsl_helpers import *
+from openmath import openmath as om
+from openmath import helpers
 
-class MitMHelper(CDBaseHelper):
+class MitMHelper(helpers.CDBaseHelper):
     """holds all functionality for making MitM tools available in Python"""
     def __init__(self, cdbase, conv):
         """conv: the OM converter to use for building Python objects"""
-        self.conv = conv
+        self._conv = conv
         super().__init__(cdbase)
     def __call__(self, a):
         """runs a computation or query through MitM"""
-        obj = interpretAsOpenMath(a)
+        obj = helpers.interpretAsOpenMath(a)
         print("this should run", obj)
         # apply conv to imports result(s) into Python
 
@@ -40,10 +41,10 @@ def LMFDB(obj):
 
 ### building queries
 
-mmt = CDBaseHelper("http://???")
+mmt = helpers.CDBaseHelper("http://???")
 qmt = mmt.qmt
 
-class QueryHelper(WrappedHelper):
+class QueryHelper(helpers.WrappedHelper):
     """base of classes representing queries"""
     def toOM(self):
         pass
@@ -58,7 +59,7 @@ class FROMQuery(QueryHelper):
     def __init__(self, db):
         self.db = db
     def toOM(self):
-        return OMSymbol(cdbase=self.db.cdbase, cd=self.db.cd, name="")
+        return om.OMSymbol(cdbase=self.db.cdbase, cd=self.db.cd, name="")
     def WHERE(self, **kwargs):
         conditions = [qmt.condition(self.db.__getattr__(k),v) for k,v in kwargs.items()]
         return WHEREQuery(self, conditions)
@@ -91,4 +92,4 @@ algebra = MitM.algebra
 
 p = LMFDB(FROM(lmfdbBase.hilbertforms).WHERE(dim=2))
 q = p.map(lambda x: algebra.hecke(x))
-r = MitM(q)            
+r = MitM(q)
