@@ -6,10 +6,11 @@ makes MitM functionality available from within Python
 
 from openmath import openmath as om
 from openmath import helpers
+from openmath import convert_pickle
 
 import qmt
 
-converter = None # TODO: Use the MitM converter
+converter = convert_pickle.PickleConverter() # TODO: Use the MitM converter
 lmfdb = qmt.UseSystemHelper("http://www.lmfdb.org/db", "lmfdb", converter)
 
 smglom = helpers.CDBaseHelper("http://mathhub.info/MitM/smglom", converter)
