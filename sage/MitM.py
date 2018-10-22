@@ -8,7 +8,21 @@ from openmath import openmath as om
 from openmath import helpers
 from openmath import convert_pickle
 
+from scscp import SCSCPCLI
+
 import qmt
+
+
+def run(query, host="127.0.0.1", port=26134):
+    """ Evaluates a query on a MitM server """
+    client = None; result = None
+    try:
+        client = SCSCPCLI(host, port=port)
+        print(query.getQuery())
+        return client.heads.mitm_transient.mitmEval([query.getQuery()])
+    finally:
+        if client:
+            client.quit()
 
 converter = convert_pickle.PickleConverter() # TODO: Use the MitM converter
 lmfdb = qmt.UseSystemHelper("http://www.lmfdb.org/db", "lmfdb", converter)
@@ -18,5 +32,6 @@ algebra = smglom / "algebra"
 
 # Generate a query to be sent over the wire
 # TODO: Actually run the query
-query = lmfdb.hmf_forms.where(algebra.base_field_degree(2)).get().map(lambda x: lmfdb.hecke(x))
-print(query._query)
+query = lmfdb.hmf_forms.where(algebra.base_field_degree(2))
+query2 = query.get().map(lambda x: lmfdb.hecke(x))
+print(run(query))

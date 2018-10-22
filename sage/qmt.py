@@ -53,6 +53,11 @@ class _QueryBuilder(object):
         query._tags = None
         return query
     
+    def getQuery(self):
+        """ Applies all tags and wrap this query in the mitm eval symbol """
+        query = self.get()._query
+        return om.OMSymbol(name="ODKQuery", cd="Systems", cdbase="http://opendreamkit.org")(query)
+    
     def _toOM(self, term):
         return helpers.convertAsOpenMath(term, self._converter)
 
@@ -83,7 +88,7 @@ class MAP(_QueryBuilder):
     def __init__(self, converter, base, func, tags=None):
         super(MAP, self).__init__(converter, om.OMBinding(
             binder = QMTQuery.Mapping,
-            vars = om.OMVariable('x'),
+            vars = om.OMBindVariables([om.OMVariable('x')]),
             obj = _multibody(
                 base, 
                 func(om.OMVariable('x'))
@@ -132,7 +137,7 @@ class WHERE(_QueryBuilder):
             
             return om.OMBinding(
                 binder = QMTJudgements.Equals,
-                vars = om.OMVariable('x'),
+                vars = om.OMBindVariables([om.OMVariable('x')]),
                 obj = _multibody(
                     op(om.OMVariable('x'), *args),
                     value
