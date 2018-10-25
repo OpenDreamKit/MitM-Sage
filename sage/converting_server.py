@@ -31,7 +31,7 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
                 objPy = self.converter.to_python(obj)
                 return self.converter.to_openmath(objPy)
         
-        return MitMRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
+        return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
 
     def get_allowed_heads(self, data):
         return scscp.symbol_set([om.OMSymbol(base = MitMEval, cd = MitMCD, name = MitMEval)], cdnames=[MitMCD, 'scscp1'])
@@ -56,7 +56,7 @@ class MitMSCSCPServer(SCSCPSocketServer):
             def __init__(self, *args, **kwargs):
                 MitMRequestHandler.__init__(self, openmath_converter, *args, **kwargs)
         
-        MitMSCSCPServer.__init__(self, host=host, port=port, 
+        SCSCPSocketServer.__init__(self, host=host, port=port, 
             logger=logger or logging.getLogger(__name__), name=name, version=version, 
             description=description, RequestHandlerClass=ReqHandler)
         
