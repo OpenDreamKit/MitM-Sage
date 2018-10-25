@@ -21,7 +21,7 @@ MitMEval = "sage_eval"
 
 class MitMRequestHandler(SCSCPServerRequestHandler):
     def __init__(self, converter, *args, **kwargs):
-        super(MitMRequestHandler, self).__init__(*args, **kwargs)
+        SCSCPServerRequestHandler.__init__(self, *args, **kwargs)
         self.converter = converter
     
     def handle_call(self, call, head):
