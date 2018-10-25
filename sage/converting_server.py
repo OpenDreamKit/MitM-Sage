@@ -22,8 +22,8 @@ MitMEval = "MitM_Evaluate"
 
 class MitMRequestHandler(SCSCPServerRequestHandler):
     def __init__(self, converter, *args, **kwargs):
-        SCSCPServerRequestHandler.__init__(self, *args, **kwargs)
         self.converter = converter
+        SCSCPServerRequestHandler.__init__(self, *args, **kwargs)
     
     def handle_call(self, call, head):
         if call.data.elem.cdbase == MitMBase and call.data.elem.cd == MitMCD and call.data.elem.name == MitMEval:
@@ -32,7 +32,8 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
            try:
               objPy = self.converter.to_python(obj)
               return self.converter.to_openmath(objPy)
-           except (AttributeError, IndexError, TypeError) as e:
+           except Exception as e:
+              # we have to protect our error messages, the SCSCP server would swallow them
               return om.OMString(str(e))
         
         return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
