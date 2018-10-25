@@ -37,9 +37,8 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
            except Exception as e:
               # we have to protect our error messages, the SCSCP server would swallow them
               eS = traceback.format_exc()
-              return om.OMString(str(eS)
-        
-)        return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
+              return om.OMString(str(eS))
+        return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
 
     def get_allowed_heads(self, data):
         return scscp.symbol_set([om.OMSymbol(base = MitMEval, cd = MitMCD, name = MitMEval)], cdnames=[MitMCD, 'scscp1'])
