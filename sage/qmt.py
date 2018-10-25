@@ -102,7 +102,7 @@ class WHERE(_QueryBuilder):
         super(WHERE, self).__init__(converter, None, tags=tags)
 
         # re-write the individual conditions
-        cs = [self._get_condition(c) for c in conditions]
+        cs = [QMTProp.Holds(om.OMVariable('x'), self._get_condition(c)) for c in conditions]
         
         # if we only have one condition, do not change anything 
         # on the base query
@@ -111,9 +111,13 @@ class WHERE(_QueryBuilder):
         
         # if we have > 1, we need to add a holds()
         else:
-            self._query = QMTProp.Holds(
-                om.OMVariable('x'),
-                functools.reduce(lambda a,b: QMTProp.And(a, b), cs)
+            self._query = om.OMBinding(
+                binder = QMTQuery.Comprehension,
+                vars = om.OMBindVariables([om.OMVariable('x')]),
+                obj = _multibody(
+                    base,
+                    functools.reduce(lambda a,b: QMTProp.And(a, b), cs)
+                )
             )
         self._base = base
         self._conditions = conditions
@@ -161,7 +165,7 @@ class UseSystemHelper(helpers.CDBaseHelper):
         self._system = system
         self._converter = converter
     
-    def __hook__(self, cd, cdbase, converter, symbolhook):
+    def __hook__(self, cdbase, cd, converter, symbolhook):
         return FROM(converter, helpers.OMSymbol(name="", cd=cd, cdbase=cdbase, converter=converter), tags=[self])
     
     def __repr__(self):

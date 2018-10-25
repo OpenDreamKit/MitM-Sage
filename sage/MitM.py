@@ -18,7 +18,6 @@ def run(query, host="127.0.0.1", port=26134):
     client = None; result = None
     try:
         client = SCSCPCLI(host, port=port)
-        print(query.getQuery())
         return client.heads.mitm_transient.mitmEval([query.getQuery()])
     finally:
         if client:
@@ -32,6 +31,6 @@ algebra = smglom / "algebra"
 
 # Generate a query to be sent over the wire
 # TODO: Actually run the query
-query = lmfdb.hmf_forms.where(algebra.base_field_degree(2))
+query = lmfdb.hmf_forms.where(algebra.HilbertNewforms.base_field_degree(2), algebra.HilbertNewforms.dimension(2))
 query2 = query.get().map(lambda x: lmfdb.hecke(x))
 print(run(query))
