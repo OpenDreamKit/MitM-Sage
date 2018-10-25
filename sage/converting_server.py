@@ -47,7 +47,7 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
                                              self.server.description)
 
 class MitMSCSCPServer(SCSCPSocketServer):
-    def __init__(self, openmath_converter, host='localhost', port=26133,
+    def __init__(self, openmath_converter, host='localhost', port=26136,
                      logger=None, name=b'MitM Server', version=b'none',
                      description='MitM SCSCP server'):
         
