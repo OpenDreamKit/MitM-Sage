@@ -54,7 +54,7 @@ class MitMSCSCPServer(SCSCPSocketServer):
         # build a converter class
         class ReqHandler(MitMRequestHandler):
             def __init__(self, *args, **kwargs):
-                super(MitMRequestHandler,self).__init__(openmath_converter, *args, **kwargs)
+                MitMRequestHandler.__init__(self.openmath_converter, *args, **kwargs)
         
         super(MitMSCSCPServer, self).__init__(host=host, port=port, 
             logger=logger or logging.getLogger(__name__), name=name, version=version, 
