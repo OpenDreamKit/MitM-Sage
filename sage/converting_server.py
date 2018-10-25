@@ -12,6 +12,8 @@ from scscp import scscp
 
 from scscp.socketserver import SCSCPServerRequestHandler, SCSCPSocketServer
 
+import traceback
+
 # improve sage openmath serialisation
 # imported only for side-effects
 import pickle_improvements
@@ -34,9 +36,10 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
               return self.converter.to_openmath(objPy)
            except Exception as e:
               # we have to protect our error messages, the SCSCP server would swallow them
-              return om.OMString(str(e.with_traceback()))
+              eS = traceback.format_exc()
+              return om.OMString(str(eS)
         
-        return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
+)        return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
 
     def get_allowed_heads(self, data):
         return scscp.symbol_set([om.OMSymbol(base = MitMEval, cd = MitMCD, name = MitMEval)], cdnames=[MitMCD, 'scscp1'])
