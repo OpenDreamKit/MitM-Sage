@@ -34,7 +34,7 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
               return self.converter.to_openmath(objPy)
            except Exception as e:
               # we have to protect our error messages, the SCSCP server would swallow them
-              return om.OMString(str(e))
+              return om.OMString(str(e.with_traceback()))
         
         return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
 
