@@ -15,9 +15,9 @@ from scscp.socketserver import SCSCPServerRequestHandler, SCSCPSocketServer
 # imported only for side-effects
 import pickle_improvements
 
-MitMBase = "http://opendreamkit.org/MitM"
-MitMCD = "computation"
-MitMEval = "sage_eval"
+MitMBase = "http://opendreamkit.org/"
+MitMCD = "scscp_transient_1"
+MitMEval = "MitM_Evaluate"
 
 class MitMRequestHandler(SCSCPServerRequestHandler):
     def __init__(self, converter, *args, **kwargs):
