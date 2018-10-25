@@ -13,7 +13,7 @@ from scscp.socketserver import SCSCPServerRequestHandler, SCSCPSocketServer
 
 # improve sage openmath serialisation
 # imported only for side-effects
-import MitM
+import pickle_improvements
 
 MitMBase = "http://opendreamkit.org/MitM"
 MitMCD = "computation"
