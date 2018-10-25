@@ -3,6 +3,7 @@ from six.moves import socketserver
 import logging
 
 from openmath.convert_pickle import PickleConverter as MitMConverter
+from openmath import openmath as om
 
 from scscp.client import TimeoutError, CONNECTED
 from scscp.server import SCSCPServer
@@ -26,11 +27,11 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
     
     def handle_call(self, call, head):
         if call.data.elem.cdbase == MitMBase and call.data.elem.cd == MitMCD and call.data.elem.name == MitMEval:
-                return OMSymbol("test","test")
-                # we take the one argument of MitMEval, import it (which triggers computation), and export it (i.e., the result of the computation)
-                obj = call.data.arguments[0]
-                objPy = self.converter.to_python(obj)
-                return self.converter.to_openmath(objPy)
+           # we take the one argument of MitMEval, import it (which triggers computation), and export it (i.e., the result of the computation)
+           obj = call.data.arguments[0]
+           return ABC
+           objPy = self.converter.to_python(obj)
+           return self.converter.to_openmath(objPy)
         
         return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
 
