@@ -33,7 +33,7 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
               objPy = self.converter.to_python(obj)
               return self.converter.to_openmath(objPy)
            except (AttributeError, IndexError, TypeError) as e:
-              return om.OMSTR(str(e))
+              return om.OMString(str(e))
         
         return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
 
