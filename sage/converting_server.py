@@ -29,9 +29,11 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
         if call.data.elem.cdbase == MitMBase and call.data.elem.cd == MitMCD and call.data.elem.name == MitMEval:
            # we take the one argument of MitMEval, import it (which triggers computation), and export it (i.e., the result of the computation)
            obj = call.data.arguments[0]
-           objPy = self.converter.to_python(obj)
-           return ABC
-           return self.converter.to_openmath(objPy)
+           try:
+              objPy = self.converter.to_python(obj)
+              return self.converter.to_openmath(objPy)
+           except Exception as e:
+               return om.OMSTR(str(e))
         
         return SCSCPServerRequestHandler.handle_call(self, call, head) # super does not work on this class in Python 2 
 
