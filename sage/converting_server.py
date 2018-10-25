@@ -23,16 +23,12 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
     def __init__(self, converter, *args, **kwargs):
         SCSCPServerRequestHandler.__init__(self, *args, **kwargs)
         self.converter = converter
-        print("init")
-        logger.debug("initdd")
     
     def handle_call(self, call, head):
-        print(1)
+        return OMSymbol("test","test")
         if call.data.elem.cdbase == MitMBase and call.data.elem.cd == MitMCD and call.data.elem.name == MitMEval:
-                print(2)
                 # we take the one argument of MitMEval, import it (which triggers computation), and export it (i.e., the result of the computation)
                 obj = call.data.arguments[0]
-                print(3)
                 objPy = self.converter.to_python(obj)
                 return self.converter.to_openmath(objPy)
         
