@@ -23,6 +23,8 @@ class MitMRequestHandler(SCSCPServerRequestHandler):
     def __init__(self, converter, *args, **kwargs):
         SCSCPServerRequestHandler.__init__(self, *args, **kwargs)
         self.converter = converter
+        print("init")
+        logger.debug("initdd")
     
     def handle_call(self, call, head):
         print(1)
