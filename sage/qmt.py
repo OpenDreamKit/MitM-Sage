@@ -19,7 +19,10 @@ QMTJudgements = _qmt.QMTJudgements
 QMTBinaries = _qmt.QMTBinaries
 QMTUnaries = _qmt.QMTUnaries
 
+
 _multibody = helpers.CDBaseHelper("http://cds.omdoc.org/mmt").OpenMath.MultiBody
+_map = helpers.CDBaseHelper("http://gl.mathhub.info/MMT/LFX/Datatypes").ListSymbols.map
+
 
 class _QueryBuilder(object):
     """ A class for helping to build QMT MiTM Queries """
@@ -38,8 +41,13 @@ class _QueryBuilder(object):
         return USE(self._converter, self._query, system, tags=self._tags)
 
     def map(self, func):
-        """ Do stuff """
-        return MAP(self._converter, self._query, func, tags=self._tags)
+        """ Maps a function over this query """
+        qmt = self.query()
+        return MAP(qmt._converter, qmt._query, func, tags=qmt._tags)
+    
+    def limit(self, frm=None, until=None):
+        """ Limits the set of results to a fixed number """
+        return LIMIT(self._converter, self._query, frm, until, tags=self._tags)
     
     def get(self):
         """ Applies all tags (if any) to this Query """
@@ -53,11 +61,14 @@ class _QueryBuilder(object):
         query._tags = None
         return query
     
-    def getQuery(self):
+    def query(self):
         """ Applies all tags and wrap this query in the mitm eval symbol """
-        query = self.get()._query
-        return om.OMSymbol(name="ODKQuery", cd="Systems", cdbase="http://opendreamkit.org")(query)
+        query = self.get()
+        return _QueryBuilder(query._converter, om.OMSymbol(name="ODKQuery", cd="Systems", cdbase="http://opendreamkit.org")(query._query), tags=query._tags)
     
+    def getQuery(self):
+        return self.get()._query
+
     def _toOM(self, term):
         return helpers.convertAsOpenMath(term, self._converter)
 
@@ -86,14 +97,8 @@ class FROM(_QueryBuilder):
 
 class MAP(_QueryBuilder):
     def __init__(self, converter, base, func, tags=None):
-        super(MAP, self).__init__(converter, om.OMBinding(
-            binder = QMTQuery.Mapping,
-            vars = om.OMBindVariables([om.OMVariable('x')]),
-            obj = _multibody(
-                base, 
-                func(om.OMVariable('x'))
-            )
-        ), tags)
+
+        super(MAP, self).__init__(converter, _map(base, func), tags)
         self._base = base
         self._func = func
 
@@ -102,7 +107,7 @@ class WHERE(_QueryBuilder):
         super(WHERE, self).__init__(converter, None, tags=tags)
 
         # re-write the individual conditions
-        cs = [self._get_condition(c) for c in conditions]
+        cs = [QMTProp.Holds(om.OMVariable('x'), self._get_condition(c)) for c in conditions]
         
         # if we only have one condition, do not change anything 
         # on the base query
@@ -111,9 +116,13 @@ class WHERE(_QueryBuilder):
         
         # if we have > 1, we need to add a holds()
         else:
-            self._query = QMTProp.Holds(
-                om.OMVariable('x'),
-                functools.reduce(lambda a,b: QMTProp.And(a, b), cs)
+            self._query = om.OMBinding(
+                binder = QMTQuery.Comprehension,
+                vars = om.OMBindVariables([om.OMVariable('x')]),
+                obj = _multibody(
+                    base,
+                    functools.reduce(lambda a,b: QMTProp.And(a, b), cs)
+                )
             )
         self._base = base
         self._conditions = conditions
@@ -151,6 +160,25 @@ class WHERE(_QueryBuilder):
         newconditions = list(self._conditions) + list(conditions)
         return WHERE(self._converter, self._base, newconditions, tags=self._tags)
 
+class LIMIT(_QueryBuilder):
+    def __init__(self, converter, base, frm=None, until=None, tags=None):
+
+        if frm is None and until is None:
+            raise AssertionError("Need some limit")
+
+        if frm is None:
+            _query = QMTQuery.SliceUntil(str(until), base)
+        elif until is None:
+            _query = QMTQuery.SliceFrom(str(frm), base)
+        else:
+            _query = QMTQuery.Slice(str(frm), str(until), base)
+
+        super(LIMIT, self).__init__(converter, _query, tags=tags)
+
+        self._base = base
+        self._frm = frm
+        self._until = until
+
 class NoRewriteCondition(helpers.WrappedHelper):
     pass
 
@@ -161,7 +189,7 @@ class UseSystemHelper(helpers.CDBaseHelper):
         self._system = system
         self._converter = converter
     
-    def __hook__(self, cd, cdbase, converter, symbolhook):
+    def __hook__(self, cdbase, cd, converter, symbolhook):
         return FROM(converter, helpers.OMSymbol(name="", cd=cd, cdbase=cdbase, converter=converter), tags=[self])
     
     def __repr__(self):
