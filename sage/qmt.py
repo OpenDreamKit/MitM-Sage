@@ -97,7 +97,6 @@ class FROM(_QueryBuilder):
 
 class MAP(_QueryBuilder):
     def __init__(self, converter, base, func, tags=None):
-
         super(MAP, self).__init__(converter, _map(base, func), tags)
         self._base = base
         self._func = func
