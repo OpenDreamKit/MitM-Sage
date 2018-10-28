@@ -72,7 +72,7 @@ if __name__ == '__main__':
     logger = logging.getLogger('demo_server')
 
     conv = MitMConverter()
-    srv = MitMSCSCPServer(conv, logger=logger)
+    srv = MitMSCSCPServer(conv, host=os.environ.get('SCSCP_HOST') or 'localhost', logger=logger)
     
     try:
         srv.serve_forever()
