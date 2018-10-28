@@ -70,6 +70,7 @@ class MitMSCSCPServer(SCSCPSocketServer):
 
 # fix to avoid coding large integers as strings
 import copyreg
+from sage.rings.integer import Integer
 def pickle_sage_integer(i):
     return Integer, (int(i),)
 copyreg.pickle(Integer, pickle_sage_integer)
