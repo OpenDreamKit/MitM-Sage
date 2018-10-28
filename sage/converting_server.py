@@ -66,7 +66,13 @@ class MitMSCSCPServer(SCSCPSocketServer):
         SCSCPSocketServer.__init__(self, host=host, port=port, 
             logger=logger or logging.getLogger(__name__), name=name, version=version, 
             description=description, RequestHandlerClass=ReqHandler)
-        
+
+# fix to avoid coding large integers as strings
+import copyreg
+def pickle_sage_integer(i):
+    return Integer, (int(i),)
+copyreg.pickle(Integer, pickle_sage_integer)
+    
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
     logger = logging.getLogger('demo_server')
