@@ -127,7 +127,7 @@ if __name__ == '__main__':
     from sage.rings.integer_ring import ZZ
     R = PolynomialRing(ZZ, ["x1","x2"])
     import pdb
-    pdb.settrace()
+    pdb.set_trace()
     print(conv.to_openmath(R))
 
     try:
