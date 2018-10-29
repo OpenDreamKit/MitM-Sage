@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
     # Sage specific customization of the conversion
     bc = conv._basic_converter
-    sageCDBase = bc._cdbase
+    sageCDBase = bc._omBase
     def sageOMS(cd,name):
         return om.OMS(cdbase=sageCDBase, cd=cd, name=name)
 
