@@ -96,6 +96,8 @@ if __name__ == '__main__':
     reg(sageCDBase, polyConsCD, polyConsName, lambda: polyConsImpl)
 
     # export polynomial rings
+    from sage.rings.polynomial.multi_polynomial_ring_base import MPolynomialRing_base
+    from sage.rings.polynomial.polynomial_ring import PolynomialRing_general
     polyRingConsCD = "sage.rings.polynomial.polynomial_ring_constructor"
     polyRingConsName = "PolynomialRing"
     def polyRingExp(R):
@@ -105,10 +107,11 @@ if __name__ == '__main__':
         vnsO = [om.omString(s) for s in vns]
         RO = om.OMApplication(sageOMS(polyRingConsCD, polyRingConsName), brO, vnsO)
         return RO
-    bc.register_to_openmath(sage.rings.polynomial.multi_polynomial_ring_base.MPolynomialRing_base, polyRingExp)
-    bc.register_to_openmath(sage.rings.polynomial.polynomial_ring.PolynomialRing_general, polyRingExp)
+    bc.register_to_openmath(MPolynomialRing_base, polyRingExp)
+    bc.register_to_openmath(PolynomialRing_general, polyRingExp)
 
     # export polynomials
+    from sage.rings.polynomial.polynomial_element import Polynomial
     def polyExp(p):
         par = p.parent()
         d = p.dict()
