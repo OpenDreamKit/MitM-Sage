@@ -104,7 +104,7 @@ if __name__ == '__main__':
         br = R.base_ring()
         vns = R.variable_names()
         brO = conv.to_openmath(br)
-        vnsO = [om.omString(s) for s in vns]
+        vnsO = [om.OMString(s) for s in vns]
         RO = om.OMApplication(sageOMS(polyRingConsCD, polyRingConsName), brO, vnsO)
         return RO
     bc.register_to_openmath(MPolynomialRing_base, polyRingExp)
