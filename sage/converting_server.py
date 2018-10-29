@@ -125,7 +125,7 @@ if __name__ == '__main__':
        return lambda R,d: R(d), (p.parent(), p.dict())
     copyreg.pickle(Polynomial, pickle_polynomial)
     def pickle_polynomial_ring(p):
-       return lambda br,vn: R(d), (p.base_ring(), p.varnames())
+       return lambda br,vn: PolynomialRing(br,vn), (p.base_ring(), p.varnames())
     copyreg.pickle(MPolynomialRing_base, pickle_polynomial_ring)
     
 
