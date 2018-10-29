@@ -7,6 +7,7 @@ makes MitM functionality available from within Python
 from openmath import openmath as om
 from openmath import helpers
 from openmath import encoder
+from openmath import convert as c
 from openmath import convert_pickle
 
 from scscp import SCSCPCLI
@@ -15,6 +16,21 @@ from scscp import scscp
 from lxml.etree import tostring
 
 import qmt
+import sage.all
+
+hack = c.Converter()
+
+hack.register_to_python_name("http://python.org/", "Python", "list", lambda *args: list(args))
+
+hack.register_to_python_class(om.OMString, lambda s:s.string)
+hack.register_to_python_class(om.OMInteger, lambda i:i.integer)
+
+from sage.rings.rational_field import RationalField
+hack.register_to_python_name("http://python.org/", "sage.rings.rational_field", "RationalField", RationalField())
+
+from sage.rings.polynomial.polynomial_ring_constructor import PolynomialRing
+hack.register_to_python_name("http://python.org/", "sage.rings.polynomial.polynomial_ring_constructor", "PolynomialRing", PolynomialRing)
+
 
 def run(query, host="127.0.0.1", port=26134):
     """ Evaluates a query on a MitM server """
@@ -23,7 +39,8 @@ def run(query, host="127.0.0.1", port=26134):
     client = None; result = None
     try:
         client = SCSCPCLI(host, port=port)
-        return client.heads.mitm_transient.mitmEval([query.getQuery(), Systems.SageEval._toOM()], timeout=100000000)
+        res = client.heads.mitm_transient.mitmEval([query.getQuery(), Systems.SageEval._toOM()], timeout=100000000)
+        return hack.to_python(res)
     finally:
         if client:
             client.quit()
