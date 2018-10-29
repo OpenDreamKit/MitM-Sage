@@ -3,7 +3,7 @@ import socket
 from six.moves import socketserver
 import logging
 
-from openmath.convert_pickle import PickleConverter as MitMConverter
+from openmath.convert_pickle import PickleConverter
 from openmath import openmath as om
 
 from scscp.client import TimeoutError, CONNECTED
@@ -68,86 +68,76 @@ class MitMSCSCPServer(SCSCPSocketServer):
             logger=logger or logging.getLogger(__name__), name=name, version=version, 
             description=description, RequestHandlerClass=ReqHandler)
 
+class MitMConverter(PickleConverter):
+    def __init__(self, *args, **kwargs):
+        super(MitMConverter, self).__init__(*args, **kwargs)
+
+        bc = self._basic_converter
+        sageCDBase = "http://python.org/"
+
+        # Sage specific customization of the conversion
+        def sageOMS(cd,name):
+            return om.OMSymbol(cdbase=sageCDBase, cd=cd, name=name)
+
+        # fix to avoid coding large integers as strings
+        import copyreg
+        from sage.rings.integer import Integer
+        def pickle_sage_integer(i):
+            return Integer, (int(i),)
+        copyreg.pickle(Integer, pickle_sage_integer)
+
+        # conversion from polynomials
+        self._basic_converter.register_to_python_name(sageCDBase, "Polynomial", "sage.rings.polynomial.polynomial_element", lambda: (lambda R, d: R(d)))
+
+        # export polynomial rings
+        from sage.rings.polynomial.multi_polynomial_ring_base import MPolynomialRing_base
+        from sage.rings.polynomial.polynomial_ring import PolynomialRing_general
+        polyRingConsCD = "sage.rings.polynomial.polynomial_ring_constructor"
+        polyRingConsName = "PolynomialRing"
+        def polyRingExp(R):
+            brO = conv.to_openmath(R.base_ring())
+            vnsO = conv.to_openmath([s for s in R.variable_names()])
+            return om.OMApplication(sageOMS(polyRingConsCD, polyRingConsName), arguments=[brO, vnsO])
+        bc.register_to_openmath(MPolynomialRing_base, polyRingExp)
+        bc.register_to_openmath(PolynomialRing_general, polyRingExp)
+
+        # export polynomials
+        from sage.rings.polynomial.polynomial_element import Polynomial
+        def polyExp(p):
+            print("PICKLING p")
+            par = p.parent()
+            d = p.dict()
+            parO = conv.to_openmath(par)
+            dO = conv.to_openmath(d)
+            return om.OMApplication(sageOMS(polyConsCD, polyConsName), [parO, dO])
+        bc.register_to_openmath(Polynomial, polyExp)
+
 # run an SCSCP server
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
     logger = logging.getLogger('demo_server')
 
     conv = MitMConverter()
-
-    # Sage specific customization of the conversion
-    bc = conv._basic_converter
-    sageCDBase = bc._omBase
-    def sageOMS(cd,name):
-        return om.OMSymbol(cdbase=sageCDBase, cd=cd, name=name)
-
-    # fix to avoid coding large integers as strings
-    import copyreg
-    from sage.rings.integer import Integer
-    def pickle_sage_integer(i):
-       return Integer, (int(i),)
-    copyreg.pickle(Integer, pickle_sage_integer)
-
-    # import polynomials
-    reg = bc.register_to_python_name
-    polyConsCD  = "sage.rings.polynomial.polynomial_element"
-    polyConsName = "Polynomial"
-    polyConsImpl = lambda R, d: R(d)
-    reg(sageCDBase, polyConsCD, polyConsName, lambda: polyConsImpl)
-
-    # export polynomial rings
-    from sage.rings.polynomial.multi_polynomial_ring_base import MPolynomialRing_base
-    from sage.rings.polynomial.polynomial_ring import PolynomialRing_general
-    polyRingConsCD = "sage.rings.polynomial.polynomial_ring_constructor"
-    polyRingConsName = "PolynomialRing"
-    def polyRingExp(R):
-        br = R.base_ring()
-        vns = R.variable_names()
-        brO = conv.to_openmath(br)
-        vnsO = [om.OMString(s) for s in vns]
-        RO = om.OMApplication(sageOMS(polyRingConsCD, polyRingConsName), [brO, vnsO])
-        return RO
-    bc.register_to_openmath(MPolynomialRing_base, polyRingExp)
-    bc.register_to_openmath(PolynomialRing_general, polyRingExp)
-
-    # export polynomials
-    from sage.rings.polynomial.polynomial_element import Polynomial
-    def polyExp(p):
-        par = p.parent()
-        d = p.dict()
-        parO = conv.to_openmath(par)
-        dO = conv.to_openmath(d)
-        om.OMApplication(sageOMS(polyConsCD, polyConsName), [parO, dO])
-    bc.register_to_openmath(Polynomial, polyExp)
-
-    # another attempt going directly through the pickling hooks
-    def pickle_polynomial(p):
-       return lambda R,d: R(d), (p.parent(), p.dict())
-    copyreg.pickle(Polynomial, pickle_polynomial)
-    def pickle_polynomial_ring(p):
-       return lambda br,vn: PolynomialRing(br,vn), (p.base_ring(), p.varnames())
-    copyreg.pickle(MPolynomialRing_base, pickle_polynomial_ring)
     
-
     # start the server
-    srv = MitMSCSCPServer(conv, host=os.environ.get('SCSCP_HOST') or 'localhost', logger=logger)
+    #srv = MitMSCSCPServer(conv, host=os.environ.get('SCSCP_HOST') or 'localhost', logger=logger)
     
     from sage.rings.polynomial.polynomial_ring_constructor import PolynomialRing
     from sage.rings.integer_ring import ZZ
     R = PolynomialRing(ZZ, ["x1","x2"])
-    x1,x2 = R.gens()
-    p = x1+x2
-    
-    
+    oR = conv.to_openmath(R)
+    rR = conv.to_python(oR)
 
-    import pdb
-    #pdb.set_trace()
+    x1 = R.gens()[0]
+    x2 = R.gens()[1]
+
+    p = x1 + x2
     print(conv.to_openmath(p))
-    print(conv.to_openmath(R))
+    
 
     try:
         print("starting SCSCP server")
-        srv.serve_forever()
+        #srv.serve_forever()
         print("server terminated")
     except KeyboardInterrupt:
         srv.shutdown()
