@@ -21,7 +21,6 @@ import sage.all
 hack = c.Converter()
 
 hack.register_to_python_name("http://python.org/", "Python", "list", lambda *args: list(args))
-
 hack.register_to_python_class(om.OMString, lambda s:s.string)
 hack.register_to_python_class(om.OMInteger, lambda i:i.integer)
 
@@ -30,7 +29,6 @@ hack.register_to_python_name("http://python.org/", "sage.rings.rational_field", 
 
 from sage.rings.polynomial.polynomial_ring_constructor import PolynomialRing
 hack.register_to_python_name("http://python.org/", "sage.rings.polynomial.polynomial_ring_constructor", "PolynomialRing", PolynomialRing)
-
 
 def run(query, host="127.0.0.1", port=26134):
     """ Evaluates a query on a MitM server """
@@ -48,6 +46,9 @@ def run(query, host="127.0.0.1", port=26134):
 
 
 converter = convert_pickle.PickleConverter() # TODO: Use the MitM converter
+from sage.rings.integer import Integer
+converter._basic_converter.register_to_openmath(Integer, lambda i: om.OMInteger(int(i)))
+
 Systems = helpers.CDBaseHelper("http://opendreamkit.org/", converter).Systems
 lmfdb = qmt.UseSystemHelper("http://www.lmfdb.org/db", "lmfdb", converter)
 
@@ -56,8 +57,3 @@ algebra = smglom / "algebra"
 
 smglom = helpers.CDBaseHelper("http://mathhub.info/MitM/smglom", converter)
 mitm = helpers.CDBaseHelper("http://mathhub.info/MitM", converter)
-
-# Generate a query to be sent over the wire
-# TODO: Actually run the query
-query = lmfdb.hmf_hecke.where(algebra.HilbertNewforms.base_field_degree(2), algebra.HilbertNewforms.dimension(2)).limit(until=10).map(algebra.HeckeEigenvalues.heckePolynomial)
-print(run(query))
