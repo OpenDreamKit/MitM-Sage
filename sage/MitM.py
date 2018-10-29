@@ -14,6 +14,7 @@ from scscp import scscp
 
 from lxml.etree import tostring
 
+from converting_server import MitMConverter
 import qmt
 
 def run(query, host="127.0.0.1", port=26134):
@@ -30,7 +31,7 @@ def run(query, host="127.0.0.1", port=26134):
 
 
 
-converter = convert_pickle.PickleConverter() # TODO: Use the MitM converter
+converter = MitMConverter() # TODO: Use the MitM converter
 Systems = helpers.CDBaseHelper("http://opendreamkit.org/", converter).Systems
 lmfdb = qmt.UseSystemHelper("http://www.lmfdb.org/db", "lmfdb", converter)
 
