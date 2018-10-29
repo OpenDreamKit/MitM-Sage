@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
     # export polynomial rings
     from sage.rings.polynomial.multi_polynomial_ring_base import MPolynomialRing_base
-    from sage.rings.polynomial.polynomial_ring import PolynomialRing_general
+    from sage.rings.polynomial.polynomial_ring import PolynomialRing_general, PolynomialRing
     polyRingConsCD = "sage.rings.polynomial.polynomial_ring_constructor"
     polyRingConsName = "PolynomialRing"
     def polyRingExp(R):
@@ -123,6 +123,9 @@ if __name__ == '__main__':
     # start the server
     srv = MitMSCSCPServer(conv, host=os.environ.get('SCSCP_HOST') or 'localhost', logger=logger)
     
+    R = PolynomialRing(Integers(), ["x1","x2"])
+    print(conv.to_openmath(R))
+
     try:
         print("starting SCSCP server")
         # srv.serve_forever()
