@@ -79,7 +79,7 @@ if __name__ == '__main__':
     bc = conv._basic_converter
     sageCDBase = bc._omBase
     def sageOMS(cd,name):
-        return om.OMS(cdbase=sageCDBase, cd=cd, name=name)
+        return om.OMSymbol(cdbase=sageCDBase, cd=cd, name=name)
 
     # fix to avoid coding large integers as strings
     import copyreg
