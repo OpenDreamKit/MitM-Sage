@@ -124,9 +124,9 @@ if __name__ == '__main__':
     srv = MitMSCSCPServer(conv, host=os.environ.get('SCSCP_HOST') or 'localhost', logger=logger)
     
     try:
-        print("test")
-        srv.serve_forever()
-        print("test")
+        print("starting SCSCP server")
+        # srv.serve_forever()
+        print("server terminated")
     except KeyboardInterrupt:
         srv.shutdown()
         srv.server_close()
