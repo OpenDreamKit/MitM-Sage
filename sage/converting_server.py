@@ -124,8 +124,8 @@ if __name__ == '__main__':
     srv = MitMSCSCPServer(conv, host=os.environ.get('SCSCP_HOST') or 'localhost', logger=logger)
     
     from sage.rings.polynomial.polynomial_ring_constructor import PolynomialRing
-    from sage.rings.integer_ring import Integers
-    R = PolynomialRing(Integers(), ["x1","x2"])
+    from sage.rings.integer_ring import ZZ
+    R = PolynomialRing(ZZ, ["x1","x2"])
     print(conv.to_openmath(R))
 
     try:
