@@ -68,18 +68,56 @@ class MitMSCSCPServer(SCSCPSocketServer):
             logger=logger or logging.getLogger(__name__), name=name, version=version, 
             description=description, RequestHandlerClass=ReqHandler)
 
-# fix to avoid coding large integers as strings
-import copyreg
-from sage.rings.integer import Integer
-def pickle_sage_integer(i):
-    return Integer, (int(i),)
-copyreg.pickle(Integer, pickle_sage_integer)
-    
+# run an SCSCP server
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
     logger = logging.getLogger('demo_server')
 
     conv = MitMConverter()
+
+    # Sage specific customization of the conversion
+    bc = conv._basic_converter
+    sageCDBase = bc._cdbase
+    def sageOMS(cd,name):
+        return om.OMS(cdbase=sageCDBase, cd=cd, name=name)
+
+    # fix to avoid coding large integers as strings
+    import copyreg
+    from sage.rings.integer import Integer
+    def pickle_sage_integer(i):
+       return Integer, (int(i),)
+    copyreg.pickle(Integer, pickle_sage_integer)
+
+    # import polynomials
+    reg = bc.register_to_python_name
+    polyConsCD  = "sage.rings.polynomial.polynomial_element"
+    polyConsName = "Polynomial"
+    polyConsImpl = lambda R, d: R(d)
+    reg(sageCDBase, polyConsDC, polyConsName, lambda: polyConsImpl)
+
+    # export polynomial rings
+    polyRingConsCD = "sage.rings.polynomial.polynomial_ring_constructor"
+    polyRingConsName = "PolynomialRing"
+    def polyRingExp(R):
+        br = R.base_ring()
+        vns = R.variable_names()
+        brO = conv.to_openmath(r)
+        vnsO = [om.omString(s) for s in vns]
+        RO = om.OMApplication(sageOMS(polyRingConsCD, polyRingConsName), brO, vnsO)
+        return RO
+    bc.register_to_openmath(sage.rings.polynomial.multi_polynomial_ring_base.MPolynomialRing_base, polyRingExp)
+    bc.register_to_openmath(sage.rings.polynomial.polynomial_ring.PolynomialRing_general, polyRingExp)
+
+    # export polynomials
+    def polyExp(p):
+        par = p.parent()
+        d = p.dict()
+        parO = conv.to_openmath(par)
+        dO = conv.to_openmath(d)
+        om.OMApplication(sageOMS(polyConsCD, polyConsName), parO, dO)
+    bc.register_to_openmath(sage.rings.polynomial.polynomial_element.Polynomial, polyExp)
+
+    # start the server
     srv = MitMSCSCPServer(conv, host=os.environ.get('SCSCP_HOST') or 'localhost', logger=logger)
     
     try:
