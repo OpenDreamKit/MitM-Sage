@@ -136,7 +136,7 @@ if __name__ == '__main__':
     from sage.rings.integer_ring import ZZ
     R = PolynomialRing(ZZ, ["x1","x2"])
     x1,x2 = R.gens()
-    p = x1^2
+    p = x1+x2
     
     
 
