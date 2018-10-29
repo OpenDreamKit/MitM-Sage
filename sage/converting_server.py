@@ -127,10 +127,12 @@ if __name__ == '__main__':
     from sage.rings.integer_ring import ZZ
     R = PolynomialRing(ZZ, ["x1","x2"])
     print(conv.to_openmath(R))
+    p = R.0^2+3*R.1^3
+    print(conv.to_openmath(p))
 
     try:
         print("starting SCSCP server")
-        # srv.serve_forever()
+        srv.serve_forever()
         print("server terminated")
     except KeyboardInterrupt:
         srv.shutdown()
