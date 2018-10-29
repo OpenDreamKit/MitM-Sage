@@ -118,7 +118,7 @@ if __name__ == '__main__':
         parO = conv.to_openmath(par)
         dO = conv.to_openmath(d)
         om.OMApplication(sageOMS(polyConsCD, polyConsName), parO, dO)
-    bc.register_to_openmath(sage.rings.polynomial.polynomial_element.Polynomial, polyExp)
+    bc.register_to_openmath(Polynomial, polyExp)
 
     # start the server
     srv = MitMSCSCPServer(conv, host=os.environ.get('SCSCP_HOST') or 'localhost', logger=logger)
