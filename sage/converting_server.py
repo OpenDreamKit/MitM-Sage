@@ -135,7 +135,7 @@ if __name__ == '__main__':
     from sage.rings.polynomial.polynomial_ring_constructor import PolynomialRing
     from sage.rings.integer_ring import ZZ
     R = PolynomialRing(ZZ, ["x1","x2"])
-    p = R.0
+    p = 3*R.1^2
     
     
 
