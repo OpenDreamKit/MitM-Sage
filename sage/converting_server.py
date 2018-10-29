@@ -93,7 +93,7 @@ if __name__ == '__main__':
     polyConsCD  = "sage.rings.polynomial.polynomial_element"
     polyConsName = "Polynomial"
     polyConsImpl = lambda R, d: R(d)
-    reg(sageCDBase, polyConsDC, polyConsName, lambda: polyConsImpl)
+    reg(sageCDBase, polyConsCD, polyConsName, lambda: polyConsImpl)
 
     # export polynomial rings
     polyRingConsCD = "sage.rings.polynomial.polynomial_ring_constructor"
