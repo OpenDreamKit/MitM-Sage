@@ -103,7 +103,7 @@ if __name__ == '__main__':
     def polyRingExp(R):
         br = R.base_ring()
         vns = R.variable_names()
-        brO = conv.to_openmath(R)
+        brO = conv.to_openmath(br)
         vnsO = [om.omString(s) for s in vns]
         RO = om.OMApplication(sageOMS(polyRingConsCD, polyRingConsName), brO, vnsO)
         return RO
